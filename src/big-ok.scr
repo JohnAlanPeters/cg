@@ -1,0 +1,72 @@
+( Where big holes are ok, deb
+( Uses EX                                      
+.                                              
+Use of this price range ended up under biding t
+on California St.  There were cabinets and base
+  )                                            
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+                                               
+
+
+\ NEW WORK                                          03-01-07 AL
+Vocabulary (BIG-OK)   (BIG-OK) definitions                      
+: LT          4.09 w/e 200 c ; \ was 150 s/b 175 OR 200         
+: LT-medium   4.09 w/e 150 c ; \ Tay-G  Jan 29, 2004            
+: LT-easy     4.09 w/e 100 c ; \ was 98 s/b 100  2-28-00        
+: S3            LT ;                                            
+: S4          6.00 w/e 225 c ; \ was 175 till 4-03-00           
+: PS            LT ;                                            
+: PL-easy     3.39 w/e 100 c ; \ was 85 s/b 100                 
+: PL          4.39 w/e 200 c ; \ was 100, was 175 now 200 3-07  
+: SW            PL ;                                            
+: SW-easy       LT-easy  ;                                      
+: CATV          S4 ;   \ 8-3-99                                 
+: (J)           PL ;                                            
+: PH            PL ;   : SP            PL ;                     
+: CAT-5         PL ;  Elect  -->                                
+
+
+\ Loader screen   Same name as the old file         07-24-08 AL
+                                                                
+: Big-Ok  Elect (big-ok) also ;                                 
+: Big  ." Big holes ok"  big-ok ;                               
+: Big-Holes-Ok  big-ok ;                                        
+\ Attic-access  big-ok ;                                        
+\ Crawl-access  big-ok ;                                        
+\ B-boards-off  big-ok ;                                        
+\ Holes-ok      big-ok ;                                        
+                      (Big-Ok) definitions                      
+: Split-wired    1.50 w/e  10 c ;                               
+: Strong-Box    16.00 w/e  50 c ;  \ 5-21-06 after Pacheco      
+: Quad           2.09 w/e  15 c ;                               
+Elect                                                           
+                                                                
+                                                                
+
+
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+

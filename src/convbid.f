@@ -1,0 +1,116 @@
+\ convert a bid from bluescreen to seq file
+0 value notnps
+
+: read1line ( fid -- )
+  pad 64 rot read-file 2drop ;
+
+: write1line ( outfid len -- )
+  pad swap 2 pick write-file drop
+  crlf$ count rot write-file drop ;
+
+: inscr0 ( infid outfid -- infid outfid )        \ read lines of scrn 0
+  16 0 do over read1line
+          dup i 6 < if 64 else 41 then write1line
+       loop
+  notnps 1 =         \ it's a bid
+  if 8 0 do dup 0 write1line loop   \ start at line 24
+  then ;
+
+
+: in1scr  { infid outfid fl \ skip -- infid outfid }
+  fl true = if 64 else 47 then 0 to skip
+   15 0 do infid read1line skip 0=
+           if pad over -trailing nip 0= notnps 1 = and  \ blank line in a bid
+              if true to skip
+              else notnps 1 <>
+                if pad w@ 29532 = if 30300 pad w! then  \ backslash 'v' for 's'
+                then   outfid over  write1line then
+           then
+        loop drop
+   outfid 0 write1line outfid 0 write1line infid outfid ;
+
+: dotopline ( infid outfid -- infid outfid fl )    \ true->not extended
+  pad 64 3 pick read-file 0= swap 64 = and    \ success
+  if pad 49 + c@ ascii h =       \ an extended screen
+     if dup 29 write1line   1    \ only info from an extended screen
+     else notnps 0=
+       if s" | GRS" pad over str= 0=
+          if 15 0 do pad 64 3 pick read-file 2drop loop true exit  \ skip rest of blk
+          else true to notnps then
+       then dup 64 write1line true
+     then   \ all of line from non-extended blk
+  else false then ;
+
+: import-bid { \ $dest -- } ( <infile> -- )  \ convert a blue screen bid to a text file
+  1 to notnps    max-path LocalAlloc: $dest  \ file name goes after the command
+  s" \ele\bids\" pad place bl word dup>r count pad +place
+  pad count r/o OPEN-FILE dup 0=
+  if drop s" bids\" cgbase" $dest place r> count $dest +place
+     $dest count w/o create-file else r> drop then 0=
+  if inscr0 begin dotopline ?dup
+     while in1scr repeat
+     close-file drop close-file drop
+     $dest count "+open-text ( settle ) CURSOR-ON-SCREEN REEDIT
+  else 2drop then ;
+: import import-bid ;  \ JP 5-8-09
+
+: convertnps ( -- )         \ avoid parsing '\n' as crlf
+  0 to notnps
+  [ ' 2DROP IS \N->CRLF ] s" \ele\nps.scr" r/o OPEN-FILE dup 0=
+  if drop s" src\nps.f" cgbase" w/o create-file if drop true else 0 then
+  then 0=
+  if begin dotopline ?dup
+     while notnps 0= if drop else in1scr then repeat
+     close-file drop close-file drop
+  else drop then [ ' _\n->crlf IS \N->CRLF ] ;
+
+: convertmod ( addr len -- ) { \ $buf -- }   \ file to convert
+  max-path LocalAlloc: $buf
+  true to notnps
+  s" \ele\modules\" $buf place 2dup $buf +place
+  $buf count r/o open-file dup 0=
+  if drop -rot s" modules\" cgbase" $buf place $buf +place
+     $buf count w/o create-file
+  else 2drop 2drop  exit
+  then 0=
+  if begin dotopline ?dup          \ assumes no 'h' on line#0, col#49 of any blk
+     while in1scr repeat
+     close-file drop close-file drop
+  else 2drop then ;
+
+: convert-mods  { \ $buf -- }
+  max-path LocalAlloc: $buf
+  s" \ele\modules\*.*" $buf  place
+  $buf count find-first-file 0=
+  IF 11 cells+ zcount 2dup type cr  convertmod
+      BEGIN   find-next-file 0=      \ file level
+      WHILE   11 cells+ zcount 2dup type cr  convertmod
+      REPEAT  drop
+      find-close drop
+   ELSE    drop
+   THEN ;
+
+: convertsrc ( addr len -- )   \ assume file is in \ele\ and goes in src\
+  true to notnps
+  s" \ele\" pad place 2dup pad +place
+  pad count r/o open-file dup 0=
+  if drop -rot s" src\" cgbase" pad place pad +place
+     pad count w/o create-file
+  else nip -rot 2drop
+  then 0=
+  if begin dotopline ?dup          \ assumes no 'h' on line#0, col#49 of any blk
+     while in1scr repeat
+     close-file drop close-file drop
+  else 2drop then ;          \ assumes file name doesn't start with 'n'
+
+: convert-blues ( -- )
+  s" common.scr"  convertsrc
+  s" plans.scr"   convertsrc
+  s" big-ok.scr"  convertsrc
+  s" fish.scr"    convertsrc
+  s" Ampier.scr"  convertsrc
+  s" Surface.emt" convertsrc
+     convertNPS  ;
+
+
+

@@ -1,0 +1,54 @@
+The code to change a module in to source                        
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ Line0-  Index-                                    89-02-23 AEC
+: .LINE0-  CR  BLOCK  2+ C/L  2-  -TRAILING >TYPE ;             
+                                                                
+: INDEX-  2 ?ENOUGH OVER MAX 1+ SWAP                            
+   DO I .LINE0- NUF? ?LEAVE LOOP ;                              
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+

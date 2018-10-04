@@ -1,0 +1,80 @@
+MC  Brand new open 2 x 4 wood construction.         89-06-22 AEC
+Prices lowered after loosing big house on Nob hill
+Use a saw blade tool to strip the metal cladding
+It takes a little bushing at each fitting
+Takes a better man, with more experience
+No snap in connectors
+Wide turns have to be planned on
+Think ahead how you will enter the box
+No sharp bends
+Look ahead and plan
+Know what you are dooing
+
+\ Loader screen                                              AEC
+.( replaced by a file in ...MOD )
+beep
+\s
+10 spaces  .( loading MC.SCR ) cr
+2 eof thru
+
+\ 2x-MC   1/2 regular.  RUSH to make it pay.                 AEC
+Vocabulary NEW-MC   NEW-MC Definitions
+: PL        834.00 w/c 84  c ; \ SW-Box
+: LT        969.00 w/c 94  c ; \ 4S-Box
+: PL-Easy   500.00 w/c 50  c ; ( 1/2 )
+: S3                      LT ;
+: PS                      LT ;
+: SW                      PL ;
+: (J)                     PL ;
+: Circ     1,740.00 w/c 90 c ; \ 30 LF-MCC
+Electric Definitions
+: 2mc    ." 2 sides open MC" cr  new-mc ;
+: 2X-MC  2mc  ;
+: 2-sides-open-MC  new-mc  ;
+: MC-2x4   new-mc ;
+Title  -New-plans-MC->
+\ 1X-MC  1 SIDE OPEN                                89-07-09 AEC
+Vocabulary 1X-MC  1X-MC Definitions
+: PL            834.00 w/c 104 c ; \ sw-box
+: LT            969.00 w/c 119 c ; \ 4s
+: PL-ez         500.00 w/c  60 c ;
+: PS                  PL ;         \
+: (J)                 PL ;
+: S3                  LT ;         \ 4s
+: SW                  LT ;
+: Split-wired   300.00 w/c 20 c ;
+Electric definitions
+: 1mc  ." One side open MC" cr  1X-MC ;
+: MC-1X   1X-MC ; \S
+John Jones Job  (Lost)
+
+\ See MCC.MOD SCR 9    Over priced & out of date    08-02-89 AEC
+Vocabulary BIG-HOLES-MC  BIG-HOLES-MC  Definitions
+: LT              1801 EX 182 C ;
+: S3            LT ;
+: PS            LT ;
+: PL-bb           1100 ex  60 c ;
+: PL              1801 EX 172 c ;
+: SW            PL ;
+: PH            PL ;
+: (J)           PL ;
+: TV            PL ;
+: SPLIT-WIRED                   430 ex  20 c ;
+Electric definitions
+: Big-MC  ;
+: BMC  big-holes-mc  ;
+\ Romex prices bumped up a little needs to be studied
+\s not in use
+\s MCC LF ( Mass production 1.5 markup )   SAFECO!    23oct87JAP
+Vocabulary MCC MCC definitions \ Markup 1.5
+: 14-2         ( 380.00 )      57 ex 27 m ; \ SAFECO  106-301 27
+: 12-2         ( 500.00 )      75 ex 30 m ; \
+\ 14-3         (   -    )      75 ex 30 m ; \
+: 12-3         ( 700.00 )     105 ex 35 m ; \
+: Con          (        )      34 ex 11 m ; \
+
+: Plug         ( .85   )      153 EX 15 C ; \ SAFECO  E-3
+: Cover        ( .16   )       32 EX 00 C ; \ SAFECO  D-9
+: Staple                       01 EX 00 C ; \
+Electric definitions
+

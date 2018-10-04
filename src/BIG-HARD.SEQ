@@ -1,0 +1,46 @@
+Where big holes are ok, but it is harder.           01-19-00 AL
+There are cabinets.
+There is a need to crawl.
+Some one says it should be easy.
+.
+Debris cleaned up by others.
+.
+Uses EX
+.
+This file is to correct for under biding the Nybakken Job on
+California St.  There were cabinets there and basement
+crawling.                                         Jan 19, 2000
+
+\ Loader screen   Same name as the old file         01-19-00 AL
+2 load
+: BIG-OK-HARD  Elect (big-hard)   also ;
+: BIG  ." Big holes Ok but hard"  Big-Ok-Hard ;
+: BIG-HOLES-OK-HARD               Big-Ok-Hard ;
+: Attic-access                    Big-Ok-Hard ;
+: Crawl-access                    Big-Ok-Hard ;
+: B-boards-off                    Big-Ok-Hard ;
+: Holes-hard                      Big-Ok-Hard ;
+
+                      (BIG-OK-HARD) definitions
+: Split-wired 1.75 w/e  ( 330 ex) 10 c ; Elect  \ was 150
+
+Title -Big-holes-Ok-Hard->
+
+\ NEW WORK prox same as Fish-medium                 01-19-00 AL
+Vocabulary (BIG-OK-HARD)   (BIG-OK-HARD) definitions
+: LT          4.09 w/e 150 c ; \ was 150
+: LT-easy?    4.09 w/e 100 c ; \ was 90
+: LT-close    4.09 w/e  65 c ; \ was 60
+: S3            LT ;
+: S4          6.00 w/e 200 c ; \ was 175
+: PS            LT ;
+: PL-easy?    3.39 w/e  90 c ; \ was 50 s/b 85 now 90
+: PL          4.39 w/e 125 c ; \ was 100
+: SW            PL ;
+: SW-easy?      LT-easy? ;
+: CATV          S4 ;   \ 8-3-99
+: (J)           PL ;
+: PH            PL ;  : SP  ph ;
+: Power         PL ;  Elect
+Spare
+

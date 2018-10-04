@@ -1,0 +1,86 @@
+\ Remodel with plans                                  10-07-8AL
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+\                      July 24, 2008                            
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ Loader screen                                     09-14-08 AL
+Vocabulary (NEW-WORK)                                           
+(NEW-WORK) definitions                                          
+2 5 thru                                                        
+Electric Definitions                                            
+: OPEN-2X4     Elect  (New-WORK)  also ;                        
+: New          open-2x4 ." Open-2x4" ;                          
+: Open-2-sides open-2x4 ;                                       
+\ CUT-RATE-ROMEX   35.00 rate 2!   open-2x4  ;                  
+: 2x           open-2x4 ;                                       
+: Open-romex   open-2x4 ;                                       
+\ Plans        open-2x4 ;                                       
+\ Surface      open-2x4 ;                                       
+\ Title -New-work->                                             
+                                                                
+                                                                
+
+
+\ Standard PVC boxes  Open-2-sides                  06-24-93 AL
+(New-Work) definitions  ( regular rates )                       
+: LT                    4.09 w/e  78 c ; \ from ROMEX.MOD       
+: LT-easy               4.09 w/e  50 c ; \ Dropped celing close 
+: PL                    4.09 w/e  68 c ;                        
+: PL+GFI               17.09 w/e  73 c ;                        
+: S3            LT ;  : PS            LT ;                      
+: S4                    6.00 w/e  78 c ;                        
+: PL-easy ( -.70 w/s )  3.39 w/e  55 c ; \ Less .15 time        
+: Split-wire            1.95 w/e  10 c ;                        
+: Circuit               3.50 w/e  75 c ; \ 25 rx 14/2           
+: CATV                 15.00 w/e 100 c ;                        
+: Quad                  2.09 w/e  15 c ; \ Was 1.09             
+: SW                                PL ;
+: (J)                               PL ;
+: Point                2.00 w/e  29 c ;
+: Power                            PL ;
+: Dryer               40.51 w/e 416 c ;
+: Range              111.33 w/e 541 c ;
+Elect
+
+
+\ Open-1-side            Created on June 24, 1993   05-11-09
+(OPEN-1-SIDE) definitions   ( New work x 1.25 )
+: Drops ( After Smyth ) 4.09 w/e 175 c ; \ basement ceiling
+: LT                    4.09 w/e  98 c ; \
+: LT-easy  ( No drill ) 3.00 w/e  63 c ; \ Herman Kit loss
+: LT-medium             4.09 w/e  85 c ; \ 1st one in attic
+: LT-Custom             5.00 w/e 120 c ; \ Harmer
+: PL                    4.09 w/e  85 c ; \ s/b big-ok  floor
+: Quad                  1.09 w/e  15 c ;
+: S3                                LT ;
+: SW-fished             6.26 w/e 275 c ; \ Fish in walls
+: PS   ( .... > )                   LT ; \ was PL  7-10-97
+: S4                    6.00 w/e  98 c ;
+: Circuit               3.50 w/e  60 c ; \ 25 rx 14/2 was 94 c
+: CATV                 15.00 w/e 125 c ;
+: SW                                PL ;
+: SW-Custom             5.00 w/e 120 c ; \ Harmer job
+: (J)                               PL ;
+: PH                                PL ;
+: SP                                S4 ; \ 8-3-99
+: Split-wire            1.95 w/e  13 c ;
+: 1X                       open-1-side ;
+: Open-1                   open-1-side ;
+: Gas-out              10.00 w/e   1 e ;
+: Strong-Box           21.00 w/e  25 c ; \ 13.00 parts 8-08
+\ New work x 1.25 )
+Elect
+

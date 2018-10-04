@@ -1,0 +1,22 @@
+The outlet only, less the lf run of pipe and wire   88-05-23 AEC
+
+\ Loader                                                     AEC
+Vocabulary Box&Run  Box&Run Definitions
+2 eof thru
+Electric Definitions
+
+\ Outlets of various types.                                  AEC
+: PR                            823 EX 100 c ;
+: LT                            823 EX 125 c ; \ Module #5
+: S3                           1023 EX 100 c ;
+: S4                           1423 ex 125 c ;
+\ PR-ez                          00 ex  00 c ; \ Almost 1/2 off
+: SW            PR ;           \ LT-ez  PR-ez ;
+\ SW-ez      PR-ez ;           : S3-ez   PR-ez ;
+: (J)           LT ;
+\ (J)-ez     PR-ez ;   \        393 EX  64 C ;
+\ PR-Box                        823 ex   1 e ;
+: PS            LT ;
+\ Split-wired                   210 ex 9 c ;
+\ Tap                           450 ex 50 c ; \ 1/4 of a PR
+

@@ -1,0 +1,243 @@
+( A bunch of assemblies.  They require the amperage. 88-02-AL)
+( They should be moved to the same file with the )              
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+(                      July 24, 2008  )                         
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+( loader                                           08-02-08 AL)
+: AMPIERS ;                                                     
+CR (  Ampere-Modules is loading )                               
+2 eof thru  \ lst's try this.                                   
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+\ Below was for use with converson to the WinCG system but it   
+\ messed up the blue sysem by not loading the screns            
+\ Electric Definitions    \ keep the \                          
+\ 2 CAPACITY 1- Thru      \ trial \ for CG                      
+                                                                
+                                                                
+                                                                
+
+
+\ RISER                                             09-28-08 AL
+Vocabulary RISER RISER Definitions                              
+: 70A       ( Repull #4 )          60.00 w/e 341 c ;            
+: 100A      ( #4 in 1-1/4 )        97.15 w/e 467 c ; \ 88.49    
+\ 100A-AL   ( #1 Al 1-1/4 )       111.24 w/e 463 c ; \ 12-31-07 
+\ 115A      ( #2 1-1/4 )          140.84 w/e 489 c ;            
+: 130A      ( #1 1-1/4 )          121.43 w/e 500 c ;            
+: 125A                                  130A ;                  
+: 150A      ( 1/0 1-1/4 )         140.19 w/e 510 c ; \ 12-31-07 
+\ 200A-Res  ( 3/0 & #1 1-1/4 )    466.68 w/e 521 c ; \ 310-16.3 
+: 200A      ( 3/0 1-1/2 )         176.61 w/e 597 c ;            
+\ 230A      ( 4/0 2-in )          243.17 w/e 733 c ;            
+\ 380A      ( 500mcm 3-in )       600.00 w/e 850 c ; \ guesses  
+\ 400A                              380A ;                      
+\ 200A-3P   ( 3/0 in 2-in )        245.37 w/e 757 c ;           
+Electric Definitions \ Prices seem to still inc LB and or 90    
+
+
+\ GROUND                        16aug87AEC          05-12-09    
+Have ground 0= if  Vocabulary Ground  then                      
+Ground Definitions  \ 600A   ( 1-in 3/0 )  58.47 w/e 312 c ;    
+: 400A   ( 1-in 1/0 520A )   113.47 w/e 754 c ; \ Jul 03         
+: 200A   ( 1/2 #6 )           52.59 w/e 482 c ; \ Aug 05        
+: 150A              200A ;                                       
+: 125A              200A ;  \ Now inc 40.00 rental fee          
+: 100A              200A ;  \ 73.64 w/e 535 c ; \ Jan 03
+: 100A-hard ( 50ft or rocks ) 73.64 w/e 700 c ; \ Nov 05        
+: Gas                          6.00 w/e 100 c ; \ guess         
+: Box-far                      5.35 w/e 400 c ; \
+: Box-hard                     box-far ; 
+: Box  ( 1st )                 5.35 w/e 300 c ; \ Typical
+: Box-Medium                   5.35 w/e 200 c ; \
+: Box-easy    ( not fished )   2.35 w/e 100 c ; \ Was 75        
+: Box-BtoB                     2.35 w/e  45 c ; \ Was 35        
+: Box-very-easy                2.35 w/e  50 c ; Elect \ Was 35  
+
+
+\ OS-Nip                                            06-17-08 AL
+Have OS-Nip 0= if  Vocabulary OS-Nip  then                      
+OS-Nip Definitions                                              
+\ 400A                     9259.00 w/c 226 c ;                  
+: 200A                     3679.00 w/c 154 c ;                  
+: 150A                     2314.00 w/c 137 c ;                  
+: 125A                     1961.00 w/c 120 c ; \ 130A           
+: 100A                     1701.00 w/c 118 c ; \ 115A           
+: 85A                      1351.00 w/c 114 c ; \ 85A            
+: 65A                      1181.00 w/c 112 c ; \ 65A            
+: 50A                       760.00 w/c  95 c ;                  
+: 40A                                     50A ; \ YEP           
+: 30A                       818.00 w/c  83 c ;                  
+: 20A                       275.00 w/c  31 c ;                  
+: 15A                                     20A ;                 
+Elect   
+: OS-Nipple       OS-Nip ; 
+Elect \ See OS-NIPPLE
+: Offset-Nipple   OS-Nip ;
+Elect
+
+
+% ( Three Phase )  OS-NIP                        08-15-93 AEC   
+( Vocabulary OS-NIP )   OS-NIP definitions                      
+: 400A-3P                 239.38 w/e 404 c ;                    
+: 300A-3P                 111.20 w/e 298 c ;                    
+: 200A-3P                  53.05 w/e 235 c ; \ =============    
+: 150A-3P                  49.71 w/e 145 c ; \ below here not   
+: 130A-3P        ( -> ? )  40.00 w/e 117 c ; \ current prices   
+: 125A-3P    130A-3P ;                                          
+: 115A-3P                  38.98 w/e 127 c ;                    
+: 100A-3P    115A-3P ;                                          
+: 70A-3P                   28.18 w/e 121 c ; \ Interpolated     
+: 65A-3P                   22.78 w/e 118 c ;                    
+: 60A-3P     65A-3P ;                                           
+: 50A-3P                   14.27 w/e  99 c ;                    
+: 40A-3P     50A-3P ;  \ Yep                                    
+: 30A-3P                    8.03 w/e 147 c ;  Elect             
+
+
+\ LB-INC                                            01-02-08 AL
+Vocabulary LB-INC LB-INC definitions                            
+\ 400A   ( 380A )       116.00 w/e  322 c ;                     
+\ 335A                         w/e  322 c ;                     
+\ 285A                   48.99 w/e  215 c ;                     
+\ 200A                   27.44 w/e  162 c ;                     
+: 150A                   20.80 w/e  141 C ; \ inaccurate        
+: 130A                   20.29 w/e  141 C ; \ but true          
+: 125A          130A ;  \ Fix it later                          
+\ 115A                   13.33 w/e  96 c ;                      
+: 100A                   13.33 w/e  96 c ;  \ Same as 115a      
+Electric Definitions                                            
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ 90-INC                                            04-13-96 AL
+Vocabulary ALRC-90-Inc ALRC-90-Inc Definitions                  
+: 400A                       143.82 w/e 297 c ; \               
+: 200A                        45.31 w/e 118 c ; \               
+: 150A                        24.20 w/e  96 c ; \               
+: 125A         150A ;                           \               
+: 115A                        13.30 w/e  75 c ; \               
+: 100A         115a ;                           \               
+: 100A-ez                     13.30 w/e  30 c ; \               
+: 65A                          8.02 w/e  60 c ; \               
+: 60A           65A ;                           \               
+: 50A                          5.64 w/e  52 c ; \               
+: 40A           50A ;                           \               
+: 30A           50A ;                           \               
+Elect    : 90-Inc    ALRC-90-Inc ;  : 45-inc  90-inc ;          
+\ OO \FORTH\PRICES\MODULES\90-GRS.MOD                           
+
+
+\ 90-INC                                            12-12-90 AEC
+Vocabulary EMT-90-INC EMT-90-INC Definitions                    
+: 400A                       100.16 w/e 114 c ; \               
+: 200A                        16.77 w/e  69 c ; \               
+: 150A                        12.21 w/c  55 c ; \               
+: 125A                    150A ;                \               
+: 115A                         8.16 w/c  46 c ; \               
+: 100A                    115a ;                \               
+: 65A                          2.39 w/c  16 c ; \               
+: 60A                     65A ;                 \               
+: 50A                          1.69 w/c  13 c ; \               
+: 40A                     50A ;                 \               
+: 30A                     50A ;                 \               
+Electric Definitions                                            
+                                                                
+                                                                
+
+
+\ LF-ALRC                       12-30-90   DOUBLE CHECK $$   0.0
+Vocabulary LF-ALRC    LF-ALRC definitions                       
+: 400A   ( 500mcm 3-in )     2237.00 w/c  27 c ;                
+: 200A   ( 3/0 2-in )         825.50 w/c 169 m ;                
+: 150A   ( 1/0 1-1/4 )        616.19 w/c 147 m ;                
+: 130A   ( #1  1-1/4 )        524.00 w/c 136 m ;                
+: 115A   ( #2 1-in )          432.50 w/c 125 m ;                
+: 100A               115A ;                                     
+:  85A   ( #4 1-in )          328.19 w/c 135 m ;                
+:  70A                85A ;                                     
+:  65A   ( #6 3/4 )           223.43 w/c  97 m ;                
+:  50A   ( #8 1/2 )           169.46 w/c  82 m ;                
+Electric Definitions                                            
+                                                                
+                                                                
+                                                                
+
+
+\ Reconnection (s)                                 04-12-05 AL 
+Vocabulary RECONNECT RECONNECT Definitions
+` 1/2                   828.00 w/c 102 c ;                      
+` 3/4                  1000.00 w/c 125 c ; \ these are guesses  
+` 1-in                 1500.00 w/c 140 c ; \ more guesses       
+` 1-1/4                2500.00 w/c 188 c ; \ more guesses       
+` 1-1/2                2700.00 w/c 195 c ; \ more guesses       
+` 2-in                 3000.00 w/c 200 c ; \ more guesses       
+` Looms                 670.00 w/c 174 c ; \ cut on May 96      
+` Black-Box             400.00 w/c 125 c ;                      
+` Flex                  100.00 w/c  50 c ; \ 1/2                
+` 3/4-Flex              200.00 w/c  75 c ;                      
+` Breakers              300.00 w/c  60 c ;                      
+` Romex-hard            900.00 w/c 100 c ;                      
+` Romex-easy            100.00 w/c  20 c ;
+` 6-Loom-N&T            600.00 w/c 100 c ;
+` 2-Loom-N&T            200.00 w/c  50 c ;
+: Looms                  50.00 w/c  16 c ;    
+
+Electric definitions  : Repower reconnect ;                     
+
+
+%  ( Three Phase ) OS-NIP                            15apr8AEC  
+( Vocabulary OS-NIP )   OS-NIP definitions                      
+\ 3P-400A                     190.56 EX 292 C ;                 
+: 3P-200A                       8069 EX 169 C ;                 
+: 3P-150A                       4971 EX 145 C ;                 
+: 3P-130A             ( -> ? )  4000 EX 117 C ;                 
+: 3P-125A       3P-130A ;                                       
+: 3P-115A                       3898 EX 127 C ;                 
+: 3P-100A       3P-115A ;                                       
+: 3P-70A                        2818 EX 121 C ; \ Interpolate   
+: 3P-65A                        2278 EX 118 C ;                 
+: 3P-60A        3P-65A ;                                        
+: 3P-50A                        1427 EX 99 C ;                  
+: 3P-40A        3P-50A ;  \ YEP                                 
+: 3P-30A                       8.03 w/e 147 C ;                 
+Electric Definitions                                            
+
+
+\  RISER    Out of date as of --> >    11-20-91 AEC 09-11-06 AL
+Vocabulary RISER RISER Definitions                              
+: 70A       ( Repull #4 )          60.00 w/e  341 c ;           
+: 100A      ( #4 in 1-1/4 )        77.36 w/e  357 c ;           
+: 115A      ( #2 1-1/4 )          129.66 w/e  379 c ;           
+: 130A      ( #1 1-1/4 )          110.35 w/e  390 c ;           
+: 125A                                  130A ;                  
+: 150A      ( 1/0 1-1/4 )         119.20 w/e  400 c ;           
+: 200A      ( 3/0 1-1/2 )         164.94 w/e  472 c ;           
+: 230A      ( 4/0 2-in )          243.17 w/e  733 c ;           
+\ 280A-3P   ( 300MCM 3-in )       511.35 w/e  765 c ;           
+: 400A                           1228.00 w/e  826 c ;           
+\ 200A-3P   ( 3/0 in 2-in )       245.37 w/e  757 c ;           
+ELECTRIC DEFINITIONS                                            
+                                                                
+                                                                
+
+

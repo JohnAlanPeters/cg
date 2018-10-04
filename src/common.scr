@@ -1,0 +1,79 @@
+\ The items that are the same price regardless of   09-08-11 BEC
+\ the type of wall surface.                                     
+                                                                
+
+\ Loader
+: COMMON ;                                                      
+Electric definitions
+: Stucco          100.00 w/c  50 c ; \
+\ Rosette                   stucco ; \
+: Tile           1500.00 w/c  70 c ; \ 50
+: Tile-cutting                tile ; \
+` Circuit-easy    748.00 w/c  40 c ; \ 100 thhn #14 is 10.00 50 c
+` Circuit        1000.00 w/c  70 c ; \ Was 60 c   2-14-02
+` Repull-(J)        0.00 w/c  45 c ; \ A junction box
+` 4x4-Ext         565.71 w/c  20 c ; \
+: Occ-sensor       25.00 w/e  25 c ; \    occ-sensor ; \
+: Occupancy-Sensor      occ-sensor ;                  
+: OCC                   occ-sensor ; \
+: CB              400.00 w/c  20 c ; \ Raised 2-2-05
+: GFI            1300.00 w/c  25 c ; \ 13.00 UE? 15.49 Lows  Dec 2010
+: AFCI           3500.00 w/c  50 c ; \ 28.00 before June 12, 07
+: GFI-hard       1300.00 w/c  50 c ; \
+: GFI+Device     2025.00 w/c  40 c ; \ : FCB  1800.00 w/c 20 c ;
+: GFI+Dev-hard   2025.00 w/c  60 c ; \
+: GFI+Plug       2025.00 w/c  40 c ; \ Was .25  MG raised to .50
+: GFI+Switch     2025.00 w/c  35 c ; \ 2025 was prior to 3-10-08
+: GFI+2x4        2400.00 w/c  30 c ; \ not as hard
+: GFCI           1300.00 w/c  05 c ; \ 9.03 March 08
+: GFI+IND        2325.00 w/c  20 c ; \
+\ GFI-CB is in NPS.scr  View CB-big \
+` Smoke-9V       1000.00 w/c  25 c ; \  5.92 Aug 08
+` Smoke-110V     1000.00 w/c  25 c ; \
+` Smoke-110V-9V  1500.00 w/c  25 c ; \ 10.15 Mar 09
+` Smoke-110V~9V  1500.00 w/c  00 c ; \ For fire alarm jobs
+` Smoke-9V-110V  1500.00 w/c  25 c ; \
+` Deep            865.00 w/c  15 c ; \  7.60 Aug 08
+: Bubble                      Deep ; \
+: Bubble-cover                Deep ; \
+` Cord            452.00 w/c  25 c ; \ 275.00
+` DATA           1000.00 w/c 150 c ; \ CATV, NET, PHONE
+` D&P             187.00 w/c  12 c ; \ Our new boxes or mass pro
+` D&P-easy        187.00 w/c  18 c ; \ Modern boxes & mass pro.
+` Device&Plate    187.00 w/c  25 c ; \
+` D&D             695.00 w/c  12 c ; \
+: Jelly-Flo        20.00 w/e  25 c ; \ 19.89 Univ Dec 96 14.63
+\ Quad            109.00 w/c  23 c ; \
+` Whip            349.00 w/c  33 c ; \
+` Big-Whip       4126.00 w/c 197 c ; \ #4 100A NES temp for UG
+` Whip+(J)        550.00 w/c  50 c ; \
+\ Sealtite       1518.00 w/c  84 c ; \
+` Fan-Box        2500.00 w/c 100 c ; \
+` Box-Ext         380.00 w/c  25 c ; \ All a guess
+` Box-in          350.00 w/c 150 c ; \ Fixture down/up
+` Box-only        349.00 w/c 100 c ; \ from EMT.MOD fish s/b more
+` Box-only-easy   300.00 w/c  44 c ; \ Simple junction
+` Split-Circuit    20.00 w/c 300 c ; \ Rember Alpine
+` Open-Close        0.00 w/c  25 c ; \
+` AFCI-220V      8961.00 w/c  50 c ; \ Was off by 100
+` AFCI           4000.00 w/c  25 c ; \ 50 c previously
+` AF  AFCI ;
+` AFCI-[D]       4000.00 w/c  50 c ; \
+Elect
+
+
+\ Aliases and abreviations
+` Repull-(J)      0.00 w/c  45 c ; \ A junction box
+
+: NIC -1 s>d sell-sub 2! ;  \ flag to force display 0.00
+: NOOP nic ;
+: NOP  nic ;
+: INC  nic ;
+: TBD  nic ;                                                                 
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+

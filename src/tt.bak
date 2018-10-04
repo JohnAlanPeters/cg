@@ -1,0 +1,18 @@
+
+: vQUERY ( addr cnt -- )
+  (SOURCE) 2! >IN OFF 0 TO SOURCE-ID 0 TO SOURCE-POSITION ;
+
+create vbuf 255 allot
+
+: vtype ( addr cnt -- )
+  vbuf append ;  \ ?? add text to a counted string
+
+\ interpret input from a string; result in a string
+: vectint ( addr cnt -- addr cnt)  \ vectored interpret
+  0 vbuf !
+  vquery
+  ['] type @
+  ['] vtype is type
+  interpret
+  is type
+  vbuf count ;

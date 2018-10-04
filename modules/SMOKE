@@ -1,0 +1,126 @@
+Smoke alarm wiring 110V                               17aug87jap
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ Loader                                              17aug87jap
+forget cover                                                    
+  From a:nps.scr 106 load \ 3-oct                               
+\ From a:nps.scr  58 load \ W-M                                 
+\ From a:nps.scr  59 load \ W-M                                 
+  From a:nps.scr 117 load \ x.01hr                              
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ Wire Molding        40.04 +   0.96 @ 47  $   85.16  04aug87jap
+2 w-m 500                                           6           
+5 thhn #14                                          1           
+3 nut yellow                                        1           
+1 w-m 5737A  ( Med open )                          24           
+1 W-M 5738   ( sml fixt )                          18           
+1 w-m 504                                           0           
+1 Fixture detector                                 31           
+1 permit fixture                                    0           
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ 18" fish EMT        29.07 +   1.17 @ 47  $   84.06  17aug87jap
+Wire            4 romex 14-2                        7           
+Fixture down/up 25 x.01hr electrician               9           
+Splices         3 nut yellow                        1           
+Box             1 3-oct tiger                      25           
+Conector        1 romex blue                        5           
+Smoke unit      1 Device detector                  21           
+City fees       1 permit minimum                   12           
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ 8ft fish EMT        30.42 +   2.14 @ 47  $  131.00  17aug87jap
+Wire            9 romex 14-2                       17           
+Fixture down/up 25 x.01hr electrician               9           
+Fish past       1 Blockage stud                    14           
+and drill thru  1 Blockage fire-block              23           
+Splices         3 nut yellow                        1           
+Box             1 3-oct tiger                      25           
+Conector        1 romex blue                        5           
+Smoke unit      1 Device detector                  21           
+City fees       1 permit minimum                   12           
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ 20ft fish EMT       33.66 +   3.26 @ 47  $  186.88  17aug87jap
+Wire            21 romex 14-2                      39           
+Fish past       1 Blockage stud                    14           
+and drill thru  2 Blockage fire-block              47           
+Tap outlet box  50 x.01hr Electrician              18           
+Splices         3 nut yellow                        1           
+Box             1 3-oct tiger                      25           
+Conector        1 romex blue                        5           
+Smoke unit      1 Device detector                  21           
+City fees       1 permit minimum                   12           
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+\ Smoke modules                                       17aug87jap
+Electric definitions                                            
+Vocabulary smoke-alarm  Smoke-alarm definitions                 
+: 18in-fish                     2907 ex 117 c ;                 
+: 8ft-fish                      3042 ex 214 c ;                 
+: 20ft-fish                     3366 ex 326 c ;                 
+: WM-box                        4004 ex  96 c ;                 
+Electric definitions                                            
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+

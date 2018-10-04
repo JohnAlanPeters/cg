@@ -1,0 +1,198 @@
+TITLE                                               10-04-98 AEC
+                 A R I E S   E L E C T R I C                    
+                  QUIZ #1 May 30, 1988                          
+.                     Rev 10-4-98                               
+.                                                               
+THIS TEST WILL HELP US KNOW WHERE WE CAN HELP YOU LEARN.        
+.                                                               
+Open book test, based on the 1990 code book and a calculator.   
+Don't ask for help till after the test.                         
+Put your name and phone number on your answer sheets.           
+                                                                
+2 pages                                                         
+0 2 reads     3 6 reads    7 8 reads                            
+                                                                
+                                                                
+                                                                
+
+
+\ Loader                                                     AEC
+                                                                
+                                                                
+2 EOF THRU                                                      
+Title  --Test-1-AEC-->                                          
+                                                                
+                                                                
+print bid                                                       
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem TEST1                                                       
+1- What size wire is used for 15A?                              
+   What size wire for 30A?                                      
+   What two sizes are used for 100A?                            
+2- What section number tells how many amps #2 copper will take? 
+   Why do we use the 75 degree column?                          
+3- The requirements for securing 1/2 in pipe are:               
+   Within how many inches from each EMT fitting?                
+   How far apart a for straight run 1/2 inch rigid steel?       
+4- How many L.F of track lighting equals one outlet for the     
+   purlose of load calculatins?                                 
+5- Bushings are required on 1-in and over or #4 and up, Right?  
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem CIRCUITS                                                    
+6- Look up the smallest moter that requires a dedicated circuit.
+          1/4   1/3   1/2   3/4   1-hp                          
+7- What are two uses for #14 wire in a commercial job?          
+8- Kitchen utility plugs must be #12 wire.  Name two other rooms
+   in a residental job that require #12                         
+9- Where are GFI outlets required by the 1990 code?             
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem ROMEX                                                       
+10- Note the letter of all the jobs where Romex is OK           
+    H. In a remodeled a hotel                                   
+    R. In a new resturant                                       
+    P. In a new penthouse on a 2 floor house + basement den     
+    T. 3 floor house with new top floor additon.                
+    N. A brand new 4 floor house built from 2 by 4 wood.        
+    A. 2 floor house room adition on the rear                   
+12- Calculate the maximum watts allowed on a 2 wire 220 volt    
+    heater on a 14 gage circuit.                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem LOAD-CALC                                                   
+14- What section in the code book allows a couple of lights to  
+    be on the Disposal circuit?                                 
+16- How any outlets (max) can be on a circuit that is limited   
+    to sleeping areas and halls that total less than 500 sq ft  
+17- How many plugs are needed in a NEW room 12 x 12 with a      
+    36 inch door way, and a 6 ft sliding glass deck door?       
+18- If the above room is existing, how many plugs are needed?   
+19- When do existing outlets have to be grounded?               
+19a Why is it ok to use a GFI in an existing ungrounded outlet? 
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem COLOR-TV-BLOW-OUT                                           
+20- There is a color TV powered by the red leg of a three       
+    wire 110/220 volt feeder.  The refigerator is on the black  
+    leg.  When the electrician took off the wire nut from the   
+    neutral wires the basement ceiling junction box where the   
+    red and black circuits split, the TV and VCR smoked!        
+    WHAT HAPPINED?    Use paper or just tell me....             
+    State two ways to prevent this accident.                    
+21- How many degrees bends can I use in one run of EMT?         
+22- What is the smallest size pipe that requires a bushing?_    
+23-  "    "  "   "      "   wire "    "       "   "    ?        
+24- Bonding is not required after you pass the first main       
+    disconect switch.  Why?                                     
+                                                                
+                                                                
+                                                                
+
+
+Rem PLANS                                                       
+25- Does A.I.C. stand for amps inrush current or what?          
+26- What does V.A. stand for?                                   
+    Volts multiplied by amps equals what?                       
+29- If the plans differ from the contract what do you do?       
+35- If the plans differ from the actuall what can you do?       
+36 -If the archetect says "do it according to the plans" but you
+    know a better way, what can you do?                         
+38- Why do most archetects forget one of the required outlets   
+39- What does an electrician use a "reflected ceiling" plan for?
+40- Is it better to over communicate or under communicate?      
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem RESIDENTAL-CODE                                             
+41- What minimum size circuit is required for Kitchen lights?   
+42- "      "      "     "  the Dinning room Plugs?              
+43- "      "      "     "  the Family room plugs?               
+44- How often and where must romex be secured?                  
+45- A hole counts as a means of securing romex, right?          
+46- How many romex cables can be fed thru a 5/8" hole?          
+47- When is romex not required to be covered?                   
+50- When you are just extending a nob and tube circuit does the 
+    romex have to be grounded?                                  
+51- When heating up a circuit, which wire is connected first an 
+    unhooked last?  Which color is second?                      
+                                                                
+                                                                
+                                                                
+                                                                
+
+
+Rem FILL-AND-ACCURACY                                           
+52- What table tells you how many wires can be in a box?        
+54- If its true that you need a junction box every 100 feet of  
+    straight run of raceway where does the code say that?       
+59- How far back can the front edge of a box or outlet be       
+    in a combustable surface?                                   
+60- Non combustable surfaces?                                   
+61- What would be a good question for a test like this?         
+62- Why would you appologize for something you did not do?      
+63- What is your goal in life?                                  
+64- Who do you feel is the most successful person in our        
+    industry, and why?                                          
+65- Give me an example of something diffivult you accomplished. 
+66- How do you prioritize your tasks?                           
+67- Do you use an organiser and may I see it?                   
+                                                                
+
+
+Rem  MORE                                                       
+68- What are your strengths?                                    
+69- What makes you better or different from others?             
+70- Do you have a goal in life?                                 
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+
+

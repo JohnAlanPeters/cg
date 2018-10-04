@@ -1,0 +1,48 @@
+Where big holes are ok, but it is harder.           01-19-00 AL
+There is some fishing.
+There are cabinets.
+There is a need to crawl.
+Some one says it should be easy.
+.
+Debris cleaned up by others.
+.
+Uses EX
+.
+This file is to correct for under biding the Nybakken Job on
+California St.  There were cabinets there and basement
+crawling.                                         Jan 19, 2000
+
+\ Loader screen   Same name as the old file         01-19-00 AL
+2 load
+: BIG-FISH  Elect (Big-Fish)   also ;
+: B-F  ." Big holes Ok but some fishing is required"
+                                  Big-Fish ;
+: BIG-FISH                        Big-Fish ;
+: Attic-access                    Big-Fish ;
+: Crawl-access                    Big-Fish ;
+: B-boards-off                    Big-Fish ;
+: Holes-hard                      Big-Fish ;
+
+                      (BIG-FISH) definitions
+: Split-wired 1.75 w/e  ( 330 ex) 10 c ; Elect  \ was 150
+
+Title -Big-Holes-Fishing->
+
+\ NEW WORK prox same as Fish-medium                 01-19-00 AL
+Vocabulary (BIG-FISH)   (BIG-FISH) definitions
+: LT          4.09 w/e 200 c ;
+: LT-easy?    4.09 w/e 150 c ;
+: S3            LT ;
+: S4          6.00 w/e 250 c ;
+: PS            LT ;
+: PL-easy?    3.39 w/e 100 c ;
+: PL          4.39 w/e 175 c ;
+: SW            PL ;
+: SW-easy?      LT-easy? ;
+: CATV          S4 ;
+: (J)           PL ;
+: PH            PL ;  : SP  ph ;
+: Power         PL ;  Elect
+
+Spare
+

@@ -1,0 +1,32 @@
+\ Remodeling  open to studs by others                   17oct87jap
+
+\ Loader screen                                       16sep87AEC
+.(  Loading  OPEN-1S.SEQ ) cr
+Electric definitions
+Vocabulary (OPEN-1-SIDE)   (OPEN-1-SIDE)  also  \ ????
+
+: OPEN-ONE-SIDE   Electric-order  (OPEN-1-SIDE)  also ;
+: ONE-SIDE        open-one-side ;
+: ONE-SIDE-OPEN    One-side ;
+: CUSTOM-PLANS     One-side ;
+: 1x               One-side ;
+: Open-1-side      One-side ;
+Elect
+
+\ OPEN ONE SIDE
+OPEN-1-SIDE Definitions
+: LT             4.09 w/e 102 c ;
+: S3            LT ;
+: PS            LT ;
+: PL-bb          3.00 w/e  50 c ;
+: PL             4.09 w/e  86 c ;
+: SW            PL ;
+: PH            PL ;
+: (J)           PL ;
+: CATV          LT ;
+: Split-wired 1.95 w/e 15 c ;
+: Tap           PL-bb ;
+: Gas-out      3.00 w/e  85 c ;
+: S4           6.00 w/e 102 c ; \ Guesses
+Elect
+ 

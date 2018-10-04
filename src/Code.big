@@ -1,0 +1,804 @@
+\ $Id:
+\     BROOKLINE ARIES ELECTRIC COMPANY SINCE 1972.
+\     121 Santa Rosa Ave.        Office 415-239-5393
+\     San Francisco, CA 94112    Cell 415-509-3599
+\                  japeters@pacbell.net
+\     Conversion to Win32Forth via Robert Ackerman
+\
+\ PROBLEMS are below,  see also PRETTY.F for more problems
+\ IS creates a problem in several places
+\ FILE is unknown, COPY-SMALL-BID needs it
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ These are all fakes to fool the compiler temproarily
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Fake  BLK       \ INTERPRET-LINES++   Fakie  jp???
+Fake  GET-SCR#  \ (FIG)               Fakie  jp???
+Fake  UN-PATCH  \ RETAIL        \ I could get along with out this one
+Fake  TIME      \ TIME-STAMP    \ I could get along with out this one
+Fake  (FIG)     \ (MEN)
+Fake  FL        \ foreward line, try +ROW-CURSOR
+Fake  FIle      \ COPY-BID needs it,  POINTS TO FCB OF CURRENTLY OPEN FILE
+Fake  copy--bid \ Copies a range of screens, work around to copy whole file
+Fake  SAME      \ Make the FROM file and the TO file the same
+Fake  \E        \ Set the path to C:\WinCG\Bids
+
+\ <<<<<<< Code.big
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Document:
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+=======
+Comment:
+>>>>>>> 1.3
+Take the given quantity units, extend them, as well as calculate the totals
+and put the sell prices in to the contract ready to print.
+.
+                    (c) 1985 - 2003
+.
+        E L E C T R I C   M O D U L E   P R I C E S
+.
+     John A. Peters
+     121 Santa Rosa Ave.
+     San Francisco, CA 94112     japeters@pacbell.net
+.
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+These screens started out as the 1983 Model FORTH by Laxen/Perry with the
+additions of Wil Baden and the LA group as changed and modified by CRC & Meta
+compiled in Win32Forth.
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 000   PROBLEM
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+(( This is suposed to be near the end of the file!!
+\ Audit or CrossFoot  Double  11-24-02 jap          06-06-03 AL
+ 2Variable Total-payments         Variable schedule-line#
+ 2Variable Total-bid              Variable total-line#
+ 2Variable Total-difference
+: TOTS  ( n n -- )  \ Schedule-line# and total-line#
+  2 ?enough  SWAP
+  total-line# !     schedule-line# !
+  total-line#  @    get-total        total-payments 2!
+  schedule-line# @  totalize         total-bid 2!
+  total-payments 2@ total-bid 2@ d-  total-difference  2!
+  cr  total-bid 2@         bucks
+  cr  total-payments 2@    bucks
+  cr ." ============ "
+  cr total-difference 2@  bucks ;
+: TOT  ( -- )  6 11 TOTS ;
+))
+
+comment:
+ELECTRIC
+ELECT   Set the search order to a clean safe state.
+ELECTRIC-WORDS  A correctly spelled version
+DONE  Save all the buffers and set the vocabularys to a clean
+      state with Electric as the first vocabulary to be searched
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 01
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ VARIABLES AND DEFERRED WORDS
+\ 2 Variable RATE         \ Sunday, May 02 2004 - 13:55
+
+((
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 02    SOME OF THE VARIABLES
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+2variable QUAN          \ Also in MARKUP.BLK 10 as needed early
+2variable NPS-W/S       \ Whole sale cost of material not used
+2variable WHOLESALE-SUB \ in from markup.blk
+2variable PARTS-COST    \ Cost of the parts
+2variable FLUF-COST     \ Fixtures and other non parts non time
+ variable TIME-UNIT     \ Time per unit ( EMT is per 100 ft )
+        \ NEW-S does not increase the rate.  See also S.OK <<<<<<<<<<
+92.00 2constant LABOR-RATE?  ( Custom, use 10% more )
+        ( 1993  94  95  96  97  98  99  01-99 09-00 11-03 )
+        (   55  56  55  60  60  65  70  82.50 87.50 92.00 )
+2variable CURRENT-RATE         \  40%   35%   35%  )
+: PER-HOUR   rate 2! ;         \ PG & Old houses Nitch in 2002 )
+Labor-rate?  Rate 2!           \ Initialize
+Labor-rate? current-rate 2!    \ Initialize
+Defer UNIT ( this one is ok )  \ Example: Wire is per 1000 ft
+))
+Comment:
+% Most of the variabales and defered words.           08mar87jap
+QUAN            The quanity ordered.
+NPS-W/S         The price of one unit wholesale
+PART-COST       The cost of the parts
+TIME-UNIT       Per each, hundred or thousand
+RATE        >>  This is where the default labor rate is set...
+UNIT            It gets defered to either C  M  E
+PARTS-EXT       The total of the unit price times the quanity.
+ TIME-EXT       The time for the number of units.
+LABOR-EXT
+ SELL-EXT       The parts and labor added.  Asking price.
+PARTS-SUB       The sub total of parts.
+ TIME-SUB       Sub total of time.
+LABOR-SUB       Sub total of the labor price.
+ SELL-SUB       Sub total of the asking price.
+Comment;
+
+((
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 03    More of the variables and deferred words                     
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+2variable PARTS-SUB  \ is in use by interpret-lines++
+2variable  TIME-SUB  \ The time-sub may be no longer in use.
+2variable LABOR-SUB  \ currently not in use but keep?
+2variable  SELL-SUB
+2variable PARTS-TOTAL
+2variable  TIME-TOTAL
+2variable LABOR-TOTAL
+2variable  SELL-TOTAL
+2variable PARTS-EXT  \
+2variable  TIME-EXT  \ The time to install ordered quanity
+2variable LABOR-EXT  \ The labor to install the quality
+2variable  SELL-EXT  \ The extended labor + materials
+))
+((
+\ +++ added in
+\ THE CALCULATIONS ======
+: D+!   ( need comment )
+         DUP >R 2@ D+ R> 2!  ;
+
+: CALC-PARTS   ( n -- )
+     2dup  parts-cost 2!  Quan 2@  d*  1.00 d/
+     2dup  parts-ext  2!  2dup  parts-sub d+!  parts-total d+!  ; \ >>>>>> 1.5
+))
+((
+\ 04!
+\ Additonal variables and constants                 11-18-93 AL
+  1000 constant THOUSAND
+   100 constant HUNDRED
+     1 constant ONE-ONLY
+    20 constant M-IN  ( move-in using TAB )
+    46 constant $COLUMN
+       Variable KEYBOARD keyboard on \ comand line display
+))
+      2variable ~~FIXTURE-MARKUP     \ Not in use??
+ 1.17 2constant   FIXTURE-MARKUP=    \ Tax and 10% only
+fixture-markup= ~~FIXTURE-MARKUP  2! \ Not in use?
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 05    un-add a column
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ Un-add a column                                   09-30-01 AEC
+: (UN-ADD)  ( line# -- )   \ LINE is not known in Win32
+  line $COLUMN +   c/l $COLUMN  -  blank  update  ;
+: UN-ADD-COLUMN   ( -- )  \ Uses current SCR
+  1 15 Do-thru  I  (un-add)  loop  ;
+\ Comment;
+: UN-SUMMARY  ( -- )
+  0 line  24 +  [ 64 24 - ] literal  blank  update ;  ( 48 17 )
+    ( Just after the comments, till the percent )
+: UN-ADD  ( -- )  \ Uses SCR
+  scr @ 0= if abort" Scr zero" then
+  un-summary  un-add-column  ;
+
+\ UN-TIME  $column @   35 is $column  un-add   $column !  ;
+: UN-TIME  $column @   35 $column !   un-add   $column !  ;
+
+((
+\ 06
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ Calculate the parts, labor, time and sell prices
+: CALC-PARTS   ( d -- )
+  2dup  parts-cost 2!  Quan 2@  d*    100. d/
+  2dup  parts-ext  2!   2dup  parts-sub d+!  parts-total d+!  ;
+: CALC-TIME   ( n -- )   time-unit !
+  time-unit @ quan 2@  d*  ( no->    100. d* ) unit s>d  d/
+  2dup  time-ext 2!  2dup time-sub d+!  time-total d+!  ;
+: CALC-LABOR   ( -- )
+  time-ext 2@        rate 2@  D*   1.00 d/
+  2dup  labor-ext 2!  2dup  labor-sub d+!  labor-total d+!  ;
+: CALC-SELL  ( -- )
+  parts-ext 2@  labor-ext 2@  d+ ( fluf-ext 2@  d+ )
+  2dup  sell-ext 2!  2dup   sell-sub d+!   sell-total d+!  ;
+))
+Comment:
+CALC-PARTS
+ Multiply the cost by the quantity and store in three variables
+ Parts-ext  Parts-sub  and Parts-total
+CALC-TIME
+comment;
+
+((
+\ 07
+\ Show the parts, labor, time & sell prices.
+: SHOW-TIME   time-ext 2@  2-6-d.nr  ." hr" ;
+: .W/S    ( d -- d ) 2dup  2-6-d.nr  space ;
+: TAB-IN   tab ;  \ for compatability with Win32
+: SHOW-PARTS
+ [ m-in 5 + ] literal TAB-in quan 2@ 100. d/ drop  5 .r ."  @ "
+ [ m-in 11 + ] literal TAB-in  parts-cost 2@  2-6-d.nr  ." = "
+ [ m-in 18 + ] literal TAB-in  parts-ext  2@  2-6-d.nr   ;
+: SHOW-LABOR  [ m-in 29 + ] literal TAB-in  show-time
+   [ m-in 39 + ] literal TAB-in  labor-ext  2@  2-6-d.nr  ;
+/ : SHOW-SELL   [ m-in   36 +  ( $column + )  ]
+/        literal tab-in  sell-ext   2@  2-6-d.nr  ; ( 48 )
+))
+Comment:
+% Display the parts, labor and sell prices.           21aug86jap
+.W/S
+SHOW-PARTS
+        Show the quanity, the parts price and the extended cost.
+SHOW-LABOR
+         Show the time it will take and the asking price for it.
+SHOW-SELL
+         Show the asking price for the line.
+comment;
+
+((
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 08    Display the parts, labor and sell prices
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ Display the parts, labor & sell prices.
+: d-ONE-ONLY  ( 0-quan -- 1-quan )
+              depth  2 < if  1.00  then ; \ No # means one
+\ : N/A         depth  2 < if   .00  then ; \ No # means zero
+
+\ : n-ONE-ONLY   ( { } or n -- 1-quan ) \ no depth then 1 on stac
+\                depth  1 < if  1  then  ;
+\ : SHOW-ALL    keyboard  @ 0=  if  exit  else  \ s/b just after
+\   show-parts  show-labor  show-sell  then ;   \      show-sell
+\
+\
+Defer MARKUP#  ( it is ok )
+\ : MARK-IT-UP  ( w/s -- r/t )
+\              ( markup# )
+\              1.35  d*  100.00  d/ ;
+))
+((  This one is temporarily coded using a magic number
+  ( Defered above to MARKUP- )
+ : NO-MARKUP  DROP 0.0 ;
+   PATCH NO-MARKUP  MARK-IT-UP
+))
+Comment:
+SHOW-PARTS  Show the quanity, the parts price and the extended cost.
+SHOW-LABOR  Show the time it will take and the asking price for it.
+SHOW-SELL   Show the asking price for the line.
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 09     DOUBLE?  Inputing numbers
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\ : DOUBLE?  \ DPL  use dp-location
+\           dp-location 1+  0<> ;
+\ : ?>D     double? 0= if s>d 100. d* then ;
+\
+\ : W/C     ( d-quan d -- ) >r >r n-one-only ?>D
+\        quan 2! >r >r mark-it-up calc-parts ; 
+
+((
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 10    W/S  EX  E2
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+: W/E   ( n-quan d -- )   >r >r   n-one-only ?>d quan 2!  r> r>
+           100. D*   mark-it-up  calc-parts  ;
+: W/C   ( n-quan d -- )   >r >r   n-one-only ?>d quan 2!  r> r>
+                     mark-it-up  calc-parts  ;
+: W/M   ( n-quan d -- )   >r >r   n-one-only ?>d quan 2!  r> r>
+            10. D/   mark-it-up  calc-parts  ;
+: EX    ( n n -- )
+        swap  s>d quan 2!  ?>d   calc-parts  ;
+))
+Comment:
+% Tell the sub totals and clear the variables.      88-12-08 AEC
+M
+C
+E
+CLEAR-SUB       Zero out the double variables named
+                parts-sub, labor-sub and sell-sub.
+(SUB)
+                print the sub total of the parts, labor and sell
+SUB
+comment;
+
+((
+\ \\\\\\\\\\\\\\\\\\\
+\ 11    Tell the sub totals and clear the variables.      05-17-91 AL
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+: E2    s>d N/A  calc-time  calc-labor  calc-sell show-all   ;
+: EXdd  ( d-quan d -- )   3 ?enough
+   >r >r 1.00 d/  d-one-only     quan 2!  r> r>   calc-parts  ;
+: EXd   ( n-quan d -- )   2 ?enough
+        >r >r  n-one-only  S>D  quan 2! r> r>  calc-parts ;
+: M [']  Thousand is Unit  E2 ;
+: C [']  Hundred  is UNIT  E2 ;
+: E [']  One-only is UNIT  E2 ;
+: CLEAR-SUB \ used by interpret-lines++ on scr 17  Quan = stomp
+  parts-sub 2off  time-sub 2off  ( fluf-sub 2off )
+  labor-sub 2off  sell-sub 2off ;
+))
+Comment:
+T-MODULE        A stub for future actions.  Curently is CR CR
+CLEAR-TOTALS    Clear all the sub totals and all the totals.
+TOTAL           Total all the catagories.  This word is used
+                was useful from the command line.  Not used as
+                much now that we work in a file where we can
+                save and re use the results.  It increments the
+                variables used by  GRAND  which is also not
+                used much.
+T-MODULE
+comment;
+
+
+\ \\\\\\\\\
+\ 12
+\ \\\\\\\\\\\
+((
+\ TOTAL the prices entered on the command line.     09-30-01 AL
+: CLEAR-TOTALS  ( -- )
+  clear-sub
+  parts-total 2off   time-total 2off
+  labor-total 2off   sell-total 2off  ;
+: TOTAL   ( Print totals at botom of command line )
+  [ m-in  5 + ] literal tab-in                      ." TOTAL"
+  [ m-in 22 + ] literal TAB-in   Parts-total 2@        2-6-d.nr
+  [ m-in 29 + ] literal tab-in    Time-total 2@        2-6-d.nr
+  [ m-in 39 + ] literal TAB-in   Labor-total 2@        2-6-d.nr
+  [ m-in 46 + ] literal TAB-in    Sell-total 2@        2-6-d.nr
+  cr 30 spaces ." Totals cleared" cr  clear-totals  ;
+))
+Comment:
+% Clear the grand totals, show the headers (supress?) 21aug86jap
+CLEAR-GRAND     Don't clear-totals, do zero out the grand totals
+HEAD-LINE       Put a header on top of the columns like this.
+                PARTS       TIME      LABOR       SELL
+                and unsupress if necessary.
+GRAND           Show the headaers and the grand totals of all
+                and clear the grand total variables.
+                Actually not used very much by me.
+CLEAR
+comment;
+
+((
+\ 13
+\ HEAD-LINE used by WHOLESALE etc      88-05-05     09-30-01 AEC
+: HEAD-LINE
+  [ m-in 23 + ] literal TAB-in   ." Parts"
+  [ m-in 31 + ] literal TAB-in   ." Time"
+  [ m-in 40 + ] literal TAB-in   ." Labor"
+  [ m-in 47 + ] literal TAB-in   ." Sell" ;
+: H-L Head-line cr ;
+: CLEAR   clear-totals  ."  Totals Clear"    head-line  ;
+))
+Comment:
+SHOW-HEAD  and  HEAD  are aliases for HEAD-LINE  All of them
+  will print a headline above the columns, labeling each one.
+INTERPRET-A-BLOCK  This was known as  RUN in F82 version 1.0.0
+  I use it as it does what I need in the old way when it treats
+  the in-file and the from-file.  Something like that.  JP
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 14    SO-xx   In use by MEN to print the time
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+: SO-xx   ( d -- ) \ print double number 2 decimal places in a field of three
+  2dup d0= 0=
+  if  2 places  5 ~field-width !  prt#
+  ~target @  14 -  swap  cmove update   else 2drop
+           ( 14 - )
+           (  4 + )
+            \ s-o  ." hr"  r-o
+           then ;
+
+
+\ 15 16
+\ SOURCE-LINE
+  Variable JUMPED
+  Variable ~LastColumnToCompile  46 ~LastColumnToCompile !
+  : JUMP  jumped ! ;
+  Variable CURRENT-LINE
+
+  : SOURCE-LINE  ( -- adr len )  \ V: blk
+    blk @  ?dup if   block  CURRENT-LINE @  c/l *   +
+    Jumped @  +  ~LastColumnToCompile @  \ First & last to compil
+    else tib #tib @ then ;
+
+Comment:
+% INTERPRET-LINE                                    88-12-08 AEC
+JUMPED
+JUMP
+CURRENT-LINE    is a variable
+SOURCE-LINE     Take the BLK and convert it to the address of
+                the current-line, unless BLK is zero.
+                Restore the text input buffer??
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 16    Interpret-lines prerequsites            Ackerman  88-03-05 AEC
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Defer DEFERED-SUB
+Defer AMOUNT>SCREEN               ( If-so-cents  on screen 19 )
+Defer INTERPRET-LINES  ( Defered to interpret-lines++  scr 18 )
+
+
+
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 17    Makes it stop quicker  in use
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Variable Stop?
+: \Q  Stop? on ;
+: Q-stop?   stop?  @ if 15 current-line !  exit then ;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 18    Waiting on the word PATCH
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+ \  : UNPATCH-ERR
+ \    ['] 1- ['] (error) 16 + !   \ Magic number!
+ \    ['] (source) is source ; \ This line c\o the meeting on 8-7-90
+ \  : LOFF>BLKOFF ( loff -- blkoff)
+ \    1- current-line @ c/l * + jumped @ +  unpatch-err ;
+
+ \  Makes it stop quicker  in use                    11-02-90 AEC
+ \  Variable Stop?
+ \  : \Q   Stop? on  ;
+ \  : \Q-Stop?  Stop? @ if 15 current-line ! exit then ;
+
+Comment:
+IF-SO-DOLLARS   Drop the cents and move the double number to
+                the address on the stack.
+NO-CENTS        Vector  if-so-dollars in to amount>screen
+IF-SO-CENTS     Test for a double nunber, output it to the
+                screen with two decimal places.
+WITH-CENTS      Vector if-so-CENTS in to amount>screen
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 19
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+((  IS has a problem in this code
+\ Interpret-lines           Ackerman  12-10-89 AEC
+
+: INTERPRET-LINES++ ( n -- )           ( each line separately )
+  cr  Blk @ >r  >in @ >r  >in off  Blk !   \ save stuff
+  ['] source-line is source                \ vector source
+  ['] loff>blkoff ['] (error) 16 + !       \ Thanks Dudley
+    clear-sub                              \ application
+  1 15 Do-thru  >in off  I current-line !  \ line offset
+    \Q-stop?    dpl on                     \ set to single pres
+    current-line @ (un-add)  INTERPRET
+    Blk @ block  I c/l  * +                \ addr of line
+    $column + 14 +  ~target !              \ where to emit
+    defered-sub 2@                         \ get answer
+    Amount>Screen ( defered )              \ if-so-cents scr 19
+    clear-sub ( several )                  \ answers off
+  LOOP  unpatch-err   STOP? Off            \ Off = don't stop
+  ['] (source) is source r> >in ! r> Blk ! ;    \ restore stuff
+))
+\ <<<<<<< Code.big
+Document:
+=======
+
+Comment:
+\ >>>>>>> 1.3
+NOOP-SLASH-PAREN   Disabale the action of back-slash and the
+                   left parenithes.
+DEFINED+    The same as  DEFINED  with the addition of
+            disabeling the words back-slash and the left paren.
+REPORT   Give name of the word you are interpreting.  This is
+      usefull when you want to see what items are being extended
+      on screen while executing the command EXTEND.
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 20
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ IF-SO-DOLLARS                                              AEC
+: IF-SO-DOLLARS  ( d -- )
+   2dup d0= 0=
+   if drop-cents  0 places  d.j-move
+   else 2drop then ;
+: IF-SO-CENTS  ( Uses ~target to print double number )
+               ( Don't print if zero )
+   2dup d0= 0=
+   if   2 places  d.j-move
+   else 2drop then ;
+: WITH-CENTS
+   ['] IF-SO-CENTS   is  amount>screen ;  WITH-CENTS
+ ' Sell-sub is Defered-sub
+(( IS has a problem in this code
+ ' INTERPRET-LINES++ is interpret-lines
+))
+
+Comment:
+SUMMARY         Put the prices on top of the screen
+                Price up the items on the screen, enter the
+                editor, go to the top and print the various
+                totals for the parts, tate, hours, and sell
+                prices.  Put the user in to the editor so he can
+                use the work ADD to add up the extentions at the
+                cursor location.  Needs a beter name.
+FIG             Price out the screen but skip anything on the
+                first three columns.  ( Room name etc.)
+FIGG            Take the screen number and price it out.  Put
+                the totals on the top line of the screen.
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 21
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+( Added in here )
+ Variable ~TEMP
+ : ANY?   ( n1, n2, n3, etc count -- ) \ See YES? below
+   dup 1+ roll ~temp !  0 swap 0 do swap ~temp @
+   = or loop ;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 22
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\  Use FIG to price items to the screen             89-01-14 AL
+: NOOP-SLASH-PAREN  ( n f -- n f )
+   >r dup  [ ' noop ] literal [ ' \ ] literal   [ ' ( ] literal
+   3  any?    if r>  drop false else  r>  then ;
+: DEFINED+   ( -- here 0 | cfa [ -1 | 1 ] )   ( ID the word )
+  bl word  ?uppercase  find  2dup
+  noop-slash-paren
+  if  >name .id else drop then ;
+\ \s
+\ : REPORT  ( -- )
+\  [']  defined+ ['] defined       ( Echo the interpreted word )
+\   dup  (save-old)  >body dup >r ! ['] exit r> 2+ ! ; Tagg
+\ ( Requires PATCH and UNPATCH from TOOLS.BLK )
+
+Comment:
+%                                                   88-10-06 AEC
+(EXTEND)  Tab over, figure the prices with totals then add the
+          colums and print the results
+EXTEND    Price up all the parts listed on the current screen.
+          Usually executed by  CTRL E  from the visual editor.
+FIG   Extend the prices as above but stop and wait for a key so
+      you can look at the on screen audit trail before going on.
+LEFT-EXTEND  Extend prices for parts listed on the left border.
+FIGG     An old name now better known as Left-Extend
+EXTENDS  Extend a series of screens
+FIG-THRU is an old name for Extends
+PRICE-IT extend the whole file from screen one to the end
+LEFT-EXTENDS  Extends parts that start on left border of screen
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 23
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ Summary               Started before 12-30-90     10-17-02 bec
+2variable temp
+: SUMMARY  ( -- )  \ Put the sums on top of the screen
+                           [ editor ]  top ( 17 cc )  2  cc 
+    2 places WholeSale-Sub 2@   2dup temp 2!    100. d/
+    WholeSale-Sub 2off         ( ^^^Test^^^^ )
+     100. d/  ( ?? )      S-O     10 d.j         r-o
+                          S-O     ." +1/3 "      r-o
+ 2 places  Time-total 2@  S-O      8 d.j         r-o
+                          S-O     ." hrs "       r-o
+\ ( For the Auto Module)  S-O     ." c ; \"      r-o
+           Sell-total 2@  S-O      11 d.j        r-o  update  ;
+
+
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 24
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ Problem with GET-SCR#  I have faked it at the top of the file
+((                               \ JP???
+: (FIG)  ( -- )  \  Add-up prices, emit to screen
+   clear-totals   get-scr# wholesale-sub 2off  ( rda )
+   interpret-lines ( defered to interpret-lines++ )  summary ;
+))
+Comment:
+mmmm    Show the times for each line as well as the sell price
+MEN-ON
+        Turn on the times feature
+MEN-OFF
+        Put it back to not showing the times on each line
+(MEN)   Times on  extend each line  Times off
+MEN     Add a column showing the time required for each item
+MENN    Same as above but for lists that start on column one
+MEN-THRU  Extend prices given a range of screens with times.
+MENN-THRU   Same but for lists starting on left border.
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 25
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ WHOLESALEa Can't be moved to markup.blk           06-13-93 AEC
+\ : WholeSaleSub   2dup  quan 2@  d*  WholeSale-Sub d+! ;
+: Double-     IncWholeSaleSub  2.00 ;
+\ MARKUP-     IncWholeSaleSub  1.35 ;
+: (No-Markup) IncWholeSaleSub  1.00 ;
+: No-Parts-   IncWholeSaleSub  0.00 ;
+\ Yes-Parts  [']  Markup-   is markup# ;  Yes-parts ( default ) 
+: NO-PARTS    ['] No-parts- is markup#  ;
+
+
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 26
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ WHOLESALEb Can't be moved to markup.blk           11-10-96 AEC
+: DELIVERED  with-cents  [']   DOUBLE-  is markup# \ added -
+   rate 2@  current-rate 2!  0.00 rate 2!
+   1.00 ~~fixture-markup 2!
+   5 spaces        ." Add Tax etc. & installation time."  ;
+: WHOLESALE  with-cents  ['] (NO-MARKUP) is markup# \ added -
+   rate 2@  current-rate 2!  0.00 rate 2!
+   1.00 ~~fixture-markup 2!
+   5 spaces        ." Add Tax etc. & installation time."  ;
+
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 27
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+((  Unpatch is unknown  IS is not working
+: RETAIL    [']   markup- is markup# unpatch  WITH-CENTS
+  current-rate 2@ rate 2!
+  fixture-markup=  ~~fixture-markup 2!  ;
+))
+
+: NO-LABOR  .00 rate 2!  ;
+: LABOR-ON  Labor-rate? rate 2! ;
+: No-markup  ['] (no-markup) is markup# ;
+
+Comment:
+\ Show the parts, labor, time & sell prices. 8aug87 12-30-90 AEC
+: SHOW-TIME   time-ext 2@  2-6-d.nr  ." hr" ;
+: .W/S    ( d -- d ) 2dup  2-6-d.nr  space ;
+: SHOW-PARTS
+   [ m-in  5 + ] literal TAB  quan 2@  drop  5 .r ."  @ "
+   [ m-in 11 + ] literal TAB  parts-cost 2@  2-6-d.nr  ." = "
+   [ m-in 18 + ] literal TAB  parts-ext  2@  2-6-d.nr   ;
+( SHOW-FLUF  Fixtures and fluf will not be shown at this time )
+: SHOW-LABOR  [ m-in 29 + ] literal TAB  show-time
+   [ m-in 39 + ] literal TAB  labor-ext  2@  2-6-d.nr  ;
+: SHOW-SELL   [ m-in   36 +  ( $column + )  ]
+                 literal tab  sell-ext   2@  2-6-d.nr  ; ( 48 )
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 28
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ MEN   Time-sub is a 2variable           02-24-89  ALLOT Ù AL
+: TIME>SCREEN
+  time-sub 2@  SO-XX  if-so-cents  ;
+: MEN-ON  ( -- )
+  ['] time>screen    is amount>screen  ;
+: MEN-OFF
+  ['] if-so-dollars  is amount>screen   with-cents ;
+
+\ (FIG) is faked
+: (MEN) keyboard off  men-on  (FIG)  men-off  keyboard on ;
+
+: MEN  ( dark )  16 jump (men)  ( ; \ OK 9-28-93 JP  )
+    [ editor ] bot fl ;
+\ CK E MEN  \ Don't need this one  CK is control-key
+: MEN-THRU  ( from thru -- )
+  do-thru i  dup .  men  loop ( save-buffers  beep ) ;
+: EXTENDS  men-thru ;  \ Does not work
+
+Comment:
+\ W/S  EX  E2                                       05-19-91 AEC
+: W/E   ( n-quan d -- )   >r >r   n-one-only s>d quan 2!  r> r>
+           100. D*   mark-it-up  calc-parts  ;
+: W/C   ( n-quan d -- )   >r >r   n-one-only s>d quan 2!  r> r>
+                     mark-it-up  calc-parts  ;
+: W/M   ( n-quan d -- )   >r >r   n-one-only s>d quan 2!  r> r>
+            10. D/   mark-it-up  calc-parts  ;
+: EX    ( n n -- )
+        swap  s>d quan 2!  s>d   calc-parts  ;
+: EF    ( n n -- )   \ same but no calc-parts
+        swap  s>d quan 2!  s>d  calc-fluf  ;
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 29
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ TIME is faked at top
+: TIME-STAMP   time 3 - type ;
+
+: T-STAMP   [ editor ] top ( 46) 52 cc  s-o time-stamp r-o ;
+((   Some how " is not known!!!!!               jp???
+: COPY--BID  ( first last -- )
+   file @  " \ELE\-BIDS" $open drop file !
+             0 hop  convey-  ;
+))
+
+: CAB-n  ( first last n-blocks -- ) ( Give it a name )
+            ."  Creating A Bid file"  [ editor ] \ wrap off
+   ( n ) create-file  ( n n ) copy--bid  same   r# off
+   0 scr !  T-STAMP  top 0 v ;
+: Name-check  >in @ bl word C@ 0= abort" No file name" >in ! ;
+   \ Prevents over writing a file of the same name.
+: CABb name-check \E  0 23  24 cab-n  ; \ 9-13-00
+: COD      0  0   3 cab-n ." Setup Charge!"  beep  ;
+   \ Copy only the Name template.  Reminds upon ESC key
+
+Comment:
+\ Calculate the parts, labor, time and sell prices  12-30-90 AEC
+: CALC-PARTS   ( d -- )
+  2dup  parts-cost 2!  Quan 2@  d*  ( 100. d/ )
+  2dup  parts-ext  2!   2dup  parts-sub d+!  parts-total d+!  ;
+: CALC-FLUF  ( d - )
+   2dup  fluf-cost 2!  Quan 2@  d*  ( 100. d/ )
+   2dup fluf-ext 2!     2dup   fluf-sub d+!  fluf-total d+!  ;
+: CALC-TIME   ( n -- )   time-unit !
+  time-unit @ quan 2@  d*  ( no-> )  100. d*   unit s>d  d/
+  2dup  time-ext 2!  2dup time-sub d+!  time-total d+!  ;
+: CALC-LABOR   ( -- )
+  time-ext 2@        rate 2@  D*   1.00 d/
+  2dup  labor-ext 2!  2dup  labor-sub d+!  labor-total d+!  ;
+: CALC-SELL  ( -- )     ( screen 6 )
+  parts-ext 2@  labor-ext 2@  d+   fluf-ext 2@  d+  ( 100. d/)
+  2dup  sell-ext 2!  2dup   sell-sub d+!   sell-total d+!  ;
+comment;
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 30
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ CAB   Small version                               12-21-03 AL
+
+(( FILE is unknown
+: COPY-SMALL-BID  ( first last -- )
+   file @  " \ELE\SMALL-BID" $open drop file !
+             0 hop  convey-  ;
+: CAB-new-small  ( first last n-blocks -- ) ( Give it a name )
+            ."  Creating A Bid file"  [ editor ] wrap off
+   ( n ) create-file  ( n n ) copy-small-bid  same   r# off
+   0 scr !  T-STAMP  top 0 v ;
+: Name-check  >in @ bl word C@ 0= abort" No file name" >in ! ;
+   \ Prevents over writing a file of the same name.
+: CAB   name-check \E  0 23  24 cab-new-small  ;
+))
+
+
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ 31
+\ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\ TOT & Totalize                 rda 11-15-02       12-21-03 AL
+: TOTALIZE ( line# -- d )  \ Can't switch to single precision
+  1 ?enough   \ JP          \ Used by TOTS
+  0 0 rot line 0
+  c/l 0
+  do if dup c@ bl -
+     else dup c@ dup 47 > swap 59 < and
+       if dup get-number
+          4 roll 4 roll d+ rot 1   \ -- d addr fl
+       else 0 then
+     then swap 1+ swap
+  loop 2drop  ;
+\ : Bucks  ( d -- ) 8 d.j ;
+: GET-TOTAL  ( line  -- )  \ used by TOTS
+   1 ?enough  line 54 + get-number ;
+
+.( Code.big loaded ) cr
+

@@ -1,0 +1,196 @@
+( A assembly for fishing in existing walls.           11-19-AL)
+(((
+Lani says
+ One man cuts all the holes in the base and down the walls.
+ Then two men fish in the wires together.
+
+Fred says
+  Use a feeler, then cut in the box
+  Send a tape measure up in the wall
+  Chisel the lath
+  Drill two 1-1/8 hole saw holes
+
+John says
+  Stay with the crew unless Pete is there else a low PPM.
+)))
+
+\ Loader screen for Fish-in-walls   See also FISH.BAD
+Electric Definitions
+Vocabulary (FISH-WORK)
+: FISH-IN-WALL     Elect (FISH-WORK)  also ;
+: Flush-in-wall    fish-in-wall ;
+: Fish-in-walls    fish-in-wall ;
+: FISH             fish-in-wall ;
+: Flush-on-walls   fish-in-wall ;
+
+  (FISH-WORK) Definitions
+\ Electric Definitions                 \ Mjellem was 3 hr s/b 1/5 hr
+\ Fish-in-walls Definitions            \ Mjellem was per c s/b per c oops
+: Fire-box           50.00 w/e  70 c ; \ Wires in the way
+: Cans               60.00 w/e 300 c ; \ For Boris on the Green/Webster Mjellem
+: Cans-LED          170.00 w/e 150 c ; \ For Boris Merchasan 2718 Turk 11-5-13 
+: Cans-medium        60.00 w/c 200 c ; \ For Boris on 5-16-12
+: Cans-easy          60.00 w/c 100 c ;
+: Can                Cans            ;
+: LT-Hard           626.00 w/c 350 c ; \ Thru joists, no attic 
+` LT                626.00 w/c 300 c ; \ module 2   10.81
+: Light  LT ;
+` LT-Average        615.00 w/c 225 c ;
+` LT-Medium         615.00 w/c 200 c ; \ Romex.mod  10.88 1/2 OFF
+` LT-Easy           615.00 w/c 100 c ;
+: PS-Medium                LT-medium ; \
+` PS-Easy           615.00 w/c 100 c ;
+: Quad                2.47 w/e  20 c ;
+: 1G->2G              2.50 w/e  50 c ;
+: PL-Hard           626.00 w/c 325 c ;
+` PL-Medium         615.00 w/c 175 c ; \ See note on screen zero
+` PL-Easy           615.00 w/c 110 c ; \ 9.00
+` PL                626.00 w/c 275 c ; \ Prox 2 hrs by Lani & Fred
+: Plug  PL ;
+` PL-Very-easy      260.00 w/c  73 c ; \ Apr 09
+: LT-Very-easy        PL-very-easy   ; \ Jan 95  5/8 hr
+: SW-Very-easy        PL-very-easy   ; \ Jan 95
+` PL-very-hard      626.00 w/c 375 c ; \ Oct 04
+: SW-hard           861.00 w/c 320 c ; \ Feb 96 inc mud, ground
+: SW                626.00 w/c 275 c ;
+: Switch  SW ;
+: SW-Medium         626.00 w/c 175 c ;
+: SW-Easy           626.00 w/c 100 c ;
+: SW-Under                   SW-easy ;
+: S3-Medium                LT-Medium ;
+: S3-Easy                    LT-Easy ;
+: (J)                             LT ;
+: (J)-Easy                   PL-Easy ;
+: (J)-Medium               PL-Medium ;
+: Cable-Chase           PL-Very-Easy ;
+: S3                              LT ;
+: S4                800.00 w/c 350 c ;
+: PS                              LT ;
+: PH                              PL ;
+: CAT-6                           PL ;
+: DSL                             PL ;
+: Split-wire          1.04 w/e  07 c ;
+: Tap                 1.00 w/e 100 c ;
+: Tap-easy            1.00 w/e  25 c ;
+: Gas-out             3.50 w/e 200 c ;
+: Gas-out-medium      3.50 w/e 150 c ;
+: Gas-out-easy        3.50 w/e 100 c ;
+: CATV               20.00 w/e 275 c ; \ Guess
+: CATV-medium        20.00 w/e 200 c ; \ Guess
+: CATV-easy          20.00 w/e 100 c ; \ Guess
+: Power             615.00 w/c 300 c ;
+: LAN                20.00 w/e 300 c ;
+: LAN-medium         20.00 w/e 200 c ; \ Guess
+: LAN-easy           20.00 w/e 100 c ; \ Guess
+: LAN-Hard           20.00 w/e 400 c ; \ Guess
+: Strong-Box         25.00 w/e 100 c ; \ 1 hr el
+: SP-hard            10.00 w/c 275 c ;
+: SP                              PL ; \  800.00 w/c 275 c ;
+: SP-medium                PL-medium ; \  800.00 w/c 175 c ;
+: SP-easy                    PL-easy ; \  800.00 w/c  75 c ;
+: SP-very-easy       800.00 w/c 50 c ;
+: Video                    SP-medium ; \  Theobald
+: Security                 SP-medium ; \
+Elect
+
+\ Watch out for N&T wires to move
+\ Also VIEW fixture
+\ Check these, Double ceiling, Insulation in walls or ceiling
+\ Metal Lath? Spacing more than 6 ft?, Hight?, Ladder required?
+\ Double walls, Fire Hat, Rock may not be easier than lath
+\ New work means insulaton in the walls
+
+
+| Recessed-Can                                      04-26-09
+Vocabulary Recessed-Can  Recessed-Can Definitions
+: 3in-LV      35.57 w/e 70 c ; \ MR-16 50W Max 06-3C-LVNAT
+: 4in-LV      25.12 w/e 70 c ; \
+: 4in-mini     7.90 w/e 70 c ; \ 50W/R20 or PAR 20  Not AT!
+: 4in-mini-AT  9.60 w/e 70 c ; \
+: 5in-PAR      9.10 w/e 70 c ; \ 75W-PAR
+: 5in-Mini     9.58 w/e 70 c ; \ 75W-PAR
+: 6in-Flo-13  13.86 w/e 70 c ; \ 1 13W Magnetic
+: 6in-Flo-26  25.26 w/e 70 c ; \ 2 13W Flo Tubes
+: 6in-T24-13  48.04 w/e 50 c ; \ 1 13W Electronic
+: 6in-IC-NIC   6.75 w/e 50 c ; \ Incandescent non AT
+Elect
+\ Mini is for 6-in joists
+
+| Recessed-Trim                                     04-26-09
+Vocabulary Recessed-Trim  Recessed-Trim Definitions
+: 3in-Various  5.39 w/e 15 c ; \ MR-16  Did not see Oval-slot
+: Shower       6.63 w/e 15 c ; \
+: 4in-Oval-16  6.48 w/e 15 c ; \ MR-16
+: 4in-Oval-50  7.95 w/e 15 c ; \ 50W/R20 or PAR 20
+: 5in-PAR-75   4.99 w/e 15 c ; \ Magnetic
+: 6in-13W      8.28 w/e 15 c ; \ Magnetic
+\ 6in-26W       xx  w/e 15 c ; \ Magnetic + Tubes
+: 6in-13W      9.00 w/e 15 c ; \ Electronic
+Elect
+
+| Recessed-Lamp                                     04-26-09
+Vocabulary Recessed-Lamp  Recessed-Lamp Definitions
+: MR-16        1.59 w/e 08 c ; \ MR-16
+: PAR-75-30    2.79 w/e 08 c ; \
+Elect
+\ Any wires in the way?
+\ NIC IS New IC & RIC is Remodel IC
+
+\ Recessed  ." noop " ;
+Vocabulary Recessed  Recessed Definitions
+: MR16&Trim     50.00 w/e  200 c ;  \ From Boris
+: Switch&Dimmer 50.00 w/e  200 c ;
+Elect
+
+\ Open-1-side  Install, no parts
+
+Open-1-Side   Definitions
+: Can           0.00 w/e 20 c ;
+: Trim          0.00 w/e 10 c ; \ Easier as rock fits tight
+: Recessed-in   0.00 w/e 30 c ;       
+\ Fished  Fixture, no wireing
+
+Fish-in-walls Definitions
+: Recessed-110x 26.00 w/e 90 c ; \ still 90 on 9-5-05
+: Recessed-12Vx 50.00 w/e 90 c ; \ 26.00 + 12.89 Oval slot
+: Recessed-flox 45.00 w/e 90 c ;  Elect   \ Fished LT is 3 hrs
+: Oval-Slot     12.80 w/e 33 c ; \ Mauzioni job
+Elect
+
+\ WATCH FOR FIRE BOX     
+
+\ Big-Holes  Fixture & Hang only
+Big-Holes-ok  Definitions
+: Recessed-110x 26.00 w/e 50 c ; \ was 70 till 9-5-05
+: Recessed-12x  50.00 w/e 50 c ;
+Elect                            \ 30 minutes
+
+\ Open-1-side Fixt + Labor only
+Open-1-Side   Definitions
+: Recessed-110x 26.00 w/e 20 c ; \ was 30 till 9-5-05
+: Recessed-12x  50.00 w/e 20 c ; \ 12 minutes
+Elect
+
+: Recessed-Flox 45.00 w/e 20 c ; \ 12 minutes
+Elect
+
+\ FIRE-BOXES!! \ Keven is 200 or 250 each + 3 hrs cover floors
+\ More time with double ceiling in a big old set of flats
+
+\ Fished-in-walls  inc LT-outlet                    04-23-09
+Fish-in-walls Definitions
+: Recessed-110V 36.00 w/e 190 c ;
+: Recessed-12V  60.00 w/e 190 c ;
+: Recessed-flo  55.00 w/e 190 c ;
+Elect
+
+\ Now includes labor and materials
+\ Romex too?
+
+
+
+
+
+
+
+
