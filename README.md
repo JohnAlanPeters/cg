@@ -2,9 +2,9 @@
 This system will bring Forth into the age of the cloud. Historically, Forth was typed in from a paper listing. Later Forth83 was DOS based. Forth migrated to Windows on XP and then via Win32Forth on to Windows W7, W8 & W10 via thanks to Tom Zimmer. Now I am asking you the reader to help improve Forth on the Cloud. Soon you will be able to use Forth without the hassle of downloading it (Anti Virus protection problems) etc, or the fear of downloading an unknown .EXE file and so on.
 
 SHORT HAND
-W32 is short for Win32Forth
-CG is short for Contract Generator.  
-TV TeamViewer
+W32 is short for Win32Forth<br>
+CG is short for Contract Generator. <br> 
+TV TeamViewer<br>
 
 The full W32 system is running on a Windows 10 Surface computer.  It includes the Forth source for estimating electrical jobs. A full system (database?) of parts with prices as well and times from the Manual of Labor units that came from NECA (National Electrical Contractors Association). I am hoping to see it put to use.  I will help for fun. It normally uses the WinEd editor to output to a file suitable for showing to the client.  This application is a whole other story and how to use it will come later
 
