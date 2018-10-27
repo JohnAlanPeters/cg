@@ -23,11 +23,12 @@ def clientthread(conn):
             time.sleep(1)
             continue    
         #Receiving from forth client
-        reply = conn.recv(1024)
+        reply = conn.recv(16*1024)
         if not reply: 
             break     
         print reply
-        ssnd=reply
+        outstr=reply.replace('<br>','\r')
+        ssnd=outstr
      
     #came out of loop
     conn.close()
@@ -62,7 +63,6 @@ def socksvr():
         start_new_thread(clientthread ,(conn,))
          
     s.close()
-
 start_new_thread(socksvr,())
 
 #Create custom HTTPRequestHandler class
