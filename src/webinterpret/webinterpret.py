@@ -23,11 +23,11 @@ def clientthread(conn):
             time.sleep(1)
             continue    
         #Receiving from forth client
-        reply = conn.recv(16*1024)
+        reply = conn.recv(200*1024)
         if not reply: 
             break     
         print reply
-        outstr=reply.replace('<br>','\r')
+        outstr=reply.replace('<br>','\n')
         ssnd=outstr
      
     #came out of loop
@@ -97,7 +97,7 @@ class intrpRequestHandler(BaseHTTPRequestHandler):
     # gets posted data; hands off to forth socket; gets response; returns response to webpage
     plen = int(self.headers['Content-Length']) # <--- Gets the size of data
     pdata = self.rfile.read(plen) # <--- Gets the data itself
-    print plen,pdata
+    print pdata
     srcv=pdata      # socket client will see this and send it to forth
     while not ssnd: # wait for response
         time.sleep(1) 

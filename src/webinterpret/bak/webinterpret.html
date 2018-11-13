@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<title>test form input</title>
+
+<script language="javascript" type="text/javascript">
+function doit()
+{
+    function handler() 
+    { 
+        if (xhr.readyState == 4 /* complete */) { 
+            if (xhr.status == 200) { 
+                document.getElementById('output').textContent= event.target.response;
+            } 
+        } 
+    }
+    function handler2(){ 
+        document.getElementById('output').textContent= event.target.response;
+    }
+    // windows: 
+    //    var xhr = getXMLHttpRequest(); 
+    //    xhr.onreadystatechange = handler;     // instead of 'onload'
+    // or maybe: xhr.addEventListener("load", handler2);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "webinterpreter.html"); 
+    xhr.onload = function(event){ 
+        //alert("The server responded with: " + event.target.response);
+        document.getElementById('output').textContent= event.target.response;
+    }; 
+    var txt = document.getElementById("inp").value;
+    xhr.send(txt);
+}
+</script>
+<body>
+
+<form name="myform">
+<input type="button" value="                do it                " onclick='doit();'><br>                     
+<textarea id='inp' name='yoho' rows="16" cols="64"></textarea>
+<br><br>
+</form>
+<textarea id="output" rows="16" cols="72"></textarea>
+</body>
+</html> 
+

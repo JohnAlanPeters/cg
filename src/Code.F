@@ -294,6 +294,13 @@ false value partswholesaleshow
 : TOTAL  ( -- ) \ display totals in console
      sub-total  clear-totals ;
 
+: HL ( -- )
+         0 spaces ." Only      Part         Parts       Time          Labor       Sell " ;                                        
+
+: HEADLINE ( -- )
+     cr 31 spaces ." Only       Part       Parts      Time       Labor      Sell " ;
+
+
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
   partswholesaleshow

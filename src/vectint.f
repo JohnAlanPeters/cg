@@ -1,5 +1,5 @@
 
-create vbuf 16 1024 * allot        
+create vbuf 200 1024 * allot        
 variable vec
 
 : pplace ( addr cnt buf -- )
@@ -11,7 +11,11 @@ variable vec
 
 : vtype ( addr cnt -- )
   vbuf pplace s"  " vbuf pplace ;  \ add text to a counted string
+
 : hcr s" <br>" vbuf pplace ;
+
+: ?vcr ( n -- )
+  ?dup if 64 mod 0= if hcr then then ;
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
@@ -19,6 +23,8 @@ variable vec
   ['] type 4 + @ vec !
   ['] vtype is type
   ['] hcr is cr
+  ['] ?vcr is ?cr
+  ['] 2drop is gotoxy
   vquery
   ['] interpret
   catch ?dup if ." error " . then
