@@ -1,0 +1,6 @@
+build notes:
+we have github cg at: \Users\John
+modified line in cg\_makecg.bat to chdir to: \Users\John\cg\src
+modify path to win32forth in cg\src\cg.f in 3 places to:  ‘\win32forth’
+modify cg shortcut on desktop properties to target and start in \Users\John\cg
+modify 'new cg' on desktop: chdir to \Users\John\cg
