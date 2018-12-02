@@ -9,8 +9,8 @@ needs xwinver
 chdir webserver
 needs webserver
 chdir ..
-create forthbase ," \programdata\win32forth\"
-here ," \programdata\win32forth\SRC\KERNEL\FKERNEL.F" ' KERNFILE 4 + !
+create forthbase ," \win32forth\"
+here ," \win32forth\SRC\KERNEL\FKERNEL.F" ' KERNFILE 4 + !
 
 : SETFDIR  ( ss -- )   COUNT &FORTHDIR PLACE ;
 forthbase setfdir
@@ -21,7 +21,7 @@ synonym CD chdir
 
 : (((  s" )))"     "comment ; immediate  \ comment till )))
 
-\ s" \programdata\win32forth\src\dc.f" included
+\ s" \win32forth\src\dc.f" included
 
 Include START-STOP.F  \ hit esc or the enter key twice to abort.
 
