@@ -1,3 +1,3 @@
 rem _makecg.bat
-chdir "c:\Users\John\cg\src"
+chdir "c:\cg\src"
 \Win32Forth\win32for.exe fload cg.f

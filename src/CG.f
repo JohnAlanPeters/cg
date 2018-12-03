@@ -61,7 +61,7 @@ s" WinEd.ndx" cgbase" &wined.ndx place
 
 s" .;" search-path place    \ init search path
 current-dir$ count search-path +place
-s" ;\program files\win32forth"  search-path +place
+s" ;\win32forth"  search-path +place
 set-ed-defaults
 search-path count s" SearchPathed" "SetDefault
 set-w32f-default
@@ -145,8 +145,9 @@ forth also forth definitions editor
 : HELLO-CG
     s" bootup" logmsg \ getuser
     Title-CG   current-dir$ setfdir
-    -1 to dp-location  s" \Program Files\cg\src\webinterpret" "chdir \  s"  bids" "chdir
+    -1 to dp-location  s" \cg\src\webinterpret" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
+    editor overstrike off
     elect
     cmdline 0= swap 0= or
     if file-to-edit$ off
