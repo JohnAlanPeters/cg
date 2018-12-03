@@ -1,3 +1,4 @@
 bids/
 *.exe
 CVS/
+*/wcglog.txt
