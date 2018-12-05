@@ -140,7 +140,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 
 : CALC-SELL  ( -- )
      parts-ext 2@  labor-ext 2@  d+
-     2dup   sell-sub 2+!   sell-total 2+!  ;
+     2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
 
 : CALC-OTHER ( n -- )
     100 * s>d 2dup other-sub 2+! other-total 2+! ;
@@ -186,14 +186,14 @@ false value partswholesaleshow
 : CONS-SHOW-PARTS ( -- )
   32 >ccol quan 2@  1.00 d/ d. ." @"
   43 >ccol parts-cost 2@ bucks ."  ="
-  55 >ccol parts-sub 2@ bucks ;
+  55 >ccol parts-ext 2@ bucks ;
 : CONS-SHOW-TIME ( -- )
-  65 >ccol time-sub 2@ bucks ."  hr" ;
+  65 >ccol time-ext 2@ bucks ."  hr" ;
 : CONS-SHOW-SELL ( -- )
   77 >ccol labor-ext 2@ bucks
-  87 >ccol sell-sub  2@ bucks
+  87 >ccol sell-ext  2@ bucks
   discount
-  if sell-sub 2@ discount 0 d* 1.00 d/
+  if sell-ext 2@ discount 0 d* 1.00 d/
      97 >ccol bucks
   then ;
 
@@ -261,11 +261,11 @@ false value partswholesaleshow
          then ;  \ clear subtotal for console line
 
         ( quanity with cost on top )
-: W/E   ( n-quan d -- ) kclr >r >r     n-one-only  ?>d  quan 2!  r> r>
+: W/E   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
             100. d*   mark-it-up   calc-parts ;
-: W/C   ( n-quan d -- ) kclr >r >r     n-one-only  ?>d  quan 2!  r> r>
+: W/C   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
                       mark-it-up   calc-parts ;
-: W/M   ( n-quan d -- ) kclr >r >r     n-one-only  ?>d  quan 2!  r> r>
+: W/M   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
              10. d/   mark-it-up   calc-parts ;
 : EX    ( n-quan n -- )  \ Single precision extend, used for fluf and fixts
          >R  n-one-only  ?>d quan 2! R> S>D  calc-parts  ;
