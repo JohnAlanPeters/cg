@@ -1,4 +1,8 @@
 bids/
 *.exe
 CVS/
-*/wcglog.txt
+wcglog.txt
+src/webinterpret/wcglog.txt
+assemblies/test4.f
+
+
