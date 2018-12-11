@@ -1971,18 +1971,18 @@ Secure   definitions                      \ Used Sold Keep Have
 : Rod-hanger       2.42 w/e  41 c ; Elect                       
 
 
-\ PERMIT                  C 900-052  XX-0           06-05-09
+\ PERMIT                  C 900-052  XX-0           12-10-18       
 Vocabulary Permit        Permit Definitions
-: Reinspection    170.00 calc-permit ; \ w/e  0 c ;
-: Emergency-Alarm 456.00 calc-permit ; \ w/e  0 c ;
-: 10-Outlets-1    165.00 calc-permit ; \ w/e  0 c ; \ 1 insp Was 160 + 5
-: 20-Outlets-2    245.00 calc-permit ; \ w/e  0 c ; \ 2 insp Was 240 + 5
-: 40-Outlets-3    306.00 calc-permit ; \ w/e  0 c ; \ Inc panel up to 200A
-:  5-Commercial-2 240.00 calc-permit ; \ w/e  0 c ; \ 2 NonRes Insp
-: 20-Commercial-3 261.99 calc-permit ; \ w/e  0 c ; \ 3 NonRes Insp
-: Fire-Alarm-4    421.00 calc-permit ; \ w/e  0 c ; \ 4 Inspections
-: 20-Outlets-1     89.51 calc-permit ; \ w/e  0 c ;
-: Panel-Change         40-outlets-3  ; \ w/e  0 c ;
+: Reinspection    170.00 w/e  0 c ;
+: Emergency-Alarm 456.00 w/e  0 c ;
+: 10-Outlets-1    165.00 w/e  0 c ; \ 1 insp Was 160 + 5
+: 20-Outlets-2    245.00 w/e  0 c ; \ 2 insp Was 240 + 5
+: 40-Outlets-3    306.00 w/e  0 c ; \ Inc panel up to 200A
+:  5-Commercial-2 240.00 w/e  0 c ; \ 2 NonRes Insp
+: 20-Commercial-3 261.99 w/e  0 c ; \ 3 NonRes Insp
+: Fire-Alarm-4    421.00 w/e  0 c ; \ 4 Inspections
+: 20-Outlets-1     89.51 w/e  0 c ;
+: Panel-Change         40-outlets-3 ;
 
 \ Change address   50.59                                  28.46
 Elect

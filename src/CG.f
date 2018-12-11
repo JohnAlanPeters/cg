@@ -104,7 +104,7 @@ Include big-ok.scr
 Include fish.scr
 Include Ampier.scr
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
-Include ..\assemblies\nes-compiled.f  \ colon defs with multiple modules
+Include ..\bids\nes-compiled.f  \ colon defs with multiple modules
 
 \ note: cg won't run if next file isn 't last - I don't know why
 \ Include Rent.f          \ Anti pirate
@@ -146,7 +146,7 @@ forth also forth definitions editor
 : HELLO-CG
     s" bootup" logmsg \ getuser
     Title-CG   current-dir$ setfdir
-    -1 to dp-location  s" \cg\src\webinterpret" "chdir \  s"  bids" "chdir
+    -1 to dp-location  s" \cg\bids" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     editor overstrike off
     elect

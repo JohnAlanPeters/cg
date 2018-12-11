@@ -197,7 +197,6 @@ false value partswholesaleshow
      97 >ccol bucks
   then ;
 
-
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 6   DISPLAY THE PARTS, LABOR AND SELL PRICES =====
 
@@ -273,7 +272,6 @@ false value partswholesaleshow
 : E2  ( n -- )  \ E2 is executed by evaluate
    s>d  calc-time  calc-labor  calc-sell
    keyboard @ if cons-show-all then ;
-
 
 : M [']  Thousand is Unit  E2 ;
 : C [']  Hundred  is UNIT  E2 ;
