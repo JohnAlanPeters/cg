@@ -154,7 +154,7 @@ editor
 : ins ( -- )  \ put editor in insert mode
   [ editor ] overstrike on toggle-insert ;
 
-: see ( <name> -- )     \ version of 'see' to show file name where defined
+: fsee ( <name> -- )     \ version of 'see' to show file name where defined
   >in @  see >in ! cr .viewinfo 2drop cr ;
 
 : msgbp ( -- )  0 call MessageBeep drop ;
