@@ -129,7 +129,7 @@ cr .( after ed_keys)
         GetStack: DocWindow to entry#
         refresh-screen
         no-highlight
-        view-key-loop
+        \ view-key-loop
         ;
 
 

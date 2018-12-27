@@ -159,8 +159,9 @@ forth also forth definitions editor
           then
           cmdline file-to-edit$ place
     then
-    call GetFocus to topwin
-    clear-totals ['] wined catch 0<> if message then ;
+    \ call GetFocus to topwin
+    clear-totals wined focus-console quit ; 
+    \ ['] wined catch 0<> if message then ;
 
 ELECT             \ Sets the vocabulary
 Editor also
