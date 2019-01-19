@@ -53,9 +53,9 @@ create rbuf szbuf allot
 
 \ connect to server, read input, xmit kybrd til emptyline
 : do-client init-client
-  sockread type cr
-  begin  sockread vectint  
-    2dup type cr b2sock false
+  sockread type cr .. [ editor ] 0 to saved-depth
+  begin  sockread vectint
+    ( 2dup type cr ) b2sock false
   until ssock closeSocket ;
 
 \ accept connection, xmit msg, read input, xmit kybrd til emptyline

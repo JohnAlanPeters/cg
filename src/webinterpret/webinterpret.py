@@ -17,7 +17,7 @@ def clientthread(conn):
     conn.sendall('Welcome\n')
     while True:         
         if srcv:
-            conn.sendall(srcv+'\n')    #send to forth
+            conn.sendall(srcv)    #send to forth
             srcv=''   
         else:
             time.sleep(1)
@@ -72,7 +72,7 @@ class intrpRequestHandler(BaseHTTPRequestHandler):
   def do_GET(self):
     try:
         if not 'interpret' in self.path:
-            self.send_response(404) 
+            self.send_response(404)
             return           
          
         f = open('webinterpret.html') #open requested file
@@ -89,7 +89,7 @@ class intrpRequestHandler(BaseHTTPRequestHandler):
         return
       
     except IOError:
-      self.send_error(404, 'file not found')
+        self.send_error(404, 'file not found')
       
   def do_POST(self):
     global srcv,ssnd
