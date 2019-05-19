@@ -28,5 +28,6 @@ variable vec
   vquery
   ['] interpret
   catch ?dup if ." error " . then
+  vec @ is type
   vbuf >r r@ w@ r> 2 + swap dup 0= if drop s" ok" then ;
 
