@@ -4,7 +4,7 @@
 
 editor also
   \ This test needs to be moved to the word calling CALC not in calc itself.
-14 constant topout
+7 constant topout
 : Rev? ( -- fl)  \ true-> not '0' or 'S' for major rev#
   topout 2 + #line" drop 32 + c@ dup ascii 0 = swap ascii S = or not ; \ 32
 
@@ -27,39 +27,39 @@ editor also
 \ : CALC-HRS GET-GL-REM CURRENT-RATE 2@ 4.00 D/ D/  topout 7 + 71  at-cents ;
 
 : CALC  ( -- ) rev?     \ only if non-zero
-  if topout 6 + #line" drop 64 + 14 blank  \ erase calc-gl-rem
-     topout 7 + #line" drop 64 + 14 blank  \ erase calc-hrs
+  if topout 6 + #line" drop 61 + 14 blank  \ erase calc-gl-rem
+     topout 7 + #line" drop 61 + 14 blank  \ erase calc-hrs
   \  show-gl-rem calc-hrs  hrsDiff calc-percent
   then ;
 
 
 : TIME-OUT    ( first last -- )   \ Callender or schedule the job days & hours
-  time-total 2@   .80 d* 100. d/ topout    61 at-cents  \ Total Hrs  Goal
-  time-total 2@                  topout    71 at-cents  \ Total Hrs  Actual
-  time-total 2@  1.00 d* 5.00 d/ topout 1+ 61 at-cents  \ Total Days Envelope
-  time-total 2@  1.00 d* 7.50 d/ topout 1+ 71 at-cents  \ Total Days Actual
+  time-total 2@   .80 d* 100. d/ topout    51 at-cents  \ Total Hrs  Goal
+  time-total 2@                  topout    61 at-cents  \ Total Hrs  Actual
+  time-total 2@  1.00 d* 5.00 d/ topout 1+ 51 at-cents  \ Total Days Envelope
+  time-total 2@  1.00 d* 7.50 d/ topout 1+ 61 at-cents  \ Total Days Actual
   ;
 
 : SELL-OUT    ( -- )    \ total estimate
-  EX-TOTAL topout 2 + 61 at-cents ;
+  EX-TOTAL topout 2 + 51 at-cents ;
 
 : LABOR-OUT    ( -- )
-  labor-total 2@ topout 3 + 61  at-cents ;      \ This is the budgeted hours
+  labor-total 2@ topout 3 + 51  at-cents ;      \ This is the budgeted hours
 
 : PARTS-OUT  ( -- )     \ materials
-  parts-total 2@  topout 4 + 61  at-cents ;
+  parts-total 2@  topout 4 + 51  at-cents ;
 
 : WHOLESALE-OUT ( -- )
-  wholesale-total 2@ topout 4 + 71 at-cents ;
+  wholesale-total 2@ topout 4 + 61 at-cents ;
 
 : OTHER-OUT ( -- )
-  other-total 2@ topout 5 + 61 at-cents ;
+  other-total 2@ topout 5 + 51 at-cents ;
 
 : ALLOWANCE-OUT ( -- )
-  allowance-total 2@ topout 5 + 71 at-cents ;
+  allowance-total 2@ topout 5 + 61 at-cents ;
 
 : PERMIT-OUT ( -- )
-  permit-total 2@ topout 6 + 61 at-cents ;
+  permit-total 2@ topout 6 + 51 at-cents ;
 
 
 : ADD-ALL-SCREENS   ( -- )

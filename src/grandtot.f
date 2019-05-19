@@ -50,9 +50,9 @@ anew _grandtot
   then ;
 
 : bid-thru ( -- )    \ extend every vscr in current file and do a grandtotal
-  noext?    \ only total if a bid (no extension)
+  noext?    \ only total if a bid, no file extension like .F 
   if false to ext-err CLEAR-TOTALS
-     24 to cursor-line
+     17 to cursor-line
      1 0 skiplines   \ to first non-blank line
     begin cursor-line file-lines <
     while parts-total 2@ labor-total 2@

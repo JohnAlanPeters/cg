@@ -1,6 +1,7 @@
 0 value rh
 0 value wh
 variable newnm 32 allot
+create lbuf 120 allot
 
 : read-line-CRLF ( buff len -- flag )
   dup >r 13 scan dup r> <>              \ got cr
@@ -61,4 +62,23 @@ variable newnm 32 allot
   begin find-next-file 0=
   while vwfile 0= if exit then
   repeat drop find-close drop ;
+
+: 1linefile ( wd -- )
+  dup @ 16 <>   \ not a dir
+  if 44 + zcount 2dup type ."  "
+     r/o open-file 0=
+     if >r lbuf 100 r@ read-line swap drop 0=
+        if lbuf swap type crlf$ count type else drop then
+        r> close-file drop
+     else drop then
+  else drop
+  then start/stop ;
+
+: files1line ( -- )
+  s" *" find-first-file 0=
+  if 1linefile then
+  begin find-next-file 0=
+  while 1linefile
+  repeat drop find-close drop ;
+
 

@@ -14,9 +14,9 @@ headline total ;
 
 : RISER-125 ( - )
   electric keyboard on kclr
-1 [ RISER  ] 125A    cr
-1 [ 90-INC ] 125A    cr
-1 [ LB-INC ] 125A    cr
+1 [ RISER remvoc ] 125A    cr
+1 [ 90-INC remvoc ] 125A    cr
+1 [ LB-INC remvoc ] 125A    cr
 headline total ;
 
 : RISER-150 ( - )

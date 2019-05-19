@@ -235,8 +235,10 @@ false value partswholesaleshow
        timecolshow if show-time then
   then show-sell ;
 
+: remvoc ( -- )  \ remember vocab we are in for later display
+  context @ voc>vcfa , ;
 : CONS-SHOW-ALL   ( -- )   \ output on current console line
-  cons-show-parts cons-show-time  cons-show-sell ;
+  context @ voc>vcfa .name cons-show-parts cons-show-time  cons-show-sell ;
 
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
@@ -387,6 +389,7 @@ false value partswholesaleshow
                 This revision is for Win32Forth.
                 Conversion started in March of 2000
                 Working version Thursday, July 01 2004
+                files1line will help look through the old bids
 
 ELECTRIC        A vocabulary
 ELECT           Set the search order to a clean safe state.

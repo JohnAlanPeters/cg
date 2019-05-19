@@ -104,6 +104,7 @@ Include big-ok.scr
 Include fish.scr
 Include Ampier.scr
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
+Include dir2seq.f
 Include ..\bids\nes-compiled.f  \ colon defs with multiple modules
 
 \ note: cg won't run if next file isn 't last - I don't know why
