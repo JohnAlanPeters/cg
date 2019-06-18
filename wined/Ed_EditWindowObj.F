@@ -917,8 +917,10 @@ defer +bg       ' _+bg is +bg
                         \ draw left border
                 0 0 window-lmargin 2 -
                 Height: self
+                have-focus? 0= if ltgray else
                 ( Get the margin color and fill the left margin )
                 overstrike @ if marginColor else BMarginColor then
+                then
                 FillArea: dc
                       \ vertical line beside left border
                 Gray LineColor: dc

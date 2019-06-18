@@ -313,7 +313,7 @@ defer _Control+W ' close-text is _control+w
       'B'     +k_control            OF      debug-word                  ENDOF
       'B'     +k_control +k_shift   OF      debug-word                  ENDOF
       'C'     +k_control            OF      copy-text                   ENDOF
-      'D'     +k_control            OF      datestamp   ( also F12 )    ENDOF
+      'D'     +k_control            OF      datestamp   ( also F9 )     ENDOF
       'D'     +k_control +k_shift   OF      revert-text ( also Q )      ENDOF
       'E'     +k_control            OF      grand-total                 ENDOF
       'E'     +k_control +k_shift   OF      expand-tabs                 ENDOF
@@ -340,7 +340,7 @@ defer _Control+W ' close-text is _control+w
       'T'     +k_control            OF      word-delete                 ENDOF
       'T'     +k_control +k_shift   OF      word-undelete               ENDOF
 \     'U'     +k_control            OF      highlight-case-toggle       ENDOF
-      'V'     +k_control            OF      Paste-text                  ENDOF
+\     'U'     +k_control            of      d_un-add                    ENDOF \ JAPP 5/16
       'V'     +k_control +k_shift   OF      Paste-date/time             ENDOF
       'W'     +k_control            OF      do-ctrl-w  ( push right )   ENDOF
       'W'     +k_control +k_shift   OF      close-text                  ENDOF

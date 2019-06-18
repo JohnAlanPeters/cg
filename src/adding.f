@@ -119,7 +119,7 @@ editor also
 
 : ALL-THRU     ( -- )
    add-all-screens
-    over-sig
+\   over-sig
     lab-bud-35  topout 3 + 71 at-cents    \  the 35% amount
     calc  5 +to cursor-col ;
 

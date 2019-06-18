@@ -39,7 +39,7 @@ defer reedit
 0 value invkloop  \ so we know when we are editing (in view-key-loop)
 0 0 2value last-total  \ has to be remembered before clearing
 defer total-est   \ so we can put total on status line
-: _xit ( rda ) focus-console false to invkloop quit ;
+: _xit ( rda ) focus-console cr ." ok" false to invkloop quit ;
 
 cd ..
 current-dir$ setfdir
@@ -54,6 +54,7 @@ s" src" cgbase" "fpath+
 s" ContractGen " edname$ place
 
 only forth also editor also forth also definitions
+
 overstrike on
 2 to FilterIndex
 ' _xit is do-esc

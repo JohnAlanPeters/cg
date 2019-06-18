@@ -17,7 +17,7 @@ I'm still hoping to use the old version so all of my code will start working.
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 : exttotline? ( -- fl )    \ true=>an extended total line
   cursor-line #line" vtot-col >
-  if dup 16 + 28 bl skip nip 0=  
+  if dup 16 + 28 bl skip nip 0=
      swap vtot-col + c@ ascii . = and   
   else drop false then ;
 
@@ -35,7 +35,7 @@ I'm still hoping to use the old version so all of my code will start working.
   if 1 true skiplines then ;
                    
 : EXTEND ( -- )  \ Ctrl+E  Extends all the lines from 23 down to TOTAL ESTIMATE
-                 \ This is hard coded in BID-THRU    
+                 \ This is hard coded in BID-THRU
                                                                \ JP
     -1 true skiplines 1 +to cursor-line  \ get to top of current vscr
     clear-totals

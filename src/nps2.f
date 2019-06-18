@@ -155,8 +155,9 @@ Elect
 \ DIMMER 1/7              C 600-321  E-3          F 10-01-08
 Vocabulary Dimmer  \ CAUTION Sometimes there is no ground
 Dimmer definitions              \ was 50 hrs per C
-: DV-600      29.00 w/e  25 c ; \ 18.60 Jan 2010  26.39 Dec 2010  side slider                
-: DV-603      30.00 w/e  25 c ; \ 25.16 UE  29.97 Lows                                           
+: DVCL-153    29.00 w/e  25 c ; \ 24.00 June 2019
+: DV-600      21.00 w/e  25 c ; \ 19.97 June 2019 26.39 Dec 2010  side slider
+: DV-603      30.00 w/e  25 c ; \ 25.16 UE  29.97 Lows
 : DV-600VA    35.00 w/e  51 c ; \ Diva  Deco + mini side slider
 : DV-603VA    40.00 w/e  51 c ; \ Diva  Deco + mini side slider
 ~ DV-103P     70.00 w/e  35 c ; \ 69.35 July 2007
@@ -890,11 +891,11 @@ Elect
 | LAMP  Bulbs 1/3           630-022a FI-14
 Vocabulary Lamp          Lamp Definitions
 : LED-20      18.69 w/e   0 c ;
-: LED-30      19.90 w/e   0 c ; 
+: LED-30      19.90 w/e   0 c ;
 : LED-48      40.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
 : LED-A19     17.00 w/e   8 c ; \ 5-600 Lumins = 60W
 : LED-PAR     17.00 w/e   8 c ; \ 6-600 Lumins
-: MR-16        5.50 w/e   8 c ; \ Jul 02  6.00 or 4.99 ea
+: MR-16        3.00 w/e   8 c ; \ Navar June 2019                        
 :  25W         1.01 w/e   2 c ; \ 630-22
 :  40W          .84 w/e   2 c ; \ 630-22
 :  60W          .55 w/e   0 c ; \ 12-93
@@ -1791,6 +1792,7 @@ Vocabulary Setup   Setup definitions
 : Medium-Job      .00 w/c 100 c ;
 : Ladder-work     .00 w/c 100 c ;
 : Hot-220         .00 w/c 150 c ;
+: Elevator        .00 w/c 200 c ;
 : Apartment       .00 w/c  25 c ;
 : Engineering     .00 w/c 125 c ;
 : Finish-work     .00 w/c  50 c ;
@@ -2870,11 +2872,19 @@ Elect
 \ Under Cabinet LED
 Vocabulary UC-LED
 UC-LED Definitions
+: 48-inch  150.00 w/e  55 c ; \ guessed in May 2019  s/b 150.00 w/e 55 C   
+: 32-inch  133.00 w/e  50 c ;
 : 30-inch  133.00 w/e  50 c ;
 : 24-inch  108.00 w/e  50 c ;
 : 18-inch   92.00 w/e  50 c ;
 : 12-inch   85.00 w/e  45 c ;
 :  8-inch   67.00 w/e  40 c ;
+Elect
+
+Vocabulary Rewire-LED  ( JP 6-14-2019 )
+Rewire-LED definitions
+: 32-inch   15.00 w/e 25 c ;
+: 48-inch   15.00 w/e 25 c ;
 Elect
 
 
