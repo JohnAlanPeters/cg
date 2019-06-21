@@ -32,6 +32,8 @@ defer grand-total     \ Defined early so AA can be used in cg-special ctrl-
 
 defer AAA
 defer reedit
+defer un-add \ for wined
+defer settle
 
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 
@@ -150,7 +152,7 @@ forth also forth definitions editor
     Title-CG   current-dir$ setfdir
     -1 to dp-location  s" \cg\bids" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
-    editor overstrike off
+    editor overstrike ( off ) on
     elect
     cmdline 0= swap 0= or
     if file-to-edit$ off

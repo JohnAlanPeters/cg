@@ -162,7 +162,7 @@ Dimmer definitions              \ was 50 hrs per C
 : DV-603VA    40.00 w/e  51 c ; \ Diva  Deco + mini side slider
 ~ DV-103P     70.00 w/e  35 c ; \ 69.35 July 2007
 ~ DVLV-600    39.23 w/e  51 c ; \ Jul 07
-\ MALV-1000   xx.25 w/e  35 c ; \ Maestro LV 600w  Lutron
+: MACL-153P   24.58 w/e  25 c ; \ Maestro led May 2019  Grey same        JAPP  
 ~ MA-1000     70.00 w/e  35 c ; \ Maestro LV 1000  Lutron
 : MALV-600    55.00 w/e  35 c ; \ Maestro LV 600w  Lutron
 : MA-600      27.00 w/e  35 c ; \ Maestro 600w 26.00 Dimms both
@@ -890,12 +890,13 @@ Elect
 
 | LAMP  Bulbs 1/3           630-022a FI-14
 Vocabulary Lamp          Lamp Definitions
-: LED-20      18.69 w/e   0 c ;
-: LED-30      19.90 w/e   0 c ;
-: LED-48      40.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
-: LED-A19     17.00 w/e   8 c ; \ 5-600 Lumins = 60W
+: LED-20       3.00 w/e   0 c ; \ Really?
+: LED-30       5.00 w/e   0 c ; \ Dimmable
+: LED-48      14.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
+: LED-A19      5.00 w/e   8 c ; \ 5-600 Lumins = 60W
 : LED-PAR     17.00 w/e   8 c ; \ 6-600 Lumins
-: MR-16        3.00 w/e   8 c ; \ Navar June 2019                        
+: LED-16        3.00 w/e   8 c ; \ Navar June 2019                          
+: MR-16        3.00 w/e   8 c ; \ Navar June 2019
 :  25W         1.01 w/e   2 c ; \ 630-22
 :  40W          .84 w/e   2 c ; \ 630-22
 :  60W          .55 w/e   0 c ; \ 12-93
@@ -2872,13 +2873,14 @@ Elect
 \ Under Cabinet LED
 Vocabulary UC-LED
 UC-LED Definitions
-: 48-inch  150.00 w/e  55 c ; \ guessed in May 2019  s/b 150.00 w/e 55 C   
-: 32-inch  133.00 w/e  50 c ;
-: 30-inch  133.00 w/e  50 c ;
-: 24-inch  108.00 w/e  50 c ;
-: 18-inch   92.00 w/e  50 c ;
-: 12-inch   85.00 w/e  45 c ;
-:  8-inch   67.00 w/e  40 c ;
+: 48-inch  184.00 w/e  55 c ; \ May 2019 Dimmable 4000K LED GetinLight AZ
+: 40-inch  139.90 w/e  50 c ;
+: 42-inch  133.00 w/e  50 c ; 
+: 32-inch   99.00 w/e  50 c ;
+: 24-inch   85.90 w/e  50 c ;
+: 18-inch   69.90 w/e  50 c ;
+: 12-inch   49.90 w/e  45 c ;
+:  9-inch   39.90 w/e  40 c ;      
 Elect
 
 Vocabulary Rewire-LED  ( JP 6-14-2019 )

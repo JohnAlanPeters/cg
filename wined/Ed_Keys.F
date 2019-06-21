@@ -286,7 +286,7 @@ defer _Control+W ' close-text is _control+w
             WHILE   rem-sendkey                \ just send keys to Forth console
             REPEAT ;
 
-: F55 ; \ Another place marker for use with VIEW
+: JAPP ; \ Another place marker for use with VIEW
 
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
@@ -317,7 +317,7 @@ defer _Control+W ' close-text is _control+w
       'D'     +k_control +k_shift   OF      revert-text ( also Q )      ENDOF
       'E'     +k_control            OF      grand-total                 ENDOF
       'E'     +k_control +k_shift   OF      expand-tabs                 ENDOF
-\ JP  'F'     +k_control ( del me ) OF    ( word-right ) replace-text   ENDOF
+\     'F'     +k_control ( del me ) OF    ( word-right ) replace-text   ENDOF \ JAPP long ago
       'F'     +k_control            OF      pro-mode  ( JP 4-5-09 )     ENDOF
       'F'     +k_control +k_shift   OF      find-in-files               ENDOF
       'G'     +k_control            OF      del-rt                      ENDOF
@@ -340,7 +340,8 @@ defer _Control+W ' close-text is _control+w
       'T'     +k_control            OF      word-delete                 ENDOF
       'T'     +k_control +k_shift   OF      word-undelete               ENDOF
 \     'U'     +k_control            OF      highlight-case-toggle       ENDOF
-\     'U'     +k_control            of      d_un-add                    ENDOF \ JAPP 5/16
+\     'U'     +k_control            of      d_un-add                    ENDOF \ JAPP 5-2019 
+      'V'     +k_control            OF      Paste-text                  ENDOF
       'V'     +k_control +k_shift   OF      Paste-date/time             ENDOF
       'W'     +k_control            OF      do-ctrl-w  ( push right )   ENDOF
       'W'     +k_control +k_shift   OF      close-text                  ENDOF
@@ -361,15 +362,16 @@ defer _Control+W ' close-text is _control+w
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
       k_F4                          OF      toggle-insert               ENDOF 
       k_F4    +k_shift              OF      AAA   ( JP? 4-5-09 )        ENDOF
-      k_F5                          OF      [ also HIDDEN ] replay-macro [ previous ] ENDOF
+      k_F5                          OF      settle                      ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
-      k_F7                          OF      browse-toggle               ENDOF
+      K_f6     ( JAPP )             OF      un-add                      ENDOF
+      k_F7                          OF      settle    k                 ENDOF
       k_F8                          OF      revert-text                 ENDOF
       k_F9                          OF      datestamp  ( ^D also )      ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
       k_F10                         OF    ( hyper-link ) grand-total    ENDOF   
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
-      k_F10                         OF      save-and-load               ENDOF
+      k_F10   +k_control            OF      save-and-load               ENDOF
       k_F11                         OF      prev-link                   ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      word-link                   ENDOF

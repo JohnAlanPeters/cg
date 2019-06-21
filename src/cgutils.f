@@ -129,7 +129,7 @@ editor
 
 \ ' dotcomma-number is number
 
-: settle  ( -- )  \ eliminate extra blank lines
+: (settle)  ( -- )  \ eliminate extra blank lines
   24 to cursor-line   0  \ initial value for #blank lines read
   begin cursor-line 1+ file-lines <
   while cursor-line #line" -trailing nip 0=
@@ -139,6 +139,8 @@ editor
         else drop 0  1 +to cursor-line   \ non-blank, so reset count
         then    \  dup . cursor-line .  cr   ( for debugging )
    repeat drop ;
+
+' (settle) is settle
 
 : ren ( -<old new> ) { \ RenameFrom$ RenameTo$ -- }
         MAXSTRING LocalAlloc: RenameFrom$

@@ -368,18 +368,18 @@ false value partswholesaleshow
 : TO-Bids  ( n -- )
   >r  >bids r> ;
 
-: un-add ( -- )  \ remove extensions and vtotals
+: (un-add) ( -- )  \ remove extensions and vtotals
   noext? 0= ?exit
-  [ editor ] 23 to cursor-line
+  [ editor ] 17 to cursor-line
   begin cursor-line file-lines <
         cursor-line 1- #line" drop s" Total Estimate" tuck istr= 0= and
   while get-cursor-line
         cur-buf @ 56 min cur-buf !
         put-cursor-line
         1 +to cursor-line
-  repeat ;
+  repeat refresh-screen ;
 
-
+' (un-add) is un-add
 
 \s
 
