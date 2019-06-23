@@ -1976,6 +1976,7 @@ Secure   definitions                      \ Used Sold Keep Have
 
 \ PERMIT                  C 900-052  XX-0           12-10-18       
 Vocabulary Permit        Permit Definitions
+: Small-job       268.00 w/e  2 e ;            
 : Reinspection    170.00 w/e  0 c ;
 : Emergency-Alarm 456.00 w/e  0 c ;
 : 10-Outlets-1    165.00 w/e  0 c ; \ 1 insp Was 160 + 5
@@ -2875,8 +2876,9 @@ Vocabulary UC-LED
 UC-LED Definitions
 : 48-inch  184.00 w/e  55 c ; \ May 2019 Dimmable 4000K LED GetinLight AZ
 : 40-inch  139.90 w/e  50 c ;
-: 42-inch  133.00 w/e  50 c ; 
+: 42-inch  139.00 w/e  50 c ; \ 133.00 After Navar      
 : 32-inch   99.00 w/e  50 c ;
+: 30-inch   99.00 w/e  50 c ; 
 : 24-inch   85.90 w/e  50 c ;
 : 18-inch   69.90 w/e  50 c ;
 : 12-inch   49.90 w/e  45 c ;

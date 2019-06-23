@@ -263,7 +263,7 @@ defer _Control+W ' close-text is _control+w
         overstrike @       \ JP 4-5-09  It works!
         if word-right      \ Move cursor to the next word to the right
         else replace-text  \ Should be named find&replace
-        Then ;
+        Then ;             \ Ctl+F  But what does it do?   
 
 
 
@@ -287,9 +287,11 @@ defer _Control+W ' close-text is _control+w
             REPEAT ;
 
 : JAPP ; \ Another place marker for use with VIEW
-
+: FF   ; \ Yet another
+                      
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
+      call GetFocus to topwin
       browse-toggle
       BEGIN
             depth to saved-depth            \ so we can check stack depth
@@ -299,7 +301,7 @@ defer _Control+W ' close-text is _control+w
             EditMode: Win-EdToolbar
             \ SMS-WEW-key-Con-doc-interp-send
             key
-            call GetFocus topwin = if PutKey: cmd _xit then               
+            call GetFocus topwin <> if PutKey: cmd _xit then                 
             SetFocus: DocWindow
             HideCursor: DocWindow
             CASE
@@ -365,7 +367,7 @@ defer _Control+W ' close-text is _control+w
       k_F5                          OF      settle                      ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
       K_f6     ( JAPP )             OF      un-add                      ENDOF
-      k_F7                          OF      settle    k                 ENDOF
+      k_F7                          OF      settle                      ENDOF 
       k_F8                          OF      revert-text                 ENDOF
       k_F9                          OF      datestamp  ( ^D also )      ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF

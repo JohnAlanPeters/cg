@@ -238,7 +238,7 @@ false value partswholesaleshow
 : remvoc ( -- )  \ remember vocab we are in for later display
   context @ voc>vcfa , ;
 : CONS-SHOW-ALL   ( -- )   \ output on current console line
-  context @ voc>vcfa .name cons-show-parts cons-show-time  cons-show-sell ;
+  ( context @ voc>vcfa .name ) cons-show-parts cons-show-time  cons-show-sell ;  
 
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
@@ -248,7 +248,14 @@ false value partswholesaleshow
 
 : MARK-IT-UP  ( w/s -- r/t )
    IncWholeSaleSub
-   1.35  d*  100.00  d/ ;
+   2.00  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?                  
+
+: MMM    ; \ For use with view        
+
+\ MARK-IT-UP  ( w/s -- r/t )
+\  IncWholeSaleSub
+\  1.35  d*  100.00  d/ ;
+                         
 
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
