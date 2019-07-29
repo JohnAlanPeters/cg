@@ -26,7 +26,7 @@ editor also
 
 \ : CALC-HRS GET-GL-REM CURRENT-RATE 2@ 4.00 D/ D/  topout 7 + 71  at-cents ;
 
-: CALC  ( -- ) rev?     \ only if non-zero
+: CALC  ( -- ) rev? drop 0     \ only if non-zero
   if topout 6 + #line" drop 61 + 14 blank  \ erase calc-gl-rem
      topout 7 + #line" drop 61 + 14 blank  \ erase calc-hrs
   \  show-gl-rem calc-hrs  hrsDiff calc-percent
@@ -64,8 +64,8 @@ editor also
 
 : ADD-ALL-SCREENS   ( -- )
   bid-thru              \ extend all vscrns accumulating totals
-  sell-out  time-out wholesale-out  parts-out   labor-out 
-  other-out permit-out  allowance-out ;
+  sell-out  time-out wholesale-out  parts-out   labor-out ; 
+  \ other-out permit-out  allowance-out ;
 
 : LAB-BUD-35  ( -- d) labor-total 2@ 1.00 d* .286 d/  ;
 : LAB-BUD-100 ( -- d) labor-total 2@ ;

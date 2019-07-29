@@ -31,3 +31,18 @@ variable vec
   vec @ is type
   vbuf >r r@ w@ r> 2 + swap dup 0= if drop s" ok" then ;
 
+: sendline ( addr cnt -- )
+  pad place crlf$ count pad +place pad count b2sock ;
+
+: srvrinput ( addr cnt -- addr cnt )
+   \ check for webpage request
+   \ first line has GET <path> HTTP
+   \ assume if path == "\4th", client wants a webpage;
+   \ else, if path == "\4th" client wants forth executed
+   \ TODO: search for path; get past headers to data; edit webpage html
+   s" HTTP/1.1 200 OK " sendline
+   s" Content-type: text-html" sendline
+   crlf$ count vec place crlf$ count vec +place vec count b2sock
+   s" <!DOCTYPE html><title>webby</title><body>my my said the s to the f</body></html>" sendline
+  ;
+

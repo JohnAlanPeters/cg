@@ -287,7 +287,7 @@ defer _Control+W ' close-text is _control+w
             REPEAT ;
 
 : JAPP ; \ Another place marker for use with VIEW
-: FF   ; \ Yet another
+: F12  ; \ Yet another
                       
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
@@ -451,5 +451,5 @@ defer _Control+W ' close-text is _control+w
         ENDCASE
       AGAIN   ;
 
-: F12 ; \ I like to be able to VIEW this word to quickly jump to the file
+: FF  ; \ I like to be able to VIEW this word to quickly jump to the file  
 \ that contains the key bindings lists.  Please do not remove it.

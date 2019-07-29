@@ -412,9 +412,6 @@ LIFE-SAFETY definitions \ Sold Keep Have
 : Exit-sign-light-ceiling    120.00 w/e   50 c ; \
 : Emergency-light-ceiling     47.00 w/e   25 c ; \
 : Exit-LED-replace            55.00 w/e   50 c ; \ 4-14-15  
-
-
-
 : MR16-Flush      34.52 w/e   50 c ; \ 02-C2GW-B
 : LED-MR16-Bat   115.00 w/e  120 c ; \ 104.78 Previously
 : Dual-MR16       48.00 w/e   99 c ; \  55.00 Previously 120
@@ -428,8 +425,16 @@ LIFE-SAFETY definitions \ Sold Keep Have
 Elect \  see FIRE  for supervised See HARD-WIRED  for smokes
 
 
+Vocabulary Smoke-Alarm
+Smoke-Alarm Definitions
+: AC-Hardwired    48.00 w/e   15 c ;
+: 3V-Battery      48.00 w/e   11 c ;         
+Elect  \ Back to regular order of vocs
+: smk ; \ alias
+elect
 \ FLUORESCENT fixtures 1/3  625-100a FF-09        F 11-19-08
-Vocabulary Flo  Flo Definitions
+Vocabulary Flo
+Flo Definitions
 : 4-FT        33.00 w/e  80 c ; \ 31.005 NIC tubes Oct 08 was 33.50  
 : 4x1         35.00 w/e  80 c ; \ Good, not cheap T-8  
 : 4x2 ( Inc ) 37.50 w/e  80 c ; \ 33.36 is 31.0050 + 1.1808 x 2  Dec 2010 inc
@@ -2004,7 +2009,7 @@ Elect
  \ The batteries are NOT included with the panel
 
 | Smoke-Alarm
-Vocabulary Smoke-Alarm  Smoke-Alarm Definitions
+Vocabulary Smoke-Alarm-old Smoke-Alarm-old Definitions    
 : 10-year         30.00 w/e  25 c ;       
 Elect
 
@@ -2302,7 +2307,7 @@ Mikado   Definitions             \
  \ Ext-30cm     [  37.  50. d* ] dliteral w/e   10 c ; \        
  \ Ext-60cm     [  58.  50. d* ] dliteral w/e   10 c ; \        
  \ Ext-120cm    [  90.  50. d* ] dliteral w/e   10 c ; \        
- \ Spotlight    [ 276.  50. d* ] dliteral w/e   15 c ; Elect    
+ \ Spotlight    [ 276.  50. d* ] dliteral w/e   15 c ; Elect
 
 
 | HALO common               630-970y                07-18-07 AL
@@ -2885,12 +2890,31 @@ UC-LED Definitions
 :  9-inch   39.90 w/e  40 c ;      
 Elect
 
+\ Under Cabinet Flo
+Vocabulary UC-Flo  \ I could not find these in the files
+UC-Flo Definitions \ Hard to find the prices
+: 48-inch  184.00 w/e  55 c ; \ June 2019
+: 40-inch  139.90 w/e  50 c ; \ guess
+: 42-inch  139.00 w/e  50 c ; \ guess
+: 32-inch   43.99 w/e  50 c ; \ This one for Jane Cloninger
+: 30-inch   35.00 w/e  50 c ; \ guess
+: 24-inch   28.35 w/e  50 c ; \ guess
+: 18-inch   23.46 w/e  50 c ; \ 14.19  19.99
+: 12-inch   34.99 w/e  45 c ;
+:  9-inch   39.90 w/e  40 c ;      
+Elect
+
 Vocabulary Rewire-LED  ( JP 6-14-2019 )
 Rewire-LED definitions
 : 32-inch   15.00 w/e 25 c ;
 : 48-inch   15.00 w/e 25 c ;
 Elect
 
+Vocabulary Retrofit-LED ( JP 6-24-2019 ) \ JAPP
+Retrofit-LED definitions
+: 5-inch    14.50 w/e 25 c ;
+: 6-inch    14.50 w/e 25 c ;
+Elect
 
 \ Trouble here?
 
@@ -2940,24 +2964,6 @@ LED-28 Definitions       \
 : Direct-Con 4.00 w/e  00 c ;
 Elect
 \ First saw at Universal in Aug 08 for Dolan job
-
-
-| Dolan's Fixtures          000-000  XX-0           10-20-08 AL
-Vocabulary Dolan's
-Dolan's Definitions       \
-: BV814-6-18  279.30 w/e  00 c ; \
-: BV817-6-16  342.00 w/e  00 c ; \ BV8-17616 Was
-: F3ULT        79.80 w/e  00 c ; \ 3 MR16 adjustable lam fixture
-Elect
-\
-
-~ EL1499IC  26.00 w/e  00 c ; \ Airtite IC Housng
-~ EL1415N   24.64 w/e  00 c ; \ Shower Trim                     
-~ EL1420N   22.25 w/e  00 c ; \ Oval Slot Trim                  
-~ MR16-40    6.70 w/e  00 c ; \ 40 degree                       
-~ MR16-55    6.70 w/e  00 c ; \ 55 Degree                       
-Elect                                                           
-\ First saw at Universal in Aug 08 for Dolan job                
 
 
 | Warrantee

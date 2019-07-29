@@ -22,6 +22,7 @@ Vocabulary (FISH-WORK)
 : Fish-in-walls    fish-in-wall ;
 : FISH             fish-in-wall ;
 : Flush-on-walls   fish-in-wall ;
+: Flush-on-ceiling Fish-in-wall ;
 
   (FISH-WORK) Definitions
 \ Electric Definitions                 \ Mjellem was 3 hr s/b 1/5 hr

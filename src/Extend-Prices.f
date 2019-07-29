@@ -65,7 +65,8 @@ I'm still hoping to use the old version so all of my code will start working.
     Repeat                               \ repeat until blank line or \s
     vtotal<>0
     if exttotline? 0=
-       if 1 insert-lines then  discount
+       drop \ if 1 insert-lines then     \ Now AA & settle agree  JAPP3   
+       discount
        if 90 cur-buf ! cur-buf lcount blank update+
        else total-vscr then       \ show the virtual page column totals
        -1 +to cursor-line                \ line above total
