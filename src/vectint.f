@@ -1,5 +1,5 @@
 
-create vbuf 200 1024 * allot        
+create vbuf 200 1024 * allot
 variable vec
 
 : pplace ( addr cnt buf -- )
@@ -34,6 +34,13 @@ variable vec
 : sendline ( addr cnt -- )
   pad place crlf$ count pad +place pad count b2sock ;
 
+: sendfile ( addr cnt -- )
+   r/o open-file not
+   if vbuf 2048 rot read-file not
+      if vbuf swap b2sock
+      else drop then  close-file
+   else drop then ;
+
 : srvrinput ( addr cnt -- addr cnt )
    \ check for webpage request
    \ first line has GET <path> HTTP
@@ -42,7 +49,7 @@ variable vec
    \ TODO: search for path; get past headers to data; edit webpage html
    s" HTTP/1.1 200 OK " sendline
    s" Content-type: text-html" sendline
-   crlf$ count vec place crlf$ count vec +place vec count b2sock
-   s" <!DOCTYPE html><title>webby</title><body>my my said the s to the f</body></html>" sendline
-  ;
+   crlf$ count b2sock \ crlf$ count vbuf +place vbuf count b2sock
+   s" webinterpret.html" sendfile ;
+
 
