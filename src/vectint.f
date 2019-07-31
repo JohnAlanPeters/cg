@@ -49,7 +49,12 @@ variable vec
    \ TODO: search for path; get past headers to data; edit webpage html
    s" HTTP/1.1 200 OK " sendline
    s" Content-type: text-html" sendline
-   crlf$ count b2sock \ crlf$ count vbuf +place vbuf count b2sock
-   s" webinterpret.html" sendfile ;
+   crlf$ count b2sock
+   over 3 s" GET" compare not
+   if 2drop
+     s" webinterpret.html" sendfile
+   else 2dup type vectint b2sock then ;
+
+
 
 

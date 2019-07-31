@@ -62,7 +62,7 @@ fload ..\vectint      \ load here to access code above
 : do-server init-server  \ how fork? - only 1 client for now
   begin sockread dup -1 =
     if true
-    else type
+    else 2dup type     
      srvrinput  \ either send webpage or execute the forth
      false
     then

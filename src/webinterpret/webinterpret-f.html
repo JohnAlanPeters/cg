@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<title>test input</title>
+
+<script language="javascript" type="text/javascript">
+var lastlen=0;
+function doit()
+{
+    var dsp=document.getElementById('dsp');
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "webinterpreter.html"); 
+    xhr.onload = function(event){
+        var txt=event.target.response;
+		txt=txt.replace('\r','');
+        var dtxt=dsp.value;
+ 		if(txt[txt.length-1]!='\n')
+		   txt+='\n';
+        dtxt+=txt;
+        lastlen=dtxt.length;
+        dsp.value=dtxt;
+    };
+    var txt = dsp.value;
+    var ntxt=txt.substring(lastlen);
+    	ntxt=ntxt.replace('\n',' cr ');
+    ntxt=ntxt.slice(0,-4)+' '
+    xhr.send(ntxt);
+}
+</script>
+<body>
+Web32Forth 1.02 (It is not very fast yet)<br>  
+Text John Peters at 415-239-5393 to chat or to reboot.<br>
+The Forth browser source code as well as the Win32Forth source is on GitHub<br>
+Forth is fast & Webbley is so so slow that a DO LOOP will not show results.<br>
+My purpose is to introduce Forth without having to download anything<br>
+I hope someone will take over this project and give it a permanent URL home<br>
+Please enter your name. You will get an error -13 but we will see your name<br>
+<textarea id='dsp' rows=56 cols=72></textarea>
+</body>
+</html> 
+<script>
+const node = document.getElementById('dsp');
+node.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        doit();
+    }
+});
+</script>
