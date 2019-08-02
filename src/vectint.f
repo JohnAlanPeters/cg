@@ -32,16 +32,17 @@ variable vec
   vbuf >r r@ w@ r> 2 + swap dup 0= if drop s" ok" then ;
 
 : sendline ( addr cnt -- )
-  pad place crlf$ count pad +place pad count b2sock ;
+  ssock WriteSocketLine drop ;
+  \  pad place crlf$ count pad +place pad count b2sock ;
 
 : sendfile ( addr cnt -- )
    r/o open-file not
-   if vbuf 2048 rot read-file not
+   if >r vbuf 2048 r@ read-file not
       if vbuf swap b2sock
-      else drop then  close-file
-   else drop then ;
+      else drop then r> close-file  
+   then drop ;
 
-: srvrinput ( addr cnt -- addr cnt )
+: srvrinput ( addr cnt -- )
    \ check for webpage request
    \ first line has GET <path> HTTP
    \ assume if path == "\4th", client wants a webpage;
@@ -49,11 +50,12 @@ variable vec
    \ TODO: search for path; get past headers to data; edit webpage html
    s" HTTP/1.1 200 OK " sendline
    s" Content-type: text-html" sendline
+   s" Connection: keep-alive" sendline
    crlf$ count b2sock
    over 3 s" GET" compare not
    if 2drop
-     s" webinterpret.html" sendfile
-   else 2dup type vectint b2sock then ;
+     s" webinterpret-f.html" sendfile
+   else vectint b2sock then ;
 
 
 

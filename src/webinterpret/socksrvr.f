@@ -30,7 +30,7 @@ create rbuf szbuf allot
   to ssock ." server is accepted" cr ;
 
 : sockread ( -- addr cnt )      \ wait for input
-  begin  key? 27 = if -1 exit then   \ quit on escape
+  begin  key? if key 27 = if -1 exit then then   \ quit on escape
    250 ms  \ pause
    ssock ToRead abort" can't get # to read" ?dup
   until  \ loop until something to read
@@ -59,13 +59,14 @@ fload ..\vectint      \ load here to access code above
   until ssock closeSocket ;
 
 \ accept connection, xmit msg, read input, xmit kybrd til emptyline
-: do-server init-server  \ how fork? - only 1 client for now
-  begin sockread dup -1 =
+: do-server  init-server
+  begin
+    sockread dup -1 =
     if true
-    else 2dup type     
-     srvrinput  \ either send webpage or execute the forth
-     false
+    else 2dup type
+     srvrinput      \ either send webpage or execute the forth
+     false 
     then
-  until srvrsock closeSocket ;
+  until  ssock closeSocket drop ;
 
 

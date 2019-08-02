@@ -10,7 +10,8 @@ function doit()
 {
     var dsp=document.getElementById('dsp');
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "webinterpreter.html"); 
+    xhr.open("POST", "webinterpreter.html");
+    xhr.setRequestHeader('Connection', 'keep-alive')
     xhr.onload = function(event){
         var txt=event.target.response;
 		txt=txt.replace('\r','');
@@ -29,12 +30,12 @@ function doit()
 }
 </script>
 <body>
-Web32Forth 1.02 (It is not very fast yet)<br>  
-Text John Peters at 415-239-5393 to chat or to reboot.<br>
-The Forth browser source code as well as the Win32Forth source is on GitHub<br>
-Forth is fast & Webbley is so so slow that a DO LOOP will not show results.<br>
-My purpose is to introduce Forth without having to download anything<br>
-I hope someone will take over this project and give it a permanent URL home<br>
+Web32Forth 1.03 <br>
+Text John Peters at 415-239-5393 for tecnical help.<br>
+The source code is on GitHub<br>
+Forth is fast but Webbley is slow so far.<br>
+Forth is going to run on the cloud<br>
+We are looking for a permanent URL home<br>
 Please enter your name. You will get an error -13 but we will see your name<br>
 <textarea id='dsp' rows=56 cols=72></textarea>
 </body>
