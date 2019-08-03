@@ -25,9 +25,10 @@ function doit()
     var txt = dsp.value;
     var ntxt=txt.substring(lastlen);
     	ntxt=ntxt.replace('\n',' cr ');
-    ntxt=ntxt.slice(0,-4)+' '
+    ntxt=ntxt.slice(0,-4)+' ';
     xhr.send(ntxt);
 }
+
 </script>
 <body>
 Web32Forth 1.03 <br>

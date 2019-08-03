@@ -64,9 +64,9 @@ fload ..\vectint      \ load here to access code above
     sockread dup -1 =
     if true
     else 2dup type
-     srvrinput      \ either send webpage or execute the forth
-     false 
+    srvrinput      \ either send webpage or execute the forth
+     false
     then
-  until  ssock closeSocket drop ;
+  until srvrsock closesocket drop ssock closeSocket drop ;
 
 
