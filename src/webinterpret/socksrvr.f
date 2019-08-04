@@ -9,7 +9,7 @@ create ssrvr ," 127.0.0.1" 0 c,
 
 0 value ssock
 0 value srvrsock
-250 value szbuf
+2048 value szbuf
 create rbuf szbuf allot
 
 : init-sockets            \ call once per forth startup
@@ -27,7 +27,7 @@ create rbuf szbuf allot
   srvrsock ListenSocket abort" can't listen"
   ." waiting to accept client" cr
   rbuf szbuf srvrsock SOCKET-ACCEPT abort" can't accept"
-  to ssock ." server is accepted" cr ;
+  to ssock ." server is accepted" cr ." socket: " ssock . ;
 
 : sockread ( -- addr cnt )      \ wait for input
   begin  key? if key 27 = if -1 exit then then   \ quit on escape
@@ -62,11 +62,11 @@ fload ..\vectint      \ load here to access code above
 : do-server  init-server
   begin
     sockread dup -1 =
-    if true
+    if true ." done"
     else 2dup type
     srvrinput      \ either send webpage or execute the forth
      false
     then
-  until srvrsock closesocket drop ssock closeSocket drop ;
+  until srvrsock closesocket ssock closesocket drop ;   \  drop ssock closeSocket drop ;
 
 

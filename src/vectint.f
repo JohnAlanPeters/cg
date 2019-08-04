@@ -48,7 +48,7 @@ variable vec
    \ assume if path == "\4th", client wants a webpage;
    \ else, if path == "\4th" client wants forth executed
    \ TODO: search for path; get past headers to data; edit webpage html
-   s" HTTP/1.1 200 OK " sendline
+   s" HTTP/1.1 200 OK" sendline
    s" Content-type: text-html" sendline
    s" Connection: keep-alive" sendline
    crlf$ count b2sock
