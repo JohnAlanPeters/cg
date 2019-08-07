@@ -9,7 +9,7 @@ create ssrvr ," 127.0.0.1" 0 c,
 
 0 value ssock
 0 value srvrsock
-250 value szbuf
+2048 value szbuf
 create rbuf szbuf allot
 
 : init-sockets            \ call once per forth startup
