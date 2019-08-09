@@ -8,25 +8,17 @@
 var lastlen=0;
 function doit()
 {
-    var dsp=document.getElementById('dsp');
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "webinterpreter.html");
-    xhr.setRequestHeader('Connection', 'keep-alive');
-    xhr.onload = function(event){
-        var txt=event.target.response;
-        		txt=txt.replace('\r','');
-        var dtxt=dsp.value;
-        		if(txt[txt.length-1]!='\n')
-		       { txt+='\n'; }
-         dtxt+=txt;
-         lastlen=dtxt.length;
-         dsp.value=dtxt;
-    };
-    var txt = dsp.value;
-    var ntxt=txt.substring(lastlen);
-    	ntxt=ntxt.replace('\n',' cr ');
-    ntxt=ntxt.slice(0,-4)+' ';
-    xhr.send(ntxt);
+  var txt = document.getElementById('dsp').value;
+  var ntxt=txt.substring(lastlen);
+  ntxt=ntxt.replace('\n',' cr ');
+  ntxt=ntxt.slice(0,-4)+' ';
+  fetch('',{method: 'post',body:ntxt,headers: {
+    'Content-Type': 'text/plain',
+     )
+  })
+  .then(response => response.text())
+  .then(data => document.getElementById('dsp').value=data)
+  .catch(error => console.log('error is', error));
 }
 
 </script>

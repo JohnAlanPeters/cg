@@ -67,6 +67,6 @@ fload ..\vectint      \ load here to access code above
     srvrinput      \ either send webpage or execute the forth
      false
     then
-  until srvrsock closesocket ssock closesocket drop ;   \  drop ssock closeSocket drop ;
+  until srvrsock closesocket drop ssock closesocket drop ;   \  drop ssock closeSocket drop ;
 
 
