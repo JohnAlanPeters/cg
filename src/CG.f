@@ -33,7 +33,7 @@ defer grand-total     \ Defined early so AA can be used in cg-special ctrl-
 defer AAA
 defer reedit
 defer un-add \ for wined
-defer settle
+defer settle \ See also (settle) 
 
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 

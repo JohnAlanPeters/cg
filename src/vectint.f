@@ -33,13 +33,18 @@ variable vec
 
 : sendline ( addr cnt -- )
   ssock WriteSocketLine drop ;
-  \  pad place crlf$ count pad +place pad count b2sock ;
+
+: scontentlen ( len -- )
+   s" Content-length: " b2sock
+   0 (d.) sendline ;
 
 : sendfile ( addr cnt -- )
    r/o open-file not
    if >r vbuf 2048 r@ read-file not
-      if vbuf swap b2sock
-      else drop then r> close-file  
+      if  dup scontentlen
+          crlf$ count b2sock   \ empty line before message
+          vbuf swap b2sock
+      else drop then r> close-file
    then drop ;
 
 : srvrinput ( addr cnt -- )
@@ -49,13 +54,15 @@ variable vec
    \ else, if path == "\4th" client wants forth executed
    \ TODO: search for path; get past headers to data; edit webpage html
    s" HTTP/1.1 200 OK" sendline
-   s" Content-type: text-html" sendline
-   s" Connection: keep-alive" sendline
-   crlf$ count b2sock
+   s" Content-type: text/html" sendline
+   s" Server: Forth" sendline
    over 3 s" GET" compare not
    if 2drop
      s" webinterpret-f.html" sendfile
-   else vectint b2sock then ;
+   else  ( todo: remove headers) 
+2dup type vectint crlf$ count 2dup type b2sock
+        b2sock 
+   then ;
 
 
 

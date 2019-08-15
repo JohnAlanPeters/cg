@@ -427,8 +427,8 @@ Elect \  see FIRE  for supervised See HARD-WIRED  for smokes
 
 Vocabulary Smoke-Alarm
 Smoke-Alarm Definitions
-: AC-Hardwired    48.00 w/e   15 c ;
-: 3V-Battery      48.00 w/e   11 c ;         
+: AC-Hardwired    48.00 w/e   45 c ; \ 
+: 3V-Battery      48.00 w/e   25 c ;
 Elect  \ Back to regular order of vocs
 : smk ; \ alias
 elect
@@ -2912,9 +2912,9 @@ Elect
 
 Vocabulary Retrofit-LED ( JP 6-24-2019 ) \ JAPP
 Retrofit-LED definitions
-: 5-inch    14.50 w/e 25 c ;
-: 6-inch    14.50 w/e 25 c ;
-Elect
+: 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes 
+: 6-inch    14.50 w/e 60 c ;  \ 38 minutes including ladder time
+Elect                         \ 25 minutes each according to Miro
 
 \ Trouble here?
 

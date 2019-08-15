@@ -129,8 +129,8 @@ editor
 
 \ ' dotcomma-number is number
 
-: (settle)  ( -- )  \ eliminate extra blank lines
-  24 to cursor-line   0  \ initial value for #blank lines read
+: (settle)  ( -- )  \ eliminate extra blank lines  see also settle below
+  17 to cursor-line   0  \ initial value for #blank lines read \ was 24  JPPP
   begin cursor-line 1+ file-lines <
   while cursor-line #line" -trailing nip 0=
         if 1+ dup 2 >  \ 1 is one line 2 is two lines between  \ JP 3-24-11
@@ -140,7 +140,7 @@ editor
         then    \  dup . cursor-line .  cr   ( for debugging )
    repeat drop ;
 
-' (settle) is settle
+' (settle) is settle  \ See (settle) right above
 
 : ren ( -<old new> ) { \ RenameFrom$ RenameTo$ -- }
         MAXSTRING LocalAlloc: RenameFrom$

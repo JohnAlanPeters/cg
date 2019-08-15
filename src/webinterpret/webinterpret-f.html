@@ -10,11 +10,11 @@ function doit()
 {
   var txt = document.getElementById('dsp').value;
   var ntxt=txt.substring(lastlen);
+  lastlen+=ntxt.length;
   ntxt=ntxt.replace('\n',' cr ');
-  ntxt=ntxt.slice(0,-4)+' ';
   fetch('',{method: 'post',body:ntxt,headers: {
-    'Content-Type': 'text/plain',
-     )
+    'Content-Type': 'text/plain'
+     }
   })
   .then(response => response.text())
   .then(data => document.getElementById('dsp').value=data)
@@ -26,10 +26,10 @@ function doit()
 Web32Forth 1.03 <br>
 Text John Peters at 415-239-5393 for tecnical help.<br>
 The source code is on GitHub<br>
-Forth is fast but Webbley is slow so far.<br>
-Forth is going to run on the cloud<br>
-We are looking for a permanent URL home<br>
-Please enter your name. You will get an error -13 but we will see your name<br>
+Forth is fast but Webbley - not so much.<br>
+Forth is going to run on the wworld wide web.<br>
+Please enter your name. You will get an error -13 <br>
+but we will be able to see your name and know you were here.<br>
 <textarea id='dsp' rows=56 cols=72></textarea>
 </body>
 </html> 
@@ -41,3 +41,4 @@ node.addEventListener("keyup", function(event) {
     }
 });
 </script>
+

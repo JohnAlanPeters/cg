@@ -3,7 +3,6 @@
 
 anew dosock
 fload sockets    \ Windows Sockets By Andrey Cherezov
-fload ..\vectint
 create ssrvr ," 127.0.0.1" 0 c,
 9999 value sport                       \ arbitrary
 
@@ -50,6 +49,8 @@ create rbuf szbuf allot
 
 : b2sock ( adr cnt -- )
   ssock WriteSocket abort" failed socket write" ;
+
+fload ..\vectint
 
 \ connect to server, read input, xmit kybrd til emptyline
 : do-client init-client

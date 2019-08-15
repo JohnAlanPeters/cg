@@ -287,7 +287,7 @@ defer _Control+W ' close-text is _control+w
             REPEAT ;
 
 : JAPP ; \ Another place marker for use with VIEW
-: F12  ; \ Yet another
+: F13  ; \ Yet another 
                       
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
@@ -362,22 +362,22 @@ defer _Control+W ' close-text is _control+w
       k_F3    +k_shift              OF      back-find-text-again        ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
-      k_F4                          OF      toggle-insert               ENDOF 
-      k_F4    +k_shift              OF      AAA   ( JP? 4-5-09 )        ENDOF
+      k_F4                          OF      toggle-insert               ENDOF
+      k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
       k_F5                          OF      settle                      ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
       K_f6     ( JAPP )             OF      un-add                      ENDOF
-      k_F7                          OF      settle                      ENDOF 
+      k_F7                          OF      settle                      ENDOF
       k_F8                          OF      revert-text                 ENDOF
-      k_F9                          OF      datestamp  ( ^D also )      ENDOF
+      k_F9                          OF      grand-total                 ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
-      k_F10                         OF    ( hyper-link ) grand-total    ENDOF   
+      k_F10                         OF      un-add ( hyper-link )       ENDOF           
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
       k_F11                         OF      prev-link                   ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
-      k_F11   +k_control +k_shift   OF      word-link                   ENDOF
-      k_F12                         OF      close-text                  ENDOF
+      k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
+      k_F12                         OF      datestamp  ( close-text )   ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 
 

@@ -46,7 +46,7 @@ COMMENT;
 2variable CURRENT-RATE
 2variable LABOR-RATE
 : PER-HOUR  Labor-Rate 2! ;        \ The rate is set just below here.
-  180.00 per-hour                  \ Raised for remote bidding  with Miro.                                                          
+  150.00 per-hour                  \ Raised for remote bidding  with Miro.                                                            
 \ 150.00 per-hour                  \ Raided by JP since I have plenty of work.
 \  99.00 per-hour                  \ BV raised on Boris exit July 14, 2013
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
@@ -249,8 +249,8 @@ false value partswholesaleshow
 
 : MARK-IT-UP  ( w/s -- r/t )
    IncWholeSaleSub
-   2.00  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?                  
-
+   1.35  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?                      
+                          \ back to 1.35 after Ez Navar kit LED conversion
 : MMM    ; \ For use with view        
 
 \ MARK-IT-UP  ( w/s -- r/t )
@@ -355,7 +355,7 @@ false value partswholesaleshow
 
 \ copy template to new file or open old file
 : CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
-  max-path localAlloc: to$
+  max-path localAlloc: to$   \ Does not save the file  japp 
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
   if drop s" bids " cgbase" 2dup + 1- 0 swap c!  "chdir

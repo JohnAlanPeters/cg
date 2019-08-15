@@ -68,7 +68,7 @@ editor
     repeat - dup 0 >
     if insert-lines else drop then ;
 
-: vunpad ( -- )  \ reduce multiple blank lines to 2  (same as 'settle'?)
+: vunpad ( -- )  \ reduce multiple blank lines to 2  / same as settle  
   begin cursor-line #line" -trailing nip 0=
   while -1 +to cursor-line repeat 1 +to cursor-line
   cursor-line    #line" -trailing nip 0=
