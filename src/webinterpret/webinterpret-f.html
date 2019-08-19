@@ -8,7 +8,8 @@
 var lastlen=0;
 function doit()
 {
-  var txt = document.getElementById('dsp').value;
+  var dsp=document.getElementById('dsp');
+  var txt =dsp.value;
   var ntxt=txt.substring(lastlen);
   lastlen+=ntxt.length;
   ntxt=ntxt.replace('\n',' cr ');
@@ -17,7 +18,15 @@ function doit()
      }
   })
   .then(response => response.text())
-  .then(data => document.getElementById('dsp').value=data)
+  .then(function(data) {
+     var txt=data.replace('\r','');
+     var dtxt=dsp.value;
+     		if(txt[txt.length-1]!='\n')
+		      txt+='\n';
+     dtxt+=txt;
+     lastlen=dtxt.length;
+     dsp.value=dtxt;
+   })
   .catch(error => console.log('error is', error));
 }
 

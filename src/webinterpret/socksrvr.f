@@ -4,7 +4,7 @@
 
 anew dosock
 fload sockets    \ Windows Sockets By Andrey Cherezov
-create ssrvr ," 127.0.0.1" 0 c,
+create ssrvr ," *" 0 c,
 4444 value sport      \ arbitrary
 
 0 value ssock
@@ -62,7 +62,7 @@ fload ..\vectint      \ load here to access code above
 : do-server  init-server
   begin
     sockread dup -1 =
-    if true ." done"
+    if  ." done"
     else 2dup type
     srvrinput      \ either send webpage or execute the forth
      false

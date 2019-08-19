@@ -12,10 +12,15 @@ variable vec
 : vtype ( addr cnt -- )
   vbuf pplace s"  " vbuf pplace ;  \ add text to a counted string
 
-: hcr s" <br>" vbuf pplace ;
+: hcr crlf$ count vbuf pplace ;
 
 : ?vcr ( n -- )
   ?dup if 64 mod 0= if hcr then then ;
+
+: 2crlfs ( addr len -- addr len )
+   crlf$ count vbuf place crlf$ count vbuf +place
+   vbuf count search -1 =
+   if 4 - swap 4 + swap else 2drop 0  0 then ;
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
@@ -28,7 +33,7 @@ variable vec
   vquery
   ['] interpret
   catch ?dup if ." error " . then
-  vec @ is type
+  vec @ is type [ hidden ] ['] c_cr is cr
   vbuf >r r@ w@ r> 2 + swap dup 0= if drop s" ok" then ;
 
 : sendline ( addr cnt -- )
@@ -36,13 +41,12 @@ variable vec
 
 : scontentlen ( len -- )
    s" Content-length: " b2sock
-   0 (d.) sendline ;
+   0 (d.) sendline crlf$ count b2sock ;
 
 : sendfile ( addr cnt -- )
    r/o open-file not
    if >r vbuf 2048 r@ read-file not
       if  dup scontentlen
-          crlf$ count b2sock   \ empty line before message
           vbuf swap b2sock
       else drop then r> close-file
    then drop ;
@@ -50,18 +54,16 @@ variable vec
 : srvrinput ( addr cnt -- )
    \ check for webpage request
    \ first line has GET <path> HTTP
-   \ assume if path == "\4th", client wants a webpage;
-   \ else, if path == "\4th" client wants forth executed
-   \ TODO: search for path; get past headers to data; edit webpage html
+   \ else client wants forth executed
+   \ get past headers to data
    s" HTTP/1.1 200 OK" sendline
    s" Content-type: text/html" sendline
    s" Server: Forth" sendline
    over 3 s" GET" compare not
    if 2drop
      s" webinterpret-f.html" sendfile
-   else  ( todo: remove headers) 
-2dup type vectint crlf$ count 2dup type b2sock
-        b2sock 
+   else 2crlfs \ remove headers
+        vectint dup scontentlen 2dup type b2sock
    then ;
 
 
