@@ -29,11 +29,13 @@ create rbuf szbuf allot
   rbuf szbuf srvrsock SOCKET-ACCEPT abort" can't accept"
   to ssock ." server is accepted" cr ." socket: " ssock . ;
 
-: sockread ( -- addr cnt )      \ wait for input
-  begin  key? if key 27 = if -1 exit then then   \ quit on escape
-   250 ms  \ pause
+: sockread ( -- addr cnt | -1 or -2 )      \ wait for input
+  0
+  begin \ key? if key 27 = if drop -1 exit then then   \ quit on escape
+   1 +  250 ms  \ pause
+   dup 720 > if drop -2 ." timeout" cr  exit then
    ssock ToRead abort" can't get # to read" ?dup
-  until  \ loop until something to read
+  until nip  \ loop until something to read
   rbuf swap ssock ReadSocket abort" can't read socket"
   rbuf swap ;
 
@@ -63,10 +65,12 @@ fload ..\vectint      \ load here to access code above
   begin
     sockread dup -1 =
     if  ." done"
-    else 2dup type
-    srvrinput      \ either send webpage or execute the forth
-     false
-    then
+    else dup -2 =
+    if srvrsock closesocket drop ssock closesocket drop
+       ." reconnect" cr init-server 0=
+    else srvrinput   \ either send webpage or execute the forth
+      false
+    then then
   until srvrsock closesocket drop ssock closesocket drop ;   \  drop ssock closeSocket drop ;
 
 

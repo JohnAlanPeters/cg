@@ -25,7 +25,6 @@ variable vec
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
   0 vbuf w!
-  ['] type 4 + @ vec !
   ['] vtype is type
   ['] hcr is cr
   ['] ?vcr is ?cr
@@ -33,7 +32,8 @@ variable vec
   vquery
   ['] interpret
   catch ?dup if ." error " . then
-  vec @ is type [ hidden ] ['] c_cr is cr
+   [ hidden ] ['] c_type is type ['] c_cr is cr
+   ['] c_gotoxy is gotoxy ['] c_?cr is ?cr
   vbuf >r r@ w@ r> 2 + swap dup 0= if drop s" ok" then ;
 
 : sendline ( addr cnt -- )
@@ -51,7 +51,7 @@ variable vec
       else drop then r> close-file
    then drop ;
 
-: srvrinput ( addr cnt -- )
+: srvrinput ( addr cnt -- flag )
    \ check for webpage request
    \ first line has GET <path> HTTP
    \ else client wants forth executed
@@ -61,9 +61,9 @@ variable vec
    s" Server: Forth" sendline
    over 3 s" GET" compare not
    if 2drop
-     s" webinterpret-f.html" sendfile
-   else 2crlfs \ remove headers
-        vectint dup scontentlen 2dup type b2sock
+     s" \cg\src\webinterpret\webinterpret-f.html" sendfile
+   else 2crlfs 2dup type cr \ remove headers
+        vectint dup scontentlen 2dup type cr b2sock
    then ;
 
 

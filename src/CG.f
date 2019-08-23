@@ -33,7 +33,7 @@ defer grand-total     \ Defined early so AA can be used in cg-special ctrl-
 defer AAA
 defer reedit
 defer un-add \ for wined
-defer settle \ See also (settle) 
+defer settle \ See also (settle)
 
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 
@@ -108,6 +108,9 @@ Include fish.scr
 Include Ampier.scr
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
+cd webinterpret
+include socksrvr.f
+cd ..
 Include ..\bids\nes-compiled.f  \ colon defs with multiple modules
 
 \ note: cg won't run if next file isn 't last - I don't know why
@@ -150,7 +153,7 @@ forth also forth definitions editor
 : HELLO-CG
     s" bootup" logmsg \ getuser
     Title-CG   current-dir$ setfdir
-    -1 to dp-location  s" \cg\bids" "chdir \  s"  bids" "chdir
+    -1 to dp-location \ s" \cg\bids" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     editor overstrike ( off ) on
     elect
