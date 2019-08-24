@@ -31,7 +31,7 @@ create rbuf szbuf allot
 
 : sockread ( -- addr cnt | -1 or -2 )      \ wait for input
   0
-  begin \ key? if key 27 = if drop -1 exit then then   \ quit on escape
+  begin key? if key 27 = if drop -1 exit then then   \ quit on escape
    1 +  250 ms  \ pause
    dup 720 > if drop -2 ." timeout" cr  exit then
    ssock ToRead abort" can't get # to read" ?dup
@@ -71,6 +71,4 @@ fload ..\vectint      \ load here to access code above
     else srvrinput   \ either send webpage or execute the forth
       false
     then then
-  until srvrsock closesocket drop ssock closesocket drop ;   \  drop ssock closeSocket drop ;
-
-
+  until srvrsock closesocket drop ssock closesocket drop ;
