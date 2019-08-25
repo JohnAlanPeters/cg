@@ -34,7 +34,7 @@ variable vec
   catch ?dup if ." error " . then
    [ hidden ] ['] c_type is type ['] c_cr is cr
    ['] c_gotoxy is gotoxy ['] c_?cr is ?cr
-  vbuf >r r@ w@ r> 2 + swap dup 0= if drop s" ok" then ;
+  vbuf >r r@ w@ r> 2 + swap dup 0= if 2drop s" ok" then ;
 
 : sendline ( addr cnt -- )
   ssock WriteSocketLine drop ;
@@ -51,7 +51,7 @@ variable vec
       else drop then r> close-file
    then drop ;
 
-: srvrinput ( addr cnt -- flag )
+: srvrinput ( addr cnt -- )
    \ check for webpage request
    \ first line has GET <path> HTTP
    \ else client wants forth executed
@@ -63,7 +63,7 @@ variable vec
    if 2drop
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs 2dup type cr \ remove headers
-        vectint dup scontentlen 2dup type cr b2sock
+        vectint dup scontentlen cr 2dup type cr b2sock
    then ;
 
 
