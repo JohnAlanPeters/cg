@@ -162,7 +162,7 @@ forth also forth definitions editor
     else  cmdline drop c@ ascii 0 =
           if file-to-edit$ off
              focus-console false to invkloop
-             cmdline 2 -2 d+ swap evaluate quit 
+             cmdline 2 -2 d+ evaluate quit 
           then
           cmdline file-to-edit$ place
     then

@@ -61,7 +61,8 @@ fload ..\vectint      \ load here to access code above
   until ssock closeSocket ;
 
 \ accept connection, xmit msg, read input, xmit kybrd til emptyline
-: do-server  init-server
+: do-server 
+  init-server
   begin
     sockread dup -1 =
     if  ." done"

@@ -2,7 +2,7 @@
 
 <meta charset="utf-8" />
 
-<title>test input</title>
+<title>Win32Forth</title>
 
 <script language="javascript" type="text/javascript">
 var lastlen=0;
@@ -11,7 +11,8 @@ function doit()
   var dsp=document.getElementById('dsp');
   var txt=dsp.value;
   var ntxt=txt.substring(lastlen-1);
-  lastlen+=ntxt.length;
+  if( ntxt[ntxt.length-1] != '\n')
+      ntxt+='\n';
   fetch('',{method: 'post',body:ntxt,headers: {
     'Content-Type': 'text/plain'
      }
@@ -30,15 +31,15 @@ function doit()
 
 </script>
 <body>
-Web32Forth 1.03 <br>
-Text John Peters at 415-239-5393 for technical help.<br>
-The source code is on GitHub<br>
-Forth is fast but Webbley - almost as fast.<br>
-WORDS takes some time to come back, but it works.<br>
-Forth will be on the world wide web after a while.<br>
-Please enter your name. You will get an error -13 <br>
-but we will be able to see your name.<br>
-<textarea id='dsp' rows=56 cols=205></textarea>
+Web32Forth 2.00 by Robert Ackerman and<br>
+John Alan Peters 415-239-5393 text only.<br>
+We are on GitHub with the project name CG.<br>
+The (Contract Generator tm) for electricians.<br>
+WORDS still requires 2 CRs to make it perform.<br>
+ELECTRIC WORDS takes about 5 seconds because it is<br>
+ecohing to the local screen for development<br>
+m m m m m (Man at work!)<br>
+<textarea id='dsp' rows=56 cols=205 autofocus></textarea>
 </body>
 </html>
 <script>

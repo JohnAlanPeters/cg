@@ -2,7 +2,7 @@
 create vbuf 200 1024 * allot
 variable vec
 
-: pplace ( addr cnt buf -- )
+: pplace ( addr cnt buf -- )  \ add text to word counted buffer
   dup >r 2 + r@ w@ + swap >r r@ cmove
   r> r@ w@ + r> w! ;
 
@@ -28,13 +28,15 @@ variable vec
   ['] vtype is type
   ['] hcr is cr
   ['] ?vcr is ?cr
-  ['] 2drop is gotoxy
   vquery
   ['] interpret
-  catch ?dup if ." error " . then
-   [ hidden ] ['] c_type is type ['] c_cr is cr
-   ['] c_gotoxy is gotoxy ['] c_?cr is ?cr
-  vbuf >r r@ w@ r> 2 + swap dup 0= if 2drop s" ok" then ;
+  catch
+  [ hidden ] ['] c_type is type ['] c_cr is cr
+  ['] c_?cr is ?cr
+   ?dup if ." error " . then
+  \ vbuf >r r@ w@ r> 2 + swap dup 0= if 2drop s" ok" then
+  s"  ok " vbuf pplace vbuf >r r@ w@ r> 2 + swap
+   ;
 
 : sendline ( addr cnt -- )
   ssock WriteSocketLine drop ;
@@ -63,7 +65,7 @@ variable vec
    if 2drop
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs 2dup type cr \ remove headers
-        vectint dup scontentlen cr 2dup type cr b2sock
+        vectint dup scontentlen  b2sock
    then ;
 
 
