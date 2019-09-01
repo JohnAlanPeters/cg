@@ -20,9 +20,10 @@ function doit()
   .then(response => response.text())
   .then(function(data) {
      var dtxt=dsp.value;
+     if( data[data.length-1] == '\n')
+        dtxt=dtxt.slice(0,dtxt.length-1);
+     dtxt+='  ';
      dtxt+=data;
-     if( data[data.length-1] != '\n')
-         dtxt+='\n';
      lastlen=dtxt.length;
      dsp.value=dtxt;
    })
