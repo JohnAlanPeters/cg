@@ -34,7 +34,7 @@ create vbuf 4 1024 * allot
     vec 2@ (source) 2!
     [ hidden ] ['] c_type is type ['] c_cr is cr
     ['] c_?cr is ?cr
-    0 ?dup if ." error " . then
+    ?dup if ." error " . then
     s"  ok " vbuf wplace crlf$ count vbuf wplace vbuf wcount ;
 
 : sendline ( addr cnt -- )
