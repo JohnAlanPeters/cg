@@ -1,5 +1,5 @@
 
-create vbuf 4 1024 * allot
+create vbuf 200 1024 * allot
 2variable vec   \ save source to restore after interpret
 
 : wplace ( addr cnt buf -- )  \ add text to word counted buffer
@@ -12,7 +12,7 @@ create vbuf 4 1024 * allot
 : vtype ( addr cnt -- )
   vbuf wplace s"  " vbuf wplace ;  \ add text to word counted buffer
 
-: hcr crlf$ count vbuf wplace ;
+: hcr crlf$ count 1- vbuf wplace ;
 
 : ?vcr ( n -- )
   ?dup if 64 mod 0= if hcr then then ;
@@ -31,10 +31,11 @@ create vbuf 4 1024 * allot
    vquery
    ['] _interpret
    catch
+    dup if ." error " dup . then
     vec 2@ (source) 2!
     [ hidden ] ['] c_type is type ['] c_cr is cr
     ['] c_?cr is ?cr
-    ?dup if ." error " . then
+    ?dup if ." error " . .. then
     s"  ok " vbuf wplace crlf$ count vbuf wplace vbuf wcount ;
 
 : sendline ( addr cnt -- )
