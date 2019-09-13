@@ -25,7 +25,7 @@ create rbuf szbuf allot
   to srvrsock
   sport srvrsock BindSocket abort" can't bind to port"
   srvrsock ListenSocket abort" can't listen"
-  ." waiting to accept client" cr
+  ." Waiting to accept client." cr 
   rbuf szbuf srvrsock SOCKET-ACCEPT abort" can't accept"
   to ssock ." server is accepted" cr ." socket: " ssock . ;
 
@@ -61,7 +61,8 @@ fload ..\vectint      \ load here to access code above
   until ssock closeSocket ;
 
 \ accept connection, xmit msg, read input, xmit kybrd til emptyline
-: do-server 
+: do-server
+  do-serv-flag on
   init-server
   begin
     sockread dup -1 =
@@ -72,4 +73,4 @@ fload ..\vectint      \ load here to access code above
     else srvrinput   \ either send webpage or execute the forth
       false
     then then
-  until srvrsock closesocket drop ssock closesocket drop ;
+  until srvrsock closesocket drop ssock closesocket drop do-serv-flag off ;

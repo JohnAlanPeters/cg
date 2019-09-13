@@ -66,7 +66,7 @@ create vbuf 200 1024 * allot
    if 2drop
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs ?dup if 2dup type cr \ remove headers
-        vectint 2dup type dup sendheaders b2sock
+        vectint ( 2dup type ) dup sendheaders b2sock   \ jappjapp
        else drop then
    then ;
 

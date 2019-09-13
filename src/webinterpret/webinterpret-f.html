@@ -26,20 +26,17 @@ function doit()
      dtxt+=data;
      lastlen=dtxt.length;
      dsp.value=dtxt;
-   })
+     dsp.scrollTop=dsp.scrollHeight;   
+  })
   .catch(error => console.log('error is', error));
 }
 
 </script>
 <body>
-Web32Forth 2.00 by Robert Ackerman and<br>
-John Alan Peters 415-239-5393 text only.<br>
-We are on GitHub with the project name CG.<br>
-The (Contract Generator tm) for electricians.<br>
-WORDS still requires 2 CRs to make it perform.<br>
-ELECTRIC WORDS takes about 5 seconds because it is<br>
-ecohing to the local screen for development<br>
-m m m m m (Man at work!)<br>
+Web32Forth 2.01 by Robert Ackerman and John Alan Peters 415-239-5393 text only.<br>
+We are on GitHub as JohnAlanPeters/CG<r>
+The (Contract Generator tm) is for electricians to build estimates.<br>
+WORDS takes 45 seconds to display 2,846 words. It is ecohing on the local screen for development<br>
 <textarea id='dsp' rows=56 cols=205 autofocus></textarea>
 </body>
 </html>
