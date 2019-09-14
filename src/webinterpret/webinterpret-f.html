@@ -26,17 +26,32 @@ function doit()
      dtxt+=data;
      lastlen=dtxt.length;
      dsp.value=dtxt;
-     dsp.scrollTop=dsp.scrollHeight;   
+     dsp.scrollTop=dsp.scrollHeight;
   })
   .catch(error => console.log('error is', error));
 }
 
 </script>
 <body>
-Web32Forth 2.01 by Robert Ackerman and John Alan Peters 415-239-5393 text only.<br>
-We are on GitHub as JohnAlanPeters/CG<r>
-The (Contract Generator tm) is for electricians to build estimates.<br>
-WORDS takes 45 seconds to display 2,846 words. It is ecohing on the local screen for development<br>
+Web32Forth 2.02 by Robert Ackerman & John Peters 415-239-5393 TEXT is best 24/7<br>
+You can run the sustem on your own machine. The source is on GitHub under JohnAlanPeters/CG<br>
+The (Contract Generator tm) has preloaded data for electricians to build estimates.<br>
+WEBBLY HOURS.<br>
+We tend to work on it 8 to 9 AM and six thirty to eight thirty pacific Coast time.<br>
+Try stuff - If you crash, don't worry, it re-starts after 3 minutes of inactivity.<br>
+<br>
+ELECTRIC WORDS shows a bunch of electrical parts names after a short delay.<br>
+WORDS takes 45 seconds to display 2,846 words.<br>
+The output is buffered, so it looks like nothing is happining and then bang.<br>
+When a web page sends a request it can only receive one response at a time.<br>
+It may be tricky to write some code to send one line at a time till Forth is done.<br>
+<br>
+MOST all the words work propely. Let us know.<br>
+Try .LOADED  .DEFERRED  .FILE  .FONTS .FREE and more<br>
+SEE TEST will decompile the word TEST into it's components.<br>
+<br>
+The system is broken til Saturday morning.<br>
+<br>
 <textarea id='dsp' rows=56 cols=205 autofocus></textarea>
 </body>
 </html>

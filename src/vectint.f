@@ -51,7 +51,7 @@ create vbuf 200 1024 * allot
 
 : sendfile ( addr cnt -- )
    r/o open-file not
-   if >r vbuf 2048 r@ read-file not
+   if >r vbuf 4096 r@ read-file not
       if  dup sendheaders
           vbuf swap b2sock
       else drop then r> close-file
@@ -65,8 +65,10 @@ create vbuf 200 1024 * allot
    over 3 s" GET" compare not
    if 2drop
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
-   else 2crlfs ?dup if 2dup type cr \ remove headers
-        vectint ( 2dup type ) dup sendheaders b2sock   \ jappjapp
+   else 2crlfs ?dup if \ remove headers
+        vectint
+        2dup type \ Types MOST of the output to the local machine.
+        dup sendheaders b2sock   \ jappjapp
        else drop then
    then ;
 
