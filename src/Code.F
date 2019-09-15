@@ -299,11 +299,18 @@ false value partswholesaleshow
 
 : sub  sub-total ; \ an alias
 
-: TOTAL  ( -- ) \ display totals in console
-     sub-total  clear-totals ;
 
 : HL ( -- )
-         0 spaces ." Only      Part         Parts       Time          Labor       Sell " ;                                        
+     31 >ccol  ." Quan"
+     42 >ccol  ." Part"
+     53 >ccol  ." Parts"
+     64 >ccol  ." Time"
+     75 >ccol  ." Labor"
+     86 >ccol  ." Sell" ;
+
+: TOTAL  ( -- ) \ display totals in console
+     HL cr sub-total  clear-totals ;
+
 
 : HEADLINE ( -- )
      cr 31 spaces ." Only       Part       Parts      Time       Labor      Sell " ;
