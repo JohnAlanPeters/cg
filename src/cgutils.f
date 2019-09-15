@@ -151,7 +151,7 @@ editor
         if ." failed to rename file" then ;
 
 : >ccol ( n -- )   \ move console cursor to given column
-  getxy nip gotoxy ;
+  getxy nip gotoxy  ;
 
 : ins ( -- )  \ put editor in insert mode
   [ editor ] overstrike on toggle-insert ;
