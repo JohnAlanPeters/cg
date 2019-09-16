@@ -185,17 +185,38 @@ false value partswholesaleshow
   then ;
 
 : CONS-SHOW-PARTS ( -- )
-  32 >ccol quan 2@  1.00 d/ d. ." @"
-  43 >ccol parts-cost 2@ bucks ."  ="
-  55 >ccol parts-ext 2@ bucks ;
+  conscol @ -1 >
+  if
+    16 ( 32 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    21 ( 43 ) >ccol parts-cost 2@ bucks ."  ="
+    33 ( 55 ) >ccol parts-ext 2@ bucks
+  else
+    16 ( 32 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 ( 43 ) >ccol parts-cost 2@ bucks ."  ="
+    39 ( 55 ) >ccol parts-ext 2@ bucks 
+  then ;
+
 : CONS-SHOW-TIME ( -- )
-  65 >ccol time-ext 2@ bucks ."  hr" ;
+  conscol @ 0>
+  if 40  else 49 ( 65 )
+  then >ccol time-ext 2@ bucks ."  hr" ;
+
 : CONS-SHOW-SELL ( -- )
-  77 >ccol labor-ext 2@ bucks
-  87 >ccol sell-ext  2@ bucks
-  discount
-  if sell-ext 2@ discount 0 d* 1.00 d/
-     97 >ccol bucks
+  conscol @ 0>
+  if
+    52 ( 77 ) >ccol labor-ext 2@ bucks
+    62 ( 87 ) >ccol sell-ext  2@ bucks
+    discount
+    if sell-ext 2@ discount 0 d* 1.00 d/
+     72 ( 97 ) >ccol bucks 
+    then
+  else
+    61 ( 77 ) >ccol labor-ext 2@ bucks
+    71 ( 87 ) >ccol sell-ext  2@ bucks
+    discount
+    if sell-ext 2@ discount 0 d* 1.00 d/
+     81 ( 97 ) >ccol bucks
+    then 
   then ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -292,21 +313,29 @@ false value partswholesaleshow
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 
 : SUB-TOTAL ( -- )  \ display sub-totals in console
-     55 >ccol parts-total 2@ bucks
-     65 >ccol time-total  2@ bucks ."  hr"
-     77 >ccol labor-total 2@ bucks
-     87 >ccol sell-total  2@ bucks ;
+  conscol @ -1 >
+  if 
+    33 ( 55 ) >ccol parts-total 2@ bucks  \ web server
+    42 ( 65 ) >ccol time-total  2@ bucks ."  hr"
+    54 ( 77 ) >ccol labor-total 2@ bucks
+    63 ( 87 ) >ccol sell-total  2@ bucks 
+  else
+    39 ( 55 ) >ccol parts-total 2@ bucks  \ surface
+    49 ( 65 ) >ccol time-total  2@ bucks ."  hr"
+    61 ( 77 ) >ccol labor-total 2@ bucks
+    71 ( 87 ) >ccol sell-total  2@ bucks
+  then ;
 
 : sub  sub-total ; \ an alias
 
 
 : HL ( -- )
-     31 >ccol  ." Quan"
-     42 >ccol  ." Part"
-     53 >ccol  ." Parts"
-     64 >ccol  ." Time"
-     75 >ccol  ." Labor"
-     86 >ccol  ." Sell" ;
+     16 ( 31 ) >ccol  ." Quan"
+     26 ( 42 ) >ccol  ." Part"
+     37 (  53 ) >ccol  ." Parts"
+     48 (  64 ) >ccol  ." Time"
+     59 (  75 ) >ccol  ." Labor"
+     70 (  86 ) >ccol  ." Sell" ;
 
 : TOTAL  ( -- ) \ display totals in console
      HL cr sub-total  clear-totals ;

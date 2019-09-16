@@ -6,16 +6,21 @@ create vbuf 200 1024 * allot
   over >r dup>r wcount + swap cmove r> r> swap w+! ;
 
 : vQUERY ( addr cnt -- )
+  dup conscol ! 
   (source) 2@ vec 2!
   (SOURCE) 2! >IN OFF 0 TO SOURCE-ID 0 TO SOURCE-POSITION ;
 
 : vtype ( addr cnt -- )
-  vbuf wplace s"  " vbuf wplace ;  \ add text to word counted buffer
+  dup conscol +!
+  vbuf wplace ;  \  s"  " vbuf wplace ;  \ add text to word counted buffer
 
-: hcr crlf$ count 1- vbuf wplace ;
+: vcr conscol off crlf$ count 1- vbuf wplace ;
 
 : ?vcr ( n -- )
-  ?dup if 64 mod 0= if hcr then then ;
+  ?dup if 64 mod 0= if vcr then then ;
+
+: vemit ( c -- ) 1 conscol +!
+  sp@ 1 vbuf wplace ;
 
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
@@ -26,15 +31,16 @@ create vbuf 200 1024 * allot
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
   0 vbuf w!
    ['] vtype is type
-   ['] hcr is cr
+   ['] vcr is cr
    ['] ?vcr is ?cr
+   ['] vemit is emit
    vquery
    ['] _interpret
    catch
     dup if ." error " dup . then
     vec 2@ (source) 2!
-    [ hidden ] ['] c_type is type ['] c_cr is cr
-    ['] c_?cr is ?cr
+    [ hidden ] ['] c_emit is emit  ['] c_type is type ['] c_cr is cr
+    ['] c_?cr is ?cr  -1 conscol !  \ switch to ordinary output
     ?dup if ." error " . .. then
     s"  ok " vbuf wplace crlf$ count vbuf wplace vbuf wcount ;
 
@@ -66,8 +72,9 @@ create vbuf 200 1024 * allot
    if 2drop
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs ?dup if \ remove headers
+        2dup type
         vectint
-        2dup type \ Types MOST of the output to the local machine.
+        cr 2dup type \ Types MOST of the output to the local machine.
         dup sendheaders b2sock   \ jappjapp
        else drop then
    then ;

@@ -75,7 +75,8 @@ sys-warning-off
 
 forth also forth definitions editor
 0 to saved-depth
-0 variable do-serv-flag \ Are we in local or web
+variable do-serv-flag \ Are we in local or web
+variable conscol -1 conscol !  \ column for output in current console line
 
 Include patch.f         \ Hot patch a word for a temporary change
 Include vSCR.f          \ +vSCR  vINDEX  >vSCR
