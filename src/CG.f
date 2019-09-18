@@ -37,6 +37,9 @@ defer settle \ See also (settle)
 
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 
+0 value in-web? \ Are we in web?  0 = No
+variable conscol -1 conscol !  \ column for output in current console line
+
 0 value  topwin
 0 value invkloop  \ so we know when we are editing (in view-key-loop)
 0 0 2value last-total  \ has to be remembered before clearing
@@ -88,6 +91,7 @@ Include CONVERT.F       \ Back tick and some other compiler directives
 Include PRETTY.F        \ Pretty printing words including PRT# and more
 Include CODE.f          \ EXTEND the prices.
 Include P-OK.F          \ ELECT Vocabulary created, only load one once!
+Include CODE2.F         \ Factored the code for web vs local console jappjapp
 Include EXTEND-PRICES.F \ Used by Ctrl+E
 Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
 \ Include NPS.F           \ The database of prices and times

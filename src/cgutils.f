@@ -151,7 +151,7 @@ editor
         if ." failed to rename file" then ;
 
 : >ccol ( n -- )   \ move console cursor to given column
-  conscol @ -1 =
+  conscol @ -1 =  
   if getxy nip gotoxy
   else conscol @ - spaces then ;        \  ;
 

@@ -62,7 +62,7 @@ fload ..\vectint      \ load here to access code above
 
 \ accept connection, xmit msg, read input, xmit kybrd til emptyline
 : do-server
-  do-serv-flag on
+  -1 to in-web?
   init-server
   begin
     sockread dup -1 =
@@ -73,4 +73,4 @@ fload ..\vectint      \ load here to access code above
     else srvrinput   \ either send webpage or execute the forth
       false
     then then
-  until srvrsock closesocket drop ssock closesocket drop do-serv-flag off ;
+  until srvrsock closesocket drop ssock closesocket drop 0 to in-web? ;

@@ -183,41 +183,48 @@ false value partswholesaleshow
   if sell-sub 2@ discount 0 d* 1.00 d/
      discount-col TAB-in bucks
   then ;
+                                                \ JP start of factoring
+: web-show
+    10 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    21 ( 21 ) >ccol parts-cost 2@ bucks ."  ="
+    33 ( 33 ) >ccol parts-ext 2@ bucks  ;
+
+: console-show
+    16 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    31 ( 27 ) >ccol parts-cost 2@ bucks ."  ="
+    43 ( 39 ) >ccol parts-ext 2@ bucks ;
 
 : CONS-SHOW-PARTS ( -- )
-  conscol @ -1 >
-  if
-    16 ( 32 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    21 ( 43 ) >ccol parts-cost 2@ bucks ."  ="
-    33 ( 55 ) >ccol parts-ext 2@ bucks
-  else
-    16 ( 32 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    27 ( 43 ) >ccol parts-cost 2@ bucks ."  ="
-    39 ( 55 ) >ccol parts-ext 2@ bucks 
+  in-web?
+  if  web-show
+  else console-show
   then ;
-
+                                                 \ JP end of factoring
 : CONS-SHOW-TIME ( -- )
-  conscol @ 0>
-  if 40  else 49 ( 65 )
-  then >ccol time-ext 2@ bucks ."  hr" ;
+  in-web?
+  if  40  else 51
+  then  >ccol time-ext 2@ bucks ."  hr" ;
 
 : CONS-SHOW-SELL ( -- )
-  conscol @ 0>
-  if
+  in-web?
+  if  \ which one?
     52 ( 77 ) >ccol labor-ext 2@ bucks
     62 ( 87 ) >ccol sell-ext  2@ bucks
     discount
-    if sell-ext 2@ discount 0 d* 1.00 d/
-     72 ( 97 ) >ccol bucks 
+    if  \ the other one
+     sell-ext 2@ discount 0 d* 1.00 d/
+     72 ( 97 ) >ccol bucks
     then
-  else
+  else  \ wich one?
     61 ( 77 ) >ccol labor-ext 2@ bucks
     71 ( 87 ) >ccol sell-ext  2@ bucks
     discount
-    if sell-ext 2@ discount 0 d* 1.00 d/
-     81 ( 97 ) >ccol bucks
-    then 
+    if  \ wich one?
+      sell-ext 2@ discount 0 d* 1.00 d/
+      81 ( 97 ) >ccol bucks
+    then
   then ;
+
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 6   DISPLAY THE PARTS, LABOR AND SELL PRICES =====
@@ -312,34 +319,35 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 
-: SUB-TOTAL ( -- )  \ display sub-totals in console
+: SUB-TOTAL ( -- )  \ display sub-totals
   conscol @ -1 >
-  if 
-    33 ( 55 ) >ccol parts-total 2@ bucks  \ web server
-    42 ( 65 ) >ccol time-total  2@ bucks ."  hr"
-    54 ( 77 ) >ccol labor-total 2@ bucks
-    63 ( 87 ) >ccol sell-total  2@ bucks 
+  if
+    34 ( 33 ) >ccol parts-total 2@ bucks  \ web server
+    43 ( 42 ) >ccol time-total  2@ bucks ."  hr"
+    55 ( 54 ) >ccol labor-total 2@ bucks
+    64 ( 63 ) >ccol sell-total  2@ bucks
   else
-    39 ( 55 ) >ccol parts-total 2@ bucks  \ surface
-    49 ( 65 ) >ccol time-total  2@ bucks ."  hr"
-    61 ( 77 ) >ccol labor-total 2@ bucks
-    71 ( 87 ) >ccol sell-total  2@ bucks
+    39 ( 39 ) >ccol parts-total 2@ bucks  \ surface
+    49 ( 49 ) >ccol time-total  2@ bucks ."  hr"
+    61 ( 61 ) >ccol labor-total 2@ bucks
+    71 ( 71 ) >ccol sell-total  2@ bucks
   then ;
 
 : sub  sub-total ; \ an alias
 
 
-: HL ( -- )
-     16 ( 31 ) >ccol  ." Quan"
-     26 ( 42 ) >ccol  ." Part"
-     37 (  53 ) >ccol  ." Parts"
-     48 (  64 ) >ccol  ." Time"
-     59 (  75 ) >ccol  ." Labor"
-     70 (  86 ) >ccol  ." Sell" ;
+: HL ( -- ) \ Headline
+     16 ( 16 ) >ccol  ." Quan"
+     24 ( 26 ) >ccol  ." Part R/T"
+     37 ( 37 ) >ccol  ." Parts"
+     47 ( 48 ) >ccol  ." Time"
+     58 ( 59 ) >ccol  ." Labor"
+     68 ( 70 ) >ccol  ." Sell" ;
 
 : TOTAL  ( -- ) \ display totals in console
      HL cr sub-total  clear-totals ;
 
+: TT total  ;  \ development schortcut  
 
 : HEADLINE ( -- )
      cr 31 spaces ." Only       Part       Parts      Time       Labor      Sell " ;

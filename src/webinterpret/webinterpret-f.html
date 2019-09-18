@@ -33,27 +33,33 @@ function doit()
 }
 </script>
 <body>
-Web32Forth 2.02 by Robert Ackerman & John Peters 415-239-5393 TEXT is best 24/7<br>
+Web32Forth 3.00 by Robert Ackerman & John Peters 415-239-5393 TEXT is best 24/7<br>
 You can DL the system on to your own machine. The source is on GitHub under JohnAlanPeters/CG<br>
 The (Contract Generator tm) has preloaded data for electricians to build estimates.<br>
 WEBBLY HOURS.<br>
 We tend to work on it 8-9 AM and 6-9 PM M-F and odd times on weekends, Pacific Coast time.<br>
-If you crash, it re-starts after 3 minutes of inactivity.<br>
+If you crash, it restarts after 3 minutes of inactivity.<br>
 <br>
-ELECTRIC WORDS shows a bunch of electrical parts names after a short delay.<br>
+ELECTRIC WORDS shows a list of electrical parts names after a short delay.<br>
 WORDS takes 45 seconds to display 2,846 words because,<br>
 The output is buffered, so it looks like nothing is happining and then bang.<br>
 The browser HTML code buffers the output so it can send it all at one time.<br>
-We may have to recode it to send each single line of otput immediatly.<br>
+We may have to recode it to send each single line of output immediatly.<br>
 <br>
-All the Forth words work just like on the hard disk based system, No?<br>
-BUG Forth words that call GOTOXY and GETXY call STDOUT: a windows call not available here.<br>
+All the Forth words work just like on the hard disk based system. <br>
+THANKS to Robert for herculean thinking and coding to get the local server screen to start working.<br>
 <br>
- &#58 TEST 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>        
+ &#58 TEST 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
 <!-- colon       dot-quote         quote cr loop semicolon -->
 Try .LOADED .DEFERRED .FILE .FONTS .FREE SEE (sub-string) and all the rest.<br>
 <br>
-<textarea id='dsp' rows=56 cols=205 autofocus></textarea>
+Enter the following 3 lines, one at a time, to find out how much to charge to run 2 20A circuits in pipe for 100 feet.<br)
+Devide by 100 for the price per linear foot installed<br>
+The labor unnits are from NICA and the parts prices are from the National Price Service. Some are out of date but not by much.<br>
+100 EMT  1/2<br> 
+300 THHN #12<br>
+TOTAL<br>
+<textarea id='dsp' rows=56 cols=205 autofocus style="font-family:courier;"></textarea>
 </body>
 </html>
 <script>
