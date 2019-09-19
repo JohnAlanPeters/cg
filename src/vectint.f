@@ -6,7 +6,7 @@ create vbuf 200 1024 * allot
   over >r dup>r wcount + swap cmove r> r> swap w+! ;
 
 : vQUERY ( addr cnt -- )
-  dup conscol ! 
+  conscol off
   (source) 2@ vec 2!
   (SOURCE) 2! >IN OFF 0 TO SOURCE-ID 0 TO SOURCE-POSITION ;
 
@@ -20,7 +20,7 @@ create vbuf 200 1024 * allot
   ?dup if 64 mod 0= if vcr then then ;
 
 : vemit ( c -- ) 1 conscol +!
-  sp@ 1 vbuf wplace ;
+  sp@ 1 vbuf wplace drop ;
 
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
@@ -73,7 +73,7 @@ create vbuf 200 1024 * allot
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs ?dup if \ remove headers
         2dup type
-        vectint
+        vectint     
         cr 2dup type \ Types MOST of the output to the local machine.
         dup sendheaders b2sock   \ jappjapp
        else drop then
