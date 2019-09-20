@@ -1,9 +1,9 @@
 
 : Total-WEB ( -- ) \ display sub-totals on web
-34 ( 34 ) >ccol parts-total 2@ bucks
-43 ( 43 ) >ccol time-total  2@ bucks ."  hr"
-55 ( 57 ) >ccol labor-total 2@ bucks
-62 ( 62 ) >ccol sell-total  2@ bucks ;      
+37 ( 34 ) >ccol parts-total 2@ bucks
+46 ( 43 ) >ccol time-total  2@ bucks ."  hr"
+58 ( 57 ) >ccol labor-total 2@ bucks
+65 ( 62 ) >ccol sell-total  2@ bucks ;       
 
 : Total-con ( -- ) \ display sub-totals in console
     ( 35 ) >ccol parts-total 2@ bucks
@@ -12,7 +12,7 @@
     ( 70 ) >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
-     7 spaces ." Only            Part       Parts     Time       Labor     Sell " ;
+     10 spaces ." Only            Part       Parts     Time       Labor     Sell " ;
 
 : Headline-con ( -- ) \ Tells the name of the column
 16 ( 16 ) >ccol  ." Quan"   \ ok

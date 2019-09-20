@@ -6,7 +6,7 @@ create vbuf 200 1024 * allot
   over >r dup>r wcount + swap cmove r> r> swap w+! ;
 
 : vQUERY ( addr cnt -- )
-  conscol off
+  dup conscol !   
   (source) 2@ vec 2!
   (SOURCE) 2! >IN OFF 0 TO SOURCE-ID 0 TO SOURCE-POSITION ;
 
