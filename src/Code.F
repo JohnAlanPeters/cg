@@ -266,8 +266,10 @@ false value partswholesaleshow
 
 : remvoc ( -- )  \ remember vocab we are in for later display
   context @ voc>vcfa , ;
+
 : CONS-SHOW-ALL   ( -- )   \ output on current console line
-  ( context @ voc>vcfa .name ) cons-show-parts cons-show-time  cons-show-sell ;  
+   ( context @ voc>vcfa .name )
+  cons-show-parts cons-show-time  cons-show-sell ;
 
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
@@ -319,6 +321,7 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 
+((
 : SUB-TOTAL ( -- )  \ display sub-totals
   conscol @ -1 >
   if
@@ -334,24 +337,46 @@ false value partswholesaleshow
   then ;
 
 : sub  sub-total ; \ an alias
+))
 
+: Total-WEB ( -- ) \ display sub-totals on web
+  37 ( 34 ) >ccol parts-total 2@ bucks
+  46 ( 43 ) >ccol time-total  2@ bucks ."  hr"
+  58 ( 57 ) >ccol labor-total 2@ bucks
+  65 ( 62 ) >ccol sell-total  2@ bucks ;
 
-: HL ( -- ) \ Headline
-     16 ( 16 ) >ccol  ." Quan"
-     24 ( 26 ) >ccol  ." Part R/T"
-     37 ( 37 ) >ccol  ." Parts"
-     47 ( 48 ) >ccol  ." Time"
-     58 ( 59 ) >ccol  ." Labor"
-     68 ( 70 ) >ccol  ." Sell" ;
+: Total-con ( -- ) \ display sub-totals in console
+  37  ( 35 ) >ccol parts-total 2@ bucks
+  46  ( 45 ) >ccol time-total  2@ bucks ."  hr"
+  58  ( 59 ) >ccol labor-total 2@ bucks
+  65  ( 70 ) >ccol sell-total  2@ bucks ;
 
-: TOTAL  ( -- ) \ display totals in console
-     HL cr sub-total  clear-totals ;
+: Headline-WEB ( -- )
+     conscol @ 40 > if cr then
+     10 spaces ." Only            Part       Parts     Time       Labor     Sell " ;
 
-: TT total  ;  \ development schortcut  
+: Headline-con ( -- ) \ names of the columns
+16 ( 16 ) >ccol  ." Quan"
+30 ( 30 ) >ccol  ." Part"
+45 ( 45 ) >ccol  ." Parts"
+50 ( 50 ) >ccol  ." Time"
+59 ( 59 ) >ccol  ." Labor"
+67 ( 67 ) >ccol  ." Sell" ;
 
-: HEADLINE ( -- )
-     cr 31 spaces ." Only       Part       Parts      Time       Labor      Sell " ;
+: HEADLINE
+  in-web?
+  if   headline-WEB
+  else headline-con
+  then ;
 
+: TOTAL
+  Headline
+  in-web? cr
+  if   total-WEB
+  else total-con
+  then  clear-totals ;
+
+: TT total  ;  \ development shortcut
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank

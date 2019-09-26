@@ -91,7 +91,6 @@ Include CONVERT.F       \ Back tick and some other compiler directives
 Include PRETTY.F        \ Pretty printing words including PRT# and more
 Include CODE.f          \ EXTEND the prices.
 Include P-OK.F          \ ELECT Vocabulary created, only load one once!
-Include CODE2.F         \ Factored the code for web vs local console jappjapp
 Include EXTEND-PRICES.F \ Used by Ctrl+E
 Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
 \ Include NPS.F           \ The database of prices and times
@@ -133,11 +132,23 @@ forth also forth definitions editor
    0 word c@
    if pocket count BL SKIP "CLIP" "+open-text
    then  cursor-on-screen reEdit ;
+
 : oo ['] (oo) catch 0<> if message then  ;
 
-: VV ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
+: VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   .viewinfo count "+open-text 0 swap 1-
   to-find-line refresh-line reEdit ;
+
+: VV-web ( <word> -- ) bl word drop cr   
+  ." Use SEE <word> to decompile the source code." cr
+  ." To view the code in the context of the surce file, you need the to download the system or  " cr
+  ." You can view the code in GitHub at https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
+
+: VV
+  in-web?
+  if vv-web
+  else vv-con
+  then ; 
 
 : Done   ( -- )   save-text focus-console ." File Saved" ;
 : CAF    Done ;  \ As in close all files
@@ -165,14 +176,14 @@ forth also forth definitions editor
     cmdline 0= swap 0= or
     if file-to-edit$ off
     else  cmdline drop c@ ascii 0 =
-          if file-to-edit$ off
+          if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
-             cmdline 2 -2 d+ evaluate quit 
+             cmdline 2 -2 d+ evaluate
           then
           cmdline file-to-edit$ place
     then
     \ call GetFocus to topwin
-    clear-totals wined focus-console quit ; 
+    clear-totals wined focus-console quit ;
     \ ['] wined catch 0<> if message then ;
 
 ELECT             \ Sets the vocabulary
@@ -197,4 +208,4 @@ January 10th, 2004 - 18:56 Only two changes left before merge
 January 17th, 2004 - 12:03 Now we are using the same Wined source as the group!
                            VIEW-to-top needs an ok from the group
 Sun, April 23 2006 -  8:15 We moved WinEd to our folder, not in sync with guys
-
+September 22, 2019 -  9:08 The web version is live on the internet
