@@ -2,25 +2,27 @@
 \ assumes send linse, get linse in loop
 \ this version serves webpage directly instead of going through python
 
-anew dosock
-fload sockets    \ Windows Sockets By Andrey Cherezov
-create ssrvr ," *" 0 c,
-4444 value sport      \ arbitrary
+anew dosock              \ load a new version of everything below
+fload sockets            \ Windows Sockets By Andrey Cherezov
+create ssrvr             \ create a word in the dictionary named socket-server
+  ," *"                  \ compile a counted strig containing asterisks
+  0 c,                   \ compile 0 at HERE & increment the dictionary pointer
+4444 value sport         \ arbitrary number for what use?
 
-0 value ssock
-0 value srvrsock
-2048 value szbuf
-create rbuf szbuf allot
+0 value ssock            \ create a value for the server-socket
+0 value srvrsock         \ set the server-socket to zero
+2048 value szbuf         \ set the size-buffer to 2048 or 2KB
+create rbuf szbuf allot  \ allocate the r-buffer to 2KB
 
-: init-sockets            \ call once per forth startup
+: init-sockets           \ call once per forth startup
    SocketsStartup  abort" SocketsStartup error."
    cr  ." IP: " my-ip-addr NtoA type  cr ;
 
-: init-client    \ connect to server
+: init-client            \ connect to server
   ssrvr count  sport
   CLIENT-OPEN to ssock ;
 
-: init-server    \ accept connection from client
+: init-server            \ accept connection from client
   CreateSocket abort" can't create socket"
   to srvrsock
   sport srvrsock BindSocket abort" can't bind to port"

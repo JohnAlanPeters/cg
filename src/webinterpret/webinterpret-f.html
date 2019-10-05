@@ -11,8 +11,8 @@ function doit()
   var dsp=document.getElementById('dsp');
   var txt=dsp.value;
   var ntxt=txt.substring(lastlen-1);
-  if( ntxt[ntxt.length-1] != '\n')
-      ntxt+='\n';
+  if( ntxt[ntxt.length-1] == '\n')
+     ntxt=ntxt.slice(0,ntxt.length-1);
   fetch('',{method: 'post',body:ntxt,headers: {
     'Content-Type': 'text/plain'
      }
@@ -20,7 +20,7 @@ function doit()
   .then(response => response.text())
   .then(function(data) {
      var dtxt=dsp.value;
-     if( data[data.length-1] == '\n')
+     if(dtxt[dtxt.length-1]=='\n')
         dtxt=dtxt.slice(0,dtxt.length-1);
      dtxt+='  ';
      dtxt+=data;

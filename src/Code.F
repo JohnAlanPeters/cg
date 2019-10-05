@@ -13,15 +13,15 @@ Put the sell prices in to the contract ready to print
 
   (c) John A. Peters    1985, 1986, 1987, 1988, 1989, 1990
   (c) 1991  1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999
-  (c) 2000 2001 2002
+  (c) 2000 2001 2002 2003 2004 2005 2006 2007 2008 2018 2019
 
         E L E C T R I C   M O D U L E   P R I C E S
 
      BROOKLINE AREIS ELECTRIC COMPANY SINCE 1972.
-     121 Santa Rosa Ave.        Office 415-239-5393
-     San Francisco, CA 94112    Cell 415-509-3599
-                  japeters@pacbell.net
-     Conversion to Win32Forth via Robert Ackerman
+     121 Santa Rosa Ave.      Text is best 415-239-5393
+     San Francisco, CA 94112  Not attended 415-509-3599
+                  john@BrooklineElectric.com
+     Conversion from FPC to Win32Forth via Robert Ackerman
 
 COMMENT;
 
@@ -91,10 +91,10 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 35 set-exts parts-col
 44 set-exts time-col
 56 set-exts sell-col
-35 set-exts vparts-col \ 29
-44 set-exts vtime-col  \ Virtual scr sub time is now ok was 37
-56 set-exts vtot-col   \ Virtual scr sub price is now ok was 48
-                       \ decimal point columm before bolding
+35 set-exts vparts-col   \ 29
+44 set-exts vtime-col    \ Virtual scr sub time is now ok was 37
+56 set-exts vtot-col     \ Virtual scr sub price is now ok was 48
+                         \ decimal point columm before bolding
 68 set-exts discount-col
 
 : (totline?) ( -- fl )   \ if an extended line and next one isn't
@@ -115,7 +115,7 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 
 : (vtop?) ( -- fl )     \ if on top line of a virtual screen
    noext? 0=   displayingLine 25 <  or  afterTot? or
-   if 0 else   \ is source or before l#25 or after 'total' line
+   if 0 else   \ is source or before line #25 or after 'total' line
    displayingLine #line" -trailing nip 0= if 0 else  \ blank line isn't a vscr
    displayingLine 1 - #line" -trailing nip 0=  \ line above is blank
    then then ;
@@ -321,7 +321,7 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 
-((
+((  NOT IN USE
 : SUB-TOTAL ( -- )  \ display sub-totals
   conscol @ -1 >
   if
@@ -346,10 +346,10 @@ false value partswholesaleshow
   65 ( 62 ) >ccol sell-total  2@ bucks ;
 
 : Total-con ( -- ) \ display sub-totals in console
-  37  ( 35 ) >ccol parts-total 2@ bucks
-  46  ( 45 ) >ccol time-total  2@ bucks ."  hr"
-  58  ( 59 ) >ccol labor-total 2@ bucks
-  65  ( 70 ) >ccol sell-total  2@ bucks ;
+  32  ( 37 ) >ccol parts-total 2@ bucks
+  43  ( 46 ) >ccol time-total  2@ bucks ."  hr"
+  58  ( 58 ) >ccol labor-total 2@ bucks
+  65  ( 65 ) >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
      conscol @ 40 > if cr then
@@ -363,20 +363,20 @@ false value partswholesaleshow
 59 ( 59 ) >ccol  ." Labor"
 67 ( 67 ) >ccol  ." Sell" ;
 
-: HEADLINE
+: HEADLINE        \ maybe shold be HEADLINE-W/C  I think HEADLINE is redefined
   in-web?
   if   headline-WEB
-  else headline-con
+  else headline-CON   
   then ;
 
-: TOTAL
-  Headline
+: TOTAL      \ name it total-w/c     ?-?
+  Headline   \ use headline-w/c   ?-?
   in-web? cr
   if   total-WEB
-  else total-con
+  else total-CON
   then  clear-totals ;
 
-: TT total  ;  \ development shortcut
+: TT total ;  \ development shortcut  call total-w/c ?-?
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
