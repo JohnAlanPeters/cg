@@ -1009,8 +1009,10 @@ Vocabulary Tube Tube definitions
 : 13W-Quad     7.90 w/e  0 c ; \ Dec 93  All are warm
 : 9W           5.00 w/e  0 c ; \ June 94
 : FC-8         6.50 w/e  0 c ; \ June 94  FC-8
-: FC-12        7.00 w/e  0 c ; Elect \ June 94
-
+: FC-12        7.00 w/e  0 c ; \ June 94
+: LED         22.00 w/e  0 c ; \ 30.00 r/t
+: LED2        23.00 w/e  0 c ; \ experiment 
+Elect
 
 | ELECTRONIC-TUBE           630-003  FF-09          05-08-95 AL
 Vocabulary ELECTRONIC-TUBE
@@ -1791,7 +1793,7 @@ Vocabulary Setup   Setup definitions
 : Job             .00 w/c  75 c ;
 : New-location    .00 w/c  25 c ;
 : New-Job         .00 w/c  49 c ;
-: New-Job-Site    .00 w/c  49 c ;
+: New-Job-Site    .00 w/c  66 c ;        
 : Job-Site        .00 w/c  49 c ;
 : Supply-House    .00 w/c 100 c ;
 : Job-Small       .00 w/c 100 c ;
@@ -1853,6 +1855,8 @@ Vocabulary BLOCKAGE    BLOCKAGE definitions     \ Sold Keep Ha
 \ REWIRE
 Vocabulary Rewire  Rewire Definitions
 : PigTail       0.50 w/c  15 c ;  
+: Flo-LED      44.00 w/e  33 c ; \ 20 minutes 
+: Flo-LED-1st  44.00 w/e  50 c ; \ 30 minutes for the first one      
 Elect
 
 
@@ -2935,7 +2939,8 @@ Elect
 Vocabulary LED   LED Definitions  ( Lowes prices )
 : 5W-PAR30  59.44 w/e  00 c ; \ Listed at Universal ss a MR-16 = not  $82.32
 : 6W-TypeA  31.35 w/e  00 c ; \ Looks like a type "A" = to 45W not 58W           
-
+: Tube-48   25.00 w/e  00 c ; \ 4K kelvin 
+                                              
 \ FEIT      44.98 w/e  00 c ; \ Lows 16W=75W
 \ PAR-30    59.00 w/e  00 c ; \ UE Dec 2010
 \ PAR-38D   71.00 w/e  00 c ; \ UE Sec 2010 Dimmable

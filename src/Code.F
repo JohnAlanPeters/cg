@@ -88,12 +88,12 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 : set-exts ( n <name> -- )
   create , does> @ m-in + ;
 
-35 set-exts parts-col
-44 set-exts time-col
-56 set-exts sell-col
-35 set-exts vparts-col   \ 29
-44 set-exts vtime-col    \ Virtual scr sub time is now ok was 37
-56 set-exts vtot-col     \ Virtual scr sub price is now ok was 48
+35 ( 35 ) set-exts parts-col    \ changing messed up virtual sub total in WinEd
+44 ( 44 ) set-exts time-col
+56 ( 56 ) set-exts sell-col
+35 ( 35 ) set-exts vparts-col   \ 29
+44 ( 44 ) set-exts vtime-col    \ Virtual scr sub time is now ok was 37
+56 ( 56 ) set-exts vtot-col     \ Virtual scr sub price is now ok was 48
                          \ decimal point columm before bolding
 68 set-exts discount-col
 
@@ -259,17 +259,24 @@ false value partswholesaleshow
 : CLR           clear-totals ;
 
 : SHOW-ALL   ( -- )
-  partswholesaleshow if show2parts
-  else partscolshow if show-parts then
-       timecolshow if show-time then
-  then show-sell ;
+  PartsWholeSaleShow
+  if   show2parts
+  else partscolshow
+    if   show-parts
+  then
+       timecolshow
+     if   show-time
+    then
+   then show-sell ;
 
 : remvoc ( -- )  \ remember vocab we are in for later display
   context @ voc>vcfa , ;
 
 : CONS-SHOW-ALL   ( -- )   \ output on current console line
    ( context @ voc>vcfa .name )
-  cons-show-parts cons-show-time  cons-show-sell ;
+  cons-show-parts \ leaves off the last didget to the right of the decimal
+  cons-show-time
+  cons-show-sell ;
 
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
@@ -321,23 +328,22 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 
-((  NOT IN USE
-: SUB-TOTAL ( -- )  \ display sub-totals
-  conscol @ -1 >
-  if
-    34 ( 33 ) >ccol parts-total 2@ bucks  \ web server
-    43 ( 42 ) >ccol time-total  2@ bucks ."  hr"
-    55 ( 54 ) >ccol labor-total 2@ bucks
-    64 ( 63 ) >ccol sell-total  2@ bucks
-  else
-    39 ( 39 ) >ccol parts-total 2@ bucks  \ surface
-    49 ( 49 ) >ccol time-total  2@ bucks ."  hr"
-    61 ( 61 ) >ccol labor-total 2@ bucks
-    71 ( 71 ) >ccol sell-total  2@ bucks
-  then ;
-
-: sub  sub-total ; \ an alias
-))
+\ NOT IN USE
+\ : SUB-TOTAL ( -- )  \ display sub-totals
+\ conscol @ -1 >
+\ if
+\   34 ( 33 ) >ccol parts-total 2@ bucks  \ web server
+\   43 ( 42 ) >ccol time-total  2@ bucks ."  hr"
+\   55 ( 54 ) >ccol labor-total 2@ bucks
+\   64 ( 63 ) >ccol sell-total  2@ bucks
+\ else
+\   39 ( 39 ) >ccol parts-total 2@ bucks  \ surface
+\   49 ( 49 ) >ccol time-total  2@ bucks ."  hr"
+\   61 ( 61 ) >ccol labor-total 2@ bucks
+\   71 ( 71 ) >ccol sell-total  2@ bucks
+\ then ;
+\
+\ sub  sub-total ; \ an alias
 
 : Total-WEB ( -- ) \ display sub-totals on web
   37 ( 34 ) >ccol parts-total 2@ bucks
@@ -345,9 +351,9 @@ false value partswholesaleshow
   58 ( 57 ) >ccol labor-total 2@ bucks
   65 ( 62 ) >ccol sell-total  2@ bucks ;
 
-: Total-con ( -- ) \ display sub-totals in console
-  32  ( 37 ) >ccol parts-total 2@ bucks
-  43  ( 46 ) >ccol time-total  2@ bucks ."  hr"
+: Total-CON ( -- ) \ display sub-totals in console
+  31  ( 32 ) >ccol parts-total 2@ bucks
+  43  ( 43 ) >ccol time-total  2@ bucks ."  hr"
   58  ( 58 ) >ccol labor-total 2@ bucks
   65  ( 65 ) >ccol sell-total  2@ bucks ;
 
@@ -355,13 +361,13 @@ false value partswholesaleshow
      conscol @ 40 > if cr then
      10 spaces ." Only            Part       Parts     Time       Labor     Sell " ;
 
-: Headline-con ( -- ) \ names of the columns
-16 ( 16 ) >ccol  ." Quan"
+: Headline-CON ( -- ) \ names of the columns
+18 ( 16 ) >ccol  ." Quan"
 30 ( 30 ) >ccol  ." Part"
-45 ( 45 ) >ccol  ." Parts"
+40 ( 45 ) >ccol  ." Parts"
 50 ( 50 ) >ccol  ." Time"
 59 ( 59 ) >ccol  ." Labor"
-67 ( 67 ) >ccol  ." Sell" ;
+70 ( 67 ) >ccol  ." Sell" ;
 
 : HEADLINE        \ maybe shold be HEADLINE-W/C  I think HEADLINE is redefined
   in-web?
@@ -428,7 +434,7 @@ false value partswholesaleshow
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
   if drop s" bids " cgbase" 2dup + 1- 0 swap c!  "chdir
-     to$ +NULL false to$ 1+
+     to$ +NULL false to$ 1+ 
      s" template " over + 1- 0 swap c!
     Call CopyFile 0= abort" The COPY Failed!"
   else close-file then to$ count "+open-text
@@ -571,10 +577,3 @@ MEN-ON          Turn on the times feature
 MEN-OFF         Put it back to not showing the times on each line
 (MEN)           Times on  extend each line  Times off
 MEN             Add a column showing the time required for each item
-MENN            Same as above but for lists that start on column one
-MEN-THRU        Extend prices given a range of screens with times.
-MENN-THRU       Same but for lists starting on left border.
-
-\ End of file
-
-

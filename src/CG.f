@@ -44,7 +44,7 @@ variable conscol -1 conscol !  \ column for output in current console line
 0 value invkloop  \ so we know when we are editing (in view-key-loop)
 0 0 2value last-total  \ has to be remembered before clearing
 defer total-est   \ so we can put total on status line
-: _xit ( rda ) focus-console cr ." ok" false to invkloop quit ;
+: _xit ( rda )  false to invkloop focus-console cr ." ok" quit ;
 
 cd ..
 current-dir$ setfdir
@@ -133,16 +133,19 @@ forth also forth definitions editor
    if pocket count BL SKIP "CLIP" "+open-text
    then  cursor-on-screen reEdit ;
 
+
 : oo ['] (oo) catch 0<> if message then  ;
 
 : VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   .viewinfo count "+open-text 0 swap 1-
   to-find-line refresh-line reEdit ;
 
-: VV-web ( <word> -- ) bl word drop cr   
+: VV-web ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
-  ." To view the code in the context of the surce file, you need the to download the system or  " cr
-  ." You can view the code in GitHub at https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
+  ." To view the code in the context of the surce file," cr
+  ." you need the to download the system or  " cr
+  ." You can view the code in GitHub at" cr
+  ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
 : VV
   in-web?
@@ -150,8 +153,8 @@ forth also forth definitions editor
   else vv-con
   then ; 
 
-: Done   ( -- )   save-text focus-console ." File Saved" ;
-: CAF    Done ;  \ As in close all files
+: Done   ( -- ) save-text focus-console ." File Saved" ;
+: CAF    ( -- ) Done ;  \ As in close all files
 : Revert ( -- ) Revert-text ." Reverted to last save" ;
 : E-B    ( -- ) revert ;
 : Rev    ( -- ) revert ;
@@ -163,7 +166,7 @@ forth also forth definitions editor
 : DEL   ( <fname> -- ) /parse delete-file abort" failed to delete file" ;
 
  \ 'esc' to go from console to editor
-: Title-CG
+: Title-CG   \ puts it on the top of the." console
   Z" Contract Generator 3.03.04" CONHNDL call SetWindowText drop ;
 
 : HELLO-CG
@@ -183,7 +186,7 @@ forth also forth definitions editor
           cmdline file-to-edit$ place
     then
     \ call GetFocus to topwin
-    clear-totals wined focus-console quit ;
+    clear-totals  wined focus-console ." ok" cr quit ;
     \ ['] wined catch 0<> if message then ;
 
 ELECT             \ Sets the vocabulary
