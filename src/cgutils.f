@@ -164,3 +164,15 @@ editor
 : msgbp ( -- )  0 call MessageBeep drop ;
 ' msgbp is beep
 
+: vwinfo     ( -<name>- line filename )  [  editor ]
+    bl word anyfind
+    if get-viewfile if dup count cur-file place else exit then
+    else c@ abort" Undefined word!"
+         cur-line @ cur-file
+    then over to orig-loc ;
+
+: show ( <word> -- )  \ show in console first line of definition from source
+ [  editor ] vwinfo count "+open-text 0 swap 1-
+  to-find-line get-cursor-line cur-buf lcount focus-console cr type ;
+
+

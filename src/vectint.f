@@ -72,6 +72,7 @@ create vbuf 200 1024 * allot
     to-con
     -1 conscol !         \ switch to ordinary output
     \ ?dup if ." error " . .. then
+      vbuf w@ if s"   " vbuf wplace then
     s"  ok " vbuf wplace crlf$ count 1- vbuf wplace vbuf wcount ;
 
 : sendline ( addr cnt -- ) \ send a line to the socket
