@@ -41,24 +41,36 @@ create vbuf 200 1024 * allot
    vbuf count search -1 =
    if 4 - swap 4 + swap else 2drop 0 0 then ;
 
+: to-web
+   ['] vemit is emit
+   ['] vtype is type  \ add text to word counted buffer
+   ['] ?vcr is ?cr
+   ['] vcr is cr      \ virtual CR
+   ['] vgetxy is getxy
+   ['] vgetcolrow is getcolrow ;
+
+: to-con
+   [ hidden ]
+   ['] c_emit is emit
+   ['] c_type is type
+   ['] c_cr is cr
+   ['] c_?cr is ?cr
+   ['] c_getxy is getxy 
+   ['] c_getcolrow is getcolrow ;
+
+
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
    0 vbuf             \ a 200 KB 2varible to save source to restore after interpret
    w!  ( w1 a1 -- )   \ store word (16bit) w1 into address a1
-   ['] vtype is type  \ add text to word counted buffer
-   ['] vcr is cr      \ virtual CR
-   ['] ?vcr is ?cr
-   ['] vemit is emit
-   ['] vgetxy is getxy
-   ['] vgetcolrow is getcolrow
+   to-web
    vquery
    ['] _interpret
    catch
     ?dup if ." error " dup . then
     vec 2@ (source) 2!
-    [ hidden ] ['] c_emit is emit  ['] c_type is type ['] c_cr is cr
-    ['] c_?cr is ?cr ['] c_getxy is getxy ['] c_getcolrow is getcolrow
-     -1 conscol !         \ switch to ordinary output
+    to-con
+    -1 conscol !         \ switch to ordinary output
     \ ?dup if ." error " . .. then
     s"  ok " vbuf wplace crlf$ count 1- vbuf wplace vbuf wcount ;
 
@@ -106,6 +118,13 @@ create vbuf 200 1024 * allot
           dup 0 sendheaders \ send the HTML headers
           b2sock            \ send the forth string to the socket
        else drop then       \ no data, then skip it
+   then ;
+
+
+
+
+
+then skip it
    then ;
 
 
