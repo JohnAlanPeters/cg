@@ -1903,7 +1903,7 @@ Vocabulary Install  INSTALL Definitions
 : Your-Chime      0.00 w/c  25 c ; \
 : Track-Fixture   0.00 w/c   8 c ; \
 : Rod-hanger      3.00 w/c  65 c ; \ Parts
-: Gas-stem      300.00 w/c 100 c ; \ 3.00
+: Gas-stem      300.00 w/c 100 c ; \ 3.00 parts and one hour
 : Ganged-dimmer   0.00 w/c  25 c ; \
 : Inter-tye    1000.00 w/c  70 c ;
 : Tram-track     20.00 w/c 200 c ;

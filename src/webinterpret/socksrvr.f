@@ -70,9 +70,12 @@ fload ..\vectint      \ load here to access code above
     sockread dup -1 =
     if  ." done"
     else dup -2 =
-    if srvrsock closesocket drop ssock closesocket drop
+     if srvrsock closesocket drop ssock closesocket drop
        ." reconnect" cr init-server 0=
-    else srvrinput   \ either send webpage or execute the forth
+     else srvrinput   \ either send webpage or execute the forth
       false
-    then then
-  until srvrsock closesocket drop ssock closesocket drop 0 to in-web? ;
+     then 
+    then 
+  until srvrsock closesocket drop
+    ssock closesocket drop
+    0 to in-web? ;

@@ -328,23 +328,6 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 
-\ NOT IN USE
-\ : SUB-TOTAL ( -- )  \ display sub-totals
-\ conscol @ -1 >
-\ if
-\   34 ( 33 ) >ccol parts-total 2@ bucks  \ web server
-\   43 ( 42 ) >ccol time-total  2@ bucks ."  hr"
-\   55 ( 54 ) >ccol labor-total 2@ bucks
-\   64 ( 63 ) >ccol sell-total  2@ bucks
-\ else
-\   39 ( 39 ) >ccol parts-total 2@ bucks  \ surface
-\   49 ( 49 ) >ccol time-total  2@ bucks ."  hr"
-\   61 ( 61 ) >ccol labor-total 2@ bucks
-\   71 ( 71 ) >ccol sell-total  2@ bucks
-\ then ;
-\
-\ sub  sub-total ; \ an alias
-
 : Total-WEB ( -- ) \ display sub-totals on web
   37 ( 34 ) >ccol parts-total 2@ bucks
   46 ( 43 ) >ccol time-total  2@ bucks ."  hr"
