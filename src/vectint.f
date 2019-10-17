@@ -123,10 +123,3 @@ create vbuf 200 1024 * allot
 
 
 
-
-
-then skip it
-   then ;
-
-
-
