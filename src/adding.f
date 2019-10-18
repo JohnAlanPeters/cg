@@ -50,13 +50,13 @@ editor also
   parts-total 2@  topout 4 + 51  at-cents ;
 
 : WHOLESALE-OUT ( -- )
-  wholesale-total 2@ topout 4 + 61 at-cents ;
+  wholesale-total 2@ topout 4 + 64 at-cents ;
 
 : OTHER-OUT ( -- )
   other-total 2@ topout 5 + 51 at-cents ;
 
 : ALLOWANCE-OUT ( -- )
-  allowance-total 2@ topout 5 + 61 at-cents ;
+  allowance-total 2@ topout 5 + 64 at-cents ;
 
 : PERMIT-OUT ( -- )
   permit-total 2@ topout 6 + 51 at-cents ;
@@ -100,7 +100,7 @@ editor also
   IF 2 54 get-number       \ get the total est.mate price
    d-                      \ subtract sig from bid
    2dup d0<
-   >r 12 71 out-cents r>
+   >r 12 64 out-cents r>
   ELSE  2drop false
   THEN ;
 
@@ -120,7 +120,7 @@ editor also
 : ALL-THRU     ( -- )
    add-all-screens
 \   over-sig
-    lab-bud-35  topout 3 + 71 at-cents    \  the 35% amount
+    lab-bud-35  topout 3 + 64 at-cents    \  the 35% amount The 3 is line
     calc  5 +to cursor-col ;
 
 : 20%    ( -- ) s" 20%" findstr

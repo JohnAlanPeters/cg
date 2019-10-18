@@ -79,4 +79,3 @@ fload ..\vectint      \ load here to access code above
   ssock closesocket drop 0 to in-web? ;
 
 : ds  do-server ;
-

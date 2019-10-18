@@ -1,42 +1,29 @@
-Goal
-First Last                                                                      
-000 Address                                                                     
-San Francisco, CA                                 C 415-                        
-                                                  H 415-                        
-Contingency Fund is $0.00                     Ref:                              
+Customer name
+address
+San Francisco, CA
+(415)   
+email
 
-
-                     THE SHOPPING LIST                                          
-                   --> Revision 0.1 <--
-                       Jxxe 05, 2007
-
-___________
-
-                 abc                                  HRs                                 
-                                                      MDs                                 
-                                                      T                                   
-                                                      L                                   
-                                                      M                                   
-                                                      O                                   
-
+6 line                                            Goal       Actual Budget
+                                                 73.49     91.87 Man Hours      
+                                                 18.37     12.24 Man Days       
+                                          T   17,490.98     Estimated Price     
+                                          L   13,780.50     s/b he4,818.35 W/S L
+                                          M   1,960.48     1,453.30 pre tax W/S M
+                                          O     156.00      0.00 JP       
+                                          B       0.00
 
 Custom Notes                                                                    
 
-                                                                                
-                                                                                
-\s                                                                              
-<a href=                                                                        
+                                                        
+                                                        
+\s                                                      
+<a href=                                                
 http://www.cpsc.gov/CPSCPUB/PUBS/afcifac8.PDF
->Bedroom plugs need to be on a AFCI circuit breaker.</a>                        
-                                                                                
-                                                                                
-
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-Modular 100A                 312.61 +1/3   15.08 hrs   1,779.20                 
+>Bedroom plugs need to be on a AFCI circuit breaker.</a>
+                                                        
+                                                        
+Modular 100A                 312.61 +1/3   15.08 hrs   1
                 Neat-EMT                                                                  
 Ladder & 220V   1 Setup     Hot-220                        1.50      225.00               
 To PG&E wires   1 Riser     100A                           3.57      639.93               
@@ -48,12 +35,11 @@ Hot cold & gas  1 Ground    BOND                           0.50       84.49
 Hook up hot     3 Kouple-tap 3/0-12                        0.48      165.15               
 W-H relocated?
                                                           15.08   $2,777.90               
-\s                                                                              
-Not including PG&E fees if any.                                                 
-                                                                                
-                                                                                
-                                                                                
-Reconnect old                                                                   
+
+\ Not including PG&E fees if any.                       
+                                                        
+                                                        
+Reconnect old                                           
                 Neat-EMT                                                                  
 n Old fuses     2 CB      ( AFCI? )                        0.40       70.80               
 n Old CBs       2 CB                                       0.40       70.80               
@@ -82,30 +68,29 @@ PG&E required   1 Sweep  3x36 ( PVC-Conc )                 3.50      633.00
 No thread con.  1 NT-Con 3-in                              0.75      228.63               
 Termination can 1 Term-can 200A                            1.25      307.65               
 Between boxes   1 OS-Nip   200A                            1.54      280.66               
-Bender rent     26 Dollars Rental                                                         
+Bender rent     ( 26 Dollars Rental                                                       
 2-nd inspection ( Get PG&E estimate )                                                     
-Temporary power ( Pull in full size wires )                                               
-Kitchen Lighting                                                                          
+Temporary power ( Pull in full size wires )
+                                                          29.98   $6,932.18               
+
+Kitchen Lighting                                        
                 Open-1-side                                                               
 Demo work       1.00 hours electrician                     1.00      150.00               
 Ceiling Lights  5 LT  2 S3                                 6.86    1,067.64               
 Layout cans     120 Minutes Electrician                    2.04      306.00               
-Sink light      LT  SW                                    26.33    4,098.54               
+Sink light      LT  SW                                     1.83      285.54               
 Hood Fan        LT  Install hood-fan                       1.48      227.52               
 Light Circuits  CB  Circuit                                0.80      130.12               
 Lighting Layout 0.50 Hour Electrician                      0.50       75.00               
 Temp power      0.50 hour electrician                      0.50       75.00               
                 ( For other trades )
-                                                          69.49  $13,062.00               
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-Kitchen Power                                                                   
+                                                          15.01   $2,316.82               
+                                                        
+                                                        
+Kitchen Power                                           
                 Open-1-side                                                               
-Dishwasher      PL  CB  Circuit                            1.65      263.14               
-Disposal -->?   PL  CB  Circuit  SW                        2.50      396.16               
+Dishwasher      PL  AFCI Circuit                           1.70      319.24               
+Disposal -->?   PL  AFCI Circuit  SW                       2.55      452.26               
 Cords (if NIC)  2 Cord                                     0.50       87.20               
 Refrigerator    PL                                         0.85      133.02               
 Stove Igniter   PL                                         0.85      133.02               
@@ -113,174 +98,81 @@ Counters        6 PL  2 GFCI                               5.20      848.22
 Util Circuits   2 CB  2 Circuit                            1.60      260.24               
 Island          ( Charge as ) Neat-EMT                                                    
 Layout plugs    1 Hour Electrician                         1.00      150.00
-                                                          14.15   $2,271.00               
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-(C) 2010 John A Peters                                         )                
-This proposal is the result of years of electrical contracting.                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-Reminders                                                                       
-Title-24                                                                        
-AFCI CBs                                                                        
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-Conduit & Circuit(s)                                                            
-                Neat-EMT                                                        
-Raceway pipe    50 LF-EMT 1/2                                                   
-As needed...    CB Circuit                                                      
-If needed...    CB Circuit                                                      
-AFCI (Bedrooms) AFCI Circuit                                                    
-                                                                                
-                                                                                
-                                                                                
-Raceway pipe    50 LF-EMT 3/4                                                   
-If needed       2 L-B 1/2                                                       
-.               FPE                                                             
-Empty Raceway   70 LF-EMT 1/2   Apartment hous                                  
-If needed       25 LF-EMT 1/2   ( measure )                                     
-Empty Raceway   90 LF-EMT 1/2   Back rear apt                                   
-                                                                                
-City Permit & Inspection     173.20 +1/3    2.00 hrs     413.82                 
-Residential       1 Permit 10-Outlets-1                 233.82                  
-Meet Inspector    1 Appointment Inspector      2.00     180.00                  
-\s                                                                              
-If you do not want an inspection, your risk is 9X the permit fee                
-                                                                                
-YES 2 HOURS                                                                     
-                                                                                
-Residential Med   1 Permit 20-Outlets-2                                         
-Residential Big   1 Permit 40-Outlets-3                                         
-Cover Inspection  1 Appointment Inspector                                       
-Final Inspection  1 Appointment Inspector                                       
-Commercial Job    1 Permit 5-Commercial-2                                       
-Commercial Job    1 Permit 20-Commercial-3                                      
-                                                                                
-                                                                                
-One Time Cost(s)               0.00 +1/3    1.25 hrs     112.50                 
-Electrician &   Truck-to New-Location          0.25      22.50                  
-Round Trip (if) Truck-to Supply-House          1.00      90.00                  
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-Fixed Bid Quality              0.00 +1/3    0.00 hrs     150.00                 
-Draft Proposal  60 Dollars Allowance ( JP )              60.00                  
-1st Day Meeting 45 Dollars Allowance ( JP )              45.00                  
-Finish Quality  45 Dollars Allowance ( JP )              45.00                  
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-Contingency Reserve            0.00 +1/3    0.00 hrs       0.00                 
-Change Orders?  ( Adds, Deletes, Changes )                                      
-Your Ideas      ( "While you are here" )                                        
-Unseen work     ( Until Inspector gives ok )                                    
-25% or less     000 Dollars Allowance                                           
-\s                                                                              
-<a href=                                                                        
-http://brooklineelectric.com/categories/contingency-fund-1.html                 
-  >Click here to read about the contingency fund.</a>                           
--                                                                               
-This fund allows you to give direct orders to the electrician.                  
-                                                                                
-DON'T USE - USE BV ELECTRIC METHOD                                              
-Avoid gref later minimum 300 or 500 contingency fund                            
-                                                                                
-                                                                                
--------------------                                 ===========                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-TOTAL ESTIMATE               000.00 +1/3   00.00 hrs   0,000.00                 
-                                                     ==========                 
+                                                          14.25   $2,383.20               
+                                                        
+                                                        
+\ (C) 2019 John A Peters                                 
+\ This proposal is the result of years of electrical con
+                                                        
+                                                        
+Reminders                                               
+Title-24                                                                                  
+AFCI CBs                                                                                  
+                                                        
+                                                        
+Conduit & Circuit(s)                                    
+                Neat-EMT                                                                  
+Raceway pipe    50 LF-EMT 1/2                              2.65      415.50               
+As needed...    AFCI Circuit                               0.95      210.00               
+If needed...    AFCI Circuit                               0.95      210.00               
+AFCI (Bedrooms) AFCI Circuit                               0.95      210.00
+                                                           5.50   $1,045.50               
+                                                        
+Raceway pipe    50 LF-EMT 3/4                           
+If needed       2 L-B 1/2                                  1.00      161.28               
+.               FPE                                                                       
+Empty Raceway   70 LF-EMT 1/2  ( Apartment )               3.71      581.70               
+If needed       25 LF-EMT 1/2  ( measure )                 1.32      207.00               
+Empty Raceway   90 LF-EMT 1/2  ( Back rear apt             4.77      747.90
+                                                          10.80   $1,697.88               
+City Permit & Inspection     173.20 +1/3    2.00 hrs    
+Residential       1 Permit 10-Outlets-1                 
+Meet Inspector    1 Appointment Inspector      2.00     
+\s                                                      
+\ If you do not want an inspection, your risk is 9X the 
+                                                        
+\ YES 2 HOURS
+                                                        
+Residential Med   1 Permit 20-Outlets-2                 
+Residential Big   1 Permit 40-Outlets-3                 
+Cover Inspection  1 Appointment Inspector               
+Final Inspection  1 Appointment Inspector               
+Commercial Job    1 Permit 5-Commercial-2               
+Commercial Job    1 Permit 20-Commercial-3              
+                                                        
+                                                        
+One Time Cost(s)               0.00 +1/3    1.25 hrs    
+Electrician &   Truck-to New-Location                      0.25       37.50               
+Round Trip (if) Truck-to Supply-House                      1.00      150.00
+                                                           1.25     $187.50               
+                                                        
+Fixed Bid Quality              0.00 +1/3    0.00 hrs    
+Draft Proposal  60 Dollars Allowance ( JP )                0.00       60.00               
+1st Day Meeting 45 Dollars Allowance ( JP )                0.00       45.00               
+Finish Quality  45 Dollars Allowance ( JP )                0.00       45.00
+                                                           0.00     $150.00               
+                                                        
+Contingency Reserve            0.00 +1/3    0.00 hrs    
+Change Orders?  ( Adds, Deletes, Changes )                                                
+Your Ideas      ( "While you are here" )                                                  
+Unseen work     ( Until Inspector gives ok )                                              
+25% or less     000 Dollars Allowance                                                     
+\s                                                      
+<a href=                                                
+http://brooklineelectric.com/categories/contingency-fund
+  >Click here to read about the contingency fund.</a>   
+-                                                       
+This fund allows you to give direct orders to the electr
+
+\ DON'T USE - USE BV ELECTRIC METHOD
+\ Avoid gref later minimum 300 or 500 contingency fund  
+                                                        
+                                                        
+-------------------                                 ====
+                                                        
+                                                        
+TOTAL ESTIMATE               000.00 +1/3   00.00 hrs   0         $17,490.98     
+                                                     ==========
                                       TOTAL ESTIMATE   0,000.00                 
                                                       =========                 
                                                                                 
@@ -296,67 +188,7 @@ Avoid gref atlest 300
                                     10%                                         
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 dkdkdk                                                                          
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 OPT Plaster  (If needed)                                                        
@@ -368,27 +200,6 @@ OPT Plaster  (If needed)
 2x4 patch        8 Square-inches                                                
 This is a guess ( till the wires are in )                                       
 It is best to   ( have a professional do this.                                  
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Signature Agreement                                                             
@@ -410,19 +221,6 @@ PAYMENT SCHEDULE
 =================================                                               
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Signature and Contract                                                          
 This summary is superseded by the details of the "Scope-of Work"                
  including the two pages of "Job Management and Conventions".                   
@@ -438,37 +236,12 @@ Progress payments COD-by-section, percent completed or as below.
                                                       208.33                    
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 EXTRAS AND CHANGES                                                              
 Please add the following tasks to the list of work to be done.                  
 .                                                                               
 I agree that the prices will be calculated using the same data-                 
 base as was used for the original estimate.  The added items                    
 will be added to the appropriate section of the next revision.                  
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Goal 2                                                                          
@@ -486,7 +259,6 @@ Contingency Fund is $x00                      Ref:
 ___________                                                                     
                                                                                 
                                                                                 
-                                                                                
 Multi Meter Gang                                                                
 -- NEW SERVICE  ( 230 Volts )                                                   
 Ladder & 220V   1 Setup     Hot-220                                             
@@ -495,7 +267,6 @@ Tenant Mains    3 C-B 60A
 Hot cold & gas  X Ground    Bond                                                
 Gr rod & water  1 Ground    150A                                                
 Hook up hot     3 Kouple-tap 3/0-12                                             
-                                                                                
                                                                                 
                                                                                 
 get ug-mm                                                                       
@@ -509,9 +280,6 @@ Panels          X Panel 150A-16-32
 Pipe ends =     X OS-Nipple 1-1/4                                               
 More distance   X 15 * LF-EMT 65A                                               
 Other           1 hr el                                                         
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 get OS-Nip                                                                      
@@ -545,10 +313,6 @@ Don't sign a contract other than your own unless you:
   Charge for technical consulting.                                              
   Watch out for terms that include pages other than "E" series,                 
   EE pages with panel layouts are a good sign.                                  
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Warnings to Aries                                                               
@@ -598,7 +362,6 @@ Gr rod & water  1 GROUND    150A
 Plywood         ( Contingency fund )                                            
                                                                                 
                                                                                 
-                                                                                
 2g M-M                                                                          
 .                                                                               
 Riser                                                                           
@@ -610,9 +373,6 @@ Gr rod & water
 Circuit breaker 2 C-B 100A                                                      
                 2 panel 125a-12-24                                              
                 2 c-b 100a                                                      
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 3 Res 1 Coml UG                                                                 
@@ -643,8 +403,6 @@ Gang of meters  2 R-S    4-METER
 Hot cold & gas  1 GROUND BOND                                                   
 Gr rod & water                                                                  
 Plywood         ( Contingency fund )                                            
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Gang & riser                                                                    
@@ -994,11 +752,6 @@ Hook up hot     3 Kouple-tap 3/0-12
 House meter                                                                     
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Underground 4-in                                                                
 Start up time   1 SETUP     NES                                                 
 Gr rod & water  1 GROUND    400A                                                
@@ -1011,8 +764,6 @@ Termination can 1 TERM-CAN  400A
 Between boxes   1 OS-NIP    400A                                                
 Plywood         ( Contingency fund )                                            
 Temporary power ( Contingency fund )                                            
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 New Service MB-100A                                                             
@@ -1043,8 +794,6 @@ Gr rod & water  1 Ground    100A
 Hot cold & gas  1 Ground    Bond                                                
 Plywood                                                                         
 Temporary power                                                                 
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 2 Comml 100A ea.                                                                
@@ -1158,7 +907,6 @@ Give warning    ( Small box )
 Plywood                                                                         
                                                                                 
                                                                                 
-                                                                                
 UG Customer owned NES                                                           
                 ( 230 Volts 100 Amps )                                          
 Work hot 220V   1 Setup       Hot-220                                           
@@ -1167,12 +915,6 @@ Meter-M & Panel Ug-all-in-1   100A-12-24
 Gr rod & water  1 Ground      100A                                              
 Hot cold & gas  1 Ground      BOND                                              
 Hook up hot     1 hour Electrician                                              
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 2 Comml 100A 3P                                                                 
@@ -1190,21 +932,10 @@ Hook up hot     3 Kouple-tap 3/0-12
 Plywood                                                                         
                                                                                 
                                                                                 
-                                                                                
 Fixture costs                                     from 67                       
 You can go to Peer Light (Alan) or Bay Commercial (Mike).                       
 If you like I will fax a note of introduction to one of them.                   
 I will ask them to let you pay my whole sale price.                             
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Commercial check list                               06-10-92 AEC                
@@ -1230,15 +961,6 @@ will not be ask you to pay any more than if it had been done
 correctly in the first place.                                                   
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Communication                                                                   
 Please share your goals with me so I can produce them as my own.                
 This is an estimate, not a bid.  It will be edited and reprinted                
@@ -1251,10 +973,6 @@ my judgment, and bill for my time 2-nd guessing your wishes.
 24-hrs later I will assume it to be part of the contract.                       
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 RELEASE OF MECHANIC'S LIEN                                                      
    Aries Electric hereby releases any right of                                  
 that he may now have by reason of having furnished labor and/or                 
@@ -1265,42 +983,10 @@ as below, except for disputed claims for extra work and work not
 covered by previous payments.                                                   
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Assumptions                                                                     
 If any of the stated criteria is incorrect or must be changed,                  
 it may affect the prices quoted, and a review of the costs will                 
 become necessary.                                                               
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Standard price list                                                             
@@ -1364,23 +1050,11 @@ In garage       1 Transformer Tri-Volt         0.20      43.14
 Under bid?      1 hour electrician             1.00     159.00                  
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
 Closet light                                                                    
                 Fish-in-walls                                                   
                 LT-medium                                                       
                 SW-very-easy                                                    
                 Fixture Jelly-jar                                               
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Intercom                                                                        
@@ -1392,11 +1066,6 @@ Intercom
                 Travel medium                                                   
                 Blockage floor-plate                                            
                 ( Door release extra )                                          
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Bath Fan Ceiling                                                                
@@ -1441,26 +1110,10 @@ Pipe            15 lf-EMT 1/2
 Wires           Circuit                                                         
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Puck Sample                                                                     
                 Flush-in-walls                                                  
                 8 Puck light                                                    
                 1 Transformer 250W                                              
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Template                                                                        
@@ -1473,10 +1126,6 @@ Template
                 x 4s-ind pr                                                     
                 x 4s bl                                                         
                 x device pr                                                     
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Dryer 220V                    99.22 +1/3    6.04 hrs   1,094.07                 
@@ -1506,9 +1155,6 @@ Ground wire     12 thhn #8
  \              2 Ground clamp                                                  
 The main        C-B 20A                                                         
 Poor access     1 hours electrician                                             
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Jacuzzi 50A  Hot Tub 8/5                                                        
@@ -1550,15 +1196,6 @@ show every outlet according to it's circuit.  This exercise
 will disclose most any electrical code safety problem.                          
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Range 220V                                                                      
                 Open-1-side                                                     
 Circuit breaker C-B 50A                                                         
@@ -1568,11 +1205,8 @@ Outlet          Device-220 Range
 Range cord      Molded range                                                    
                                                                                 
                                                                                 
-                                                                                
-                                                                                
 Get Device-220                                                                  
 Get Molded      ( This line will not print )                                    
-                                                                                
                                                                                 
                                                                                 
 Closet fuses out                                                                
@@ -1599,28 +1233,12 @@ Closet fuses out T&M
                 ( Repulling wires not included                                  
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Cans 2-in                                                                       
                 Fish-in-walls                                                   
 Back boxes      1 Recessed-2" Can                                               
 Simple type     1 Recessed-2" Trim                                              
                 1 Lamp MR-16                                                    
 Note: Prices    ( include some install time )                                   
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Cans 4-in                                                                       
@@ -1631,14 +1249,6 @@ Halogen type    1 Lamp 50W-PAR
 Note: Prices    ( include some install time )                                   
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Cans 5-in                                                                       
                 Fish-in-walls                                                   
 Back boxes      1 Recessed-5" Can                                               
@@ -1646,13 +1256,6 @@ Simple type     1 Recessed-5" Trim
 Halogen type    1 Lamp 75W-PAR                                                  
                 ( Fire box )                                                    
 Note: Prices    ( include some install time )                                   
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Bathroom remodel                                                                
@@ -1666,9 +1269,6 @@ Dimmer          Dimmer DV-600
 Fan             Timer Push-60W                                                  
                 Kill old-box                                                    
                 Flo Cloud-32W                                                   
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Notes changNeat-EMTtes and Spelling                                             
@@ -1685,8 +1285,6 @@ Contingency screen made easier and added items. 6-11-00
 Smoke-9v and Smoke-110v both now as well as Smoke-110V-9V                       
                                                                                 
                                                                                 
-                                                                                
-                                                                                
 UC flo lighting                                                                 
                 Fish-in-walls                                                   
                 4 LT                                                            
@@ -1698,11 +1296,6 @@ UC flo lighting
                 4 Tube 21-in                                                    
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Oven 220V                                                                       
                 Fish-in-walls                                                   
 Circuit breaker C-B 30A                                                         
@@ -1711,12 +1304,6 @@ Sharp corner    1 L-B 1/2
 Outlet box      Box-only                                                        
 With installer  Travel Return-trip                                              
 Flex to unit    Whip                                                            
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Install Trolley Cable                                                           
@@ -1733,8 +1320,6 @@ Install Trolley Cable
 235 of NPS                                                                      
                                                                                 
                                                                                 
-                                                                                
-                                                                                
 Trace and Tag                                                                   
                 Trace&tag 1 Tester-Rent                                         
                 Trace&tag 1 Circuit                                             
@@ -1743,12 +1328,6 @@ Trace and Tag
                 Trace&tag 1 Old-fuse                                            
                 Trace&tag 1 Outlet                                              
                 Trace&tag 1 Outlets                                             
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 \ INDS Not too quick                                                            
@@ -1761,26 +1340,11 @@ Trace and Tag
                         ( Change speed here )                                   
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Bathroom Heat                                                                   
                 Fish-in-Walls                                                   
                 PS                                                              
 Dedicated       CB  Circuit                                                     
                 Heat Bath-1500w                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 PG&E                           0.00 +1/3    4.00 hrs     360.00                 
@@ -1793,26 +1357,12 @@ Take the paper work to the PG&E office.
 Come back and "cut over power" by appointment.                                  
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Trench                                                                          
 Open 7 squares  300 Dollars Allowance                                           
 Dig trench      800 Dollars Allowance                                           
 Around corner                                                                   
 Thru foundation 100 Dollars Allowance                                           
 Concrete Cover  400 Dollars Allowance                                           
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 Pipe                                                                            
@@ -1853,16 +1403,6 @@ Cover Inspection  1 Appointment Inspector
 Final Inspection  1 Appointment Inspector                                       
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 CONDITIONS, Custom work                                                         
 All of below =   1 Hour Electrician                                             
 Stairs take time                                                                
@@ -1873,10 +1413,6 @@ No locations
 3rd floor                                                                       
                                                                                 
 Far from shop                                                                   
-                                                                                
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 GOOD HOUSEKEEPING                                                               
@@ -1906,9 +1442,6 @@ Compared to a-> ( rough construction site )
 -->                                                                             
 \s                                                                              
 Get engineer                                                                    
-                                                                                
-                                                                                
-                                                                                
                                                                                 
                                                                                 
 \ New stuff 2/3                                                                 
@@ -1951,14 +1484,6 @@ Orientation     1 Travel Walk-job
 Design & Build  1 Engineer Best-way                                             
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 220V Hot Water Heater         54.58 +1/3    6.42 hrs     715.50                 
                 100.00 per-hour                                                 
                 Neat-EMT                                                        
@@ -1971,28 +1496,13 @@ Conjestion      0.50 hr el                     0.50      50.00
 3 Walls         0.50 hr el                     0.50      50.00                  
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 Last Day -----                                                                  
                 1 Packing End-of-job                                            
                 1 Packing Take-to-shop                                          
                 1 Packing Clean-Vehicle                                         
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 \                                                                               
-                                                                                
                                                                                 
                                                                                 
 | Change orders                                                                 
@@ -2003,23 +1513,9 @@ Get an ok       0.10 hr el
 Extra shopping  1.00 hr el                                                      
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
 \ Loader                                                     AL                
 117 load                                                                        
 Get engineer                                                                    
                                                                                 
                                                                                 
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
-                                                                                
+
