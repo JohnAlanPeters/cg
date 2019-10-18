@@ -345,23 +345,25 @@ false value partswholesaleshow
 \
 \ sub  sub-total ; \ an alias
 
+   \ I wonder if these are affecting the next one?
 : Total-WEB ( -- ) \ display sub-totals on web
-  37 ( 34 ) >ccol parts-total 2@ bucks
-  46 ( 43 ) >ccol time-total  2@ bucks ."  hr"
-  58 ( 57 ) >ccol labor-total 2@ bucks
-  65 ( 62 ) >ccol sell-total  2@ bucks ;
+  24 ( 44 ) >ccol parts-total 2@ bucks
+  33 ( 53 ) >ccol time-total  2@ bucks ."  hr"
+  41 ( 61 ) >ccol labor-total 2@ bucks
+  51 ( 71 ) >ccol sell-total  2@ bucks ;    
+       \ changing these #s does not change anything
 
-: Total-CON ( -- ) \ display sub-totals in console
-  31  ( 32 ) >ccol parts-total 2@ bucks
-  43  ( 43 ) >ccol time-total  2@ bucks ."  hr"
-  58  ( 58 ) >ccol labor-total 2@ bucks
-  65  ( 65 ) >ccol sell-total  2@ bucks ;
+: Total-CON ( -- ) \ display sub-totals in console   sub?
+  43  ( 44 ) >ccol parts-total 2@ bucks  \ jppjpp
+  51  ( 53 ) >ccol time-total  2@ bucks ."  hr" 
+  61  ( 61 ) >ccol labor-total 2@ bucks
+  71  ( 71 ) >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
      conscol @ 40 > if cr then
-     10 spaces ." Only            Part       Parts     Time       Labor     Sell " ;
+     05 spaces ." Only            Part       Parts     Time       Labor     Sell " ;  
 
-: Headline-CON ( -- ) \ names of the columns
+: Headline-CON ( -- ) \ names of the columns  THESE ARE GOOD
 18 ( 16 ) >ccol  ." Quan"
 30 ( 30 ) >ccol  ." Part"
 40 ( 45 ) >ccol  ." Parts"
