@@ -34,8 +34,8 @@ create rbuf szbuf allot  \ allocate the r-buffer to 2KB
 : sockread ( -- addr cnt | -1 or -2 )      \ wait for input
   0
   begin key? if key 27 = if drop -1 exit then then   \ quit on escape
-   1 +  250 ms  \ pause
-   dup 240 > if drop -2 ." timeout" cr  exit then  
+   1 +   20 ms  \ pause 
+   dup 120 > if drop -2 ." timeout" cr  exit then
    ssock ToRead abort" can't get # to read" ?dup
   until nip  \ loop until something to read
   rbuf swap ssock ReadSocket abort" can't read socket"
@@ -75,4 +75,7 @@ fload ..\vectint      \ load here to access code above
     else srvrinput   \ either send webpage or execute the forth
       false
     then then
-  until srvrsock closesocket drop ssock closesocket drop 0 to in-web? ;
+  until srvrsock closesocket drop 
+  ssock closesocket drop 0 to in-web? ;
+
+: ds  do-server ;
