@@ -114,8 +114,8 @@ Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
 cd webinterpret
 include socksrvr.f
+include nes-compiled.f  \ colon defs with multiple modules
 cd ..
-Include ..\bids\nes-compiled.f  \ colon defs with multiple modules
 
 \ note: cg won't run if next file isn 't last - I don't know why
 \ Include Rent.f          \ Anti pirate
