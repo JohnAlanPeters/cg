@@ -101,7 +101,7 @@ Vocabulary ALRC          ALRC Definitions \ STALE PRICES!!!!!
 : 3/4        119.44 w/c   6  c ; \  6    -
 : 1-in       170.15 w/c   7  c ; \  9-93 less
 : 1-1/4      324.00 w/c   8  c ; \  March 2014                   
-: 1-1/2      276.93 w/c   9  c ; \  17.99 Aug 00
+: 1-1/2      369.80 w/c   9  c ; \  HD 10-19-2919 276.93 Aug 98  
 : 2-in       424.00 w/c  10  c ; \  29.00
 : 2-1/2      585.37 w/c  11  c ; \  -   11
 : 3-in       768.94 w/c  14  c ; \  -   14
@@ -416,18 +416,18 @@ Elect  \       4.50 + 2.50 = 700 ea Oct 2007
 
 
 | EMT ------------E-M-T-- C 010-001  AR-13          08-20-08 AL
-Vocabulary EMT           EMT Definitions  \ Temp Sold Keep Have 
+Vocabulary EMT           EMT Definitions  \ Temp Sold Keep Have
 \ No back tick if  m     Normal \                               
-: 1/2         36.00 w/c  45 m ; \  32.00 Was 20 here pre Aug 08 
-: 3/4         30.00 w/c  50 m ; \  0.2995 4-25-09               
-~ 1-in        94.00 w/c  55 m ; \  45.40 Out of date, too low   
-~ 1-1/4      152.00 w/c  62 m ; \  63.57 Out of date, too low   
-~ 1-1/2      188.00 w/c  70 m ; \  74.79 Out of date, too low   
-~ 2-in       230.00 w/c  80 m ; \  93.89 Out of date, too low   
-~ 2-1/2      374.00 w/c  95 m ; \ 212.33 Out of date, too low   
-~ 3-in       463.00 w/c  11 c ; \ 267.26 Out of date, too low   
-~ 3-1/2      695.00 w/c  13 c ; \ 374.90 Out of date, too low   
-~ 4-in       692.00 w/c  16 c ; \ 434.30 Out of date, too low   
+: 1/2         28.10 w/c  45 m ; \  Home Depot 10-19-2019
+: 3/4         50.20 w/c  50 m ; \  Home Depot must be an error
+~ 1-in        84.20 w/c  55 m ; \  Home Depot 10-19-2019
+~ 1-1/4      139.00 w/c  62 m ; \
+~ 1-1/2      165.80 w/c  70 m ; \
+~ 2-in       194.70 w/c  80 m ; \ was 230.00
+~ 2-1/2      374.00 w/c  95 m ; \ was 374.00
+~ 3-in       463.00 w/c  11 c ; \ Not on HD list  
+~ 3-1/2      695.00 w/c  13 c ; \  
+~ 4-in       692.00 w/c  16 c ; \  
 Elect \  Stud wall = 4x if 1-1/2" Steiner  See LF-EMT           
 \ Add 28% for ladder to 12 feet.                                
 \ Normal to 8 feet, "T" bar, gun or on man lift.                
