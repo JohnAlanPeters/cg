@@ -151,7 +151,15 @@ forth also forth definitions editor
   in-web?
   if vv-web
   else vv-con
-  then ; 
+  then ;
+
+: vvv
+   in-web?
+   if vv-web
+   else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
+         focus-console false to invkloop
+   then ;
+
 
 : Done   ( -- ) save-text focus-console ." File Saved" ;
 : CAF    ( -- ) Done ;  \ As in close all files
