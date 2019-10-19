@@ -147,13 +147,13 @@ forth also forth definitions editor
   ." You can view the code in GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
-: VV
+: VVV
   in-web?
   if vv-web
   else vv-con
   then ;
 
-: vvv
+: vv
    in-web?
    if vv-web
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
