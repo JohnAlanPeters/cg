@@ -71,7 +71,7 @@ create vbuf 200 1024 * allot
     vec 2@ (source) 2!
     to-con
     -1 conscol !         \ switch to ordinary output
-    \ ?dup if ." error " . .. then
+    ?dup if ." error " . .. then
       vbuf w@ if s"   " vbuf wplace then
     s"  ok " vbuf wplace crlf$ count 1- vbuf wplace vbuf wcount ;
 
@@ -118,7 +118,7 @@ create vbuf 200 1024 * allot
           cr 2dup type      \ send the forth command
           dup 0 sendheaders \ send the HTML headers
           b2sock            \ send the forth string to the socket
-       else drop then       \ no data, then skip it
+       else drop s" ok" cr then       \ no data, then skip it
    then ;
 
 

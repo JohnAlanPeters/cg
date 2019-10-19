@@ -4,6 +4,8 @@
   31 spaces ." Only       Part       Parts      Time       Labor      Sell "
   cr ;
 
+: HL  headline ;
+
 : RISER-100 ( - )
   [ electric  ] keyboard on kclr   cr 
 1 [ SETUP     ] ." Setup"  hot-220 cr
