@@ -1909,7 +1909,7 @@ Vocabulary Install  INSTALL Definitions
 : Tram-track     20.00 w/c 200 c ;
 \ See also Hang-flo
 Elect
-
+: Hang   install ;
 
 | HOLE                      900-030  Experience     88-12-14 AEC
 Vocabulary Hole                           \ Temp Sold Keep Have
