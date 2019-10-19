@@ -328,10 +328,10 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  24 ( 44 ) >ccol parts-total 2@ bucks
-  33 ( 53 ) >ccol time-total  2@ bucks ."  hr"
-  41 ( 61 ) >ccol labor-total 2@ bucks
-  51 ( 71 ) >ccol sell-total  2@ bucks ;    
+  35 ( 44 ) >ccol parts-total 2@ bucks
+  44 ( 53 ) >ccol time-total  2@ bucks ."  hr"
+  52 ( 61 ) >ccol labor-total 2@ bucks
+  62 ( 71 ) >ccol sell-total  2@ bucks ;      
        \ changing these #s does not change anything
 
 : Total-CON ( -- ) \ display sub-totals in console   sub?
