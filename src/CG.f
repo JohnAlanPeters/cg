@@ -142,9 +142,8 @@ forth also forth definitions editor
 
 : VV-web ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
-  ." To view the code in the context of the surce file," cr
-  ." you need the to download the system or  " cr
-  ." You can view the code in GitHub at" cr
+  ." To use VIEW you need the the disk based system or" cr
+  ." If you know GitHub you can view the code in GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
 : VVV
