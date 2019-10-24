@@ -591,7 +591,7 @@ Elect
 \ FIXTURES   1/4            625-304  FF-3         F 05-01-09    
 Vocabulary Fixture       Fixture definitions
 : Simple-Dome   25.00 w/e 25 c ; \ Simple 2 lamp fixture
-: Hall-wall     50.00 w/e 30 c ; \ fudge for Entrprise at 498 Winston Dec 2010
+: LED-can       15.00 w/e 30 c ; \ Guessing in October 23, 2019                                                                            
 : Motion-Sensor 30.00 w/e 40 c ; \ 80 22.00 Cheap no Good  
 : Motion-NonLED 48.00 w/e 40 c ; \ Levinson                  
 : Motion-Reg    40.00 w/e 40 c ; \ 75.00 RAB  Oct 07

@@ -46,7 +46,7 @@ COMMENT;
 2variable CURRENT-RATE
 2variable LABOR-RATE
 : PER-HOUR  Labor-Rate 2! ;        \ The rate is set just below here.
-  150.00 per-hour                  \ Raised for remote bidding  with Miro.                                                            
+  180.00 per-hour                  \ Raised for remote bidding with Miro. 
 \ 150.00 per-hour                  \ Raided by JP since I have plenty of work.
 \  99.00 per-hour                  \ BV raised on Boris exit July 14, 2013
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.

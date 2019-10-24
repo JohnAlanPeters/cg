@@ -34,8 +34,8 @@ editor also
 
 
 : TIME-OUT    ( first last -- )   \ Callender or schedule the job days & hours
-  time-total 2@   .80 d* 100. d/ topout    51 at-cents  \ Total Hrs  Goal
-  time-total 2@                  topout    61 at-cents  \ Total Hrs  Actual
+  time-total 2@                  topout    51 at-cents  \ Total Hrs  Goal
+  time-total 2@  .80 d* 100. d/  topout    61 at-cents  \ Total Hrs  Actual
   time-total 2@  1.00 d* 5.00 d/ topout 1+ 51 at-cents  \ Total Days Envelope
   time-total 2@  1.00 d* 7.50 d/ topout 1+ 61 at-cents  \ Total Days Actual
   ;
