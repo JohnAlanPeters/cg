@@ -231,8 +231,8 @@ MENUBAR Edit-Menu-bar
    MENUITEM     "Close File & Window"                    close-text ;
    MENUITEM     "Close All File Windows   \tCtrl+Shft+W" close-all-text ;
    MENUSEPARATOR
-   MENUITEM     "&Save File               \tCtrl+S"      save-text ;
-   MENUITEM     "Save &All Changed Files"                save-all-text ;
+   MENUITEM     "&SAVE FILE               \tCtrl+S"      save-text ;
+   MENUITEM     "SAVE &ALL Changed Files"                save-all-text ;        
    MENUITEM     "Save File As..."                        save-text-as ;
    MENUSEPARATOR
    MENUITEM     "Save MAC/UNIX File As PC..."            save-text-as-pc ;

@@ -67,7 +67,7 @@ create vbuf 200 1024 * allot
    vquery
    ['] _interpret
    catch
-    ?dup if ." error " dup . then
+    dup if ." error " dup . then
     vec 2@ (source) 2!
     to-con
     -1 conscol !         \ switch to ordinary output
@@ -111,14 +111,14 @@ create vbuf 200 1024 * allot
    if 2drop                 \ if not = drop the address of both strings and send HTML file
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs              \ chop off headers up to 2 CRLFs to get to data  \ rda told me ( 2 headers? not one?) 
-       ?dup                \ duplicate the address and len of the address of the CRLF string
+       ?dup                \ duplicate the len of the request string if not zero
        if                  \ test for true which is anything but a zero
          2dup type         \ type the forth command to the surface console
          vectint           \ get output of request into buffer
        else drop s" ok" then       \ no data, then skip it
-       cr 2dup type      \ send the forth command
-       dup 0 sendheaders \ send the HTML headers
-       b2sock            \ send the forth string to the socket
+       cr 2dup type        \ display response in console
+       dup 0 sendheaders   \ send the HTML headers
+       b2sock              \ send the response to the socket
    then ;
 
 
