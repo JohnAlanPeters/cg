@@ -164,7 +164,8 @@ false value partswholesaleshow
 0 value discount         \ rate of discount; 100 -> no diff
 
 : sub<>0  ( -- fl )   \ if sub is not zero
-  sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
+  \ sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
+  quan 2@ -1 -1 d<> ;
 
 : vtotal<>0 ( -- fl )
   EX-TOTAL + ;

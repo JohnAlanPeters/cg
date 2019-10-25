@@ -53,6 +53,7 @@ I'm still hoping to use the old version so all of my code will start working.
      buf-blank                           \ blank pad the buffer
      cur-buf lcount  drop
      tab-size + 30                       \ zero based, but editor is 1 based
+     -1 -1 quan 2!                       \ flag for showing totals
      evaluate-ext                        \ interpret cols 16-48
      if sub<>0                           \ ?is line not empty
       if sell-sub 2@ -1 s>d d=           \ -1 -> flag for display as '0'
