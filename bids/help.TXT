@@ -1,2 +1,23 @@
 help is on the way
 This is how to use the CG
+
+ELECTRIC WORDS takes 20 seconds lists electrical part names.<br>
+C-B WORDS takes 3 seconds and lists the circuit breker sizes.<br>
+C-B SEE 400A shows the code.  C-B SHOW 400A<br>
+
+ SEE <word> shows the code.
+SHOW <word> shows the 1-st line of the source including stack comments and back-slash comments.
+VIEW <word? shows the source file but only if you are on a disk-based ful system, not on a browser.
+PANEL WORDS is a good one<br>
+SHOW (word) will show you te first line of definition from source.<br>
+
+The labor units used by the below are from NECA. Parts prices are from NPS.
+
+Try these lines to calc the price per linear foot of a 2 circuit 20A line
+
+50 EMT  1/2
+150 THHN #12
+TOTAL
+
+
+

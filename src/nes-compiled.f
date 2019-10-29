@@ -1,7 +1,7 @@
 ( NES-150 )
 
 : HEADLINE ( -- )
-  31 spaces ." Only       Part       Parts      Time       Labor      Sell "
+  31 spaces ."            Part       Parts      Time       Labor      Sell "                                
   cr ;
 
 : RISER-100 ( - )

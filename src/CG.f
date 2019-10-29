@@ -142,23 +142,27 @@ forth also forth definitions editor
 
 : VV-web ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
-  ." To use VIEW you need the the disk based system or" cr
+  ." To use VIEW you need to have the the disk based system or" cr
   ." If you know GitHub you can view the code in GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
-: VVV
+: VIEW
   in-web?
   if vv-web
   else vv-con
   then ;
 
-: vv
+: VVV view ;
+
+: VV  
    in-web?
    if vv-web
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
          focus-console false to invkloop
    then ;
 
+: dir-modules
+  s" \cg\modules\*.*" print-dir-files ;
 
 : Done   ( -- ) save-text focus-console ." File Saved" ;
 : CAF    ( -- ) Done ;  \ As in close all files
