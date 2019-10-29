@@ -175,4 +175,5 @@ editor
  [  editor ] vwinfo count "+open-text 0 swap 1-
   to-find-line get-cursor-line cur-buf lcount focus-console cr type ;
 
+: show+ >in @ see >in ! show ;                  \ 'see' plus 'show'
 

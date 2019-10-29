@@ -5,8 +5,8 @@ San Francisco, CA
 email
 6 line                                          Actual     Goal
                                                            12.48 Man Days                
-                                                 93.62     74.89 Man Hours
-                                          T      18.72     12.48 Emated Price      
+                                                 93.62     74.89 Man Hours      
+                                          T      18.72     12.48 Emated Price   
                                           L   20,588.76    5,892.16 W/S Labor   
                                           M   16,851.60    5,892.16 pre taxed   
                                           O   1,987.16     1,473.07             
@@ -38,9 +38,9 @@ Conduit body    1 LB-Inc    100A                           0.96      190.79
 Meter & Panel   1 M-P       100A-12-24                     2.50      651.90               
 Ground System   1 Ground    100A                           4.82      938.59               
 Hot cold & gas  1 Ground    BOND                           0.50       99.49               
-Hook up hot     3 Kouple-tap 3/0-12                        0.48      179.55               
-W-H relocated?
-                                                          15.08   $3,230.30               
+Hook up hot     3 Kouple-tap 3/0-12                        0.48      179.55
+W-H relocated?                                            15.08   $3,230.30               
+                                                          11.51   $2,483.27               
 
 \ Not including PG&E fees if any.                       
                                                         
@@ -65,10 +65,10 @@ Transformer     ( NIC  Low-Volt Tri-volt )
 
 Underground work                                        
 Coordinate PG&E 5 hours electrician                        5.01      901.80               
-Remove cement   300 Dollars Allowance                      0.00      300.00               
-Dig trench      800 Dollars Allowance                      0.00      800.00               
-Thru foundation 100 dollars Allowance                      0.00      100.00               
-Concrete mix    400 dollars Allowance                      0.00      400.00               
+Remove cement   300 Dollars Allowance                                                     
+Dig trench      800 Dollars Allowance                                                     
+Thru foundation 100 dollars Allowance                                                     
+Concrete mix    400 dollars Allowance                                                     
 Gr rod & water  1 Ground 200A                              4.82      938.59               
 Rigid conduit   10 GRS   3-in ( Over 125A )                1.50      339.70               
 PG&E required   1 Sweep  3x24                              2.00      457.20               
@@ -114,8 +114,8 @@ Layout plugs    1 Hour Electrician                         1.00      180.00
                                                         
                                                         
 Reminders                                               
-Title-24                                                                                  
-AFCI CBs                                                                                  
+Title-24                                                   0.00        0.00               
+AFCI CBs                                                   0.00        0.00               
                                                         
                                                         
 Conduit & Circuit(s)                                    
@@ -155,9 +155,9 @@ Round Trip (if) Truck-to Supply-House                      1.00      180.00
                                                            1.25     $225.00               
                                                         
 Fixed Bid Quality              0.00 +1/3    0.00 hrs    
-Draft Proposal  60 Dollars Allowance ( JP )                0.00       60.00               
-1st Day Meeting 45 Dollars Allowance ( JP )                0.00       45.00               
-Finish Quality  45 Dollars Allowance ( JP )                0.00       45.00
+Draft Proposal  60 Dollars Allowance ( JP )                                               
+1st Day Meeting 45 Dollars Allowance ( JP )                                               
+Finish Quality  45 Dollars Allowance ( JP )
                                                            0.00     $150.00               
                                                         
 Contingency Reserve            0.00 +1/3    0.00 hrs    
@@ -172,7 +172,7 @@ This fund allows you to give direct orders to the electr
                                                         
                                                         
 -------------------                                 ====
-                                                        
+
 
 TOTAL ESTIMATE                                                   $20,588.76     
                                                                  ==========
@@ -238,7 +238,7 @@ Progress payments COD-by-section, percent completed or as below.
 
                                                                                 
 EXTRAS AND CHANGES                                                              
-Please add the following tasks to the list of work to be done.                  
+Please add` the following tasks to the list of work to be done.
 .                                                                               
 I agree that the prices will be calculated using the same data-                 
 base as was used for the original estimate.  The added items                    

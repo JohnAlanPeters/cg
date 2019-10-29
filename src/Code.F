@@ -164,7 +164,8 @@ false value partswholesaleshow
 0 value discount         \ rate of discount; 100 -> no diff
 
 : sub<>0  ( -- fl )   \ if sub is not zero
-  sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
+  \ sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
+  quan 2@ -1 -1 d<> ;
 
 : vtotal<>0 ( -- fl )
   EX-TOTAL + ;
@@ -341,16 +342,17 @@ false value partswholesaleshow
   71  ( 71 ) >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
-     conscol @ 40 > if cr then
-     05 spaces ." Only            Part       Parts     Time       Labor     Sell " ;  
+     conscol @ 40 > if cr then  \ Part
+     05 spaces ."                            Parts     Time       Labor     Sell " ;    
 
-: Headline-CON ( -- ) \ names of the columns  THESE ARE GOOD
-18 ( 16 ) >ccol  ." Quan"
-30 ( 30 ) >ccol  ." Part"
-40 ( 45 ) >ccol  ." Parts"
-50 ( 50 ) >ccol  ." Time"
-59 ( 59 ) >ccol  ." Labor"
-70 ( 67 ) >ccol  ." Sell" ;
+: Headline-CON ( -- ) \ names of the columns
+\ 18 >ccol  ." Count"
+\ 18 >ccol  ." Quan"
+\ 30 >ccol  ." Part"
+  40 >ccol  ." Parts"
+  50 >ccol  ." Time"
+  59 >ccol  ." Labor"
+  70 >ccol  ." Sell" ;
 
 : HEADLINE        \ maybe shold be HEADLINE-W/C  I think HEADLINE is redefined
   in-web?
