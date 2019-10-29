@@ -436,7 +436,7 @@ false value partswholesaleshow
 
 : (un-add) ( -- )  \ remove extensions and vtotals
   noext? 0= ?exit
-  [ editor ] 17 to cursor-line
+  [ editor ] 12 ( 17 ) to cursor-line 
   begin cursor-line file-lines <
         cursor-line 1- #line" drop s" Total Estimate" tuck istr= 0= and
   while get-cursor-line
