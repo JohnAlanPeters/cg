@@ -5,21 +5,32 @@ San Francisco, CA 94123
 theArtistRita@gmail.com
 
 6 line                                          Actual     Goal
-                                                 93.67     74.93 Man Hours      
-                                                 18.73     12.48 Man Days       
-                                          T   21,563.88     Estimated Price     
-                                          L   16,860.60    5,895.31 W/S Lab     
-                                          M   2,677.28     1,983.94 pre tax     
-                                          O     156.00            JP       
+                                                101.60     81.28 Man Hours      
+                                                 20.32     13.54 Man Days       
+                                          T   23,547.55     Estimated Price     
+                                          L   18,288.00    6,394.40 W/S Lab     
+                                          M   3,233.55     2,396.01 pre tax     
+                                          O     156.00            JP
                                           B       0.00
 
 Custom Notes                                                                    
 
 
 
-Back porch Sub panel
+Basement panel
+                Neat-EMT                                                                  
+Small panel     1 Panel 125A-4-8                           1.00      209.70               
+6 Old CBs       7 AFCI                                     1.75      693.00               
+3/4 inch pipe   1 Reconnect 3/4                            1.25      238.50               
+Demolish old    40 minutes electrician                     0.68      122.40               
+Plug at panel   PL-ez GFCI                                 0.38       96.75               
+1/2 inch pipe   2 Reconnect 1/2                            2.04      389.54
+                                                           7.10   $1,749.89               
+
+
+Back Porch Sub panel
                 Fish-in-wall                                                              
-Ladder work     1 Setup     Ladder-work                    1.00      180.00               
+Ladder          1 Setup     Ladder-work                    1.00      180.00               
 Large panel     1 Panel     200A-40-40                     3.50      832.50               
 Feeder          70 rx 2/3                                  6.65    1,571.50               
 Connectors      2 rx-con 1-in                              0.28       53.08               
@@ -28,15 +39,20 @@ Hot cold & gas  0.50 Ground    BOND                        0.25       49.74
                                                           16.50   $3,625.41               
 
 
-Basement panel
+Basement Main Panel
                 Neat-EMT                                                                  
 Small panel     1 Panel 125A-4-8                           1.00      209.70               
-6 Old CBs       7 AFCI                                     1.75      693.00
+6 Old CBs       7 AFCI                                     1.75      693.00               
 3/4 inch pipe   1 Reconnect 3/4                            1.25      238.50               
 Demolish old    40 minutes electrician                     0.68      122.40               
 Plug at panel   PL-ez GFCI                                 0.38       96.75               
 1/2 inch pipe   2 Reconnect 1/2                            2.04      389.54
                                                            7.10   $1,749.89               
+
+
+
+
+
 
                                                         
 Kitchen Lighting                                        
@@ -74,7 +90,7 @@ Layout plugs    1 Hour Electrician                         1.00      180.00
 Living room
                 Fish-in-walls                                                             
 Chain hung      Install gas-stem                           1.00      184.05               
-                4 Device&Plate                             1.00      190.08
+Renew           4 Device&Plate                             1.00      190.08
                                                            2.00     $374.13               
 
 Hall
@@ -89,12 +105,15 @@ Office
                 1 install easy                             0.35       63.00
                                                            0.85     $158.04               
 
-Closet
-                fish-in-walls                                                             
-                hang easy                                  0.35       63.00               
-                device&plate                               0.25       47.52               
-New one         PL  ( need feeder )                        2.75      503.45
-                                                           3.35     $613.97               
+Closet -> Bath
+                Open-1-side                                                               
+                LT                                         0.98      181.92               
+                SW                                         0.85      158.52               
+                PL  GFCI                                   0.90      185.07               
+                AFCI  Circuit                              0.85      211.72               
+                Hang easy                                  0.35       63.00               
+                Device&plate                               0.25       47.52
+                                                           4.18     $847.75               
 
 Back porch
                 Neat-emt                                                                  
@@ -166,9 +185,8 @@ Unseen work     ( Until Inspector gives ok )
 \ This fund allows you to give direct orders to the elec
 \ Avoid gref later minimum 300 or 500 contingency fund
                                                         
-
-                                                        
-TOTAL ESTIMATE               000.00 +1/3   00.00 hrs             $21,563.88     
+                                                                 ==========
+TOTAL ESTIMATE               000.00 +1/3   00.00 hrs             $23,547.55
                                                                  ==========
 \s
 
@@ -177,7 +195,7 @@ TOTAL ESTIMATE               000.00 +1/3   00.00 hrs             $21,563.88
 
 
 \s Signature Agreement                                                              
-/s This summary is superseded by the details of the "Scope-of Work"
+ This summary is superseded by the details of the "Scope-of Work" 
  including the two pages of "Job Management and Conventions".                   
 PROVIDE AND INSTALL:
 Various electrical outlets & other items listed on printout.                    
