@@ -415,7 +415,7 @@ false value partswholesaleshow
 
 \ copy template to new file or open old file
 : CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
-  max-path localAlloc: to$   \ Does not save the file  japp 
+  max-path localAlloc: to$ 
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
   if drop s" bids " cgbase" 2dup + 1- 0 swap c!  "chdir

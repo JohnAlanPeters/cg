@@ -448,7 +448,8 @@ defer _Control+W ' close-text is _control+w
       k_LF                          OF      lf-left                     ENDOF
       k_CR                          OF      smart-cr                    ENDOF
       k_CR +k_control               OF      ." ==> k_LF "               ENDOF
-      k_CR +k_shift                 OF      goto-line                   ENDOF
+      k_CR +k_shift                 OF 1 +row-cursor 0 to cursor-col smart-insert-tab ENDOF
+      k_CR +k_alt                   OF     ." doesn't work"             ENDOF
                     dup insert/overstrike-character
         ENDCASE
       AGAIN   ;
