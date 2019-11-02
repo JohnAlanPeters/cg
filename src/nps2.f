@@ -1888,6 +1888,9 @@ Vocabulary Install  INSTALL Definitions
 : Micro-hood      0.00 w/c 100 c ;
 : Rosette         0.20 w/c 100 c ;
 : European        0.00 w/c  80 c ;
+: Your-fixture    0.00 w/c  25 c ; \ Not a chandelear of assembly
+: Your-thermostat 0.00 w/c  25 c ;
+: Your-BB-heater  0.00 w/c  50 c ; \ enough time?  Add an OS-nipple if two
 : Your-dimmer     0.00 w/c  25 c ;
 : Your-GFI        0.00 w/c  35 c ;
 : Your-switch     0.00 w/c  20 c ;
