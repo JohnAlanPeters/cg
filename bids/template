@@ -1,138 +1,73 @@
-
+Template
 address
 San Francisco, CA
-(415)   
+415 
 email
 6 line                                          Actual     Goal
-                                                           12.48 Man Days                
-                                                 93.62     74.89 Man Hours      
-                                          T      18.72     12.48 Emated Price   
-                                          L   20,588.76    5,892.16 W/S Labor   
-                                          M   16,851.60    5,892.16 pre taxed   
-                                          O   1,987.16     1,473.07             
-                                          B       0.00
-
-Custom Notes                                                                    
-
-                                                        
-Fred
-                Neat-EMT                                                                  
-                180.00 per-hour                                                           
-                pl                                         1.75      341.68
-                                                           1.75     $341.68               
+                                                                         
+                                          H      26.40        21.12 Man Hours
+                                          D       5.28         3.52 Man Days       
+                                          T   5,009.886    5,892.16 Contract    
+                                          L   3,960.000    1,384.61 W/S Labor   
+                                          M     899.88       667.51 Pre Tax     
+                                          O       0.00
 
 
 
 
 
+Pamel
+Arc Fault CBs   8 AFCI                                     2.00      732.00               
+                9 cb                                       1.80      318.60               
+                5 cb                                       1.00      177.00               
+                4 CB                                       0.80      141.60               
+                5 CB                                       1.00      177.00               
+                8 CB                                       1.60      283.20
+                                                           8.20   $1,829.40               
 
 
 
 
-Modular 100A                 312.61 +1/3   15.08 hrs   1
-                Neat-EMT                                                                  
-Ladder & 220V   1 Setup     Hot-220                        1.50      270.00               
-To PG&E wires   1 Riser     100A                           3.57      747.03               
-Conduit body    1 LB-Inc    100A                           0.96      190.79               
-90 Corner bend  1 90-Inc    100A                           0.75      152.95               
-Meter & Panel   1 M-P       100A-12-24                     2.50      651.90               
-Ground System   1 Ground    100A                           4.82      938.59               
-Hot cold & gas  1 Ground    BOND                           0.50       99.49               
-Hook up hot     3 Kouple-tap 3/0-12                        0.48      179.55
-W-H relocated?                                            15.08   $3,230.30               
-                                                          11.51   $2,483.27               
+
+
 
 \ Not including PG&E fees if any.                       
                                                         
                                                         
 Reconnect old                                           
-                Neat-EMT                                                                  
-n Old fuses     2 CB      ( AFCI? )                        0.40       82.80               
-n Old CBs       2 CB                                       0.40       82.80               
-30 Amp Dryer    1 C-B 30A                                  0.30       84.48               
-Knob & Tube     1 Reconnect Black-box                      1.25      230.40               
-Existing rx     1 Reconnect Romex-easy                     0.20       37.35               
-1/2 inch pipe   1 Reconnect 1/2                            1.02      194.77               
-3/4 inch pipe   1 Reconnect 3/4                            1.25      238.50               
-Demolish old    40 minutes electrician                     0.68      122.40               
-To new location 20 Lf-EMT 20A                              1.30      247.20               
-Plug at panel   PL-ez GFCI                                 0.38       96.75               
-Light at panel  LT-easy   ( pull string )                  1.25      237.15               
-SW+PL at panel  SW-ez     ( if wanted )                    0.33       70.20               
-Plywood (if)    Setup Wall                                 0.85      208.35               
-Transformer     ( NIC  Low-Volt Tri-volt )
-                                                           9.61   $1,933.15               
+                0 hr el                                    0.00        0.00               
 
-Underground work                                        
-Coordinate PG&E 5 hours electrician                        5.01      901.80               
-Remove cement   300 Dollars Allowance                                                     
-Dig trench      800 Dollars Allowance                                                     
-Thru foundation 100 dollars Allowance                                                     
-Concrete mix    400 dollars Allowance                                                     
-Gr rod & water  1 Ground 200A                              4.82      938.59               
-Rigid conduit   10 GRS   3-in ( Over 125A )                1.50      339.70               
-PG&E required   1 Sweep  3x24                              2.00      457.20               
-PG&E required   1 Sweep  3x36 ( PVC-Conc )                 3.50      738.00               
-No thread con.  1 NT-Con 3-in                              0.75      251.13               
-Termination can 1 Term-can 200A                            1.25      345.15               
-Between boxes   1 OS-Nip   200A                            1.54      326.86               
-Bender rent     ( 26 Dollars Rental                                                       
-2-nd inspection ( Get PG&E estimate )                                                     
-Temporary power ( Pull in full size wires )
-                                                          20.37   $5,898.43               
 
-Kitchen Lighting                                        
-                Open-1-side                                                               
-Demo work       1.00 hours electrician                     1.00      180.00               
-Ceiling Lights  5 LT  2 S3                                 6.86    1,273.44               
-Layout cans     120 Minutes Electrician                    2.04      367.20               
-Sink light      LT  SW                                     1.83      340.44               
-Hood Fan        LT  Install hood-fan                       1.48      271.92               
-Light Circuits  CB  Circuit                                0.80      154.12               
-Lighting Layout 0.50 Hour Electrician                      0.50       90.00               
-Temp power      0.50 hour electrician                      0.50       90.00               
-                ( For other trades )
-                                                          15.01   $2,767.12               
-                                                        
-                                                        
-Kitchen Power                                           
-                Open-1-side                                                               
-Dishwasher      PL  AFCI Circuit                           1.70      370.24               
-Disposal -->?   PL  AFCI Circuit  SW                       2.55      528.76               
-Cords (if NIC)  2 Cord                                     0.50      102.20               
-Refrigerator    PL                                         0.85      158.52               
-Stove Igniter   PL                                         0.85      158.52               
-Counters        6 PL  2 GFCI                               5.20    1,004.22               
-Util Circuits   2 CB  2 Circuit                            1.60      308.24               
-Island          ( Charge as ) Neat-EMT                                                    
-Layout plugs    1 Hour Electrician                         1.00      180.00
-                                                          14.25   $2,810.70               
-                                                        
-                                                        
-\ (C) 2019 John A Peters                                
-\ This proposal is the result of years of experience
-                                                        
-                                                        
-Reminders                                               
-Title-24                                                   0.00        0.00               
-AFCI CBs                                                   0.00        0.00               
+
+Kitchen
+Nothing         0 hr el                                    0.00        0.00               
+
+
+Dining Room
+                1 4-oct pancake                            0.40       62.10               
+                Install your-fixture                       0.25       37.50
+                                                           0.65      $99.60               
+
+Living room
+Nothing         0 hr el                                    0.00        0.00               
+                
                                                         
                                                         
 Conduit & Circuit(s)                                    
                 Neat-EMT                                                                  
-Raceway pipe    50 LF-EMT 1/2                              2.65      495.00               
-As needed...    AFCI Circuit                               0.95      238.50               
-If needed...    AFCI Circuit                               0.95      238.50               
-AFCI (Bedrooms) AFCI Circuit                               0.95      238.50
-                                                           5.50   $1,210.50               
+Raceway pipe    50 LF-EMT 1/2                              2.65      415.50               
+As needed...    AFCI Circuit                               0.95      210.00               
+If needed...    AFCI Circuit                               0.95      210.00               
+AFCI (Bedrooms) AFCI Circuit                               0.95      210.00
+                                                           5.50   $1,045.50               
                                                         
 Raceway pipe    50 LF-EMT 3/4                           
-If needed       2 L-B 1/2                                  1.00      191.28               
+If needed       2 L-B 1/2                                  1.00      161.28               
 .               FPE                                                                       
-Empty Raceway   70 LF-EMT 1/2  ( Apartment )               3.71      693.00               
-If needed       25 LF-EMT 1/2  ( measure )                 1.32      246.60               
-Empty Raceway   90 LF-EMT 1/2  ( Back rear apt             4.77      891.00
-                                                          10.80   $2,021.88               
+Empty Raceway   70 LF-EMT 1/2  ( Apartment )               3.71      581.70               
+If needed       25 LF-EMT 1/2  ( measure )                 1.32      207.00               
+Empty Raceway   90 LF-EMT 1/2  ( Back rear apt             4.77      747.90
+                                                          10.80   $1,697.88               
 City Permit & Inspection     173.20 +1/3    2.00 hrs    
 Residential       1 Permit 10-Outlets-1                 
 Meet Inspector    1 Appointment Inspector      2.00     
@@ -149,48 +84,44 @@ Commercial Job    1 Permit 5-Commercial-2
 Commercial Job    1 Permit 20-Commercial-3              
                                                         
                                                         
-One Time Cost(s)               0.00 +1/3    1.25 hrs    
-Electrician &   Truck-to New-Location                      0.25       45.00               
-Round Trip (if) Truck-to Supply-House                      1.00      180.00
-                                                           1.25     $225.00               
+One Time Cost(s)
+Electrician &   Truck-to New-Location                      0.25       37.50               
+Round Trip (if) Truck-to Supply-House                      1.00      150.00
+                                                           1.25     $187.50               
                                                         
-Fixed Bid Quality              0.00 +1/3    0.00 hrs    
+Fixed Bid Quality
 Draft Proposal  60 Dollars Allowance ( JP )                                               
 1st Day Meeting 45 Dollars Allowance ( JP )                                               
 Finish Quality  45 Dollars Allowance ( JP )
                                                            0.00     $150.00               
                                                         
-Contingency Reserve            0.00 +1/3    0.00 hrs    
+Contingency Reserve
 Change Orders?  ( Adds, Deletes, Changes )                                                
 Your Ideas      ( "While you are here" )                                                  
 Unseen work     ( Until Inspector gives ok )                                              
 25% or less     000 Dollars Allowance                                                     
 \s                                                      
 -
-This fund allows you to give direct orders to the electr
-\ Avoid grief later minimum 300 or 500 contingency fund
+
                                                         
-                                                        
--------------------                                 ====
 
 
-TOTAL ESTIMATE                                                   $20,588.76     
+                                                        
+TOTAL ESTIMATE                                                    $5,009.88     
                                                                  ==========
+Thd contingency fund allows you to give direct orders to the electricians
+It will not be used with your your permission.
 
+\ Avoid grief later minimum 300 or 500 contingency fund
                                                                                 
                                 Signature                                       
                                 Change
                                                                                 
                                                                                 
-Custom work                         50%                                         
-                                                                                
-Condo Conversions need AT LEAST!!   25%
-       Man days                     20%
-Avoid gref atlest 300                                                           
-                                    10%                                         
+
                                                                                 
                                                                                 
-dkdkdk                                                                          
+
                                                                                 
                                                                                 
 OPT Plaster  (If needed)                                                        
@@ -205,7 +136,7 @@ It is best to   ( have a professional do this.
                                                                                 
                                                                                 
 Signature Agreement                                                             
-This summary is superseded by the details of the "Scope-of Work"                
+This summary is superseded by the details of the "Scope-of Work"
  including the two pages of "Job Management and Conventions".                   
 PROVIDE AND INSTALL:                                                            
 Various electrical outlets & other items listed on printout.                    
@@ -245,4 +176,37 @@ base as was used for the original estimate.  The added items
 will be added to the appropriate section of the next revision.
 
 
+This summary will be superseded by an on-site visit with Miro the owner
+of my sister company BV Electric who will perform the work.
+
+Sorry to disappoint you, I'm busy. I work with 4 Licensed Electrical Contractors 
+and . . . BV Electric is the best match for your job. You get competitive prices 
+that are better than I can provide. To keep the rates relatively low, 
+BV Electric does not buy advertising.
+
+They rely on good customer reviews on Yelp etc. They have many excellent
+5 star reviews on Yelp.  http://www.yelp.com/biz/bv-electric-san-francisco.
+
+They have become quite popular as you can tell by reading the yelp reviews.
+Miro is a Licensed Electrical Contractor Owner and Estimator with 17 years of
+experience. He spent seven years working for others and now he has ten more
+years in business as a licensed contractor for a total of seventeen years.
+
+415-666-9990 is The BV Electric office phone.
+415-298-0734 is Miro's cell
+
+BVElectric@gmail.com CSLB License #760262
+
+My specialties are Same Day Service, Old Houses, Small jobs & Prompt Emergency
+Response 24/7/365 I keep track of the jobs I refer. I want to be sure they turn 
+out perfectly. I do get a small commission which I use for follow-up.
+
+If there is anything less than 100% perfect or 5 stars or you're not happy 
+in anyway I need to know about it. 
+
+PS - I did forward your text to Nicoleta who will take your call in the office.
+
+John Alan Peters owner
+BrooklineElectric.com
+415-239-5393 TEXT/cell
 

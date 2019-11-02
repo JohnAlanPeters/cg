@@ -47,10 +47,13 @@ COMMENT;
 2variable LABOR-RATE
 : PER-HOUR  Labor-Rate 2! ;        \ The rate is set just below here.
   180.00 per-hour                  \ Raised for remote bidding with Miro. 
-\ 150.00 per-hour                  \ Raided by JP since I have plenty of work.
+\ 150.00 per-hour                  \ Raised by JP since I have plenty of work.
 \  99.00 per-hour                  \ BV raised on Boris exit July 14, 2013
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
+
+: Competitive-rate [ 150.00 per-hour ] immediate ;   \ For comppetitive bids
+: comp-rate ;  \ easier to spell
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
@@ -296,7 +299,6 @@ false value partswholesaleshow
 \  1.35  d*  100.00  d/ ;
                          
 
-
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 7     UNITS AND QUANTITIES ===========
 
@@ -438,7 +440,7 @@ false value partswholesaleshow
 
 : (un-add) ( -- )  \ remove extensions and vtotals
   noext? 0= ?exit
-  [ editor ] 17 to cursor-line
+  [ editor ] 17 to cursor-line 
   begin cursor-line file-lines <
         cursor-line 1- #line" drop s" Total Estimate" tuck istr= 0= and
   while get-cursor-line

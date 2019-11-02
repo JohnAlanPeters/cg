@@ -357,7 +357,7 @@ defer _Control+W ' close-text is _control+w
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 69    Function key bindings   +SCR is 1 page down
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-      k_F1    ( rbs )               OF      edopen ( w32f-doc           ENDOF
+      k_F1    ( rbs )               OF      edopen  ( w32f-doc )        ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
       k_F2                          OF      grand-total  ( AA )         ENDOF
       k_F3                          OF      find-text-again             ENDOF
@@ -366,22 +366,22 @@ defer _Control+W ' close-text is _control+w
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
       k_F4                          OF      settle                      ENDOF
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
-      k_F5                          OF      toggle-insert               ENDOF
+      k_F5                          OF      grand-total                 ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
-      K_f6                          OF      un-add                      ENDOF           
-      k_F7                          OF      grand-total                 ENDOF
-      k_F8                          OF      toggle-insert               ENDOF
+      K_f6                          OF      un-add                      ENDOF
+      k_F7                          OF      toggle-insert               ENDOF
+      k_F8                          OF      revert-text                 ENDOF
       k_F9                          OF      grand-total                 ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
-      k_F10                         OF      un-add ( hyper-link )       ENDOF           
+      k_F10                         OF      un-add  ( hyper-link )      ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
-      k_F11                         OF      revert-text ( prev-link )   ENDOF
+      k_F11                         OF      toggle-insert               ENDOF              
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      datestamp  ( close-text )   ENDOF
+      k_F12                         OF      revert-text                 ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
-
+\                                         ( prev-link )  ( datestamp )
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 70    Arrow Down, End, Home

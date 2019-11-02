@@ -128,7 +128,7 @@ forth also forth definitions editor
 : V reedit ;
 : RE-Edit  reEdit ;
 
-: (OO)   ( <optional file-name> -- ) \ File name is optional
+: (OO)   ( <optional file-name> -- ) \ Open current unless given a file name                     
    0 word c@
    if pocket count BL SKIP "CLIP" "+open-text
    then  cursor-on-screen reEdit ;

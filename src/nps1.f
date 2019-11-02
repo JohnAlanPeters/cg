@@ -530,11 +530,11 @@ ELECT  \
                                                                 
 
 | EMT-90                  B 010-020  AR-09          88-10-02 AEC
-Vocabulary EMT-90                         \ Used Sold Keep Have 
-EMT-90          Definitions                 \                   
-~ 1/2               w/c  50 c ; \ Top p             4   18    2 
-~ 3/4               w/c  60 c ; \                        2    4 
-: 1-in       300.00 w/c  75 c ; \ Guess                  -      
+Vocabulary EMT-90                         \ Used Sold Keep Have
+EMT-90          Definitions                                       
+: 1/2         28.00 w/c  25 c ; \ Oct 2019
+: 3/4         50.00 w/c  35 c ; \ Bend you own  
+: 1-in       300.00 w/c  75 c ; \ Guess
 : 1-1/4      429.00 w/c  90 c ; \ 2.44 Jun 95                   
 : 1-1/2      542.00 w/c  90 c ; \ 3.39 SES Dec 96               
 \ 1-1/2-45                      \ 3.40 SES Dec 96               

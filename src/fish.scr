@@ -23,10 +23,8 @@ Vocabulary (FISH-WORK)
 : FISH             fish-in-wall ;
 : Flush-on-walls   fish-in-wall ;
 : Flush-on-ceiling Fish-in-wall ;
-
+: Flush            fish-in-wall ;
   (FISH-WORK) Definitions
-\ Electric Definitions                 \ Mjellem was 3 hr s/b 1/5 hr
-\ Fish-in-walls Definitions            \ Mjellem was per c s/b per c oops
 : Fire-box           50.00 w/e  70 c ; \ Wires in the way
 : Cans               60.00 w/e 300 c ; \ For Boris on the Green/Webster Mjellem
 : Cans-LED          170.00 w/e 150 c ; \ For Boris Merchasan 2718 Turk 11-5-13 
