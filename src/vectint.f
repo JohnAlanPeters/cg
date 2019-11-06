@@ -67,7 +67,7 @@ create vbuf 200 1024 * allot
    vquery
    ['] _interpret
    catch
-    \ dup if ."  error " dup . then
+    dup if ."  error " dup . then
     vec 2@ (source) 2!
     to-con
     -1 conscol !         \ switch to ordinary output

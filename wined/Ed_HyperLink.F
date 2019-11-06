@@ -110,7 +110,7 @@ needs   HyperLink.f
                 THEN
         LOOP    to entry# ; \ f1=true if found and the file was selected
 
-: (hyper-insert)  ( -- ) \ insert-hyper if current file is'n unnamed
+: (hyper-insert)  ( -- ) \ insert-hyper if current file isn't unnamed
                 cur-file-unnamed? 0=
                 IF 1 +hyper hyper-insert THEN ;
 
@@ -279,7 +279,8 @@ needs hyper.f
                 cur-filename count hyper-string place
                 cur-file-unnamed? 0=              \ if not unnamed
                 cur-filename c@ 0> and            \ and if already opened a file
-                IF      1 +hyper                  \ bump to next file entry
+                \ IF      1 +hyper                  \ bump to next file entry
+                IF  last-entry# Getstack: editwindow - +hyper
                         hyper-insert              \ make room for a file
                 THEN
                 adr len "already-open? >r
