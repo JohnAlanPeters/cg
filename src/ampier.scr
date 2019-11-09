@@ -156,7 +156,7 @@ Vocabulary EMT-90-INC EMT-90-INC Definitions
 : 115A                         8.16 w/c  46 c ; \               
 : 100A                    115a ;                \               
 : 65A                          2.39 w/c  16 c ; \               
-: 60A                     65A ;                 \               
+: 60A                     65A ;                 \
 : 50A                          1.69 w/c  13 c ; \               
 : 40A                     50A ;                 \               
 : 30A                     50A ;                 \               
@@ -175,7 +175,8 @@ Vocabulary LF-ALRC    LF-ALRC definitions
 : 100A               115A ;                                     
 :  85A   ( #4 1-in )          328.19 w/c 135 m ;                
 :  70A                85A ;                                     
-:  65A   ( #6 3/4 )           223.43 w/c  97 m ;                
+:  65A   ( #6 3/4 )           223.43 w/c  97 m ;
+:  60A   65A ; \ more common                
 :  50A   ( #8 1/2 )           169.46 w/c  82 m ;                
 Electric Definitions                                            
                                                                 

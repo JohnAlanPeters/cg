@@ -5,189 +5,152 @@ San Francisco, CA 94123
 theArtistRita@gmail.com
 
 6 line                                          Actual     Goal
-                                                101.60     81.28 Man Hours      
-                                                 20.32     13.54 Man Days       
-                                          T   23,547.55     Estimated Price     
-                                          L   18,288.00    6,394.40 W/S Lab     
-                                          M   3,233.55     2,396.01 pre tax     
+                                                 91.11        72.88n Hours      
+                                                 18.22        12.14n Days       
+                                          T   15,676.724.53 Estimated Price     
+                                          L   13,666.50    4,778.49 W/S Lab     
+                                          M   2,010.22     1,489.18 pre tax     
                                           O     156.00            JP
                                           B       0.00
 
-Custom Notes                                                                    
 
 
 
-Basement panel
+Custom Notes                                            
+
+
+Basement Tennant Panel
                 Neat-EMT                                                                  
-Small panel     1 Panel 125A-4-8                           1.00      209.70               
-6 Old CBs       7 AFCI                                     1.75      693.00               
-3/4 inch pipe   1 Reconnect 3/4                            1.25      238.50               
-Demolish old    40 minutes electrician                     0.68      122.40               
-Plug at panel   PL-ez GFCI                                 0.38       96.75               
-1/2 inch pipe   2 Reconnect 1/2                            2.04      389.54
-                                                           7.10   $1,749.89               
+New main CB     1 C-B 60A                                  0.30       75.48               
+Small panel     1 Panel 125A-4-8                           1.00      179.70               
+6 Old CBs       7 AFCI                                     1.75      640.50               
+3/4 inch pipe   1 Reconnect 3/4                            1.25      201.00               
+Plug at panel   PL-ez GFCI                                 0.38       85.35               
+1/2 inch pipe   2 Reconnect 1/2                            2.04      328.34
+                                                           6.72   $1,510.37               
 
 
-Back Porch Sub panel
-                Fish-in-wall                                                              
-Ladder          1 Setup     Ladder-work                    1.00      180.00               
-Large panel     1 Panel     200A-40-40                     3.50      832.50               
-Feeder          70 rx 2/3                                  6.65    1,571.50               
-Connectors      2 rx-con 1-in                              0.28       53.08               
-Ground System   1 Ground    100A                           4.82      938.59               
-Hot cold & gas  0.50 Ground    BOND                        0.25       49.74
-                                                          16.50   $3,625.41               
-
-
-Basement Main Panel
+Feeder and Sub panel
                 Neat-EMT                                                                  
-Small panel     1 Panel 125A-4-8                           1.00      209.70               
-6 Old CBs       7 AFCI                                     1.75      693.00               
-3/4 inch pipe   1 Reconnect 3/4                            1.25      238.50               
-Demolish old    40 minutes electrician                     0.68      122.40               
-Plug at panel   PL-ez GFCI                                 0.38       96.75               
-1/2 inch pipe   2 Reconnect 1/2                            2.04      389.54
-                                                           7.10   $1,749.89               
+Ladder in well  1 Setup Ladder-work                        1.00      150.00               
+Large panel     1 Panel 150A-16-32                         2.40      457.20               
+                50 LF-EMT 65A                              4.65      790.00               
+                1 L-B 3/4                                  0.60       96.62               
+Hot cold & gas  0.50 Ground Bond                           0.25       42.24
+                                                           8.90   $1,536.06               
 
 
+Kitchen LED Lighting
+                Big-holes-ok                                                              
+Demo work       1.00 hours electrician                     1.00      150.00               
+Recessed lights 5 LT                                      10.00    1,527.60               
+                1 SW                                       2.00      305.92               
+If wanted       1 S3                                       2.00      305.52               
+Layout cans     30 Minutes Electrician                     0.51       76.50               
+Fixtures        5 fixture LED-can                          1.50      326.25               
+Keep old SW loc 0 SW                                       0.00        0.00
+                                                          17.01   $2,691.79               
 
 
+Kitchen Other
+                Big-holes-ok                                                              
+Sink light      LT  SW                                     4.00      611.44               
+Hood Fan        LT                                         2.00      305.52               
+                0 Install hood-fan                         0.00        0.00               
+Light Circuits  CB  Circuit                                0.90      153.90               
+Lighting Layout 0.50 Hour Electrician                      0.50       75.00               
+Temp power      0.50 hour electrician                      0.50       75.00
+                                                           7.90   $1,220.86               
 
 
-                                                        
-Kitchen Lighting                                        
-                Open-1-side                                                               
-Demo work       1.00 hours electrician                     1.00      180.00               
-Recessed lights  5 LT  2 S3                                6.86    1,273.44               
-Layout cans     120 Minutes Electrician                    2.04      367.20               
-Sink light      LT  SW                                     1.83      340.44               
-Hood Fan        LT  Install hood-fan                       1.48      271.92               
-Light Circuits  CB  Circuit                                0.80      154.12               
-Lighting Layout 0.50 Hour Electrician                      0.50       90.00               
-Temp power      0.50 hour electrician                      0.50       90.00
-                                                          15.01   $2,767.12               
-
-Kitchen fixtures
-                180 dollars allowance                      0.00      180.00               
-Fish in ceiling 1 hr el                                    1.00      180.00               
-Keep old SW loc ( Problem? )
-                                                           1.00     $360.00               
-                                                        
-Kitchen Power                                           
-MAKE SURE       Open-1-side                                                               
-Dishwasher      PL  CB  Circuit                            1.65      312.64               
-Cords (if NIC)  1 Cord                                     0.25       51.10               
-Refrigerator    PL                                         0.85      158.52               
-Disposal NIC    ( Not wanted )                                                            
-Stove Igniter   PL                                         0.85      158.52               
-Counters        4 PL  2 GFCI                               3.50      687.18               
+Kitchen Power Plugs
+                Fish-in-walls  ( Big X ? )                                                
+Dishwasher      PL  CB  Circuit                            3.65      574.85               
+Cords (if NIC)  1 Cord                                     0.25       43.60               
+Refrigerator    PL                                         2.75      420.95               
+Disposal NIC    0 SW  0 PL                                 0.00        0.00               
+Stove Igniter   PL                                         2.75      420.95               
+Counters        4 PL  2 GFCI                              11.10    1,733.90               
                 fish-in-walls                                                             
-Waincot table   1 PL                                       2.75      503.45               
-Util Circuits   2 CB  2 Circuit                            1.80      361.80               
-Layout plugs    1 Hour Electrician                         1.00      180.00
-                                                          12.65   $2,413.21               
+Wainscot table  1 PL                                       2.75      420.95               
+Util Circuits   2 AFCI 2 Circuit                           1.90      420.00               
+Layout plugs    1 Hour Electrician                         1.00      150.00
+                                                          26.15   $4,185.20               
 
 Living room
                 Fish-in-walls                                                             
-Chain hung      Install gas-stem                           1.00      184.05               
-Renew           4 Device&Plate                             1.00      190.08
-                                                           2.00     $374.13               
+Chain hung      Install gas-stem                           1.00      154.05               
+Renew           4 Device&Plate                             1.00      160.08
+                                                           2.00     $314.13               
 
 Hall
-Switch          3 Device&Plate                             0.75      142.56               
-Old paddle fan  Kill old-fan                               0.50       90.00               
-Chime           Low-volt chime-kit                         0.50      101.47               
-Old pipe        Kill old-wiremold                          0.25       45.00
-                                                           2.00     $379.03               
+Switch          3 Device&Plate                             0.75      120.06               
+Old paddle fan  Kill old-fan                               0.50       75.00               
+Chime           Low-volt chime-kit                         0.50       86.47               
+Old pipe        Kill old-wiremold                          0.25       37.50
+                                                           2.00     $319.03               
 
 Office
-                2 Device&Plate                             0.50       95.04               
-                1 install easy                             0.35       63.00
-                                                           0.85     $158.04               
+                2 Device&Plate                             0.50       80.04               
+                1 install easy                             0.35       52.50
+                                                           0.85     $132.54               
 
 Closet -> Bath
                 Open-1-side                                                               
-                LT                                         0.98      181.92               
-                SW                                         0.85      158.52               
-                PL  GFCI                                   0.90      185.07               
-                AFCI  Circuit                              0.85      211.72               
-                Hang easy                                  0.35       63.00               
-                Device&plate                               0.25       47.52
-                                                           4.18     $847.75               
+                LT                                         0.98      152.52               
+                SW                                         0.85      133.02               
+                PL  GFCI                                   0.90      158.07               
+                AFCI  Circuit                              0.85      186.22               
+                Hang easy                                  0.35       52.50               
+                Device&plate                               0.25       40.02
+                                                           4.18     $722.35               
 
 Back porch
                 Neat-emt                                                                  
-Dryer           Dryer                                      5.31    1,024.77               
-4-oct old box   Install easy                               0.35       63.00               
-Wash machine    PL  AFCI                                   2.00      440.68
-                                                           7.66   $1,528.45               
+Dryer           PL AFCI                                    2.00      380.68               
+4-oct old box   Install easy                               0.35       52.50               
+Wash machine    PL  AFCI                                   2.00      380.68
+                                                           4.35     $813.86               
+
 
 Bath
                 Fish-in-walls                                                             
-                Hang medium                                0.55       99.00               
-Not g+sw        device&plate                               0.25       47.52               
-                GFI                                        0.25       62.55
-                                                           1.05     $209.07               
+                Hang medium                                0.55       82.50               
+Not g+sw        device&plate                               0.25       40.02               
+                GFI                                        0.25       55.05
+                                                           1.05     $177.57               
 
 
-Parlor
-quad + 1        3 device&plate                             0.75      142.56               
-Maybe less $    Install chandelier                         1.50      270.00
-                                                           2.25     $412.56               
+Parlor          Fish-in-walls
+quad + 1        3 device&plate                             0.75      120.06               
+Maybe less $    Install chandelier                         1.50      225.00
+                                                           2.25     $345.06               
 
 Front BR
-Maybe less $    Install chandelier                         1.50      270.00
-                                                           1.50     $270.00               
+Maybe less $    Install chandelier                         1.50      225.00
+                                                           1.50     $225.00               
 
 Smoke alarms
-                3 PS                                       9.00    1,645.35               
-10 Year         2 alarm AC                                 1.00      312.30
-                                                          10.00   $1,957.65               
+10 Year         2 Alarm AC                                 1.00      282.30
+                                                           1.00     $282.30               
                 
-                                                        
-(C) 2019 John A Peters
-\ This proposal is the result of years of experience
-                                                        
-                                                       
-Other Circuit(s)
-                Neat-EMT                                                                  
-Raceway pipe    50 LF-EMT 1/2                              2.65      495.00               
-As needed...    AFCI Circuit                               0.95      238.50               
-If needed...    AFCI Circuit                               0.95      238.50               
-AFCI (Bedrooms) AFCI Circuit                               0.95      238.50
-                                                           5.50   $1,210.50               
-
 
 Permit
-Residential Med   1 Permit 20-Outlets-2                    0.00      330.75               
 Residential Big   1 Permit 40-Outlets-3                    0.00      413.10               
-Cover Inspection  1 Appointment Inspector                  2.00      360.00               
-Final Inspection  1 Appointment Inspector                  2.00      360.00
-                                                           4.00   $1,463.85               
+Cover Inspection  1 Appointment Inspector                  2.00      300.00               
+Final Inspection  1 Appointment Inspector                  2.00      300.00
+                                                           4.00   $1,013.10               
                                                         
 One Time Cost(s)
-Electrician &   Truck-to New-Location                      0.25       45.00               
-Round Trip (if) Truck-to Supply-House                      1.00      180.00
-                                                           1.25     $225.00               
-                                                        
-Fixed Bid Quality
-Draft Proposal  60 Dollars Allowance ( JP )                0.00       60.00               
-1st Day Meeting 45 Dollars Allowance ( JP )                0.00       45.00               
-Finish Quality  45 Dollars Allowance ( JP )                0.00       45.00
-                                                           0.00     $150.00               
-                                                        
-Contingency Reserve
-Change Orders?  ( Adds, Deletes, Changes )                                                
-Your Ideas      ( "While you are here" )                                                  
-Unseen work     ( Until Inspector gives ok )                                              
-25% or less     1696 Dollars Allowance                     0.00    1,696.00
-\s                                                         0.00   $1,696.00               
-\ This fund allows you to give direct orders to the elec
-\ Avoid gref later minimum 300 or 500 contingency fund
-                                                        
+Electrician &   Truck-to New-Location                      0.25       37.50               
+Round Trip (if) Truck-to Supply-House                      1.00      150.00
+                                                           1.25     $187.50               
+
+
+TOTAL ESTIMATE                                                   $15,676.72     
                                                                  ==========
-TOTAL ESTIMATE               000.00 +1/3   00.00 hrs             $23,547.55
-                                                                 ==========
+
+                                                        
 \s
 
                                 Signature
@@ -204,5 +167,6 @@ City fees, appointment, inspection & certificate if a line item.
                                                        ========                 
 Changes are itemized, suggestions appreciated. (Cross off items)                
 Please be present 2-nd hr of work -OR- provide answers and keys.                
+
 
 
