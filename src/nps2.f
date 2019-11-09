@@ -11,15 +11,15 @@ Elect
 
 | FUSE                    * 550-003  NO-T        ex 08-28-00 BEC
 Vocabulary Fuse           FUSE Definitions \ SKU# Sold Keep Have
-` CB-adapter 600.00 w/c   8 c ; \ Guess price 8-28-00
-` 15A         93.00 w/c   8 c ; \
-\ Low-amps   295.00 w/c  10 c ; \ to 14a
-` Adapter     84.00 w/c   5 c ; \    90
-` Non-tamp   222.00 w/c   5 c ; \    90
-` 20A         59.00 w/c   8 c ; \    90
-` 60A         94.00 w/c   8 c ; \    90
-` 100A      1620.00 w/c   8 c ; \ Jul 96 Universal
-` 200A      2252.00 w/c   8 c ; \ Jul 96 Universal
+: CB-adapter 600.00 w/c   8 c ; \ Guess price 8-28-00
+: 15A         93.00 w/c   8 c ; \
+: Low-amps   295.00 w/c  10 c ; \ to 14a
+: Adapter     84.00 w/c   5 c ; \    90
+: Non-tamp   222.00 w/c   5 c ; \    90
+: 20A         59.00 w/c   8 c ; \    90
+: 60A         94.00 w/c   8 c ; \    90
+: 100A      1620.00 w/c   8 c ; \ Jul 96 Universal
+: 200A      2252.00 w/c   8 c ; \ Jul 96 Universal 
 : AIC-200A    35.11 w/e   8 c ; \     90
 : AIC-300A    45.00 w/e   8 c ; \ guess  actually 35
 : AIC-400A    55.00 w/e  20 c ; \ GUESS

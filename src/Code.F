@@ -52,7 +52,7 @@ COMMENT;
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
 
-: Competitive-rate [ 150.00 per-hour ] immediate ;   \ For comppetitive bids
+: Competitive-rate [ 150.00 per-hour ] immediate ;   \ For competitive bids
 : comp-rate ;  \ easier to spell
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
@@ -146,7 +146,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
      parts-ext 2@  labor-ext 2@  d+
      2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
 
-: CALC-OTHER ( n -- )
+: CALC-OTHER ( n -- )                                              \  Looks ok           
     100 * s>d 2dup other-sub 2+! other-total 2+! ;
 
 : CALC-PERMIT ( n d -- )
@@ -423,6 +423,17 @@ false value partswholesaleshow
   if drop s" bids " cgbase" 2dup + 1- 0 swap c!  "chdir
      to$ +NULL false to$ 1+ 
      s" template " over + 1- 0 swap c!
+    Call CopyFile 0= abort" The COPY Failed!"
+  else close-file then to$ count "+open-text
+      9 to cursor-line reEdit ;
+
+: CAB-MINI { \ to$ -- <fname> }   \ copies bids\template to a new file
+  max-path localAlloc: to$
+  /parse-s$ count to$ place
+  to$ $open     \ don't copy if already exists
+  if drop s" bids " cgbase" 2dup + 1- 0 swap c!  "chdir
+     to$ +NULL false to$ 1+
+     s" template-mini " over + 1- 0 swap c!
     Call CopyFile 0= abort" The COPY Failed!"
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
