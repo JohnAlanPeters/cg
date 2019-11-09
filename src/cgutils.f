@@ -180,18 +180,20 @@ editor
 hidden
 
 : words-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
-  ." The Forth word WORDS does not work on the cloud from a browser. " cr
+  ." The Forth word WORDS does not work on the cloud from a browser, yet. " cr cr
   ." Instead, use WORDS-LIST as a work-around for now. " cr
   ." Caution FORTH WORDS-LIST will make you wait about 60 seconds . . . " cr
-  ." and then blast them all at once, but it does work. " cr
-  ." For a shorter (faster) list of words try a smaller vocabulary " cr
-  ." INSTALL WORDS-LIST is only 48 words " cr
-  ." PANEL LIST or EMT WORDS-LIST or NAILER WORDS-LIST come up pretty fast " cr
-  ." Big vocabularies like ELECTRIC WORDS-LIST or FORTH WORDS-LIST take quite a while " cr
+  ." Then it will blast all the WORDS to the browser at once, but it does work. " cr
+  ." For a shorter (faster) list of words try a smaller vocabulary. " cr
+  ." INSTALL WORDS-LIST is only 48 words. " cr
+   cr
+  ." PANEL LIST or EMT WORDS-LIST or NAILER WORDS-LIST come up pretty fast. " cr
+   cr
+  ." Big vocabularies like ELECTRIC WORDS-LIST or FORTH WORDS-LIST take quite a while. " cr
   ." For electrician's install times, prices and the sell price try this. " cr
-  ." INSTALL HOOD-FAN CR " cr
-  ." INSTALL MICRO-HOOD CR " cr
-  ." TOTAL CR" cr ;
+  ." INSTALL HOOD-FAN " cr
+  ." INSTALL MICRO-HOOD " cr
+  ." TOTAL " cr cr ;
 
 : WORDS-list   ( -<optional_name>- ) \ WORDS partial-string will focus the list
      words ;
@@ -199,5 +201,17 @@ hidden
 forth
 : words ( -<optional_name>- )
   in-web?
-  if words-msg else words then ;
+  if words-msg else words wordscount then ;
+
+: getdatetime ( -- daddr dlen taddr tlen )
+  get-local-time time-buf >date"
+  time-buf >time" ;
+
+: data>fuser ( a1 t1 -- )  \ datetime, username, or ip address
+  s" \cg\src\webinterpret\users" 2dup r/w open-file
+  if drop r/w create-file drop
+  else -rot 2drop then
+  dup >r file-append drop
+  r@ write-file drop r> close-file drop ;
+
 
