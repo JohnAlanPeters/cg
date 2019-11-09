@@ -101,7 +101,17 @@ create vbuf 200 1024 * allot
       else drop then r> close-file
    then drop ;
 
-: srvrinput ( addr cnt -- )      \ audit this one
+create lastwebuser 64 allot
+
+: showwebuser ( -- )
+  getdatetime vbuf place s"  " vbuf +place vbuf +place
+  s"  " vbuf +place ssock getpeername drop
+  2dup lastwebuser count compare
+  if 2dup lastwebuser +place vbuf +place crlf$ count vbuf +place
+     vbuf count data>fuser vbuf count type
+  else 2drop then ;
+
+: srvrinput ( addr cnt -- )
    \ check for webpage request
    \ first line has GET <path> HTTP
    \ else client wants Forth executed
@@ -109,6 +119,7 @@ create vbuf 200 1024 * allot
    over 3 s" GET"           \ address over to the top of stack
    compare not              \ compare the comand string and the string with the 'GET'
    if 2drop                 \ if not = drop the address of both strings and send HTML file
+     showwebuser
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs              \ chop off headers up to 2 CRLFs to get to data  \ rda told me ( 2 headers? not one?) 
        ?dup                \ duplicate the len of the request string if not zero
