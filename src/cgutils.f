@@ -179,7 +179,7 @@ editor
 
 hidden
 
-: words-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
+: words-WEB-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
   ." The Forth word WORDS does not work on the cloud from a browser, yet. " cr cr
   ." Instead, use WORDS-LIST as a work-around for now. " cr
   ." Caution FORTH WORDS-LIST will make you wait about 60 seconds . . . " cr
@@ -201,7 +201,7 @@ hidden
 forth
 : words ( -<optional_name>- )
   in-web?
-  if words-msg else words ( wordscount ) then ;
+  if words-WEB-msg else words ( wordscount ) then ;
 
 : getdatetime ( -- daddr dlen taddr tlen )
   get-local-time time-buf >date"

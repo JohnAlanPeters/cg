@@ -288,7 +288,6 @@ defer _Control+W ' close-text is _control+w
 : edopen ( -- )
   s" \cg\bids\help.txt" "+open-text ;
 
-: JAPP ; \ Another place marker for use with VIEW
 : F13  ; \ Yet another
                       
 : VIEW-KEY-LOOP ( -- )
@@ -454,5 +453,5 @@ defer _Control+W ' close-text is _control+w
         ENDCASE
       AGAIN   ;
 
-: FF  ; \ I like to be able to VIEW this word to quickly jump to the file  
-\ that contains the key bindings lists.  Please do not remove it.
+: F14  ; \ I like to be able to VIEW this word to quickly jump to this file
+         \ Please do not remove it.

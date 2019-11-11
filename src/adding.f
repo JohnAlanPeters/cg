@@ -11,7 +11,7 @@ editor also
 : GET-GL-BUD  topout 3 + 65 get-number ;  \ GL estimated to do the work
 : GET-GL-ACT  topout 4 + 65 get-number ;  \ Actual GL spent, comes from QB
 : GET-DBI     topout 5 + 65 get-number ;  \ GL for the time to do DBI Inspection
-\ : GET-GL-REM  topout 6 + 65 get-number ;  \ GL Rem in the budget
+  : GET-GL-REM  topout 6 + 65 get-number ;  \ GL Rem in the budget
 
 : HrsDiff ( -- )  \ calc (real.hrs) - (10% hrs )
   topout 7 + 68 get-number       \ -- d1-real.hrs    (calculated and bid)
@@ -33,39 +33,41 @@ editor also
   then ;
 
 
-: TIME-OUT    ( first last -- )   \ Callender or schedule the job days & hours
+: TIME-OUT    ( first last -- )   \ Calender or schedule the job days & hours
   time-total 2@                  topout    51 at-cents  \ Total Hrs  Goal
   time-total 2@  .80 d* 100. d/  topout    64 at-cents  \ Total Hrs  Actual
   time-total 2@  1.00 d* 5.00 d/ topout 1+ 51 at-cents  \ Total Days Envelope
   time-total 2@  1.00 d* 7.50 d/ topout 1+ 64 at-cents  \ Total Days Actual
   ;
 
-: SELL-OUT    ( -- )    \ total estimate
+: SELL-OUT    ( -- )     \ total estimate including what?
   EX-TOTAL topout 2 + 51 at-cents ;
 
-: LABOR-OUT    ( -- )
-  labor-total 2@ topout 3 + 51  at-cents ;      \ This is the budgeted hours
+: LABOR-OUT    ( -- )    \ actuall hours
+  labor-total 2@ topout 3 + 51  at-cents ;
 
-: PARTS-OUT  ( -- )     \ materials
+: PARTS-OUT  ( -- )      \ materials marked-up
   parts-total 2@  topout 4 + 51  at-cents ;
 
-: WHOLESALE-OUT ( -- )
+: WHOLESALE-OUT ( -- )   \ materials at whowsale
   wholesale-total 2@ topout 4 + 64 at-cents ;
 
-: OTHER-OUT ( -- )
+: OTHER-OUT ( -- )       \ contingency fund
   other-total 2@ topout 5 + 51 at-cents ;
 
-: ALLOWANCE-OUT ( -- )
+: ALLOWANCE-OUT ( -- )   \ contingency fund
   allowance-total 2@ topout 5 + 64 at-cents ;
 
-: PERMIT-OUT ( -- )
+: PERMIT-OUT ( -- )      \ DBI costs and time to meet inspector?
   permit-total 2@ topout 6 + 51 at-cents ;
 
 
-: ADD-ALL-SCREENS   ( -- )
-  bid-thru              \ extend all vscrns accumulating totals
-  sell-out  time-out wholesale-out  parts-out   labor-out ; 
-  \ other-out permit-out  allowance-out ;
+: ADD-ALL-SCREENS ( -- ) \ It all happens here
+  bid-thru               \ extend all vscrns accumulating totals
+  sell-out  time-out wholesale-out  parts-out   labor-out ;
+\   other-out            \ what?
+\   permit-out           \ DBI fees
+\   allowance-out ;      \ contingency fund
 
 : LAB-BUD-35  ( -- d) labor-total 2@ 1.00 d* .286 d/  ;
 : LAB-BUD-100 ( -- d) labor-total 2@ ;
@@ -145,7 +147,7 @@ editor also
      else 2drop drop then
 \    20% 25% cc
   then  EX-TOTAL to last-total
-  ( clear-totals ) save-text overstrike on ;
+  ( clear-totals ) save-text ( overstrike on ) ;
 
 ' AA is grand-total   \ AA from the console or use F2 from within the editor
 

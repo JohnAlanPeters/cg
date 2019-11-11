@@ -81,8 +81,8 @@ Elect
 
 
 | SWEEP  24-in radius     C 001-004  BR-3           12-16-01 BEC
-Vocabulary SWEEP          SWEEP Definitions    \ Sold Keep Have 
-\ 1-1/2       69.00 w/e   56 c ; \ Too small 2-in minimum PG&E  
+Vocabulary SWEEP          SWEEP Definitions    \ Sold Keep Have
+: 1-1/2       69.00 w/e   56 c ; \ Too small 2-in minimum PG&E   
 : 2x24        42.00 w/e   75 c ; \ 29.86 Aug 96  30.61 Aug 03   
 : 2x24-PVC    45.00 w/e   75 c ; \ Minimum & 24-in radius PG&E  
 : 2x36        75.00 w/e   75 c ; \    $40.43            to 200A 
@@ -1848,7 +1848,7 @@ GE  Definitions
 : 15A           6.00 w/e 20 c ; \ Apr 97  Jerome Const.         
 : 20A           6.00 w/e 20 c ; \                               
 \ 20A-2P         .00 w/e 30 c ; \                               
-\ 30A          41.00 w/e 30 c ; \                               
+: 30A          41.00 w/e 30 c ; \                                
 \ 40A           30A ;
 : 50A          51.00 w/e 40 C ; \ 41.00 30  But hard to find
 : 60A           50A ;
@@ -1863,12 +1863,12 @@ Elect
 Vocabulary ITE                            \ Used Sold Keep Have 
 ITE    Definitions                                              
 \ Filler         .90 w/e 01 c ; \                               
-\ 15A           9.00 w/e 20 c ; \                               
+: 15A           9.00 w/e 20 c ; \
 : 20A          16.75 w/e 20 c ; \ 6.00 Ind. Bill Poole Feb 98   
-\ 20a-2p       18.00 w/e 30 c ; \                               
-\ 30a-2p       18.00 w/e 30 c ; \                               
-\ 60A          25.00 w/e 30 C ; \                               
-\ 90a          92.66 w/e 90 c ; \                               
+: 20a-2p       18.00 w/e 30 c ; \
+: 30a-2p       18.00 w/e 30 c ; \
+: 60A          25.00 w/e 30 C ; \
+: 90a          92.66 w/e 90 c ; \
 \ 50A                                                           
 : 3P-60A      165.00 w/e 90 c ; \  West Gate                    
 Elect \                                                         
@@ -2055,7 +2055,7 @@ Elect \
                                                                 
 
 | METER (in)                                        09-16-08 AL
-Vocabulary Meter          Meter definitions                     
+Vocabulary Meter          Meter definitions
 : E-Monitor   480.00 w/e 250 c ; \ 379.00 Sept 08               
 : 1-Gang       72.00 w/e 250 c ; \ 72.00                        
 : 100A          1-GANG ;                                        
@@ -2066,8 +2066,9 @@ Vocabulary Meter          Meter definitions
 \ More than   5 see note below.                                 
 : Link-Kit     25.00 w/e  50 C ; \ LK171B        23.75 Apr 02   
 \ 5th-Jaw       2.30 w/e .....                                  
-Elect  : Meter-In Meter ;                                       
-\ More than 4, have to join.  If you go to rain tite you will   
+Elect  
+: Meter-In Meter ;                                       
+\ More than 4, have to join.  If you go to rain tite you will
 \ be paying for 400 amp buss after 4 meters.                    
                                                                 
 
@@ -2100,7 +2101,7 @@ Vocabulary Hub                            \ Used Sold Keep Have
 ` 2-in       600.00 w/c  65 C ; \                   1    1    1 
 ` 2-1/2     1000.00 w/c  65 C ; \ too low?               1    2 
 ` 3-in      1200.00 w/c  65 C ; \ guess                  1    2 
-\ Adapter    515.00 w/c  65 C ; \                        1    2 
+: Adapter    515.00 w/c  65 C ; \                        1    2
 \ Conduit termination bushing set times.                        
 \ Blank                                                  2    2 
 Elect                                                           
@@ -2155,9 +2156,9 @@ Vocabulary M-P
 : 100A-10-20   103.79 w/e 250 c ; \ JA110AS 76.71     2012  Not made
 : 100A-12-24   149.56 w/e 250 c ; \ JA112CY UG/OH  March 2014
 : 100A-16-24   189.50 w/e 250 c ; \ Westinghouse   March 2014
-\ 125A-16-24   220.50 w/e 250 c ; \ JA416CS
-\ 200A-8-16    225.00 w/e 290 c ; \ JA206CS
-\ 200A-20-40   189.00 w/e 290 c ; \ March 2014         
+: 125A-16-24   220.50 w/e 250 c ; \ JA416CS
+: 200A-8-16    225.00 w/e 290 c ; \ JA206CS
+: 200A-20-40   189.00 w/e 290 c ; \ March 2014
 : 200A-30-40*  275.00 w/e 100 c ; \ Guess
 \              129.00 B&K Apr 97  \ JA220CW Pheonex             
 : 400A-20-42 1300.00 w/e 300 c ; \ ,                            

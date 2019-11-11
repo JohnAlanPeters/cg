@@ -1,13 +1,11 @@
 \ $Id: Extend-Prices.f,v 1.4 2011/10/24 18:38:11 rdack Exp $
-\ File is EXTEND-PART.F  by Robert D. Ackerman (hard stuff) and John Peters
+\ File is EXTEND-PRICES.F  by Robert D. Ackerman (hard stuff) and John Peters
 \ Created December 08, 2001  Revised January 1, 2002
 \ Now it is working better on Thursday, April 29 2004 - 18:47
 (( Do you want to right justify output so decimal points line up?
 then use rightmost column minus count from prt# as starting column
 for emit-at-column.
-
-This code was created fresh for the WindCG version.
-I'm still hoping to use the old version so all of my code will start working.
+This code was created fresh for the WinCG version.
 ))
 
     editor
@@ -34,7 +32,7 @@ I'm still hoping to use the old version so all of my code will start working.
   cursor-line #line" drop c@ ascii \ = dup
   if 1 true skiplines then ;
                    
-: EXTEND ( -- )  \ Ctrl+E  Extends all the lines from 23 down to TOTAL ESTIMATE
+: EXTEND ( -- )  \ Ctrl+E  Extends all the lines from 17 down to TOTAL ESTIMATE  
                  \ This is hard coded in BID-THRU
                                                                \ JP
     -1 true skiplines 1 +to cursor-line  \ get to top of current vscr
