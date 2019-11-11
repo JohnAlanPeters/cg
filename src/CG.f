@@ -140,7 +140,7 @@ forth also forth definitions editor
   .viewinfo count "+open-text 0 swap 1-
   to-find-line refresh-line reEdit ;
 
-: VV-web ( <word> -- ) bl word drop cr
+: VV-web-instructions ( <word> -- ) bl word drop cr 
   ." Use SEE <word> to decompile the source code." cr
   ." To use VIEW you need to have the the disk based system or" cr
   ." We can use Google Hanagouts and I can demo the Contract Generator TM'
@@ -149,7 +149,7 @@ forth also forth definitions editor
 
 : VIEW
   in-web?
-  if vv-web
+  if vv-web-instructions
   else vv-con
   then ;
 
@@ -157,7 +157,7 @@ forth also forth definitions editor
 
 : VV
    in-web?
-   if vv-web
+   if vv-web-instructions
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
          focus-console false to invkloop
    then ;

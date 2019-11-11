@@ -598,12 +598,11 @@ Vocabulary Fixture       Fixture definitions
 : Motion-Head   45.00 w/e 40 c ; \ 30.00 RAB black 300W 8/08!
 : Motion-RAB    47.00 w/e 50 c ; \ Motion Head only, works with LED
 : Motion-socket 45.00 w/e 20 c ; \ 38.94 inc ship, not tax,
-\ RAB LUMINtor is not fully ajdustable unless you try for hte Gotcha?
-\ The Designers Edge, little dials, kinda dumb, 40W minimum
 : Light-Sensor  15.00 w/e 25 c ; \ plc 3040 150w sauser
 : Double-head 2006.00 w/c 25 c ; \
 : Single-Head 1500.00 w/c 25 c ; \
 : Keyless      160.00 w/c 20 c ; \ 5-05
+: Porclean   keyless ;
 : Pull-string  375.00 w/c 20 c ; \ 3.6661 May 2009
 : Temp-Light   400.00 w/c  8 c ; \ 3.50 Dec 2003
 : Fiber-Hat   8000.00 w/c 50 c ; \ B&K 78 Univ 80 Apr 2005

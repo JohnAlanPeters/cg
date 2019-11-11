@@ -171,15 +171,15 @@ editor
          cur-line @ cur-file
     then over to orig-loc ;
 
-: show ( <word> -- )  \ show in console first line of definition from source
+: _show ( <word> -- )  \ show in console first line of definition from source
  [  editor ] vwinfo count "+open-text 0 swap 1-
   to-find-line get-cursor-line cur-buf lcount focus-console cr type ;
 
-: show+ >in @ see >in ! show ;                  \ 'see' plus 'show'
+: SHOW  >in @ _show >in ! see ;                  \ Show+ was 'see' plus 'show'
 
 hidden
 
-: words-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
+: words-WEB-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
   ." The Forth word WORDS does not work on the cloud from a browser, yet. " cr cr
   ." Instead, use WORDS-LIST as a work-around for now. " cr
   ." Caution FORTH WORDS-LIST will make you wait about 60 seconds . . . " cr
@@ -201,7 +201,7 @@ hidden
 forth
 : words ( -<optional_name>- )
   in-web?
-  if words-msg else words wordscount then ;
+  if words-WEB-msg else words ( wordscount ) then ;
 
 : getdatetime ( -- daddr dlen taddr tlen )
   get-local-time time-buf >date"
