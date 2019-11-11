@@ -127,7 +127,7 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 4     THE CALCULATIONS ======
 : EX-TOTAL ( -- d )  \ add the 3 'total' variables
-  sell-total 2@ other-total 2@ d+ permit-total 2@ d+ ;
+  sell-total 2@ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+ ;
 
 : CALC-PARTS   ( d -- )
      2dup  parts-cost 2!  Quan 2@  d*  1.00 d/

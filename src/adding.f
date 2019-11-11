@@ -64,10 +64,11 @@ editor also
 
 : ADD-ALL-SCREENS ( -- ) \ It all happens here
   bid-thru               \ extend all vscrns accumulating totals
-  sell-out  time-out wholesale-out  parts-out   labor-out ;
-\   other-out            \ what?
-\   permit-out           \ DBI fees
-\   allowance-out ;      \ contingency fund
+  sell-out  time-out wholesale-out  parts-out   labor-out 
+  other-out            \ what?
+  permit-out           \ DBI fees
+  allowance-out      \ contingency fund
+  ;
 
 : LAB-BUD-35  ( -- d) labor-total 2@ 1.00 d* .286 d/  ;
 : LAB-BUD-100 ( -- d) labor-total 2@ ;

@@ -1767,13 +1767,13 @@ Vocabulary Dollars        Dollars definitions
 \ T&M++      43.00 w/c  8 m  ; \ Even higher porton of materials
 \ T&M+++     60.00 w/c  4 m  ; \ Even higher porton of materials
 : Cost ( must )  100 EX  0 c ; \ Must use E      use ...FLUF
-: Other      calc-other 0 E  ;
+: Other  ( n -- ) calc-other 0 e    ;
 : Credit               Other ; \ NOTE Cost is no markup!
 : Project               T&M  ;
 : Time&Materials  T&M ;
 : Fixtures              Cost ;
 \ : Tax                 Cost ;
-: Allowance            Other ;
+: Allowance ( n -- )  calc-allowance 0 e ;
 : Profit               Other ;
 : Designing             Cost ;
 \ Wholesale  100.00 w/c 00 m ; \ Retail
