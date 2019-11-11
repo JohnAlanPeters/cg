@@ -142,10 +142,6 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
      quan 2@  d*  unit s>d   d/ timejack @ s>d d* 100. d/
      2dup  time-ext   2!  2dup time-sub 2+!   time-total 2+!  ;
 
-: CALC-SELL  ( -- )
-     parts-ext 2@  labor-ext 2@  d+
-     2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
-
 : CALC-OTHER ( n -- )
     100 * s>d 2dup other-sub 2+! other-total 2+! ;
 
@@ -155,6 +151,10 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 : CALC-ALLOWANCE ( n -- )
     100 * s>d 2dup allowance-sub 2+! allowance-total 2+! ;
 
+: CALC-SELL  ( -- )
+     parts-ext 2@  labor-ext 2@  d+
+     other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+
+     2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 5     SHOW THE RESULTS ======
@@ -167,8 +167,8 @@ false value partswholesaleshow
 0 value discount         \ rate of discount; 100 -> no diff
 
 : sub<>0  ( -- fl )   \ if sub is not zero
-  \ sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
-  quan 2@ -1 -1 d<> ;
+  sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
+  \ quan 2@ -1 -1 d<> ;
 
 : vtotal<>0 ( -- fl )
   EX-TOTAL + ;
@@ -211,19 +211,18 @@ false value partswholesaleshow
 
 : CONS-SHOW-SELL ( -- )
   in-web?
-  if  \ which one?
+  if
     52 ( 77 ) >ccol labor-ext 2@ bucks
     62 ( 87 ) >ccol sell-ext  2@ bucks
     discount
-    if  \ the other one
-     sell-ext 2@ discount 0 d* 1.00 d/
-     72 ( 97 ) >ccol bucks
+    if sell-ext 2@ discount 0 d* 1.00 d/
+       72 ( 97 ) >ccol bucks
     then
-  else  \ wich one?
+  else  \ console
     61 ( 77 ) >ccol labor-ext 2@ bucks
     71 ( 87 ) >ccol sell-ext  2@ bucks
     discount
-    if  \ wich one?
+    if
       sell-ext 2@ discount 0 d* 1.00 d/
       81 ( 97 ) >ccol bucks
     then
@@ -267,11 +266,10 @@ false value partswholesaleshow
   if   show2parts
   else partscolshow
     if   show-parts
-  then
-       timecolshow
-     if   show-time
+    then timecolshow
+    if   show-time
     then
-   then show-sell ;
+  then show-sell ;
 
 : remvoc ( -- )  \ remember vocab we are in for later display
   context @ voc>vcfa , ;

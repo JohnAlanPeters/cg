@@ -142,8 +142,8 @@ forth also forth definitions editor
 
 : VV-web ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
-  ." To use VIEW you need to have the the disk based system or" cr
-  ." We can use Google Hanagouts and I can demo the Contract Generator TM'
+  ." VIEW requires the the disk based system or" cr
+  ." I can demo the Contract Generator TM with a screen-share app. cr
   ." If you know GitHub you can view the code in GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
