@@ -127,7 +127,7 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 4     THE CALCULATIONS ======
 : EX-TOTAL ( -- d )  \ add the 3 'total' variables
-  sell-total 2@ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+ ;
+  sell-total 2@ ; \ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+ ;
 
 : CALC-PARTS   ( d -- )
      2dup  parts-cost 2!  Quan 2@  d*  1.00 d/
@@ -146,14 +146,15 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
     100 * s>d 2dup other-sub 2+! other-total 2+! ;
 
 : CALC-PERMIT ( n d -- )
-     swap s>d d* 2dup permit-sub 2+! permit-total 2+! ;
+     swap s>d d* 2dup permit-sub 2! permit-total 2+! ;
 
 : CALC-ALLOWANCE ( n -- )
-    100 * s>d 2dup allowance-sub 2+! allowance-total 2+! ;
+    100 * s>d 2dup allowance-sub 2! allowance-total 2+! ;
 
 : CALC-SELL  ( -- )
      parts-ext 2@  labor-ext 2@  d+
-     other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+
+     \ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+
+     other-sub 2@ d+ permit-sub 2@ d+ allowance-sub 2@ d+
      2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -181,8 +182,7 @@ false value partswholesaleshow
 : SHOW-TIME ( -- )
   time-col TAB-in  time-sub 2@ 2 8 d.nr ;
 : SHOW-SELL ( -- )
-  sell-col TAB-in  sell-sub 2@ other-sub 2@ d+
-  permit-sub 2@ d+ allowance-sub 2@ d+ bucks
+  sell-col TAB-in  sell-sub 2@ bucks
   discount
   if sell-sub 2@ discount 0 d* 1.00 d/
      discount-col TAB-in bucks
