@@ -153,7 +153,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 
 : CALC-SELL  ( -- )
      parts-ext 2@  labor-ext 2@  d+
-     \ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+
+     \ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+  ( jappjapp )
      other-sub 2@ d+ permit-sub 2@ d+ allowance-sub 2@ d+
      2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
 
