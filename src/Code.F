@@ -247,6 +247,7 @@ false value partswholesaleshow
    IF 1 THEN  ;
 
 : CLEAR-SUB \ used by interpret-lines++
+  parts-ext 2off labor-ext 2off
   parts-sub 2off labor-sub 2off wholesale-sub 2off
   other-sub 2off permit-sub 2off allowance-sub 2off
   time-sub 2off sell-sub 2off  ;
