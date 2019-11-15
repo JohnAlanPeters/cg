@@ -150,12 +150,16 @@ Electric Definitions
 : PL-easy       14.73 w/e     100 c ; \ Almost 1/2 off
 : LT-very-Easy  11.90 w/e      75 c ; \ for Ed
 : PL-very-easy  11.90 w/e      40 c ; \ for Phifer
-: LT            PL ;
-: LT-medium     PL-medium ;
-: LT-easy       14.73 w/e     125 c ;     : SW    PL ;
-: SW-medium     PL-medium ;               : S3    LT ;
-: SW-easy       PL-easy ;                 : Tap   PL-easy ;
-: (J)              PL ;                   : (J)-easy  PL-easy ;
+: LT             PL ;
+: LT-medium      PL-medium ;
+: LT-easy       14.73 w/e     125 c ;
+: SW             PL ;
+: SW-medium      PL-medium ;
+: S3             LT ;
+: SW-easy        PL-easy ;
+: Tap           0.10 w/e 25 c ;  \ Tap power by open-close          
+: (J)              PL ;
+: (J)-easy  PL-easy ;
 Elect  
 \ Neat-wiremold Neat-WM ;
 
