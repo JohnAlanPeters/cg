@@ -160,7 +160,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 5     SHOW THE RESULTS ======
 
-: .W/S    ( d -- d ) 2dup  2-6-d.nr  space ;
+: .W/S    ( d -- d ) 2dup  6 d.xx  space ;
 
 true  value timecolshow      \ set false to not show time column
 false value partscolshow     \ set false to not show parts column
