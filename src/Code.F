@@ -52,9 +52,6 @@ COMMENT;
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
 
-: Competitive-rate [ 150.00 per-hour ] immediate ;   \ For competitive bids
-: comp-rate ;  \ easier to spell
-
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
 2variable PARTS-SUB   \ is in use by interpret-lines++
