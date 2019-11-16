@@ -279,15 +279,23 @@ false value partswholesaleshow
   cons-show-sell ;
 
 : IncWholeSaleSub  ( d -- )
-   2dup quan 2@ d* 100.00 d/
+   2dup quan 2@ d* 100. d/
    partswholesaleshow
    if 2dup WholeSale-Sub 2+!  then
    wholesale-total 2+!  ;
 
+1.00 2value markup        \ default is no markup
+
 : MARK-IT-UP  ( w/s -- r/t )
    IncWholeSaleSub
-   1.35  d*  100.  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?                      
+   markup  d*  100.  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?
                           \ back to 1.35 after Ez Navar kit LED conversion
+: small-parts ( -- )
+  2.00 2to markup ;
+
+: large-parts ( -- )
+  1.35 2to markup ;
+
 : MMM    ; \ For use with view
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
