@@ -1009,7 +1009,7 @@ Vocabulary Tube Tube definitions
 : 9W           5.00 w/e  0 c ; \ June 94
 : FC-8         6.50 w/e  0 c ; \ June 94  FC-8
 : FC-12        7.00 w/e  0 c ; \ June 94
-: LED         22.00 w/e  0 c ; \ 30.00 r/t
+\ LED         22.00 w/e  0 c ; \ 30.00 r/t
 : LED2        23.00 w/e  0 c ; \ experiment 
 Elect
 
@@ -2198,15 +2198,15 @@ Vocabulary TRAVEL
 TRAVEL Definitions
 : Walk-job      0.00 w/c 200 c ;
 : Meet-Inspector 0.0 w/c 100 c ;
-\ Service-Call   0.0 w/c 150 c ;
-\ Each-day       0.0 w/c  25 c ;
+: Service-Call   0.0 w/c 150 c ;
+: Each-day       0.0 w/c  25 c ;
 : Medium         0.0 w/c  75 c ;
 : Return-Trip    0.0 w/c  75 c ;
-\ Roll-it       0.00 w/c 100 c ;
+: Roll-it       0.00 w/c 100 c ;
 : Parking       0.00 w/c  25 c ;
 : Easy          0.00 w/c  25 c ;
-\ Dump-run     15.00 w/e  50 c ;
-\ Man-Days       0.0 w/c  50 c ;
+: Dump-run     15.00 w/e  50 c ;
+: Man-Days       0.0 w/c  50 c ; 
 : Parts-run      0.0 w/c 100 c ;
 : 2nd-parts-run  0.0 w/c  50 c ; 
 Elect
@@ -2882,86 +2882,35 @@ Trench Definitions       \
 : Square     300.00 w/e  00 c ;
 Elect
 
-\ Under Cabinet LED
-Vocabulary UC-LED
-UC-LED Definitions
+\ LED Under Cabinet
+Vocabulary LED-UC
+           LED-UC Definitions
 : 48-inch  184.00 w/e  55 c ; \ May 2019 Dimmable 4000K LED GetinLight AZ
 : 40-inch  139.90 w/e  50 c ;
-: 42-inch  139.00 w/e  50 c ; \ 133.00 After Navar      
+: 42-inch  139.00 w/e  50 c ; \ 133.00 After Navar
 : 32-inch   99.00 w/e  50 c ;
-: 30-inch   99.00 w/e  50 c ; 
+: 30-inch   99.00 w/e  50 c ;
 : 24-inch   85.90 w/e  50 c ;
 : 18-inch   69.90 w/e  50 c ;
 : 12-inch   49.90 w/e  45 c ;
-:  9-inch   39.90 w/e  40 c ;      
+:  9-inch   39.90 w/e  40 c ;
 Elect
 
-\ Under Cabinet Flo
-Vocabulary UC-Flo  \ I could not find these in the files
-UC-Flo Definitions \ Hard to find the prices
-: 48-inch  184.00 w/e  55 c ; \ June 2019
-: 40-inch  139.90 w/e  50 c ; \ guess
-: 42-inch  139.00 w/e  50 c ; \ guess
-: 32-inch   43.99 w/e  50 c ; \ This one for Jane Cloninger
-: 30-inch   35.00 w/e  50 c ; \ guess
-: 24-inch   28.35 w/e  50 c ; \ guess
-: 18-inch   23.46 w/e  50 c ; \ 14.19  19.99
-: 12-inch   34.99 w/e  45 c ;
-:  9-inch   39.90 w/e  40 c ;      
+Vocabulary LED
+           LED definitions
+: Rewire      15.00 w/e 25 c ;
+: Tube        22.00 w/e  0 c ; \ 4K kelvin  48 inch
+
 Elect
 
-Vocabulary Rewire-LED  ( JP 6-14-2019 )
-Rewire-LED definitions
-: 32-inch   15.00 w/e 25 c ;
-: 48-inch   15.00 w/e 25 c ;
-Elect
-
-Vocabulary Retrofit-LED ( JP 6-24-2019 ) \ JAPP
-Retrofit-LED definitions
+Vocabulary LED-Retrofit  \ JP 6-24-2019
+LED-Retrofit definitions
 : 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes 
 : 6-inch    14.50 w/e 60 c ;  \ 38 minutes including ladder time
 Elect                         \ 25 minutes each according to Miro
 
-\ Trouble here?
 
-Vocabulary LED-Tube  LED-tube definitions
-: 110-Volt  44.26 w/e  55 c ;
-: 1-LED-48  1 44.26 *  w/e  55 c ;
-: 2-LED-48  2 44.26 *  w/e  65 c ;
-: 3-LED-48  3 44.26 *  w/e  75 c ;
-: 4-LED-48  4 44.26 *  w/e  85 c ;     
-
-: 1-strip   50.00 w/e  80 c ;
-: 2-strip   90.72 w/e  80 c ;
-Elect
-
-
-
-| LED-Task-Lighting bulbs   000-000  XX-0           08-16-08 AL     
-Vocabulary LED   LED Definitions  ( Lowes prices )
-: 5W-PAR30  59.44 w/e  00 c ; \ Listed at Universal ss a MR-16 = not  $82.32
-: 6W-TypeA  31.35 w/e  00 c ; \ Looks like a type "A" = to 45W not 58W           
-: Tube-48   25.00 w/e  00 c ; \ 4K kelvin 
-                                              
-\ FEIT      44.98 w/e  00 c ; \ Lows 16W=75W
-\ PAR-30    59.00 w/e  00 c ; \ UE Dec 2010
-\ PAR-38D   71.00 w/e  00 c ; \ UE Sec 2010 Dimmable
-\ PAR-38    78.00 w/e  00 c ; \ UE Dec 2010 Non-dimmable
-
-: 14-inch  117.37 w/e  00 c ; \ 14.5 inche strip
-: 19-inch  147.14 w/e  00 c ;
-: Driver   147.06 w/e  00 c ;
-: Starter    6.08 w/e  00 c ;
-: (J)-box    8.19 w/e  00 c ;
-: Gap-Con    4.05 w/e  00 c ;
-: Switch     5.62 w/e  00 c ;
-Elect
-\ Total for Tezer ws $930.81 whole sale  1,241.08 Sell
-\ WAC Lighting BA-LED10  is 30 inches long List 246.30 less 25% is 184.00
-\ 10 x 1W 3000K lamps  Up to 590 lumen wit a CRI up to 85  Audry Wood job 
-
-
-| LED-28 Ameri Fluorescent  000-000  XX-0           08-17-08 AL
+| LED-28 Ameri Fluorescent
 Vocabulary LED-28
 LED-28 Definitions       \
 : LED28inc 115.00 w/e  50 c ;
@@ -2971,7 +2920,6 @@ LED-28 Definitions       \
 : Direct-Con 4.00 w/e  00 c ;
 Elect
 \ First saw at Universal in Aug 08 for Dolan job
-
 
 | Warrantee
 Vocabulary Warrantee                                            
