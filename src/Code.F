@@ -286,14 +286,9 @@ false value partswholesaleshow
 
 : MARK-IT-UP  ( w/s -- r/t )
    IncWholeSaleSub
-   1.35  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?                      
+   1.35  d*  100.  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?                      
                           \ back to 1.35 after Ez Navar kit LED conversion
-: MMM    ; \ For use with view        
-
-\ MARK-IT-UP  ( w/s -- r/t )
-\  IncWholeSaleSub
-\  1.35  d*  100.00  d/ ;
-                         
+: MMM    ; \ For use with view
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 7     UNITS AND QUANTITIES ===========
