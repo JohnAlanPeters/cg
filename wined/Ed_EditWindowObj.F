@@ -240,9 +240,10 @@ Record: LPWinScrollInfo
          if ( Bold ) BLUE  SetTextColor: dc typestr /bold BLACK SetTextColor: dc
          else vtop?
            if BLUE SetTextColor: dc typestr BLACK  SetTextColor: dc
-           else 2dup isnumber?
-           if RED SetTextColor: dc typestr BLACK SetTextColor: dc
-           else typestr then then
+              bold
+           else /bold 2dup isnumber?
+             if RED SetTextColor: dc typestr BLACK SetTextColor: dc
+             else typestr then then
          then
         repeat 2drop
      else typestr then
