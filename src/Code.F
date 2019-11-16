@@ -52,9 +52,6 @@ COMMENT;
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
 
-: Competitive-rate [ 150.00 per-hour ] immediate ;   \ For competitive bids
-: comp-rate ;  \ easier to spell
-
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
 2variable PARTS-SUB   \ is in use by interpret-lines++
@@ -160,7 +157,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 5     SHOW THE RESULTS ======
 
-: .W/S    ( d -- d ) 2dup  2-6-d.nr  space ;
+: .W/S    ( d -- d ) 2dup  6 d.xx  space ;
 
 true  value timecolshow      \ set false to not show time column
 false value partscolshow     \ set false to not show parts column

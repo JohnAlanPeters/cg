@@ -52,7 +52,7 @@ editor also
 : WHOLESALE-OUT ( -- )   \ materials at whowsale
   wholesale-total 2@ topout 4 + 64 at-cents ;
 
-: OTHER-OUT ( -- )       \ contingency fund
+: OTHER-OUT ( -- )       \ credit, profit, etc.
   other-total 2@ topout 5 + 51 at-cents ;
 
 : ALLOWANCE-OUT ( -- )   \ contingency fund
@@ -60,7 +60,6 @@ editor also
 
 : PERMIT-OUT ( -- )      \ DBI costs and time to meet inspector?
   permit-total 2@ topout 6 + 51 at-cents ;
-
 
 : ADD-ALL-SCREENS ( -- ) \ It all happens here
   bid-thru               \ extend all vscrns accumulating totals
