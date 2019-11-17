@@ -1756,37 +1756,37 @@ Elect
 
 
 Vocabulary Commission Commission definitions
-: Allowance   calc-allowance ;
+: Allowance     calc-allowance ;
 Elect
 
 
 \ DOLLARS                   900-012    Caution!!    12-30-90 AL
 Vocabulary Dollars        Dollars definitions
-\ T&M        15.50 w/c 16 m  ; \ Low proportion of materials
-\ T&M+       35.00 w/c 10 m  ; \ Higher proportion of materials
-\ T&M++      43.00 w/c  8 m  ; \ Even higher porton of materials
-\ T&M+++     60.00 w/c  4 m  ; \ Even higher porton of materials
-: Cost ( must )  100 EX  0 c ; \ Must use E      use ...FLUF
-: Other  ( n -- ) calc-other 0 e    ;
-: Credit               Other ; \ NOTE Cost is no markup!
-: Project               T&M  ;
-: Time&Materials  T&M ;
-: Fixtures              Cost ;
-\ : Tax                 Cost ;
+: Dollar                Dollars ;
+: $$                    Dollars ;
+: Wholesale     100.00 w/c 00 m ; \ Retail
+: Parts         100.00 w/c 00 m ; \ Materials
+: T&M            15.50 w/c 16 m ; \ Low proportion of materials
+: T&M+           35.00 w/c 10 m ; \ Higher proportion of materials
+: T&M++          43.00 w/c  8 m ; \ Even higher porton of materials
+: T&M+++         60.00 w/c  4 m ; \ Even higher porton of materials
+: Cost ( must )    100 EX   0 c ; \ Must use E      use ...FLUF
+: Designing                Cost ; \ NOTE Cost is no markup!
+: Fixtures                 Cost ;
+: Tax                      Cost ;
+: Overhead                 Cost ;
+: Project                   T&M ;
+: Time&Materials            T&M ;
+: Other ( n -- ) calc-other 0 e ; \ This does not look right
+: Credit                  Other ;
+: Profit                  Other ;
+: Fees                    Parts ;
+: Sub-Contract            Parts ;
+: Rental              Wholesale ;
 : Allowance ( n -- )  calc-allowance 0 e ;
-: Profit               Other ;
-: Designing             Cost ;
-\ Wholesale  100.00 w/c 00 m ; \ Retail
-: Parts      100.00 w/c 00 m ;
-: Fees                 Parts ;
-: Sub-Contract         Parts ;
-: Overhead              Cost ;
-\ Rental           Wholesale ;
 Elect
-: Dollar Dollars ;
-: $$     Dollars ;  
 
-\ SETUP Job                 900-020                 05-13-09    
+\ SETUP Job These are all labor catagory
 Vocabulary Setup   Setup definitions
 : Safety-Check    .00 w/c  61 c ;
 : Job             .00 w/c  75 c ;
@@ -1810,7 +1810,7 @@ Vocabulary Setup   Setup definitions
 : Door-cha            apartment ;
 : Attic           .00 w/c  40 c ;
 : Steps           .00 w/c  02 c ;
-\ Subcontract        Whole-sale ; \ Whole=sale is undefined   
+\ Subcontract        Whole-sale ; \ Whole-sale is undefined
 : Steps-down      .00 w/c  01 c ;
 : Multi-Week-Job  .00 w/c 300 c ;
 : Multi-Day-Job   .00 w/c 200 c ;
@@ -2777,7 +2777,7 @@ Elect
 
 
 | TRAM-INSTALL ONLY         630-970x FS4          F 10-02-95 AEC
-Vocabulary INSTALL-TRAM
+Vocabulary INSTALL-TRAM  \ another name for low voltage mono-rail?
            INSTALL-TRAM      Definitions    \
 : Rods            .00 w/c   4 c ; \ T128
 : Turns           .00 w/c  12 c ; \ T104
@@ -2789,23 +2789,22 @@ Vocabulary INSTALL-TRAM
 \ Pendant/Blue    .00 w/e   1 c ; \ ART150255CH
 Elect
 : Tram-Track  Tram ;
-\ See scr 227 for trolly   <<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 | Annuzzi                   000-000  XX-0           10-16-95 AL
-Vocabulary ANNUZZI                        \ Temp Sold Keep Have
-ANNUZZI  Definitions            \ Annuzzi, Steve, Jack 468-2795
+Vocabulary ANNUZZI               \ Cement contractor
+ANNUZZI  Definitions             \ Annuzzi, Steve, Jack 468-2795
 : Demo/Repl-Ft  5.50 w/e  00 c ; \ per square foot
 : Demo/Repl-Sq 50.00 w/c  00 c ; \
 : Excivate-hr  39.00 w/c  00 c ; \ 4-hrs Precita (Shale)
 : Sand/Rem     50.00 w/c  20 c ; \  50.00 or less says Steve
 Elect
 \ Quoted 250.00
-\ Billed 350.00 for additon of backfill sand and remove burden
+\ Billed 350.00 for additon of backfill sand and to remove the burden
 \ Says that percita s/b 500.00 not 350.00
 
 
-| INSTALL-COMM              675-000               F 97-05-14 AEC
+| INSTALL-COMM  \ Intercom     675-000               F 97-05-14 AEC
 Vocabulary Install-Comm   Install-Comm   definitions \ Sold
  : Hand-set               .00 w/c   1 e ;
  : Door-set               .00 w/c   1 e ;
@@ -2854,7 +2853,7 @@ Elect
 | Nob&Tube                  000-000  XX-0           08-29-96 AEC
 Vocabulary Nob&Tube                       \ Temp Sold Keep Have
 Nob&Tube Definitions
-` Nob        900.00 w/c  10 c ; \ .90 SES Aug 96
+: Nob        900.00 w/c  10 c ; \ .90 SES Aug 96
 \ Tube       000.00 w/c  20 c ; \
 Elect
 
@@ -2899,7 +2898,8 @@ Elect
 Vocabulary LED
            LED definitions
 : Rewire      15.00 w/e 25 c ;
-: Tube        22.00 w/e  0 c ; \ 4K kelvin  48 inch
+: Tube-48     22.00 w/e  0 c ; \ 5K kelvin  48 inch 
+: Tube-96     25.00 w/e  0 c ; \ Home Depot
 
 Elect
 
