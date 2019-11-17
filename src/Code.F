@@ -43,14 +43,17 @@ COMMENT;
  ( 110, 90, 115, 99 various   90.00                                       )
  ( July 14, 2013 BV raised to 99.00                                       )
 
-2variable CURRENT-RATE
-2variable LABOR-RATE
+2variable CURRENT-RATE             \ what is this for?
+2variable LABOR-RATE               \ a double number variable
 : PER-HOUR  Labor-Rate 2! ;        \ The rate is set just below here.
   180.00 per-hour                  \ Raised for remote bidding with Miro. 
 \ 150.00 per-hour                  \ Raised by JP since I have plenty of work.
 \  99.00 per-hour                  \ BV raised on Boris exit July 14, 2013
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
+
+: Commercial-rate   [ 180.00 labor-rate 2! ] ; \ immediate words for changing the
+: Residential-rate   [ 150.00 labor-rate 2! ] ; \ labor rate in an estimate.     
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
