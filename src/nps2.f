@@ -2906,6 +2906,7 @@ LED-Tube Definitions
 : 48-inch            16.00 w/c 00 c ; \ Time is included wit the rewire
 : 96-inch            26.00 w/c 00 c ; 
 
+\ A comment to play with GitHub
 
 Vocabulary LED-Retrofit-can \   JP 6-24-2019
 LED-Retrofit-can definitions
