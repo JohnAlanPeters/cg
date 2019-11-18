@@ -52,8 +52,8 @@ COMMENT;
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
 
-: Commercial-rate     180.00 labor-rate 2! ; \ Immediate words for changing the
-: Residential-rate    150.00 labor-rate 2! ; \ Labor rate in an estimate. 
+: Commercial-rate   [ 180.00 labor-rate 2! ] ; \ immediate words for changing the
+: Residential-rate   [ 150.00 labor-rate 2! ] ; \ labor rate in an estimate.     
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
@@ -86,7 +86,7 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
  100 constant HUNDRED
    1 constant ONE-ONLY
 
-16 value m-in
+24 value m-in
 
 : set-exts ( n <name> -- )
   create , does> @ m-in + ;
@@ -189,14 +189,14 @@ false value partswholesaleshow
   then ;
                                                 \ JP start of factoring
 : web-show
-    10 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    21 ( 21 ) >ccol parts-cost 2@ bucks ."  ="
-    33 ( 33 ) >ccol parts-ext 2@ bucks  ;
+    24 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    29 ( 21 ) >ccol parts-cost 2@ bucks ."  ="
+    41 ( 33 ) >ccol parts-ext 2@ bucks  ;
 
 : console-show
-    16 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    31 ( 27 ) >ccol parts-cost 2@ bucks ."  ="
-    43 ( 39 ) >ccol parts-ext 2@ bucks ;
+    24 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    39 ( 27 ) >ccol parts-cost 2@ bucks ."  ="
+    51 ( 39 ) >ccol parts-ext 2@ bucks ;
 
 : CONS-SHOW-PARTS ( -- )
   in-web?
@@ -206,25 +206,25 @@ false value partswholesaleshow
                                                  \ JP end of factoring
 : CONS-SHOW-TIME ( -- )
   in-web?
-  if  40  else 51
+  if  50  else 61
   then  >ccol time-ext 2@ bucks ."  hr" ;
 
 : CONS-SHOW-SELL ( -- )
   in-web?
   if
-    52 ( 77 ) >ccol labor-ext 2@ bucks
-    62 ( 87 ) >ccol sell-ext  2@ bucks
+    62 ( 77 ) >ccol labor-ext 2@ bucks
+    74 ( 87 ) >ccol sell-ext  2@ bucks
     discount
     if sell-ext 2@ discount 0 d* 1.00 d/
-       72 ( 97 ) >ccol bucks
+       84 ( 97 ) >ccol bucks
     then
   else  \ console
-    61 ( 77 ) >ccol labor-ext 2@ bucks
-    71 ( 87 ) >ccol sell-ext  2@ bucks
+    62 ( 77 ) >ccol labor-ext 2@ bucks
+    74 ( 87 ) >ccol sell-ext  2@ bucks
     discount
     if
       sell-ext 2@ discount 0 d* 1.00 d/
-      81 ( 97 ) >ccol bucks
+      86 ( 97 ) >ccol bucks
     then
   then ;
 
@@ -291,7 +291,7 @@ false value partswholesaleshow
 
 : MARK-IT-UP  ( w/s -- r/t )
    IncWholeSaleSub
-   markup  d*  100.  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?
+   markup  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?
                           \ back to 1.35 after Ez Navar kit LED conversion
 : small-parts ( -- )
   2.00 2to markup ;
