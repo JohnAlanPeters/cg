@@ -136,7 +136,8 @@ editor
         if 1+ dup 2 >  \ 1 is one line 2 is two lines between  \ JP 3-24-11
            if  1 delete-lines
            else 1 +to cursor-line then
-        else drop 0  1 +to cursor-line   \ non-blank, so reset count
+        else 1 = if 1 insert-lines then
+           0  1 +to cursor-line   \ non-blank, so reset count
         then    \  dup . cursor-line .  cr   ( for debugging )
    repeat drop ;
 
