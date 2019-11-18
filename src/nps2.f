@@ -1790,7 +1790,7 @@ Elect
 Vocabulary Setup   Setup definitions
 : Safety-Check    .00 w/c  61 c ;
 : Job             .00 w/c  75 c ;
-: New-location    .00 w/c  25 c ;
+: New-location    .00 w/c  75 c ; 
 : New-Job         .00 w/c  49 c ;
 : New-Job-Site    .00 w/c  66 c ;        
 : Job-Site        .00 w/c  49 c ;
@@ -1851,12 +1851,7 @@ Vocabulary BLOCKAGE    BLOCKAGE definitions     \ Sold Keep Ha
 ` Brick         .00 w/c 200 c ; Elect
 
 
-\ REWIRE
-Vocabulary Rewire  Rewire Definitions
-: PigTail       0.50 w/c  15 c ;  
-: Flo-LED      44.00 w/e  33 c ; \ 20 minutes 
-: Flo-LED-1st  44.00 w/e  50 c ; \ 30 minutes for the first one      
-Elect
+
 
 
 \ INSTALL Miscelaneous      900-031  XX-0           12-09-06 AL
@@ -2895,16 +2890,25 @@ Vocabulary LED-UC
 :  9-inch   39.90 w/e  40 c ;
 Elect
 
-Vocabulary LED
-           LED definitions
-: Rewire      15.00 w/e 25 c ;
-: Tube-48     22.00 w/e  0 c ; \ 5K kelvin  48 inch 
-: Tube-96     25.00 w/e  0 c ; \ Home Depot
-
+\ REWIRE
+Vocabulary Rewire  Rewire Definitions
+: Strip-48           0.00 w/c  33 c ; \ 20 min  5K kelvin
+: Strip-96           0.00 w/c  45 c ; \ 27 min  Home Depot only
+: Wrap-48            0.00 w/c  45 c ; \ 27 min  Why no labor time?
+: Wrap-96            0.00 w/c  50 c ; \ 30 min  It is included with the rewire time
+: Vaper-proof-48     0.00 w/c  55 c ; \ 33 min
+: Vaper-proof-96     0.00 w/c  60 c ; \ 36 min  
+: PigTail            0.50 w/c  15 c ;
 Elect
 
-Vocabulary LED-Retrofit  \ JP 6-24-2019
-LED-Retrofit definitions
+Vocabulary LED-tube
+LED-Tube Definitions 
+: 48-inch            16.00 w/c 00 c ; \ Time is included wit the rewire
+: 96-inch            26.00 w/c 00 c ; 
+
+
+Vocabulary LED-Retrofit-can \   JP 6-24-2019
+LED-Retrofit-can definitions
 : 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes 
 : 6-inch    14.50 w/e 60 c ;  \ 38 minutes including ladder time
 Elect                         \ 25 minutes each according to Miro
@@ -2940,3 +2944,4 @@ Annual Definitions
 : 5-Year        5 hours [ hours ] electrician ;                 
 : 1-year        1 hours [ hours ] electrician ;                 
 Elect                                                           
+   

@@ -85,12 +85,12 @@ This code was created fresh for the WinCG version.
                                          
 : 3-column ( -- )     \ show parts, time, and total columns
   true to partscolshow true to timecolshow ;
-: 3C  3-column ;
-: 3-C 3-column ;  
-: 3-columns 3-column ;
-                 
+: 3C          3-column ;
+: 3-col       3-column ;
+: 3-columns   3-column ." 3 columns" ;
+
 : Extend-Prices Extend ;
-: no-time 1-column ; 
+: no-time     1-column ;
 
 : more ( n -- )  \ remove vscr subtotal and insert n blank lines
   begin
