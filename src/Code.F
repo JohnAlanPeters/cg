@@ -52,8 +52,8 @@ COMMENT;
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
 
-: Commercial-rate   [ 180.00 labor-rate 2! ] ; \ immediate words for changing the
-: Residential-rate   [ 150.00 labor-rate 2! ] ; \ labor rate in an estimate.     
+: Commercial-rate   180.00 labor-rate 2!  ; \ immediate words for changing the
+: Residential-rate  150.00 labor-rate 2!  ; \ labor rate in an estimate.
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
