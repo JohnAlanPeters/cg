@@ -74,7 +74,8 @@ fload ..\vectint      \ load here to access code above
        ." reconnect" cr init-server 0=
      else srvrinput   \ either send webpage or execute the forth
       false
-    then then
+     then 
+    then
   until srvrsock closesocket drop 
   ssock closesocket drop 0 to in-web? ;
 
