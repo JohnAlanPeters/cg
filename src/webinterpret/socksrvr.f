@@ -22,7 +22,7 @@ create rbuf szbuf allot  \ allocate the r-buffer to 2KB
   ssrvr count  sport
   CLIENT-OPEN to ssock ;
 
-: init-server            \ accept connection from client
+: init-server   ( -- )         \ accept connection from client
   CreateSocket abort" can't create socket"
   to srvrsock
   sport srvrsock BindSocket abort" can't bind to port"
@@ -34,7 +34,7 @@ create rbuf szbuf allot  \ allocate the r-buffer to 2KB
 : sockread ( -- addr cnt | -1 or -2 )      \ wait for input
   0
   begin key? if key 27 = if drop -1 exit then then   \ quit on escape
-   1 +   20 ms  \ pause for socket to reciive input  Needs time to receive command
+   1 +   20 ms  \ pause for socket to receive input
    dup 500 > if drop -2 ." timeout" cr  exit then \ time to reset the system
    ssock ToRead abort" can't get # to read" ?dup
   until nip  \ loop until something to read
@@ -70,13 +70,13 @@ fload ..\vectint      \ load here to access code above
     sockread dup -1 =
     if  ." done"
     else dup -2 =
-     if srvrsock closesocket drop ssock closesocket drop
-       ." reconnect" cr init-server 0=
+     if drop srvrsock closesocket drop ssock closesocket drop
+       ." reconnect" cr init-server 0
      else srvrinput   \ either send webpage or execute the forth
       false
      then 
     then
-  until srvrsock closesocket drop 
+  until srvrsock closesocket drop
   ssock closesocket drop 0 to in-web? ;
 
 : ds  do-server ;
