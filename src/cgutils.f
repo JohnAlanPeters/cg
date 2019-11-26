@@ -199,6 +199,8 @@ hidden
 : WORDS-list   ( -<optional_name>- ) \ WORDS partial-string will focus the list
      words ;
 
+: LIST  words-list ; \ easier to type, but will it work? 
+
 forth
 : words ( -<optional_name>- )
   in-web?
