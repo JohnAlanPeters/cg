@@ -107,7 +107,7 @@ create lastwebuser 64 allot
   getdatetime vbuf place s"  " vbuf +place vbuf +place
   s"  " vbuf +place ssock getpeername drop
   2dup lastwebuser count compare
-  if 2dup lastwebuser +place vbuf +place crlf$ count vbuf +place
+  if 2dup lastwebuser place vbuf +place crlf$ count vbuf +place
      vbuf count data>fuser vbuf count type
   else 2drop then ;
 

@@ -13,6 +13,7 @@ create ssrvr             \ create a word in the dictionary named socket-server
 0 value srvrsock         \ set the server-socket to zero
 2048 value szbuf         \ set the size-buffer to 2048 or 2KB
 create rbuf szbuf allot  \ allocate the r-buffer to 2KB
+create lastwebuser 64 allot
 
 : init-sockets           \ call once per forth startup
    SocketsStartup  abort" SocketsStartup error."
@@ -22,20 +23,31 @@ create rbuf szbuf allot  \ allocate the r-buffer to 2KB
   ssrvr count  sport
   CLIENT-OPEN to ssock ;
 
-: init-server            \ accept connection from client
+: showwebuser ( -- )
+  getdatetime rbuf place s"  " rbuf +place rbuf +place
+  rbuf count type cr s"  " rbuf +place
+  ssock getpeername drop
+  2dup lastwebuser count compare
+  if 2dup lastwebuser place 2dup type
+     rbuf +place crlf$ count rbuf +place
+     rbuf count data>fuser
+  else 2drop then ;
+
+: init-server   ( -- )         \ accept connection from client
   CreateSocket abort" can't create socket"
   to srvrsock
   sport srvrsock BindSocket abort" can't bind to port"
   srvrsock ListenSocket abort" can't listen"
   ." Waiting to accept client." cr 
   rbuf szbuf srvrsock SOCKET-ACCEPT abort" can't accept"
-  to ssock ." server is accepted" cr ." socket: " ssock . ;
+  to ssock ." server is accepted" cr ." socket: " ssock . 
+  showwebuser ;
 
 : sockread ( -- addr cnt | -1 or -2 )      \ wait for input
   0
   begin key? if key 27 = if drop -1 exit then then   \ quit on escape
-   1 +   20 ms  \ pause for socket to reciive input  Needs time to receive command
-   dup 500 > if drop -2 ." timeout" cr  exit then \ time to reset the system
+   1 +   50 ms   \ pause for socket to receive input
+   dup 1200 > if drop -2 ." timeout" cr  exit then \ time to reset the system
    ssock ToRead abort" can't get # to read" ?dup
   until nip  \ loop until something to read
   rbuf swap ssock ReadSocket abort" can't read socket"
@@ -70,12 +82,13 @@ fload ..\vectint      \ load here to access code above
     sockread dup -1 =
     if  ." done"
     else dup -2 =
-     if srvrsock closesocket drop ssock closesocket drop
-       ." reconnect" cr init-server 0=
+     if drop srvrsock closesocket drop ssock closesocket drop
+       ." reconnect" cr init-server 0
      else srvrinput   \ either send webpage or execute the forth
       false
-    then then
-  until srvrsock closesocket drop 
+     then 
+    then
+  until srvrsock closesocket drop
   ssock closesocket drop 0 to in-web? ;
 
 : ds  do-server ;

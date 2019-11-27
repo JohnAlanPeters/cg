@@ -52,8 +52,8 @@ COMMENT;
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
 Labor-rate 2@  Current-rate 2!     \ initalize
 
-: Commercial-rate   [ 180.00 labor-rate 2! ] ; \ immediate words for changing the
-: Residential-rate   [ 150.00 labor-rate 2! ] ; \ labor rate in an estimate.     
+: Commercial-rate   180.00 labor-rate 2!  ; \ immediate words for changing the
+: Residential-rate  150.00 labor-rate 2!  ; \ labor rate in an estimate.
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
@@ -189,14 +189,14 @@ false value partswholesaleshow
   then ;
                                                 \ JP start of factoring
 : web-show
-    24 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    29 ( 21 ) >ccol parts-cost 2@ bucks ."  ="
-    41 ( 33 ) >ccol parts-ext 2@ bucks  ;
+    24 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    39 >ccol parts-cost 2@ bucks ."  ="
+    51 >ccol parts-ext 2@ bucks  ;
 
 : console-show
-    24 ( 16 ) >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    39 ( 27 ) >ccol parts-cost 2@ bucks ."  ="
-    51 ( 39 ) >ccol parts-ext 2@ bucks ;
+    24 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    39 >ccol parts-cost 2@ bucks ."  ="
+    51 >ccol parts-ext 2@ bucks ;
 
 : CONS-SHOW-PARTS ( -- )
   in-web?
@@ -206,25 +206,25 @@ false value partswholesaleshow
                                                  \ JP end of factoring
 : CONS-SHOW-TIME ( -- )
   in-web?
-  if  50  else 61
+  if  61  else 61
   then  >ccol time-ext 2@ bucks ."  hr" ;
 
 : CONS-SHOW-SELL ( -- )
   in-web?
   if
-    62 ( 77 ) >ccol labor-ext 2@ bucks
-    74 ( 87 ) >ccol sell-ext  2@ bucks
+    72 >ccol labor-ext 2@ bucks
+    84 >ccol sell-ext  2@ bucks
     discount
     if sell-ext 2@ discount 0 d* 1.00 d/
-       84 ( 97 ) >ccol bucks
+       96 >ccol bucks
     then
   else  \ console
-    62 ( 77 ) >ccol labor-ext 2@ bucks
-    74 ( 87 ) >ccol sell-ext  2@ bucks
+    72 >ccol labor-ext 2@ bucks
+    84 >ccol sell-ext  2@ bucks
     discount
     if
       sell-ext 2@ discount 0 d* 1.00 d/
-      86 ( 97 ) >ccol bucks
+      96 >ccol bucks
     then
   then ;
 
@@ -333,42 +333,40 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  35 ( 44 ) >ccol parts-total 2@ bucks
-  44 ( 53 ) >ccol time-total  2@ bucks ."  hr"
-  52 ( 61 ) >ccol labor-total 2@ bucks
-  62 ( 71 ) >ccol sell-total  2@ bucks ;      
+  53 >ccol parts-total 2@ bucks
+  63 >ccol time-total  2@ bucks ."  hr"
+  74 >ccol labor-total 2@ bucks
+  86 >ccol sell-total  2@ bucks ;
        \ changing these #s does not change anything
 
 : Total-CON ( -- ) \ display sub-totals in console   sub?
-  43  ( 44 ) >ccol parts-total 2@ bucks  \ jppjpp
-  51  ( 53 ) >ccol time-total  2@ bucks ."  hr" 
-  61  ( 61 ) >ccol labor-total 2@ bucks
-  71  ( 71 ) >ccol sell-total  2@ bucks ;
+  51  >ccol parts-total 2@ bucks
+  61  >ccol time-total  2@ bucks ."  hr"
+  72  >ccol labor-total 2@ bucks
+  84  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
      conscol @ 40 > if cr then  \ Part
-     05 spaces ."                            Parts     Time       Labor     Sell " ;    
+     \ 24 conscol @ - 0 max spaces
+     \ ."                            Parts     Time       Labor     Sell " ;
+     56 >ccol ." Parts"
+     67 >ccol ." Time"
+     79 >ccol ." Labor"
+     90 >ccol ." Sell" ;  
 
 : Headline-CON ( -- ) \ names of the columns
 \ 18 >ccol  ." Count"
 \ 18 >ccol  ." Quan"
 \ 30 >ccol  ." Part"
-  40 >ccol  ." Parts"
-  50 >ccol  ." Time"
-  59 >ccol  ." Labor"
-  70 >ccol  ." Sell" ;
+  50 >ccol  ." Parts"
+  60 >ccol  ." Time"
+  70 >ccol  ." Labor"
+  82 >ccol  ." Sell" ;
 
-: HEADLINE        \ maybe shold be HEADLINE-W/C  I think HEADLINE is redefined
+: TOTAL  ( -- )
   in-web?
-  if   headline-WEB
-  else headline-CON   
-  then ;
-
-: TOTAL      \ name it total-w/c     ?-?
-  Headline   \ use headline-w/c   ?-?
-  in-web? cr
-  if   total-WEB
-  else total-CON
+  if  headline-WEB  cr total-WEB
+  else headline-CON cr total-CON
   then  clear-totals ;
 
 : TT total ;  \ development shortcut  call total-w/c ?-?

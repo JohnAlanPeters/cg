@@ -194,8 +194,8 @@ forth also forth definitions editor
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
              cmdline 2 -2 d+ evaluate
+          else cmdline file-to-edit$ place
           then
-          cmdline file-to-edit$ place
     then
     \ call GetFocus to topwin
     clear-totals  wined focus-console ." ok" cr quit ;
