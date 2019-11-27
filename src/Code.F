@@ -349,10 +349,10 @@ false value partswholesaleshow
      conscol @ 40 > if cr then  \ Part
      \ 24 conscol @ - 0 max spaces
      \ ."                            Parts     Time       Labor     Sell " ;
-     57 >ccol ." Parts"
+     56 >ccol ." Parts"
      67 >ccol ." Time"
      79 >ccol ." Labor"
-     89 >ccol ." Sell" ;
+     90 >ccol ." Sell" ;  
 
 : Headline-CON ( -- ) \ names of the columns
 \ 18 >ccol  ." Count"

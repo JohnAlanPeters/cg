@@ -13,6 +13,7 @@ create ssrvr             \ create a word in the dictionary named socket-server
 0 value srvrsock         \ set the server-socket to zero
 2048 value szbuf         \ set the size-buffer to 2048 or 2KB
 create rbuf szbuf allot  \ allocate the r-buffer to 2KB
+create lastwebuser 64 allot
 
 : init-sockets           \ call once per forth startup
    SocketsStartup  abort" SocketsStartup error."
@@ -22,6 +23,16 @@ create rbuf szbuf allot  \ allocate the r-buffer to 2KB
   ssrvr count  sport
   CLIENT-OPEN to ssock ;
 
+: showwebuser ( -- )
+  getdatetime rbuf place s"  " rbuf +place rbuf +place
+  rbuf count type cr s"  " rbuf +place
+  ssock getpeername drop
+  2dup lastwebuser count compare
+  if 2dup lastwebuser place 2dup type
+     rbuf +place crlf$ count rbuf +place
+     rbuf count data>fuser
+  else 2drop then ;
+
 : init-server   ( -- )         \ accept connection from client
   CreateSocket abort" can't create socket"
   to srvrsock
@@ -29,7 +40,8 @@ create rbuf szbuf allot  \ allocate the r-buffer to 2KB
   srvrsock ListenSocket abort" can't listen"
   ." Waiting to accept client." cr 
   rbuf szbuf srvrsock SOCKET-ACCEPT abort" can't accept"
-  to ssock ." server is accepted" cr ." socket: " ssock . ;
+  to ssock ." server is accepted" cr ." socket: " ssock . 
+  showwebuser ;
 
 : sockread ( -- addr cnt | -1 or -2 )      \ wait for input
   0

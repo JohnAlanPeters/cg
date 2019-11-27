@@ -210,7 +210,7 @@ forth
   get-local-time time-buf >date"
   time-buf >time" ;
 
-: data>fuser ( a1 t1 -- )  \ datetime, username, or ip address
+: data>fuser ( a1 t1 -- )  \ write datetime, username, or ip address to file
   s" \cg\src\webinterpret\users" 2dup r/w open-file
   if drop r/w create-file drop
   else -rot 2drop then
