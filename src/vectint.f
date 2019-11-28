@@ -12,16 +12,16 @@ create vbuf 200 1024 * allot
 
 : vtype ( addr cnt -- )
   dup conscol +!
-  vbuf wplace ;   \  s"  " vbuf wplace ;  \ add text to word counted buffer
+  vbuf wplace ;   \  add text to word counted buffer
 
 : vcr ( -- )      \ virtual CR
-  conscol off crlf$ count 1- vbuf wplace ; \ virtual CR
+  conscol off crlf$ count 1- vbuf wplace ;
 
-: ?vcr ( n -- )   \ if n is other than zero then send a vCR
-  ?dup            \ duplicate top of data stack if non-zero
-  if 100 mod 0=   \ divide n1 by n2 and leave the answer and also a remainder?
-  if vcr          \ send a virtual CR
-  then then ;     \ then we are done
+: ?vcr ( n -- )   \ if past #visible columns, do a cr
+  ?dup            \ ignore if zero characters to output
+  if getcolrow drop >   \ check if we need a cr
+   if vcr then         \ send a virtual CR
+  then ;
 
 : vemit ( c -- ) 1 conscol +!
   sp@ 1 vbuf wplace drop ;
@@ -29,12 +29,9 @@ create vbuf 200 1024 * allot
 : vgetxy ( -- col row )
   conscol          \ a variable for the current console line
   @                \ fetch the current virtual console line
-  100 >            \ return true if n1 is greater than 100
+  getcolrow drop >            \ return true if n1 is greater than #columns
   if vcr           \
-  then conscol @ 0 ;
-
-: vgetcolrow ( -- col row ) \ virtual get column and row
-   100 32 ;              \ arbitrarily set the column to 100 and the row to 32?
+  then conscol @ [ hidden ] C_GETXY nip ;
 
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
@@ -46,8 +43,7 @@ create vbuf 200 1024 * allot
    ['] vtype is type  \ add text to word counted buffer
    ['] ?vcr is ?cr
    ['] vcr is cr      \ virtual CR
-   ['] vgetxy is getxy
-   ['] vgetcolrow is getcolrow ;
+   ['] vgetxy is getxy ;
 
 : to-con
    [ hidden ]
@@ -55,13 +51,12 @@ create vbuf 200 1024 * allot
    ['] c_type is type
    ['] c_cr is cr
    ['] c_?cr is ?cr
-   ['] c_getxy is getxy 
-   ['] c_getcolrow is getcolrow ;
+   ['] c_getxy is getxy ;
 
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
-   0 vbuf             \ a 200 KB 2varible to save source to restore after interpret
+   0 vbuf             \ a 200 KB 2variable to save response from interpreting
    w!  ( w1 a1 -- )   \ store word (16bit) w1 into address a1
    to-web
    vquery
@@ -99,17 +94,7 @@ create vbuf 200 1024 * allot
       if  dup 1 sendheaders
           vbuf swap b2sock
       else drop then r> close-file
-   then drop ;
-
-create lastwebuser 64 allot
-
-: showwebuser ( -- )
-  getdatetime vbuf place s"  " vbuf +place vbuf +place
-  s"  " vbuf +place ssock getpeername drop
-  2dup lastwebuser count compare
-  if 2dup lastwebuser place vbuf +place crlf$ count vbuf +place
-     vbuf count data>fuser vbuf count type
-  else 2drop then ;
+   then drop ; 
 
 : srvrinput ( addr cnt -- )
    \ check for webpage request
@@ -119,7 +104,6 @@ create lastwebuser 64 allot
    over 3 s" GET"           \ address over to the top of stack
    compare not              \ compare the comand string and the string with the 'GET'
    if 2drop                 \ if not = drop the address of both strings and send HTML file
-     showwebuser
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else 2crlfs              \ chop off headers up to 2 CRLFs to get to data  \ rda told me ( 2 headers? not one?) 
        ?dup                \ duplicate the len of the request string if not zero
