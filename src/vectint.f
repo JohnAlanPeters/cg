@@ -10,18 +10,19 @@ create vbuf 200 1024 * allot
   (source) 2@ vec 2!
   (SOURCE) 2! >IN OFF 0 TO SOURCE-ID 0 TO SOURCE-POSITION ;
 
-: vtype ( addr cnt -- )
-  dup conscol +!
-  vbuf wplace ;   \  add text to word counted buffer
-
 : vcr ( -- )      \ virtual CR
   conscol off crlf$ count 1- vbuf wplace ;
 
 : ?vcr ( n -- )   \ if past #visible columns, do a cr
   ?dup            \ ignore if zero characters to output
-  if getcolrow drop >   \ check if we need a cr
+  if conscol @ + getcolrow drop >   \ check if we need a cr
    if vcr then         \ send a virtual CR
   then ;
+
+: vtype ( addr cnt -- )
+  dup ?vcr
+  dup conscol +!
+  vbuf wplace ;   \  add text to word counted buffer
 
 : vemit ( c -- ) 1 conscol +!
   sp@ 1 vbuf wplace drop ;
@@ -29,7 +30,7 @@ create vbuf 200 1024 * allot
 : vgetxy ( -- col row )
   conscol          \ a variable for the current console line
   @                \ fetch the current virtual console line
-  getcolrow drop >            \ return true if n1 is greater than #columns
+  getcolrow drop >        \ return true if n1 is greater than #columns
   if vcr           \
   then conscol @ [ hidden ] C_GETXY nip ;
 
