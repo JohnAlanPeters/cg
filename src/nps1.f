@@ -2057,7 +2057,7 @@ Elect \
 | METER (in)                                        09-16-08 AL
 Vocabulary Meter          Meter definitions
 : E-Monitor   480.00 w/e 250 c ; \ 379.00 Sept 08               
-: 1-Gang       72.00 w/e 250 c ; \ 72.00                        
+: 1-Gang       30.00 w/e 250 c ; \  72.00 in 2008
 : 100A          1-GANG ;                                        
 : 2-Gang      122.00 w/e 250 c ; \ 172 HSHDB   116.00 May 08    
 : 3-Gang      175.00 w/e 300 c ; \ 173   Roake 148.00 Mar 02    
