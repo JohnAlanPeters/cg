@@ -346,9 +346,9 @@ false value partswholesaleshow
   84  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
-     conscol @ 40 > if cr then  \ Part
-     \ 24 conscol @ - 0 max spaces
-     \ ."                            Parts     Time       Labor     Sell " ;
+     conscol @ 40 > if cr then  
+  \  24 >ccol ." count"
+  \  46 >ccol ." Quan"
      56 >ccol ." Parts"
      67 >ccol ." Time"
      79 >ccol ." Labor"
