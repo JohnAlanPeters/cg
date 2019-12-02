@@ -189,14 +189,14 @@ false value partswholesaleshow
   then ;
                                                 \ JP start of factoring
 : web-show
-    24 >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    39 >ccol parts-cost 2@ bucks ."  ="
-    51 >ccol parts-ext 2@ bucks  ;
+    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 >ccol parts-cost 2@ bucks ."  ="
+    39 >ccol parts-ext 2@ bucks  ;
 
 : console-show
-    24 >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    39 >ccol parts-cost 2@ bucks ."  ="
-    51 >ccol parts-ext 2@ bucks ;
+    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 >ccol parts-cost 2@ bucks ."  ="
+    39 >ccol parts-ext 2@ bucks ;
 
 : CONS-SHOW-PARTS ( -- )
   in-web?
@@ -206,25 +206,25 @@ false value partswholesaleshow
                                                  \ JP end of factoring
 : CONS-SHOW-TIME ( -- )
   in-web?
-  if  61  else 61
+  if  49  else 49
   then  >ccol time-ext 2@ bucks ."  hr" ;
 
 : CONS-SHOW-SELL ( -- )
   in-web?
   if
-    72 >ccol labor-ext 2@ bucks
-    84 >ccol sell-ext  2@ bucks
+    60 >ccol labor-ext 2@ bucks
+    72 >ccol sell-ext  2@ bucks
     discount
     if sell-ext 2@ discount 0 d* 1.00 d/
-       96 >ccol bucks
+       84 >ccol bucks
     then
   else  \ console
-    72 >ccol labor-ext 2@ bucks
-    84 >ccol sell-ext  2@ bucks
+    60 >ccol labor-ext 2@ bucks
+    72 >ccol sell-ext  2@ bucks
     discount
     if
       sell-ext 2@ discount 0 d* 1.00 d/
-      96 >ccol bucks
+      84 >ccol bucks
     then
   then ;
 
@@ -349,19 +349,19 @@ false value partswholesaleshow
      conscol @ 40 > if cr then  
   \  24 >ccol ." count"
   \  46 >ccol ." Quan"
-     56 >ccol ." Parts"
-     67 >ccol ." Time"
-     79 >ccol ." Labor"
-     90 >ccol ." Sell" ;  
+     44 >ccol ." Parts"
+     55 >ccol ." Time"
+     67 >ccol ." Labor"
+     78 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
 \ 18 >ccol  ." Count"
 \ 18 >ccol  ." Quan"
 \ 30 >ccol  ." Part"
-  50 >ccol  ." Parts"
-  60 >ccol  ." Time"
-  70 >ccol  ." Labor"
-  82 >ccol  ." Sell" ;
+  38 >ccol  ." Parts"
+  48 >ccol  ." Time"
+  58 >ccol  ." Labor"
+  70 >ccol  ." Sell" ;
 
 : TOTAL  ( -- )
   in-web?
