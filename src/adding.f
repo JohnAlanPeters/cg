@@ -89,7 +89,11 @@ editor also
                 else out-cents then
     else 2drop then ;
 
+<<<<<<< HEAD
 : CCC  ( -- )
+=======
+: CCCR  ( -- )
+>>>>>>> 26beda8326f33cf17f87d56212bce849b574431e
   s" Contingency Reserve" findstr
   if cursor-line find-tot-line ?dup
      if cursor-line 72 get-number else 0 0 then

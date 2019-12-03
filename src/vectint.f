@@ -63,13 +63,12 @@ create vbuf 200 1024 * allot
    vquery
    ['] _interpret
    catch
-    dup if ."  error " dup . then
-    vec 2@ (source) 2!
-    to-con
-    -1 conscol !         \ switch to ordinary output
-    ?dup if ."  error " . .. then
-    vbuf w@ if s"  " vbuf wplace then
-    s" ok " vbuf wplace crlf$ count 1- vbuf wplace vbuf wcount ;
+   ?dup if ."  error " . then
+   vec 2@ (source) 2!
+   to-con
+   -1 conscol !         \ switch to ordinary output
+   vbuf w@ if s"  " vbuf wplace then
+   s" ok " vbuf wplace crlf$ count 1- vbuf wplace vbuf wcount ;
 
 : sendline ( addr cnt -- ) \ send a line to the socket
   ssock                    \ a self fetchng value named ssock init to zero
