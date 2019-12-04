@@ -333,17 +333,17 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  53 >ccol parts-total 2@ bucks
-  63 >ccol time-total  2@ bucks ."  hr"
-  74 >ccol labor-total 2@ bucks
-  86 >ccol sell-total  2@ bucks ;
-       \ changing these #s does not change anything
+  41 >ccol parts-total 2@ bucks
+  51 >ccol time-total  2@ bucks ."  hr"
+  62 >ccol labor-total 2@ bucks
+  74 >ccol sell-total  2@ bucks ;
 
-: Total-CON ( -- ) \ display sub-totals in console   sub?
-  51  >ccol parts-total 2@ bucks
-  61  >ccol time-total  2@ bucks ."  hr"
-  72  >ccol labor-total 2@ bucks
-  84  >ccol sell-total  2@ bucks ;
+
+: Total-CON ( -- ) \ display sub-totals in console
+  39  >ccol parts-total 2@ bucks
+  49  >ccol time-total  2@ bucks ."  hr"
+  60  >ccol labor-total 2@ bucks
+  72  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
      conscol @ 40 > if cr then  
@@ -369,7 +369,8 @@ false value partswholesaleshow
   else headline-CON cr total-CON
   then  clear-totals ;
 
-: TT total ;  \ development shortcut  call total-w/c ?-?
+: TOT total ; \ another attemampt as a shortcut
+: TT  total ; \ shortcut. The iPad spell checker was changing TT into "To"
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
