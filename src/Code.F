@@ -417,7 +417,7 @@ false value partswholesaleshow
   s" KITCHEN POWER" bid-copy ;
 
 \ copy template to new file or open old file
-: CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
+: CAB-mini { \ to$ -- <fname> }   \ copies bids\template to a new file
   max-path localAlloc: to$ 
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
@@ -428,7 +428,7 @@ false value partswholesaleshow
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
 
-: CAB-MINI { \ to$ -- <fname> }   \ copies bids\template to a new file
+: CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
   max-path localAlloc: to$
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
