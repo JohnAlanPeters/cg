@@ -33,13 +33,13 @@ anew _grandtot
         put-cursor-line
   then  cursor-line ;
 
-: show-grand ( -- )  \ where? on the top or the bottom of the bid?
+: show-grand ( -- )  \ bottom of the bid
   grand-total-line
   if get-cursor-line cur-buf lcount drop
-     60 + 20 blank 80 cur-buf !
+     60 + 20 blank 100 cur-buf !
      vtot-col tab-in EX-TOTAL so $.r ro
      update+
-  then ;                         \ else it adds itself in next time
+  then ;
 
 : aa- ( -- )     \ just calc sell-total and display it (no extend vscrns)
   noext?

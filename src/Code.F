@@ -91,12 +91,12 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 : set-exts ( n <name> -- )
   create , does> @ m-in + ;
 
-35 ( 35 ) set-exts parts-col    \ changing messed up virtual sub total in WinEd
-44 ( 44 ) set-exts time-col
-56 ( 56 ) set-exts sell-col
-35 ( 35 ) set-exts vparts-col   \ 29
-44 ( 44 ) set-exts vtime-col    \ Virtual scr sub time is now ok was 37
-56 ( 56 ) set-exts vtot-col     \ Virtual scr sub price is now ok was 48
+32  set-exts parts-col    \ changing messed up virtual sub total in WinEd
+41  set-exts time-col
+53  set-exts sell-col
+32  set-exts vparts-col
+41  set-exts vtime-col
+53  set-exts vtot-col
                          \ decimal point columm before bolding
 68 set-exts discount-col
 
@@ -282,7 +282,7 @@ false value partswholesaleshow
   cons-show-sell ;
 
 : IncWholeSaleSub  ( d -- )
-   2dup quan 2@ d* 100. d/
+   2dup quan 2@ d* 100.00 d/
    partswholesaleshow
    if 2dup WholeSale-Sub 2+!  then
    wholesale-total 2+!  ;
@@ -291,7 +291,7 @@ false value partswholesaleshow
 
 : MARK-IT-UP  ( w/s -- r/t )
    IncWholeSaleSub
-   markup  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?
+   markup  d*  100.00  d/ ;  \ Was 1.35 till I talked wiwth Mario,  Big parts?
                           \ back to 1.35 after Ez Navar kit LED conversion
 : small-parts ( -- )
   2.00 2to markup ;
