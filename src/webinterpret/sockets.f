@@ -144,6 +144,7 @@ CREATE SINLEN /sockaddr_in ,
    \ &LOCAL ALEN ADDR FH call accept
    DUP INVALID_SOCKET =
    IF call WSAGetLastError ELSE 0 THEN ;
+
 : SOCKET-ACCEPT  ( ADDR ALEN FH -- s2 ior )
    swap >r rp@ -rot call accept r>drop
    DUP INVALID_SOCKET =

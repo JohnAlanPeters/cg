@@ -237,10 +237,10 @@ Record: LPWinScrollInfo
    else highlighting? 0=
      if begin dup
         while bl kparse totline?
-         if ( Bold ) BLUE  SetTextColor: dc typestr /bold BLACK SetTextColor: dc
+         if ( Bold  BLUE  SetTextColor: dc ) typestr ( /bold) BLACK SetTextColor: dc
          else vtop?
-           if BLUE SetTextColor: dc typestr BLACK  SetTextColor: dc
-              bold
+           if ( BLUE SetTextColor: dc)  typestr BLACK  SetTextColor: dc
+             ( bold )
            else /bold 2dup isnumber?
              if RED SetTextColor: dc typestr BLACK SetTextColor: dc
              else typestr then then

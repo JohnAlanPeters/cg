@@ -281,30 +281,29 @@ false value partswholesaleshow
   cons-show-time
   cons-show-sell ;
 
+0. 2value markup
+
+: small-parts ( -- )
+  2.00 2to markup ;
+
+: large-parts ( -- )
+  1.33 2to markup ;
+
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
    partswholesaleshow
    if 2dup WholeSale-Sub 2+!  then
    wholesale-total 2+!  ;
 
-1.00 2value markup        \ default is no markup
-
-: MARK-IT-UP  ( w/s -- r/t )
+: MARK-IT-UP  ( w/s -- r/t )  \ 'w\s' is the double# wholesale price
+   2dup 100.0000 d< if small-parts else large-parts then   
    IncWholeSaleSub
-   markup  d*  100.00  d/ ;  \ Was 1.35 till I talked wiwth Mario,  Big parts?
-                          \ back to 1.35 after Ez Navar kit LED conversion
-: small-parts ( -- )
-  2.00 2to markup ;
-
-: large-parts ( -- )
-  1.35 2to markup ;
-
-: MMM    ; \ For use with view
+   markup  d*  100.00  d/ ;   \ 'r/t' is retail after markup
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-\ 7     UNITS AND QUANTITIES ===========
+\      UNITS AND QUANTITIES ===========
 
-: isDOUBLE? dp-location  1+ 0<> ; \ also defined in the kernel
+: isDOUBLE? dp-location  1+ 0<> ; 
 : ?>d ( ?? -- d )  \ assumes a single or double on stack
    isdouble?  0=  if  s>d  100.  d*  then ;
 
