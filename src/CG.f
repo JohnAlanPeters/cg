@@ -189,16 +189,16 @@ forth also forth definitions editor
     editor overstrike  off \  on
     elect
     cmdline 0= swap 0= or
-    if file-to-edit$ off
+    if file-to-edit$ off  wined
     else  cmdline drop c@ ascii 0 =
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
              cmdline 2 -2 d+ evaluate
-          else cmdline file-to-edit$ place
+          else cmdline file-to-edit$ place  wined
           then
     then
     \ call GetFocus to topwin
-    clear-totals  wined focus-console ." ok" cr quit ;
+    clear-totals focus-console ." ok" cr quit ;
     \ ['] wined catch 0<> if message then ;
 
 ELECT             \ Sets the vocabulary
