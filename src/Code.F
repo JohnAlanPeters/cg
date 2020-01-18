@@ -332,10 +332,10 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  41 >ccol parts-total 2@ bucks
-  51 >ccol time-total  2@ bucks ."  hr"
-  62 >ccol labor-total 2@ bucks
-  74 >ccol sell-total  2@ bucks ;
+  39 >ccol parts-total 2@ bucks
+  49 >ccol time-total  2@ bucks ."  hr"
+  60 >ccol labor-total 2@ bucks
+  72 >ccol sell-total  2@ bucks ;
 
 
 : Total-CON ( -- ) \ display sub-totals in console
@@ -346,17 +346,16 @@ false value partswholesaleshow
 
 : Headline-WEB ( -- )
      conscol @ 40 > if cr then  
-  \  24 >ccol ." count"
-  \  46 >ccol ." Quan"
-     44 >ccol ." Parts"
-     55 >ccol ." Time"
-     67 >ccol ." Labor"
-     78 >ccol ." Sell" ;
+     22 >ccol ." Count"
+     38 >ccol ." Part" \ Need to show on small cell screen or think it is dead
+     49 >ccol ." Parts"
+     60 >ccol ." Time"
+     72 >ccol ." Labor"
+     81 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
-\ 18 >ccol  ." Count"
-\ 18 >ccol  ." Quan"
-\ 30 >ccol  ." Part"
+  00 >ccol  ." Count"
+  18 >ccol  ." Part"
   38 >ccol  ." Parts"
   48 >ccol  ." Time"
   58 >ccol  ." Labor"
@@ -369,7 +368,7 @@ false value partswholesaleshow
   then  clear-totals ;
 
 : TOT total ; \ another attemampt as a shortcut
-: TT  total ; \ shortcut. The iPad spell checker was changing TT into "To"
+: TT reset-stacks  total ; \ shortcut. The iPad spell checker was changing TT into "To"
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
