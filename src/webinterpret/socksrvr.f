@@ -82,15 +82,14 @@ fload ..\vectint      \ load here to access code above
   init-server
   begin -1 to in-web?
     sockread dup -1 =
-    if  0 to in-web? ." done"
+    if ." done"
     else dup -2 =
-     if 0 to in-web? drop srvrsock closesocket drop ssock closesocket drop
+     if drop srvrsock closesocket drop ssock closesocket drop
        ." reconnect" cr init-server 0
      else srvrinput   \ either send webpage or execute the forth
       false
-     then 
+     then
     then
-  until srvrsock closesocket drop
-  ssock closesocket drop 0 to in-web? ;
+  until srvrsock closesocket drop ssock closesocket drop 0 to in-web? ;
 
 : ds  do-server ;
