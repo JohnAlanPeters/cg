@@ -120,10 +120,10 @@ defer to-web
      2crlfs              \ chop off headers up to 2 CRLFs to get to data
      2dup type           \ type the forth command to the surface console
      vectint             \ get output of request into buffer
+
      cr 2dup type        \ display response in console
      dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
      b2sock             
  \ send the response to the socket
    then ;
-
 

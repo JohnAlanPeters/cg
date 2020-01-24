@@ -9,6 +9,7 @@ var lastlen=0;
 var fHeader='';
 var startstop=0;
 var sendint=false;
+var r1st=0;
 
 function doit(cntnu)
 {
@@ -30,6 +31,7 @@ function doit(cntnu)
     ntxt=txt.substring(lastlen-1);
     if(!fHeader &&  ntxt[ntxt.length-1] == '\n'){
       ntxt=ntxt.slice(0,ntxt.length-1);}
+    if(ntxt[0]=='\n') ntxt=ntxt.slice(1);
   }
   fetch('',{method: 'post',body:ntxt,headers: {
       'Content-Type': 'text/plain'
@@ -41,10 +43,11 @@ function doit(cntnu)
    })
   .then(function(data) {
      var dtxt=dsp.value;
-     if(!fHeader && dtxt[dtxt.length-1]=='\n'){
+     if((!fHeader || r1st) && dtxt[dtxt.length-1]=='\n'){
       dtxt=dtxt.slice(0,dtxt.length-1);
-      dtxt=dtxt+' ';
      }
+     r1st=0;
+     if(fHeader==5) fHeader=0;
      dtxt+=data;
      lastlen=dtxt.length;
      dsp.value=dtxt;
@@ -69,6 +72,7 @@ See also Win32Forth on facebbok/groups<br>
     //var dsp=document.getElementById('dsp');
     document.addEventListener("keydown",function(event) {
     if (event.key === "Enter") {
+        r1st=1;
         doit(0);
     }
     else if(event.key === 'Escape' && fHeader){  // quit long response

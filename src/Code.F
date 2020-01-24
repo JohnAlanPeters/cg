@@ -345,13 +345,13 @@ false value partswholesaleshow
   72  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
-     conscol @ 40 > if cr then  
-     22 >ccol ." Count"
-     38 >ccol ." Part" \ Need to show on small cell screen or think it is dead
-     49 >ccol ." Parts"
-     60 >ccol ." Time"
-     72 >ccol ." Labor"
-     81 >ccol ." Sell" ;
+     conscol @ 40 > if cr then
+     16 >ccol ." Count"
+     33 >ccol ." Part" \ Need to show on small cell screen or think it is dead
+     44 >ccol ." Parts"
+     55 >ccol ." Time"
+     67 >ccol ." Labor"
+     78 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
   00 >ccol  ." Count"
