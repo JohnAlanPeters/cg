@@ -27,7 +27,8 @@ Vocabulary (FISH-WORK)
   (FISH-WORK) Definitions
 : Fire-box           50.00 w/e  70 c ; \ Wires in the way
 : Cans               60.00 w/e 300 c ; \ For Boris on the Green/Webster Mjellem
-: Cans-LED          170.00 w/e 150 c ; \ For Boris Merchasan 2718 Turk 11-5-13 
+: LED-Cans           17.60 w/e 100 c ; \ 2019 December guesses
+: Cans-LED          170.00 w/e 150 c ; \ For Boris Merchasan 2718 Turk 11-5-13
 : Cans-medium        60.00 w/c 200 c ; \ For Boris on 5-16-12
 : Cans-easy          60.00 w/c 100 c ;
 : Can                Cans            ;

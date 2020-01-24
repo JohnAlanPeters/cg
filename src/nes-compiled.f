@@ -7,6 +7,7 @@
 1 [ 90-INC cr ] ." 90-inc" 100A    cr
 1 [ LB-INC cr ] ." LB-inc" 100A    cr
     total ;
+
 : RISER-125A ( - )
   electric keyboard on kclr
 1 [ RISER remvoc ] 125A    cr
@@ -26,7 +27,22 @@
 1 [ RISER  ] 200A  cr
 1 [ 90-INC ] 200A  cr
 1 [ LB-INC ] 200A  cr
-    total ;
+         total ;
+
+: NES-150A ( 150A 2 meter New Service )
+( SETUP 	HOT-202     edfined but it is there )
+  electric keyboard on kclr         cr
+1 [ setup   ] ." Setup"  job        cr
+1 [ RISER   ] ." Riser"  	150A      	cr
+1 [ 90-INC  ] ." 90-inc" 	150A      cr	
+2 [ LB-INC  ] ." LF-inc" 	150A      cr
+1 [ METER   ] ." Meter"  2-gang     cr
+2 [ OS-NIP  ] ." OS-Nip" 	100A      cr
+1 [ PANEL   ] ." Panel"  125A-12-24 cr
+1 [ C-B     ] ." CB"     	100A      	cr
+1 [ GROUND  ] ." Ground Bond" 	BOND      cr
+1 [ GROUND  ] ." Ground"  	150A      cr
+         total ;
 
 : NES-150A ( 150A 2 meter New Service )
 ( SETUP 	HOT-202     edfined but it is there )
@@ -60,7 +76,7 @@
 
 \ Permit  riser  meter-main or meter-panel  grounding  reconnections
 
-\ NES-INC-100A  ( Note the A at the end )
+
 
 : RISER-100A  108.23 w/e 528 c ;
 

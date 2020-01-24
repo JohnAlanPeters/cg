@@ -110,11 +110,12 @@ Vocabulary T-L
 ` Female      21.00 w/c 20 c ; \ Jun 94 was 12.00        -      
 ` Male-4      12.00 w/c 25 c ; \ Jan 96  B&K                    
 ` Female-4    14.00 w/c 20 c ; \ Jan 96  B&K              -     
-ELECT \                                                         
-: Twist-Lock  T-L ;                                             
-\ see also Twist-lock                                           
-                                                                
-\ These all were out of date.  The 21.00 price came from a      
+ELECT \
+
+
+: Twist-Lock  T-L ;
+\ see also Twist-lock
+\ These all were out of date.  The 21.00 price came from a
 \ Twist lock recept 30A 250V for Mullen on July 17, 2008        
 
 
@@ -128,7 +129,9 @@ DEVICE-RT    definitions
 \ GFI                                                    2    2 
 \ PR                                                            
 : TWIN-FLAP  467.14 w/c  10 c ; \ 601-081                       
-Elect                                                           
+Elect
+     
+                                                                
 : DEVICE&COVER-RT  device-rt ; \                                
 \ 600-65 is switches with covers SG is 5.70                     
 \ 601-81 is plates with switch?  SG is 5.50                     
@@ -230,73 +233,6 @@ Elect
 \ Solid State     Torroidal coil and electronic Super special EV
 \ Magnetic        Common trans  Use VA or LV  Dedicated Neut.
 
-
-| X10 1/5 Transmitters     600-990a LL-0          F 07-15-08 AL
-Vocabulary X10                 \ Use w/s x 2 for hi tec problems
-           X10  Definitions    \ 800 9
-: Desk-Console      15.95 w/e  20 c ; \ Portable desk console
-: Glue-on           25.00 w/e  40 c ; \ 21.25 \ not to trouble
-: 2380  ( SW-link)  96.00 w/e  40 c ; \ 47.99 Transmits,Rec/dim
-: 12080 ( SW-link)  48.00 w/e  40 c ; \ 23.99 Transmits only
-: 2384-SW-link      80.00 w/e  40 c ; \ 39.95 Deco at other end
-: 2382W             25.00 w/e  40 c ; \ 12.79 Earlenbaugh
-: 2384W             56.00 w/e  40 c ; \ 27.99 Earlenbaugh
-: 2201W             67.00 w/e  40 c ; \ 33.99 Reg dimmer?
-Elect -->                                                       
-
-
-| X10-2/5 Transmitters     600-990b LL-0          F 01-19-05 AL
-          X10 Definitions    \ 800 9                            
-: Wireless-SW       40.00 w/e  50 c ; \ Glue on                 
-: Dry-Contact      108.95 w/e  25 c ; \ 4 addresses             
-: Fixture-Relay     24.75 w/e  50 c ; \ Takes more time than 25 
-: Fixt-Relay-Dim    31.16 w/e  25 c ; \ HomePro                 
-: Power-flash       22.95 w/e  25 c ; \ 1 address               
-: Universal-module  18.95 w/e  25 c ; \ 1 address Receiver      
-: Screw-in-module   14.90 w/e  15 c ; \ Light bulb type         
-: Split-Receptacle  15.95 w/e  25 c ; \                         
-: Receptacle        22.95 w/e  25 c ;                           
-Elect -->                                                       
-
-
-| X10-3/5 Receivers        600-990c LL-0          F 88-07-12 AEC
-          X10 Definitions    \ Time?  \ Used Sold Keep Have     
-: Dimmer-500W       11.56 w/e  20 c ; \ Common SW (dim remotly) 
-: Dimmer-1000W     114.99 w/e  20 c ; \ Out of stock            
-: Dimmer-2400W     269.95 w/e  30 c ; \                         
-\ Chime-Module               19.95 w/e 20 c ; \                 
-: H2040 ( Split outlet )     15.95 w/e 20 c ; \                 
-: H9615 ( Common slave )     29.95 w/e 20 c ; \ Sender          
-: Smart-Light       49.95 w/e  50 c ; \ Motion sensor           
-: Infrared-Console  29.95 w/e  20 c ;                           
-: HVAC-Thermostat  209.78 w/e  50 c ; \ 3049B model             
-: Remote-sensor     59.96 w/e  50 c ; \ set hours off later     
-: Lamp-Module       12.73 w/e  25 c ; \ Not radio shack         
-Elect                                                           
-
-
-| X10-4/5 Specials         600-999d For 60 L      F 88-07-25 AEC
-          X10 Definitions             \ Used Sold Keep Have     
- \ L6381-UW   45.00 w/e  20 c ; \ LoVolt dimmer                 
- \ L5625       9.00 w/e  20 c ; \ Fan Switch                    
- \ L6227X     32.84 w/e  20 c ; \ 2 out                         
- \ L16241      6.90 w/e  20 c ; \                               
- \ L6299      47.30 w/e  20 c ; \                               
- \ Module     12.95 w/e  8 c ; \ IV only                        
- \ Signal-Bridge ( L6299  )   47.30 w/e  40 c ; \               
- \ Inter-Flash   ( L6326  )  119.50 w/e  40 c ; \               
- \ Dimmer-2000W  ( L6290  )  375.00 w/e 100 c ; \               
- \ Dry-Contact   ( L6315  )  120.00 w/e  40 c ; \               
-Elect                                                           
-
-
-| X-10 5/5                   600-999cd             F05-28-08 AL
-Vocabulary X-10   X-10 Definitions                              
-: Receiver       39.99 w/e 50 c ; \ Receiver 2251               
-: Transmitter    22.99 w/e 20 c ; \ Transmitter 4095W           
-: Antenna        23.99 w/e 10 c ; \ Antenna 4002                
-Elect                                                           
-                                                                
 
 | DECO  White            BC 602-000  E-8          F 08-10-08 AL
 Vocabulary DECO  DECO  definitions
@@ -432,81 +368,7 @@ Smoke-Alarm Definitions
 Elect  \ Back to regular order of vocs
 : smk ; \ alias
 elect
-\ FLUORESCENT fixtures 1/3  625-100a FF-09        F 11-19-08
-Vocabulary Flo
-Flo Definitions
-: 4-FT        33.00 w/e  80 c ; \ 31.005 NIC tubes Oct 08 was 33.50  
-: 4x1         35.00 w/e  80 c ; \ Good, not cheap T-8  
-: 4x2 ( Inc ) 37.50 w/e  80 c ; \ 33.36 is 31.0050 + 1.1808 x 2  Dec 2010 inc
-: 4x4 ( Wrap) 59.00 w/e 100 c ; \ 4 T8  4-2-08 54.60 58.75
-: 4x2-Wrap    52.98 w/e  81 c ; \ 2 T8  Was 44.00 3-16-09
-: 4x2-easy    37.50 w/e  50 c ; \ Tubes included
-: Cloud-128W  85.00 w/e  35 c ; \            18-in
-~ Cloud-32W   30.00 w/e  25 c ; \
-~ Cloud-8W    20.00 w/e  25 c ; \
-: 4x2-Wrap    25.98 w/e   81 c ; \ 2 T8  Was 44.00 3-16-09
-: 4x2-Cloud   85.00 w/e  100 c ; \ 2 T8  4-30-08 Universal
-\ Double-4x4 120.00 w/e  151 c ; \ 8ft 8 tube 4-lines
-: 4-ft-WP       80.00 w/e  80 c ; \ 78.00 SES Nov 95
-: Circline-1  35.00 w/e  25 c ; \ FC-8  inc    9-in
-: Circline-2  39.06 w/e  25 c ; \ FC-8, FC-12 14-in
-~ H7-Flo      33.00 w/e  25 c ; \ Whitman
-~ Jelly-Flo   20.00 w/e  25 c ; \ 19.89 Univ Dec 96 14.63 2002
-: Chain-support  4.65 w/e  23 c ; \ ( NIC cord, right? )
-: Jelly-Jar-out 20.00 w/e  20 c ; \
-: Retrofit-L     0.00 w/e  50 c ; \
-~ 8ft-1tube     28.00 w/e 100 c ; \
-: Monument       2.00 w/e  33 c ; \
-: Lense          5.80 w/e  08 c ; \
-: 8x4-Tandem  45.00 w/e 170 c ; \ 4 48-in tube T-8 Tandem Elect
-: 8ft-4x4T    37.45 w/e 170 c ; \ 4 48-in tube T-12 Tandem Bal
-: 8ft-4x8T    59.00 w/e 130 c ; \ 4 96-in tube
-Elect
-: Fluorescent             Flo ; Elect  \  See scr 180  Lay-in
 
-
-\ CFL                       000-000  XX-0           03-25-08    
-Vocabulary CFL  CFl Definitions
-:  11W         400.00 w/c   8 c ; \ 11W 25       600 Lumen
-:  13W         400.00 w/c   8 c ; \ 15w 50-60    800 Lumen
-:  20W         900.00 w/c   8 c ; \ 20W         1200 Lumen
-:  26W        1000.00 w/c   6 c ; \ 26w 90      1300 Lumen
-:  23W        1200.00 w/c   8 c ; \ 23w 105-120 1500 Lumen
-:  32W        1200.00 w/c   8 c ; \ 32w 150     2000 Lumen
-:  40W        1200.00 w/c   8 c ; \   w         2500 Lumen?  
-:  45W        1500.00 w/c   8 c ; \ 45w 200     3100 Lumen
-Elect \                                                         
-                                                                
-\ Delux EL  10,000 hours   30% of the power                     
-                                                                
-
-| CUT-IN-FLO                625-100c FF-09        F 09-09-95 AEC
-Vocabulary CUT-IN-FLO                                           
-                         CUT-IN-FLO  definitions \    Keep Have 
-: 10X48       50.00 w/e   71 c ; \ guesss                       
-Elect  \                                                        
-
-
-| WP-FLO      fixtures      625-100c FF-09        F 89-03-11 AEC
-Vocabulary WP-FLO                         \ Used Sold Keep Have 
-                         WP-FLO      definitions \    Keep Have 
-: 4ft-2tube   62.00 w/e  100 c ; \                              
-: 8ft-2tube  122.00 w/e  200 c ; \                              
-Elect  \                                                        
-                                                                
-
-| REFLECTOR Florescents     625-104c FF-09        F 12-02-93 AEC
-Vocabulary Reflector     Reflector   definitions \    Keep Have 
-: 8-ft        45.00 w/e  150 c ; \ 5-88   \ SKU# Sold Keep Have 
-: 4-ft        26.00 w/e  100 c ; \                       x      
-: Shop-light   9.50 w/e   50 c ; \ Home dep                     
-\ 8ft-4tube    xx        100 c ; \                       x      
-\ 8ft-4-4ft    xx                \                       x      
-\ 4ft-4tube    xx        100 c ; \                       x      
-Elect                                                           
-\ 8-ft electronic is 75.00                                      
-\ 8-ft tube is 10 or 11                                         
-                                                                
 
 | T-BAR                     625-104d XX-X           11-17-08 AL
 Vocabulary T-Bar         T-Bar    Definitions  \ Sold Keep Have 
@@ -527,9 +389,9 @@ Elect
 
 | STEM                      625-104e xx-x           89-01-04 AEC
 Vocabulary Stem          Stem Definitions \ Used Sold Keep Have
-\  6-in        2.00 w/e  50 c ; \
-\ 12-in        2.50 w/e  50 c ; \
-\ 18-in        2.75 w/e  50 c ; \
+:  6-in        2.00 w/e  50 c ; \
+: 12-in        2.50 w/e  50 c ; \
+: 18-in        2.75 w/e  50 c ; \
 : 2-ft         3.00 w/e  50 c ; \
 : 3-ft         4.50 w/e  50 c ; \
 : 4-ft         5.50 w/e  50 c ; \
@@ -541,7 +403,7 @@ Vocabulary Stem          Stem Definitions \ Used Sold Keep Have
 Elect                                                           
                                                                 
 
-| HANG-FLO                  625-200x FF-09        F 88-10-29 AEC
+| HANG-LED                  625-200x FF-09        F 88-10-29 AEC
 Vocabulary Hang-flo      Hang-flo    Definitions                
 ` 2x4-wrap     0.00 w/c  90 c ;      \    \ SKU# Sold Keep Have 
 ` 4x4-wrap     0.00 w/c 100 c ;      \    \ SKU# Sold Keep Have 
@@ -590,8 +452,10 @@ Elect
 
 \ FIXTURES   1/4            625-304  FF-3         F 05-01-09    
 Vocabulary Fixture       Fixture definitions
+: LED-convert     22.00 w/e 33 c ; \ Plus setup time
+: LED-convert-15  15.00 w/e 50 c ; \ Kevin
 : Simple-Dome   25.00 w/e 25 c ; \ Simple 2 lamp fixture
-: LED-can       15.00 w/e 30 c ; \ Guessing in October 23, 2019                                                                            
+: LED-can       15.00 w/e 30 c ; \ Guessing in October 23, 2019
 : Motion-Sensor 30.00 w/e 40 c ; \ 80 22.00 Cheap no Good  
 : Motion-NonLED 48.00 w/e 40 c ; \ Levinson                  
 : Motion-Reg    40.00 w/e 40 c ; \ 75.00 RAB  Oct 07
@@ -648,26 +512,6 @@ Vocabulary Fixture       Fixture definitions
 Elect    \                                                      
                                                                 
 
-| HPS fixtures              625-304d FF-3         F 03-09-09
-Vocabulary HPS   HPS definitions               \ Sold Keep Have
-: Square-Light  80.00 w/e  1 e ; \ 50W under overhang
-: Wall-Pack    100.00 w/e  1 e ; \ 100W  Wall pack
-: RLM-Type      29.65 w/e 50 c ; \ Granger for Ed
-: 250W-LowBay  100.00 w/e  1 e ; \ SafeCo  Jan 95
-: 400W-LowBay  200.00 w/e  1 e ; \ B&K     Jan 95
-: 400W-Wall    327.00 w/e  1 e ; \ IMPARK  Dec 2010
-: 400W      400w-Wall ; \
-: 250W         130.00 w/e  1 c ; \ guess
-: 150W-bulb     13.56 w/e  1 e ; \ 68.00 SafeCo Feb 94
-: 150W-Flood    85.00 w/e  1 e ; \ RAB-150  SES Jan 95
-: 100W-bulb    200.00 w/e  1 e ; \ Bay Comm
-: 50-watt       75.00 w/e 25 c ; \ 70.00 Dec 2010
-: 70-watt       75.00 w/e 25 c ; \ 70.00 Dec 2010
-: 70-watts     120.00 w/e 30 c ; \ For Enterprise proce c/o Boris Dec 2010
-Elect    \  Eye and Lexan
-: HPS-Fixture  HPS ;
-Elect
-
 | JUNO  IC44                                        08-16-94 AEC
 Vocabulary Juno    \ 4-16-93 for Stuart on Collingwood
 Juno     Definitions   \ (Remodel can costs the same price)
@@ -705,14 +549,7 @@ TOPAZ    Definitions  \ rename to FIXTURE-MR16  ?
 \ New-Work    36.25 w/e  50 c ; \ TL602 Recesed new work         
 : Oval-slot   10.85 w/e  10 c ; \ TR613 Top light slot Trim     
 Elect                                                           
-\ See also HALOGEN-16 on 189                                    
-\ Caution  IC requred if in outer envelope  JUNO   2 scr back   
-\ Trim LC119 at Mayne house                                     
-\ Phone (516) 758-5507 Topaz Lighting and Electric  NY          
-\ Repairs Inc mud and paint                                     
-\ Rock 55 --> 65    1.0 hour or so ..                           
-\ Lath 75 --> 100   1.5 hours or 2 hours                        
-                                                                
+
 
 | Recessed-6"                                       07-12-07 AL
 Vocabulary Recessed-6"  Recessed-6"  Definitions                
@@ -872,8 +709,6 @@ Vocabulary Vent-6"  Vent-6" Definitions
 Elect
 
 
-
-
 | BALL  FIXTURE             625-400               F 88-10-29 AL
 Vocabulary Ball          Ball  definitions  \    Sold Keep Have
 \ 14-in       42.53 w/e  50 c ; \ Garage over stock 42.53
@@ -964,99 +799,6 @@ Vocabulary Ballast    Ballast definitions \ Used Sold Keep Have
 Elect
 
 
-| T-8 Tube                  630-003  FF-09          12-02-93 AEC
-Vocabulary T-8  T-8 definitions \ Used Sold K
-\ 3-ft          .00 w/e  8 c ; \
-: 4-ft#7       2.25 w/e  8 c ; \ Regular 11-8-13
-: 4-ft#8       5.30 w/e  8 c ; \ Brighter
-\ 6-ft        16.00 w/e  8 c ; \
-\ 8-ft          .00 w/e 15 c ; \ 10 pack  last of stock was 5.00
-Elect
-                                                                
-
-| TUBE-SAME-TIME            630-003  FF-09          05-10-03 AL 
-Vocabulary Tube-same-time Tube-same-time definitions            
-: 9-in         3.92 w/e  2 c ; \
-: 12-in        3.51 w/e  2 c ; \    3.95
-: 21-in        4.50 w/e  2 c ; \    4.50
-: 2-ft         5.92 w/e  2 c ; \ Citys Lights Nov 94
-: 2x2         11.78 w/e  2 c ; \ SES Aug 95
-: 4-ft         2.00 w/e  2 c ; \ June 07 Was 1.50
-: T-8          3.00 w/e  2 c ; \
-: 3-ft         2.00 w/e  2 c ; \
-: 8-ft         5.00 w/e  2 c ; \ 10 pack  last of stock was 5.00
-\ 8ft-Vita    28.00 w/e  2 c ; \
-: 13W-Quad     7.90 w/e  2 c ; \ Dec 93  All are warm
-: 9W           5.00 w/e  2 c ; \ June 94
-: FC-8         6.50 w/e  2 c ; \ June 94  FC-8
-: FC-12        7.00 w/e  2 c ; Elect \ June 94 
-
-
-| TUBE (REPLACE)             630-003  FF-09         04-02-08 AL
-Vocabulary Tube Tube definitions
-: 9-in         3.92 w/e  8 c ; \
-: 12-in        3.51 w/e  8 c ; \    3.95
-: 21-in        4.50 w/e  8 c ; \    4.50
-: 2-ft         5.92 w/e  8 c ; \ Citys Lights Nov 94
-: 2x2         11.78 w/e  8 c ; \ SES Aug 95
-: 4-ft ( T8 )  2.10 w/e 12 c ; \ April 2013                                       
-: T-8          4-ft ;          
-: 3-ft         2.00 w/e  8 c ; \
-: 8-ft         5.00 w/e 15 c ; \ 10 pack  last of stock was 5.00
-\ 8-Watt-Mizer 5.82 w/e 15 c ; \ June 94  City Lights
-\ 8ft-Vita    28.00 w/e  8 c ; \
-: 13W-Quad     7.90 w/e  0 c ; \ Dec 93  All are warm
-: 9W           5.00 w/e  0 c ; \ June 94
-: FC-8         6.50 w/e  0 c ; \ June 94  FC-8
-: FC-12        7.00 w/e  0 c ; \ June 94
-\ LED         22.00 w/e  0 c ; \ 30.00 r/t
-: LED2        23.00 w/e  0 c ; \ experiment 
-Elect
-
-| ELECTRONIC-TUBE           630-003  FF-09          05-08-95 AL
-Vocabulary ELECTRONIC-TUBE
-           ELECTRONIC-TUBE definitions \ Used Sold Keep Ha
-\ 8-ft  NOT   11.00 w/e 12 c ; \
-: 4-ft         3.00 w/e 12 c ; \ Less if at same time
-: 2x2         12.00 w/e 12 c ; \ SES Mar 95                     
-Elect                                                           
-: Energy-Tube   Electronic-tube ;                               
-Elect
-
-| WARM-TUBE                 630-003  FF-09          05-10-03 BEC
-Vocabulary Warm-Tube     Warm-Tube  definitions \ Used Sold Keep
-\ NOTE  For even color use GE from City Lights                  
-: 9-in         4.92 w/e  8 c ; \ Guess                          
-: 12-in        4.00 w/e  8 c ; \ Jan 95 B&K                     
-: 21-in        5.00 w/e  8 c ; \ Jan 95 B&K                     
-: 2-ft         3.27 w/e  8 c ; \  "                             
-: 3-ft         4.00 w/e 10 c ; \ Guess                          
-: 4-ft         4.00 w/e  0 c ; \ 2.35 May 2003 But labor        
-             \ NO LABOR ABOVE !!!                               
-: 4ft-3000K    6.59 w/e 10 c ; \  "                             
-\ 6-ft         5.00 w/e 12 c ; \ Guess cost                     
-: 8ft          7.50 w/e 15 c ; \  "                             
-: Vita-8ft    28.00 w/e  8 c ; \  "                             
-: 4-ft-T8      4.70 w/e  8 c ; \ Bay Dec 94                     
-Elect
-: Warm  warm-tube ;
-
-
-| INSTALL-TUBE  Dup         630-003  FF-09          88-12-27 AEC
-Vocabulary INSTALL-TUBE                   \ Used Sold Keep Have 
-INSTALL-TUBE definitions                                        
-: 9-in         0.00 w/e  8 c ; \                         x      
-: 12-in        0.00 w/e  8 c ; \    3.95           11    x    0 
-: 21-in        0.00 w/e  8 c ; \    4.50            6    x    0 
-\ 3-ft                   8     \                         x      
-: 4-ft         0.00 w/e 10 c ; \                   19    x    0 
-: 8-ft         0.00 w/e 15 c ; \                         x      
-: 8ft-easy     0.00 w/e  7 c ; \                         x      
-: Circline     0.00 w/e  6 c ; \                         x      
-Elect   \                                                       
-\ Open\close fixture on existing fixture.                       
-
-
 | CLOSET-LIGHT              630-600x LL-0         F 12-10-07 AL
 Vocabulary CLOSET-LIGHT                   \ Used Sold Keep Have 
 CLOSET-LIGHT Definitions \ 1\2 The labor of under cabinet       
@@ -1073,54 +815,6 @@ Elect   \
      \ 24-in 21.97 Peer                                         
      \ Need an update including tubes                           
 
-
-| INCH-LIGHT                630-600x LL-0         F 05-20-09    
-Vocabulary Inch-light                     \ Used Sold Keep Have
-INCH-LIGHT Definitions   \ Calif Elect                          
-` 12-in     3000.00 w/c  50 c ; \ 12-in  Was 2000 Dec 93 Guess  
-` 21-in     4242.00 w/c  50 c ; \ 21-in  Was 3100 May 09        
-` 24-in     5000.00 w/c  60 c ; \ 2-12"  Was 2700 May 09 Guess  
-` 33-in     6132.00 w/c  70 c ; \ 12&21  Was 4350 May 09        
-` 42-in     7500.00 w/c  80 c ; \ 2-21"  Was 5300 May 09 Guess  
-\ 48-in            for Lorraine Bosche      
-` 24-in-HQ  8510.00 w/c  60 c ; \ Univ Best brand???            
-` Outlet     100.00 w/c  10 c ; \      Dec 93                   
-` Rocker-SW  200.00 w/c  10 c ; \      Dec 93                   
-Elect   \                                                       
-     \ American Lights prices from SafeCo ( Cheep brand )       
-     \ 24-in 21.97 Peer                                         
-     \ Need an update including tubes                           
-
-
-| PUCK  UC-Halogen          630-605y                01-31-99 AEC
-Vocabulary PUCK        ( WESTEC )  : UC-Halogen puck ;          
-PUCK       Definitions   \   Fuse  5A 250V                      
-\ Fish-zip                                                      
-\ Surf-zip                                                      
-` Light        900.00 w/c  50 c ; \ Part number E-266  was 30   
-` Touch-Pad   1200.00 w/c  50 c ; \                             
-` Wireless-SW 3000.00 w/c  50 c ; \ SL6136 Disc Builders        
-` Touch-Dim1  1600.00 w/c  50 c ; \ A6043CS                     
-` Touch-Dim3  1600.00 w/c  50 c ; \ A6553CS Wrong price?        
-` 60W-Plug    2000.00 w/c  50 c ; \ Wall or remote              
-` 12V-Trans   2000.00 w/c  75 c ; \ Wall or remote 75W or 60W   
-` 75W-Trans   2000.00 w/c  75 c ; \ ETR-75                      
-` 75W-X-dim   2000.00 w/c  50 c ; \                             
-Elect   \     NOTE  Leave slack wire for changing bulbs, teach  
-\ 15.00@DCB  9.00@B&K  12.00@UES  14.00@SES  12.00@Alpha        
-
-
-| LYTRIM by LOL             630-610x LL-0            9-18-89 AEC
-Vocabulary LYTRIM        LYTRIM Definitions     \ Sold Keep Have
-: 4-ft        44.44 w/e  100 c ; \ 100                          
-: 8-ft        61.56 w/e  100 c ; \ 150                          
-: 8-joiner    62.78 w/e  100 c ; \  70                          
-: Power-feed  26.60 w/e   33 c ; \  33                          
-: Connector    7.43 w/e   10 c ; \  10                          
-: End-cap      1.49 w/e    5 c ; \   5                          
-: Lamp&holder  4.50 w/e    1 c ; \ L8351           20         0 
-Elect                                                           
-                                                                
 
 | HALO 1/2                  630-970x FS4          F 03-13-00 bye
 Vocabulary HALO  HALO Definitions                               
@@ -1241,37 +935,6 @@ Elect    \ Deva works good
 \ See also TOPAZ                                                
 
 
-| Kenn.  Labor same as Halo 630-970x FS4          F 04-30-9  AEC
-                    KENN   Definitions    \ Used Sold Keep Have 
-` 2-ft         600.00 w/c 125 c ; \ L651       4    1    x    0 
-` 4-ft        1200.00 w/c 125 c ; \ L651       4    1    x    0 
-` 6-ft        1740.00 w/c 137 c ; \ L650                        
-` 8-ft        2280.00 w/c 150 c ; \ L652       4   12    x    0 
-\ 12-ft       Use Halo                                          
-` Floating     495.00 w/c  20 c ; \                             
-` Mini-con     240.00 w/c  10 c ; \ L908            4           
-` X-Feed       660.00 w/c  50 c ; \ L906                        
-` "T"          540.00 w/c  30 c ; \ L905            3         0 
-` Flat-90      480.00 w/c  20 c ; \ L904            1         0 
-` Center-Feed  540.00 w/c  40 c ; \ L903            4         0 
-` Flex-corner  840.00 w/c  20 c ; \ L902                        
-` Live-end     750.00 w/c  30 c ; \ L901                        
-` Mono-point   720.00 w/c   0 c ;  Elect                        
-` 4-ft        1680.00 w/c 125 c ; \ L651       4    1    x    0
-` 6-ft        2520.00 w/c 137 c ; \ L650                        
-` 8-ft        3220.00 w/c 150 c ; \ L652       4   12    x    0 
-\ 12-ft       Use Halo                                          
-\ Floating    Not made                                          
-` Mini-con     668.00 w/c  10 c ; \ L908            4           
-\ X-Feed         0.00 w/c  50 c ; \ L906                        
-\ "T"            0.00 w/c  30 c ; \ L905            3         0 
-` 90-Corner    960.00 w/c  20 c ; \ L904            1         0 
-\ Center-Feed    0.00 w/c  40 c ; \ L903            4         0 
-\ Flex-corner    0.00 w/c  20 c ; \ L902                        
-` Live-end     750.00 w/c  30 c ; \ L901                        
-Elect                                                           
-                                                                
-
 | TRACK    1 Circuit  HALO  630-970x FS4          F 08-29-08 AL
 Vocabulary TRACK  TRACK Definitions ( Times -.25 strips only)   
 ` 2-ft         845.00 w/c  75 c ; \                             
@@ -1349,23 +1012,6 @@ Vocabulary HANG-TRACK   HANG-TRACK Definitions \ Sold Keep Have
 ` Power-feed   0.0 w/c  20 c ;  Elect \ was 40                  
 
 
-| TRAC-12                   630-980x FS-04        F 02-21-94 AEC
-Vocabulary TRAC-12   TRAC-12 Definitions \                      
-: 2-ft         6.65 w/e  50 c ; \ TL2  Times cut 1/2 from Track 
-: 4-ft        10.65 w/e  75 c ; \ TLF    ( Oops! Dr White Job ) 
-: 6-ft        16.00 w/e 100 c ; \ TL6                           
-: 8-ft        21.00 w/e 125 c ; \ TL8                           
-: Flex-90      6.00 w/e  20 c ; \ TL20                          
-: Flat-90      6.00 w/e  20 c ; \ TL21                          
-: Conduit-feed 7.35 w/e  40 c ; \ TL34                          
-: Power-Cube  46.65 w/e  20 c ; \ TL548                         
-: Power-Big  100.00 w/e  20 c ; \ TL???                         
-: Lampholder   2.35 w/e   1 c ; \ TL101                         
-: Xenon        1.35 w/e   1 c ; \ TL900 or 901                  
-\ Halogen      5.35 w/e   1 c ; \ TL922 or 923                  
-Elect                                                           
-                                                                
-
 | LOL UC track              630-980x FS-04        F 09-06-91 AEC
 Vocabulary LOL           LOL definitions \ tax + 10% is l
 : 96-in       65.70 w/e 150 c ; \ L8395   \ SKU# Sold Keep Have 
@@ -1434,18 +1080,6 @@ Vocabulary LOL      LOL definitions             \ Sold Keep Have
 Elect                                                           
 
 
-| Alabaster
-Vocabulary ALABASTER  ALABASTER definitions
-: #40782      490.00 w/e 25 c ; \ Bedroom ceiling
-Elect
-
-
-| Shaper
-Vocabulary SHAPER     SHAPER definitions
-: #676        150.00 w/e 25 c ; \ Wall sconce Deck              
-Elect                                                           
-                                                                
-
 | WIRE 1/2                  650-001  G-3 G-03     F 89-01-29 0.0
 Vocabulary WIRE          WIRE    definitions   \ Sold Keep Have 
 : #8/4     1500.00 w/m  20 m ; \ B&K Oct 94  SES 1.13           
@@ -1513,25 +1147,7 @@ Vocabulary CORD-DROP                      \ Used Sold Keep Have
 : 20A         48.29 w/e    1 e ; \ From  \modules CORD.MOD      
 Elect                                                           
                                                                 
-
-| INTERCOM                  675-000               F 97-05-14 AEC
- \  Safety      GFCI  ( w )                    0.05      15.40Vo
-: Phone-Entry        1000.00 w/e 100 C ; \ 1 hour ,             
- : 1-STATION ." IK-15"  46.48 w/e 100 C ;                       
- \ 2-STATION ." IK-25"  63.20 w/e 100 c ;                       
- \ SPEAKER   ." IS-68"  11.67 w/c  25 c ;                       
- : Hand-set             26.67 w/c   1 e ;                       
- : Door-set             26.67 w/c   1 e ;                       
- : OPENER    ." DR-1DR" 26.67 w/c   1 e ;                       
- \ OPENER-METAL ( DR-2SA) 56.00 w/c 1 e ;                       
-Elect    \     See 306 for HANG-INTERCOM                        
-\ Aiphone  s/b 50 or 60 per station inc wire.                   
-\ More stations = more conductors  ie 14 wires                  
-\ and complicated to figure out  see 80-E                       
-\ NOTE!  Leave it to the experts  To much grief.                
-                                                                
-
-\ LOW-VOLT                  675-001  G-3 G-03     F 05-01-09          
+\ LOW-VOLT                  675-001  G-3 G-03     F 05-01-09
 Vocabulary Low-Volt   Low-Volt Definitions
 : Door-release      34.00 w/e 30 c ; \ 675-41  17 or 26.00
 : Thermostat        39.00 w/e 50 c ; \
@@ -1608,28 +1224,28 @@ Elect
 | BERKO            1/6     C 775-023b XX-0           08-05-06  
 Vocabulary Berko    ( Silica filled )                           
                   Berko   Definitions \ Times were all 75 (new) 
-\  500W    68.00 w/e  75 c ; \ 28-in Berko                      
-\  750W    31.87 w/e  75 c ; \ 3-ft                             
-\ 1000W-4  28.38 w/e 100 c ; \ 4-ft                             
-\ 1250W-5  39.39 w/e 105 c ; \ 5-ft                             
-\ 1500W-6  47.34 w/e 110 c ; \ 6-ft                             
-: 2000W-8  63.63 w/e 125 c ; \ 8-ft  96"  5-6-08 Universal      
-\ Thermostat 15.30 w/e  30 c ; \                                
-: EC-stat    17.68 w/e  35 c ; \ Feb 06                         
-: Line-stat  18.04 w/e  35 c ;                                  
-: WM          1.00 w/e   1 e ; \                                
-Elect                                                           
-\ Mathew recommends Cadete 14x10 it is 4KW for 150 dollars?     
+:  500W    68.00 w/e  75 c ; \ 28-in Berko
+:  750W    31.87 w/e  75 c ; \ 3-ft
+: 1000W-4  28.38 w/e 100 c ; \ 4-ft
+: 1250W-5  39.39 w/e 105 c ; \ 5-ft
+: 1500W-6  47.34 w/e 110 c ; \ 6-ft
+: 2000W-8  63.63 w/e 125 c ; \ 8-ft  96"  5-6-08 Universal
+: Thermostat 15.30 w/e  30 c ; \
+: EC-stat    17.68 w/e  35 c ; \ Feb 06
+: Line-stat  18.04 w/e  35 c ;
+: WM          1.00 w/e   1 e ; \
+Elect
+\ Mathew recommends Cadete 14x10 it is 4KW for 150 dollars?
 
 
 | Intertherm       2/6    C 775-023b XX-0           12-18-08 AL
-Vocabulary INTERTHERM-CLONE INTERTHERM-CLONE Definitions \ Used 
-\ NBH-500   117.04 w/e  75 c ; \ 30-in Intertherm               
-\ NBH-750   135.43 w/e  75 c ; \ 40-in   B&K-v                  
-\ NBH-1000  156.33 w/e  75 c ; \ 48-in 4'                       
-\ XXX-1250  121.50 w/e  75 c ; \ 62-in 5'2"  110v MAX 6-FT      
-\ NBH-1380  178.39 w/e  75 c ; \ 83-in 6'7"                     
-\ NBH-1380  178.39 w/e  75 c ; \ xx-in 8'                       
+Vocabulary INTERTHERM-CLONE INTERTHERM-CLONE Definitions \ Used
+: NBH-500   117.04 w/e  75 c ; \ 30-in Intertherm
+: NBH-750   135.43 w/e  75 c ; \ 40-in   B&K-v
+: NBH-1000  156.33 w/e  75 c ; \ 48-in 4'
+: XXX-1250  121.50 w/e  75 c ; \ 62-in 5'2"  110v MAX 6-FT
+: NBH-1380  178.39 w/e  75 c ; \ 83-in 6'7"
+: NBH-1380  178.39 w/e  75 c ; \ xx-in 8'
 : 1000W     163.78 w/e  75 c ; \ 48-in                          
 : 1500W     200.00 w/e  75 c ; \ 74-in 6'2"                     
 : 2000W     241.21 w/e  75 c ; \ 96-in 8'0" Berko LF20004  8-ft 
@@ -2651,23 +2267,6 @@ Elect
 : T-S  Trouble-shoot ;
 
 
-| Flat-rateing              000-000  XX-0 10-14-93  07-06-07 AL
-Vocabulary Level  Level Definitions                             
-` L015            0.0 w/c  25 c ;                               
-` L030            0.0 w/c  50 c ;                               
-` L045            0.0 w/c  75 c ;                               
-` L060            0.0 w/c 100 c ;                               
-` L075            0.0 w/c 125 c ;                               
-` L090            0.0 w/c 150 c ;                               
-` L120            0.0 w/c 200 c ;                               
-` L150            0.0 w/c 250 c ;                               
-` L165            0.0 w/c 275 c ;                               
-` L180            0.0 w/c 300 c ;                               
-` L210            0.0 w/c 350 c ;                               
-` L225            0.0 w/c 375 c ;                               
-` L240            0.0 w/c 400 c ; elect                         
-
-
 | Reactivate                000-000  XX-0 10-14-93  10-14-93 AEC
 Vocabulary Reactivate                                           
 Reactivate Definitions                                          
@@ -2903,8 +2502,8 @@ Elect
 
 Vocabulary LED-tube
 LED-Tube Definitions 
-: 48-inch            16.00 w/c 00 c ; \ Time is included wit the rewire
-: 96-inch            26.00 w/c 00 c ; 
+: 48-inch            16.00 w/e 00 c ; \ Time is included wit the rewire
+: 96-inch            26.00 w/e 00 c ;  
 
 \ A comment to play with GitHub
 
