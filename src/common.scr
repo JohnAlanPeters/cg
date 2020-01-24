@@ -17,8 +17,8 @@ Electric definitions
 : Occupancy-Sensor      occ-sensor ;                  
 : OCC                   occ-sensor ; \
 : CB              400.00 w/c  20 c ; \ Raised 2-2-05
-: CC cb ;  \ a shortcut for testing the system response (Live or dead?)
 : GFI            1300.00 w/c  25 c ; \ 13.00 UE? 15.49 Lows  Dec 2010
+: MM cb ;  \ a shortcut for testing the system response (Live or dead?)        
 : AFCI           3500.00 w/c  50 c ; \ 28.00 before June 12, 07
 : GFI-hard       1300.00 w/c  50 c ; \
 : GFI+Device     2025.00 w/c  40 c ; \ : FCB  1800.00 w/c 20 c ;

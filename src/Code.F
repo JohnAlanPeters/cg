@@ -281,30 +281,29 @@ false value partswholesaleshow
   cons-show-time
   cons-show-sell ;
 
+0. 2value markup
+
+: small-parts ( -- )
+  2.00 2to markup ;
+
+: large-parts ( -- )
+  1.33 2to markup ;
+
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
    partswholesaleshow
    if 2dup WholeSale-Sub 2+!  then
    wholesale-total 2+!  ;
 
-1.00 2value markup        \ default is no markup
-
-: MARK-IT-UP  ( w/s -- r/t )
+: MARK-IT-UP  ( w/s -- r/t )  \ 'w\s' is the double# wholesale price
+   2dup 100.0000 d< if small-parts else large-parts then   
    IncWholeSaleSub
-   markup  d*  100.00  d/ ;  \ Was 1.35 till I talked wiwth Mario,  Big parts?
-                          \ back to 1.35 after Ez Navar kit LED conversion
-: small-parts ( -- )
-  2.00 2to markup ;
-
-: large-parts ( -- )
-  1.35 2to markup ;
-
-: MMM    ; \ For use with view
+   markup  d*  100.00  d/ ;   \ 'r/t' is retail after markup
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-\ 7     UNITS AND QUANTITIES ===========
+\      UNITS AND QUANTITIES ===========
 
-: isDOUBLE? dp-location  1+ 0<> ; \ also defined in the kernel
+: isDOUBLE? dp-location  1+ 0<> ; 
 : ?>d ( ?? -- d )  \ assumes a single or double on stack
    isdouble?  0=  if  s>d  100.  d*  then ;
 
@@ -333,10 +332,10 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  41 >ccol parts-total 2@ bucks
-  51 >ccol time-total  2@ bucks ."  hr"
-  62 >ccol labor-total 2@ bucks
-  74 >ccol sell-total  2@ bucks ;
+  39 >ccol parts-total 2@ bucks
+  49 >ccol time-total  2@ bucks ."  hr"
+  60 >ccol labor-total 2@ bucks
+  72 >ccol sell-total  2@ bucks ;
 
 
 : Total-CON ( -- ) \ display sub-totals in console
@@ -346,18 +345,17 @@ false value partswholesaleshow
   72  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
-     conscol @ 40 > if cr then  
-  \  24 >ccol ." count"
-  \  46 >ccol ." Quan"
+     conscol @ 40 > if cr then
+     16 >ccol ." Count"
+     33 >ccol ." Part" \ Need to show on small cell screen or think it is dead
      44 >ccol ." Parts"
      55 >ccol ." Time"
      67 >ccol ." Labor"
      78 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
-\ 18 >ccol  ." Count"
-\ 18 >ccol  ." Quan"
-\ 30 >ccol  ." Part"
+  00 >ccol  ." Count"
+  18 >ccol  ." Part"
   38 >ccol  ." Parts"
   48 >ccol  ." Time"
   58 >ccol  ." Labor"
@@ -370,7 +368,7 @@ false value partswholesaleshow
   then  clear-totals ;
 
 : TOT total ; \ another attemampt as a shortcut
-: TT  total ; \ shortcut. The iPad spell checker was changing TT into "To"
+: TT reset-stacks  total ; \ shortcut. The iPad spell checker was changing TT into "To"
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
@@ -472,6 +470,9 @@ false value partswholesaleshow
                 Conversion started in March of 2000
                 Working version Thursday, July 01 2004
                 files1line will help look through the old bids
+                Stoped using it in 2008 due to realestate downt
+                Finished conversion November 2019
+                Web version is progressing in December 2019
 
 ELECTRIC        A vocabulary
 ELECT           Set the search order to a clean safe state.

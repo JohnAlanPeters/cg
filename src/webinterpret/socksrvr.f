@@ -27,11 +27,12 @@ create lastwebuser 64 allot
   getdatetime rbuf place s"  " rbuf +place rbuf +place
   rbuf count type cr s"  " rbuf +place
   ssock getpeername drop
-  2dup lastwebuser count compare
-  if 2dup lastwebuser place 2dup type
+  \ 2dup lastwebuser count compare
+  \ if 2dup lastwebuser place 
+     2dup type cr 
      rbuf +place crlf$ count rbuf +place
-     rbuf count data>fuser
-  else 2drop then ;
+     rbuf count data>fuser ;
+  \ else 2drop then ;
 
 : init-server   ( -- )         \ accept connection from client
   CreateSocket abort" can't create socket"
@@ -77,20 +78,18 @@ fload ..\vectint      \ load here to access code above
   until ssock closeSocket ;
 
 \ accept connection, xmit msg, read input, xmit kybrd til emptyline
-: do-server
-  -1 to in-web?
+: do-server  \ I would like it to clear the stack at the same time  jappjapp
   init-server
-  begin
+  begin -1 to in-web?
     sockread dup -1 =
-    if  ." done"
+    if ." done"
     else dup -2 =
      if drop srvrsock closesocket drop ssock closesocket drop
        ." reconnect" cr init-server 0
      else srvrinput   \ either send webpage or execute the forth
       false
-     then 
+     then
     then
-  until srvrsock closesocket drop
-  ssock closesocket drop 0 to in-web? ;
+  until srvrsock closesocket drop ssock closesocket drop 0 to in-web? ;
 
 : ds  do-server ;

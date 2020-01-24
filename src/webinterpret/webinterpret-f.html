@@ -6,67 +6,99 @@
 
 <script language="javascript" type="text/javascript">
 var lastlen=0;
-function doit()
+var fHeader='';
+var startstop=0;
+var sendint=false;
+var r1st=0;
+
+function doit(cntnu)
 {
   var dsp=document.getElementById('dsp');
-  var txt=dsp.value;
-  var ntxt=txt.substring(lastlen-1);
-  if( ntxt[ntxt.length-1] == '\n')
-     ntxt=ntxt.slice(0,ntxt.length-1);
+  if(sendint){
+     sendint=false;
+     cntnu=4;
+  }
+  if(fHeader==5){
+     fHeader=0;
+     return;
+  }
+  if(startstop==3){
+     cntnu=3;
+  }
+  var ntxt=cntnu.toString();
+  if(!cntnu){
+    var txt=dsp.value;
+    ntxt=txt.substring(lastlen-1);
+    if(!fHeader &&  ntxt[ntxt.length-1] == '\n'){
+      ntxt=ntxt.slice(0,ntxt.length-1);}
+    if(ntxt[0]=='\n') ntxt=ntxt.slice(1);
+  }
   fetch('',{method: 'post',body:ntxt,headers: {
-    'Content-Type': 'text/plain'
+      'Content-Type': 'text/plain'
      }
   })
-  .then(response => response.text())
+  .then(response =>{
+    fHeader = response.headers.get('ForthContinue');
+    return response.text();
+   })
   .then(function(data) {
      var dtxt=dsp.value;
-     if(dtxt[dtxt.length-1]=='\n')
-        dtxt=dtxt.slice(0,dtxt.length-1);
-     dtxt+='  ';
-     dtxt+=data+'\n';
+     if((!fHeader || r1st) && dtxt[dtxt.length-1]=='\n'){
+      dtxt=dtxt.slice(0,dtxt.length-1);
+     }
+     r1st=0;
+     if(fHeader==5) fHeader=0;
+     dtxt+=data;
      lastlen=dtxt.length;
      dsp.value=dtxt;
      dsp.scrollTop=dsp.scrollHeight;
+     if(fHeader==2 && !window.startstop){
+        doit(1);
+     }
   })
   .catch(error => console.log('error is', error));
 
 }
 </script>
 <body>
-Web32Forth 4.03 by Robert Ackerman & John Peters 415-239-5393<br>
-Join us at Win32Forth on facebbok/groups.<br> 
-The source is on GitHub under JohnAlanPeters/CG<br>
+This an extention of Win32Forth. We call it Web32Forth 4.04<br>
+Coded by Robert Ackerman. Designed by John Peters 415-239-5393<br>
+The Contract Generator TM is a database of electrical parts<br>
+The source is listed on GitHub as JohnAlanPeters/CG<br>
+See also Win32Forth on facebbok/groups<br>
 <br>
-The Contract Generator tm is a database of 'ELECTRIC WORDS' and it has all the parts electricians use.<br>
-<br>
-You can't executie 'FORTH WORDS' because it would take 90 seconds. Please help speed up the code.<br>
-<br>
-SEE  <word> decompiles the source code.<br>
-SHOW <word> shows the 1-st line of the source code, the stack comments and the back-slash \documentation.<br>
-VIEW <word> only works on the disk-based full system, not a browser. Try SHOW <br>
-<br>
-&#58 TEST 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
-You can copy and paste the above DO LOOP code if that is easier.<br>
-<br>
-You can enter any one of the CAPITALIZED words below or copy-paste them in to your browser<br>
-PANEL LIST is a good one. You will see electrician stuff<br>
-C-B LIST will give you a list of circuit breakers<br>
-EMT LIST will list the sizes of Elctro Metalic Tubing i.e. EMT<br>
-SS-CON LIST is for Set-Screw Connectors<br>
-Any of the below words or "vocabularies" will give you a list of the words in the vocabulary<br>
-LED-TUBE  PVC-PIPE  PVC-90  METER  METER-RT  HUB  COMMERCIAL-METER  PANEL-RT  PANEL<br>
--PLEASE enter ( Your Name ) so I can appreciate your visit. <br>
-You can send us a message using to brooklineelectric@gmail.com<br>
-<br>
-<textarea id='dsp' rows=26 cols=205 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
-</body>
-</html>
+<textarea id='dsp' rows=20 cols=150 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 <script>
-const node = document.getElementById('dsp');
-node.addEventListener("keyup", function(event) {
+    //var dsp=document.getElementById('dsp');
+    document.addEventListener("keydown",function(event) {
     if (event.key === "Enter") {
-        doit();
+        r1st=1;
+        doit(0);
+    }
+    else if(event.key === 'Escape' && fHeader){  // quit long response
+        sendint=true;
+    }
+    else if(fHeader){    // start/stop long response
+        if(startstop){
+          startstop=0;
+          event.preventDefault();
+          doit(2);       // continue
+        }
+        else{
+          startstop=3;
+          event.preventDefault();
+        }
     }
 });
 </script>
+<br>
+&#58 TEST 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
+If you get a -13 error then turn off iphone "smart-punctuation" - (General/Keyboards/Smart)<br>
+C-B   WORDS is for circuit breakers sizes<br>
+EMT   WORDS is for sizes of EMT (Electro Metalic Tubing)<br>
+RISER-100A, PVC-PIPE, PVC-90, METER, METER-RT, COMMERCIAL-METER, PANEL<br>
+Win32Forth and all it's thousands of words are here for your use<br>
+Please enter ( Your Name ) so I will know you are visiting<br>
+</body>
+</html>
 
