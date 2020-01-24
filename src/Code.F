@@ -471,6 +471,9 @@ false value partswholesaleshow
                 Conversion started in March of 2000
                 Working version Thursday, July 01 2004
                 files1line will help look through the old bids
+                Stoped using it in 2008 due to realestate downt
+                Finished conversion November 2019
+                Web version is progressing in December 2019
 
 ELECTRIC        A vocabulary
 ELECT           Set the search order to a clean safe state.
