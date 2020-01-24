@@ -91,12 +91,12 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 : set-exts ( n <name> -- )
   create , does> @ m-in + ;
 
-35 ( 35 ) set-exts parts-col    \ changing messed up virtual sub total in WinEd
-44 ( 44 ) set-exts time-col
-56 ( 56 ) set-exts sell-col
-35 ( 35 ) set-exts vparts-col   \ 29
-44 ( 44 ) set-exts vtime-col    \ Virtual scr sub time is now ok was 37
-56 ( 56 ) set-exts vtot-col     \ Virtual scr sub price is now ok was 48
+32  set-exts parts-col    \ changing messed up virtual sub total in WinEd
+41  set-exts time-col
+53  set-exts sell-col
+32  set-exts vparts-col
+41  set-exts vtime-col
+53  set-exts vtot-col
                          \ decimal point columm before bolding
 68 set-exts discount-col
 
@@ -189,14 +189,14 @@ false value partswholesaleshow
   then ;
                                                 \ JP start of factoring
 : web-show
-    24 >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    39 >ccol parts-cost 2@ bucks ."  ="
-    51 >ccol parts-ext 2@ bucks  ;
+    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 >ccol parts-cost 2@ bucks ."  ="
+    39 >ccol parts-ext 2@ bucks  ;
 
 : console-show
-    24 >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    39 >ccol parts-cost 2@ bucks ."  ="
-    51 >ccol parts-ext 2@ bucks ;
+    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 >ccol parts-cost 2@ bucks ."  ="
+    39 >ccol parts-ext 2@ bucks ;
 
 : CONS-SHOW-PARTS ( -- )
   in-web?
@@ -206,25 +206,25 @@ false value partswholesaleshow
                                                  \ JP end of factoring
 : CONS-SHOW-TIME ( -- )
   in-web?
-  if  61  else 61
+  if  49  else 49
   then  >ccol time-ext 2@ bucks ."  hr" ;
 
 : CONS-SHOW-SELL ( -- )
   in-web?
   if
-    72 >ccol labor-ext 2@ bucks
-    84 >ccol sell-ext  2@ bucks
+    60 >ccol labor-ext 2@ bucks
+    72 >ccol sell-ext  2@ bucks
     discount
     if sell-ext 2@ discount 0 d* 1.00 d/
-       96 >ccol bucks
+       84 >ccol bucks
     then
   else  \ console
-    72 >ccol labor-ext 2@ bucks
-    84 >ccol sell-ext  2@ bucks
+    60 >ccol labor-ext 2@ bucks
+    72 >ccol sell-ext  2@ bucks
     discount
     if
       sell-ext 2@ discount 0 d* 1.00 d/
-      96 >ccol bucks
+      84 >ccol bucks
     then
   then ;
 
@@ -281,30 +281,29 @@ false value partswholesaleshow
   cons-show-time
   cons-show-sell ;
 
-: IncWholeSaleSub  ( d -- )
-   2dup quan 2@ d* 100. d/
-   partswholesaleshow
-   if 2dup WholeSale-Sub 2+!  then
-   wholesale-total 2+!  ;
+0. 2value markup
 
-1.00 2value markup        \ default is no markup
-
-: MARK-IT-UP  ( w/s -- r/t )
-   IncWholeSaleSub
-   markup  d*  100.00  d/ ; \ Was 1.35 till I talked wiwth Mario,  Big parts?
-                          \ back to 1.35 after Ez Navar kit LED conversion
 : small-parts ( -- )
   2.00 2to markup ;
 
 : large-parts ( -- )
-  1.35 2to markup ;
+  1.33 2to markup ;
 
-: MMM    ; \ For use with view
+: IncWholeSaleSub  ( d -- )
+   2dup quan 2@ d* 100.00 d/
+   partswholesaleshow
+   if 2dup WholeSale-Sub 2+!  then
+   wholesale-total 2+!  ;
+
+: MARK-IT-UP  ( w/s -- r/t )  \ 'w\s' is the double# wholesale price
+   2dup 100.0000 d< if small-parts else large-parts then   
+   IncWholeSaleSub
+   markup  d*  100.00  d/ ;   \ 'r/t' is retail after markup
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-\ 7     UNITS AND QUANTITIES ===========
+\      UNITS AND QUANTITIES ===========
 
-: isDOUBLE? dp-location  1+ 0<> ; \ also defined in the kernel
+: isDOUBLE? dp-location  1+ 0<> ; 
 : ?>d ( ?? -- d )  \ assumes a single or double on stack
    isdouble?  0=  if  s>d  100.  d*  then ;
 
@@ -333,35 +332,34 @@ false value partswholesaleshow
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  53 >ccol parts-total 2@ bucks
-  63 >ccol time-total  2@ bucks ."  hr"
-  74 >ccol labor-total 2@ bucks
-  86 >ccol sell-total  2@ bucks ;
-       \ changing these #s does not change anything
+  39 >ccol parts-total 2@ bucks
+  49 >ccol time-total  2@ bucks ."  hr"
+  60 >ccol labor-total 2@ bucks
+  72 >ccol sell-total  2@ bucks ;
 
-: Total-CON ( -- ) \ display sub-totals in console   sub?
-  51  >ccol parts-total 2@ bucks
-  61  >ccol time-total  2@ bucks ."  hr"
-  72  >ccol labor-total 2@ bucks
-  84  >ccol sell-total  2@ bucks ;
+
+: Total-CON ( -- ) \ display sub-totals in console
+  39  >ccol parts-total 2@ bucks
+  49  >ccol time-total  2@ bucks ."  hr"
+  60  >ccol labor-total 2@ bucks
+  72  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
-     conscol @ 40 > if cr then  \ Part
-     \ 24 conscol @ - 0 max spaces
-     \ ."                            Parts     Time       Labor     Sell " ;
-     56 >ccol ." Parts"
-     67 >ccol ." Time"
-     79 >ccol ." Labor"
-     90 >ccol ." Sell" ;  
+     conscol @ 40 > if cr then
+     16 >ccol ." Count"
+     33 >ccol ." Part" \ Need to show on small cell screen or think it is dead
+     44 >ccol ." Parts"
+     55 >ccol ." Time"
+     67 >ccol ." Labor"
+     78 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
-\ 18 >ccol  ." Count"
-\ 18 >ccol  ." Quan"
-\ 30 >ccol  ." Part"
-  50 >ccol  ." Parts"
-  60 >ccol  ." Time"
-  70 >ccol  ." Labor"
-  82 >ccol  ." Sell" ;
+  00 >ccol  ." Count"
+  18 >ccol  ." Part"
+  38 >ccol  ." Parts"
+  48 >ccol  ." Time"
+  58 >ccol  ." Labor"
+  70 >ccol  ." Sell" ;
 
 : TOTAL  ( -- )
   in-web?
@@ -369,7 +367,8 @@ false value partswholesaleshow
   else headline-CON cr total-CON
   then  clear-totals ;
 
-: TT total ;  \ development shortcut  call total-w/c ?-?
+: TOT total ; \ another attemampt as a shortcut
+: TT reset-stacks  total ; \ shortcut. The iPad spell checker was changing TT into "To"
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
@@ -416,7 +415,7 @@ false value partswholesaleshow
   s" KITCHEN POWER" bid-copy ;
 
 \ copy template to new file or open old file
-: CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
+: CAB-mini { \ to$ -- <fname> }   \ copies bids\template to a new file
   max-path localAlloc: to$ 
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
@@ -427,7 +426,7 @@ false value partswholesaleshow
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
 
-: CAB-MINI { \ to$ -- <fname> }   \ copies bids\template to a new file
+: CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
   max-path localAlloc: to$
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists

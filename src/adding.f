@@ -79,9 +79,6 @@ editor also
   cur-buf cell+ 54 + swap cmove
   put-cursor-line to cursor-line refresh-screen ;
 
-: CJ  Copy-job ;  \ Shorter
-: C-J  CJ ;
-
 : COPY-CONTINGENCY ( d -- )  [ editor ]
     \ find place on scr# 0 and overwrite it
     s" Contingency Fund is " findstr
@@ -89,7 +86,7 @@ editor also
                 else out-cents then
     else 2drop then ;
 
-: CC  ( -- )
+: CCC ( -- ) 
   s" Contingency Reserve" findstr
   if cursor-line find-tot-line ?dup
      if cursor-line 72 get-number else 0 0 then
@@ -147,7 +144,7 @@ editor also
      else 2drop drop then
 \    20% 25% cc
   then  EX-TOTAL to last-total
-  ( clear-totals ) save-text ( overstrike on ) ;
+  ( clear-totals ) save-text  overstrike on ;
 
 ' AA is grand-total   \ AA from the console or use F2 from within the editor
 

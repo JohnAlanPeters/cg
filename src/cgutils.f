@@ -130,6 +130,7 @@ editor
 \ ' dotcomma-number is number
 
 : (settle)  ( -- )  \ eliminate extra blank lines  see also settle below
+   un-add
   17 to cursor-line   0  \ initial value for #blank lines read \ was 24  JPPP
   begin cursor-line 1+ file-lines <
   while cursor-line #line" -trailing nip 0=
@@ -181,30 +182,29 @@ editor
 hidden
 
 : words-WEB-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
-  ." The Forth word WORDS does not work on the cloud from a browser, yet. " cr cr
-  ." Instead, use WORDS-LIST as a work-around for now. " cr
-  ." Caution FORTH WORDS-LIST will make you wait about 60 seconds . . . " cr
-  ." Then it will blast all the WORDS to the browser at once, but it does work. " cr
-  ." For a shorter (faster) list of words try a smaller vocabulary. " cr
-  ." INSTALL WORDS-LIST is only 48 words. " cr
-   cr
-  ." PANEL LIST or EMT WORDS-LIST or NAILER WORDS-LIST come up pretty fast. " cr
-   cr
-  ." Big vocabularies like ELECTRIC WORDS-LIST or FORTH WORDS-LIST take quite a while. " cr
-  ." For electrician's install times, prices and the sell price try this. " cr
-  ." INSTALL HOOD-FAN " cr
-  ." INSTALL MICRO-HOOD " cr
-  ." TOTAL " cr cr ;
+  ." Be careful with using the Forth word WORDS as it does not have START/STOP" cr
+  ." FORTH WORDS takes a long time. (56 sec.)" cr
+  ;
 
-: WORDS-list   ( -<optional_name>- ) \ WORDS partial-string will focus the list
-     words ;
-
-: LIST  words-list ; \ easier to type, but will it work? 
-
+: list  ( -<optional_name>- ) \ WORDS partial-string will focus the list
+                0 to words-cnt
+                words-pocket off
+                bl word uppercase c@
+                if      pocket count words-pocket place
+                        bl word uppercase drop
+                        voc-link @
+                        begin   dup vlink>voc ( #threads cells - )
+                                (words)
+                                @ dup 0=
+                        until   drop
+                else    context @ (words)
+                then    0 to with-address? ;
 forth
-: words ( -<optional_name>- )
-  in-web?
-  if words-WEB-msg else words ( wordscount ) then ;
+\ Dudley, please delete these 5 lines
+\ forth
+\ words ( -<optional_name>- )
+\ in-web?
+\ if words-WEB-msg else words ( wordscount ) then ;
 
 : getdatetime ( -- daddr dlen taddr tlen )
   get-local-time time-buf >date"

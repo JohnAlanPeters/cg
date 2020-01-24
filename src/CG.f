@@ -140,11 +140,11 @@ forth also forth definitions editor
   .viewinfo count "+open-text 0 swap 1-
   to-find-line refresh-line reEdit ;
 
-: VV-web-instructions ( <word> -- ) bl word drop cr 
+: VV-web-instructions ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
   ." VIEW requires the the disk based system or" cr
-  ." I can demo the Contract Generator TM with a screen-share app. cr
-  ." If you know GitHub you can view the code in GitHub at" cr
+  ." I can demo the Contract Generator TM with a screen-share app." cr
+  ." You can get the code from GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
 : VIEW
@@ -189,16 +189,16 @@ forth also forth definitions editor
     editor overstrike  off \  on
     elect
     cmdline 0= swap 0= or
-    if file-to-edit$ off
+    if file-to-edit$ off  wined
     else  cmdline drop c@ ascii 0 =
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
              cmdline 2 -2 d+ evaluate
-          else cmdline file-to-edit$ place
+          else cmdline file-to-edit$ place  wined
           then
     then
     \ call GetFocus to topwin
-    clear-totals  wined focus-console ." ok" cr quit ;
+    clear-totals focus-console ." ok" cr quit ;
     \ ['] wined catch 0<> if message then ;
 
 ELECT             \ Sets the vocabulary
