@@ -435,9 +435,9 @@ create upath 64 allot
 : onedrivebids ( -- addr len )
   setupath s" OneDrive\bids\" upath +place upath count ;
 
-: CAB { \ to$ -- <fname> }   \ copies bids\template to a new file
-  \ onedrivebids 2dup + 0 swap c!  "chdir
-  s" \cg\bids\ " 2dup + 0 swap c! "chdir
+: CAB { \ to$ -- <fname> }   \ copies from OneDrive bids\template to a new file
+  onedrivebids 2dup + 0 swap c!  "chdir
+  \ s" \cg\bids\ " 2dup + 0 swap c! "chdir
   max-path localAlloc: to$
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists

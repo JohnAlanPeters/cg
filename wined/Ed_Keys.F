@@ -358,7 +358,7 @@ defer _Control+W ' close-text is _control+w
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
       k_F1    ( rbs )               OF      edopen  ( w32f-doc )        ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
-      k_F2                          OF      grand-total toggle-insert   ENDOF                                           
+      k_F2                          OF      grand-total                 ENDOF                                            
       k_F3                          OF      find-text-again             ENDOF
       k_F3    +k_shift              OF      back-find-text-again        ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
