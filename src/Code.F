@@ -428,7 +428,7 @@ false value partswholesaleshow
 
 create upath 64 allot
 : setupath ( -- addr len )   \ path to users dir
-  s" \Users\j*"  find-first-file drop
+  s" \Users\j*"  find-first-file if drop s" \Users\User" find-first-file drop then 
   dir->file-name rot drop 
   s" \Users\" upath place upath +place s" \" upath +place ;
 
