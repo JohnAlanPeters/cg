@@ -172,6 +172,7 @@ forth also forth definitions editor
 : Rev    ( -- ) revert ;
 : UnDo   ( -- ) revert ;
 : VP     ( -- ) prev-link v ;
+: vprev  ( -- ) prev-view v ;   \ don't close current file
 : N      ( -- ) +vscr ; \ does not work
 : B      ( -- ) -vscr ;
 : HH     ( -- ) words ; \ You can give it a string
