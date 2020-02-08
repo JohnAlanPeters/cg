@@ -78,7 +78,8 @@ This code was created fresh for the WinCG version.
 : Flat-rate ( -- )    \ call before extending to only show single total column
   false to partscolshow false to timecolshow  ;
 
-: 1-column   flat-rate ;  \ c/b an alias I guess.                
+: 1-column   flat-rate ;  \ c/b an alias I guess.
+: 1-col      flat-rate ;                
 
 : 2-column   ( -- )   \ show time column and total column
   false to partscolshow true to timecolshow ;

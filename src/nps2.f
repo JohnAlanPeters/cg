@@ -734,7 +734,7 @@ Vocabulary Lamp          Lamp Definitions
 : LED-48      14.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
 : LED-A19      5.00 w/e   8 c ; \ 5-600 Lumins = 60W
 : LED-PAR     17.00 w/e   8 c ; \ 6-600 Lumins
-: LED-16        3.00 w/e   8 c ; \ Navar June 2019                          
+: LED-16       3.00 w/e   8 c ; \ Navar June 2019                          
 : MR-16        3.00 w/e   8 c ; \ Navar June 2019
 :  25W         1.01 w/e   2 c ; \ 630-22
 :  40W          .84 w/e   2 c ; \ 630-22
@@ -2491,6 +2491,7 @@ Elect
 
 \ REWIRE
 Vocabulary Rewire  Rewire Definitions
+: Strip-36           0.00 w/c  33 c ; \ 20 min  5K kelvin    
 : Strip-48           0.00 w/c  33 c ; \ 20 min  5K kelvin
 : Strip-96           0.00 w/c  45 c ; \ 27 min  Home Depot only
 : Wrap-48            0.00 w/c  45 c ; \ 27 min  Why no labor time?
