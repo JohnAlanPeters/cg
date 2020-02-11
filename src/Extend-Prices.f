@@ -32,9 +32,9 @@ This code was created fresh for the WinCG version.
   cursor-line #line" drop c@ ascii \ = dup
   if 1 true skiplines then ;
                    
-: EXTEND ( -- )  \ Ctrl+E  Extends all the lines from 17 down to TOTAL ESTIMATE  
+: EXTEND ( -- )  \ Ctrl+E  Extends all the lines from 17 down to TOTAL ESTIMATE
                  \ This is hard coded in BID-THRU
-                                                               \ JP
+     un-add      \ erase all three columns                     \ JP                                     
     -1 true skiplines 1 +to cursor-line  \ get to top of current vscr
     clear-totals
     cursor-line #line" drop s" total est" tuck istr=
