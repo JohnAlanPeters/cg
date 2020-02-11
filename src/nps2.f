@@ -1394,7 +1394,7 @@ Vocabulary Dollars        Dollars definitions
 : Project                   T&M ;
 : Time&Materials            T&M ;
 : Other ( n -- ) calc-other 0 e ; \ This does not look right
-: Credit                  Other ;
+: Credit       negate     Other ;
 : Profit                  Other ;
 : Fees                    Parts ;
 : Sub-Contract            Parts ;
