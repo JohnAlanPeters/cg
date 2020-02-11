@@ -138,7 +138,12 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
      2dup  labor-ext  2!  2dup labor-sub 2+!  labor-total 2+!  ;
 
 variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
-: CALC-TIME   ( d -- )              \ back to 100 July 2013
+
+: calc-unit-time ( d -- )
+   100 0 d* unit s>d d/ timejack @ s>d d* 100. d/ time-unit 2! ;
+
+: CALC-TIME   ( d -- )  \ cost per unit
+     2dup calc-unit-time
      quan 2@  d*  unit s>d   d/ timejack @ s>d d* 100. d/
      2dup  time-ext   2!  2dup time-sub 2+!   time-total 2+!  ;
 
@@ -165,7 +170,8 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 true  value timecolshow      \ set false to not show time column
 false value partscolshow     \ set false to not show parts column
 false value partswholesaleshow
-0 value discount         \ rate of discount; 100 -> no diff
+false value unitcolshow      \ true -> show cost and time for a single unit
+0 value discount             \ rate of discount; 100 -> no diff
 
 : sub<>0  ( -- fl )   \ if sub is not zero
   sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
@@ -177,8 +183,12 @@ false value partswholesaleshow
 : SHOW2PARTS
   parts-col 1- TAB-in wholesale-sub 2@ bucks
   time-col TAB-in parts-sub 2@ bucks ;
+: SHOW-UNIT-PARTS ( -- )
+  parts-col TAB-in parts-cost 2@ bucks ;  
 : SHOW-PARTS ( -- )
   parts-col TAB-in  parts-sub 2@ bucks ;
+: SHOW-UNIT-TIME ( -- )
+  time-col TAB-in time-unit 2@ 2 8 d.nr ;
 : SHOW-TIME ( -- )
   time-col TAB-in  time-sub 2@ 2 8 d.nr ;
 : SHOW-SELL ( -- )
@@ -263,14 +273,13 @@ false value partswholesaleshow
 : CLR           clear-totals ;
 
 : SHOW-ALL   ( -- )
-  PartsWholeSaleShow
-  if   show2parts
-  else partscolshow
-    if   show-parts
-    then timecolshow
-    if   show-time
-    then
-  then show-sell ;
+  unitcolshow  if show-unit-parts else
+  PartsWholeSaleShow if show2parts else
+  partscolshow  if show-parts else
+  then then then
+  unitcolshow  if show-unit-time else     
+  timecolshow  if show-time  then then
+  show-sell ;
 
 : remvoc ( -- )  \ remember vocab we are in for later display
   context @ voc>vcfa , ;
@@ -464,7 +473,7 @@ create upath 64 allot
   begin cursor-line file-lines <
         cursor-line 1- #line" drop s" Total Estimate" tuck istr= 0= and
   while get-cursor-line
-        cur-buf @ 56 min cur-buf !
+        cur-buf @ 48 min cur-buf !
         put-cursor-line
         1 +to cursor-line
   repeat refresh-screen ;

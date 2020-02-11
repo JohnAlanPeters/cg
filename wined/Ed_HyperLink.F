@@ -227,6 +227,20 @@ needs hyper.f
                         THEN
                 THEN    ;
 
+: prev-view     ( -- )   \ same as prev-link except no close file
+                >E
+                ?save-new ?EXIT
+                GetStack: EditWindow 0=
+                IF      beep
+                ELSE    update-mirrors
+                        -1 +hyper
+                        cur-filename c@
+                        IF      hyper-open
+                        ELSE    beep
+                                1 +hyper
+                        THEN
+                THEN    ;
+
 : next-link     ( -- )
                 >E
                 ?save-new ?EXIT

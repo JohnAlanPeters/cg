@@ -76,19 +76,22 @@ This code was created fresh for the WinCG version.
     refresh-screen ;
 
 : Flat-rate ( -- )    \ call before extending to only show single total column
-  false to partscolshow false to timecolshow  ;
+  false to partscolshow false to timecolshow false to unitcolshow ;
 
 : 1-column   flat-rate ;  \ c/b an alias I guess.
 : 1-col      flat-rate ;                
 
 : 2-column   ( -- )   \ show time column and total column
-  false to partscolshow true to timecolshow ;
+  false to partscolshow true to timecolshow false to unitcolshow ;
                                          
 : 3-column ( -- )     \ show parts, time, and total columns
-  true to partscolshow true to timecolshow ;
+  true to partscolshow true to timecolshow false to unitcolshow ;
 : 3C          3-column ;
 : 3-col       3-column ;
 : 3-columns   3-column ." 3 columns" ;
+
+: 4-column ( -- )   \ show cost of 1 part, total time and total cost+time
+  true to unitcolshow ;
 
 : Extend-Prices Extend ;
 : no-time     1-column ;
