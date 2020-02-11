@@ -52,6 +52,7 @@ anew _grandtot
 : bid-thru ( -- )    \ extend every vscr in current file and do a grandtotal
   noext?    \ only total if a bid, no file extension like .F 
   if false to ext-err CLEAR-TOTALS
+     un-add     
      17 to cursor-line
      1 0 skiplines   \ to first non-blank line
     begin cursor-line file-lines <

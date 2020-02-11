@@ -34,7 +34,6 @@ This code was created fresh for the WinCG version.
                    
 : EXTEND ( -- )  \ Ctrl+E  Extends all the lines from 17 down to TOTAL ESTIMATE
                  \ This is hard coded in BID-THRU
-     un-add      \ erase all three columns                     \ JP                                     
     -1 true skiplines 1 +to cursor-line  \ get to top of current vscr
     clear-totals
     cursor-line #line" drop s" total est" tuck istr=
