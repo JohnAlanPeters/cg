@@ -294,6 +294,7 @@ false value unitcolshow      \ true -> show cost and time for a single unit
 
 : small-parts ( -- )
   2.00 2to markup ;
+small-parts  \ default
 
 : large-parts ( -- )
   1.33 2to markup ;
@@ -305,7 +306,7 @@ false value unitcolshow      \ true -> show cost and time for a single unit
    wholesale-total 2+!  ;
 
 : MARK-IT-UP  ( w/s -- r/t )  \ 'w\s' is the double# wholesale price
-   2dup 100.0000 d< if small-parts else large-parts then   
+   \ 2dup 100.00 d< if small-parts else large-parts then
    IncWholeSaleSub
    markup  d*  100.00  d/ ;   \ 'r/t' is retail after markup
 
@@ -327,7 +328,7 @@ false value unitcolshow      \ true -> show cost and time for a single unit
 : W/M   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
              10. d/   mark-it-up   calc-parts ;
 : EX    ( n-quan n -- )  \ Single precision extend, used for fluf and fixts
-         >R  n-one-only  ?>d quan 2! R> S>D  calc-parts  ;
+         >R  n-one-only  ?>d quan 2! R> S>D mark-it-up calc-parts  ;
 
 : E2  ( n -- )  \ E2 is executed by evaluate
    s>d  calc-time  calc-labor  calc-sell
