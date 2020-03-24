@@ -12,7 +12,7 @@ anew _grandtot
         if BEGIN   1- DUP C@ BL =      \ scan back to blank
            UNTIL   1+ C@ ascii $ =    \ char after blank is '$'?
         else drop false then
-      ELSE DROP FALSE THEN      \ keep looking
+      ELSE DROP FALSE THEN  \ keep looking
    else drop 0 true then    \ end of file
   until ;                   \ l# of vtot line or 0
 

@@ -28,7 +28,7 @@ Include START-STOP.F  \ hit esc or the enter key twice to abort.
 1 value (WinEdDbg)    \ avoid turnkey at end of wined.f
 
 defer grand-total     \ Defined early so AA can be used in cg-special ctrl-
-' noop is grand-total
+' noop is grand-total \ View _grandtot for the deferred word       
 
 defer AAA
 defer reedit
@@ -153,9 +153,10 @@ forth also forth definitions editor
   else vv-con
   then ;
 
-: VVV view ;
+: VVV ( <word> -- ) \ Puts you in the editor for <word>    
+   view ; \ Puts you in the editor
 
-: VV
+: VV \ To the console for <word> not the editor
    in-web?
    if vv-web-instructions
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE

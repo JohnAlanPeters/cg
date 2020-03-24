@@ -15,11 +15,21 @@ variable lastbakfile max-path allot
   from$  1+
   Call CopyFile 0= ;
 
+create upath 64 allot
+
+: setupath ( -- addr len )   \ path to users dir
+  s" \Users\j*"  find-first-file if drop s" \Users\User" find-first-file drop then 
+  dir->file-name rot drop 
+  s" \Users\" upath place upath +place s" \" upath +place ;
+
+: onedrivebids ( -- addr len )
+  setupath s" OneDrive\bids\" upath +place upath count ;
+
 : xsave { \ $buf -- }     \ save original as xx.bak, before writing to disk
   edit-changed? 0= ?exit  \ only backup if file has changed
   max-path localalloc: $buf
   cur-filename count s" bids" search nip nip 0=  \ not a full path
-  if s" bids\" cgbase" $buf place
+  if ( s" bids\" cgbase" ) onedrivebids $buf place
      cur-filename count $buf +place
      $buf count find-first-file nip 0= \ only for files in bids dir
   else true then
