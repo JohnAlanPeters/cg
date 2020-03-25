@@ -436,32 +436,34 @@ small-parts  \ default
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
 
-create upath 64 allot
-: setupath ( -- addr len )   \ path to users dir
+create upath 250 allot
+: userdir ( -- addr len )   \ path to users dir
   s" \Users\j*"  find-first-file if drop s" \Users\User" find-first-file drop then 
   dir->file-name rot drop 
   s" \Users\" upath place upath +place s" \" upath +place ;
 
-: onedrivebids ( -- addr len )
-  setupath s" OneDrive\bids\" upath +place upath count ;
+: onedrivedir ( -- addr len )
+  userdir s" OneDrive\" upath +place upath count ;
+
+: +1drvdir ( addr len -- a2 l2)  \  filepath in onedrive
+  onedrivedir 2drop upath +place upath count ;
 
 : CAB { \ to$ -- <fname> }   \ copies from OneDrive bids\template to a new file
-  onedrivebids 2dup + 0 swap c!  "chdir
-  \ s" \cg\bids\ " 2dup + 0 swap c! "chdir
+  s" bids\" +1drvdir over +null "chdir
   max-path localAlloc: to$
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
-  if to$ +NULL false to$ 1+
-     s" \cg\bids\template-mini " over + 1- 0 swap c!
+  if to$ +null to$ 1+
+    s" bids\template-mini" +1drvdir drop dup +null
     Call CopyFile 0= abort" The COPY Failed!"
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
 
 : to-bids ( -- )  \ open -bids in editor
-  s" bids\-bids" cgbase" "open-text REEDIT  ;
+  s" bids\-bids" +1drvdir "open-text reEdit  ;
 
 : >bids ( line# -- )             \ open -bids to line# given
-  s" bids\-bids" cgbase" "open-text 
+  s" bids\-bids" +1drvdir "open-text
   find-buf off
   0 swap to-find-line  refresh-line ;
 
