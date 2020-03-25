@@ -21,7 +21,7 @@
  Sales-Amount 2@  TAXes 2@  d+  O-H 2@  d+  profits 2@ d+
                                     ."     Total is " 11 d.j  cr ;
 
-: GG  ( -- )     [ editor ] swap2lines ; \ The current and 1 below
-: GGG ( n n -- ) [ editor ] swaplines ;  \ From 1st line to 2nd line number
+: GG  ( -- )     [ editor ] swap2lines ; \ Swap the current and the one below
+: GGG ( n n -- ) [ editor ] swaplines ;  \ Swap from 1st line to 2nd line number
 
 

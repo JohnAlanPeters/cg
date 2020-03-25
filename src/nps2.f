@@ -342,8 +342,8 @@ ELECT
 Vocabulary LIFE-SAFETY
 LIFE-SAFETY definitions \ Sold Keep Have
 
-: Exit-sign-light            120.00 w/e   25 c ; \
-: Exit-Ceiling               120.00 w/e   50 c ; \
+: Exit-sign-light             32.00 w/e   25 c ; \ Buich was 120.00   
+: Exit-Ceiling                32.00 w/e   50 c ; \   "
 : Emergency-light             47.00 w/e   25 c ; \
 : Exit-sign-light-ceiling    120.00 w/e   50 c ; \
 : Emergency-light-ceiling     47.00 w/e   25 c ; \
@@ -727,11 +727,14 @@ Elect              \
 \ 30 hours per c  is 18 minutes to hang it.                     
 Elect                                                                
 
+: LED-tube ; \ viewable word
+
 | LAMP  Bulbs 1/3           630-022a FI-14
 Vocabulary Lamp          Lamp Definitions
 : LED-20       3.00 w/e   0 c ; \ Really?
 : LED-30       5.00 w/e   0 c ; \ Dimmable
 : LED-48      14.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
+: LED-96      15.50 w/e   8 c ; \ See also LED-TubeS       
 : LED-A19      5.00 w/e   8 c ; \ 5-600 Lumins = 60W
 : LED-PAR     17.00 w/e   8 c ; \ 6-600 Lumins
 : LED-16       3.00 w/e   8 c ; \ Navar June 2019                          
@@ -2478,22 +2481,35 @@ Elect
 \ LED Under Cabinet
 Vocabulary LED-UC
            LED-UC Definitions
-: 48-inch  184.00 w/e  55 c ; \ May 2019 Dimmable 4000K LED GetinLight AZ
-: 40-inch  139.90 w/e  50 c ;
-: 42-inch  139.00 w/e  50 c ; \ 133.00 After Navar
-: 32-inch   99.00 w/e  50 c ;
-: 30-inch   99.00 w/e  50 c ;
-: 24-inch   85.90 w/e  50 c ;
-: 18-inch   69.90 w/e  50 c ;
-: 12-inch   49.90 w/e  45 c ;
-:  9-inch   39.90 w/e  40 c ;
+: 48-inch   85.00 w/e  55 c ;
+: 40-inch   75.00 w/e  50 c ;
+: 42-inch   65.00 w/e  50 c ;  \ March for Buich a guess from Amazon 
+\ 32-inch   99.00 w/e  50 c ;
+\ 30-inch   99.00 w/e  50 c ;
+\ 24-inch   85.90 w/e  50 c ;
+\ 18-inch   69.90 w/e  50 c ;
+\ 12-inch   49.90 w/e  45 c ;
+\  9-inch   39.90 w/e  40 c ;
 Elect
 
-\ REWIRE
-Vocabulary Rewire  Rewire Definitions
-: Strip-36           0.00 w/c  33 c ; \ 20 min  5K kelvin    
-: Strip-48           0.00 w/c  33 c ; \ 20 min  5K kelvin
-: Strip-96           0.00 w/c  45 c ; \ 27 min  Home Depot only
+\ REWIRE-LED
+Vocabulary Rewire-LED  Rewire-LED Definitions
+: Strip-36          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
+: Strip-48          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
+: Strip-96          40.00 w/e  45 c ; \ .45 27 min  Home Depot only   
+Elect
+
+\ REWIRE-New-ends ( Labor only )
+Vocabulary Rewire-New-ends  Rewire-New-ends Definitions
+: Strip-36          00.00 w/e 100 c ; \ .33 20 min  5K kelvin was 14.00 ea
+: Strip-48          00.00 w/e 100 c ; \ .33 20 min  5K kelvin  
+Elect
+
+\ REWIRE-BV
+Vocabulary Rewire-BV  Rewire-BV Definitions
+: Strip-36           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
+: Strip-48           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
+: Strip-96           0.00 w/c  45 c ; \ .45 27 min  Home Depot only
 : Wrap-48            0.00 w/c  45 c ; \ 27 min  Why no labor time?
 : Wrap-96            0.00 w/c  50 c ; \ 30 min  It is included with the rewire time
 : Vaper-proof-48     0.00 w/c  55 c ; \ 33 min
@@ -2501,16 +2517,42 @@ Vocabulary Rewire  Rewire Definitions
 : PigTail            0.50 w/c  15 c ;
 Elect
 
+\ REWIRE
+Vocabulary Rewire  Rewire Definitions
+: Strip-48           0.00 w/c  33 c ; \ .33 20 min  5K kelvin
+: Strip-96           0.00 w/c  45 c ; \ .45 27 min  Home Depot only
+Elect
+
+
 Vocabulary LED-tube
-LED-Tube Definitions 
-: 48-inch            16.00 w/e 00 c ; \ Time is included wit the rewire
-: 96-inch            26.00 w/e 00 c ;  
+LED-Tube Definitions
+: 48-inch-BV          7.10 w/e 00 c ; \ Time is included with the rewire
+: 96-inch-BV         26.00 w/e 00 c ; \ Wrong
+Elect
+
+Vocabulary LED-PET-tube  \ <<<<<<<<<<<           
+LED-PET-Tube Definitions \ Parts only
+: 48-inch             7.86 w/e 00 c ; \   7.86 e at 1000Bulbs.com
+: 96-inch            19.71 w/e 00 c ; \ 197.10 c at 1000Bulbs.com Kelly x114       
+Elect
+
+Vocabulary LED-tube
+LED-Tube Definitions \ Parts only
+: 48-inch            10.68 w/e 00 c ; \ Universal invoice Feb 2020
+: 96-inch            18.50 w/e 00 c ; \ Amazon top cost
+Elect
+
+Vocabulary LED-sleeve
+LED-sleeve Definitions \ Parts only
+: 48-inch             3.50 w/e 00 c ; \ Online Feb 2020
+: 96-inch            18.50 w/e 00 c ; \ Amazon top cost
+Elect
 
 \ A comment to play with GitHub
 
 Vocabulary LED-Retrofit-can \   JP 6-24-2019
 LED-Retrofit-can definitions
-: 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes 
+: 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes
 : 6-inch    14.50 w/e 60 c ;  \ 38 minutes including ladder time
 Elect                         \ 25 minutes each according to Miro
 
@@ -2544,5 +2586,3 @@ Annual Definitions
 : 25-year      25 hours [ hours ] electrician ;                 
 : 5-Year        5 hours [ hours ] electrician ;                 
 : 1-year        1 hours [ hours ] electrician ;                 
-Elect                                                           
-   

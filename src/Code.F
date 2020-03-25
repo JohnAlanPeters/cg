@@ -50,10 +50,14 @@ COMMENT;
 \ 150.00 per-hour                  \ Raised by JP since I have plenty of work.
 \  99.00 per-hour                  \ BV raised on Boris exit July 14, 2013
 : Rate? Labor-Rate 2@ 2 9 d.nr ;   \ initalization, no colon or semicolon.
-Labor-rate 2@  Current-rate 2!     \ initalize
+Labor-rate 2@  Current-rate 2!     \ initalize   jappjapp
 
-: Commercial-rate   180.00 labor-rate 2!  ; \ immediate words for changing the
-: Residential-rate  150.00 labor-rate 2!  ; \ labor rate in an estimate.
+: Residental-Rate-BV 149.00 labor-rate 2! ;
+: Commercial-Rate-BV 189.00 labor-rate 2! ;           
+: Commercial-rate    180.00 labor-rate 2! ; \ immediate words for changing the
+: Commercial-labor-rate   commercial-rate ;
+: Residential-rate   150.00 labor-rate 2! ; \ labor rate in an estimate.
+: Residential-labor-rate residential-rate ;  
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
@@ -293,11 +297,36 @@ false value unitcolshow      \ true -> show cost and time for a single unit
 0. 2value markup
 
 : small-parts ( -- )
-  2.00 2to markup ;
+  2.00 2to markup ; \ 200%
 small-parts  \ default
 
-: large-parts ( -- )
-  1.33 2to markup ;
+: Parts+2.00               2.00 2to markup ;        
+
+: medium-parts ( -- )      1.33 2to markup ;
+: parts+1/3                1.33 2to markup ;
+: w/s+tax+15%OH+10%profit  1.33 2To markup ; \ <<<<<<
+: w/s+tax+15%+10%          1.33 2To markup ; \ <<<<<<
+: Parts+1.33               1.33 2to markup ;
+
+: large-parts     1.20 2to markup ; ( -- )
+: Parts+10%       1.20 2to markup ;  \ Whole sale +tax, +10% profit, no OH
+: Parts-ten       1.20 2to markup ;
+: Parts-20        1.20 2to markup ;
+: Low-markup      1.20 2to markup ;
+: w/s+tax+10%     1.20 2to markup ; \ <<<<
+: Parts+1.20      1.20 2to markup ;
+
+: Wholesale-parts 1.09 2to markup ; \ Whole sale plus tax only, no profit
+: Inc-tax         1.09 2to markup ; \ actually 8.50 or 1.085
+: w/s+tax-only    1.09 2To markup ; \ <<<<
+: Parts+8.5       1.09 2to markup ;
+
+: Pretax-parts ( -- )               \ Wholesale price only beforee sales tax
+                  1.00 2to markup ; \ before sales tax. no tax, no profit, no OH
+: w/s-parts       1.00 2to markup ;
+: w/s-pre-tax     1.00 2to markup ; \ <<<<
+: Parts+00        1.00 2to markup ;
+: Parts+1.00      1.00 2to markup ;              
 
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/
