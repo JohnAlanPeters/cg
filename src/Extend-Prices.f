@@ -64,7 +64,7 @@ This code was created fresh for the WinCG version.
     vtotal<>0
     if exttotline? 0=
        drop \ if 1 insert-lines then     \ Now AA & settle agree  JAPP3   
-       discount
+       discount-rate
        if 90 cur-buf ! cur-buf lcount blank update+
        else total-vscr then       \ show the virtual page column totals
        -1 +to cursor-line                \ line above total

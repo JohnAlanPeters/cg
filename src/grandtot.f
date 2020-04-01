@@ -60,20 +60,20 @@ anew _grandtot
           time-total 2@ other-total 2@ permit-total 2@  allowance-total 2@
           wholesale-total 2@ sell-total 2@
           depth to saved-depth
-          extend                     \ calculate extensions
+          extend                       \ calculate extensions
           depth saved-depth <>
           if beep cr ." stack is off at line: " cursor-line . abort then
           cursor-line file-lines <
           if
             ext-err if beep cr ." err line: " cursor-line . abort then
             1 -1 skiplines              \ to end of vscr
-            1 0 skiplines              \ to next vscr
+            1 0 skiplines               \ to next vscr
           then
           sell-total 2+!  wholesale-total 2+! 
           allowance-total 2+! permit-total 2+!  other-total 2+!
           time-total 2+!  labor-total  2+!  parts-total 2+!
           0 to saved-depth
-    repeat discount 0= if show-grand then
+    repeat discount-rate 0= if show-grand then
   then ;
 
 

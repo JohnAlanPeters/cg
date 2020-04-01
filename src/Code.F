@@ -175,7 +175,7 @@ true  value timecolshow      \ set false to not show time column
 false value partscolshow     \ set false to not show parts column
 false value partswholesaleshow
 false value unitcolshow      \ true -> show cost and time for a single unit
-0 value discount             \ rate of discount; 100 -> no diff
+0 value discount-rate        \ rate of discount; 100 -> no diff     
 
 : sub<>0  ( -- fl )   \ if sub is not zero
   sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
@@ -197,8 +197,8 @@ false value unitcolshow      \ true -> show cost and time for a single unit
   time-col TAB-in  time-sub 2@ 2 8 d.nr ;
 : SHOW-SELL ( -- )
   sell-col TAB-in  sell-sub 2@ bucks
-  discount
-  if sell-sub 2@ discount 0 d* 1.00 d/
+  discount-rate
+  if sell-sub 2@ discount-rate 0 d* 1.00 d/
      discount-col TAB-in bucks
   then ;
                                                 \ JP start of factoring
@@ -228,16 +228,16 @@ false value unitcolshow      \ true -> show cost and time for a single unit
   if
     60 >ccol labor-ext 2@ bucks
     72 >ccol sell-ext  2@ bucks
-    discount
-    if sell-ext 2@ discount 0 d* 1.00 d/
+    discount-rate
+    if sell-ext 2@ discount-rate 0 d* 1.00 d/
        84 >ccol bucks
     then
   else  \ console
     60 >ccol labor-ext 2@ bucks
     72 >ccol sell-ext  2@ bucks
-    discount
+    discount-rate
     if
-      sell-ext 2@ discount 0 d* 1.00 d/
+      sell-ext 2@ discount-rate 0 d* 1.00 d/
       84 >ccol bucks
     then
   then ;
@@ -297,11 +297,10 @@ false value unitcolshow      \ true -> show cost and time for a single unit
 0. 2value markup
 
 : small-parts ( -- )
-  2.00 2to markup ; \ 200%
+  2.00 2to markup ; \ 200% or double
 small-parts  \ default
 
-: Parts+2.00               2.00 2to markup ;        
-
+: Parts+2.00               2.00 2to markup ;
 : medium-parts ( -- )      1.33 2to markup ;
 : parts+1/3                1.33 2to markup ;
 : w/s+tax+15%OH+10%profit  1.33 2To markup ; \ <<<<<<

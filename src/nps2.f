@@ -342,7 +342,7 @@ ELECT
 Vocabulary LIFE-SAFETY
 LIFE-SAFETY definitions \ Sold Keep Have
 
-: Exit-sign-light             32.00 w/e   25 c ; \ Buich was 120.00   
+: Exit-sign-light             61.00 w/e   25 c ; \ UE Acadamy fire March 2020                   
 : Exit-Ceiling                32.00 w/e   50 c ; \   "
 : Emergency-light             47.00 w/e   25 c ; \
 : Exit-sign-light-ceiling    120.00 w/e   50 c ; \
@@ -1383,13 +1383,14 @@ Elect
 Vocabulary Dollars        Dollars definitions
 : Dollar                Dollars ;
 : $$                    Dollars ;
+\ Discount 
 : Wholesale     100.00 w/c 00 m ; \ Retail
 : Parts         100.00 w/c 00 m ; \ Materials
 : T&M            15.50 w/c 16 m ; \ Low proportion of materials
 : T&M+           35.00 w/c 10 m ; \ Higher proportion of materials
 : T&M++          43.00 w/c  8 m ; \ Even higher porton of materials
 : T&M+++         60.00 w/c  4 m ; \ Even higher porton of materials
-: Cost ( must )    100 EX   0 c ; \ Must use E      use ...FLUF
+: Cost ( must ) 100.00 w/c  0 c ; \ Must use EX??      use ...FLUF       
 : Designing                Cost ; \ NOTE Cost is no markup!
 : Fixtures                 Cost ;
 : Tax                      Cost ;
