@@ -70,8 +70,11 @@ cr .( after ed_keys)
 
 : cgclick ( -- )
   timerid if killtimer hyper-link
-  else  invkloop 0=
-   if 2drop drop reedit quit
+  else invkloop 0=
+   if 2drop 2drop true to invkloop
+      Mhedit-click   cursor-line #line" -trailing cursor-col min
+        to cursor-col 
+      reedit quit
    else Mhedit-click   cursor-line #line" -trailing cursor-col min
         to cursor-col
    then
