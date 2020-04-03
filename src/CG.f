@@ -44,7 +44,7 @@ variable conscol -1 conscol !  \ column for output in current console line
 0 value invkloop  \ so we know when we are editing (in view-key-loop)
 0 0 2value last-total  \ has to be remembered before clearing
 defer total-est   \ so we can put total on status line
-: _xit ( rda )  false to invkloop focus-console cr ." ok" quit ;
+: _xit  false to invkloop focus-console cr ." ok" quit ;
 
 cd ..
 current-dir$ setfdir
@@ -122,9 +122,9 @@ cd ..
 
 0 to slfactor           \ Zero is normal speed, Use space bar for stop/start
 forth also forth definitions editor
-:noname ( -- ) \ Re edit (Does not take any thing)
-   true to invkloop gethandle: editwindow call SetFocus drop
- view-key-loop ;   is reedit
+:noname ( -- ) \ Re edit (Does not take any thing) 
+  true to invkloop gethandle: editwindow call SetFocus drop
+  view-key-loop ;   is reedit
 : V reedit ;
 : RE-Edit  reEdit ;
 

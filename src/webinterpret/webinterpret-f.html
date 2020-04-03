@@ -61,13 +61,10 @@ function doit(cntnu)
 }
 </script>
 <body>
-This an extention of Win32Forth. We call it Web32Forth 4.04<br>
-Coded by Robert Ackerman. Designed by John Peters 415-239-5393<br>
-The Contract Generator TM is a database of electrical parts<br>
-The source is listed on GitHub as JohnAlanPeters/CG<br>
-See also Win32Forth on facebbok/groups<br>
+Web32Forth 4.06 by Robert Ackerman & John Peters 415-239-5393<br>
+CG is a database of electrical parts. The name Contract Generator is TM<br>
 <br>
-<textarea id='dsp' rows=20 cols=150 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
+<textarea id='dsp' rows=30 cols=150 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 <script>
     //var dsp=document.getElementById('dsp');
     document.addEventListener("keydown",function(event) {
@@ -92,13 +89,28 @@ See also Win32Forth on facebbok/groups<br>
 });
 </script>
 <br>
-&#58 TEST 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
-If you get a -13 error then turn off iphone "smart-punctuation" - (General/Keyboards/Smart)<br>
-C-B   WORDS is for circuit breakers sizes<br>
-EMT   WORDS is for sizes of EMT (Electro Metalic Tubing)<br>
-RISER-100A, PVC-PIPE, PVC-90, METER, METER-RT, COMMERCIAL-METER, PANEL<br>
+Try  &#58 TEST 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
 Win32Forth and all it's thousands of words are here for your use<br>
-Please enter ( Your Name ) so I will know you are visiting<br>
+<br>
+<br>
+If you type the following lines:<br>
+CB <br>
+CB <br>
+TOTAL <br>
+<br>
+It will list the install times, the parts cost and the "Sell" price for a 20A Circuit Breaker and it wil look like this<br>
+<br>
+CB                 1@            8.00 =      8.00      0.20 hr     36.00     44.00<br>
+total           Count            Part       Parts      Time        Labor      Sell<br>
+<br>
+C-B   WORDS will list the various sizes of circuit breakers<br>
+EMT   WORDS will give the sizes of EMT (Electro Metalic Tubing)<br>
+<br>
+Other good words are RISER-100A, PVC-PIPE, EMT-90, METER, METER-RT, PANEL<br>
+<br>
+John Alan Peters japeters747@gmail.com<br>
+P.S. If you get a -13 error for no reason, turn off "smart-punctuation" - (General/Keyboards/Smart)<br>
+<br>
 </body>
 </html>
 

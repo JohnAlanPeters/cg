@@ -50,7 +50,7 @@ create lastwebuser 64 allot
   0
   begin key? if key 27 = if drop -1 exit then then   \ quit on escape
    1 +   50 ms   \ pause for socket to receive input
-   dup 1200 > if drop -2 cr ." timeout" cr  exit then \ time to reset the system
+   dup 300 > if drop -2 cr ." timeout" cr  exit then \ time to reset the system
    ssock ToRead abort" can't get # to read" ?dup
   until nip  \ loop until something to read
   rbuf swap ssock ReadSocket abort" can't read socket"

@@ -263,9 +263,17 @@ defer _Control+W ' close-text is _control+w
         overstrike @       \ JP 4-5-09  It works!
         if word-right      \ Move cursor to the next word to the right
         else replace-text  \ Should be named find&replace
-        Then ;             \ Ctl+F  But what does it do?   
+        Then ;             \ Ctl+F  But what does it do?
 
+: fstacksave ( -- ) \ remember current edit file position
+  set-ed-defaults entry# s>d (d.) s" Recall" "SetDefault
+  set-w32f-default ;
 
+: recallopen ( -- )
+  set-ed-defaults
+  s" Recall" "GetDefaultValue
+  if dup to entry# SetStack: EditWindow hyper-open
+  else drop then set-w32f-default ;
 
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -375,7 +383,7 @@ defer _Control+W ' close-text is _control+w
       k_F10                         OF      un-add  ( hyper-link )      ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
-      k_F11                         OF      toggle-insert               ENDOF              
+      k_F11                         OF      fstacksave                  ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
       k_F12                         OF      revert-text                 ENDOF
