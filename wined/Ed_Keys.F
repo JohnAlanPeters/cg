@@ -446,7 +446,7 @@ defer _Control+W ' close-text is _control+w
       k_ESC                         OF      do-esc                      ENDOF
       k_LF                          OF      lf-left                     ENDOF
       k_CR                          OF      smart-cr                    ENDOF
-      k_CR +k_control               OF      ." ==> k_LF "               ENDOF
+      k_CR +k_control               OF      xsplit-line                 ENDOF
       k_CR +k_shift                 OF 1 +row-cursor 16 to cursor-col   ENDOF
       k_CR +k_alt                   OF     ." doesn't work"             ENDOF
                     dup insert/overstrike-character

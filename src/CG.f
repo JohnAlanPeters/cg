@@ -134,7 +134,7 @@ forth also forth definitions editor
    then  cursor-on-screen reEdit ;
 
 
-: oo ['] (oo) catch 0<> if message then  ;
+: oo ['] (oo) catch 0<> if message then  ;  \ file name Must be in proper dir
 
 : VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   .viewinfo count "+open-text 0 swap 1-
