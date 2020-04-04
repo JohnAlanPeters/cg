@@ -130,7 +130,7 @@ editor
 \ ' dotcomma-number is number
 
 : (settle)  ( -- )  \ eliminate extra blank lines  see also settle below
-   un-add
+  cursor-line un-add
   17 to cursor-line   0  \ initial value for #blank lines read \ was 24  JPPP
   begin cursor-line 1+ file-lines <
   while cursor-line #line" -trailing nip 0=
@@ -140,7 +140,7 @@ editor
         else 1 = if 1 insert-lines then
            0  1 +to cursor-line   \ non-blank, so reset count
         then    \  dup . cursor-line .  cr   ( for debugging )
-   repeat drop ;
+   repeat drop to cursor-line ;
 
 ' (settle) is settle  \ See (settle) right above
 

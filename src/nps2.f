@@ -1404,6 +1404,7 @@ Vocabulary Dollars        Dollars definitions
 : Sub-Contract            Parts ;
 : Rental              Wholesale ;
 : Allowance ( n -- )  calc-allowance 0 e ;
+: Discount ( n -- ) negate allowance ;
 Elect
 
 \ SETUP Job These are all labor catagory

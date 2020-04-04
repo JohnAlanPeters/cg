@@ -273,6 +273,7 @@ defer _Control+W ' close-text is _control+w
   set-ed-defaults
   s" Recall" "GetDefaultValue
   if dup to entry# SetStack: EditWindow hyper-open
+     s" " s" Recall"  "SetDefault
   else drop then set-w32f-default ;
 
 
