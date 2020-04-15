@@ -348,13 +348,13 @@ defer _Control+W ' close-text is _control+w
       'R'     +k_control            OF      reformat-text               ENDOF
       'R'     +k_control +k_shift   OF      [ also HIDDEN ] EditorWindow repeat-amacro [ previous ] ENDOF
       'S'     +k_control            OF      save-text                   ENDOF
-      'S'     +k_control +k_shift   OF      swap2lines                  ENDOF
+\     'S'     +k_control +k_shift   OF      swap2lines                  ENDOF
       'T'     +k_control            OF      word-delete                 ENDOF
       'T'     +k_control +k_shift   OF      word-undelete               ENDOF
 \     'U'     +k_control            OF      highlight-case-toggle       ENDOF
 \     'U'     +k_control            of      d_un-add                    ENDOF \ JAPP 5-2019 
       'V'     +k_control            OF      Paste-text                  ENDOF
-      'V'     +k_control +k_shift   OF      Paste-date/time             ENDOF
+\     'V'     +k_control +k_shift   OF      Paste-date/time             ENDOF
       'W'     +k_control            OF      do-ctrl-w  ( push right )   ENDOF
       'W'     +k_control +k_shift   OF      close-text                  ENDOF
       'X'     +k_control            OF      cut-text                    ENDOF

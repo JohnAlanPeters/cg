@@ -79,7 +79,9 @@ sys-warning-off
 forth also forth definitions editor
 0 to saved-depth
 variable do-serv-flag \ Are we in local or web
+create vbuf 200 1024 * allot
 variable conscol -1 conscol !  \ column for output in current console line
+0 value webindent  \ len of request from webby
 
 Include patch.f         \ Hot patch a word for a temporary change
 Include vSCR.f          \ +vSCR  vINDEX  >vSCR
@@ -110,11 +112,12 @@ Include plans.scr
 Include big-ok.scr
 Include fish.scr
 Include Ampier.scr
+include nes-compiled.f  \ colon defs with multiple modules
+forth definitions
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
 cd webinterpret
 include socksrvr.f
-include nes-compiled.f  \ colon defs with multiple modules
 cd ..
 
 \ note: cg won't run if next file isn 't last - I don't know why
@@ -125,7 +128,7 @@ forth also forth definitions editor
 :noname ( -- ) \ Re edit (Does not take any thing) 
   true to invkloop gethandle: editwindow call SetFocus drop
   view-key-loop ;   is reedit
-: V reedit ;
+
 : RE-Edit  reEdit ;
 
 : (OO)   ( <optional file-name> -- ) \ Open current unless given a file name
@@ -153,10 +156,10 @@ forth also forth definitions editor
   else vv-con
   then ;
 
-: VVV ( <word> -- ) \ Puts you in the editor for <word>    
+: VV  ( <word> -- ) \ Puts you in the editor for <word>
    view ; \ Puts you in the editor
 
-: VV \ To the console for <word> not the editor
+: V  \ To the console for <word> not the editor
    in-web?
    if vv-web-instructions
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE

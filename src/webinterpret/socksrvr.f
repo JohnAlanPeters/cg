@@ -25,11 +25,11 @@ create lastwebuser 64 allot
 
 : showwebuser ( -- )
   getdatetime rbuf place s"  " rbuf +place rbuf +place
-  rbuf count type cr s"  " rbuf +place
+  rbuf count type s"  " rbuf +place
   ssock getpeername drop
   \ 2dup lastwebuser count compare
-  \ if 2dup lastwebuser place 
-     2dup type cr 
+  \ if 2dup lastwebuser place
+     2dup type s"  " rbuf +place
      rbuf +place crlf$ count rbuf +place
      rbuf count data>fuser ;
   \ else 2drop then ;

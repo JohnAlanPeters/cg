@@ -79,7 +79,7 @@ This code was created fresh for the WinCG version.
 
 : 1-column   flat-rate ;  \ c/b an alias I guess.
 : 1-col      flat-rate ;                
-
+: 1C 1-column ;
 : 2-column   ( -- )   \ show time column and total column
   false to partscolshow true to timecolshow false to unitcolshow ;
                                          
