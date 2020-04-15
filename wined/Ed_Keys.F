@@ -354,7 +354,7 @@ defer _Control+W ' close-text is _control+w
 \     'U'     +k_control            OF      highlight-case-toggle       ENDOF
 \     'U'     +k_control            of      d_un-add                    ENDOF \ JAPP 5-2019 
       'V'     +k_control            OF      Paste-text                  ENDOF
-      'V'     +k_control +k_shift   OF      Paste-date/time             ENDOF
+\     'V'     +k_control +k_shift   OF      Paste-date/time             ENDOF
       'W'     +k_control            OF      do-ctrl-w  ( push right )   ENDOF
       'W'     +k_control +k_shift   OF      close-text                  ENDOF
       'X'     +k_control            OF      cut-text                    ENDOF

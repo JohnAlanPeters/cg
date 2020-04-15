@@ -63,7 +63,7 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
 2variable PARTS-SUB   \ is in use by interpret-lines++
 2variable TIME-SUB   \ The time-sub may be no longer in use.
-2variable LABOR-SUB   \ currently not in use but keep?
+2variable LABOR-SUB
 2variable SELL-SUB
 2variable OTHER-SUB
 2variable PERMIT-SUB
@@ -82,7 +82,6 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable LABOR-EXT   \ The labor to install the quality
 2variable SELL-EXT    \ The extended labor + materials
 
-
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 3     THE CONSTANTS ======
 
@@ -95,14 +94,23 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 : set-exts ( n <name> -- )
   create , does> @ m-in + ;
 
-32  set-exts parts-col    \ changing messed up virtual sub total in WinEd
+32  set-exts parts-col    \ changing virtual sub total in WinEd
 41  set-exts time-col
 53  set-exts sell-col
 32  set-exts vparts-col
 41  set-exts vtime-col
 53  set-exts vtot-col
-                         \ decimal point columm before bolding
 68 set-exts discount-col
+
+true  value timecolshow      \ set false to not show time column
+false value partscolshow     \ set false to not show parts column
+false value partswholesaleshow
+false value unitcolshow      \ true -> show cost and time for a single unit
+false value laborcolshow
+false value cons-1col        \ true=> only show 1 column in console/web
+0 value discount-rate        \ rate of discount; 100 -> no diff
+999 value last>in            \ last >in pointer offset
+
 
 : (totline?) ( -- fl )   \ if an extended line and next one isn't
   displayingLine #line" vtot-col >
@@ -135,11 +143,11 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 
 : CALC-PARTS   ( d -- )
      2dup  parts-cost 2!  Quan 2@  d*  1.00 d/
-     2dup  parts-ext  2!  2dup  parts-sub 2+!  parts-total 2+!  ;
+     2dup  parts-ext 2!  2dup  parts-sub 2+!  parts-total 2+!  ;
 
 : CALC-LABOR   ( -- )
      time-ext 2@   labor-rate 2@  D*  1.00  d/
-     2dup  labor-ext  2!  2dup labor-sub 2+!  labor-total 2+!  ;
+     2dup  labor-ext 2! 2dup labor-sub 2+!  labor-total 2+!  ;
 
 variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 
@@ -149,7 +157,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 : CALC-TIME   ( d -- )  \ cost per unit
      2dup calc-unit-time
      quan 2@  d*  unit s>d   d/ timejack @ s>d d* 100. d/
-     2dup  time-ext   2!  2dup time-sub 2+!   time-total 2+!  ;
+     2dup time-ext 2! 2dup time-sub 2+!  time-total 2+!  ;
 
 : CALC-OTHER ( n -- )
     100 * s>d 2dup other-sub 2+! other-total 2+! ;
@@ -164,18 +172,12 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
      parts-ext 2@  labor-ext 2@  d+
      \ other-total 2@ d+ permit-total 2@ d+ allowance-total 2@ d+  ( jappjapp )
      other-sub 2@ d+ permit-sub 2@ d+ allowance-sub 2@ d+
-     2dup sell-ext 2! 2dup sell-sub 2+! sell-total 2+!  ;
+     2dup sell-ext 2+! 2dup sell-sub 2+! sell-total 2+!  ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 5     SHOW THE RESULTS ======
 
 : .W/S    ( d -- d ) 2dup  6 d.xx  space ;
-
-true  value timecolshow      \ set false to not show time column
-false value partscolshow     \ set false to not show parts column
-false value partswholesaleshow
-false value unitcolshow      \ true -> show cost and time for a single unit
-0 value discount-rate        \ rate of discount; 100 -> no diff     
 
 : sub<>0  ( -- fl )   \ if sub is not zero
   sell-sub 2@ + other-sub 2@ + or permit-sub 2@ + or allowance-sub 2@ + or ;
@@ -201,23 +203,19 @@ false value unitcolshow      \ true -> show cost and time for a single unit
   if sell-sub 2@ discount-rate 0 d* 1.00 d/
      discount-col TAB-in bucks
   then ;
-                                                \ JP start of factoring
-: web-show
-    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    27 >ccol parts-cost 2@ bucks ."  ="
-    39 >ccol parts-ext 2@ bucks  ;
-
-: console-show
-    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
-    27 >ccol parts-cost 2@ bucks ."  ="
-    39 >ccol parts-ext 2@ bucks ;
 
 : CONS-SHOW-PARTS ( -- )
   in-web?
-  if  web-show
-  else console-show
+  if
+    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 >ccol parts-cost 2@ bucks ."  ="
+    39 >ccol parts-ext 2@ bucks
+  else
+    17 >ccol quan 2@  1.00 d/ 3 d.r ." @"
+    27 >ccol parts-cost 2@ bucks ."  ="
+    39 >ccol parts-ext 2@ bucks
   then ;
-                                                 \ JP end of factoring
+
 : CONS-SHOW-TIME ( -- )
   in-web?
   if  49  else 49
@@ -226,14 +224,15 @@ false value unitcolshow      \ true -> show cost and time for a single unit
 : CONS-SHOW-SELL ( -- )
   in-web?
   if
-    60 >ccol labor-ext 2@ bucks
+    cons-1col not if 60 >ccol labor-ext 2@ bucks
+    else webindent dup  conscol ! 0 vbuf w! then
     72 >ccol sell-ext  2@ bucks
     discount-rate
     if sell-ext 2@ discount-rate 0 d* 1.00 d/
        84 >ccol bucks
     then
   else  \ console
-    60 >ccol labor-ext 2@ bucks
+    cons-1col not if 60 >ccol labor-ext 2@ bucks then
     72 >ccol sell-ext  2@ bucks
     discount-rate
     if
@@ -264,7 +263,7 @@ false value unitcolshow      \ true -> show cost and time for a single unit
   parts-ext 2off labor-ext 2off
   parts-sub 2off labor-sub 2off wholesale-sub 2off
   other-sub 2off permit-sub 2off allowance-sub 2off
-  time-sub 2off sell-sub 2off  ;
+  time-ext 2off time-sub 2off sell-sub 2off sell-ext 2off  ;
 
 : CLEAR-TOTALS  ( -- )
   -1 to dp-location   \ so display items from console works
@@ -282,16 +281,15 @@ false value unitcolshow      \ true -> show cost and time for a single unit
   partscolshow  if show-parts else
   then then then
   unitcolshow  if show-unit-time else     
-  timecolshow  if show-time  then then
+  timecolshow  if show-time   then then
   show-sell ;
 
 : remvoc ( -- )  \ remember vocab we are in for later display
   context @ voc>vcfa , ;
 
 : CONS-SHOW-ALL   ( -- )   \ output on current console line
-   ( context @ voc>vcfa .name )
-  cons-show-parts \ leaves off the last didget to the right of the decimal
-  cons-show-time
+  cons-1col not
+  if cons-show-parts cons-show-time then
   cons-show-sell ;
 
 0. 2value markup
@@ -345,21 +343,26 @@ small-parts  \ default
 : ?>d ( ?? -- d )  \ assumes a single or double on stack
    isdouble?  0=  if  s>d  100.  d*  then ;
 
-: kclr   keyboard @ if clear-sub 0 to saved-depth -1 to dp-location
+: chkLast>in ( -- )
+   >in @ last>in < if time-ext 2off parts-ext 2off labor-ext 2off sell-ext 2off
+    1 else 0 then >in @ + to last>in ;
+
+: kclr keyboard @ if clear-sub 0 to saved-depth -1 to dp-location
          then ;  \ clear subtotal for console line
 
-        ( quanity with cost on top )
-: W/E   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
+        ( quantity with cost on top )
+: W/E   ( n-quan d -- ) chkLast>in >r >r     n-one-only  ?>d  quan 2!  r> r>
             100. d*   mark-it-up   calc-parts ;
-: W/C   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
+: W/C   ( n-quan d -- ) chkLast>in >r >r     n-one-only  ?>d  quan 2!  r> r>
                       mark-it-up   calc-parts ;
-: W/M   ( n-quan d -- ) ( kclr ) >r >r     n-one-only  ?>d  quan 2!  r> r>
+: W/M   ( n-quan d -- ) chkLast>in >r >r     n-one-only  ?>d  quan 2!  r> r>
              10. d/   mark-it-up   calc-parts ;
 : EX    ( n-quan n -- )  \ Single precision extend, used for fluf and fixts
+        chkLast>in
          >R  n-one-only  ?>d quan 2! R> S>D mark-it-up calc-parts  ;
 
 : E2  ( n -- )  \ E2 is executed by evaluate
-   s>d  calc-time  calc-labor  calc-sell
+   s>d calc-time  calc-labor  calc-sell
    keyboard @ if cons-show-all then ;
 
 : M [']  Thousand is Unit  E2 ;
@@ -370,16 +373,20 @@ small-parts  \ default
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 8     ACCUMULATE THE TOTALS AND SUBTOTALS =====
 : Total-WEB ( -- ) \ display sub-totals on web
-  39 >ccol parts-total 2@ bucks
-  49 >ccol time-total  2@ bucks ."  hr"
-  60 >ccol labor-total 2@ bucks
+  cons-1col not
+  if 39 >ccol parts-total 2@ bucks
+     49 >ccol time-total  2@ bucks ."  hr"
+     60 >ccol labor-total 2@ bucks
+  then
   72 >ccol sell-total  2@ bucks ;
 
 
 : Total-CON ( -- ) \ display sub-totals in console
-  39  >ccol parts-total 2@ bucks
-  49  >ccol time-total  2@ bucks ."  hr"
-  60  >ccol labor-total 2@ bucks
+  cons-1col not
+  if 39  >ccol parts-total 2@ bucks
+     49  >ccol time-total  2@ bucks ."  hr"
+     60  >ccol labor-total 2@ bucks
+  then
   72  >ccol sell-total  2@ bucks ;
 
 : Headline-WEB ( -- )
@@ -403,10 +410,10 @@ small-parts  \ default
   in-web?
   if  headline-WEB  cr total-WEB
   else headline-CON cr total-CON
-  then  clear-totals ;
+  then  clear-totals cr ;
 
 : TOT total ; \ another attemampt as a shortcut
-: TT reset-stacks  total ; \ shortcut. The iPad spell checker was changing TT into "To"
+: TT reset-stacks  total ; \ shortcut. The spell checker changed TT into "To"
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank

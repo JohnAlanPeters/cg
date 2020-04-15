@@ -1,18 +1,24 @@
+anew ttt  \ we need a better name
 
-anew tt
+: ?digit ( ascii -- true|false)  \ is character a digit 0-9
+  dup ascii 0 >= swap ascii 9 <= and ;
 
+: index$ ( n -- addr len )  \ index# as a string plus a space
+  s>d <# #S #> ;
 editor
-: xset  ( -- )  \ eliminate extra blank lines  see also settle below
-  17 to cursor-line   0  \ initial value for #blank lines read \ was 24  JPPP
-  begin cursor-line 1+ file-lines <
-  while cursor-line #line" -trailing nip 0=
-        if 1+ dup 2 >  \ 1 is one line 2 is two lines between  \ JP 3-24-11
-           if  1 delete-lines
-           else 1 +to cursor-line then
-        else 1 = if 1 insert-lines then
-           0  1 +to cursor-line   \ non-blank, so reset count
-        then    \  dup . cursor-line .  cr   ( for debugging )
-   repeat drop ;
-
-
+: vindex#s ( -- )       \ maintain indexes for each virtual page
+  cursor-line
+  17 to cursor-line     \ start after header of a bid file
+  1
+  begin  +vscr          \ down 1 vscreen
+    cursor-line file-lines 1- <     \ don't go off the end of the file
+  while
+    get-cursor-line
+    cur-buf cell+ c@ ?digit 0=
+    if cur-buf lcount over 3 + swap move   \ make room for 3 characters at start
+     3 cur-buf +! s"    " cur-buf cell+ swap cmove
+     dup index$ cur-buf cell+ swap cmove
+     put-cursor-line
+    then 1+              \ next vscreen index#
+  repeat  drop to cursor-line ;
 

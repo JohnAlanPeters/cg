@@ -1,5 +1,3 @@
-
-create vbuf 200 1024 * allot
 2variable vec   \ save source to restore after interpret
 0 value sentcr
 
@@ -26,7 +24,7 @@ defer to-web
   over >r dup>r wcount + swap cmove r> r> swap w+! ;
 
 : vQUERY ( addr cnt -- )
-  dup conscol !
+  dup conscol ! dup to webindent
   (source) 2@ vec 2!
   (SOURCE) 2! >IN OFF 0 TO SOURCE-ID 0 TO SOURCE-POSITION ;
 
@@ -118,10 +116,10 @@ defer to-web
      s" \cg\src\webinterpret\webinterpret-f.html" sendfile
    else
      2crlfs              \ chop off headers up to 2 CRLFs to get to data
-     2dup type           \ type the forth command to the surface console
+     \ 2dup type         \ type the forth command to the surface console
      vectint             \ get output of request into buffer
 
-     cr 2dup type        \ display response in console
+     \ cr 2dup type      \ display response in console
      dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
      b2sock             
  \ send the response to the socket
