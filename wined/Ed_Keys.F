@@ -387,7 +387,7 @@ defer _Control+W ' close-text is _control+w
       k_F11                         OF      fstacksave                  ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      revert-text                 ENDOF
+      k_F12                         OF      fstacksave                  ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( datestamp )
 
