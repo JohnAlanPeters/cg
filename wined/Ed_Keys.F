@@ -348,7 +348,7 @@ defer _Control+W ' close-text is _control+w
       'R'     +k_control            OF      reformat-text               ENDOF
       'R'     +k_control +k_shift   OF      [ also HIDDEN ] EditorWindow repeat-amacro [ previous ] ENDOF
       'S'     +k_control            OF      save-text                   ENDOF
-      'S'     +k_control +k_shift   OF      swap2lines                  ENDOF
+\     'S'     +k_control +k_shift   OF      swap2lines                  ENDOF
       'T'     +k_control            OF      word-delete                 ENDOF
       'T'     +k_control +k_shift   OF      word-undelete               ENDOF
 \     'U'     +k_control            OF      highlight-case-toggle       ENDOF

@@ -2511,9 +2511,9 @@ Elect
 Vocabulary Rewire-BV  Rewire-BV Definitions
 : Strip-36           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
 : Strip-48           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
-: Strip-96           0.00 w/c  45 c ; \ .45 27 min  Home Depot only
-: Wrap-48            0.00 w/c  45 c ; \ 27 min  Why no labor time?
-: Wrap-96            0.00 w/c  50 c ; \ 30 min  It is included with the rewire time
+: Strip-96           0.00 w/c  45 c ; \ .45 27 min  HBH s/b 34 min .57 hr                               
+: Wrap-48            0.00 w/c  45 c ; \ 27 min
+: Wrap-96            0.00 w/c  50 c ; \ 30 min Labor is included in rewire time
 : Vaper-proof-48     0.00 w/c  55 c ; \ 33 min
 : Vaper-proof-96     0.00 w/c  60 c ; \ 36 min  
 : PigTail            0.50 w/c  15 c ;
