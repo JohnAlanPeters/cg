@@ -10,26 +10,26 @@ the factory 90 uses more wire ( and gains some             0.00
                                                   0.00                          
                                                   0.00         0.00             
                                                   0.00         0.00             
-                                                                
-                                                                
+                                                  0.00         0.00             
+                                                  0.00                          
                                                                 
                                                                 
 
 
-\ 420A  Use 320A                                        
-                1 EMT-90  3-in                                         
-                5 THHN    600mcm                        
-                2 SS-COUP 3-in                          
-                                                        
-                ( Use 380 amps for 400 amps )           
-                                                        
-                                                        
+
+\ 420A  Use 320A                                
+                1 EMT-90  3-in                  
+                5 THHN    600mcm                
+                2 SS-COUP 3-in                  
+                                                
+
+                ( Use 380 amps for 400 amps )   
+                                                
+                                                
 \ 380A  400A
                 1 EMT-90  3-in
                 5 THHN    500mcm
                 2 SS-COUP  3-in
-
-
 
 
 \ 335A
@@ -48,8 +48,8 @@ the factory 90 uses more wire ( and gains some             0.00
                 1 EMT-90  1-1/2
                 5 THHN    3/0
                 2 SS-COUP  1-1/2
-                                                        
-                                                        
+                                                
+                                                
 \ 150A               12.21 +tax     0.55 hrs
                 1 EMT-90  1-1/4
                 5 THHN    1/0
@@ -92,8 +92,8 @@ the factory 90 uses more wire ( and gains some             0.00
                 2 SS-COUP  1/2
 
 
-\ SO INDEX                                              
-                                                        
-                                                        
-Total Estimate                                                        $0.00     
+\ SO INDEX                                      
+                                                
+                                                
+Total Estimate                                                             $0.00                    
 
