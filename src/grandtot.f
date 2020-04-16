@@ -65,7 +65,7 @@ anew _grandtot
           if beep cr ." stack is off at line: " cursor-line . abort then
           cursor-line file-lines <
           if
-            ext-err if beep cr ." err line: " cursor-line . abort then
+            ext-err if beep ."  at line: " cursor-line . abort then
             1 -1 skiplines              \ to end of vscr
             1 0 skiplines               \ to next vscr
           then
