@@ -207,7 +207,7 @@ defer do-esc ' _do-esc is do-esc
 : browse-toggle ( -- )
        >E
        bitImage? ?EXIT
-       ( browse? 0=) FALSE to browse?
+        browse? 0= ( FALSE ) to browse?
        update-mirror-browse
        refresh-screen
        Refresh: EditorWindow

@@ -64,8 +64,11 @@ anew _grandtot
           depth saved-depth <>
           if beep cr ." stack is off at line: " cursor-line . abort then
           cursor-line file-lines <
-          if
-            ext-err if beep ."  at line: " cursor-line . abort then
+          if ext-err
+            if beep ."  at line: " cursor-line .
+               cr context @ current ! words
+               abort
+            then
             1 -1 skiplines              \ to end of vscr
             1 0 skiplines               \ to next vscr
           then

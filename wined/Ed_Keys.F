@@ -365,7 +365,7 @@ defer _Control+W ' close-text is _control+w
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 69    Function key bindings   +SCR is 1 page down
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-      k_F1    ( rbs )               OF      edopen  ( w32f-doc )        ENDOF
+      k_F1                          OF      browse-toggle               ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
       k_F2                          OF      settle grand-total          ENDOF                                            
       k_F3                          OF      find-text-again             ENDOF

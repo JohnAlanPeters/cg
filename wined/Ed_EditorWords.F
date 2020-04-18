@@ -199,8 +199,7 @@ create colontbl maxscrlines cells allot  \ to xlate scrline to fileline
         swap /string blank ;            \ add trailing blanks
 
 : put-cursor-line ( -- )
-         cur-buf LCOUNT drop -trailing
-         cursor-line #line! ;
+         cur-buf LCOUNT -trailing cursor-line #line! ;
 
 : -trailing-blanks ( -- )
                 cursor-line #line" 2dup -trailing nip - nip
