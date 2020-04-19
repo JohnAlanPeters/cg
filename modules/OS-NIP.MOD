@@ -1,252 +1,129 @@
-Offset Nipple with           
+Offset Nipple with
                 106.00 per-hour                
                                                
                                                
+
                                                
                                                
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+                                                 26.69        21.35
+                                                  5.33         3.55
+                                              2,290.85
+                                              1,467.95       513.26
+                                                822.90       823.33
+                                                  0.00         0.00
+                                                  0.00
                                                
                                                
 
 
-\ 20A #12    1/2             
-                1  OS-NIP    1/2               
-                10 THHN      #12               
-                2  L-N       1/2               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+
+                3c
 
 
-\ 30A #10    3/4             
-                1  OS-NIP    3/4               
-                10 THHN      #10               
-                1  GR-BUSH   3/4   ( plastic ) 
-                1  Bushing   3/4               
-                2  L-N       3/4               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+20A #12    1/2
+                1  OS-NIP    1/2                       1.85     0.25       15.60
+                10 THHN      #12                       1.90     0.06        5.20
+                2  L-N       1/2                       0.44     0.00        0.44
+                                                      $4.19     0.31      $21.24
 
+30A #10    3/4  ( With wire )
+                1  OS-NIP    3/4                       1.94     0.30       18.44
+                10 THHN      #10                       2.80     0.08        7.20
+                1  GR-BUSH   3/4   ( plastic )         1.61     0.45       26.36
+                1  Bushing   3/4                       0.19     0.02        1.29
+                2  L-N       3/4                       0.38     0.24       13.58
+                                                      $6.92     1.09      $66.87
 
-\ 50A #8    1-in             
-                1  OS-NIP    1-in              
-                10 THHN      #8                
-                1  GR-BUSH   1-in   ( plastic  
-                1  Bushing   1-in              
-                2  L-N       1-in              
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+50A #8    1-in  ( With wire )
+                1  OS-NIP    1-in                      2.37     0.35       21.62
+                10 THHN      #6                        5.30     0.12       11.90
+                1  GR-BUSH   1-in   ( plastic          2.30     0.50       29.80
+                1  Bushing   1-in                      0.33     0.02        1.43
+                2  L-N       1-in                      0.26     0.30       16.76
+                                                     $10.56     1.29      $81.51
 
+65A #6   1-1/4  ( No wire )
+                1  OS-NIP    1-1/4                     5.20     0.40       27.20
+                10 THHN      #6                        5.30     0.12       11.90
+                1  GR-BUSH   1-1/4                     2.18     0.60       35.18
+                1  Bushing   1-1/4                     0.46     0.03        2.11
+                2  L-N       1-1/4                     0.88     0.34       19.58
+                                                     $14.02     1.49      $95.97
 
-\ 65A #6   1-1/4             
-                55.00 per-hour                 
-                1  OS-NIP    1-1/4             
-                10 THHN      #6                
-                1  GR-BUSH   1-1/4             
-                1  Bushing   1-1/4             
-                2  L-N       1-1/4             
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+85A #4   1-1/4
+                1  OS-NIP    1-1/4                     5.20     0.40       27.20
+                10 THHN      #4                       10.10     0.14       17.80
+                1  GR-BUSH   1-1/4                     2.18     0.60       35.18
+                1  bushing   1-1/4                     0.46     0.03        2.11
+                2  L-N       1-1/4                     0.88     0.34       19.58
+                                                     $18.82     1.51     $101.87
 
+115A #2  1-1/4
+                55.00 per-hour                         0.00     0.00        0.00
+Offset nipple   1  OS-NIP    1-1/4                     5.20     0.40       27.20
+The wire        10 THHN      #2                       14.70     0.18       24.60
+Bonding         1  GR-BUSH   1-1/4                     2.18     0.60       35.18
+Plastic         1  BUSHING   1-1/4                     0.46     0.03        2.11
+Lock Nuts       2  L-N       1-1/4                     0.88     0.34       19.58
+                                                     $23.42     1.55     $108.67
 
-\ 85A #4   1-1/4             
-                1  OS-NIP    1-1/4             
-                10 THHN      #4                
-                1  GR-BUSH   1-1/4             
-                1  bushing   1-1/4             
-                2  L-N       1-1/4             
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+130A #1  1-1/4
+                1  OS-NIP    1-1/4                     5.20     0.40       27.20
+                10 THHN      #1                       19.40     0.20       30.40
+                1  GR-BUSH   1-1/4                     2.18     0.60       35.18
+                1  Bushing   1-1/4                     0.46     0.03        2.11
+                2  L-N       1-1/4                     0.88     0.34       19.58
+                                                     $28.12     1.57     $114.47
 
+150A #0  1-1/2
+                1  OS-NIP    1-1/2                     6.43     0.45       31.18
+                4 3 * THHN   1/0                      15.36     0.26       29.66
+                1  GR-BUSH   1-1/2                     2.28     0.70       40.78
+                1  Bushing   1-1/2                     0.63     0.04        2.83
+                2  L-N       1-1/2                     1.34     0.44       25.54
+                                                     $26.04     1.89     $129.99
 
-\ 115A #2  1-1/4             
-                55.00 per-hour                 
-Offset nipple   1  OS-NIP    1-1/4             
-The wire        10 THHN      #2                
-Bonding         1  GR-BUSH   1-1/4             
-Plastic         1  BUSHING   1-1/4             
-Lock Nuts       2  L-N       1-1/4             
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+200A 3/0 1-1/2
+                1  OS-NIP    1-1/2                     6.43     0.45       31.18
+                5 3 * THHN   3/0                      52.20     0.39       73.65
+                1  GR-BUSH   1-1/2                     2.28     0.70       40.78
+                1  Bushing   1-1/2                     0.63     0.04        2.83
+                1  L-N       1-1/2                     0.67     0.22       12.77
+                                                     $62.21     1.80     $161.21
 
+285A 300mcm
+                1  OS-NIP    2-in                     10.16     0.50       37.66
+                6 3 * THHN   300MCM                   56.16     0.63       90.81
+                1  GR-BUSH   2-in                      3.81     0.80       47.81
+                1  bushing   2-in                      1.11     0.05        3.86
+                2  L-N       2-in                      1.94     0.52       30.54
+                ( 2-1/2 for ease but not made          0.00     0.00        0.00
+                                                     $73.18     2.50     $210.68
 
-\ 130A #1  1-1/4             
-                1  OS-NIP    1-1/4             
-                10 THHN      #1                
-                1  GR-BUSH   1-1/4             
-                1  Bushing   1-1/4             
-                2  L-N       1-1/4             
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+400A 1P 6W
+                1  OS-NIP    3-in                     33.25     0.70       71.75
+                6 6 * THHN   3/0                     125.28     0.93      176.43
+                1  GR-BUSH   3-in                      6.75     0.90       56.25
+                1  bushing   3-in                      2.75     0.06        6.05
+                2  L-N       3-in                      6.00     0.76       47.80
+                ( 2-1/2 not made 3-in easier )         0.00     0.00        0.00
+                                                    $174.03     3.35     $358.28
 
+600A 1P 6W
+                1  OS-NIP    3-in                     33.25     0.70       71.75
+6 Wires         7 6 * THHN   300mcm                  131.04     1.47      211.89
+                1  BOND-BUSH 4-in                      8.40     1.25       77.15
+                1  bushing   4-in                      4.15     0.08        8.55
+                2  L-N       4-in                     13.00     1.10       73.50
+                                                    $189.84     4.60     $442.84
 
-\ 150A #0  1-1/2             
-                1  OS-NIP    1-1/2             
-                4 3 * THHN   1/0               
-                1  GR-BUSH   1-1/2             
-                1  Bushing   1-1/2             
-                2  L-N       1-1/2             
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+400A 3Phayse
+                1  OS-NIP    3-in                     33.25     0.70       71.75
+6 wires         5 6 * THHN   500mcm ( 6 wires        142.80     1.32      215.40
+                1  GR-BUSH   3-in   ( bonding          6.75     0.90       56.25
+                1  bushing   3-in   ( plastic          2.75     0.06        6.05
+                2  L-N       3-in                      6.00     0.76       47.80
+                                                    $191.55     3.74     $397.25
 
-
-\ 200A 3/0 1-1/2             
-                1  OS-NIP    1-1/2             
-                5 3 * THHN   3/0               
-                1  GR-BUSH   1-1/2             
-                1  Bushing   1-1/2             
-                1  L-N       1-1/2             
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-\ 285A 300mcm                
-                1  OS-NIP    2-in              
-                6 3 * THHN   300MCM            
-                1  GR-BUSH   2-in              
-                1  bushing   2-in              
-                2  L-N       2-in              
-                ( 2-1/2 for ease but not made  
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-\ 400A 1P 6W                 
-                1  OS-NIP    3-in              
-                6 6 * THHN   3/0               
-                1  GR-BUSH   3-in              
-                1  bushing   3-in              
-                2  L-N       3-in              
-                ( 2-1/2 not made 3-in easier ) 
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-\ 600A 1P 6W                 
-                1  OS-NIP    3-in              
-6 Wires         7 6 * THHN   300mcm            
-                1  BOND-BUSH 4-in              
-                1  bushing   4-in              
-                2  L-N       4-in              
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-\ 400A 3Phayse               
-                1  OS-NIP    3-in              
-6 wires         5 6 * THHN   500mcm ( 6 wires  
-                1  GR-BUSH   3-in   ( bonding  
-                1  bushing   3-in   ( plastic  
-                2  L-N       3-in              
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
+Total Estimate                                                         $2,290.85
 

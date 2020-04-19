@@ -180,7 +180,8 @@ forth also forth definitions editor
 : N      ( -- ) +vscr ; \ does not work
 : B      ( -- ) -vscr ;
 : HH     ( -- ) words ; \ You can give it a string
-: WW            words ;  
+: WW            words ;
+: WO            words ;
 : DEL   ( <fname> -- ) /parse delete-file abort" failed to delete file" ;
 
  \ 'esc' to go from console to editor

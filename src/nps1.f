@@ -321,11 +321,11 @@ Vocabulary OS-Nip
 : 100A       775.00 w/c  106 c ; \                              
 : 1/2        185.10 w/c   25 c ; \ 0.87 Feb 99                  
 : 3/4        194.00 w/c   30 c ; \                              
-\ 1-in       237.10 w/c   35 c ; \                              
-: 1-1/4      520.20 w/c   40 c ; \                              
-: 1-1/2      643.70 w/c   45 c ; \ 2.71 Feb 99                  
-\ 2-in      1016.70 w/c   50 c ; \                              
-\ 2-1/2      beep ." Not made" ; \                              
+: 1-in       237.10 w/c   35 c ; \
+: 1-1/4      520.20 w/c   40 c ; \
+: 1-1/2      643.70 w/c   45 c ; \ 2.71 Feb 99
+: 2-in      1016.70 w/c   50 c ; \
+: 2-1/2      beep ." Not made" ; \
 : 3-in      3325.60 w/c   70 c ;                                
 \ Not made                                                      
 Elect   : OS-nipple  os-nip ;                                   
@@ -361,12 +361,12 @@ Vocabulary  KO-Seal      Ko-Seal definitions
 : 1-1/4       62.95 w/c   4 c ; \ A                             
 : 1-1/2      100.25 w/c   5 c ; \ B                             
 : 2-in       122.95 w/c   6 c ; \ B                             
-\ 2-1/2      141.60 w/c   7 c ; \ B 3841                        
-\ 3-in       190.40 w/c   8 c ; \ B                             
-\ 3-1/2      193.78 w/c   9 c ; \ B                             
-\ 4-in       244.38 w/c  10 c ; \ B                             
-\ 4-1/2      381.00 w/c  11 c ; \ B                             
-\ 5-in       661.25 w/c  12 c ; \ B                             
+: 2-1/2      141.60 w/c   7 c ; \ B 3841
+: 3-in       190.40 w/c   8 c ; \ B
+: 3-1/2      193.78 w/c   9 c ; \ B
+: 4-in       244.38 w/c  10 c ; \ B
+: 4-1/2      381.00 w/c  11 c ; \ B
+: 5-in       661.25 w/c  12 c ; \ B
 Elect                     : Knockout-Seal KO-Seal ;             
 
 
@@ -883,15 +883,15 @@ Vocabulary THHN  ( Wire fill table two screens down )
 : 2/0     ( 175 Amps ) 2760.00 w/m 24 m ; \ 175A\200A   1-1/2
 : 3/0     ( 200 Amps ) 3480.16 w/m 26 m ; \ 200A\225A   1-1/2
 \ Old prices below . . .
-: 4/0xxx  ( 230 Amps ) 2238.82 w/m 29 m ; \ 230A\250A   2-in
-: 250xxx  ( 255 Amps ) 2656.62 w/m 32 m ; \ 255A\300A   2-in
-: 300xxx  ( 285 Amps ) 3122.44 w/m 35 m ; \ Not listed  2-in
-: 350xxx  ( 310 Amps ) 3445.04 w/m 38 m ; \ 310A\350A   2-1/2
-: 400xxx  ( 335 Amps ) 4359.85 w/m 41 m ; \ 335A\400A   2-1/2
-: 500xxx  ( 380 Amps ) 4000.00 w/m 44 m ; \ 380A        3-in
-: 500MCM  ( 380 Amps ) 4765.79 w/m 44 m ; \ 380A        3-in   
-: 600xxx  ( 420 Amps ) 7288.32 w/m 48 m ; \ 420A        3-in
-: 750xxx  ( 460 Amps ) 8950.21 w/m 54 m ; \ 460A 
+: 4/0MCM  ( 230 Amps ) 2238.82 w/m 29 m ; \ 230A\250A   2-in
+: 250MCM  ( 255 Amps ) 2656.62 w/m 32 m ; \ 255A\300A   2-in
+: 300MCM  ( 285 Amps ) 3122.44 w/m 35 m ; \ Not listed  2-in
+: 350MCM  ( 310 Amps ) 3445.04 w/m 38 m ; \ 310A\350A   2-1/2
+: 400MCM  ( 335 Amps ) 4359.85 w/m 41 m ; \ 335A\400A   2-1/2
+: 500MCM  ( 380 Amps ) 4000.00 w/m 44 m ; \ 380A        3-in
+: 500MCM  ( 380 Amps ) 4765.79 w/m 44 m ; \ 380A        3-in
+: 600MCM  ( 420 Amps ) 7288.32 w/m 48 m ; \ 420A        3-in
+: 750MCM  ( 460 Amps ) 8950.21 w/m 54 m ; \ 460A
 \ 1-in and up, #4 and up needs a bushing
 ELECT  : copper thhn ;  ( LSI gives a 52 % time discount.)
 

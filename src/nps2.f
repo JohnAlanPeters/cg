@@ -1350,7 +1350,7 @@ Vocabulary Hours
 : Allowance      Electrician ;
 : Owner        0.0 w/c [ 168 6 * ] literal m ; \ same as rate
 \ T&M      1000.00 w/c   1000              m ; \ 50.00           
-: El electrician ;                                              
+: EL electrician ;
 \ HR hours  \ added by JP cause of problem with packing defs    
 Elect    : Hour   hours ;   : HR hours ;  : Task  hours ;       
 Elect                                                           

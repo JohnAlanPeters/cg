@@ -71,23 +71,23 @@ Ground Definitions  \ 600A   ( 1-in 3/0 )  58.47 w/e 312 c ;
 : Box-very-easy                2.35 w/e  50 c ; Elect \ Was 35  
 
 
-\ OS-Nip                                            06-17-08 AL
+\ OS-Nip   ( Most of these are wrong 50A is correct for 2020
 Have OS-Nip 0= if  Vocabulary OS-Nip  then                      
-OS-Nip Definitions                                              
-\ 400A                     9259.00 w/c 226 c ;                  
+OS-Nip Definitions  ( Includes wires )
+: 400A                     9259.00 w/c 226 c ;
 : 200A                     3679.00 w/c 154 c ;                  
 : 150A                     2314.00 w/c 137 c ;                  
 : 125A                     1961.00 w/c 120 c ; \ 130A           
 : 100A                     1701.00 w/c 118 c ; \ 115A           
 : 85A                      1351.00 w/c 114 c ; \ 85A            
 : 65A                      1181.00 w/c 112 c ; \ 65A            
-: 50A                       760.00 w/c  95 c ;                  
-: 40A                                     50A ; \ YEP           
-: 30A                       818.00 w/c  83 c ;                  
-: 20A                       275.00 w/c  31 c ;                  
-: 15A                                     20A ;                 
+: 50A                      1056.00 w/c 127 c ; \ 760.00 was wrong in old
+: 40A                                    50A ; \ Yep
+: 30A                       818.00 w/c  83 c ; \ Nope 30 is more than 50?
+: 20A                       275.00 w/c  31 c ;
+: 15A                                    20A ;
 Elect   
-: OS-Nipple       OS-Nip ; 
+: OS-Nipple       OS-Nip ;
 Elect \ See OS-NIPPLE
 : Offset-Nipple   OS-Nip ;
 Elect
