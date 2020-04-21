@@ -1,6 +1,6 @@
 \ $Id: CG.f,v 1.14 2013/08/13 23:30:32 rdack Exp $
 \ to use merged editor compile in cg.f   [rda 11/02]
-
+: CG ;  \ place marker for use with VIEW or VV  Can I move it t line 84?
 sys-warning-off
 dup-warning-off
 
@@ -116,6 +116,7 @@ include nes-compiled.f  \ colon defs with multiple modules
 forth definitions
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
+Include tt.f             \ Developint PP numbering
 cd webinterpret
 include socksrvr.f
 cd ..
@@ -180,6 +181,7 @@ forth also forth definitions editor
 : N      ( -- ) +vscr ; \ does not work
 : B      ( -- ) -vscr ;
 : HH     ( -- ) words ; \ You can give it a string
+: WW            words ;
 : DEL   ( <fname> -- ) /parse delete-file abort" failed to delete file" ;
 
  \ 'esc' to go from console to editor

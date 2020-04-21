@@ -367,7 +367,7 @@ defer _Control+W ' close-text is _control+w
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
       k_F1    ( rbs )               OF      edopen  ( w32f-doc )        ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
-      k_F2                          OF      settle grand-total          ENDOF                                            
+      k_F2                          OF      settle   grand-total        ENDOF                                               
       k_F3                          OF      find-text-again             ENDOF
       k_F3    +k_shift              OF      back-find-text-again        ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
@@ -378,6 +378,7 @@ defer _Control+W ' close-text is _control+w
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
       K_f6                          OF      un-add                      ENDOF
       k_F7                          OF      toggle-insert               ENDOF
+      k_F7 +k_control               OF      browse-toggle               ENDOF
       k_F8                          OF      revert-text                 ENDOF
       k_F9                          OF      grand-total                 ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF

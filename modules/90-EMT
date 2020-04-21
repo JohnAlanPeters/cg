@@ -1,99 +1,99 @@
 T he 90 with wire                                    12-12-90 AEC
-oth the materials and the labor are less expe                  
-the factory 90 uses more wire ( and gains some             0.00 
-                                                                
-                                                                
-                                                                
-                                                                
-                                                  0.00         0.00             
+oth the materials and the labor are less expe
+the factory 90 uses more wire (and gain somelength ) 
+
+
+
+
+                                                 10.48         8.38             
+                                                  2.09         1.39             
+                                                728.91                          
+                                                366.80       128.25             
+                                                362.11       181.01             
                                                   0.00         0.00             
                                                   0.00                          
-                                                  0.00         0.00             
-                                                  0.00         0.00             
-                                                  0.00         0.00             
-                                                  0.00                          
-                                                                
-                                                                
 
 
 
-\ 420A  Use 320A                                
-                1 EMT-90  3-in                  
-                5 THHN    600mcm                
-                2 SS-COUP 3-in                  
+
+
+420A  Use 320A
+              1 EMT-90  3-in                                    1.25      120.49          
+              5 THHN    600mcm                                  0.04       13.37          
+              2 SS-COUP 3-in                                    0.11       16.27
+                                                                1.40     $150.13          
+
+              ( Use 380 amps for 400 amps )   
+                                              
+                                              
+380A  400A
+              1 EMT-90  3-in                                    1.25      120.49          
+              5 THHN    500mcm                                  0.04       10.93          
+              2 SS-COUP  3-in                                   0.11       16.27
+                                                                1.40     $147.69          
+
+335A
+              1 EMT-90  2-1/2                                   0.90       71.50          
+              5 THHN    400mcm                                  0.04       10.11          
+              2 SS-COUP  2-1/2                                  0.10       14.59
+                                                                1.04      $96.20          
+
+285A               27.17 +tax     0.85 hrs
+              1 EMT-90  2-in                                    0.90       48.86          
+              5 THHN    300mcm                                  0.03        7.29          
+              2 SS-COUP  2-IN                                   0.09        7.50
+                                                                1.02      $63.65          
+
+200A               16.77 +tax     0.69 hrs
+              1 EMT-90  1-1/2                                   0.90       42.34          
+              5 THHN    3/0                                     0.02        7.66          
+              2 SS-COUP  1-1/2                                  0.08        6.07
+                                                                1.00      $56.07          
+                                              
+150A               12.21 +tax     0.55 hrs
+              1 EMT-90  1-1/4                                   0.90       40.08          
+              5 THHN    1/0                                     0.02        3.26          
+              2 SS-COUP  1-1/4                                  0.07        4.70
+                                                                0.99      $48.04          
+
+130A               11.36 +tax     0.54 hrs
+              1 EMT-90  1-1/4                                   0.90       40.08          
+              5 THHN    #1                                      0.02        4.58          
+              2 SS-COUP  1-1/4                                  0.07        4.70
+                                                                0.99      $49.36          
+
+115A                8.16 +tax     0.46 hrs
+              1 EMT-90  1-in                                    0.75       32.25          
+              5 THHN    #2                                      0.01        3.29          
+              2 SS-COUP  1-IN                                   0.06        3.40
+                                                                0.82      $38.94          
+
+85A                 6.41 +tax     0.44 hrs
+              1 EMT-90  1-in                                    0.75       32.25          
+              5 THHN    #4                                      0.01        2.38          
+              2 SS-COUP  1-in                                   0.06        3.40
+                                                                0.82      $38.03          
+
+65A                 2.39 +tax     0.16 hrs
+              ( EMT-90  3/4                                     0.35       13.25          
+              5 THHN    #6                                      0.01        1.41          
+              2 SS-COUP  3/4                                    0.05        2.49
+                                                                0.41      $17.15          
+
+50A                 1.69 +tax     0.13 hrs
+              ( EMT-90  1/2                                     0.25        9.31          
+              5 THHN    #8                                      0.01        1.07          
+              2 SS-COUP  1/2                                    0.04        1.70
+                                                                0.30      $12.08          
+
+30A                 0.99 +tax     0.12 hrs
+              ( EMT-90  1/2                                     0.25        9.31          
+              5 THHN    #10                                     0.00        0.56          
+              2 SS-COUP  1/2                                    0.04        1.70
+                                                                0.29      $11.57          
+
+SO INDEX                                      
+                                              
                                                 
-
-                ( Use 380 amps for 400 amps )   
-                                                
-                                                
-\ 380A  400A
-                1 EMT-90  3-in
-                5 THHN    500mcm
-                2 SS-COUP  3-in
-
-
-\ 335A
-                1 EMT-90  2-1/2
-                5 THHN    400mcm
-                2 SS-COUP  2-1/2
-
-
-\ 285A               27.17 +tax     0.85 hrs
-                1 EMT-90  2-in
-                5 THHN    300mcm
-                2 SS-COUP  2-IN
-
-
-\ 200A               16.77 +tax     0.69 hrs
-                1 EMT-90  1-1/2
-                5 THHN    3/0
-                2 SS-COUP  1-1/2
-                                                
-                                                
-\ 150A               12.21 +tax     0.55 hrs
-                1 EMT-90  1-1/4
-                5 THHN    1/0
-                2 SS-COUP  1-1/4
-
-
-\ 130A               11.36 +tax     0.54 hrs
-                1 EMT-90  1-1/4
-                5 THHN    #1
-                2 SS-COUP  1-1/4
-
-
-\ 115A                8.16 +tax     0.46 hrs
-                1 EMT-90  1-in
-                5 THHN    #2
-                2 SS-COUP  1-IN
-
-
-\ 85A                 6.41 +tax     0.44 hrs
-                1 EMT-90  1-in
-                5 THHN    #4
-                2 SS-COUP  1-in
-
-
-\ 65A                 2.39 +tax     0.16 hrs
-                ( EMT-90  3/4
-                5 THHN    #6
-                2 SS-COUP  3/4
-
-
-\ 50A                 1.69 +tax     0.13 hrs
-                ( EMT-90  1/2
-                5 THHN    #8
-                2 SS-COUP  1/2
-
-
-\ 30A                 0.99 +tax     0.12 hrs
-                ( EMT-90  1/2
-                5 THHN    #10
-                2 SS-COUP  1/2
-
-
-\ SO INDEX                                      
-                                                
-                                                
-Total Estimate                                                             $0.00                    
+Total Estimate                                                           $728.91                    
 
