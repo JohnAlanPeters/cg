@@ -47,8 +47,8 @@ int offsetY
             SetTextColor: dc TextOut: dc
         ELSE
           overstrike @
-          if s" OVERSTRIKE"          CYAN
-          else s" Insert        "    LTRED
+          if s" OVERSTRIKE"          OmarginColor ( CYAN )
+          else s" Insert        "    ImarginColor ( LTRED )
           then BOLD
             SetTextColor: dc TextOut: dc
             Handle: vFont SetFont: dc

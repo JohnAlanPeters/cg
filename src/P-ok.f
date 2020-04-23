@@ -24,7 +24,7 @@ only Forth also definitions  \ maybe this will work
 ( 2/4 )
 Vocabulary ELECTRIC
 forth
-: ELE      electric ;
+: ELE only forth also electric ;
 : ELECT
    Only Forth Also Electric Also definitions  ;
 : ELECTRIC-ORDER            Elect ;
