@@ -2143,21 +2143,21 @@ Elect
 
 
 % MC    ( Drilled wood )  C 106-301  AC-3           04-20-92 AEC
-Vocabulary MC  ( For Hugo? )                                    
+Vocabulary MC  ( For Hugo? )
                           MC  definitions  \ Temp Sold Keep Have
-: 14/2       428.00 w/m  21 m ; \ Same as RX                    
-: 12/2       350.00 w/m  24 m ; \ in wood         SES           
-: 14/3       598.00 w/m  28 m ; \ AJ's Joe                      
-: 12/3       500.00 w/m  25 m ; \ SafeCo          100  140  150 
-: 12/4       599.00 w/m  26 m ; \ NPS                           
-: 10/3       625.99 w/m  35 m ; \ Use core clad
-: #8  ( arm) 430.00 w/m  20 m ; \                  10       240 
-: #6  ( Arm) 640.00 w/m  22 m ; \ time gues                     
+: 14/2       428.00 w/m  21 m ; \ Time same as RX
+: 12/2       350.00 w/m  24 m ; \ in wood         SES
+: 14/3       598.00 w/m  28 m ; \ AJ's Joe
+: 12/3       500.00 w/m  25 m ; \
+: 12/4       599.00 w/m  26 m ; \ NPS
+: 10/3       625.99 w/m  35 m ; \
+: #8  ( arm) 430.00 w/m  20 m ; \
+: #6  ( Arm) 640.00 w/m  22 m ; \ time guess
 \ 8/3               w/m  60 m ; \                               
 : Caddy-kx   17.65  w/c   5 c ; \                               
 : Staple      5.95  w/c  00 m ; \ 1-1/8                         
-: Whip       230.00 w/c  27 c ;                                 
-Elect  : M-C  mc ;  .( Do not fish MC )                         
+: Whip       230.00 w/c  27 c ;
+Elect  : M-C  mc ;  .( Do not fish MC )
 
 
 | PLASTER 0/8               900-060  Test of time   09-21-97 0.0
