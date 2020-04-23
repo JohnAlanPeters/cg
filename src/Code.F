@@ -294,14 +294,14 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 
 0. 2value markup
 
-: small-parts ( -- )
-  2.00 2to markup ; \ 200% or double
+: small-parts   ( -- )     2.00 2to markup ; \ 200% or double
+: Parts+2.00               2.00 2to markup ;
 small-parts  \ default
 
-: Parts+2.00               2.00 2to markup ;
-: medium-parts ( -- )      1.33 2to markup ;
+: Regular-markup           1.33 2to markup ;
+: Fair-markup              1.33 2to markup ;
 : parts+1/3                1.33 2to markup ;
-: w/s+tax+15%OH+10%profit  1.33 2To markup ; \ <<<<<<
+: Good-markup              1.33 2To markup ; \ <<<<<<
 : w/s+tax+15%+10%          1.33 2To markup ; \ <<<<<<
 : Parts+1.33               1.33 2to markup ;
 
@@ -318,8 +318,8 @@ small-parts  \ default
 : w/s+tax-only    1.09 2To markup ; \ <<<<
 : Parts+8.5       1.09 2to markup ;
 
-: Pretax-parts ( -- )               \ Wholesale price only beforee sales tax
-                  1.00 2to markup ; \ before sales tax. no tax, no profit, no OH
+: No-markup       1.00 2to markup ; \ Wholesale price only beforee sales tax
+: Pretax-parts    1.00 2to markup ; \ before sales tax. no tax, no profit, no OH
 : w/s-parts       1.00 2to markup ;
 : w/s-pre-tax     1.00 2to markup ; \ <<<<
 : Parts+00        1.00 2to markup ;

@@ -321,11 +321,11 @@ Vocabulary OS-Nip
 : 100A       775.00 w/c  106 c ; \                              
 : 1/2        185.10 w/c   25 c ; \ 0.87 Feb 99                  
 : 3/4        194.00 w/c   30 c ; \                              
-\ 1-in       237.10 w/c   35 c ; \                              
-: 1-1/4      520.20 w/c   40 c ; \                              
-: 1-1/2      643.70 w/c   45 c ; \ 2.71 Feb 99                  
-\ 2-in      1016.70 w/c   50 c ; \                              
-\ 2-1/2      beep ." Not made" ; \                              
+: 1-in       237.10 w/c   35 c ; \
+: 1-1/4      520.20 w/c   40 c ; \
+: 1-1/2      643.70 w/c   45 c ; \ 2.71 Feb 99
+: 2-in      1016.70 w/c   50 c ; \
+: 2-1/2      beep ." Not made" ; \
 : 3-in      3325.60 w/c   70 c ;                                
 \ Not made                                                      
 Elect   : OS-nipple  os-nip ;                                   
@@ -361,12 +361,12 @@ Vocabulary  KO-Seal      Ko-Seal definitions
 : 1-1/4       62.95 w/c   4 c ; \ A                             
 : 1-1/2      100.25 w/c   5 c ; \ B                             
 : 2-in       122.95 w/c   6 c ; \ B                             
-\ 2-1/2      141.60 w/c   7 c ; \ B 3841                        
-\ 3-in       190.40 w/c   8 c ; \ B                             
-\ 3-1/2      193.78 w/c   9 c ; \ B                             
-\ 4-in       244.38 w/c  10 c ; \ B                             
-\ 4-1/2      381.00 w/c  11 c ; \ B                             
-\ 5-in       661.25 w/c  12 c ; \ B                             
+: 2-1/2      141.60 w/c   7 c ; \ B 3841
+: 3-in       190.40 w/c   8 c ; \ B
+: 3-1/2      193.78 w/c   9 c ; \ B
+: 4-in       244.38 w/c  10 c ; \ B
+: 4-1/2      381.00 w/c  11 c ; \ B
+: 5-in       661.25 w/c  12 c ; \ B
 Elect                     : Knockout-Seal KO-Seal ;             
 
 
@@ -892,6 +892,7 @@ Vocabulary THHN  ( Wire fill table two screens down )
 : 500MCM  ( 380 Amps ) 4765.79 w/m 44 m ; \ 380A        3-in
 : 600MCM  ( 420 Amps ) 5989.50 w/m 48 m ; \ 420A        3-in was 7288.32
 : 750MCM  ( 460 Amps ) 8950.21 w/m 54 m ; \ 460A    
+
 \ 1-in and up, #4 and up needs a bushing
 ELECT  : copper thhn ;  ( LSI gives a 52 % time discount.)
 
@@ -1739,7 +1740,7 @@ Vocabulary 3P-Disconect-4W                \ Used Sold Keep Have
               3P-Disconect-4W Definitions \ Keep                
 \ 100A          .50 w/e  10 e ;           \              -      
 : 400A       567.50 w/e  10 e ;           \              -      
-Elect \                                                         
+Elect \
 ( Labor included for line & load wire )                         
 
 
@@ -1747,13 +1748,15 @@ Elect \
 Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
 : 20A          3.73 w/e  20 c ; \ 10-2010 SES                                       
 : 15A          20A            ; \                               
-\ 30-50-50-30 22.00 w/e  40 c ; \  18.95 June 07                
-~ 20-20-20-20 22.00 w/e  40 c ; \                               
-: 20A-20A      8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10         
+: 20A-20A      8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
+: 20-20A              20A-20A ;
+: 15-15A              20A-20A ;
 : 15A-2P      10.00 w/e  30 c ; \  6.00  Jan 97  B&K            
 : 20A-2P        15A-2P        ; \    88                         
 : 2P-20A       20A-2P ;
-: 30A         22.58 w/e  30 c ; \ 22.58  Aug 00                 
+: 30-50-50-30 22.00 w/e  40 c ; \  18.95 June 07
+: 20-20-20-20 22.00 w/e  40 c ; \
+: 30A         22.58 w/e  30 c ; \ 22.58  Aug 00
 : 40A           30A           ; \ 13.55  MES  ??when?           
 : 50A           30A           ; \                               
 : 60A           30A           ; \                               

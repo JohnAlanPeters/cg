@@ -1,145 +1,125 @@
-\ PRICES for Electro Metalic Tubeing on the surface.  88-04-02 J
-\ NEW                                                           
-\ LT-&-SW                                                       
-                                                                
-                                                                
-                                                                
-                                                                
-                                                  0.00         0.00             
-                                                  0.00         0.00             
-                                                  0.00                          
-                                                  0.00         0.00             
-                                                  0.00         0.00             
-                                                                
-                                                                
-                                                                
-                                                                
+\ PRICES for Electro Metalic Tubeing on a wod surface.
+\ NEW
+\ LT-&-SW
+
+
+
+
+                                                  0.00         0.00
+                                                  0.00         0.00
+                                                  0.00
+                                                  0.00         0.00
+                                                  0.00         0.00
+
+
+
+
 
 
 \ LF-EMT  125A to 400A                               88-04-02AL
-Vocabulary LF-EMT                                               
-                   LF-EMT definitions                           
-` 380A   1564.71 w/c 26 c ; \ 500mcm                            
-: 400A   380A  ;                                                
-` 300A   1070.57 w/c 20 c ; \ 300mcm                            
-` 225A     641.08 w/c 16 c ; \ 3/0                              
-: 200A  225A ;                                                  
-` 150A     467.12 w/c 14 c ; \ 1/0                              
-` 130A     416.12 w/c 13 c ; \ #1                               
-` 115A     314.90 w/c 12 c ; \ #2                               
-: 125A  115A ; \ #2                                             
-Elect  \ added on 7/24                                          
-: LF-Conduit   LF-EMT ;                                         
-                                                                
-2 12 thru                                                       
+Vocabulary LF-EMT
+                   LF-EMT definitions
+` 380A             1564.71 w/c 26 c ; \ 500mcm
+: 400A                        380A  ;
+` 300A             1070.57 w/c 20 c ; \ 300mcm
+` 225A              641.08 w/c 16 c ; \ 3/0
+: 200A                         225A ;
+` 150A              467.12 w/c 14 c ; \ 1/0
+` 130A              416.12 w/c 13 c ; \ #1
+` 115A              314.90 w/c 12 c ; \ #2
+: 125A                         115A ; \ #2
+Elect
+: LF-Conduit   LF-EMT ;
 
 
-\ LF-EMT  20A to 115A                               05-09-91 AL
-                   LF-EMT definitions                           
-: 100A              115A ; ( #2 1-1/4 or 1-in )                 
-`  85A     210.59 w/c 11  c ; \ #4 1-in                         
-:  65A     137.07 w/c  93 m ; \ #6 3/4 or 1-1/4 (BP at Roake)   
-:  50A     114.05 w/c  88 m ; \ #8 3/4                          
-:  30A      62.56 w/c  76 m ; \ #10 1/2                         
-:  20A      49.09 w/c  65 m ; \ 12/3 1/2                        
-:  20A-st   41.61 w/c  25 m ; \ 12/2 1/2                        
-:  15A      42.25 w/c  60 m ;                                   
-: 3P-70A   170.78 w/c 105 m ;                                   
-Elect                                                           
-                                                                
-                                                                
-\ SURFACE-EMT Outlets of various types.             07-02-08 AL
-Vocabulary (Neat-EMT)  (Neat-EMT) definitions                   
-: PL-220       22.00 w/e      200 c ; \                         
-: PL-hard      11.89 w/e      220 c ; \                         
+\ LF-EMT  20A to 115A
+                   LF-EMT definitions
+: 100A                         115A ; ( #2 1-1/4 or 1-in )
+`  85A             210.59 w/c 11  c ; \ #4 1-in
+:  65A             137.07 w/c  93 m ; \ #6 3/4 or 1-1/4 (BP at Roake)
+:  50A             114.05 w/c  88 m ; \ #8 3/4
+:  30A              62.56 w/c  76 m ; \ #10 1/2
+:  20A              49.09 w/c  65 m ; \ 12/3 1/2
+:  20A-st           41.61 w/c  25 m ; \ 12/2 1/2
+:  15A              42.25 w/c  60 m ;
+: 3P-70A   170.78 w/c 105 m ;
+Elect
+
+
+\ SURFACE-EMT Outlets of various types.
+Vocabulary (Neat-EMT)  (Neat-EMT) definitions
+: PL-220       22.00 w/e      200 c ; \
+: PL-hard      11.89 w/e      220 c ; \
 \ PL Too low   11.89 w/e      180 c ; \ 2.00 ?  1.75 less res 1.50  1 hr actual
-: PL ( 20' )   19.77 w/e      175 c ; \ Was 11.89  1.75 Residental                   
+: PL ( 20' )   19.77 w/e      175 c ; \ Was 11.89  1.75 Residental
 : PL-medium    10.00 w/e      140 c ; \
-: PL-easy       9.00 w/e      100 c ; \ Almost 1/2 off          
-: PL-very-easy  8.00 w/e       50 c ; \ Almost 1/2 off          
-: PL-ez         8.00 w/e       33 c ; \ PL-v-Very-easy          
-: LT           11.92 w/e      206 c ; \ Module #5               
-: LT-medium    10.00 w/e      170 c ; \ 12-93   174             
-: LT-easy       9.00 w/e      125 c ; \ 12-93   105             
-: LT-very-easy  5.00 w/e       75 c ; \ Mar 97                  
-: LT-on(J)      9.00 w/e       25 c ; \ 7-96 Jim@Hicky          
-: Split-wire    1.40 w/e        9 c ;                           
-: Quad          2.47 w/e       15 c ;  Elect \ was 1.47         
+: PL-easy       9.00 w/e      100 c ; \ Almost 1/2 off
+: PL-very-easy  8.00 w/e       50 c ; \ Almost 1/2 off
+: PL-ez         8.00 w/e       33 c ; \ PL-v-Very-easy
+: LT           11.92 w/e      206 c ; \ Module #5
+: LT-medium    10.00 w/e      170 c ; \ 12-93   174
+: LT-easy       9.00 w/e      125 c ; \ 12-93   105
+: LT-very-easy  5.00 w/e       75 c ; \ Mar 97
+: LT-on(J)      9.00 w/e       25 c ; \ 7-96 Jim@Hicky
+: Split-wire    1.40 w/e        9 c ;
+: Quad          2.47 w/e       15 c ;  Elect \ was 1.47
+: S4            21.40 w/e     227 c ;
+: S3            13.12 w/e     213 c ;
+: SW-only        5.00 w/e      50 c ; \ 09-94
+: SW-below                  SW-only ;
+: SW                             PL ;
+: SW-easy                   PL-easy ;
+: SW-very-easy         PL-very-easy ;
+: SW-ez                      PL-ez  ; \ PL-v-very-easy
+: S3-easy                  LT-easy  ;
+: SW-medium               LT-medium ;
+: S3-medium               LT-medium ;
+: (J)-medium              PL-medium ;
+: (J)-easy                  PL-easy ;
+: S4-easy          21.40 w/e  125 c ;
+: Dryer-mod        51.09 w/e  531 c ; \
+: Range-mod        77.24 w/e  600 c ; \ Guess
+: Tap               3.00 w/e   50 c ; \ 1/4 of a PR
+: Power                          LT ;
+: (J)                            PL ;
+: 1/2               27.07 w/c  53 m ; \ Inc fittings
+: 3/4               38.54 w/c  60 m ; \ Inc fittings
+: 1-in              63.10 w/c  66 m ; \ Inc fittings
+: 1-1/4             91.01 W/C  75 m ; \ Inc fittings
+: 1-1/2            111.22 W/C  85 m ; \ Inc fittings
+\ 2-in             151.37 W/C  97 m ; \ Inc fittings
+: 200A                1221 EX 174 M ;
+: 150A  ( #1/0 )       894 EX 151 M ;
+: 130A  ( #1 )         805 EX 145 M ;
+: 125A                         130A ;
+: 115A  ( #2 )         576 EX 118 M ;
+: 100A                         115A ;
+:  85A   ( #4 )        370 EX 112 M ;
+:  65A   ( #6 )        235 EX  91 M ;
+:  50A                          65A ;
+:  30A   ( #10 )       105 EX  72 M ;
+:  20A  ." 2 #12"       71 EX  59 M ;
+:  15A  ." 3 #14"       76 EX  87 M ;
+:  20a  ( 2 #12 same as 3 #14 ) 15A ;
+Electric Definitions
 
 
-\ SURFACE-EMT Outlets cont                          08-12-08 AL
-                       (Neat-EMT) definitions                   
-: S4          21.40 w/e  227 c ;                                
-: S3          13.12 w/e  213 c ;                                
-: SW-only      5.00 w/e   50 c ; \ 09-94                        
-: SW-below             SW-only ;                                
-: SW                        PL ;                                
-: SW-easy              PL-easy ;                                
-: SW-very-easy    PL-very-easy ;                                
-: SW-ez                 PL-ez  ; \ PL-v-very-easy               
-: S3-easy             LT-easy  ;                                
-: SW-medium          LT-medium ;                                
-: S3-medium          LT-medium ;  : (J)-medium  PL-medium ;     
-: (J)-easy             PL-easy ;                                
-: S4-easy     21.40 w/e  125 c ; Elect                          
-                                                                
-
-\ SURFACE-EMT Outlets cont                          03-31-97 AL
-                       (Neat-EMT) definitions                   
-: Dryer-mod   51.09 w/e  531 c ; \
-: Range-mod   77.24 w/e  600 c ; \ Guess                            
-: Tap          3.00 w/e   50 c ; \ 1/4 of a PR                  
-: Power            LT ;                                         
-: (J)              PL ;                                         
-
-Elect                                                           
-                                                                
-                                                                
-\ LF-EMT                                            12-28-90 AEC
-                   LF-EMT definitions                           
-: 1/2         27.07 w/c  53 m ; \ Inc fittings                  
-: 3/4         38.54 w/c  60 m ; \ Inc fittings                  
-: 1-in        63.10 w/c  66 m ; \ Inc fittings                  
-: 1-1/4       91.01 W/C  75 m ; \ Inc fittings                  
-: 1-1/2      111.22 W/C  85 m ; \ Inc fittings                  
-\ 2-in       151.37 W/C  97 m ; \ Inc fittings                  
-Elect                                                           
-                                                                
-                                                                
-\ LF-EMT-RT  20A to 200A                            88-04-02 JAP 
-Vocabulary LF-EMT-RT  LF-EMT-RT definitions
-: 200A                        1221 EX 174 M ; 
-: 150A  ( #1/0 )               894 EX 151 M ;
-: 130A  ( #1 )                 805 EX 145 M ;
-: 125A         130A ;
-: 115A  ( #2 )                 576 EX 118 M ;
-: 100A         115A ;
-:  85A   ( #4 )                370 EX 112 M ;
-:  65A   ( #6 )                235 EX  91 M ;
-:  50A           65A ;
-:  30A   ( #10 )               105 EX  72 M ;
-:  20A  ." 2 #12"               71 EX  59 M ;
-:  15A  ." 3 #14"               76 EX  87 M ;
-:  20a  ( 2 #12 same as 3 #14 )  15A ;
-Electric Definitions                                            
-
-
-\  RAIN-TITE-EMT  ( Weather proof )                  88-04-03AEC 
+\  RAIN-TITE-EMT  ( Weather proof )
 Vocabulary (RT-EMT)  (RT-EMT) definitions
-: LT                           2050 EX 276 c ; \ MODULE #5      
-\ S3                           1920 EX 210 c ;                  
-\ S4                           2420 ex 220 c ;                  
-: PS            LT ;                                            
-\ PR-easy                      1500 ex 100 c ; \ almost 1/2 off 
-\ LT-easy  PL-easy ;                                            
-: PL                           2802 EX 316 c ;                  
-: SW            PL ;                                            
-: (J)           LT ;                                            
-\ (J)-bb     LT-bb ;   \        393 EX  64 c ;                  
-Electric Definitions                                            
-: RAIN-TITE-EMT     Elect (RT-EMT) also  cr  ;                  
-: RAIN         RAIN-TITE-EMT ;                                  
-                                                                
+: LT                  2050 EX 276 c ; \ MODULE #5
+\ S3                  1920 EX 210 c ;
+\ S4                  2420 ex 220 c ;
+: PS                                      LT ;
+\ PR-easy             1500 ex 100 c ; \ almost 1/2 off
+\ LT-easy                   PL-easy ;
+: PL                  2802 EX 316 c ;
+: SW                             PL ;
+: (J)                            LT ;
+\ (J)-bb                      LT-bb ;  \ 393 EX  64 c ;
+Electric Definitions
+: RAIN-TITE-EMT     Elect (RT-EMT) also  cr  ;
+: RAIN         RAIN-TITE-EMT ;
+
 
 \ NEAT-WIREMOLD Outlets
 \ Vocabulary Neat-WM Neat-WM definitions
@@ -150,44 +130,43 @@ Electric Definitions
 : PL-easy       14.73 w/e     100 c ; \ Almost 1/2 off
 : LT-very-Easy  11.90 w/e      75 c ; \ for Ed
 : PL-very-easy  11.90 w/e      40 c ; \ for Phifer
-: LT             PL ;
-: LT-medium      PL-medium ;
+: LT                             PL ;
+: LT-medium               PL-medium ;
 : LT-easy       14.73 w/e     125 c ;
-: SW             PL ;
-: SW-medium      PL-medium ;
-: S3             LT ;
-: SW-easy        PL-easy ;
-: Tap           0.10 w/e 25 c ;  \ Tap power by open-close          
-: (J)              PL ;
-: (J)-easy  PL-easy ;
-Elect  
+: SW                             PL ;
+: SW-medium               PL-medium ;
+: S3                             LT ;
+: SW-easy                   PL-easy ;
+: Tap                 0.10 w/e 25 c ;  \ Tap power by open-close
+: (J)                            PL ;
+: (J)-easy                  PL-easy ;
+Elect
 \ Neat-wiremold Neat-WM ;
 
 
-\ LF-GRS  20A to 115A                               06-18-07 AL
+\ LF-GRS  20A to 115A
 Vocabulary LF-GRS
                    LF-GRS definitions
-:  85A     210.59 w/c  11 c ; \ #4 1-in
-:  65A     137.07 w/c  93 m ; \ #6 3/4 or 1-1/4 (BP at Roake)
-:  50A     114.05 w/c  88 m ; \ #8 3/4
-:  30A      62.56 w/c  76 m ; \ #10 1/2
-:  20A      49.09 w/c  65 m ; \ 12/3 1/2
-:  20A-st   41.61 w/c  25 m ; \ 12/2 1/2
-:  15A      42.25 w/c  60 m ;
+:  85A             210.59 w/c  11 c ; \ #4 1-in
+:  65A             137.07 w/c  93 m ; \ #6 3/4 or 1-1/4 (BP at Roake)
+:  50A             114.05 w/c  88 m ; \ #8 3/4
+:  30A              62.56 w/c  76 m ; \ #10 1/2
+:  20A              49.09 w/c  65 m ; \ 12/3 1/2
+:  20A-st           41.61 w/c  25 m ; \ 12/2 1/2
+:  15A              42.25 w/c  60 m ;
 Elect
 
 
 \  See also  \ele\modules\grs.mod
 
+\ Alternative names
+: Neat-EMT   Elect (NEAT-EMT) also ;
+: Neat-Work                 Neat-emt ;  \ 10-3-2013
+: Neat-workmanship          Neat-emt ;
+: Neat                      Neat-emt ;
+: Neatly-drilled            Neat-emt ;
+: Flex-2x4                  Neat-emt ;
 
-\ Loader screen                                     09-18-08 AL
-: Neat-EMT   Elect (NEAT-EMT)  also     ;
-: Neat-Work         Neat-emt ;  \ 10-3-2013
-: Neat-workmanship  Neat-emt ;
-: Neat              Neat-emt ;
-: Neatly-drilled    Neat-emt ;
-: Flex-2x4          Neat-emt ;
-Title Surface-EMT->
 \ FLEX-OPEN-2-SIDES   ." Same as EMT "  neat ;
 
 

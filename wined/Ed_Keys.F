@@ -201,7 +201,7 @@ defer _Control+W ' close-text is _control+w
   r> null LOCALE_USER_DEFAULT
   call GetDateFormat date$ swap 1- ;
 
-: datestamp ( -- )    \ put date stamp (f9)
+: date-stamp ( -- )    \ put date stamp (f9)
   noext? 0= ?exit  \ only if not a .f file
   s" Revision" findstr 0= ?exit
   1 +to cursor-line  \
@@ -325,7 +325,7 @@ defer _Control+W ' close-text is _control+w
       'B'     +k_control            OF      debug-word                  ENDOF
       'B'     +k_control +k_shift   OF      debug-word                  ENDOF
       'C'     +k_control            OF      copy-text                   ENDOF
-      'D'     +k_control            OF      datestamp   ( also F9 )     ENDOF
+      'D'     +k_control            OF      date-stamp  ( also F9 )     ENDOF
       'D'     +k_control +k_shift   OF      revert-text ( also Q )      ENDOF
       'E'     +k_control            OF      grand-total                 ENDOF
       'E'     +k_control +k_shift   OF      expand-tabs                 ENDOF
@@ -365,7 +365,7 @@ defer _Control+W ' close-text is _control+w
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 69    Function key bindings   +SCR is 1 page down
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-      k_F1    ( rbs )               OF      edopen  ( w32f-doc )        ENDOF
+      k_F1                          OF      browse-toggle               ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
       k_F2                          OF      settle   grand-total        ENDOF                                               
       k_F3                          OF      find-text-again             ENDOF

@@ -199,7 +199,7 @@ create colontbl maxscrlines cells allot  \ to xlate scrline to fileline
         swap /string blank ;            \ add trailing blanks
 
 : put-cursor-line ( -- )
-                cur-buf LCOUNT cursor-line #line! ;
+         cur-buf LCOUNT -trailing cursor-line #line! ;
 
 : -trailing-blanks ( -- )
                 cursor-line #line" 2dup -trailing nip - nip
@@ -347,8 +347,8 @@ defer vtop?
 
   Color: LTGRAY    new-color linesColor
   Color: BLACK     new-color binaryColor
-\ Color: BLUE      new-color BmarginColor       \ browse margin color blue
-\ 240 128 128 rgb  new-color BmarginColor       \ browse margin color
+\ Color: BLUE      new-color BmarginColor    \  \ browse margin color blue
+\ 240 128 128 rgb  new-color BmarginColor    \  \ browse margin color 
   128 225 128 rgb  new-color BmarginColor       \ insert margin color green
 
 defer trailBG  ' normalBG is trailBG
