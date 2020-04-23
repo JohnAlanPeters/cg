@@ -62,12 +62,12 @@ Vocabulary (Neat-EMT)  (Neat-EMT) definitions
 : LT-very-easy  5.00 w/e       75 c ; \ Mar 97
 : LT-on(J)      9.00 w/e       25 c ; \ 7-96 Jim@Hicky
 : Split-wire    1.40 w/e        9 c ;
-: Quad          2.47 w/e       15 c ;  Elect \ was 1.47
+: Quad          2.47 w/e       15 c ;
 : S4            21.40 w/e     227 c ;
 : S3            13.12 w/e     213 c ;
 : SW-only        5.00 w/e      50 c ; \ 09-94
 : SW-below                  SW-only ;
-: SW                             PL ;
+: SW                             PL ; 
 : SW-easy                   PL-easy ;
 : SW-very-easy         PL-very-easy ;
 : SW-ez                      PL-ez  ; \ PL-v-very-easy
