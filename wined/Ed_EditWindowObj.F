@@ -920,7 +920,8 @@ defer +bg       ' _+bg is +bg
                 Height: self
                 have-focus? 0= if ltgray else
                 ( Get the margin color and fill the left margin )
-                overstrike @ if marginColor else BMarginColor then
+                browse? if BmarginColor else
+                overstrike @ if OmarginColor else IMarginColor then then
                 then
                 FillArea: dc
                       \ vertical line beside left border
@@ -1023,7 +1024,8 @@ defer +bg       ' _+bg is +bg
                        \ -- screenline#
                         dup>r line-cur +
                         ( Output text in the right character height )
-                          overstrike @ if marginColor else BMarginColor then
+                          browse? if BmarginColor else
+                          overstrike @ if OmarginColor else IMarginColor then then
                           SetBkColor: dc
                           0 <# #s #> 2dup GetTextExtent: dc drop
                           window-Lmargin 5 - swap - 1 max

@@ -5,56 +5,56 @@ Feeder              Ground    deg.        Use
 #2 or less          = 8    to 115         100                   
 1 or 0              = 6       150         150                   
 2/0 or 3/0          = 4       200         200                   
-over 3/0 to 350 mcm = 2       310         300     0.00         0.00             
-over 350 to     600 = 1/0     420         400     0.00         0.00             
-                                                  0.00                          
-                                                  0.00         0.00             
-                                                  0.00         0.00             
-                                                  0.00         0.00             
-                                                  0.00                          
+over 3/0 to 350 mcm = 2       310         300     4.23         3.38
+over 350 to     600 = 1/0     420         400     0.84         0.56
+                                                849.40
+                                                761.40       266.22
+                                                 88.00        43.98
+                                                  0.00         0.00
+                                                  0.00
                                                                 
                                                                 
 
 
 
 Bond hot h20
-                3 ground clamp                        19.86     0.60      127.86
-                4 thhn #8                              2.88     0.04       10.08
-It is easy      ( use .30 hrs )                        0.00     0.00        0.00
-                                                     $22.74     0.64     $137.94
+                3 ground clamp                                  0.60      127.86
+                4 thhn #8                                       0.04       10.08
+It is easy      ( use .30 hrs )                                 0.00        0.00
+                                                                0.64     $137.94
 
 Ground 15a
-15a ground box                                         0.00     0.00        0.00
-                10 xthhn #14
-                1 ground strap
-                1 ground clip
-
+15a ground box                                                  0.00        0.00
+                10 thhn #14                                     0.05       11.80
+                \ 1 ground strap ( strap is a                   0.00        0.00
+                1 ground clip                                   0.01        2.07
+                                                                0.06      $13.87
 
 Ground box 1st
-                Neat-EMT
-                1 blockage Fire-Block
-                1 Blockage Floor-Plate
-                1 Blockage Wall
-                50 THHN #6
-ALong joists    0.22 hr el
-Ladder work     0.37 hr el
-                1 Device&Plate
-                1 Ground GS
-                1 Nut Red
-                2 Thhn #12
-
+                Neat-EMT                                        0.00        0.00
+                1 blockage Fire-Block                           0.45       81.00
+                1 Blockage Floor-Plate                          0.75      135.00
+                1 Blockage Wall                                 0.25       45.00
+                50 THHN #6                                      0.60      161.00
+ALong joists    0.22 hr el                                      0.22       39.60
+Ladder work     0.37 hr el                                      0.37       66.60
+                1 Device&Plate                                  0.25       48.74
+                1 Ground GS                                     0.04        7.31
+                1 Nut Red                                       0.06       10.91
+                2 Thhn #12                                      0.01        2.56
+                                                                3.00     $597.72
 
 get blockage
-get nut
-6-18-07
+get nut                                                         0.00        0.00
+6-18-07                                                         0.00        0.00
 
 
 Ground a box
-                15 thhn #14
-                1 blockage fire-block
-                1 ground clip
-                1 ground strap
-
+                15 thhn #14                                     0.07       16.80
+                1 blockage fire-block                           0.45       81.00
+                1 ground clip                                   0.01        2.07
+                \ 1 ground strap                                0.00        0.00
+                                                                0.53      $99.87
 
 \ U-fer
                 25 thhn  #4
@@ -119,5 +119,5 @@ The wire        15 thhn  #6
                 1 ground rod
 
 
-Total Estimate
+Total Estimate                                                           $849.40
 
