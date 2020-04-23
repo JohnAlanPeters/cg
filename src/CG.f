@@ -1,6 +1,8 @@
 \ $Id: CG.f,v 1.14 2013/08/13 23:30:32 rdack Exp $
 \ to use merged editor compile in cg.f   [rda 11/02]
+
 : CG ;  \ place marker for use with VIEW or VV  Can I move it t line 84?
+
 sys-warning-off
 dup-warning-off
 
@@ -33,7 +35,7 @@ defer grand-total     \ Defined early so AA can be used in cg-special ctrl-
 defer AAA
 defer reedit
 defer un-add \ for wined
-defer settle \ See also (settle)
+defer settle \ See also (settle) <- by triple clicking here
 
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 

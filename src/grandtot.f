@@ -66,7 +66,7 @@ anew _grandtot
           cursor-line file-lines <
           if ext-err
             if beep ."  at line: " cursor-line .
-               cr context @ current ! words
+ \             cr context @ current ! words
                abort
             then
             1 -1 skiplines              \ to end of vscr

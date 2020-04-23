@@ -324,6 +324,7 @@ small-parts  \ default
 : w/s-pre-tax     1.00 2to markup ; \ <<<<
 : Parts+00        1.00 2to markup ;
 : Parts+1.00      1.00 2to markup ;              
+: Wholesale       1.00 2to markup ;
 
 : IncWholeSaleSub  ( d -- )
    2dup quan 2@ d* 100.00 d/

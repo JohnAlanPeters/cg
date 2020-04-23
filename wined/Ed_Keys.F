@@ -385,7 +385,7 @@ defer _Control+W ' close-text is _control+w
       k_F10                         OF      un-add  ( hyper-link )      ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
-      k_F11                         OF      fstacksave                  ENDOF
+      k_F11                         OF      fstacksave ( memorize )     ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
       k_F12                         OF      fstacksave                  ENDOF
