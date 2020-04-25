@@ -99,7 +99,7 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   nskip true skiplines   \ skip non-empties
   nskip false skiplines  \ skip empties
   cursor-line swap - file-lines screen-rows - min to line-cur    \ new position
-  refresh-screen save-text ;
+  refresh-screen ;
 
 : -VSCR  ( -- )      \ up to top of lines ending with empty line
   cursor-line line-cur -  \ #lines from top where current line is
@@ -276,6 +276,31 @@ defer _Control+W ' close-text is _control+w
      s" " s" Recall"  "SetDefault
   else drop then set-w32f-default ;
 
+\ ** add virtual screen #s to a bid or module
+: index$ ( n -- addr len )  \ index# as a string
+  s>d <# #S #> ;
+editor
+: vindex#s ( -- )       \ maintain indexes for each virtual page
+  cursor-line
+  17 to cursor-line     \ start after header of a bid file
+  1
+  begin  +vscr          \ down 1 vscreen
+    cursor-line file-lines 1- <     \ don't go off the end of the file
+  while
+    get-cursor-line
+    cur-buf cell+ 5 s" Total" istr=
+    if drop to cursor-line refresh-screen exit then
+    cur-buf lcount over 3 + swap move   \ make room for 3 characters at start
+    3 cur-buf w+! s"    " cur-buf cell+ swap cmove
+    dup index$ cur-buf cell+ swap cmove
+    put-cursor-line
+    1+              \ next vscreen index#
+  repeat  drop to cursor-line refresh-screen ;
+
+0 value err-vocab-show
+  \ true-> show vocab on extend error
+: err_vocab-toggle ( -- )
+  err-vocab-show 0= to err-vocab-show ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 67    The main editor loop
@@ -302,7 +327,6 @@ defer _Control+W ' close-text is _control+w
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
       call GetFocus to topwin
-      browse-toggle
       BEGIN
             depth to saved-depth            \ so we can check stack depth
             ibeam-cursor
@@ -374,7 +398,7 @@ defer _Control+W ' close-text is _control+w
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
       k_F4                          OF      settle                      ENDOF
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
-      k_F5                          OF      grand-total                 ENDOF
+      k_F5                          OF      err_vocab-toggle            ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
       K_f6                          OF      un-add                      ENDOF
       k_F7                          OF      toggle-insert               ENDOF
@@ -387,7 +411,7 @@ defer _Control+W ' close-text is _control+w
       k_F11                         OF      fstacksave ( memorize )     ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      fstacksave                  ENDOF
+      k_F12                         OF      vindex#s                    ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( datestamp )
 
