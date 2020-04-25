@@ -225,7 +225,7 @@ Dimmer definitions              \ was 50 hrs per C
 \ N1000       55.50 w/e  25 c ; \ See Nova-T
 : 1500W      103.50 w/e  60 c ; \
 : 2000W      147.00 w/e  70 c ; \
-: ZP-600VA-brown  36.60 w/e  04 c ;
+: ZP          36.60 w/e  04 c ;        
 Elect
 : Dim  [ Dimmer ] DV-600 ;
 \ Electronic      IC44, Halo 2001, Juno 538  Common works,
@@ -510,7 +510,99 @@ Vocabulary Fixture       Fixture definitions
 : Gas-2-lamp    18.50 w/e 25 c ; \ NIC Glass
 : Gas-3-lamp    21.00 w/e 25 c ; \
 Elect    \                                                      
-                                                                
+
+
+\ LED Under Cabinet
+Vocabulary LED-UC
+           LED-UC Definitions
+: 48-inch   85.00 w/e  55 c ;
+: 40-inch   75.00 w/e  50 c ;
+: 42-inch   65.00 w/e  50 c ;  \ March for Buich a guess from Amazon 
+\ 32-inch   99.00 w/e  50 c ;
+\ 30-inch   99.00 w/e  50 c ;
+\ 24-inch   85.90 w/e  50 c ;
+\ 18-inch   69.90 w/e  50 c ;
+\ 12-inch   49.90 w/e  45 c ;
+\  9-inch   39.90 w/e  40 c ;
+Elect
+
+\ REWIRE-LED
+Vocabulary Rewire-LED  Rewire-LED Definitions
+: Strip-36          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
+: Strip-48          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
+: Strip-96          40.00 w/e  45 c ; \ .45 27 min  Home Depot only   
+Elect
+
+\ REWIRE-New-ends ( Labor only )
+Vocabulary Rewire-New-ends  Rewire-New-ends Definitions
+: Strip-36          00.00 w/e 100 c ; \ .33 20 min  5K kelvin was 14.00 ea
+: Strip-48          00.00 w/e 100 c ; \ .33 20 min  5K kelvin  
+Elect
+
+\ REWIRE-BV
+Vocabulary Rewire-BV  Rewire-BV Definitions
+: Strip-36           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
+: Strip-48           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
+: Strip-96           0.00 w/c  45 c ; \ .45 27 min  HBH s/b 34 min .57 hr                               
+: Wrap-48            0.00 w/c  45 c ; \ 27 min
+: Wrap-96            0.00 w/c  50 c ; \ 30 min Labor is included in rewire time
+: Vaper-proof-48     0.00 w/c  55 c ; \ 33 min
+: Vaper-proof-96     0.00 w/c  60 c ; \ 36 min  
+: PigTail            0.50 w/c  15 c ;
+Elect
+
+\ REWIRE
+Vocabulary Rewire  Rewire Definitions
+: Strip-48           0.00 w/c  33 c ; \ .33 20 min  5K kelvin
+: Strip-96           0.00 w/c  45 c ; \ .45 27 min  Home Depot only
+Elect
+
+
+Vocabulary LED-tube
+LED-Tube Definitions
+: 48-inch-BV          7.10 w/e 00 c ; \ Time is included with the rewire
+: 96-inch-BV         26.00 w/e 00 c ; \ Wrong
+Elect
+
+Vocabulary LED-PET-tube  \ <<<<<<<<<<<           
+LED-PET-Tube Definitions \ Parts only
+: 48-inch             7.86 w/e 00 c ; \   7.86 e at 1000Bulbs.com
+: 96-inch            19.71 w/e 00 c ; \ 197.10 c at 1000Bulbs.com Kelly x114       
+Elect
+
+Vocabulary LED-tube
+LED-Tube Definitions \ Parts only
+: 48-inch            10.68 w/e 00 c ; \ Universal invoice Feb 2020
+: 96-inch            18.50 w/e 00 c ; \ Amazon top cost
+Elect
+
+Vocabulary LED-sleeve
+LED-sleeve Definitions \ Parts only
+: 48-inch             3.50 w/e 00 c ; \ Online Feb 2020
+: 96-inch            18.50 w/e 00 c ; \ Amazon top cost
+Elect
+
+\ A comment to play with GitHub
+
+Vocabulary LED-Retrofit-can \   JP 6-24-2019
+LED-Retrofit-can definitions
+: 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes
+: 6-inch    14.50 w/e 60 c ;  \ 38 minutes including ladder time
+Elect                         \ 25 minutes each according to Miro
+
+
+| LED-28 Ameri Fluorescent
+Vocabulary LED-28
+LED-28 Definitions       \
+: LED28inc 115.00 w/e  50 c ;
+: 9-in      95.00 w/e  00 c ; \ 9.5 inches by 6.25 inches
+: Cord      10.00 w/e  00 c ;
+: Plug       5.00 w/e  00 c ;
+: Direct-Con 4.00 w/e  00 c ;
+Elect
+\ First saw at Universal in Aug 08 for Dolan job
+
+
 
 | JUNO  IC44                                        08-16-94 AEC
 Vocabulary Juno    \ 4-16-93 for Stuart on Collingwood
@@ -1324,33 +1416,35 @@ Elect
 \ MINUTES                   900-005  Pay * 1.00     89-06-28 BEC
 Vocabulary Minutes
                          Minutes definitions
-\ Manager         0.0 w/c  20 m ; \
-\ Journeyman      0.0 w/c  17 m ; \ 13.00        Sell
+: Manager         0.0 w/c  20 m ; \
+: Journeyman      0.0 w/c  17 m ; \ 13.00        Sell 
 : Electrician     0.0 w/c  17 m ; \ 17.00   2880
 : Trouble-shooter 0.0 w/c  25 m ; \ 25.00
-\ John            0.0 w/c  17 m ; \ 19.00
-\ Pete            0.0 w/c  17 m ; \
-\ Contractor      0.0 w/c  24 m ; \ 24.00
-: Two-Men         0.0 w/c  48 m ; \ 48.00                        
-\ Be-careful      electrician ;                                 
-\ Wait-on-you     electrician ;                                 
-\ Work            Electrician ;                                 
- Elect                                                          
+: John            0.0 w/c  17 m ; \ 19.00
+: JP john ;
+: Pete            0.0 w/c  17 m ; \
+: Contractor      0.0 w/c  24 m ; \ 24.00
+: Two-Men         0.0 w/c  48 m ; \ 48.00
+: Be-careful      electrician ;
+: Wait-on-you     electrician ;
+: Work            Electrician ;
+ Elect
 
 
-\ HOURS                     900-010 [Pay 6 *]       05-19-09    
+\ HOURS                     900-010 [Pay 6 *]       05-19-09
 Vocabulary Hours
                          Hours definitions     \    at 52.00
-\ Easy-work    0.0 w/c [  80 6 * ] literal m ; \  8.00  24.96
-\ Apprentice   0.0 w/c [ 100 6 * ] literal m ; \
+: Easy-work    0.0 w/c [  80 6 * ] literal m ; \  8.00  24.96
+: Apprentice   0.0 w/c [ 100 6 * ] literal m ; \
 : Electrician  0.0 w/c [ 167 6 * ] literal m ; \   .00  55.00
 : Master-Elect 0.0 w/c [ 167 7 * ] literal m ; \      91.85 ?
 : Engineering    Electrician ;
 : Engineer       Electrician ;
 : Allowance      Electrician ;
 : Owner        0.0 w/c [ 168 6 * ] literal m ; \ same as rate
-\ T&M      1000.00 w/c   1000              m ; \ 50.00           
-: EL electrician ;
+: T&M      1000.00 w/c   1000              m ; \ 50.00
+: El electrician ;
+
 \ HR hours  \ added by JP cause of problem with packing defs    
 Elect    : Hour   hours ;   : HR hours ;  : Task  hours ;       
 Elect                                                           
@@ -2049,21 +2143,21 @@ Elect
 
 
 % MC    ( Drilled wood )  C 106-301  AC-3           04-20-92 AEC
-Vocabulary MC  ( For Hugo? )                                    
+Vocabulary MC  ( For Hugo? )
                           MC  definitions  \ Temp Sold Keep Have
-: 14/2       428.00 w/m  21 m ; \ Same as RX                    
-: 12/2       350.00 w/m  24 m ; \ in wood         SES           
-: 14/3       598.00 w/m  28 m ; \ AJ's Joe                      
-: 12/3       500.00 w/m  25 m ; \ SafeCo          100  140  150 
-: 12/4       599.00 w/m  26 m ; \ NPS                           
-: 10/3       625.99 w/m  35 m ; \ Use core clad
-: #8  ( arm) 430.00 w/m  20 m ; \                  10       240 
-: #6  ( Arm) 640.00 w/m  22 m ; \ time gues                     
+: 14/2       428.00 w/m  21 m ; \ Time same as RX
+: 12/2       350.00 w/m  24 m ; \ in wood         SES
+: 14/3       598.00 w/m  28 m ; \ AJ's Joe
+: 12/3       500.00 w/m  25 m ; \
+: 12/4       599.00 w/m  26 m ; \ NPS
+: 10/3       625.99 w/m  35 m ; \
+: #8  ( arm) 430.00 w/m  20 m ; \
+: #6  ( Arm) 640.00 w/m  22 m ; \ time guess
 \ 8/3               w/m  60 m ; \                               
 : Caddy-kx   17.65  w/c   5 c ; \                               
 : Staple      5.95  w/c  00 m ; \ 1-1/8                         
-: Whip       230.00 w/c  27 c ;                                 
-Elect  : M-C  mc ;  .( Do not fish MC )                         
+: Whip       230.00 w/c  27 c ;
+Elect  : M-C  mc ;  .( Do not fish MC )
 
 
 | PLASTER 0/8               900-060  Test of time   09-21-97 0.0
@@ -2479,97 +2573,10 @@ Vocabulary Trench                         \ Te
 Trench Definitions       \
 : Square     300.00 w/e  00 c ;
 Elect
-
-\ LED Under Cabinet
-Vocabulary LED-UC
-           LED-UC Definitions
-: 48-inch   85.00 w/e  55 c ;
-: 40-inch   75.00 w/e  50 c ;
-: 42-inch   65.00 w/e  50 c ;  \ March for Buich a guess from Amazon 
-\ 32-inch   99.00 w/e  50 c ;
-\ 30-inch   99.00 w/e  50 c ;
-\ 24-inch   85.90 w/e  50 c ;
-\ 18-inch   69.90 w/e  50 c ;
-\ 12-inch   49.90 w/e  45 c ;
-\  9-inch   39.90 w/e  40 c ;
-Elect
-
-\ REWIRE-LED
-Vocabulary Rewire-LED  Rewire-LED Definitions
-: Strip-36          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
-: Strip-48          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
-: Strip-96          40.00 w/e  45 c ; \ .45 27 min  Home Depot only   
-Elect
-
-\ REWIRE-New-ends ( Labor only )
-Vocabulary Rewire-New-ends  Rewire-New-ends Definitions
-: Strip-36          00.00 w/e 100 c ; \ .33 20 min  5K kelvin was 14.00 ea
-: Strip-48          00.00 w/e 100 c ; \ .33 20 min  5K kelvin  
-Elect
-
-\ REWIRE-BV
-Vocabulary Rewire-BV  Rewire-BV Definitions
-: Strip-36           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
-: Strip-48           0.00 w/c  50 c ; \ .33 20 min  5K kelvin
-: Strip-96           0.00 w/c  45 c ; \ .45 27 min  HBH s/b 34 min .57 hr                               
-: Wrap-48            0.00 w/c  45 c ; \ 27 min
-: Wrap-96            0.00 w/c  50 c ; \ 30 min Labor is included in rewire time
-: Vaper-proof-48     0.00 w/c  55 c ; \ 33 min
-: Vaper-proof-96     0.00 w/c  60 c ; \ 36 min  
-: PigTail            0.50 w/c  15 c ;
-Elect
-
-\ REWIRE
-Vocabulary Rewire  Rewire Definitions
-: Strip-48           0.00 w/c  33 c ; \ .33 20 min  5K kelvin
-: Strip-96           0.00 w/c  45 c ; \ .45 27 min  Home Depot only
-Elect
-
-
-Vocabulary LED-tube
-LED-Tube Definitions
-: 48-inch-BV          7.10 w/e 00 c ; \ Time is included with the rewire
-: 96-inch-BV         26.00 w/e 00 c ; \ Wrong
-Elect
-
-Vocabulary LED-PET-tube  \ <<<<<<<<<<<           
-LED-PET-Tube Definitions \ Parts only
-: 48-inch             7.86 w/e 00 c ; \   7.86 e at 1000Bulbs.com
-: 96-inch            19.71 w/e 00 c ; \ 197.10 c at 1000Bulbs.com Kelly x114       
-Elect
-
-Vocabulary LED-tube
-LED-Tube Definitions \ Parts only
-: 48-inch            10.68 w/e 00 c ; \ Universal invoice Feb 2020
-: 96-inch            18.50 w/e 00 c ; \ Amazon top cost
-Elect
-
-Vocabulary LED-sleeve
-LED-sleeve Definitions \ Parts only
-: 48-inch             3.50 w/e 00 c ; \ Online Feb 2020
-: 96-inch            18.50 w/e 00 c ; \ Amazon top cost
-Elect
-
-\ A comment to play with GitHub
-
-Vocabulary LED-Retrofit-can \   JP 6-24-2019
-LED-Retrofit-can definitions
-: 5-inch    14.50 w/e 59 c ;  \ was .25 for Aeron Noe Now 38 minutes
-: 6-inch    14.50 w/e 60 c ;  \ 38 minutes including ladder time
-Elect                         \ 25 minutes each according to Miro
-
-
-| LED-28 Ameri Fluorescent
-Vocabulary LED-28
-LED-28 Definitions       \
-: LED28inc 115.00 w/e  50 c ;
-: 9-in      95.00 w/e  00 c ; \ 9.5 inches by 6.25 inches
-: Cord      10.00 w/e  00 c ;
-: Plug       5.00 w/e  00 c ;
-: Direct-Con 4.00 w/e  00 c ;
-Elect
-\ First saw at Universal in Aug 08 for Dolan job
-
+                                                        
+\v                                                              
+Not in use not correct                                          
+                                                                
 | Warrantee
 Vocabulary Warrantee                                            
            Warrantee Definitions                                
@@ -2577,10 +2584,7 @@ Vocabulary Warrantee
 : 25-year     3 hours [ hours ] electrician ;                   
 : 15-Year     2 hours [ hours ] electrician ;                   
 : 10-year     1 hours [ hours ] electrician ;                   
-Elect                                                           
-\v                                                              
-Not in use not correct                                          
-                                                                
+Elect
 
 | Annual-Safety                                                 
 Vocabulary Annual                                               

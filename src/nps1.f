@@ -890,8 +890,9 @@ Vocabulary THHN  ( Wire fill table two screens down )
 : 400MCM  ( 335 Amps ) 4359.85 w/m 41 m ; \ 335A\400A   2-1/2
 : 500MCM  ( 380 Amps ) 4000.00 w/m 44 m ; \ 380A        3-in
 : 500MCM  ( 380 Amps ) 4765.79 w/m 44 m ; \ 380A        3-in
-: 600MCM  ( 420 Amps ) 7288.32 w/m 48 m ; \ 420A        3-in
-: 750MCM  ( 460 Amps ) 8950.21 w/m 54 m ; \ 460A
+: 600MCM  ( 420 Amps ) 5989.50 w/m 48 m ; \ 420A        3-in was 7288.32
+: 750MCM  ( 460 Amps ) 8950.21 w/m 54 m ; \ 460A    
+
 \ 1-in and up, #4 and up needs a bushing
 ELECT  : copper thhn ;  ( LSI gives a 52 % time discount.)
 
@@ -1739,7 +1740,7 @@ Vocabulary 3P-Disconect-4W                \ Used Sold Keep Have
               3P-Disconect-4W Definitions \ Keep                
 \ 100A          .50 w/e  10 e ;           \              -      
 : 400A       567.50 w/e  10 e ;           \              -      
-Elect \                                                         
+Elect \
 ( Labor included for line & load wire )                         
 
 
@@ -1747,13 +1748,15 @@ Elect \
 Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
 : 20A          3.73 w/e  20 c ; \ 10-2010 SES                                       
 : 15A          20A            ; \                               
-\ 30-50-50-30 22.00 w/e  40 c ; \  18.95 June 07                
-~ 20-20-20-20 22.00 w/e  40 c ; \                               
-: 20A-20A      8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10         
+: 20A-20A      8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
+: 20-20A              20A-20A ;
+: 15-15A              20A-20A ;
 : 15A-2P      10.00 w/e  30 c ; \  6.00  Jan 97  B&K            
 : 20A-2P        15A-2P        ; \    88                         
 : 2P-20A       20A-2P ;
-: 30A         22.58 w/e  30 c ; \ 22.58  Aug 00                 
+: 30-50-50-30 22.00 w/e  40 c ; \  18.95 June 07
+: 20-20-20-20 22.00 w/e  40 c ; \
+: 30A         22.58 w/e  30 c ; \ 22.58  Aug 00
 : 40A           30A           ; \ 13.55  MES  ??when?           
 : 50A           30A           ; \                               
 : 60A           30A           ; \                               

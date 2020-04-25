@@ -1,126 +1,68 @@
-Fishing wall prices                                             
+Fishing wall prices
                                                                 
                                                                 
                                                                 
                                                                 
                                                                 
                                                                 
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-
-
-Labor rate                                          09-30-99 AL
-                82.50 per-hour                                  
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
+                                                 23.60        18.88             
+                                                  4.72         3.14             
+                                              5,304.66                          
+                                              4,248.00     1,485.31             
+                                              1,056.66       528.33             
+                                                  0.00         0.00             
+                                                  0.00                          
                                                                 
                                                                 
 
 
+
+Labor rate                                      
+                180.00 per-hour                                 0.00        0.00          
+                                                
+                                                
 Fish-in-walls                
-                Fish-in-walls                  
-Light           LT                             
-Switch          SW                             
-Plug            PL                             
-Circuit Breaker CB                             
-New wires       Circuit                        
-                Box-only                       
-Double duplex   Quad                           
-Ground fault    GFI                            
-In our box      GFCI                           
-Phone           PH                             
-                CATV                           
+                Fish-in-walls                                   0.00        0.00          
+Light           LT                                              3.00      552.52          
+Switch          SW                                              2.75      507.52          
+Plug            PL                                              2.75      507.52          
+Circuit Breaker CB                                              0.20       44.00          
+New wires       Circuit                                         0.70      146.00          
+                Box-only                                        1.00      186.98          
+Double duplex   Quad                                            0.20       40.94          
+Ground fault    GFI                                             0.25       71.00          
+In our box      GFCI                                            0.05       35.00          
+Phone           PH                                              2.75      507.52          
+                CATV                                            2.75      535.00
+                                                               16.40   $3,134.00          
                                                
-                                               
-                                               
-
-
 Track                        
-                Track 4-ft                     
-                Track 6-ft                     
-                Track 8-ft                     
-                Track 12-ft                    
-                Track Floating                 
-                Track Joiner                   
-                Track Flat-90                  
+                Track 4-ft                                      1.00      206.00          
+                Track 6-ft                                      1.12      241.02          
+                Track 8-ft                                      1.25      375.70          
+                Track 12-ft                                     1.45      478.02          
+                Track Floating                                  0.20       73.62          
+                Track Joiner                                    0.10       29.20          
+                Track Flat-90                                   0.20       57.80
+                                                                5.32   $1,461.36          
                                                
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
 Low Volt Fixtures            
-                Kenn Quadri                    
-                Kenn Astro                     
-                Kenn Barn-Door                 
-                Kenn Gimbal                    
-                Kenn Mono-point                
-                Kenn Cylinder                  
-                Lamp MR-16                     
+                Kenn Quadri                                     0.08       92.40          
+                Kenn Astro                                      0.08       92.40          
+                Kenn Barn-Door                                  0.08       92.40          
+                Kenn Gimbal                                     0.08       56.40          
+                Kenn Mono-point                                 0.20       52.00          
+                Kenn Cylinder                                   0.08       38.40          
+                Lamp MR-16                                      0.08       20.40
+                                                                0.68     $444.40          
                                                
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-
-
 Signaling                    
-                Low-volt                       
-                Button                         
-                Transformer tri-volt           
-                Low-volt Chime-kit             
-                Bell                           
+                Low-volt                                        0.00        0.00          
+                Button                                          0.25       50.40          
+                Transformer tri-volt                            0.20       52.80          
+                Low-volt Chime-kit                              0.50      107.00          
+                Bell                                            0.25       54.70
+                                                                1.20     $264.90          
                                                
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
+Total Estimate                                                         $5,304.66                    
 
