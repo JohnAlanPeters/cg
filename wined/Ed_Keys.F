@@ -265,7 +265,7 @@ defer _Control+W ' close-text is _control+w
         else replace-text  \ Should be named find&replace
         Then ;             \ Ctl+F  But what does it do?
 
-: fstacksave ( -- ) \ remember current edit file position
+: bookmark   ( -- ) \ Remembers the file so when CG runs it opens it as current
   set-ed-defaults entry# s>d (d.) s" Recall" "SetDefault
   set-w32f-default ;
 
@@ -299,7 +299,7 @@ editor
 
 0 value err-vocab-show
   \ true-> show vocab on extend error
-: err_vocab-toggle ( -- )
+: err_vocab-toggle ( -- )  \ dump the current vocabulary words
   err-vocab-show 0= to err-vocab-show ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -392,29 +392,30 @@ editor
       k_F1                          OF      browse-toggle               ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
       k_F2                          OF      settle   grand-total        ENDOF                                               
-      k_F3                          OF      find-text-again             ENDOF
-      k_F3    +k_shift              OF      back-find-text-again        ENDOF
+      k_F3                          OF      save-all-text ( FTA )       ENDOF
+      k_F3    +k_shift              OF      save-all-text  ( bfta )     ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
       k_F4                          OF      settle                      ENDOF
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
       k_F5                          OF      err_vocab-toggle            ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
-      K_f6                          OF      un-add                      ENDOF
+      K_f6                          OF      un-add  ( Rep by settle )   ENDOF
       k_F7                          OF      toggle-insert               ENDOF
-      k_F7 +k_control               OF      browse-toggle               ENDOF
+      k_F7    +k_control            OF      browse-toggle               ENDOF
       k_F8                          OF      revert-text                 ENDOF
       k_F9                          OF      grand-total                 ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
       k_F10                         OF      un-add  ( hyper-link )      ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
-      k_F11                         OF      fstacksave ( memorize )     ENDOF
+      k_F11                         OF      bookmark ( fstacksave )     ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
       k_F12                         OF      vindex#s                    ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( datestamp )
+\                                         ( back-find-all-text )
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 70    Arrow Down, End, Home

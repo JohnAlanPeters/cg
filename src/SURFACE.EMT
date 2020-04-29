@@ -156,8 +156,7 @@ Vocabulary LF-GRS
 :  15A              42.25 w/c  60 m ;
 Elect
 
-
-\  See also  \ele\modules\grs.mod
+\ See also  \ele\modules\grs.mod
 
 \ Alternative names
 : Neat-EMT   Elect (NEAT-EMT) also ;
@@ -169,4 +168,4 @@ Elect
 
 \ FLEX-OPEN-2-SIDES   ." Same as EMT "  neat ;
 
-
+ \ open-1-side  neat-emt  big-ok  fish-in-walls

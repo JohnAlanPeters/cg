@@ -18,12 +18,12 @@ John says
 Electric Definitions
 Vocabulary (FISH-WORK)
 : FISH-IN-WALL     Elect (FISH-WORK)  also ;
-: Flush-in-wall    fish-in-wall ;
-: Fish-in-walls    fish-in-wall ;
-: FISH             fish-in-wall ;
-: Flush-on-walls   fish-in-wall ;
-: Flush-on-ceiling Fish-in-wall ;
-: Flush            fish-in-wall ;
+: Flush-in-wall         fish-in-wall ;
+: Fish-in-walls         fish-in-wall ;
+: FISH                  fish-in-wall ;
+: Flush-on-walls        fish-in-wall ;
+: Flush-on-ceiling      Fish-in-wall ;
+: Flush                 fish-in-wall ;
   (FISH-WORK) Definitions
 : Fire-box           50.00 w/e  70 c ; \ Wires in the way
 : Cans               60.00 w/e 300 c ; \ For Boris on the Green/Webster Mjellem
@@ -34,9 +34,7 @@ Vocabulary (FISH-WORK)
 : Can                Cans            ;
 : LT-Hard           626.00 w/c 350 c ; \ Thru joists, no attic 
 ` LT                626.00 w/c 300 c ; \ module 2   10.81
-: Light  LT ;
-` LT-Average        615.00 w/c 225 c ;
-` LT-Medium         615.00 w/c 200 c ; \ Romex.mod  10.88 1/2 OFF
+` LT-Medium         615.00 w/c 225 c ; \ Romex.mod  10.88 1/2 OFF
 ` LT-Easy           615.00 w/c 100 c ;
 : PS-Medium                LT-medium ; \
 ` PS-Easy           615.00 w/c 100 c ;
@@ -46,14 +44,14 @@ Vocabulary (FISH-WORK)
 ` PL-Medium         615.00 w/c 175 c ; \ See note on screen zero
 ` PL-Easy           615.00 w/c 110 c ; \ 9.00
 ` PL                626.00 w/c 275 c ; \ Prox 2 hrs by Lani & Fred
-: Plug  PL ;
+: Plug                            PL ;
 ` PL-Very-easy      260.00 w/c  73 c ; \ Apr 09
 : LT-Very-easy        PL-very-easy   ; \ Jan 95  5/8 hr
 : SW-Very-easy        PL-very-easy   ; \ Jan 95
 ` PL-very-hard      626.00 w/c 375 c ; \ Oct 04
 : SW-hard           861.00 w/c 320 c ; \ Feb 96 inc mud, ground
 : SW                626.00 w/c 275 c ;
-: Switch  SW ;
+: Switch                          SW ;
 : SW-Medium         626.00 w/c 175 c ;
 : SW-Easy           626.00 w/c 100 c ;
 : SW-Under                   SW-easy ;

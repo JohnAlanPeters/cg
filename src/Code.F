@@ -304,7 +304,6 @@ small-parts  \ default
 : Good-markup              1.33 2To markup ; \ <<<<<<
 : w/s+tax+15%+10%          1.33 2To markup ; \ <<<<<<
 : Parts+1.33               1.33 2to markup ;
-
 : large-parts     1.20 2to markup ; ( -- )
 : Parts+10%       1.20 2to markup ;  \ Whole sale +tax, +10% profit, no OH
 : Parts-ten       1.20 2to markup ;
@@ -312,18 +311,17 @@ small-parts  \ default
 : Low-markup      1.20 2to markup ;
 : w/s+tax+10%     1.20 2to markup ; \ <<<<
 : Parts+1.20      1.20 2to markup ;
-
 : Wholesale-parts 1.09 2to markup ; \ Whole sale plus tax only, no profit
 : Inc-tax         1.09 2to markup ; \ actually 8.50 or 1.085
 : w/s+tax-only    1.09 2To markup ; \ <<<<
 : Parts+8.5       1.09 2to markup ;
-
+: Parts+30%       1.30 2to markup ;
 : No-markup       1.00 2to markup ; \ Wholesale price only beforee sales tax
 : Pretax-parts    1.00 2to markup ; \ before sales tax. no tax, no profit, no OH
 : w/s-parts       1.00 2to markup ;
 : w/s-pre-tax     1.00 2to markup ; \ <<<<
 : Parts+00        1.00 2to markup ;
-: Parts+1.00      1.00 2to markup ;              
+: Parts+1.00      1.00 2to markup ;
 : Wholesale       1.00 2to markup ;
 
 : IncWholeSaleSub  ( d -- )

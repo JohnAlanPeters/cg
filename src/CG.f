@@ -118,7 +118,6 @@ include nes-compiled.f  \ colon defs with multiple modules
 forth definitions
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
-Include tt.f             \ Developint PP numbering
 cd webinterpret
 include socksrvr.f
 cd ..

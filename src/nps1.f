@@ -875,9 +875,9 @@ Vocabulary THHN  ( Wire fill table two screens down )
 : #10        280.00 w/m   8 m ; \                     30A 1/2
 : #8         360.00 w/m  10 m ; \                     50A 1/2
 : #6         530.00 w/m  12 m ; \                     65A 3/4
-: #4        1019.80 w/m  14 m ; \ 81 cents   85A\100A   1-in  March 2014          
-: #3        1140.00 w/m  16 m ; \
-: #2        1470.00 w/m  18 m ; \ 1200.65   115A\125A   1-1/4
+: #4        1019.80 w/m  14 m ; \            85A\100A   1-in  March 2014
+: #3        1140.00 w/m  16 m ; \ These prices are ok, maybe a bit high.
+: #2        1470.00 w/m  18 m ; \ 1233.00   115A\125A   1-1/4 Average April 2020
 : #1        1940.00 w/m  20 m ; \ 1300.00   130A\150A   1-1/4
 : 1/0     ( 150 Amps ) 1282.89 w/m 22 m ; \ 150A\175A   1-1/4
 : 2/0     ( 175 Amps ) 2760.00 w/m 24 m ; \ 175A\200A   1-1/2
@@ -1442,21 +1442,22 @@ Vocabulary 4-Oct                          \ Used Sold Keep Have
 ` Ext        191.54 w/c  20 c ; \ 1.36 B&K Mar 95   4    4    4 
 ` Pancake    156.03 w/c  40 c ; \ 205-272                2    8 
 ` LCE        237.66 w/c  51 c ; \ 4074                   2   12 
-` 1-Hub      396.34 w/c  60 c ; \ 050-039           2    4      
-` 2-Hub      492.59 w/c  80 c ; \ 050-039                1    7 
-` 3-Hub      590.60 w/c 100 c ; \ 050-039           2    1    1 
-` BL          45.86 w/c  10 c ; \ 205-275           7    6   22 
-` Painted-BL 150.00 w/c  10 c ; \                               
-` Cast-cover 400.00 w/c  10 c ; \ 625-009           4    4    6 
-` PR         156.00 w/c  15 c ; \                               
-: Strong-box  14.00 w/c  40 c ; Elect  \ Jul 07                 
-
+` 1-Hub      396.34 w/c  60 c ; \                   2    4
+` 2-Hub      492.59 w/c  80 c ; \                        1    7
+` 3-Hub      590.60 w/c 100 c ; \                   2    1    1
+` BL          45.86 w/c  10 c ; \                   7    6   22
+` Painted-BL 150.00 w/c  10 c ; \
+` Cast-cover 400.00 w/c  10 c ; \ 625-009           4    4    6
+` PR         156.00 w/c  15 c ; \
+: Strong-box  14.00 w/c  40 c ; Elect  \ Jul 07
+: Fan-box     20.00 w/c  16 c ; \ 10 minutes for fan support box
+                                \ Prerequsite regular LT
 
 | 5S   (4-11/16) BOX      C 205-279  AR-3           08-17-08 AL
 Vocabulary 5S                             \ Used Sold Keep Have 
 5S  definitions                                                 
 ` BOX        292.00 w/c  40 c ; \ 5SDW-1/2  1.92 June 07        
-` VB         300.00 w/c  40 c ; \ See below                     
+` VB         300.00 w/c  40 c ; \ See below
 ` VB-concent 455.00 w/c  40 c ; \ 9-93                          
 ` Ext        408.85 w/c  20 c ; \ 1-1/2 deep                    
 ` BL         100.86 w/c  10 c ; \ 0.62 Aug 08                   
@@ -1746,17 +1747,16 @@ Elect \
 
 \ C-B 1/3      Low prices C 425-035a CB-5         F 06-12-07 AL
 Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
-: 20A          3.73 w/e  20 c ; \ 10-2010 SES                                       
-: 15A          20A            ; \                               
-: 20A-20A      8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
-: 20-20A              20A-20A ;
-: 15-15A              20A-20A ;
-: 15A-2P      10.00 w/e  30 c ; \  6.00  Jan 97  B&K            
-: 20A-2P        15A-2P        ; \    88                         
-: 2P-20A       20A-2P ;
+: 20A          4.57 w/e 20 c  ; \ Lows Apr 2020
+: 15A          20A            ; \
+: 20-20A       8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
+: 15-15A       20-20A        ;
+: 15A-2P       10.00 w/e 30 c ; \  6.00  Jan 97  B&K
+: 20A-2P       15A-2P         ; \    88
+: 2P-20A       20A-2P         ;
 : 30-50-50-30 22.00 w/e  40 c ; \  18.95 June 07
 : 20-20-20-20 22.00 w/e  40 c ; \
-: 30A         22.58 w/e  30 c ; \ 22.58  Aug 00
+: 30A         10.78 w/e  30 c ; \ 22.58  Aug 00  10.78 April 2020
 : 40A           30A           ; \ 13.55  MES  ??when?           
 : 50A           30A           ; \                               
 : 60A           30A           ; \                               
