@@ -217,4 +217,15 @@ forth
   dup >r file-append drop
   r@ write-file drop r> close-file drop ;
 
+: (rename-file) ( <filename> <newname> -- )
+  { \ RenameFrom$ RenameTo$ -- }
+  MAXSTRING LocalAlloc: RenameFrom$
+  MAXSTRING LocalAlloc: RenameTo$
+  /parse-s$ count RenameFrom$  place
+  /parse-s$ count RenameTo$ place cr
+  RenameFrom$ count RenameTo$ count rename-file
+  if ."  Failed" then ;
+
+: ren ( <fname> <newname> -- )   \ rename a file
+  (rename-file) ;
 
