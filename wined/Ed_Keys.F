@@ -276,6 +276,12 @@ defer _Control+W ' close-text is _control+w
      s" " s" Recall"  "SetDefault
   else drop then set-w32f-default ;
 
+: vbmark ( -- )  \ after bookmarking, reopen the file; don't delete the bookmark
+  set-ed-defaults
+  s" Recall" "GetDefaultValue
+  if dup to entry# SetStack: EditWindow hyper-open
+  else drop then set-w32f-default ;
+
 \ ** add virtual screen #s to a bid or module
 : index$ ( n -- addr len )  \ index# as a string
   s>d <# #S #> ;

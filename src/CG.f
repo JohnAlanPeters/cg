@@ -166,12 +166,15 @@ forth also forth definitions editor
 : vvv ( <word> -- )   \ open file in browse mode in editor
    true to defer-browse view ;
 
-: V  \ To the console for <word> not the editor
+: Vcons  ( <word> -- )   \ open file in editor, but focus in console
    in-web?
    if vv-web-instructions
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
          focus-console false to invkloop
    then ;
+
+: V ( -- )  \ make bookmarked file the current file
+  [ editor ] vbmark ;
 
 : dir-modules
   s" \cg\modules\*.*" print-dir-files ;
