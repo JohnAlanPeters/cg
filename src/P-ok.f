@@ -26,7 +26,7 @@ Vocabulary ELECTRIC
 forth
 : ELECT
    Only Forth Also Electric Also definitions  ;
-: ELE elect ;
+: ELE ELECT ;
 : ELECTRIC-ORDER            Elect ;
 : DEFS       also definitions ;
 

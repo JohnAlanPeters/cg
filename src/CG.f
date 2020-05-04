@@ -166,7 +166,7 @@ forth also forth definitions editor
 : vvv ( <word> -- )   \ open file in browse mode in editor
    true to defer-browse view ;
 
-: Vcons  ( <word> -- )   \ open file in editor, but focus in console
+: VVVV   ( <word> -- )   \ open file in editor, but focus in console
    in-web?
    if vv-web-instructions
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
