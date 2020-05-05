@@ -415,10 +415,10 @@ editor
       k_F10                         OF      un-add  ( hyper-link )      ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
-      k_F11                         OF      bookmark ( fstacksave )     ENDOF
+      k_F11                         OF      vindex#s ( fstacksave )     ENDOF
       k_F11   +k_shift              OF      next-link                   ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      vindex#s                    ENDOF
+      k_F12                         OF      bookmark                    ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( datestamp )
 \                                         ( back-find-all-text )

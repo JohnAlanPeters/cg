@@ -412,7 +412,10 @@ small-parts  \ default
   then  clear-totals cr ;
 
 : TOT total ; \ another attemampt as a shortcut
+
 : TT reset-stacks  total ; \ shortcut. The spell checker changed TT into "To"
+
+: HEADLINE cr headline-con ;
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
