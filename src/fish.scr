@@ -81,7 +81,7 @@ Vocabulary (FISH-WORK)
 : LAN-medium         20.00 w/e 200 c ; \ Guess
 : LAN-easy           20.00 w/e 100 c ; \ Guess
 : LAN-Hard           20.00 w/e 400 c ; \ Guess
-: Strong-Box         25.00 w/e 100 c ; \ 1 hr el
+: Strong-Box         25.00 w/e  25 c ; \ 15 minutes
 : SP-hard            10.00 w/c 275 c ;
 : SP                              PL ; \  800.00 w/c 275 c ;
 : SP-medium                PL-medium ; \  800.00 w/c 175 c ;

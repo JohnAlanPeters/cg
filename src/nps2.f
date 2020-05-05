@@ -91,14 +91,14 @@ Elect
 Vocabulary DEVICE-220                                           
            DEVICE-220  definitions                              
 : S3          14.62 w/e  25 c ; \ expensive                     
-` Dryer     1400.00 w/c  20 c ; \ 604-357                       
-: Range         dryer ;                                         
-: NEMA14-50R    dryer ;                                         
-` SW-2P     5555.55 w/e  20 c ; \ 600-14                        
-` 30A-4W    2000.00 w/c  20 c ; \ Guess!                        
-` 50A-4W    2000.00 w/c  20 c ; \ Guess!                        
-` S3-277V   1400.00 w/c  20 c ; \                               
-` PR-220V    900.00 w/c  20 c ; \ Guess!                 2      
+` Dryer     1400.00 w/c  20 c ; \ 604-357
+: Range         dryer ;
+: NEMA14-50R    dryer ;
+` SW-2P     5555.55 w/e  20 c ; \ 600-14
+` 30A-4W    2000.00 w/c  33 c ; \
+` 50A-4W    2000.00 w/c  33 c ; \
+` S3-277V   1400.00 w/c  20 c ; \
+` PR-220V    900.00 w/c  20 c ; \ Guess!                 2
 ` 4W-220-set 4500.00 w/c 20 c ; \ Coffee T-L is cheeper SES     
 Elect                                                           
 
@@ -559,22 +559,15 @@ Elect
 
 
 Vocabulary LED-tube
-LED-Tube Definitions
-: 48-inch-BV          7.10 w/e 00 c ; \ Time is included with the rewire
-: 96-inch-BV         26.00 w/e 00 c ; \ Wrong
-Elect
-
-Vocabulary LED-PET-tube  \ <<<<<<<<<<<           
-LED-PET-Tube Definitions \ Parts only
-: 48-inch             7.86 w/e 00 c ; \   7.86 e at 1000Bulbs.com
-: 96-inch            19.71 w/e 00 c ; \ 197.10 c at 1000Bulbs.com Kelly x114       
-Elect
-
-Vocabulary LED-tube
 LED-Tube Definitions \ Parts only
 : 48-inch            10.68 w/e 00 c ; \ Universal invoice Feb 2020
 : 96-inch            18.50 w/e 00 c ; \ Amazon top cost
+: 48-inch-BV          7.10 w/e 00 c ; \ Time is included with the rewire
+: 96-inch-BV         26.00 w/e 00 c ; \ Wrong
+: 48-inch-PET         7.86 w/e 00 c ; \   7.86 e at 1000Bulbs.com
+: 96-inch-PET        19.71 w/e 00 c ; \ 197.10 c at 1000Bulbs.com Kelly x114
 Elect
+
 
 Vocabulary LED-sleeve
 LED-sleeve Definitions \ Parts only
@@ -582,7 +575,6 @@ LED-sleeve Definitions \ Parts only
 : 96-inch            18.50 w/e 00 c ; \ Amazon top cost
 Elect
 
-\ A comment to play with GitHub
 
 Vocabulary LED-Retrofit-can \   JP 6-24-2019
 LED-Retrofit-can definitions
@@ -819,7 +811,14 @@ Elect              \
 \ 30 hours per c  is 18 minutes to hang it.                     
 Elect                                                                
 
-: LED-tube ; \ viewable word
+\ LED ; \ viewable word
+\ See also LED-LAMP  LED-CANS  LED-CAN  LED-CONVERT  EXIT-LED  LED-TUBE
+\ LED-UC  LRD-RETROFIT-CAN  REWIRE-LED  EXIT-LED  LED-UC
+
+Vocabulary LED  LED definitions
+: Disk         7.00 w/e  40 c ; \ Guesses AZ is 5 or 6 ea.
+Elect
+
 
 | LAMP  Bulbs 1/3           630-022a FI-14
 Vocabulary Lamp          Lamp Definitions
@@ -1548,22 +1547,23 @@ Elect
                                                                 
 
 | BLOCKAGE                  900-030  Experience     11-20-07 AL
-Vocabulary BLOCKAGE    BLOCKAGE definitions     \ Sold Keep Ha  
-` Joist         .00 w/c  20 c ; \ 12 min                        
-` Easy          .00 w/c  20 c ; \ 12 min                        
-` Wall          .00 w/c  25 c ; \ 15 min                        
-` Stud          .00 w/c  30 c ; \ 18 min                        
-` Medium        .00 w/c  30 c ; \ 20 min                        
-` Fire-Block    .00 w/c  45 c ;  : Stucco medium ;              
-` Corner        .00 w/c  50 c ;  : Double-wall .0 w/c 1 e ;     
-` Diagonal      .00 w/c  50 c ;  : 3-5/8-hole easy ;            
-` Hard          .00 w/c  50 c ;  : Pipe      hard ;             
-: Rock-ceiling           hard ;  : Ceiling corner ;             
-` Plate-easy    .00 w/c  50 c ;  : 3-5/8-sheer hard ;           
-` Floor-Plate   .00 w/c  75 c ;  : Roof-Plate    Floor-plate ;
+Vocabulary BLOCKAGE    BLOCKAGE definitions     \ Sold Keep Ha
+: Joist         .00 w/c  20 c ; \ 12 min
+: Easy          .00 w/c  20 c ; \ 12 min
+: Wall          .00 w/c  25 c ; \ 15 min
+: Fresh-stud    .00 w/c  14 c ; \  8 minutes
+: Stud          .00 w/c  30 c ; \ 18 min
+: Medium        .00 w/c  30 c ; \ 20 min
+: Fire-Block    .00 w/c  45 c ;  : Stucco medium ;
+: Corner        .00 w/c  50 c ;  : Double-wall .0 w/c 1 e ;
+: Diagonal      .00 w/c  50 c ;  : 3-5/8-hole easy ;
+: Hard          .00 w/c  50 c ;  : Pipe      hard ;
+: Rock-ceiling           hard ;  : Ceiling corner ;
+: Plate-easy    .00 w/c  50 c ;  : 3-5/8-sheer hard ;
+: Floor-Plate   .00 w/c  75 c ;  : Roof-Plate    Floor-plate ;
 : Plate  Floor-plate ;
-` Floor-hard    .00 w/c 100 c ;  : Rafter  Joist ;              
-` Brick         .00 w/c 200 c ; Elect
+: Floor-hard    .00 w/c 100 c ;  : Rafter  Joist ;
+: Brick         .00 w/c 200 c ; Elect
 
 
 
@@ -2591,4 +2591,3 @@ Vocabulary Annual
 Annual Definitions                                              
 : 25-year      25 hours [ hours ] electrician ;                 
 : 5-Year        5 hours [ hours ] electrician ;                 
-: 1-year        1 hours [ hours ] electrician ;                 
