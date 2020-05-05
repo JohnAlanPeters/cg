@@ -160,10 +160,10 @@ forth also forth definitions editor
   else vv-con
   then ;
 
-: VV  ( <word> -- ) \ Puts you in the editor for <word>
+: VVV  ( <word> -- ) \ Puts you in the editor for <word>
    view ; \ Puts you in the editor
 
-: vvv ( <word> -- )   \ open file in browse mode in editor
+: vv ( <word> -- )   \ open file in browse mode in editor
    true to defer-browse view ;
 
 : VVVV   ( <word> -- )   \ open file in editor, but focus in console

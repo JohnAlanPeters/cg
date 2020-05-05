@@ -541,28 +541,24 @@ EMT-90          Definitions
 : 2-in       868.00 w/c  90 c ; \                               
 : 2-1/2     2000.00 w/c  90 c ; \ Guess in 2000                 
 : 3-in      3837.00 w/c 125 c ; \ 1989 prices                   
-ELECT  \                                                        
-                                                                
-                                                                
-                                                                
+ELECT  \
 
 
 % STRAP-2-EMT             B 010-023                 88-10-02 AEC
-Vocabulary Strap-2-EMT                    \ Used Sold Keep Have 
-                         STRAP-2-EMT Definitions  \             
-: 1/2          6.92 w/c   0 c ; \                       15  200 
-: 3/4          8.91 w/c   0 c ; \                       15   21 
-: 1-in        12.76 w/c   0 c ; \                   3   10   20 
-~ 1-1/4       19.94 w/c   0 c ; \                       12   12 
-~ 1-1/2       24.62 w/c   0 c ; \                       10   11 
-~ 2-in        33.78 w/c   0 c ; \                       10   10 
-~ 2-1/2       73.89 w/c   0 c ; \                        -      
-~ 3-in        90.81 w/c   0 c ; \                        -      
-~ 3-1/2      133.21 w/c   0 c ; \                        -      
-~ 4-in       147.39 w/c   0 c ; \                        -      
-Elect \                                                         
-\ (One hole costs twice as much)                                
-                                                                
+Vocabulary Strap-2-EMT                    \ Used Sold Keep Have
+                         STRAP-2-EMT Definitions  \
+: 1/2          6.92 w/c   0 c ; \                       15  200
+: 3/4          8.91 w/c   0 c ; \                       15   21
+: 1-in        12.76 w/c   0 c ; \                   3   10   20
+~ 1-1/4       19.94 w/c   0 c ; \                       12   12
+~ 1-1/2       24.62 w/c   0 c ; \                       10   11
+~ 2-in        33.78 w/c   0 c ; \                       10   10
+~ 2-1/2       73.89 w/c   0 c ; \                        -
+~ 3-in        90.81 w/c   0 c ; \                        -
+~ 3-1/2      133.21 w/c   0 c ; \                        -
+~ 4-in       147.39 w/c   0 c ; \                        -
+Elect \
+\ (One hole costs twice as much)
 
 
 | STRAP                   B 010-024                 04-25-09    
