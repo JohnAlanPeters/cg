@@ -398,8 +398,8 @@ small-parts  \ default
      78 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
-  00 >ccol  ." Count"
-  18 >ccol  ." Part"
+  16 >ccol  ." Count"
+  26 >ccol  ." Part"
   38 >ccol  ." Parts"
   48 >ccol  ." Time"
   58 >ccol  ." Labor"
