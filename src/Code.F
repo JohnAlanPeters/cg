@@ -488,13 +488,14 @@ create upath 250 allot
 : CAB { \ to$ -- <fname> }   \ copies from OneDrive bids\template to a new file
   s" bids\" +1drvdir over +null "chdir
   max-path localAlloc: to$
-  /parse-s$ count to$ place
+  upath count to$ place  \ path to 1drive bids
+  /parse-s$ count to$ +place
   to$ $open     \ don't copy if already exists
   if to$ +null to$ 1+
     s" bids\template-mini" +1drvdir drop dup +null
     Call CopyFile 0= abort" The COPY Failed!"
   else close-file then to$ count "+open-text
-      9 to cursor-line reEdit ;
+    9 to cursor-line reEdit ;
 
 : to-bids ( -- )  \ open -bids in editor
   s" bids\-bids" +1drvdir "open-text reEdit  ;

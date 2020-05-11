@@ -347,8 +347,8 @@ defer vtop?
   Color: LTGRAY    new-color linesColor
   Color: BLACK     new-color binaryColor
   109 155 241 rgb  new-color OmarginColor       \ browse margin color: blue
-  128 225 128 rgb  new-color ImarginColor       \ insert margin color: green
-  240 128 128 rgb  new-color BmarginColor       \ browse margin color
+  128 225 128 rgb  new-color BmarginColor       \ insert margin color: green
+  240 128 128 rgb  new-color ImarginColor       \ browse margin color
 
 defer trailBG  ' normalBG is trailBG
 defer selectBG ' normalBG is selectBG
