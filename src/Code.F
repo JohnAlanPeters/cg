@@ -479,28 +479,28 @@ create upath 250 allot
   dir->file-name rot drop 
   s" \Users\" upath place upath +place s" \" upath +place ;
 
-: onedrivedir ( -- addr len )
+: OneDriveDIR ( -- addr len )
   userdir s" OneDrive\" upath +place upath count ;
 
-: +1drvdir ( addr len -- a2 l2)  \  filepath in onedrive
+: OneDrive  \ +1drvdir ( addr len -- a2 l2)  \  filepath in OneDrive
   onedrivedir 2drop upath +place upath count ;
 
 : CAB { \ to$ -- <fname> }   \ copies from OneDrive bids\template to a new file
-  s" bids\" +1drvdir over +null "chdir
+  s" bids\" OneDrive over +null "chdir
   max-path localAlloc: to$
   /parse-s$ count to$ place
   to$ $open     \ don't copy if already exists
   if to$ +null to$ 1+
-    s" bids\template-mini" +1drvdir drop dup +null
+    s" bids\template-mini" OneDrive drop dup +null
     Call CopyFile 0= abort" The COPY Failed!"
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
 
 : to-bids ( -- )  \ open -bids in editor
-  s" bids\-bids" +1drvdir "open-text reEdit  ;
+  s" bids\-bids" OneDrive "open-text reEdit  ;
 
 : >bids ( line# -- )             \ open -bids to line# given
-  s" bids\-bids" +1drvdir "open-text
+  s" bids\-bids" OneDrive "open-text
   find-buf off
   0 swap to-find-line  refresh-line ;
 

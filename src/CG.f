@@ -97,7 +97,6 @@ Include CODE.f          \ EXTEND the prices.
 Include P-OK.F          \ ELECT Vocabulary created, only load one once!
 Include EXTEND-PRICES.F \ Used by Ctrl+E
 Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
-\ Include NPS.F           \ The database of prices and times
 Include nps1.f
 Include nps2.f
 Include OPEN-1S.SEQ     \ Walls are open-1-side
@@ -114,7 +113,7 @@ Include plans.scr
 Include big-ok.scr
 Include fish.scr
 Include Ampier.scr
-include nes-compiled.f  \ colon defs with multiple modules
+\ include nes-compiled.f  \ colon defs with multiple modules
 forth definitions
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
@@ -160,21 +159,23 @@ forth also forth definitions editor
   else vv-con
   then ;
 
-: VVV  ( <word> -- ) \ Puts you in the editor for <word>
-   view ; \ Puts you in the editor
+: V ( -- )  \ make bookmarked file the current file
+  [ editor ] vbmark ;
 
 : vv ( <word> -- )   \ open file in browse mode in editor
    true to defer-browse view ;
 
-: VVVV   ( <word> -- )   \ open file in editor, but focus in console
+: VVV  ( <word> -- ) \ Puts you in the editor for <word>
+   view ;
+
+: VVVV  ( <word> -- )   \ open file in editor, but focus in console
    in-web?
    if vv-web-instructions
    else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
          focus-console false to invkloop
    then ;
 
-: V ( -- )  \ make bookmarked file the current file
-  [ editor ] vbmark ;
+: VVVVV  ." -*-*-*-* Many V's are to many for me to handle! :-)" ;
 
 : dir-modules
   s" \cg\modules\*.*" print-dir-files ;
