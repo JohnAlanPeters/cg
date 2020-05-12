@@ -140,11 +140,14 @@ forth also forth definitions editor
 
 : oo ['] (oo) catch 0<> if message then  ;  \ file name Must be in proper dir
 
-0 value defer-browse  \ wait to apply until file is current in editor
+0 value defer-margin  \ wait to apply until file is current in editor
 
 : VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   .viewinfo count "+open-text 0 swap 1-
-   defer-browse if true to browse? false to defer-browse then to-find-line refresh-line reEdit ;
+  defer-margin 1 = if true to browse?  else
+  defer-margin 2 = if true overstrike ! false to browse? else
+  defer-margin 3 = if false overstrike ! false to browse? then then
+  then to-find-line refresh-line reEdit ;
 
 : VV-web-instructions ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
@@ -163,10 +166,10 @@ forth also forth definitions editor
   [ editor ] vbmark ;
 
 : vv ( <word> -- )   \ open file in browse mode in editor
-   true to defer-browse view ;
+   1 to defer-margin view ;
 
 : VVV  ( <word> -- ) \ Puts you in the editor for <word>
-   view ;
+   3 to defer-margin view ;
 
 : VVVV  ( <word> -- )   \ open file in editor, but focus in console
    in-web?
