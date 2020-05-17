@@ -149,7 +149,8 @@
         IF                                 \ cursor may be to right of line end
                 get-cursor-line
                 cur-buf @ cursor-col max "LCLIP" cur-buf !      \ extend line
-                put-cursor-line                                 \ if needed
+                \ put-cursor-line                                 \ if needed
+                cur-buf LCOUNT cursor-line #line!  \ no trim blanks
         THEN
         CF_TEXT call GetClipboardData dup 0=
         IF      beep clean-paste        EXIT    THEN
