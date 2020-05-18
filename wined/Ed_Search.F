@@ -487,7 +487,8 @@ FALSE value find-label?     \ are we searching for a label?
                 to cursor-line
                 to cursor-col
                 0 HPosition: DocWindow
-                cursor-on-screen
+                \ cursor-on-screen   \ next line to center cursor line
+                cursor-line screen-rows 2 / - VPosition: DocWindow
                 cursor-col found_len + screen-cols 3 - - HPosition: DocWindow
                 cursor-line dup to hlst to hled
                 cursor-col to hcst
