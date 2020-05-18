@@ -45,6 +45,7 @@ This code was created fresh for the WinCG version.
     Begin
       extstop? true =                    \ stop at '\s' or blank
     While   get-cursor-line              \ get current line into buffer
+     cursor-line loadline !
      -1 to dp-location
      clear-sub
      buf-blank                           \ blank pad the buffer
