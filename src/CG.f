@@ -46,7 +46,7 @@ variable conscol -1 conscol !  \ column for output in current console line
 0 value invkloop  \ so we know when we are editing (in view-key-loop)
 0 0 2value last-total  \ has to be remembered before clearing
 defer total-est   \ so we can put total on status line
-: _xit  false to invkloop focus-console cr ." ok" quit ;
+: _xit loadline off false to invkloop focus-console cr ." ok" quit ;
 
 cd ..
 current-dir$ setfdir
@@ -207,7 +207,7 @@ forth also forth definitions editor
     Title-CG   current-dir$ setfdir
     -1 to dp-location \ s" \cg\bids" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
-    editor overstrike on
+    editor overstrike on  loadline off
     elect
     cmdline 0= swap 0= or
     if file-to-edit$ off  wined

@@ -73,7 +73,7 @@ This code was created fresh for the WinCG version.
        IF WORD-RIGHT THEN
        1 +to cursor-line                 \ to total line         
     then           R-O                   \ regular output to console
-    refresh-screen ;
+    refresh-screen loadline off ;
 
 : Flat-rate ( -- )    \ call before extending to only show single total column
   false to partscolshow false to timecolshow false to unitcolshow ;
