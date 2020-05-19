@@ -139,6 +139,7 @@ forth also forth definitions editor
 
 
 : oo ['] (oo) catch 0<> if message then  ;  \ file name Must be in proper dir
+: OPEN  OO ;
 
 0 value defer-margin  \ wait to apply until file is current in editor
 
