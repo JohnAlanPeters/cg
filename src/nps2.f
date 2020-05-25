@@ -338,13 +338,17 @@ PLATE-SS     definitions          \
 ELECT                                                           
 : SS-PLATE  plate-ss ;                                          
 
+Vocabulary Disconnect
+           Disconnect definitions
+: Spa-50A     100.00 w/c 100 c ; \ Jerrus price and time
+: Spa-30A      85.00 w/c  95 c ; \ JP guesses
+
 : Life ;  \ Viewable marker
 
-| LIFE-SAFETY  Exit-lights  685-015  LL-00        F 05-08-09
+| LIFE-SAFETY  Exit-lights  685-015  LL-00
 Vocabulary LIFE-SAFETY
-LIFE-SAFETY definitions \ Sold Keep Have
-
-: Exit-sign-light             61.00 w/e   25 c ; \ UE Acadamy fire March 2020                   
+           LIFE-SAFETY definitions \ Sold Keep Have
+: Exit-sign-light             61.00 w/e   25 c ; \ UE Acadamy fire March 2020
 : Exit-Ceiling                32.00 w/e   50 c ; \   "
 : Emergency-light             47.00 w/e   25 c ; \
 : Exit-sign-light-ceiling    120.00 w/e   50 c ; \

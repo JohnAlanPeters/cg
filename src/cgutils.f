@@ -181,11 +181,6 @@ editor
 
 hidden
 
-: words-WEB-msg cr cr  ( -<optional_name>- ) \ WORDS partial-string will focus the list
-  ." Be careful with using the Forth word WORDS as it does not have START/STOP" cr
-  ." FORTH WORDS takes a long time. (56 sec.)" cr
-  ;
-
 : list  ( -<optional_name>- ) \ WORDS partial-string will focus the list
                 0 to words-cnt
                 words-pocket off
