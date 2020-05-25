@@ -148,84 +148,86 @@ Vocabulary RT-Plate
 `      FLAP  467.14 w/c  10 c ; \ 601-081                       
 ` 4x4        214.00 w/c  10 c ; \ 136                           
 ` 2x4        106.00 w/c  10 c ; \ 96 cents in July 08           
-` SW-SW      900.00 w/c  20 c ; \ 600-185                       
-` 2X4-CAST   400.00 w/c  20 c ; \                               
-Elect                                                           
-: plate-rt RT-PLATE ;                                           
+` SW-SW      900.00 w/c  20 c ; \ 600-185
+` 2X4-CAST   400.00 w/c  20 c ; \
+Elect
+: plate-rt RT-PLATE ;
 
 
 
 \ DIMMER 1/7              C 600-321  E-3          F 10-01-08
 Vocabulary Dimmer  \ CAUTION Sometimes there is no ground
-Dimmer definitions              \ was 50 hrs per C
-: DVCL-153    29.00 w/e  25 c ; \ 24.00 June 2019
-: DV-600      21.00 w/e  25 c ; \ 19.97 June 2019 26.39 Dec 2010  side slider
-: DV-603      30.00 w/e  25 c ; \ 25.16 UE  29.97 Lows
-: DV-600VA    35.00 w/e  51 c ; \ Diva  Deco + mini side slider
-: DV-603VA    40.00 w/e  51 c ; \ Diva  Deco + mini side slider
-~ DV-103P     70.00 w/e  35 c ; \ 69.35 July 2007
-~ DVLV-600    39.23 w/e  51 c ; \ Jul 07
-: MACL-153P   24.58 w/e  25 c ; \ Maestro led May 2019  Grey same        JAPP  
-~ MA-1000     70.00 w/e  35 c ; \ Maestro LV 1000  Lutron
-: MALV-600    55.00 w/e  35 c ; \ Maestro LV 600w  Lutron
-: MA-600      27.00 w/e  35 c ; \ Maestro 600w 26.00 Dimms both
-: MA-R        18.75 w/e  30 c ; \ Maestro Remote  The other end
-: AY-600      13.00 w/e  25 c ; \ Universal Jun 96 AYH
-: OS-600       29.00 w/e  25 c ; \ Big-rocker  LOL = City, Bay
-: OS-1000      50.00 w/e  35 c ; \ Big-rocker OnSet
-: OS-3         16.00 w/e  25 c ; \ Deco-rocker
-: Nova-T       27.00 w/e  30 c ; \ Feb 99  City Elect
-: NovaT-1000   55.00 w/e  30 c ; \ was 74.25 now 53.82
-: NovaT-LV600  91.80 w/e  30 c ; \ Feb 99  City Elect
-: NovaT-LV1000 117.45 w/e 30 c ; \ Feb 99  City Elect
-: D-600       10.00 w/e  25 c ; \ Knob preset  Guess price * @  
-: D-603       13.00 w/e  25 c ; \ Knob preset  Guess price * @ 
-: AY-600      13.00 w/e  25 c ; \ Universal Jun 96 AYH
-\ AY-1000     25.00 w/e  25 c ; \ Guess price
-: AY-603      22.00 w/e  30 c ; \ Ariadni preset  Guess price
-\ AYLV-600    25.00 w/e  30 c ; \ Ariadni LV   same as VA
-: MP-1500    160.00 w/e  25 c ; \ Apr 94 at City Lights
-: MP-2000    194.00 w/e  25 c ; \ Apr 94 at City Lights
-: ZP-600      16.00 w/e  25 c ; \ 15.00 City, Bay matches Dec 94
-: ZP-600VA    39.00 w/e  25 c ; \ 30.51 S2 or S3 Neutral req LOL
-: ZP-1000     52.00 w/e  25 c ; \ Apr 94 51.00 Lightolier
-: ZP-R         9.00 w/e  40 c ; \ Lightolier  Time to figure out
-: OS-600      29.00 w/e  25 c ; \ Big-rocker  LOL=City, Bay
-: OS-1000     50.00 w/e  35 c ; \ BOTH ENDS  Onset LED left LOL
-: OS-3        16.00 w/e  25 c ; \ Deco-rocker
-\ MALV-1000   xx.25 w/e  35 c ; \ Maestro LV 600w  Lutron
-: MA-1000     70.00 w/e  35 c ; \ Maestro LV 1000  Lutron
-: MALV-600    55.00 w/e  35 c ; \ Maestro LV 600w  Lutron
-: MA-600      26.00 w/e  35 c ; \ Maestro 600w  Dimes both ends
-: MA-R        18.75 w/e  30 c ; \ Maestro Remote  The other end
-: S-600       17.25 w/e  25 c ; \ Skylark  Sml rocker below Lut.
-: S-10        54.00 w/e  30 c ; \ Skylark  Sml rocker below Lut.
-: S-603       20.93 w/e  20 c ; \ Skylark  Sml rocker below Lut.
-: SLV-600     34.43 w/e  25 c ; \ 32.52    Sml rocker below Lut.
-: SLV-603     43.88 w/e  25 c ; \ Skylark  Sml rocker below Lut.
-: SELV-300    45.90 w/e  30 c ; \ Skylark  Sml rocker below Lut.
-: SELV-303    55.35 w/e  30 c ; \ Skylark  Sml rocker below Lut.
-: Lumea-S3LV  55.50 w/e  25 c ; \ Rainbo Plates
-: Lumea-LV    46.50 w/e  25 c ; \ Rainbo Plates
-: Lumea-S3    28.50 w/e  20 c ; \ Rainbo Plates
-: Lumea       23.25 w/e  20 c ; \ Rainbo Plates
-: Lumea-plate  6.00 w/e   5 c ; \
-: E-600       26.93 w/e  25 c ; \ EZ LED fat  LOL
-: E-600VA     68.00 w/e  25 c ; \ EZ LED LV Bay Comml
-: ER-3        14.60 w/e  25 c ; \ Remote of LED
-: Nob          1.00 w/e  01 c ; \ Replacement nob
-: Toggle       6.00 w/e  15 c ; \ New type               2    3
-: Toggle-lit  10.00 w/e  15 c ; \ Guess
-: Toggle-S3   15.00 w/e  15 c ; \ Guess                  2    3
-: Push-Push    6.00 w/e  15 c ; \ D-600             2    2    4
-: GL-600       9.68 w/e  15 c ; \ Slide-click
-: Slide       15.00 w/e  15 c ; \ Click down
-: Skylark     17.25 w/e  15 c ; \ Skylark slide toggle preset
-: Skylark-S3  23.25 w/e  15 c ; \ Skylark slide toggle 3-way
-\ N1000       55.50 w/e  25 c ; \ See Nova-T
-: 1500W      103.50 w/e  60 c ; \
-: 2000W      147.00 w/e  70 c ; \
-: ZP          36.60 w/e  04 c ;        
+Dimmer definitions               \ was 50 hrs per C
+: Caseta-remote 14.95 w/e 25 c ; \
+: Caseta        54.95 w/e 25 c ; \ PD-6WCL-WH-R
+: DVCL-153      29.00 w/e  25 c ; \ 24.00 June 2019
+: DV-600        21.00 w/e  25 c ; \ 19.97 June 2019 26.39 Dec 2010  side slider
+: DV-603        30.00 w/e  25 c ; \ 25.16 UE  29.97 Lows
+: DV-600VA      35.00 w/e  51 c ; \ Diva  Deco + mini side slider
+: DV-603VA      40.00 w/e  51 c ; \ Diva  Deco + mini side slider
+~ DV-103P       70.00 w/e  35 c ; \ 69.35 July 2007
+~ DVLV-600      39.23 w/e  51 c ; \ Jul 07
+: MACL-153P     24.58 w/e  25 c ; \ Maestro led May 2019  Grey same        JAPP
+~ MA-1000       70.00 w/e  35 c ; \ Maestro LV 1000  Lutron
+: MALV-600      55.00 w/e  35 c ; \ Maestro LV 600w  Lutron
+: MA-600        27.00 w/e  35 c ; \ Maestro 600w 26.00 Dimms both
+: MA-R          18.75 w/e  30 c ; \ Maestro Remote  The other end
+: AY-600        13.00 w/e  25 c ; \ Universal Jun 96 AYH
+: OS-600         29.00 w/e  25 c ; \ Big-rocker  LOL = City, Bay
+: OS-1000        50.00 w/e  35 c ; \ Big-rocker OnSet
+: OS-3           16.00 w/e  25 c ; \ Deco-rocker
+: Nova-T         27.00 w/e  30 c ; \ Feb 99  City Elect
+: NovaT-1000     55.00 w/e  30 c ; \ was 74.25 now 53.82
+: NovaT-LV600    91.80 w/e  30 c ; \ Feb 99  City Elect
+: NovaT-LV1000   117.45 w/e 30 c ; \ Feb 99  City Elect
+: D-600          10.00 w/e  25 c ; \ Knob preset  Guess price * @
+: D-603          13.00 w/e  25 c ; \ Knob preset  Guess price * @
+: AY-600         13.00 w/e  25 c ; \ Universal Jun 96 AYH
+\ AY-1000        25.00 w/e  25 c ; \ Guess price
+: AY-603         22.00 w/e  30 c ; \ Ariadni preset  Guess price
+\ AYLV-600       25.00 w/e  30 c ; \ Ariadni LV   same as VA
+: MP-1500       160.00 w/e  25 c ; \ Apr 94 at City Lights
+: MP-2000       194.00 w/e  25 c ; \ Apr 94 at City Lights
+: ZP-600         16.00 w/e  25 c ; \ 15.00 City, Bay matches Dec 94
+: ZP-600VA       39.00 w/e  25 c ; \ 30.51 S2 or S3 Neutral req LOL
+: ZP-1000        52.00 w/e  25 c ; \ Apr 94 51.00 Lightolier
+: ZP-R            9.00 w/e  40 c ; \ Lightolier  Time to figure out
+: OS-600         29.00 w/e  25 c ; \ Big-rocker  LOL=City, Bay
+: OS-1000        50.00 w/e  35 c ; \ BOTH ENDS  Onset LED left LOL
+: OS-3           16.00 w/e  25 c ; \ Deco-rocker
+\ MALV-1000      xx.25 w/e  35 c ; \ Maestro LV 600w  Lutron
+: MA-1000        70.00 w/e  35 c ; \ Maestro LV 1000  Lutron
+: MALV-600       55.00 w/e  35 c ; \ Maestro LV 600w  Lutron
+: MA-600         26.00 w/e  35 c ; \ Maestro 600w  Dimes both ends
+: MA-R           18.75 w/e  30 c ; \ Maestro Remote  The other end
+: S-600          17.25 w/e  25 c ; \ Skylark  Sml rocker below Lut.
+: S-10           54.00 w/e  30 c ; \ Skylark  Sml rocker below Lut.
+: S-603          20.93 w/e  20 c ; \ Skylark  Sml rocker below Lut.
+: SLV-600        34.43 w/e  25 c ; \ 32.52    Sml rocker below Lut.
+: SLV-603        43.88 w/e  25 c ; \ Skylark  Sml rocker below Lut.
+: SELV-300       45.90 w/e  30 c ; \ Skylark  Sml rocker below Lut.
+: SELV-303       55.35 w/e  30 c ; \ Skylark  Sml rocker below Lut.
+: Lumea-S3LV     55.50 w/e  25 c ; \ Rainbo Plates
+: Lumea-LV       46.50 w/e  25 c ; \ Rainbo Plates
+: Lumea-S3       28.50 w/e  20 c ; \ Rainbo Plates
+: Lumea          23.25 w/e  20 c ; \ Rainbo Plates
+: Lumea-plate     6.00 w/e   5 c ; \
+: E-600          26.93 w/e  25 c ; \ EZ LED fat  LOL
+: E-600VA        68.00 w/e  25 c ; \ EZ LED LV Bay Comml
+: ER-3           14.60 w/e  25 c ; \ Remote of LED
+: Nob             1.00 w/e  01 c ; \ Replacement nob
+: Toggle          6.00 w/e  15 c ; \ New type               2    3
+: Toggle-lit     10.00 w/e  15 c ; \ Guess
+: Toggle-S3      15.00 w/e  15 c ; \ Guess                  2    3
+: Push-Push       6.00 w/e  15 c ; \ D-600             2    2    4
+: GL-600          9.68 w/e  15 c ; \ Slide-click
+: Slide          15.00 w/e  15 c ; \ Click down
+: Skylark        17.25 w/e  15 c ; \ Skylark slide toggle preset
+: Skylark-S3     23.25 w/e  15 c ; \ Skylark slide toggle 3-way
+\ N1000          55.50 w/e  25 c ; \ See Nova-T
+: 1500W         103.50 w/e  60 c ; \
+: 2000W         147.00 w/e  70 c ; \
+: ZP             36.60 w/e  04 c ;
 Elect
 : Dim  [ Dimmer ] DV-600 ;
 \ Electronic      IC44, Halo 2001, Juno 538  Common works,
@@ -1655,14 +1657,8 @@ Secure definitions
 : Screw            2.00 w/c   2 c ; \ Guesses
 : Box              1.00 w/c  30 c ; : Wire  Box ;
 : Screw            3.00 w/c   1 c ; : Trans box ;
-: Cover            1.00 w/c  10 c ; \ Fuse cover                 
-Elect : Fastiner   Secure  ;  Elect : SUPPORT Fastiner   ;  --> 
-
-
-| SECURE-2      2/3       A 900-040  BH-4 My guess  12-13-04 AL
-Secure   definitions                      \ Used Sold Keep Have 
-( The previous screen is prerequsite )                          
-` Bolt            25.00 w/c  15 c ; \ Up to 3/8"                
+: Cover            1.00 w/c  10 c ; \ Fuse cover
+` Bolt            25.00 w/c  15 c ; \ Up to 3/8"
 : Loom             0.00 w/c  50 c ;                             
 : Chain          198.00 w/m   2 m ; \ 060-008                   
 : Jack-chain            chain ;     \                           
@@ -1672,9 +1668,10 @@ Secure   definitions                      \ Used Sold Keep Have
 : Eye-Lag-Conc     9.98 w/c  15 c ; \ in rock over lath         
 ` Plywood         15.00 w/c  20 c ; \                           
 : T-hanger         0.40 w/e   8 c ;                             
-Elect
-\ Chain and cord time is in the ends, which are the lag-bolts   
-                                                                
+Elect : Fastiner   Secure  ;
+Elect : SUPPORT Fastiner   ;  -->
+
+\ Chain and cord time is in the ends, which are the lag-bolts
 
 
 | SECURE-3      3/3       A 900-040  BH-4 My guess  08-29-00 BEC

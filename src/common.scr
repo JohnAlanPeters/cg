@@ -6,7 +6,7 @@
 : COMMON ;                                                      
 Electric definitions
 : Stucco          100.00 w/c  50 c ; \            0.00         0.00
-\ Rosette                   stucco ; \            0.00         0.00
+: Rosette                   stucco ; \            0.00         0.00
 : Tile           1500.00 w/c  70 c ; \ 50         0.00
 : Tile-cutting                tile ; \            0.00         0.00
 ` Circuit-easy    748.00 w/c  40 c ; \ 100 th     0.00 10.     0.00
@@ -44,33 +44,33 @@ Electric definitions
 ` Device&Plate    187.00 w/c  25 c ; \
 ` D&D             695.00 w/c  12 c ; \
 : Jelly-Flo        20.00 w/e  25 c ; \ 19.89 Uni
-\ Quad            109.00 w/c  23 c ; \
-` Whip            349.00 w/c  33 c ; \
-` Big-Whip       4126.00 w/c 197 c ; \ #4 100A N
-` Whip+(J)        550.00 w/c  50 c ; \
-\ Sealtite       1518.00 w/c  84 c ; \
-` Fan-Box        2500.00 w/c 100 c ; \
-` Box-Ext         380.00 w/c  25 c ; \ All a gue
-` Box-in          350.00 w/c 150 c ; \ Fixture d
-` Box-only        349.00 w/c 100 c ; \ from EMT.
-` Box-only-easy   300.00 w/c  44 c ; \ Simple ju
-` Split-Circuit    20.00 w/c 300 c ; \ Rember Al
-` Open-Close        0.00 w/c  25 c ; \
-` AFCI-220V      8961.00 w/c  50 c ; \ Was off b
-` AFCI           4000.00 w/c  25 c ; \ 50 c prev
-` AF  AFCI ;
-` AFCI-[D]       4000.00 w/c  50 c ; \
+: Quad            109.00 w/c  23 c ; \
+: Whip            349.00 w/c  33 c ; \
+: Big-Whip       4126.00 w/c 197 c ; \ #4 100A N
+: Whip+(J)        550.00 w/c  50 c ; \
+: Sealtite       1518.00 w/c  84 c ; \
+: Fan-Box        2500.00 w/c 100 c ; \
+: Box-Ext         380.00 w/c  25 c ; \ All a gue
+: Box-in          350.00 w/c 150 c ; \ Fixture d
+: Box-only        349.00 w/c 100 c ; \ from EMT.
+: Box-only-easy   300.00 w/c  44 c ; \ Simple ju
+: Split-Circuit    20.00 w/c 300 c ; \ Rember Al
+: Open-Close        0.00 w/c  25 c ; \
+: AFCI-220V      8961.00 w/c  50 c ; \ Was off b
+: AFCI           4000.00 w/c  25 c ; \ 50 c prev
+: AF  AFCI ;
+: AFCI-[D]       4000.00 w/c  50 c ; \
 Elect
 
 
 \ Aliases and abreviations
-` Repull-(J)      0.00 w/c  45 c ; \ A junction
+: Repull-(J)      0.00 w/c  45 c ; \ A junction
 
 
 : NIC -1 s>d sell-sub 2! ;  \ flag to force disp
-: NOOP nic ; \
-: NOP  nic ; \
-: INC  nic ; \
+: NOOP nic ; \                                                  0.00        0.00
+: NOP  nic ; \                                                  0.00        0.00
+: INC  nic ; \                                                  0.00        0.00
 : TBD  nic ; \ To be determined
 
 
