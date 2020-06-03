@@ -108,7 +108,7 @@ Include ppsig.f         \ payment progress and signature
 Include convbid.f
 Include Email.f         \ create email.html for current file
 Include Logger.f        \ Used as ASP  Application Service Provider
-Include common.scr
+Include common.f
 Include plans.scr
 Include big-ok.scr
 Include fish.scr
@@ -163,7 +163,7 @@ forth also forth definitions editor
   else vv-con
   then ;
 
-: V ( -- )  \ make bookmarked file the current file
+: V  ( -- )  \ make bookmarked file the current file
   [ editor ] vbmark ;
 
 : vv ( <word> -- )   \ open file in browse mode in editor

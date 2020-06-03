@@ -186,23 +186,23 @@ Electric Definitions
 
 \ Reconnection (s)                                 04-12-05 AL 
 Vocabulary RECONNECT RECONNECT Definitions
-` 1/2                   828.00 w/c 102 c ;                      
-` 3/4                  1000.00 w/c 125 c ; \ these are guesses  
-` 1-in                 1500.00 w/c 140 c ; \ more guesses       
-` 1-1/4                2500.00 w/c 188 c ; \ more guesses       
-` 1-1/2                2700.00 w/c 195 c ; \ more guesses       
-` 2-in                 3000.00 w/c 200 c ; \ more guesses       
-` Looms                 670.00 w/c 174 c ; \ cut on May 96      
-` Black-Box             400.00 w/c 125 c ;                      
-` Flex                  100.00 w/c  50 c ; \ 1/2                
-` 3/4-Flex              200.00 w/c  75 c ;                      
-` Breakers              300.00 w/c  60 c ;                      
-` Romex-hard            900.00 w/c 100 c ;                      
-` Romex-easy            100.00 w/c  20 c ;
-` 6-Loom-N&T            600.00 w/c 100 c ;
-` 2-Loom-N&T            200.00 w/c  50 c ;
-: Looms                  50.00 w/c  16 c ;    
-
+: 1/2                   828.00 w/c 102 c ;
+: 3/4                  1000.00 w/c 125 c ; \ these are guesses
+: 1-in                 1500.00 w/c 140 c ; \ more guesses
+: 1-1/4                2500.00 w/c 188 c ; \ more guesses
+: 1-1/2                2700.00 w/c 195 c ; \ more guesses
+: 2-in                 3000.00 w/c 200 c ; \ more guesses
+: Looms                 670.00 w/c 174 c ; \ cut on May 96
+: Black-Box             400.00 w/c 125 c ;
+: Flex                  100.00 w/c  50 c ; \ 1/2
+: 3/4-Flex              200.00 w/c  75 c ;
+: Breakers              300.00 w/c  60 c ;
+: Romex-hard            900.00 w/c 100 c ;
+: Romex-easy            100.00 w/c  20 c ;
+: 6-Loom-N&T            600.00 w/c 100 c ;
+: 2-Loom-N&T            200.00 w/c  50 c ;
+: Looms                  50.00 w/c  16 c ;
+: Typical-panel         126.16 w/c 699 c ;
 Electric definitions  : Repower reconnect ;                     
 
 
@@ -225,19 +225,18 @@ Electric Definitions
 
 
 \  RISER    Out of date as of --> >    11-20-91 AEC 09-11-06 AL
-  
-Vocabulary RISER RISER Definitions                              
-: 70A       ( Repull #4 )          60.00 w/e  341 c ;           
-: 100A      ( #4 in 1-1/4 )        77.36 w/e  357 c ;           
-: 115A      ( #2 1-1/4 )          129.66 w/e  379 c ;           
-: 130A      ( #1 1-1/4 )          110.35 w/e  390 c ;           
-: 125A                                  130A ;                  
-: 150A      ( 1/0 1-1/4 )         119.20 w/e  400 c ;           
-: 200A      ( 3/0 1-1/2 )         164.94 w/e  472 c ;           
-: 230A      ( 4/0 2-in )          243.17 w/e  733 c ;           
-\ 280A-3P   ( 300MCM 3-in )       511.35 w/e  765 c ;           
-: 400A                           1228.00 w/e  826 c ;           
-\ 200A-3P   ( 3/0 in 2-in )       245.37 w/e  757 c ;           
+\ Corrected on June 1, 2020
+Vocabulary RISER RISER Definitions
+: 70A       ( Repull #4 )         174.33 w/e  341 c ;
+: 100A      ( #4 in 1-1/4 )       262.12 w/e  357 c ;
+: 115A      ( #2 1-1/4 )          311.26 w/e  379 c ;
+: 125A                                         115A ;
+: 150A      ( 1/0 1-1/4 )         378.63 w/e  440 c ;
+: 200A      ( 3/0 1-1/2 )         530.95 w/e  541 c ;
+: 300A                            802.33 w/e  672 c ;
+\ 280A-3P   ( 300MCM 3-in )       511.35 w/e  765 c ;
+: 400A                           1228.00 w/e  826 c ;
+: 200A-3P   ( 3/0 in 2-in )       706.68 w/e  592 c ;
 ELECTRIC DEFINITIONS                                            
                                                                 
                                                                 

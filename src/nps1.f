@@ -1743,7 +1743,7 @@ Elect \
 
 \ C-B 1/3      Low prices C 425-035a CB-5         F 06-12-07 AL
 Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
-: 20A          4.57 w/e 20 c  ; \ Lows Apr 2020
+: 20A          4.58 w/e 20 c  ; \ Lows Apr 2020
 : 15A          20A            ; \
 : 20-20A       8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
 : 15-15A       20-20A        ;

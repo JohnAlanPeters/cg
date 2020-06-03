@@ -221,7 +221,7 @@ forth
   RenameFrom$ count RenameTo$ count rename-file
   if ."  Failed" then ;
 
-: rename ( <fname> <newname> -- )   \ rename a file (Old then new)
+: rename ( <Old-name> <New-name> -- )   \ rename a file (Old then new)
   (rename-file) ;
 
 

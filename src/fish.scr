@@ -41,14 +41,15 @@ Vocabulary (FISH-WORK)
 : Quad                2.47 w/e  20 c ;
 : 1G->2G              2.50 w/e  50 c ;
 : PL-Hard           626.00 w/c 325 c ;
-` PL-Medium         615.00 w/c 175 c ; \ See note on screen zero
-` PL-Easy           615.00 w/c 110 c ; \ 9.00
-` PL                626.00 w/c 275 c ; \ Prox 2 hrs by Lani & Fred
-: Plug                            PL ;
-` PL-Very-easy      260.00 w/c  73 c ; \ Apr 09
 : LT-Very-easy        PL-very-easy   ; \ Jan 95  5/8 hr
+: PL                626.00 w/c 275 c ; \ Prox 2 hrs by Lani & Fred
+: PL-Medium         615.00 w/c 225 c ; \ See note on screen zero
+: PL-Medium-easy    615.00 w/c 175 c ; \ PL-medium was to different from PL
+: PL-Easy           615.00 w/c 110 c ; \ 9.00
+: PL-Very-easy      260.00 w/c  73 c ; \ Apr 09
+: Plug     ( same as a PL )       PL ;
 : SW-Very-easy        PL-very-easy   ; \ Jan 95
-` PL-very-hard      626.00 w/c 375 c ; \ Oct 04
+: PL-very-hard      626.00 w/c 375 c ; \ Oct 04
 : SW-hard           861.00 w/c 320 c ; \ Feb 96 inc mud, ground
 : SW                626.00 w/c 275 c ;
 : Switch                          SW ;

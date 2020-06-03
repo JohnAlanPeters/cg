@@ -55,9 +55,10 @@ Labor-rate 2@  Current-rate 2!     \ initalize   jappjapp
 : Residental-Rate-BV 149.00 labor-rate 2! ;
 : Commercial-Rate-BV 189.00 labor-rate 2! ;           
 : Commercial-rate    180.00 labor-rate 2! ; \ immediate words for changing the
+: Bid-rate           236.00 labor-rate 2! ; \ Don't be lower than BV
 : Commercial-labor-rate   commercial-rate ;
 : Residential-rate   150.00 labor-rate 2! ; \ labor rate in an estimate.
-: Residential-labor-rate residential-rate ;  
+: Residential-labor-rate residential-rate ;
 
 Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable WHOLESALE-SUB
@@ -502,7 +503,7 @@ create fbuf 5000 allot          \ to hold the template file text
       else drop then
     else drop then
   else drop then
-  to$ count "+open-text 9 to cursor-line reEdit ;
+  to$ count "+open-text 9 to cursor-line bookmark reEdit ;
 
 : to-bids ( -- )  \ open -bids in editor
   s" bids\-bids" OneDrive "open-text reEdit  ;
