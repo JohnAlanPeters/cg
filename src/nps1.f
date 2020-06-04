@@ -445,8 +445,8 @@ SS-CON Definitions              \
 : 2-in       202.60 w/c  25 c ; \                               
 ~ 2-1/2      663.00 w/c  30 c ; \                               
 : 3-in       795.30 w/c  40 c ; \                               
-~ 3-1/2    1125.50 w/c  50 c ; \ ,                              
-: 4-in     1309.00 w/c  60 c ; \                                
+~ 3-1/2     1125.50 w/c  50 c ; \ ,
+: 4-in      1309.00 w/c  60 c ; \
 Elect                                                           
 \ Die Cast Steel, EFCOR prices                                  
 
@@ -782,7 +782,7 @@ Vocabulary L-B         L-B Definitions
 : 1/2        418.00 w/c  50 c ; \ 3.53 June 07                  
 : Ent-1/2    418.00 w/c  50 c ; \                               
 : 3/4        491.00 w/c  60 c ; \ June 07                       
-~ Ent-3/4      4.88 w/e  60 c ; \                               
+~ Ent-3/4      4.88 w/e  60 c ; \
 ~ 1-in         7.05 w/e  75 c ; \                               
 ~ 1-1/4       12.05 w/e 110 c ; \ March 2014
 : 1-1/2       12.72 w/e 125 c ; \                               
@@ -1640,7 +1640,7 @@ Vocabulary G-4000                         \ Used Sold Keep Have
 : Wire-clip    96.36 w/c  10 c ; \ G-4000WC      Clip plated    
 : Blank-end   280.33 w/c  08 c ; \ G-4010B       p              
 : Entrance    889.61 w/c 135 c ; \ G-4010D       ce end fitting 
-: Wall-Con  1718.99 w/c  30 c ; \ G-4014A ,                     
+: Wall-Con   1718.99 w/c  30 c ; \ G-4014A ,
 : Panel-Con   900.10 w/c  50 c ; \                              
 Elect -->                                                       
 
@@ -1653,7 +1653,7 @@ Elect -->
 : Int/Ext   1031.53 w/c  50 c ; \ G-4012TX      45 degree       
 : Flat-Elbo 1010.68 w/c  40 c ; \ G-4011        Elbo            
 : Flat-T    1883.98 w/c  70 c ; \ G-4015D       ed              
-\ Flat-T-Un          w/c  70 c ; \ G-4047   unDivided           
+\ Flat-T-Un         w/c  70 c ; \ G-4047   unDivided
 : Take-Off  2018.58 w/c  50 c ; \ G-4074 ,       ed             
 : Combo-90-T  999.99 w/c  70 c ; \ G-4016D       nation 90-T    
 : Plate-1g    250.23 w/c  11 c ; \ G-4007C1      g device plate 
@@ -1746,7 +1746,7 @@ Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
 : 20A          4.58 w/e 20 c  ; \ Lows Apr 2020
 : 15A          20A            ; \
 : 20-20A       8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
-: 15-15A       20-20A        ;
+: 15-15A       20-20A         ;
 : 15A-2P       10.00 w/e 30 c ; \  6.00  Jan 97  B&K
 : 20A-2P       15A-2P         ; \    88
 : 2P-20A       20A-2P         ;
@@ -2139,7 +2139,7 @@ ELECT
 \ on page 71...   The NPS number is made up.                    
                                                                 
 
-| COM-MP                  C 475-052 Crouse Hinds    12-04-90 AEC
+| COM-MP                  C 475-052 Crouse Hinds
 Vocabulary Com-MP                         \ Used Sold Keep Have
                           Com-MP Definitions \  CS-6            
 \ 100A-10-20                                                    
@@ -2162,5 +2162,4 @@ Vocabulary M-P
 \              129.00 B&K Apr 97  \ JA220CW Pheonex             
 : 400A-20-42 1300.00 w/e 300 c ; \ ,                            
 Elect \                                                         
-\  JA110AS was 112.00 w/s pre June 87                           
-\  On sale MES  43.00                                           
+

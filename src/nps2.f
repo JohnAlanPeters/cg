@@ -1395,14 +1395,14 @@ Vocabulary Heat  Heat Definitions
 | HEAT-AL  Silica  6/6    C 775-023c XX-0           01-03-08 AL
 Vocabulary Heat-AL       Heat-al Definitions
 : 750W        29.25 w/e  75 c ; \ 3'0"  36"                     
-: 1000W       33.20 w/e  75 c ; \ 4'0"  48"                     
+: 1000W       33.20 w/e  75 c ; \ 4'0"  48"
 : 1250W ( ? ) 39.00 w/e  75 c ; \ 5'0"  60"  1,500W             
 : 1500W       47.88 w/e  75 c ; \ 6'0"  72"                     
 : 2000W       62.25 w/e  75 c ; \ 8'0"  96"   80 Glass          
 : HANG-YOURS   1.00 w/e  50 c ; \             20 Ceiling        
-: WM           1.00 w/e   1 e ; \             10 Floor          
+: WM           1.00 w/e   1 e ; \             10 Floor
 : EC-Stat     21.00 w/e  50 c ; \ check this   5 Wall           
-: PL-end      10.00 w/e 175 c ; \              1 Low loss wall  
+: PL-end      10.00 w/e 175 c ; \              1 Low loss wall
 Elect   \                                      8 Factor         
 \ Hot wire in silica with aluminum fins.                        
 
@@ -1447,7 +1447,6 @@ Vocabulary Hours
 : Engineer       Electrician ;
 : Allowance      Electrician ;
 : Owner        0.0 w/c [ 168 6 * ] literal m ; \ same as rate
-: T&M      1000.00 w/c   1000              m ; \ 50.00
 : El electrician ;
 
 \ HR hours  \ added by JP cause of problem with packing defs    
@@ -1485,17 +1484,13 @@ Vocabulary Dollars        Dollars definitions
 \ Discount 
 : Wholesale     100.00 w/c 00 m ; \ Retail
 : Parts         100.00 w/c 00 m ; \ Materials
-: T&M            15.50 w/c 16 m ; \ Low proportion of materials
-: T&M+           35.00 w/c 10 m ; \ Higher proportion of materials
-: T&M++          43.00 w/c  8 m ; \ Even higher porton of materials
-: T&M+++         60.00 w/c  4 m ; \ Even higher porton of materials
-: Cost ( must ) 100.00 w/c  0 c ; \ Must use EX??      use ...FLUF       
+: Cost ( must ) 100.00 w/c  0 c ; \ Must use EX??      use ...FLUF
 : Designing                Cost ; \ NOTE Cost is no markup!
 : Fixtures                 Cost ;
 : Tax                      Cost ;
 : Overhead                 Cost ;
-: Project                   T&M ;
-: Time&Materials            T&M ;
+\ Project                   T&M ; \ Superceded by T&M15 etc
+\ Time&Materials            T&M ;
 : Other ( n -- ) calc-other 0 e ; \ This does not look right
 : Credit       negate     Other ;
 : Profit                  Other ;
@@ -2018,13 +2013,6 @@ Mikado   Definitions             \
  : 4-Lamp-Kit   [ 1632. 50. d* ] dliteral w/e    2 e ; Elect    
  : test-e       [ 100.  50. d* ] dliteral w/e    1 e ; \ T      
  : test-f       [ 100.  50. d* ] dliteral w/e    1 e ; \        
- \ 200cm        [ 143.  50. d* ] dliteral w/e    1 e ; \        
- \ Pendant      [ 175.  50. d* ] dliteral w/e   30 c ; \ 120 cn 
- \ Clip         [  24.  50. d* ] dliteral w/e   20 c ; \        
- \ Ext-30cm     [  37.  50. d* ] dliteral w/e   10 c ; \        
- \ Ext-60cm     [  58.  50. d* ] dliteral w/e   10 c ; \        
- \ Ext-120cm    [  90.  50. d* ] dliteral w/e   10 c ; \        
- \ Spotlight    [ 276.  50. d* ] dliteral w/e   15 c ; Elect
 
 
 | HALO common               630-970y                07-18-07 AL
