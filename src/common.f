@@ -34,6 +34,7 @@ Electric definitions
 ` Smoke-110V-9V  1500.00 w/c  25 c ; \ 10.15 Mar
 ` Smoke-110V~9V  1500.00 w/c  00 c ; \ For fire
 ` Smoke-9V-110V  1500.00 w/c  25 c ; \
+: Safety-Check       .00 w/c  61 c ;
 ` Deep            865.00 w/c  15 c ; \  7.60 Aug
 : Bubble                      Deep ; \
 : Bubble-cover                Deep ; \

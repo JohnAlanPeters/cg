@@ -247,7 +247,7 @@ defer _Control+W ' close-text is _control+w
   lfrom to cursor-line
   get-cursor-line  lto to cursor-line
   put-cursor-line  lfrom to cursor-line
-  pad count cur-buf lplace put-cursor-line refresh-screen ;
+  pad count cur-buf lplace put-cursor-line  to cursor-line refresh-screen reedit ;
 
 : toggle-colons-only ( -- )    \ RDA
         cursor-line to line-cur
