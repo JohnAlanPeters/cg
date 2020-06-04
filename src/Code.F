@@ -336,6 +336,25 @@ small-parts  \ default
    IncWholeSaleSub
    markup  d*  100.00  d/ ;   \ 'r/t' is retail after markup
 
+: T&M25  ( n -- )   \ divide an amount 15% materials, 85% labor
+  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 75 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  25 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+
+
+: T&M45  ( n -- )   \ divide an amount 15% materials, 85% labor
+  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 55 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  45 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+
+: T&M50  ( n -- )   \ divide an amount 15% materials, 85% labor
+  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 50 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  50 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \      UNITS AND QUANTITIES ===========
 
@@ -434,16 +453,7 @@ small-parts  \ default
      vtot-col  tab-in EX-TOTAL $.r
      update+ ;
 
-: T&M  ( n -- )   \ divide an amount 15% materials, 85% labor
-  dup 0 100 0 d* 2dup sell-sub 2! sell-total 2+!
-  dup 0
-    85 0 d* 2dup 2dup labor-sub 2! labor-total 2+!
-  100 0 d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  0
-    15 0 d* 2dup parts-sub 2! parts-total 2+!
- ;
-\ See also a T&M in HOURS and in DOLLARS
-
+\ See T&M in DOLLARS
 
 \ templates
 : bid-show  ( <title> -- )  \ show vscr in -bids
