@@ -406,11 +406,11 @@ editor
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
       k_F5                          OF      err_vocab-toggle            ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
-      K_f6                          OF      un-add  ( Rep by settle )   ENDOF
+      K_f6                          OF      un-add                      ENDOF
       k_F7                          OF      toggle-insert               ENDOF
       k_F7    +k_control            OF      browse-toggle               ENDOF
       k_F8                          OF      revert-text                 ENDOF
-      k_F9                          OF      grand-total                 ENDOF
+      k_F9                          OF      hyper-link ( grand-total )  ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
       k_F10                         OF      un-add  ( hyper-link )      ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
@@ -487,8 +487,8 @@ editor
       k_ESC                         OF      do-esc                      ENDOF
       k_LF                          OF      lf-left                     ENDOF
       k_CR                          OF      smart-cr                    ENDOF
-      k_CR +k_control               OF      xsplit-line                 ENDOF
-      k_CR +k_shift                 OF 1 +row-cursor 16 to cursor-col   ENDOF
+      k_CR +k_shift                 OF      xsplit-line                 ENDOF
+      k_CR +k_control               OF 1 +row-cursor 16 to cursor-col   ENDOF
       k_CR +k_alt                   OF     ." doesn't work"             ENDOF
                     dup insert/overstrike-character
         ENDCASE

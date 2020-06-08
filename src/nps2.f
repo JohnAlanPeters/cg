@@ -1456,7 +1456,7 @@ Elect
 
 | Eng Engineering                                   05-19-09    
 Vocabulary Eng                                                  
-           Eng         Definitions                              
+           Eng Definitions
 : Hold-it        0.0 w/c [  302  ] literal m ;                  
 : Conjestion     0.0 w/c [  502  ] literal m ;                  
 : Cancelation    0.0 w/c [  512  ] literal m ;                  
@@ -1477,11 +1477,11 @@ Vocabulary Commission Commission definitions
 Elect
 
 
-\ DOLLARS                   900-012    Caution!!    12-30-90 AL
-Vocabulary Dollars        Dollars definitions
+\ DOLLARS                   900-012
+\ Vocabulary Dollars
+             Dollars definitions
 : Dollar                Dollars ;
 : $$                    Dollars ;
-\ Discount 
 : Wholesale     100.00 w/c 00 m ; \ Retail
 : Parts         100.00 w/c 00 m ; \ Materials
 : Cost ( must ) 100.00 w/c  0 c ; \ Must use EX??      use ...FLUF
@@ -1498,7 +1498,7 @@ Vocabulary Dollars        Dollars definitions
 : Sub-Contract            Parts ;
 : Rental              Wholesale ;
 : Allowance ( n -- )  calc-allowance 0 e ;
-: Discount ( n -- ) negate allowance ;
+: Discount  ( n -- )    negate allowance ;
 Elect
 
 \ SETUP Job These are all labor catagory

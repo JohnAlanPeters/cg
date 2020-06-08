@@ -184,7 +184,7 @@ Electric Definitions
                                                                 
 
 
-\ Reconnection (s)                                 04-12-05 AL 
+\ Reconnection (s)       Parts   Time
 Vocabulary RECONNECT RECONNECT Definitions
 : 1/2                   828.00 w/c 102 c ;
 : 3/4                  1000.00 w/c 125 c ; \ these are guesses
@@ -193,13 +193,13 @@ Vocabulary RECONNECT RECONNECT Definitions
 : 1-1/2                2700.00 w/c 195 c ; \ more guesses
 : 2-in                 3000.00 w/c 200 c ; \ more guesses
 : Looms                 670.00 w/c 174 c ; \ cut on May 96
-: Black-Box             400.00 w/c 125 c ;
+: Black-Box             756.00 w/c  91 c ; \ Redon Jun 2, 2020
 : Flex                  100.00 w/c  50 c ; \ 1/2
 : 3/4-Flex              200.00 w/c  75 c ;
 : Breakers              300.00 w/c  60 c ;
 : Romex-hard            900.00 w/c 100 c ;
 : Romex-easy            100.00 w/c  20 c ;
-: 6-Loom-N&T            600.00 w/c 100 c ;
+: 6-Loom-N&T            600.00 w/c 100 c ; \ lower than RE-CON  7 ft EMT ea
 : 2-Loom-N&T            200.00 w/c  50 c ;
 : Looms                  50.00 w/c  16 c ;
 : Typical-panel         126.16 w/c 699 c ;

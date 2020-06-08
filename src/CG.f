@@ -93,8 +93,8 @@ Include SO.F            \ SO is screen output with RO Regular output
 Include CUSTOM-KEYS.F   \ John's specials
 Include CONVERT.F       \ Back tick and some other compiler directives
 Include PRETTY.F        \ Pretty printing words including PRT# and more
+Include P-OK.F          \ ELECT Vocabulary created, only load once!
 Include CODE.f          \ EXTEND the prices.
-Include P-OK.F          \ ELECT Vocabulary created, only load one once!
 Include EXTEND-PRICES.F \ Used by Ctrl+E
 Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
 Include nps1.f
@@ -180,6 +180,8 @@ forth also forth definitions editor
    then ;
 
 : VVVVV  ." -*-*-*-* Many V's are to many for me to handle! :-)" ;
+
+: LOC .viewinfo 2drop ;
 
 : dir-modules
   s" \cg\modules\*.*" print-dir-files ;

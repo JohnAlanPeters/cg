@@ -112,7 +112,7 @@ false value cons-1col        \ true=> only show 1 column in console/web
 0 value discount-rate        \ rate of discount; 100 -> no diff
 999 value last>in            \ last >in pointer offset
 
-
+editor
 : (totline?) ( -- fl )   \ if an extended line and next one isn't
   displayingLine #line" vtot-col >
   if vtot-col + dup c@ ascii . =
@@ -336,6 +336,14 @@ small-parts  \ default
    IncWholeSaleSub
    markup  d*  100.00  d/ ;   \ 'r/t' is retail after markup
 
+Vocabulary Dollars
+           Dollars Definitions
+: T&M15  ( n -- )   \ divide an amount 15% materials, 85% labor
+  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 85 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  15 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+
 : T&M25  ( n -- )   \ divide an amount 15% materials, 85% labor
   0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
   2dup 75 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
@@ -355,10 +363,11 @@ small-parts  \ default
   100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
   50 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
 
+only forth also editor also electric also definitions
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \      UNITS AND QUANTITIES ===========
 
-: isDOUBLE? dp-location  1+ 0<> ; 
+: isDOUBLE? dp-location  1+ 0<> ;
 : ?>d ( ?? -- d )  \ assumes a single or double on stack
    isdouble?  0=  if  s>d  100.  d*  then ;
 
