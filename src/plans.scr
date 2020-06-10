@@ -58,7 +58,7 @@ Elect
 
 \ Open-1-side            Created on June 24, 1993   05-11-09
 (OPEN-1-SIDE) definitions   ( New work x 1.25 )
-: Drops ( After Smyth ) 4.09 w/e 175 c ; \ basement ceiling
+: Drop-power            4.09 w/e 175 c ; \ basement ceiling
 : LT                    4.09 w/e  98 c ; \
 : LT-easy  ( No drill ) 3.00 w/e  63 c ; \ Herman Kit loss
 : LT-medium             4.09 w/e  85 c ; \ 1st one in attic

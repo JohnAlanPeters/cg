@@ -130,7 +130,9 @@ Elect
 \ LF-GRS  20A to 115A
 Vocabulary LF-GRS
                    LF-GRS definitions
-:  85A             210.59 w/c  11 c ; \ #4 1-in
+: 200A             600.00 w/c 160 m ;
+: 100A             300.00 w/c 120 m ;
+:  85A             210.59 w/c 111 m ; \ #4 1-in
 :  65A             137.07 w/c  93 m ; \ #6 3/4 o
 :  50A             114.05 w/c  88 m ; \ #8 3/4
 :  30A              62.56 w/c  76 m ; \ #10 1/2

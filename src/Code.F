@@ -338,6 +338,8 @@ small-parts  \ default
 
 Vocabulary Dollars
            Dollars Definitions
+: T&M  ." a marker" ;
+
 : T&M15  ( n -- )   \ divide an amount 15% materials, 85% labor
   0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
   2dup 85 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
@@ -350,6 +352,17 @@ Vocabulary Dollars
   100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
   25 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
 
+: T&M30  ( n -- )   \ divide an amount 15% materials, 85% labor
+  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 70 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  30 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+
+: T&M40  ( n -- )   \ divide an amount 15% materials, 85% labor
+  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 60 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  40 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
 
 : T&M45  ( n -- )   \ divide an amount 15% materials, 85% labor
   0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
@@ -663,4 +676,3 @@ mmmm            Show the times for each line as well as the sell price
 MEN-ON          Turn on the times feature
 MEN-OFF         Put it back to not showing the times on each line
 (MEN)           Times on  extend each line  Times off
-MEN             Add a column showing the time required for each item

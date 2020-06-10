@@ -5,194 +5,128 @@ Reconnections                                       03-04-90 AEC
                                                                 
                                                                 
                                                                 
+                                                 13.50        10.80
+                                                  1.68         1.35
+                                              1,918.55
+                                              1,687.50       590.03
+                                                231.05       115.56
+                                                  0.00         0.00
+                                                  0.00
                                                                 
                                                                 
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
 
 
-2 looms nic CB               
-                7 EMT 1/2                      
-                14 THHN #14                    
-                2 SS-CON 1/2                   
-                1 4S BOX                       
-                1 4S BL                        
-2 Loom each     1 Romex Large                  
-                2 Nut Yellow                   
-This is for                                    
-one circ                                       
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
 
+2 looms nic CB
+                7 EMT 1/2                              3.92     0.31       42.67
+                14 THHN #14                            3.92     0.07       12.67
+                2 SS-CON 1/2                           0.48     0.16       20.48
+                1 4S BOX                               1.36     0.30       38.86
+                1 4S BL                                1.34     0.16       21.34
+2 Loom each     1 Romex Large                          0.98     0.13       17.23
+                2 Nut Yellow                           0.16     0.08       10.16
+This is for                                            0.00     0.00        0.00
+one circ                                               0.00     0.00        0.00
+                                                     $12.16     1.21     $163.41
 
-4 looms nic CB               
-                7 EMT 1/2                      
-                28 THHN #14                    
-                2 SS-CON 1/2                   
-                1 4S BOX                       
-                1 4S BL                        
-2 Loom each     2 Romex Large                  
-                2 Nut Red                      
-                2 Nut Yellow                   
-This is for a                                  
-pair of circ                                   
-or 4 looms.                                    
-                                               
-                                               
-                                               
-                                               
+4 looms nic CB
+                7 EMT 1/2                              3.92     0.31       42.67
+                28 THHN #14                            7.84     0.14       25.34
+                2 SS-CON 1/2                           0.48     0.16       20.48
+                1 4S BOX                               1.36     0.30       38.86
+                1 4S BL                                1.34     0.16       21.34
+2 Loom each     2 Romex Large                          1.96     0.26       34.46
+                2 Nut Red                              0.22     0.12       15.22
+                2 Nut Yellow                           0.16     0.08       10.16
+This is for a                                          0.00     0.00        0.00
+pair of circ                                           0.00     0.00        0.00
+or 4 looms.                                            0.00     0.00        0.00
+                                                     $17.28     1.53     $208.53
 
+6 looms nic CB
+                7 EMT 1/2                              3.92     0.31       42.67
+                32 THHN #14                            8.96     0.16       28.96
+                2 SS-CON 1/2                           0.48     0.16       20.48
+                1 4S BOX                               1.36     0.30       38.86
+                1 4S BL                                1.34     0.16       21.34
+2 Loom each     3 Romex Large                          2.94     0.39       51.69
+                3 Nut Red                              0.33     0.18       22.83
+                4 Nut Yellow                           0.32     0.16       20.32
+This is for a                                          0.00     0.00        0.00
+pair of circ                                           0.00     0.00        0.00
+or 4 looms.                                            0.00     0.00        0.00
+                                                     $19.65     1.82     $247.15
 
-6 looms nic CB               
-                7 EMT 1/2                      
-                32 THHN #14                    
-                2 SS-CON 1/2                   
-                1 4S BOX                       
-                1 4S BL                        
-2 Loom each     3 Romex Large                  
-                3 Nut Red                      
-                4 Nut Yellow                   
-This is for a                                  
-pair of circ                                   
-or 4 looms.                                    
-                                               
-                                               
-                                               
-                                               
+1/2 emt
+                7 EMT 1/2                              3.92     0.31       42.67
+                33 THHN #14                            9.24     0.16       29.24
+                2 SS-CON 1/2                           0.48     0.16       20.48
+                1 4S BOX                               1.36     0.30       38.86
+                1 4S BL                                1.34     0.16       21.34
+                2 NUT RED                              0.22     0.12       15.22
+                2 NUT YELLOW                           0.16     0.08       10.16
+This is for a                                          0.00     0.00        0.00
+pair of circ                                           0.00     0.00        0.00
+in a 1/2 in                                            0.00     0.00        0.00
+existing EMT                                           0.00     0.00        0.00
+                                                     $16.72     1.29     $177.97
 
+Flex
+                0 FLEX 1/2                             0.00     0.00        0.00
+                7 3 + 6 * THHN #14                    16.80     0.30       54.30
+                1 Flex-Con 1/2                         0.53     0.11       14.28
+                4 NUT RED                              0.44     0.24       30.44
+                3 NUT YELLOW                           0.24     0.12       15.24
+This is not                                            0.00     0.00        0.00
+including CB                                           0.00     0.00        0.00
+                                                     $18.01     0.77     $114.26
 
-1/2 emt                      
-                7 EMT 1/2                      
-                33 THHN #14                    
-                2 SS-CON 1/2                   
-                1 4S BOX                       
-                1 4S BL                        
-                2 NUT RED                      
-                2 NUT YELLOW                   
-This is for a                                  
-pair of circ                                   
-in a 1/2 in                                    
-existing EMT                                   
-                                               
-                                               
-                                               
-                                               
+RE-CON  pair circ
+                7 EMT 1/2                              3.92     0.31       42.67
+                7 3 + 6 * THHN #14                    16.80     0.30       54.30
+                2 SS-CON 1/2                           0.48     0.16       20.48
+                4 NUT RED                              0.44     0.24       30.44
+                3 NUT YELLOW                           0.24     0.12       15.24
+                                                     $21.88     1.13     $163.13
 
+Pair of loom
+                7 EMT 1/2                              3.92     0.31       42.67
+                33 THHN #14                            9.24     0.16       29.24
+                1 4S BOX                               1.36     0.30       38.86
+                1 4s BL                                1.34     0.16       21.34
+                2 SS-CON 1/2                           0.48     0.16       20.48
+                2 NUT RED                              0.22     0.12       15.22
+                6 NUT YELLOW                           0.48     0.24       30.48
+                                                     $17.04     1.45     $198.29
 
-Flex                         
-                0 FLEX 1/2                     
-                7 3 + 6 * THHN #14             
-                1 Flex-Con 1/2                 
-                4 NUT RED                      
-                3 NUT YELLOW                   
-This is not                                    
-including CB                                   
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+3/4 emt
+                7 EMT 3/4                              7.00     0.35       50.75
+                7 3 + 6 * THHN #14                    16.80     0.30       54.30
+                2 SS-CON 3/4                           0.84     0.20       25.84
+                1 4S BOX                               1.36     0.30       38.86
+                1 4S BL                                1.34     0.16       21.34
+                2 NUT RED                              0.22     0.12       15.22
+                2 NUT YELLOW                           0.16     0.08       10.16
+                                                     $27.72     1.51     $216.47
 
+1-in
+                7 EMT 1-in                            11.76     0.38       59.26
+                7 3 + 6 * THHN #8                     43.20     0.60      118.20
+                2 SS-CON 1-in                          1.56     0.24       31.56
+                1 5S BOX                               5.84     0.40       55.84
+                1 5S BL                                2.01     0.10       14.51
+                2 NUT Big-Blue                         0.90     0.08       10.90
+                2 NUT YELLOW                           0.16     0.08       10.16
+                                                     $65.43     1.88     $300.43
 
-RE-CON  pair circ            
-                7 EMT 1/2                      
-                7 3 + 6 * THHN #14             
-                2 SS-CON 1/2                   
-                4 NUT RED                      
-                3 NUT YELLOW                   
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
+Black box
+                Neat-EMT                               0.00     0.00        0.00
+                4 EMT 1/2                              2.24     0.18       24.74
+                4 3 + 6 * THHN #14                    11.76     0.21       38.01
+                2 SS-Con 1/2                           0.48     0.16       20.48
+                4 Nut Red                              0.44     0.24       30.44
+                3 Nut Yellow                           0.24     0.12       15.24
+                                                     $15.16     0.91     $128.91
 
-
-Pair of loom                 
-                7 EMT 1/2                      
-                33 THHN #14                    
-                1 4S BOX                       
-                1 4s BL                        
-                2 SS-CON 1/2                   
-                2 NUT RED                      
-                6 NUT YELLOW                   
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-3/4 emt                      
-                7 EMT 3/4                      
-                7 3 + 6 * THHN #14             
-                2 SS-CON 3/4                   
-                1 4S BOX                       
-                1 4S BL                        
-                2 NUT RED                      
-                2 NUT YELLOW                   
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-1-in                         
-                7 EMT 1-in                     
-                7 3 + 6 * THHN #8              
-                2 SS-CON 1-in                  
-                1 5S BOX                       
-                1 5S BL                        
-                2 NUT Big-Blue                 
-                2 NUT YELLOW                   
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
-
-Black box                    
-                Neat-EMT                       
-                4 EMT 1/2                      
-                4 3 + 6 * THHN #14             
-                2 SS-Con 1/2                   
-                4 Nut Red                      
-                3 Nut Yellow                   
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-                                               
-
+Total Estimate                                                         $1,918.55
 

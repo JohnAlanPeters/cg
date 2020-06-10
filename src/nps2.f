@@ -18,10 +18,10 @@ Vocabulary Fuse           FUSE Definitions \ SKU# Sold Keep Have
 : Non-tamp   222.00 w/c   5 c ; \    90
 : 20A         59.00 w/c   8 c ; \    90
 : 60A         94.00 w/c   8 c ; \    90
-: 100A      1620.00 w/c   8 c ; \ Jul 96 Universal
-: 200A      2252.00 w/c   8 c ; \ Jul 96 Universal 
-: AIC-200A    35.11 w/e   8 c ; \     90
-: AIC-300A    45.00 w/e   8 c ; \ guess  actually 35
+: 100A      1620.00 w/c   9 ; \ Jul 96 Universal
+: 200A      2252.00 w/c  10 c ; \ Jul 96 Universal
+: AIC-200A    35.11 w/e  10 c ; \     90
+: AIC-300A    45.00 w/e  12 c ; \ guess  actually 35
 : AIC-400A    55.00 w/e  20 c ; \ GUESS
 : AIC-600A    65.00 w/e  30 c ; \ GUESS
 : Dead-Front   5.00 w/e  50 c ; Elect

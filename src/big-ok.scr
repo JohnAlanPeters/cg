@@ -38,7 +38,7 @@ Vocabulary (BIG-OK)   (BIG-OK) definitions
                                                                 
 : Big-Ok  Elect (big-ok) also ;                                 
 : Big  ." Big holes ok"  big-ok ;                               
-: Big-Holes-Ok  big-ok ;                                        
+: Big-Holes-Ok  big-ok ;
 \ Attic-access  big-ok ;                                        
 \ Crawl-access  big-ok ;                                        
 \ B-boards-off  big-ok ;                                        
@@ -46,7 +46,9 @@ Vocabulary (BIG-OK)   (BIG-OK) definitions
                       (Big-Ok) definitions                      
 : Split-wired    1.50 w/e  10 c ;                               
 : Strong-Box    16.00 w/e  50 c ;  \ 5-21-06 after Pacheco      
-: Quad           2.09 w/e  15 c ;                               
+: Quad           2.09 w/e  15 c ;
+: Drop-power     4.09 w/e 175 c ; \ Power for outlets from attic
+
 Elect                                                           
                                                                 
                                                                 
