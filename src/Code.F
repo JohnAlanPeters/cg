@@ -340,41 +340,29 @@ Vocabulary Dollars
            Dollars Definitions
 : T&M  ." a marker" ;
 
+: _t&m ( n % -- )   \ stack: amount (single precision), percent for materials
+  >r 0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
+  2dup 100 r@ - 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
+  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
+  r> 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+
 : T&M15  ( n -- )   \ divide an amount 15% materials, 85% labor
-  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
-  2dup 85 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
-  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  15 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+  15 _t&m ;
 
-: T&M25  ( n -- )   \ divide an amount 15% materials, 85% labor
-  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
-  2dup 75 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
-  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  25 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+: T&M25  ( n -- )   \ divide an amount 25% materials,785% labor
+  25 _t&m ;
 
-: T&M30  ( n -- )   \ divide an amount 15% materials, 85% labor
-  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
-  2dup 70 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
-  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  30 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+: T&M30  ( n -- )   \ divide an amount 30% materials, 70% labor
+  30 _t&m ;
 
-: T&M40  ( n -- )   \ divide an amount 15% materials, 85% labor
-  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
-  2dup 60 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
-  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  40 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+: T&M40  ( n -- )   \ divide an amount 40% materials, 60% labor
+  40 _t&m ;
 
-: T&M45  ( n -- )   \ divide an amount 15% materials, 85% labor
-  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
-  2dup 55 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
-  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  45 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+: T&M45  ( n -- )   \ divide an amount 45% materials, 55% labor
+  45 _t&m ;
 
-: T&M50  ( n -- )   \ divide an amount 15% materials, 85% labor
-  0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
-  2dup 50 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
-  100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
-  50 0 d* 100. d/ 2dup parts-sub 2! parts-total 2+! ;
+: T&M50  ( n -- )   \ divide an amount 50% materials, 50% labor
+  50 _t&m ;
 
 only forth also editor also electric also definitions
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

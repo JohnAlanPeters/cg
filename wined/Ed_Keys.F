@@ -259,6 +259,11 @@ defer _Control+W ' close-text is _control+w
         overstrike @ 0= overstrike !
         refresh-screen ;
 
+: 3waytoggle ( -- )   \ browse -> overstrike -> insert
+  browse? if browse-toggle overstrike on else
+             overstrike @ if toggle-insert else browse-toggle then
+          then ;
+
 : Pro-mode  ( -- )         \ One mode for code work and one for estimating
         overstrike @       \ JP 4-5-09  It works!
         if word-right      \ Move cursor to the next word to the right
@@ -395,7 +400,7 @@ editor
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 69    Function key bindings   +SCR is 1 page down
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-      k_F1                          OF      browse-toggle               ENDOF
+      k_F1                          OF      3waytoggle                  ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
       k_F2                          OF      settle   grand-total        ENDOF                                               
       k_F3                          OF      save-all-text ( FTA )       ENDOF
