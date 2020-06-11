@@ -119,7 +119,7 @@ Include Ampier.scr
 forth definitions
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
 Include dir2seq.f
-cd webinterpret
+cd ..\webinterpret
 include socksrvr.f
 cd ..
 
@@ -232,8 +232,6 @@ Editor also
 ' Extend-Prices is My-Application
 \ ' Flat-Rate     is My-Application \ changing m-in does not seem to do anything
 ' dotcomma-number is number
-
-chdir ..
 
 ' hello-cg Save CG   .(  Saved the CG file ) cr
 

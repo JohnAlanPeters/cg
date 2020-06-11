@@ -68,7 +68,7 @@ create lastwebuser 64 allot
 : b2sock ( adr cnt -- )
   ssock WriteSocket abort" failed socket write" ;
 
-fload ..\vectint      \ load here to access code above
+fload ..\src\vectint      \ load here to access code above
 
 \ connect to server, read input, xmit kybrd til emptyline
 : do-client init-client
