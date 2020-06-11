@@ -791,7 +791,7 @@ del-max MAXSTRING + Pointer  del-buf
 
 : smart-insert-tab ( -- )
   overstrike @
-  if cursor-col 0= if tab-size to cursor-col else 0 to cursor-col then
+  if cursor-col 0= if tab-size else 0 then  to cursor-col
   else  insert-tab then ;
 
 : back-tab      { \ hlsts hcsts hleds hceds -- }
