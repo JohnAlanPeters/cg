@@ -62,6 +62,8 @@ s" ContractGen " edname$ place
 
 only forth also editor also forth also definitions
 
+' reedit hidden is f1key  \ f1 in console to go to editor
+
 overstrike on
 2 to FilterIndex
 ' _xit is do-esc
