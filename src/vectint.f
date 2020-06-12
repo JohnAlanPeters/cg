@@ -114,7 +114,7 @@ defer to-web
    over 3 s" GET"           \ address over to the top of stack
    compare not              \ compare the comand string and the string with the 'GET'
    if 2drop                 \ if not = drop the address of both strings and send HTML file
-     s" \cg\src\webinterpret\webinterpret-f.html" sendfile
+     s" \cg\webinterpret\webinterpret-f.html" sendfile
    else
      2crlfs              \ chop off headers up to 2 CRLFs to get to data
      2dup data>fuser ( type )        \ type the forth command to the surface console
