@@ -24,7 +24,8 @@ Vocabulary (FISH-WORK)
 : Flush-on-walls        fish-in-wall ;
 : Flush-on-ceiling      Fish-in-wall ;
 : Flush                 fish-in-wall ;
-  (FISH-WORK) Definitions
+  (FISH-WORK) Definitions              \ What is this line for?
+: Drop-power          8.18 w/e 175 c ; \ Power down from attic crawl
 : Fire-box           50.00 w/e  70 c ; \ Wires in the way
 : Cans               60.00 w/e 300 c ; \ For Boris on the Green/Webster Mjellem
 : LED-Cans           17.60 w/e 100 c ; \ 2019 December guesses
@@ -51,9 +52,9 @@ Vocabulary (FISH-WORK)
 : SW-Very-easy        PL-very-easy   ; \ Jan 95
 : PL-very-hard      626.00 w/c 375 c ; \ Oct 04
 : SW-hard           861.00 w/c 320 c ; \ Feb 96 inc mud, ground
-: SW                626.00 w/c 275 c ;
+: SW                800.00 w/c 275 c ;
 : Switch                          SW ;
-: SW-Medium         626.00 w/c 175 c ;
+: SW-Medium         726.00 w/c 175 c ;
 : SW-Easy           626.00 w/c 100 c ;
 : SW-Under                   SW-easy ;
 : S3-Medium                LT-Medium ;

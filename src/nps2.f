@@ -1439,14 +1439,14 @@ Vocabulary Minutes
 \ HOURS                     900-010 [Pay 6 *]       05-19-09
 Vocabulary Hours
                          Hours definitions     \    at 52.00
-: Easy-work    0.0 w/c [  80 6 * ] literal m ; \  8.00  24.96
-: Apprentice   0.0 w/c [ 100 6 * ] literal m ; \
-: Electrician  0.0 w/c [ 167 6 * ] literal m ; \   .00  55.00
-: Master-Elect 0.0 w/c [ 167 7 * ] literal m ; \      91.85 ?
-: Engineering    Electrician ;
-: Engineer       Electrician ;
-: Allowance      Electrician ;
-: Owner        0.0 w/c [ 168 6 * ] literal m ; \ same as rate
+: Easy-work          0.0 w/c [  80 6 * ] literal m ; \  8.00  24.96
+: Apprentice         0.0 w/c [ 100 6 * ] literal m ; \
+: Electrician        0.0 w/c [ 167 6 * ] literal m ; \   .00  55.00
+: Master-Electrician 0.0 w/c [ 167 7 * ] literal m ; \      91.85 ?
+: Engineering                          Electrician ;
+: Engineer                             Electrician ;
+: Allowance                            Electrician ;
+: Owner              0.0 w/c [ 168 6 * ] literal m ; \ same as rate
 : El electrician ;
 
 \ HR hours  \ added by JP cause of problem with packing defs    
@@ -2318,42 +2318,40 @@ PG&E   Definitions             \
 : UG-pull        400.00 w/e   0 c ; \  50 LF or less            
                                                                 
 Elect  \ 110->220 Free                                          
-                                                                
-
 
 \ Trouble-Shoot 1/2         000-000  XX-0 10-14-93  06-04-08 AL
 Vocabulary Trouble-Shoot  Trouble-Shoot Definitions
-: Very-Hard 0.0 w/c 150 c ;  ` Hardest 0.00 w/c 200 c ;
-: Harder  0.0 w/c 99 c ; : Range     harder ;
-: Hard    0.0 w/c 75 c ; : Track       hard ;
-: Medium  0.0 w/c 50 c ; : Bell      medium ;
-: Easy    0.0 w/c 25 c ; : Plug      medium ;
-: Intermitent   harder ; : Bad-splice  hard ; : Rev-Pola  easy ;
-: Miswired      medium ; : Three-way   hard ; : Heater    easy ;
-: Light-Sensor  medium ; : Broken-bulb easy ; : Phaseing  easy ;
-: Light         medium ; : Junction  medium ;
-\ Dimmer          easy ;  
-: Mixed-CB    hard ; : Bulb      easy ;
-: Trace-wire      easy ; : Mistery-sw  easy ; : Stove     hard ;
-: Motion-Sensor   hard ; : Attic     harder ; : Outlet  medium ;
-: Switch          easy ; : Phone     medium ; : Fan       hard ;
-: Interfearance harder ; : Chime    medium ;
-: Mystery-switch  Easy ;
-
+: Very-Hard      0.0 w/c 150 c ;
+: Hardest        0.0 w/c 200 c ;
+: Harder         0.0 w/c  99 c ; : Range     harder ;
+: Hard           0.0 w/c  75 c ; : Track       hard ;
+: Medium         0.0 w/c  50 c ; : Bell      medium ;
+: Easy           0.0 w/c  25 c ; : Plug      medium ;
+: Intermitent           harder ; : Bad-splice  hard ; : Rev-Pola  easy ;
+: Miswired              medium ; : Three-way   hard ; : Heater    easy ;
+: Light-Sensor          medium ; : Broken-bulb easy ; : Phaseing  easy ;
+: Light                 medium ; : Junction  medium ;
+\ Dimmer                  easy ;
+: Mixed-CB                hard ; : Bulb        easy ;
+: Trace-wire              easy ; : Mistery-sw  easy ; : Stove     hard ;
+: Motion-Sensor           hard ; : Attic     harder ; : Outlet  medium ;
+: Switch                  easy ; : Phone     medium ; : Fan       hard ;
+: Interfearance         harder ; : Chime     medium ;
+: Mystery-switch          Easy ;
 : Hollywood-S3   0.0 w/c 300 c ;
-` Water-in-pipe  0.0 w/c 300 c ;                                
-` Lost-Hot       0.0 w/c 200 c ;                                
-` Lost-Neutral   0.0 w/c 250 c ;                                
-` Lost-power     0.0 w/c 200 c ;
-` Fuse-Blows     0.0 w/c 200 c ;                                
-` Sparks         0.0 w/c 150 c ;                                
-` CB-jumps       0.0 w/c  70 c ;                                
-` CB-short       0.0 w/c  70 c ;                                
-: Flicker               harder ;                                
-: Circuit                 hard ;                                
+: Water-in-pipe  0.0 w/c 300 c ;
+: Lost-Hot       0.0 w/c 200 c ;
+: Lost-Neutral   0.0 w/c 250 c ;
+: Lost-power     0.0 w/c 200 c ;
+: Fuse-Blows     0.0 w/c 200 c ;
+: Sparks         0.0 w/c 150 c ;
+: CB-jumps       0.0 w/c  70 c ;
+: CB-short       0.0 w/c  70 c ;
+: Flicker               harder ;
+: Circuit                 hard ;
 Elect
-: T-S  Trouble-shoot ;
-
+: T-S            Trouble-shoot ;
+: TS                      T-S  ;
 
 | Reactivate                000-000  XX-0 10-14-93  10-14-93 AEC
 Vocabulary Reactivate                                           
@@ -2579,4 +2577,3 @@ Elect
 Vocabulary Annual                                               
 Annual Definitions                                              
 : 25-year      25 hours [ hours ] electrician ;                 
-: 5-Year        5 hours [ hours ] electrician ;                 
