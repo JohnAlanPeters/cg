@@ -6,6 +6,8 @@
 sys-warning-off
 dup-warning-off
 
+forth definitions
+
 needs xref
 needs xwinver
 chdir webserver
