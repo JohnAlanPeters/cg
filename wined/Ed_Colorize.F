@@ -9,7 +9,7 @@ create  keycolors
         blue ,     magenta ,   cyan ,     ltgray ,
         dkgray ,   ltred ,     ltgreen ,  yellow ,
         ltblue ,   ltmagenta , ltcyan ,   gray ,
-        brown ,    ltgray ,    dkmagenta ,  ( 0-17 jap )
+        brown ,    ltgray ,    dkmagenta ,  ( 0-18 jap )
 
 : FileName ( addr n <-name-> -- ) \ Create a word that holds a filename
            ( -- addr )
@@ -47,6 +47,10 @@ maxkeys maxkeylen * Pointer keyword-strings   \ space for the strings
         \ parse number from a string, return 0 if not a number
         bl kparse -trailing number? nip 0<> and ;
 
+: isvoc { addr cnt \ a$ -- 0|1 }
+  MAXSTRING LocalAlloc: a$
+  addr cnt a$ place a$ count bl scan nip a$ c@ swap - a$ c!
+  a$ find if @ dovoc = else 0= then ;
 
 \ 2a \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ Opens the keyword list and loads it from a text file.  Each line contains:
