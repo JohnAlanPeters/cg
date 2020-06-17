@@ -653,11 +653,12 @@ named-new$ file-to-edit$
    overstrike @
    if 0 to cursor-col
       cursor-line 1+ #line" -trailing nip      \ next is not a blank line
-      if 1 +row-cursor 'cursor c@ bl = if word-right then
+      if 1 +row-cursor 'cursor c@ bl = if word-right
+         'cursor c@ ascii $ = if 0 to cursor-col then then
       else
-       cursor-line #line" -trailing   \ ?line is not blank
+       cursor-line #line" -trailing   \ next is blank; current line is not blank
        swap c@ bl = and               \ but 1st char is blank
-       if word-right
+       if word-right 'cursor c@ ascii $ = if 0 to cursor-col then
        then
        1 +row-cursor
       then
