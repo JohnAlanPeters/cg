@@ -5,314 +5,315 @@ PRICES.MOD is the file name
 2-COLUMN                                                                
                                                                 
                                                                 
-                                                251.57    201.25                
-                                                 50.31     33.54                
-                                              29,638.97                         
-                                              20,754.28    7,256.74             
-                                              8,884.69     6,581.54             
-                                                        
-                                                        
+                                                231.93       185.54
+                                                 28.99        23.19
+                                             43,761.457
+                                             31,554.198   11,032.93
+                                             12,207.26     6,103.61
+                                                  0.00         0.00
+                                                  0.00
                                                         
                                                         
 
 
-Setup                        
-                Setup Job                                  0.75       61.87               
-                Travel Medium                              0.75       61.87
-                                                           1.50     $123.74               
-                                               
-\ Contingency                                           
+
+Setup
+                Setup Job                                       0.75       61.87
+                Travel Medium                                   0.75       61.87
+                                                                1.50     $123.74
+
+\ Contingency
 10 percent until the inspector leaves. ..
-                                                        
-                                                        
-Fish-In-Walls                
-                82.50 per-hour                                                            
-                Fish-in-walls                                                             
-                LT                                         3.00      255.95               
-                 LT-medium                                 2.00      173.30               
-                 LT-easy                                   1.00       90.80               
-                PL                                         2.75      235.32               
-                 PL-medium                                 1.75      152.67               
-                 PL-easy                                   1.10       99.05               
-                SW                                         2.75      235.32               
-                 SW-medium                                 1.75      152.82               
-                 SW-easy                                   1.00       90.95               
-                S3                                         3.00      255.95               
-                CB  Circuit                                0.90       93.15
-                                                          21.00   $1,835.28               
-                                               
-Neat-EMT Outlets             
-                Neat-EMT                                                                  
-Plaster NIC     LT                                         2.06      186.04               
-                 LT-medium                                 1.70      153.75               
-                 LT-easy                                   1.25      115.27               
-Paint NIC       PL                                         1.75      171.05               
-                 PL-medium                                 1.40      129.00               
-                 PL-easy                                   1.00       94.65               
-                SW                                         1.75      171.05               
-                 SW-medium                                 1.70      153.75               
-                 SW-easy                                   1.00       94.65               
-                S3                                         2.13      193.43
-                                                          15.74   $1,462.64               
 
+
+Fish-In-Walls
+                136.40 per-hour                                 0.00        0.00
+                Fish-in-walls                                   0.00        0.00
+                LT                                              3.00      421.72
+                 LT-medium                                      2.25      319.20
+                 LT-easy                                        1.00      148.70
+                PL                                              2.75      387.62
+                 PL-medium                                      2.25      319.20
+                 PL-easy                                        1.10      162.34
+                SW                                              2.75      391.10
+                 SW-medium                                      1.75      253.22
+                 SW-easy                                        1.00      148.92
+                S3                                              3.00      421.72
+                CB  Circuit                                     0.90      148.76
+                                                               21.75   $3,122.50
+
+Neat-EMT Outlets
+                Neat-EMT                                        0.00        0.00
+Plaster NIC     LT                                              2.06      304.82
+                 LT-medium                                      1.70      251.88
+                 LT-easy                                        1.25      188.50
+Paint NIC       PL                                              1.75      278.24
+                 PL-medium                                      1.40      210.96
+                 PL-easy                                        1.00      154.40
+                SW                                              1.75      278.24
+                 SW-medium                                      1.70      251.88
+                 SW-easy                                        1.00      154.40
+                S3                                              2.13      316.77
+                                                               15.74   $2,390.09
 
 Open-1-Side (2-sides)
-                Open-1-side                                                               
-                LT                                         0.98       86.37               
-                SW                                         0.85       75.64               
-                PL                                         0.85       75.64               
-                S3                                         0.98       86.37               
-                S4                                         0.98       88.95               
-Don't use this  Open-2-sides                                                              
-                LT                                         0.78       69.87               
-                SW                                         0.68       61.62               
-                PL                                         0.68       61.62               
-                S3                                         0.78       69.87               
-                S4                                         0.78       72.45
-                                                           8.34     $748.40               
+                Open-1-side                                     0.00        0.00
+                LT                                              0.98      141.85
+                SW                                              0.85      124.12
+                PL                                              0.85      124.12
+                S3                                              0.98      141.85
+                S4                                              0.98      145.67
+Don't use this  Open-2-sides                                    0.00        0.00
+                LT                                              0.78      114.57
+                SW                                              0.68      100.93
+                PL                                              0.68      100.93
+                S3                                              0.78      114.57
+                S4                                              0.78      118.39
+                                                                8.34   $1,227.00
 
 Big-holes-ok
-Jerome 45 55    ( Jul 97 )                                                                
-                Big-holes-OK                                                              
-                LT                                         2.00      170.52               
-                SW                                         2.00      170.92               
-                PL                                         2.00      170.92               
-                S3                                         2.00      170.52               
-                S4                                         2.25      193.72
-                                                          10.25     $876.60               
-                                               
-Grounding                    
-                Fish-in-walls                                                             
-                Ground 100a                                4.82      468.64               
-                Ground box                                 3.00      254.72               
-                Ground box-medium                          2.00      172.22               
-                Ground Box-easy                            1.00       85.67               
-                Ground rod                                 1.50      142.32               
-                Ground Clip                                0.01        1.00               
-                Ground box                                 3.00      254.72               
-                Ground box-medium                          2.00      172.22               
-                Ground box-easy                            1.00       85.67               
-                Ground Bond                                0.50       50.74
-                                                          18.83   $1,687.92               
-                                               
-GFI                          
-                Fish-in-walls                                                             
-                GFI                                        0.25       38.17               
-                GFCI                                       0.05       21.67               
-                Box-only                                   1.00       87.21               
-                CATV                                       2.75      253.87               
-                Fixture Motion-sensor                      0.40       73.50               
-                Circuit                                    0.70       71.25               
-                FPE 20A                                    0.20       50.25               
-                CB                                         0.20       21.90               
-                C-B 20A                                    0.20       21.53               
-Up to 60A       C-B 20A-2P                                 0.30       38.25               
-                C-B 100A                                   0.80      114.60
-                                                           6.85     $792.20               
-                                               
-Fixtures                     
-                Fish-in-walls                                                             
-                Fixture Motion-sensor                      0.40       73.50               
-                2 Lamp 75W-par                             0.12       36.62               
-                Ball 6-in                                  0.25       34.12               
-                Ball 8-in                                  0.25       34.78               
-                Lamp 75W-par                               0.06       18.31               
-                Lamp mr-16                                 0.08       10.65               
-                Install easy                               0.35       28.87               
-                Install medium                             0.55       45.37               
-                Install pendant                            0.75       61.87               
-                Install Chandelier                         1.50      123.75
-                                                           4.31     $467.84               
-                                               
-LED
-                LED                                                                       
-                Rewire-LED 48-inch                         0.25       40.87               
-                1 LED  4-ft                                1.25      125.80               
-                2 LED  4-ft                                2.50      251.61
-                                                           4.00     $418.28               
-                                               
-LF and Low Volt              
-                Fish-in-walls                                                             
-                Low-volt chime-Kit                         0.50       52.72               
-                Low-volt button                            0.25       24.26               
-                Low-volt tri-volt                          0.20       36.75               
-                PH                                         2.75      235.32               
-                SP                                         2.75      235.32               
-                CATV                                       2.75      253.87
-                                                           9.20     $838.24               
-                                               
-Fan/Heat                     
-                Fish-in-walls                                                             
-                Fan Small                                  0.35       51.14               
-                Fan Panasonic-wall                         0.40      390.75               
-                Heat Bath-1500W                            1.00      163.50               
-                Heat Thermostat                            0.30       54.45               
-                Heat Marly                                 1.00      240.97
-                                                           3.05     $900.81               
-                                               
-Devices/Plate/Dimmer         
-Round nob       Dimmer D-600                               0.25       34.12               
-Toggle slider   Dimmer AY-600                              0.25       38.17               
-Sideways toggle Dimmer DV-600                              0.25       48.97               
-                D&P                                        0.12       12.42               
-                Device&Plate                               0.25       23.14               
-                Device-220 Dryer                           0.20       35.40               
-                GFI                                        0.25       38.17
-                                                           1.57     $230.39               
-                                               
-Big-Holes-Ok                 
-Rock by others  Big-holes-ok                                                              
-Light           LT                                         2.00      170.52               
-Switch          SW                                         2.00      170.92               
-Plug            PL                                         2.00      170.92
-                                                           6.00     $512.36               
-                                               
-Open-2-Sides                 
-(New walls)     Open-2-sides                                                              
-Light           LT                                         0.78       69.87               
-Plug            PL                                         0.68       61.62               
-Switch          SW                                         0.68       61.62
-                                                           2.14     $193.11               
-                                               
-Neat-Wiremold                
-                Neat-Wiremold                                                             
-                LT                                         2.00      205.09               
-                LT-medium                                  1.50      155.50               
-                LT-easy                                    1.25      123.00               
-                PL                                         2.00      205.09               
-                PL-medium                                  1.50      155.50               
-                PL-easy                                    1.00      102.38               
-                SW                                         2.00      205.09               
-                SW-medium                                  1.50      155.50               
-                SW-easy                                    1.00      102.38
-                                                          13.75   $1,409.53               
-                                               
-Service 100A  #4 1-1/4       
--- NEW SERVICE  ( 230 Volts 100 Amps )                                                    
-Ladder & 220V   1 Setup     Hot-220                        1.50      123.75               
-To PG&E wires   1 Riser     100A                           3.57      398.95               
-Conduit body    1 LB-Inc    100A                           0.96       97.19               
-90 Corner bend  1 90-Inc    100A-ez                        0.30       42.70               
-Meter & Panel   1 M-P       100A-12-24                     2.50      408.15               
-Gr rod & water  1 Ground    100A                           4.82      468.64               
-Hot cold & gas  1 Ground    BOND                           0.50       50.74
-                                                          14.15   $1,590.12               
-                                               
-Reconnect old                
-Nob & Tube wire 1 Reconnect Black-box                      1.25      108.52               
-1/2 inch pipe   1 Reconnect 1/2                            1.02       95.32               
-3/4 inch pipe   1 Reconnect 3/4                            1.25      116.62               
-1-in pipe       1 Reconnect 1-in                           1.40      135.75               
-15A Breakers    1 CB                                       0.20       21.90               
-20A Breakers    1 CB                                       0.20       21.90               
-30 Amp Dryer    1 C-B 30A                                  0.30       55.23               
-50 Amp Range    1 C-B 50A                                  0.30       55.23               
-Light at meter  Neat-EMT  LT-easy                          1.25      115.27
-                                                           7.17     $725.74               
-                                               
-City Inspection              
-Loss-prevention  ( Permit Survey-first                                                    
-Meet Inspector   1 Appointment Inspector                   2.00      165.00               
-Residential Lg.  1 Permit 20-outlets-2                     0.00      330.75               
-OK to cover up   1 Permit Reinspection                     0.00      229.50               
-Commercial mini  1 Permit 20-Commercial-3                  0.00      353.68               
-Residential Sm.  1 Permit 20-Outlets-1                     0.00      120.83
-                                             $             2.00   $1,199.76               
-                                               
-Kill                         
-                Kill old-box                               0.20       16.50               
-                Kill old-fixture                           0.25       20.62               
-                Kill old-heater                            0.50       41.25               
-                Kill old-riser                             0.75       61.87
-                                                           1.70     $140.24               
-                                               
-Panels
-                Panel                                                                     
-                 70A-2-4                                   1.00      102.75               
-                100A-2-2                                   1.00      110.85               
-                125A-4-8                                   1.00      112.20               
-                125A-6-12                                  1.25      139.57               
-                125A-8-16                                  1.50      169.65               
-                125A-12-24                                 2.00      227.10               
-                125A-16-24                                 2.20      263.17               
-                150A-16-32                                 2.40      295.20               
-                150A-20-30                                 2.60      321.15               
-                200A-20-40                                 3.40      488.73               
-                200A-24-40                                 3.40      515.73               
-                200A-30-40                                 3.40      443.85               
-                200A-12-24                                 2.50      263.89               
-                200A-20-40                                 3.40      488.73               
-                200A-30-40                                 3.40      443.85               
-                200A-40-40                                 3.50      491.25               
-                225A-42-42                                 3.80      584.85               
-                400A-30-40                                 5.20      672.00               
-                Dead-Front                                 0.50       45.30
-                                             $            47.45   $6,179.82               
+Jerome 45 55    ( Jul 97 )                                      0.00        0.00
+                Big-holes-OK                                    0.00        0.00
+                LT                                              2.00      280.98
+                SW                                              2.00      281.58
+                PL                                              2.00      281.58
+                S3                                              2.00      280.98
+                S4                                              2.25      318.90
+                                                               10.25   $1,444.02
 
-               
+Grounding
+                Fish-in-walls                                   0.00        0.00
+                Ground 100a                                     4.82      762.62
+                Ground box                                      3.00      419.90
+                Ground box-medium                               2.00      283.50
+                Ground Box-easy                                 1.00      141.10
+                Ground rod                                      1.50      232.12
+                Ground Clip                                     0.01        1.63
+                Ground box                                      3.00      419.90
+                Ground box-medium                               2.00      283.50
+                Ground box-easy                                 1.00      141.10
+                Ground Bond                                     0.50       82.26
+                                                               18.83   $2,767.63
+
+GFI
+                Fish-in-walls                                   0.00        0.00
+                GFI                                             0.25       60.10
+                GFCI                                            0.05       32.82
+                Box-only                                        1.00      143.38
+                CATV                                            2.75      415.10
+                Fixture Motion-sensor                           0.40      114.56
+                Circuit                                         0.70      115.48
+                FPE 20A                                         0.20       77.28
+                CB                                              0.20       33.28
+                C-B 20A                                         0.20       36.44
+Up to 60A       C-B 20A-2P                                      0.30       60.92
+                C-B 100A                                        0.80      181.12
+                                                                6.85   $1,270.48
+
+Fixtures
+                Fish-in-walls                                   0.00        0.00
+                Fixture Motion-sensor                           0.40      114.56
+                2 Lamp 75W-par                                  0.12       55.96
+                Ball 6-in                                       0.25       54.10
+                Ball 8-in                                       0.25       55.08
+                Lamp 75W-par                                    0.06       27.98
+                Lamp mr-16                                      0.08       16.91
+                Install easy                                    0.35       47.74
+                Install medium                                  0.55       75.02
+                Install pendant                                 0.75      102.30
+                Install Chandelier                              1.50      204.60
+                                                                4.31     $754.25
+
+LED
+                \ LED                                           0.00        0.00
+                \ Rewire-LED 48-inch                            0.00        0.00
+                \ 1 LED  4-ft                                   0.00        0.00
+                \ 2 LED  4-ft                                   0.00        0.00
+
+
+LF and Low Volt
+                Fish-in-walls                                   0.00        0.00
+                Low-volt chime-Kit                              0.50       85.20
+                Low-volt button                                 0.25       39.50
+                Low-volt tri-volt                               0.20       57.28
+                PH                                              2.75      387.62
+                SP                                              2.75      387.62
+                CATV                                            2.75      415.10
+                                                                9.20   $1,372.32
+
+Fan/Heat
+                Fish-in-walls                                   0.00        0.00
+                Fan Small                                       0.35       80.74
+                Fan Panasonic-wall                              0.40      584.56
+                Heat Bath-1500W                                 1.00      256.40
+                Heat Thermostat                                 0.30       84.92
+                Heat Marly                                      1.00      371.18
+                                                                3.05   $1,377.80
+
+Devices/Plate/Dimmer
+Round nob       Dimmer D-600                                    0.25       54.10
+Toggle slider   Dimmer AY-600                                   0.25       60.10
+Sideways toggle Dimmer DV-600                                   0.25       76.10
+                D&P                                             0.12       20.10
+                Device&Plate                                    0.25       37.84
+                Device-220 Dryer                                0.20       55.28
+                GFI                                             0.25       60.10
+                                                                1.57     $363.62
+
+Big-Holes-Ok
+Rock by others  Big-holes-ok                                    0.00        0.00
+Light           LT                                              2.00      280.98
+Switch          SW                                              2.00      281.58
+Plug            PL                                              2.00      281.58
+                                                                6.00     $844.14
+
+Open-2-Sides
+(New walls)     Open-2-sides                                    0.00        0.00
+Light           LT                                              0.78      114.57
+Plug            PL                                              0.68      100.93
+Switch          SW                                              0.68      100.93
+                                                                2.14     $316.43
+
+Neat-Wiremold
+                Wiremold                                        0.00        0.00
+                LT                                              0.78      114.57
+                LT-medium                                       1.50      251.64
+                LT-easy                                         0.50       76.38
+                PL                                              0.68      100.93
+                PL-medium                                       1.50      251.64
+                PL-easy                                         0.55       81.80
+                SW                                              0.68      100.93
+                SW-medium                                       1.50      251.64
+                SW-easy                                         1.00      165.86
+                                                                8.69   $1,395.39
+
+Service 100A  #4 1-1/4
+-- NEW SERVICE  ( 230 Volts 100 Amps )                          0.00        0.00
+Ladder & 220V   1 Setup     Hot-220                             1.50      204.60
+To PG&E wires   1 Riser     100A                                3.57    1,011.18
+Conduit body    1 LB-Inc    100A                                0.96      157.60
+90 Corner bend  1 90-Inc    100A-ez                             0.30       67.52
+Meter & Panel   1 M-P       100A-12-24                          2.50      640.12
+Gr rod & water  1 Ground    100A                                4.82      762.62
+Hot cold & gas  1 Ground    BOND                                0.50       82.26
+                                                               14.15   $2,925.90
+
+Reconnect old
+Nob & Tube wire 1 Reconnect Black-box                           0.91      139.24
+1/2 inch pipe   1 Reconnect 1/2                                 1.02      155.68
+3/4 inch pipe   1 Reconnect 3/4                                 1.25      190.50
+1-in pipe       1 Reconnect 1-in                                1.40      220.96
+15A Breakers    1 CB                                            0.20       33.28
+20A Breakers    1 CB                                            0.20       33.28
+30 Amp Dryer    1 C-B 30A                                       0.30       62.48
+50 Amp Range    1 C-B 50A                                       0.30       62.48
+Light at meter  Neat-EMT  LT-easy                               1.25      188.50
+                                                                6.83   $1,086.40
+
+City Inspection
+Loss-prevention  ( Permit Survey-first                          0.00        0.00
+Meet Inspector   1 Appointment Inspector                        2.00      272.80
+Residential Lg.  1 Permit 20-outlets-2                          0.00      490.00
+OK to cover up   1 Permit Reinspection                          0.00      340.00
+Commercial mini  1 Permit 20-Commercial-3                       0.00      523.98
+Residential Sm.  1 Permit 20-Outlets-1                          0.00      179.02
+                                             $                  2.00   $1,805.80
+
+
+Kill
+                Kill old-box                                    0.20       27.28
+                Kill old-fixture                                0.25       34.10
+                Kill old-heater                                 0.50       68.20
+                Kill old-riser                                  0.75      102.30
+                                                                1.70     $231.88
+
+Panels
+                Panel                                           0.00        0.00
+                 70A-2-4                                        1.00      166.40
+                100A-2-2                                        1.00      178.40
+                125A-4-8                                        1.00      180.40
+                125A-6-12                                       1.25      224.50
+                125A-8-16                                       1.50      272.60
+                125A-12-24                                      2.00      364.80
+                125A-16-24                                      2.20      421.08
+                150A-16-32                                      2.40      471.36
+                150A-20-30                                      2.60      512.64
+                200A-20-40                                      3.40      772.26
+                200A-24-40                                      3.40      812.26
+                200A-30-40                                      3.40      705.76
+                200A-12-24                                      2.50      426.40
+                200A-20-40                                      3.40      772.26
+                200A-30-40                                      3.40      705.76
+                200A-40-40                                      3.50      777.40
+                225A-42-42                                      3.80      920.32
+                400A-30-40                                      5.20    1,069.28
+                Dead-Front                                      0.50       74.20
+                                             $                 47.45   $9,828.08
+
+
 Linear foot NeatDead-Front EMT
-                1 LF-EMT   20A                             0.06        5.61               
-                1 LF-EMT   30A                             0.07        6.61               
-                1 LF-EMT   50A                             0.08        8.13               
-                1 LF-EMT  100A                             0.12       14.15               
-                1 LF-EMT  200A                             0.16       21.85               
-                C-B       100A                             0.80      114.60               
-                LB-Inc    100A                             0.96       97.19               
-                Setup  Hot-220                             1.50      123.75               
-                Riser     100A                             3.57      398.95               
-                M-P 100A-12-24                             2.50      408.15               
-                Ground    100A                             4.82      468.64               
-                Ground    BOND                             0.50       50.74
-                                                          15.14   $1,718.37               
-                                               
-Off set nipples              
-                OS-Nip     15A                             0.31       29.28               
-                OS-Nip     20A                             0.31       29.28               
-                OS-Nip     30A                             0.83       79.51               
-                OS-Nip     40A                             0.95       88.63               
-                OS-Nip     50A                             0.95       88.63               
-                OS-Nip     65A                             1.12      108.34               
-                OS-Nip     85A                             1.14      112.28               
-                OS-Nip    100A                             1.18      120.31               
-                OS-Nip    125A                             1.20      125.47               
-                OS-Nip    200A                             1.54      176.71               
-                OS-Nip    400A                            10.00    1,620.15
-                                                          19.53   $2,578.59               
-                                               
-Breakers Interchangable      
-                C-B 20A                                    0.20       21.53               
-Up to 60A       C-B 20A-2P                                 0.30       38.25               
-Double wafer    C-B 20A-20A                                0.30       35.96               
-Quad            C-B 20-20-20-20                            0.40       62.70               
-                C-B 30A                                    0.30       55.23               
-                C-B 40A                                    0.30       55.23               
-                C-B 50A                                    0.30       55.23               
-                C-B 60A                                    0.30       55.23               
-                C-B 70A                                    0.60       83.92               
-                C-B 90A                                    4.00      500.10               
-                C-B 100A                                   0.80      114.60               
-                C-B 125A                                   1.00      185.77
-                                                           8.80   $1,263.75               
-                                               
-Breakers Square-D            
-                Square-D  20A                              0.30       36.90               
-Up to 60A       Square-D  20A-2P                           0.30       49.05               
-                Square-D  30A                              0.30       49.05               
-                Square-D  40A                              0.30       49.05               
-                Square-D  50A                              0.30       58.50               
-                Square-D  90A                              0.90      199.34               
-                Square-D  200A                             1.00      352.50
-                                                           3.40     $794.39               
-                                               
-Breakers FPE                 
-7               FPE 20A                                    0.20       50.25               
-Up to 60A       FPE 20A-2P                                 0.30       80.10               
-                FPE 30A                                    0.30       80.10               
-                FPE 40A                                    0.30       80.10               
-                FPE 50A                                    0.30       80.10               
-                FPE 60A                                    0.30       80.10               
-                FPE 100A                                   4.00      500.10
-                                                           5.70     $950.85               
-                                               
-Total Estimate                                                   $29,638.97     
+                1 LF-EMT   20A                                  0.06        9.16
+                1 LF-EMT   30A                                  0.07       10.79
+                1 LF-EMT   50A                                  0.08       13.19
+                1 LF-EMT  100A                                  0.12       22.65
+                1 LF-EMT  200A                                  0.16       34.64
+                C-B       100A                                  0.80      181.12
+                LB-Inc    100A                                  0.96      157.60
+                Setup  Hot-220                                  1.50      204.60
+                Riser     100A                                  3.57    1,011.18
+                M-P 100A-12-24                                  2.50      640.12
+                Ground    100A                                  4.82      762.62
+                Ground    BOND                                  0.50       82.26
+                                                               15.14   $3,129.93
+
+Off set nipples
+                OS-Nip     15A                                  0.31       47.78
+                OS-Nip     20A                                  0.31       47.78
+                OS-Nip     30A                                  0.83      129.57
+                OS-Nip     40A                                  1.27      194.34
+                OS-Nip     50A                                  1.27      194.34
+                OS-Nip     65A                                  1.12      176.38
+                OS-Nip     85A                                  1.14      182.51
+                OS-Nip    100A                                  1.18      194.97
+                OS-Nip    125A                                  1.20      202.90
+                OS-Nip    200A                                  1.54      283.63
+                OS-Nip    400A                                  2.26      493.44
+                                                               12.43   $2,147.64
+
+Breakers Interchangable
+                C-B 20A                                         0.20       36.44
+Up to 60A       C-B 20A-2P                                      0.30       60.92
+Double wafer    C-B 20-20A                                      0.30       57.54
+Quad            C-B 20-20-20-20                                 0.40       98.56
+                C-B 30A                                         0.30       62.48
+                C-B 40A                                         0.30       62.48
+                C-B 50A                                         0.30       62.48
+                C-B 60A                                         0.30       62.48
+                C-B 70A                                         0.60      132.84
+                C-B 90A                                         4.00      797.60
+                C-B 100A                                        0.80      181.12
+                C-B 125A                                        1.00      289.40
+                                                                8.80   $1,904.34
+
+Breakers Square-D
+                Square-D  20A                                   0.30       58.92
+Up to 60A       Square-D  20A-2P                                0.30       76.92
+                Square-D  30A                                   0.30       76.92
+                Square-D  40A                                   0.30       76.92
+                Square-D  50A                                   0.30       90.92
+                Square-D  90A                                   0.90      308.08
+                Square-D  200A                                  1.00      536.40
+                                                                3.40   $1,225.08
+
+Breakers FPE
+7               FPE 20A                                         0.20       77.28
+Up to 60A       FPE 20A-2P                                      0.30      122.92
+                FPE 30A                                         0.30      122.92
+                FPE 40A                                         0.30      122.92
+                FPE 50A                                         0.30      122.92
+                FPE 60A                                         0.30      122.92
+                FPE 100A                                        0.11       15.11
+                                                                1.81     $706.99
+
+Total Estimate                                                        $43,761.45
 

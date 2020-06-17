@@ -83,6 +83,7 @@ This code was created fresh for the WinCG version.
 : 1C 1-column ;
 : 2-column   ( -- )   \ show time column and total column
   false to partscolshow true to timecolshow false to unitcolshow ;
+: 2c  2-column ;
                                          
 : 3-column ( -- )     \ show parts, time, and total columns
   true to partscolshow true to timecolshow false to unitcolshow ;
