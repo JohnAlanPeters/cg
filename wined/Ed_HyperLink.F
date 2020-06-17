@@ -649,19 +649,13 @@ named-new$ file-to-edit$
 \ *p SMART-CR  ( -- ) follows the ragged left
 \ ** left border of the text when in the overstrike mode. Dec 22nd, 2002 jap
 : smart-cr      ( -- )   \ handle cr
-  bitImage? ?EXIT
+   bitImage? ?EXIT
    overstrike @
-   if 0 to cursor-col
-      cursor-line 1+ #line" -trailing nip      \ next is not a blank line
-      if 1 +row-cursor 'cursor c@ bl = if word-right
-         'cursor c@ ascii $ = if 0 to cursor-col then then
-      else
-       cursor-line #line" -trailing   \ next is blank; current line is not blank
-       swap c@ bl = and               \ but 1st char is blank
-       if word-right 'cursor c@ ascii $ = if 0 to cursor-col then
-       then
-       1 +row-cursor
-      then
+   if cursor-line 1+ to cursor-line
+      0 to cursor-col 'line c@ bl = cur-buf w@ and
+      if word-right 'cursor c@ ascii $ =
+          if 16 to cursor-col then
+      else cur-buf w@ 0= if 16 to cursor-col then then
    else split-line then  ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
