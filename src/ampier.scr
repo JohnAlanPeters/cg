@@ -203,7 +203,8 @@ Vocabulary RECONNECT RECONNECT Definitions
 : 2-Loom-N&T            200.00 w/c  50 c ;
 : Looms                  50.00 w/c  16 c ;
 : Typical-panel         126.16 w/e 400 c ;
-Electric definitions  : Repower reconnect ;                     
+Electric definitions
+: Repower reconnect ;
 
 
 %  ( Three Phase ) OS-NIP                            15apr8AEC  
