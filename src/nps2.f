@@ -1796,7 +1796,7 @@ Vocabulary PHONE  Phone Definitions       \ Used Sold Keep Have
 
 
 | Aliases                   900-555                 89-05-24 AEC
-: Bulb  ." Lamp is suggested" lamp ; \    \ Used Sold Keep Have 
+: Bulb  ."  Lamp is suggested" lamp ; \    \ Used Sold Keep Have
                                                                 
                                                                 
 | CONFERENCE                900-777  XX-0           88-11-02 AEC

@@ -302,9 +302,15 @@ editor
     cur-buf cell+ 5 s" Total" istr=
     if drop to cursor-line refresh-screen exit then
     cur-buf lcount over 3 + swap move   \ make room for 3 characters at start
-    3 cur-buf w+! s"    " cur-buf cell+ swap cmove
-    dup index$ cur-buf cell+ swap cmove
+    3 cur-buf +! s"    " cur-buf cell+ swap cmove
+    dup index$ >r cur-buf cell+ r@ cmove
+    r> 1 = if ascii . cur-buf cell+ 1+ c! then
     put-cursor-line
+    begin cursor-line 1+ to cursor-line get-cursor-line cur-buf c@
+    while cur-buf lcount over 3 + swap move    \ indent 3 characters
+          3 cur-buf +! s"    " cur-buf cell+ swap cmove
+          put-cursor-line
+    repeat
     1+              \ next vscreen index#
   repeat  drop to cursor-line refresh-screen ;
 
