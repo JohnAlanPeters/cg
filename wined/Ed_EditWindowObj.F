@@ -4,6 +4,8 @@
 \ 10      EditWindowClass
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+: view-color ; \ For use with viewing the color of vocabularies
+
 :Class EditWindowClass <super child-window
 
         int xpixel
