@@ -63,6 +63,7 @@ editor also
 
 : ADD-ALL-SCREENS ( -- ) \ It all happens here
   bid-thru               \ extend all vscrns accumulating totals
+  ext-err if exit then
   sell-out  time-out wholesale-out  parts-out   labor-out 
   other-out            \ what?
   permit-out           \ DBI fees
@@ -117,7 +118,7 @@ editor also
    5 60 at-cents add-dot ;
 
 : ALL-THRU     ( -- )
-   add-all-screens
+   add-all-screens ext-err if exit then
 \   over-sig
     lab-bud-35  topout 3 + 64 at-cents    \  the 35% amount The 3 is line
     calc  5 +to cursor-col ;
@@ -140,7 +141,8 @@ editor also
   noext?
   if line-cur cursor-line cursor-col
      keyboard off ['] all-thru  catch 0=
-     if  to cursor-col to cursor-line to line-cur refresh-screen
+     if ext-err if loadline @ to cursor-line 16 to cursor-col
+        else to cursor-col to cursor-line to line-cur then refresh-screen
      else 2drop drop then
 \    20% 25% cc
   then  EX-TOTAL to last-total
