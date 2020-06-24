@@ -319,6 +319,9 @@ editor
 : err_vocab-toggle ( -- )  \ dump the current vocabulary words
   err-vocab-show 0= to err-vocab-show ;
 
+: toggle-autoextend ( -- )  \ true-> extend on cr
+  autoextend 0= to autoextend ;
+
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 67    The main editor loop
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -352,7 +355,7 @@ editor
             EditMode: Win-EdToolbar
             \ SMS-WEW-key-Con-doc-interp-send
             key
-            call GetFocus topwin <> if PutKey: cmd _xit then                 
+            call GetFocus topwin <> if PutKey: cmd _xit then
             SetFocus: DocWindow
             HideCursor: DocWindow
             CASE
@@ -408,7 +411,7 @@ editor
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
       k_F1                          OF      3waytoggle                  ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
-      k_F2                          OF      settle   grand-total        ENDOF                                               
+      k_F2                          OF      settle   grand-total        ENDOF
       k_F3                          OF      save-all-text ( FTA )       ENDOF
       k_F3    +k_shift              OF      save-all-text  ( bfta )     ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
@@ -423,7 +426,7 @@ editor
       k_F8                          OF      revert-text                 ENDOF
       k_F9                          OF      hyper-link ( grand-total )  ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
-      k_F10                         OF      un-add  ( hyper-link )      ENDOF
+      k_F10                         OF      toggle-autoextend           ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
       k_F11                         OF      vindex#s ( fstacksave )     ENDOF

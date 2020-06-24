@@ -645,11 +645,13 @@ named-new$ file-to-edit$
 : 'cursor       ( -- addr )  \ Get the address of the cursor.
         'line  cursor-col +  ;
 
+0 value autoextend   \ extend all on cr when true
 
 \ *p SMART-CR  ( -- ) follows the ragged left
 \ ** left border of the text when in the overstrike mode. Dec 22nd, 2002 jap
 : smart-cr      ( -- )   \ handle cr
    bitImage? ?EXIT
+   autoextend if settle grand-total then
    overstrike @
    if cursor-line 1+ to cursor-line
       0 to cursor-col 'line c@ bl = cur-buf w@ and
