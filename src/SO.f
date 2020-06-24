@@ -32,12 +32,13 @@ variable #out
 :  _emit_  1 #out +!  [ hidden ] c_emit ;
 : _type [ hidden ] c_type ;
 
-: RO   ( -- ) ( Regular Output )  \ restore to regular
+: _RO   ( -- ) ( Regular Output )  \ restore to regular
         keyboard on
         screen-output off
         ['] _c_CR    is CR
         ['] _emit_   is emit
         ['] _type   is type ;
+' _ro is ro
 
 : R-O    ( -- ) RO ;
 
