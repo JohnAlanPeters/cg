@@ -152,6 +152,9 @@ editor
 
 variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 
+: TIME-FACTOR  ( n - ) \ Used to increase the estimated time
+                timejack ! ;  \ You can reduce the labor rate at same time
+
 : calc-unit-time ( d -- )
    100 0 d* unit s>d d/ timejack @ s>d d* 100. d/ time-unit 2! ;
 
@@ -662,5 +665,3 @@ PRICE-IT        extend the whole file from screen one to the end
 LEFT-EXTENDS    Extends parts that start on left border of screen
 mmmm            Show the times for each line as well as the sell price
 MEN-ON          Turn on the times feature
-MEN-OFF         Put it back to not showing the times on each line
-(MEN)           Times on  extend each line  Times off

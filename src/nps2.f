@@ -490,7 +490,7 @@ Vocabulary Fixture       Fixture definitions
 : Wellmade-407-445-2RS 120.00 w/e 1 e ;
 : Lamp-Basket    5.00 w/e 10 c ; Elect  \ Hodes job
 : Renoma-3040   80.00 w/e 30 c ; \ Halogen saucer 3040 H/BL
-: Smoke-Hush  2995.00 w/e 25 c ; \ 110V
+\ Smoke-Hush  2995.00 w/e 25 c ; \ 110V
 : Saucer       500.00 w/c 25 c ; \ Guess
 : Double-spun 5000.00 w/c 25 c ; \ guess
 : 2-lamp12-in  700.00 w/c 25 c ; \
@@ -1758,23 +1758,23 @@ Vocabulary FIRE-Adressable  FIRE-Adressable definitions
 : Pull-Station  27.00 w/e  80 c ; \
 Elect                                                           
 
-
+((
 | FIRE-WIREING              900-072     467-9393    01-27-09 AL
-Vocabulary FIRE-WIRE     FIRE-WIRE definitions                  
-                Neat-EMT                                        
+Vocabulary FIRE-WIRE     FIRE-WIRE definitions
+                Neat-EMT
 \ Gell-Cell     Install easy ;
-: Smoke-Head    PL  ;     
-: Pull-Station  PL  ;                                           
+: Smoke-Head    PL  ;
+: Pull-Station  PL  ;
 : Horn          PL  ;
-: Horn-Strobe   PL  ;                                           
-: Strobe        PL  ;                                           
-: NFS-320       PL  ;                                           
-: Annunciator   PL  ;                                           
-: AV-Power      PL  ;                                           
-: Dialer        PL  ;                                           
-: Pull-WP       PL  ;                                           
-Elect                                                           
-                                                                
+: Horn-Strobe   PL  ;
+: Strobe        PL  ;
+: NFS-320       PL  ;
+: Annunciator   PL  ;
+: AV-Power      PL  ;
+: Dialer        PL  ;
+: Pull-WP       PL  ;
+Elect
+))
 
 | PHONE                     900-080                 06-03-02 BEC
 Vocabulary PHONE  Phone Definitions       \ Used Sold Keep Have
@@ -1982,7 +1982,7 @@ Hard-Wired Definitions           \
 : Smoke-24V   49.00 w/e   25 c ; \
 Elect
 
-
+((
 | Alarm
 Vocabulary Alarm
 Alarm Definitions
@@ -1990,7 +1990,7 @@ Alarm Definitions
 : Photoelectric 26.00 w/e   45 c ; \
 : CO            18.00 w/e    8 c ; \
 : AC            49.00 w/e   50 c ; \
-: Smoke&CO      49.00 w/e   25 c ; \  
+: Smoke&CO      49.00 w/e   25 c ; \
 : Move-up       00.00 w/e   25 c ; \
 : Move-it       move-up ;
 : Check         00.00 w/e   15 c ; \
@@ -2002,7 +2002,7 @@ Elect
 : Alarms  alarm ;
 : Smoke   alarm ;
 Elect
-
+))
 
 | Mikado                    000-000  XX-0           02-04-90 AEC
 Vocabulary Mikado                         \ Used Sold Keep Have 
