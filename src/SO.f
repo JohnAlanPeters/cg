@@ -53,7 +53,7 @@ variable #out
                  R> TO SOURCE-ID
                  R> >IN !
                  2R> (SOURCE) 2!
-                 dup if  beep r-o focus-console dup message true to ext-err
+                 dup if beep ( r-o focus-console dup message ) true to ext-err
                      then 0= ;   \ 'throw' causes app to quit
 
 

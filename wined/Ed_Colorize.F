@@ -48,9 +48,10 @@ maxkeys maxkeylen * Pointer keyword-strings   \ space for the strings
         bl kparse -trailing number? nip 0<> and ;
 
 : isvoc { addr cnt \ a$ -- 0|1 }
+  DPR-WARNING-OFF
   MAXSTRING LocalAlloc: a$
   addr cnt a$ place a$ count bl scan nip a$ c@ swap - a$ c!
-  a$ find if @ dovoc = else 0= then ;
+  a$ PARMFIND if @ dovoc = else 0= then ;
 
 \ 2a \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ Opens the keyword list and loads it from a text file.  Each line contains:
