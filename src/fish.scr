@@ -13,6 +13,10 @@ Fred says
 John says
   Stay with the crew unless Pete is there else a low PPM.
 )))
+Vocabulary Fish-MC-walls
+           Fish-MC-walls definitions
+: PL               350.00 w/c 325 c ;
+Elect
 
 \ Loader screen for Fish-in-walls   See also FISH.BAD
 Electric Definitions
@@ -47,10 +51,11 @@ Vocabulary (FISH-WORK)
 : PL-Medium         615.00 w/c 225 c ; \ See note on screen zero
 : PL-Medium-easy    615.00 w/c 175 c ; \ PL-medium was to different from PL
 : PL-Easy           615.00 w/c 110 c ; \ 9.00
+: PL-back-to-back   615.00 w/c 110 c ;
 : PL-Very-easy      260.00 w/c  73 c ; \ Apr 09
 : Plug     ( same as a PL )       PL ;
-: SW-Very-easy        PL-very-easy   ; \ Jan 95
 : PL-very-hard      626.00 w/c 375 c ; \ Oct 04
+: SW-Very-easy        PL-very-easy   ; \ Jan 95
 : SW-hard           861.00 w/c 320 c ; \ Feb 96 inc mud, ground
 : SW                800.00 w/c 275 c ;
 : Switch                          SW ;

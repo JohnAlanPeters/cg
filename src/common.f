@@ -29,11 +29,11 @@ Electric definitions
 : GFCI           1300.00 w/c  05 c ; \ 9.03 Marc
 : GFI+IND        2325.00 w/c  20 c ; \
 \ GFI-CB is in NPS.scr  View CB-big \
-` Smoke-9V       1000.00 w/c  25 c ; \  5.92 Aug
-` Smoke-110V     1000.00 w/c  25 c ; \
-` Smoke-110V-9V  1500.00 w/c  25 c ; \ 10.15 Mar
-` Smoke-110V~9V  1500.00 w/c  00 c ; \ For fire
-` Smoke-9V-110V  1500.00 w/c  25 c ; \
+\ smoke-9V       1000.00 w/c  25 c ; \  5.92 Aug
+\ Smoke-110V     1000.00 w/c  25 c ; \
+\ Smoke-110V-9V  1500.00 w/c  25 c ; \ 10.15 Mar
+\ Smoke-110V~9V  1500.00 w/c  00 c ; \ For fire
+\ Smoke-9V-110V  1500.00 w/c  25 c ; \
 : Safety-Check       .00 w/c  61 c ;
 ` Deep            865.00 w/c  15 c ; \  7.60 Aug
 : Bubble                      Deep ; \
