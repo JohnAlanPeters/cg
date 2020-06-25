@@ -579,15 +579,18 @@ FileOpenDialog ColorText "Load Color File" "Color Files (*.COL)|*.COL|All Files 
 
 ' _must-save is must-save
 
-: revert-text   ( -- ) \ undo & return to same place, same file \ dbu c/o jap         
+: revert-text   ( -- ) \ undo & return to same place, same file \ dbu c/o jap
+        browse?
         >E
         false to edit-changed?
         line-cur       \ get current top line     \ jp
+        cursor-col
         cursor-line
         cur-filename count "open-text
         sync-mirrors
-        to cursor-line
+        to cursor-line to cursor-col
         VPosition: DocWindow    \ set cursor-line
+        to browse?
         ;
 
 : _?save-text   ( -- f1 )       \ return f1=true if we canceled
