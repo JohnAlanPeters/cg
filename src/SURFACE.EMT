@@ -30,7 +30,7 @@ Elect
 
 
 \ SURFACE-EMT Outlets of various types.
-Vocabulary (Neat-EMT)  (Neat-EMT) definitions
+Vocabulary (Neat-EMT) (Neat-EMT) definitions
 : PL-220       22.00 w/e      200 c ; \
 : PL-hard      11.89 w/e      220 c ; \
 \ PL Too low   11.89 w/e      180 c ; \ 2.00 ?
@@ -86,6 +86,13 @@ Vocabulary (Neat-EMT)  (Neat-EMT) definitions
 :  20a  ( 2 #12 same as 3 #14 ) 15A ;
 Electric Definitions
 
+                \ Alternative names
+: Neat-EMT   Elect (NEAT-EMT) also ;
+: Neat-Work                 Neat-emt ;  \ 10-3-2
+: Neat-workmanship          Neat-emt ;
+: Neat                      Neat-emt ;
+: Neatly-drilled            Neat-emt ;
+: Flex-2x4                  Neat-emt ;
 
 \  RAIN-TITE-EMT  ( Weather proof )
 Vocabulary (RT-EMT)  (RT-EMT) definitions
@@ -143,11 +150,7 @@ Elect
 
 \ See also  \ele\modules\grs.mod
 
-\ Alternative names
-: Neat-EMT   Elect (NEAT-EMT) also ;
-: Neat-Work                 Neat-emt ;  \ 10-3-2
-: Neat-workmanship          Neat-emt ;
-: Neat                      Neat-emt ;
-: Neatly-drilled            Neat-emt ;
-: Flex-2x4                  Neat-emt ;
+
+
+
 

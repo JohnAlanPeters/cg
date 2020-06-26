@@ -1,4 +1,4 @@
-\  Windows Sockets of Andrey Cherezov
+\  Windows Sockets by Andrey Cherezov
 
 anew sockets.f
 

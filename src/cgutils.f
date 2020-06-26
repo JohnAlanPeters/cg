@@ -178,7 +178,8 @@ editor
   to-find-line get-cursor-line cur-buf lcount focus-console cr type ;
 
 : SHOW  >in @ _show >in ! see ;  \ 'show' plus 'see'
-
+: SEE+  show ; \ Show the stack comment before the decompiled source
+: SUPER-SEE show ;
 hidden
 
 : list  ( -<optional_name>- ) \ WORDS partial-string will focus the list
