@@ -195,11 +195,6 @@ hidden
                 else    context @ (words)
                 then    0 to with-address? ;
 forth
-\ Dudley, please delete these 5 lines
-\ forth
-\ words ( -<optional_name>- )
-\ in-web?
-\ if words-WEB-msg else words ( wordscount ) then ;
 
 : getdatetime ( -- daddr dlen taddr tlen )
   get-local-time time-buf >date"
@@ -224,4 +219,6 @@ forth
 : rename ( <Old-name> <New-name> -- )   \ rename a file (Old then new)
   (rename-file) ;
 
+: deletefile ( <file> -- )
+  bl word count delete-file if ." failed to delete" then ;
 
