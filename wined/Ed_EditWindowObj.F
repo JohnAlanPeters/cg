@@ -315,7 +315,7 @@ Record: LPWinScrollInfo
         IF      dup
                 Show-size-in-Bites&Lines
         THEN
-        browse?
+        browse? drop 0
         IF      \ expand TABs if we are browsing
 \ Expand-tabs
                 BEGIN   dup                      \ while there is text remaining
@@ -1256,7 +1256,7 @@ create info$ MAXSTRING allot
         ELSE
             FALSE to html-link?
             FALSE to on-text?
-            browse?
+            browse? drop 0
             IF  cur-column to lcol
                 0 to lend
                 mousey CharHeight: self / line-cur + file-lines

@@ -310,7 +310,7 @@ editor
     while cur-buf lcount over 3 + swap move    \ indent 3 characters
           3 cur-buf +! s"    " cur-buf cell+ swap cmove
           put-cursor-line
-    repeat
+    repeat -1 +to cursor-line
     1+              \ next vscreen index#
   repeat  drop to cursor-line refresh-screen ;
 
