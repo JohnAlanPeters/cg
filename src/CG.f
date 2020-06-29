@@ -149,12 +149,14 @@ forth also forth definitions editor
 
 0 value defer-margin  \ wait to apply until file is current in editor
 
-: VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
-  .viewinfo count "+open-text 0 swap 1-
+: setedmode ( -- )
   defer-margin 1 = if true to browse?  else
   defer-margin 2 = if true overstrike ! false to browse? else
-  defer-margin 3 = if false overstrike ! false to browse? then then
-  then to-find-line refresh-line reEdit ;
+  defer-margin 3 = if false overstrike ! false to browse? then then then ;
+
+: VV-con ( cfa -- )      \ TODO: fix hilite on viewed word, index of base
+  $.viewinfo count "+open-text 0 swap 1- setedmode
+  to-find-line refresh-line reEdit ;
 
 : VV-web-instructions ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
@@ -169,23 +171,27 @@ forth also forth definitions editor
   else vv-con
   then ;
 
-: V  ( -- )  \ make bookmarked file the current file
+: vbk  ( -- )  \ make bookmarked file the current file
   [ editor ] vbmark ;
 
-: vv ( <word> -- )   \ open file in browse mode in editor
-   1 to defer-margin view ;
+: v reedit ;
 
-: VVV  ( <word> -- ) \ Puts you in the editor for <word>
-   3 to defer-margin view ;
-
-: VVVV  ( <word> -- )   \ open file in editor, but focus in console
+: VV  ( <word> -- ) \ opens file in the editor for <word>; stays in console
    in-web?
    if vv-web-instructions
-   else [ editor ] .VIEWINFO COUNT "+OPEN-TEXT 0 SWAP 1- TO-FIND-LINE
+   else bl word anyfind if 1 to defer-margin
+      $.viewinfo count
+      "+open-text setedmode 0 swap 1- to-find-line
          focus-console false to invkloop
+     else drop then
    then ;
 
-: VVVVV  ." -*-*-*-* Many V's are to many for me to handle! :-)" ;
+: vvv ( <word> -- )   \ open file in insert mode in editor
+   3 to defer-margin bl word anyfind
+   if view
+   else 2drop setedmode v then ;
+
+: VVVV  ." -*-*-*-* Many V's are to many for me to handle! :-)" ;
 
 : LOC .viewinfo 2drop ;
 

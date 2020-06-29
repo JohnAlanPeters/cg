@@ -18,7 +18,7 @@ Editor  \ This is required
 
 \ ====================
 
-: Test  dup swap ;
+\ Test  dup swap ;
 
 : slow-msg-infile    ( -- )
                 LOADING? IF
