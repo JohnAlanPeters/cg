@@ -178,6 +178,7 @@ editor
   to-find-line get-cursor-line cur-buf lcount focus-console type ;
 
 : SHOW  >in @ _show >in ! see ;  \ 'show' plus 'see'
+
 : SUPER-SEE show ;
 
 : SEEE  ( <word> -- )  \ Show the stack comment line, only
