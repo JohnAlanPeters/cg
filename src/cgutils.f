@@ -180,7 +180,10 @@ editor
 : SHOW  >in @ _show >in ! see ;  \ 'show' plus 'see'
 : SUPER-SEE show ;
 
-: SEE-  _show close-text focus-console false to invkloop ; \ Show the stack comment line, only
+: SEE-  ( <word> -- )  \ Show the stack comment line, only
+  >in @ bl word c@
+  if >in ! _show close-text focus-console false to invkloop
+  else drop then ;
 
 hidden
 
