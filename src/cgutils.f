@@ -178,8 +178,14 @@ editor
   to-find-line get-cursor-line cur-buf lcount focus-console cr type ;
 
 : SHOW  >in @ _show >in ! see ;  \ 'show' plus 'see'
-: SEE-  show ; \ Show the stack comment before the decompiled source
+
 : SUPER-SEE show ;
+
+: SEE-  ( <word> -- )  \ Show the stack comment line, only
+  >in @ bl word c@
+  if >in ! _show close-text focus-console false to invkloop
+  else drop then ;
+
 hidden
 
 : list  ( -<optional_name>- ) \ WORDS partial-string will focus the list
