@@ -175,15 +175,17 @@ editor
 
 : _show ( <word> -- )  \ show first line of definition from source
  [  editor ] vwinfo count "+open-text 0 swap 1-
-  to-find-line get-cursor-line cur-buf lcount focus-console cr type ;
+  to-find-line get-cursor-line cur-buf lcount focus-console type ;
 
 : SHOW  >in @ _show >in ! see ;  \ 'show' plus 'see'
 : SUPER-SEE show ;
 
-: SEE-  ( <word> -- )  \ Show the stack comment line, only
+: SEEE  ( <word> -- )  \ Show the stack comment line, only
   >in @ bl word c@
   if >in ! _show close-text focus-console false to invkloop
   else drop then ;
+
+: SEE- SEEE ;
 
 hidden
 

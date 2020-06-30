@@ -165,7 +165,7 @@ forth also forth definitions editor
   ." You can get the code from GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
-: VIEW
+: VIEW ( word -- ) \ Web if warn else view the source code of the word
   in-web?
   if vv-web-instructions
   else vv-con
@@ -174,7 +174,7 @@ forth also forth definitions editor
 : vbk  ( -- )  \ make bookmarked file the current file
   [ editor ] vbmark ;
 
-: v reedit ;
+: v reedit ; \ edit the currently open file
 
 : VV  ( <word> -- ) \ opens file in the editor for <word>; stays in console
    in-web?
