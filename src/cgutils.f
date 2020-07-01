@@ -181,7 +181,7 @@ editor
 
 : SUPER-SEE show ;
 
-: SEE-  ( <word> -- )  \ Show the stack comment line, only
+: SE    ( <word> -- )  \ Show the stack comment line, only
   >in @ bl word c@
   if >in ! _show close-text focus-console false to invkloop
   else drop then ;

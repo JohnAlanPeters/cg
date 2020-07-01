@@ -14,13 +14,13 @@ comment;
 
 only Forth also definitions  \ maybe this will work
 
-Vocabulary ELECTRIC
+Vocabulary ELECTRIC  \ A vocabulary for the electrical parts
            ELECTRIC definitions
 \ Forth
 : ELECT
    Only Forth Also Electric Also definitions  ;
 : ELECT2  only Electric Also definitions  ;
-: ELE ELECT ;
+: ELE ELECT ;  \ Switches to the electric vocabulary along with forth
 : ELECTRIC-ORDER            Elect ;
 : DEFS       also definitions ;
 elect
