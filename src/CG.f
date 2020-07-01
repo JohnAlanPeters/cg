@@ -191,7 +191,7 @@ forth also forth definitions editor
    if view
    else 2drop setedmode v then ;
 
-: VVVV  ." -*-*-*-* Many V's are to many for me to handle! :-)" ;
+: VVVV  ." Hay! ;-) Too many V's for me handle! :-)" ;
 
 : LOC .viewinfo 2drop ;
 
