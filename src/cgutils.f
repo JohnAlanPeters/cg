@@ -152,6 +152,20 @@ editor
         RenameFrom$ count RenameTo$ count rename-file
         if ." failed to rename file" then ;
 
+: copy-file { | to$ from$ buf }  ( <to from -- )
+  max-path localAlloc: to$
+  max-path localAlloc: from$
+  100000 localAlloc: buf
+  /parse-s$ count to$  place
+  /parse-s$ count from$ place
+  to$ count w/o create-file if abort" failed to create new file" then >r
+  from$ count r/o open-file if abort" failed to open existing file" then
+  dup buf 100000 rot read-file if abort" failed to read file" then
+  swap close-file drop
+  buf swap r@ write-file if abort" failed to write to new file" then
+  r> close-file drop ." copied file" ;
+
+
 : >ccol ( n -- )   \ move console cursor to given column
   conscol @ -1 =  
   if getxy nip gotoxy
@@ -173,20 +187,34 @@ editor
          cur-line @ cur-file
     then over to orig-loc ;
 
-: _show ( <word> -- )  \ show first line of definition from source
+: 1stline { \ buf -- } ( <word> -- )  \ show first line of definition from source
+  MAXSTRING LocalAlloc: buf
  [  editor ] vwinfo count "+open-text 0 swap 1-
-  to-find-line get-cursor-line cur-buf lcount focus-console space type ;
+  to-find-line get-cursor-line
+  cur-buf lcount buf place  close-text
+  focus-console false to invkloop  space buf count type ;
 
-: SHOW  >in @ _show >in ! see ;  \ 'show' plus 'see'
+: SHOW ( -- )    \ 'show' plus 'see'
+  >in @ bl word c@
+  if dup >in ! 1stline >in !  see
+  else drop then ;
 
 : SUPER-SEE show ;
 
-: SE    ( <word> -- )  \ Show the stack comment line, only
+: SE    ( <word> -- )  \ Show the stack comment line in console, only
   >in @ bl word c@
-  if >in ! _show close-text focus-console false to invkloop
+  if >in ! 1stline
   else drop then ;
 
-: SE SEE- ;
+: vocabs ( -- )   \ list vocabulary names in rows
+    cr VOC-LINK @
+    BEGIN   DUP VLINK>VOC
+            dup voc>vcfa
+            ?isclass not \ don't look through classes
+            IF      voc>vcfa .NAME 18 #tab space  10 ?cr
+            ELSE    DROP
+            THEN    @ DUP 0=
+    UNTIL   DROP ;
 
 hidden
 
