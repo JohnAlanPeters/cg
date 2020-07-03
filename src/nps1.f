@@ -1,5 +1,5 @@
 | GRS --------R-I-G-I-D-- C 001-001  AR-5           03-10-06 AL
-Vocabulary GRS                        \ Gar Temp Sold Keep Have
+Vocabulary GRS  \ Galvanized ridged Steel
 GRS Definitions                  \                              
 ` 1/2        127.40 w/c    4 c ; \ not 69.32       40   10   10 
 : 3/4  ( : )  85.88 w/c   55 m ; \                      10   10 

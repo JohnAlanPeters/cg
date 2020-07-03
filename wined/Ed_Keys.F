@@ -342,7 +342,7 @@ editor
 : edopen ( -- )
   s" \cg\bids\help.txt" "+open-text ;
 
-: F13  ; \ vScr 69 (Down 1 PP or line 411) is the start of the function keys
+: F13  ; \ Down to Vscr 69 (line 411) for the function keys
                       
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
