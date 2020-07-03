@@ -651,13 +651,16 @@ named-new$ file-to-edit$
 \ ** left border of the text when in the overstrike mode. Dec 22nd, 2002 jap
 : smart-cr      ( -- )   \ handle cr
    bitImage? ?EXIT
+   browse? if cursor-line 1+ to cursor-line 0 to cursor-col exit then
    autoextend if settle grand-total then
    overstrike @
    if cursor-line 1+ to cursor-line
-      0 to cursor-col 'line c@ bl = cur-buf w@ and
-      if word-right 'cursor c@ ascii $ =
+      cursor-col 15 >
+      if 0 to cursor-col 'line c@ bl = cur-buf w@ and
+        if word-right 'cursor c@ ascii $ =
           if 16 to cursor-col then
-      else cur-buf w@ 0= if 16 to cursor-col then then
+        else cur-buf w@ 0= if 16 to cursor-col then then
+      else 0 to cursor-col then
    else split-line then  ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

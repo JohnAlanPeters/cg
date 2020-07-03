@@ -301,7 +301,8 @@ editor
     get-cursor-line
     cur-buf cell+ 5 s" Total" istr=
     if drop to cursor-line refresh-screen exit then
-    cur-buf lcount over 3 + swap move   \ make room for 3 characters at start
+    cur-buf cell+ 3 ascii . scan nip 0=
+    if cur-buf lcount over 3 + swap move then  \ make room for 3 characters at start
     3 cur-buf +! s"    " cur-buf cell+ swap cmove
     dup index$ >r cur-buf cell+ r@ cmove
     r> 1 = if ascii . cur-buf cell+ 1+ c! then
