@@ -42,6 +42,10 @@ int offsetY
         swap 14 + swap 7 -
         \ -- x y
         2dup
+        edit-changed?
+        if s" MODIFIED" else s"                   " then
+        DkMagenta  SetTextColor: dc TextOut: dc
+        (((
         browse?
         IF  s" Browse     " BmarginColor                        \ browsing
             SetTextColor: dc TextOut: dc
@@ -53,6 +57,7 @@ int offsetY
             SetTextColor: dc TextOut: dc
             Handle: vFont SetFont: dc
         THEN
+        )))
         3 - swap 11 - swap
         2dup           MoveTo: dc
         2dup 114  0 d+ LineTo: dc
