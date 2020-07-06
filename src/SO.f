@@ -55,6 +55,7 @@ variable #out
                  R> >IN !
                  2R> (SOURCE) 2!
                  dup if beep r-o focus-console dup message true to ext-err
+                      err-vocab-show if cr context @ current ! words then
                      then 0= ;   \ 'throw' causes app to quit
 
 
