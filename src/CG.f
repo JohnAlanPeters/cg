@@ -189,7 +189,7 @@ forth also forth definitions editor
 : vvv ( <word> -- )   \ open file in insert mode in editor
    3 to defer-margin bl word anyfind
    if view
-   else 2drop setedmode view then ;
+   else drop setedmode reedit then ;
 
 : VVVV  ." Hay! ;-) Too many V's for me handle!" ;
 
