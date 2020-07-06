@@ -221,7 +221,7 @@ forth also forth definitions editor
     Title-CG   current-dir$ setfdir
     -1 to dp-location \ s" \cg\bids" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
-    editor overstrike on  loadline off
+    editor overstrike off loadline off
     elect
     cmdline 0= swap 0= or
     if file-to-edit$ off  wined

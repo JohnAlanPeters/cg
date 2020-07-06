@@ -48,12 +48,15 @@
       ELSE    r@ to entry#
       THEN    r>drop ;
 
+
 : view-release  ( -- )                          \ release the editors buffers
         DestroyWindow: FrameWindow
         text-ptr ?dup IF release 0 to text-ptr THEN
         line-tbl ?dup IF release 0 to line-tbl THEN  ;
 
+
 unload-chain chain-add-before view-release         \ make sure memory is released
+
 
 : viewbye       ( -- )
         view-before-bye
@@ -61,17 +64,20 @@ unload-chain chain-add-before view-release         \ make sure memory is release
         IF      k_BYE
         THEN    ;
 
+
 : "viewmessage  ( a1 n1 )       \ force all message window on top of application
         GetHandle: FrameWindow
         IF      StartPos: FrameWindow 100 100 rot + >r + r> message-origin
         THEN
         [ also HIDDEN ] _"message [ previous ] ;
 
+
 : "topviewmessage  ( a1 n1 )
         GetHandle: FrameWindow
         IF      StartPos: FrameWindow 100 100 rot + >r + r> message-origin
         THEN
         [ also HIDDEN ] _"top-message [ previous ] ;
+
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 65    Include some improvements  by Robert Ackerman for John Peters
@@ -82,6 +88,7 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   else dup>r bl skip nip r> swap - 44 >   \ blank through column 44
   then  ;
 
+
 : skiplines { n fl -- }  \ -1=going up  1=going down; fl- true=>until blankline
   BEGIN  cursor-line n + 0 file-lines within
     if cursor-line n + dup to cursor-line   \ inc/dec line#
@@ -89,10 +96,13 @@ unload-chain chain-add-before view-release         \ make sure memory is release
     else true then    \ end of file
   UNTIL ;
 
+
 : vtop ( -- )  \ get to top of current vscrn
   -1 true skiplines 1 +to cursor-line ;
 
+
 1 value nskip           \ # blank lines to skip when paging
+
 
 : +VSCR ( -- )          \ down 1 screen ending with empty line
   cursor-line line-cur -  \ #lines from top where current line is
@@ -100,6 +110,7 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   nskip false skiplines  \ skip empties
   cursor-line swap - file-lines screen-rows - min to line-cur    \ new position
   refresh-screen ;
+
 
 : -VSCR  ( -- )      \ up to top of lines ending with empty line
   cursor-line line-cur -  \ #lines from top where current line is
@@ -109,12 +120,14 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   cursor-line 1+ file-lines min to cursor-line
   cursor-line swap - 0 max to line-cur refresh-screen save-text ;  \ new position
 
+
 : +1VSCR  ( -- )  \ only stop if more than 1 empty-line  going down
   begin
    1 true skiplines  \ get to 1st empty
    cursor-line 1+ isblank
    1 false skiplines
   until cursor-line to line-cur refresh-screen ;
+
 
 : -1VSCR ( -- )    \ only stop if more than 1 empty-line going up
   begin
@@ -124,6 +137,7 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   until  -1 true skiplines
   cursor-line 1+ file-lines min dup to cursor-line
   to line-cur refresh-screen ;
+
 
 : vhome-end ( -- )
   cursor-col
@@ -135,8 +149,10 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   if 0 to cursor-col 0 to cursor-line 0 to line-cur then     
   refresh-screen ;
 
+
 : noext? ( -- fl )    \ If filename has .F then it is not a bidfile
   cur-filename count ascii . scan drop 1+ c@ upc 'F' <> ;
+
 
 \ Here is the version with no line length limit:
 : OVERSTRIKE-CHARACTER  ( char -- )             \ was _overstrike
@@ -152,12 +168,14 @@ unload-chain chain-add-before view-release         \ make sure memory is release
         ELSE    drop beep
         THEN ;
 
+
 : INSERT/OVERSTRIKE-CHARACTER  ( char -- ) \ modified word replaces the original
         browse?
         IF      beep \ new May 20th, 2003 - 18:57 dbu
                 drop EXIT
         THEN
         delete-highlight
+
 
         ( Test for ins/over mode and do it. jap )
         overstrike @
@@ -167,6 +185,7 @@ unload-chain chain-add-before view-release         \ make sure memory is release
         ?wrap-word
         refresh-line ;
 
+
 : +entry# ( n -- )  \ move to previous/next open file
   entry# dup rot + 0 max
   to entry#             \ select the hyper file index
@@ -174,16 +193,19 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   if to entry#
   else drop entry# SetStack: EditWindow hyper-open then ;
 
+
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 66    These words handle the backspace properly when in the overstrike mode
 \       Robert Ackerman with John Peters on March 9th, 2002 - 10:15 to 11:20
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 : DEL-CHAR      ( -- )          \  sub for k_delete  \ Working ok.
         overstrike @
         IF      bl overstrike-character
         ELSE    delete-character
         THEN ;
+
 
 : do-bs ( -- )
   delete-highlight
@@ -192,7 +214,9 @@ unload-chain chain-add-before view-release         \ make sure memory is release
   else  do-backspace
   then  ;
 
+
 defer _Control+W ' close-text is _control+w
+
 
 \ date
 : month-day-year" ( -- addr len )
@@ -200,6 +224,7 @@ defer _Control+W ' close-text is _control+w
   >r 31 date$  z" MMMM dd',' yyyy"
   r> null LOCALE_USER_DEFAULT
   call GetDateFormat date$ swap 1- ;
+
 
 : date-stamp ( -- )    \ put date stamp (f9)
   noext? 0= ?exit  \ only if not a .f file
@@ -215,6 +240,7 @@ defer _Control+W ' close-text is _control+w
   begin 2dup + c@ ascii . <>
   while 1+ repeat 1+ to cursor-col drop ;
 
+
 \ put data on clipboard
 : copy2clipboard  { str cnt \ hnd memptr -- }
   NULL Call OpenClipboard 0=  ?exit
@@ -227,19 +253,23 @@ defer _Control+W ' close-text is _control+w
   then hnd Call GlobalUnlock drop
   Call CloseClipboard drop ;
 
+
 : _line2clip ( -- )   \ cursor line to clipboard
   [ editor ] cursor-line #line" -trailing copy2clipboard ;
   ' _line2clip is line2clip
 
+
 : del-rt ( -- )  \ delete characters rt of cursor to end of line
   cursor-line #line" -trailing >r cursor-col + r> cursor-col - dup>r
   copy2clipboard  r> delete-characters  ;
+
 
 : swap2lines ( -- )  \ swap current line with line below it
   cursor-line 1+ #line" pad place
   get-cursor-line  1 +to cursor-line
   put-cursor-line -1 +to cursor-line
   pad count cur-buf lplace put-cursor-line refresh-screen ;
+
 
 : swaplines { lfrom lto -- }  \ swap 2 given lines
   lto #line" pad place
@@ -249,20 +279,24 @@ defer _Control+W ' close-text is _control+w
   put-cursor-line  lfrom to cursor-line
   pad count cur-buf lplace put-cursor-line  to cursor-line refresh-screen reedit ;
 
+
 : toggle-colons-only ( -- )    \ RDA
         cursor-line to line-cur
         colons-only 0= dup to colons-only
         if setcolontbl then
         refresh-screen ;
 
+
 : toggle-insert ( -- )
         overstrike @ 0= overstrike !
         refresh-screen ;
+
 
 : 3waytoggle ( -- )   \ browse -> overstrike -> insert
   browse? if browse-toggle overstrike on else
              overstrike @ if toggle-insert else browse-toggle then
           then ;
+
 
 : Pro-mode  ( -- )         \ One mode for code work and one for estimating
         overstrike @       \ JP 4-5-09  It works!
@@ -270,9 +304,11 @@ defer _Control+W ' close-text is _control+w
         else replace-text  \ Should be named find&replace
         Then ;             \ Ctl+F  But what does it do?
 
+
 : bookmark   ( -- ) \ Remembers the file so when CG runs it opens it as current
   set-ed-defaults entry# s>d (d.) s" Recall" "SetDefault
   set-w32f-default ;
+
 
 : recallopen ( -- )
   set-ed-defaults
@@ -281,11 +317,13 @@ defer _Control+W ' close-text is _control+w
      s" " s" Recall"  "SetDefault
   else drop then set-w32f-default ;
 
+
 : vbmark ( -- )  \ after bookmarking, reopen the file; don't delete the bookmark
   set-ed-defaults
   s" Recall" "GetDefaultValue
   if dup to entry# SetStack: EditWindow hyper-open
   else drop then set-w32f-default ;
+
 
 \ ** add virtual screen #s to a bid or module
 : index$ ( n -- addr len )  \ index# as a string
@@ -315,17 +353,21 @@ editor
     1+              \ next vscreen index#
   repeat  drop to cursor-line refresh-screen ;
 
+
 0 value err-vocab-show
   \ true-> show vocab on extend error
-: err_vocab-toggle ( -- )  \ dump the current vocabulary words
+: err-vocab-toggle ( -- )  \ dump the current vocabulary words
   err-vocab-show 0= to err-vocab-show ;
+
 
 : toggle-autoextend ( -- )  \ true-> extend on cr
   autoextend 0= to autoextend ;
 
+
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 67    The main editor loop
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 : handle-keyboard-interpretation
                   BEGIN key?                   \ handle keyboard interpretation
@@ -333,6 +375,7 @@ editor
                         IF key rem-sendkey     \ just send keys to Forth console
                         THEN
                   REPEAT ;
+
 
 : SMS-WEW-key-Con-doc-interp-send
             BEGIN   SetMultiStatus: EditorWindow
@@ -343,8 +386,10 @@ editor
 : edopen ( -- )
   s" \cg\bids\help.txt" "+open-text ;
 
+
 : F13  ; \ Down to Vscr 69 (line 411) for the function keys
                       
+
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
       call GetFocus to topwin
@@ -417,26 +462,27 @@ editor
       k_F3    +k_shift              OF      save-all-text  ( bfta )     ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
-      k_F4                          OF      settle                      ENDOF
+      k_F4                          OF      save-all-text               ENDOF
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
-      k_F5                          OF      err_vocab-toggle            ENDOF
+      k_F5                          OF      prev-link                   ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
-      K_f6                          OF      un-add                      ENDOF
-      k_F7                          OF      toggle-insert               ENDOF
+      K_f6                          OF      revert-text ( un-add )      ENDOF
+      k_F7                          OF      un-add ( toggle-insert )    ENDOF
       k_F7    +k_control            OF      browse-toggle               ENDOF
-      k_F8                          OF      revert-text                 ENDOF
-      k_F9                          OF      hyper-link ( grand-total )  ENDOF
+      k_F8                          OF      date-stamp ( revert-text )  ENDOF
+      k_F9                          OF      err-vocab-toggle            ENDOF
       k_F9    +k_control +k_shift   OF      do-html-link                ENDOF
       k_F10                         OF      toggle-autoextend           ENDOF
       k_F10   +k_control +k_shift   OF      save-text-pc                ENDOF
       k_F10   +k_control            OF      save-and-load               ENDOF
       k_F11                         OF      vindex#s ( fstacksave )     ENDOF
-      k_F11   +k_shift              OF      next-link                   ENDOF
+      k_F11   +k_shift              OF      next-link  ( prev-view )    ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
       k_F12                         OF      bookmark                    ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
-\                                         ( prev-link )  ( datestamp )
+\                                         ( prev-link )  ( date-stamp )
 \                                         ( back-find-all-text )
+
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 70    Arrow Down, End, Home
@@ -508,6 +554,7 @@ editor
                     dup insert/overstrike-character
         ENDCASE
       AGAIN   ;
+
 
 : F14  ; \ I like to be able to VIEW this word to quickly jump to this file
          \ Please do not remove it.

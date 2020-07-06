@@ -213,7 +213,7 @@ needs hyper.f
 : hyper-compile ( -- )
                 build-index ;
 
-: prev-link     ( -- )
+: prev-link     ( -- )  \ link back and close the previous file
                 >E
                 ?save-new ?EXIT
                 GetStack: EditWindow 0=
@@ -227,7 +227,7 @@ needs hyper.f
                         THEN
                 THEN    ;
 
-: prev-view     ( -- )   \ same as prev-link except no close file
+: prev-view     ( -- )   \ same as prev-link except does not close the file
                 >E
                 ?save-new ?EXIT
                 GetStack: EditWindow 0=

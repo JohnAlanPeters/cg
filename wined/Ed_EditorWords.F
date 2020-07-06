@@ -9,7 +9,7 @@ defer close-text
 defer ?save-text
 defer "+open-text
 defer before-bye
-defer open-previous
+defer open-previous   \ _open-previous
 
 : ?line-tbl-ok  ( -- )
                 line-tbl ?EXIT
