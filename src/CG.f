@@ -204,8 +204,8 @@ forth also forth definitions editor
 : E-B    ( -- ) revert ;
 : Rev    ( -- ) revert ;
 : UnDo   ( -- ) revert ;
-: VP     ( -- ) prev-link v ;
-: vprev  ( -- ) prev-view v ;   \ don't close current file
+: VP     ( -- ) prev-link v ; \ view previous file
+: vprev  ( -- ) prev-view v ; \ don't close current file
 : N      ( -- ) +vscr ; \ does not work
 : B      ( -- ) -vscr ;
 : HH     ( -- ) words ; \ You can give it a string
