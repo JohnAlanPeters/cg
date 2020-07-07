@@ -169,12 +169,12 @@ editor also
         else to cursor-col to cursor-line to line-cur then  refresh-screen
      else 2drop drop then
   then  EX-TOTAL to last-total
-  ( clear-totals ) ( save-text ) overstrike on ;
+  ( clear-totals ) ( save-text ) ( overstrike on ) ;
 
 
 ' AA is grand-total   \ AA from the console or use F2 from within the editor
 
-
+(((
 : AAA-1 1-column grand-total 2-column ;  \ same as AA but single column mode
 ' AAA-1 is AAA  ( JP? 4-5-09 )
 
@@ -187,3 +187,4 @@ editor also
       cr ." Use F2 for AA"
       cr ." Use F-10 to link to source of highlighted word"
       cr ." Use F-11 to link back to prior source word" ;
+)))

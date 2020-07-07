@@ -288,7 +288,8 @@ defer _Control+W ' close-text is _control+w
 
 
 : toggle-insert ( -- )
-        overstrike @ 0= overstrike !
+        browse? if 0 to browse? overstrike off
+       else  overstrike @ 0= overstrike ! then
         refresh-screen ;
 
 
@@ -464,7 +465,7 @@ editor
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
       k_F4                          OF      save-all-text               ENDOF
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
-      k_F5                          OF      prev-link                   ENDOF
+      k_F5                          OF      prev-view                   ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
       K_f6                          OF      revert-text ( un-add )      ENDOF
       k_F7                          OF      un-add ( toggle-insert )    ENDOF

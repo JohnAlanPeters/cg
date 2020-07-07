@@ -225,7 +225,8 @@ word-storage value append-pointer
                 s" WORDCOUNTS.TXT" 2dup 2>r "save-counts
                 2r> "+open-text ;
 
-: cwords        ( <file> -- )
+: cwords        ( <file> -- ) \ counts the words in a file and stores the count
+                              \ in a file named wordcounts.txt
                 s" *.f" word-count-file ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -866,4 +867,3 @@ FileSaveDialog SaveBitmap "Save Bitmap File" "Bitmap Files (*.BMP)|*.BMP|*.DIB|A
         bitImage? ?EXIT
         EditorWindow Start: page-up-dialog to #pages-up
         SetFocus: DocWindow ;
-
