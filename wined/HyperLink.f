@@ -18,7 +18,7 @@ map-handle hyper-hndl
 \IN-SYSTEM-OK   if  "anyfind
                     if    dup  [ also classes ] ['] DO_MESSAGE [ previous ] <>
 \IN-SYSTEM-OK             if   get-viewfile
-                               if   count "path-file not
+                               if   count widefind ( "path-file ) not
                                else 2drop false
                                then
                           else drop false

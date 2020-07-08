@@ -40,6 +40,11 @@ defer un-add \ for wined
 defer settle \ See also (settle) <- by triple clicking here
 defer ro
 
+: widefind ( a1 l1 -- a2 l2 fl )  \ for hyper-link
+  search-path >r
+  s" .;c:\cg;\win32forth" search-path place
+  "path-file r> count search-path place ;
+
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 
 0 value in-web? \ Are we in web?  0 = No
@@ -176,10 +181,16 @@ forth also forth definitions editor
 
 : v reedit ; \ edit the currently open file
 
+: widesearch ( <file> -- cfa fl )   \ for 'vv' and 'vvv'
+  search-path
+  s" .;c:\cg;\win32forth" search-path place
+  bl word anyfind dup 0= if ." not found" then rot count search-path place ;
+
 : VV  ( <word> -- ) \ opens file in the editor for <word>; stays in console
    in-web?
    if vv-web-instructions
-   else bl word anyfind if 1 to defer-margin
+   else widesearch
+      if 1 to defer-margin
       $.viewinfo count
       "+open-text setedmode 0 swap 1- to-find-line
          focus-console false to invkloop
@@ -187,9 +198,9 @@ forth also forth definitions editor
    then ;
 
 : vvv ( <word> -- )   \ open file in insert mode in editor
-   3 to defer-margin bl word anyfind
+   3 to defer-margin widesearch
    if view
-   else drop setedmode reedit then ;
+   else drop ( setedmode reedit ) then ;
 
 : VVVV  ." Hay! ;-) Too many V's for me handle!" ;
 
@@ -219,7 +230,7 @@ forth also forth definitions editor
 
 : HELLO-CG
     s" bootup" logmsg \ getuser
-    Title-CG   current-dir$ setfdir
+    Title-CG  ( current-dir$ setfdir ) s" c:\cg\" &forthdir place
     -1 to dp-location \ s" \cg\bids" "chdir \  s"  bids" "chdir
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     editor overstrike off loadline off
@@ -236,6 +247,8 @@ forth also forth definitions editor
     \ call GetFocus to topwin
     clear-totals focus-console ." ok" cr quit ;
     \ ['] wined catch 0<> if message then ;
+
+s" c:\cg\" &forthdir place
 
 ELECT             \ Sets the vocabulary
 Editor also
