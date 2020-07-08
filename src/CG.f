@@ -184,7 +184,7 @@ forth also forth definitions editor
 : widesearch ( <file> -- cfa fl )   \ for 'vv' and 'vvv'
   search-path
   s" .;c:\cg;\win32forth" search-path place
-  bl word anyfind rot count search-path place ;
+  bl word anyfind dup 0= if ." not found" then rot count search-path place ;
 
 : VV  ( <word> -- ) \ opens file in the editor for <word>; stays in console
    in-web?
@@ -200,7 +200,7 @@ forth also forth definitions editor
 : vvv ( <word> -- )   \ open file in insert mode in editor
    3 to defer-margin widesearch
    if view
-   else drop setedmode reedit then ;
+   else drop ( setedmode reedit ) then ;
 
 : VVVV  ." Hay! ;-) Too many V's for me handle!" ;
 
