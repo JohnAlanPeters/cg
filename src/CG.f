@@ -39,6 +39,7 @@ defer reedit
 defer un-add \ for wined
 defer settle \ See also (settle) <- by triple clicking here
 defer ro
+defer date-stamp
 
 : widefind ( a1 l1 -- a2 l2 fl )  \ for hyper-link
   search-path >r

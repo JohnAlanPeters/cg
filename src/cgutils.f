@@ -187,24 +187,27 @@ editor
          cur-line @ cur-file
     then over to orig-loc ;
 
-: 1stline { \ buf -- } ( <word> -- )  \ show first line of definition from source
-  MAXSTRING LocalAlloc: buf
- [  editor ] vwinfo count "+open-text 0 swap 1-
-  to-find-line get-cursor-line
-  cur-buf lcount buf place  close-text
-  focus-console false to invkloop  space buf count type ;
+\ Show line of a file given filename count and iine#
+: show1line ( fnm l1 line#  -- t1 len ) { \ $txt -- }
+  100 localalloc: $txt
+  >r r/w open-file 0=
+  if r@ 0 do
+       $txt 1+ 100 2 pick read-line
+       if ." faled read line: " i 0 d. 0= leave
+       else 0= if ." end of file" i 0 d. 0= leave else $txt c! then
+       then
+     loop dup if close-file drop $txt count type 1 then
+  then r> 2drop ;
 
-: SHOW ( -- )    \ 'show' plus 'see'
+: se ( <word> -- )  \ show first line of definition from source
+ [  editor ] vwinfo count rot show1line ;
+
+: SHOW ( <word> -- )    \ 'se' plus 'see'
   >in @ bl word c@
-  if dup >in ! 1stline >in !  see
+  if dup >in ! se >in !  see
   else drop then ;
 
 : SUPER-SEE show ;
-
-: SE    ( <word> -- )  \ Show the stack comment line in console, only
-  >in @ bl word c@
-  if >in ! 1stline
-  else drop then ;
 
 : vocabs ( -- )   \ list vocabulary names in rows
     cr VOC-LINK @
@@ -258,4 +261,22 @@ forth
 
 : deletefile ( <file> -- )
   bl word count delete-file if ." failed to delete" then ;
+
+\ date
+: month-day-year" ( -- addr len )
+  get-local-time time-buf
+  >r 31 date$  z" MMMM dd',' yyyy"
+  r> null LOCALE_USER_DEFAULT
+  call GetDateFormat date$ swap 1- ;
+
+editor
+: _date-stamp ( -- )    \ put date stamp (f9)
+  noext? 0= ?exit  \ only if not a .f file
+  month-day-year"    \ -- addr len
+  >r get-cursor-line
+  cur-buf lcount drop cursor-col + r@ cmove
+  cursor-col r> + cur-buf !
+  put-cursor-line file-has-changed refresh-line ;
+
+' _date-stamp is date-stamp
 
