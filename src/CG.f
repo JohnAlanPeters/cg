@@ -204,7 +204,8 @@ forth also forth definitions editor
 : E-B    ( -- ) revert ;
 : Rev    ( -- ) revert ;
 : UnDo   ( -- ) revert ;
-: VP     ( -- ) prev-link v ; \ view previous file
+
+: vp     ( -- ) prev-link v ; \ view previous file
 : vprev  ( -- ) prev-view v ; \ don't close current file
 : N      ( -- ) +vscr ; \ does not work
 : B      ( -- ) -vscr ;
@@ -256,4 +257,3 @@ January 10th, 2004 - 18:56 Only two changes left before merge
 January 17th, 2004 - 12:03 Now we are using the same Wined source as the group!
                            VIEW-to-top needs an ok from the group
 Sun, April 23 2006 -  8:15 We moved WinEd to our folder, not in sync with guys
-September 22, 2019 -  9:08 The web version is live on the internet

@@ -413,11 +413,10 @@ Rewire Definitions               \  Parts Time
 Elect  \       4.50 + 2.50 = 700 ea Oct 2007                    
        \ Hi temp wire is 1.40 per foot                          
                                                                 
-
-
 | EMT ------------E-M-T-- C 010-001  AR-13          08-20-08 AL
-Vocabulary EMT           EMT Definitions  \ Temp Sold Keep Have
-\ No back tick if  m     Normal \                               
+Vocabulary EMT \ Electric Metalic Tubing
+EMT Definitions
+\ No back tick if  m     Normal \
 : 1/2         28.10 w/c  45 m ; \  Home Depot 10-19-2019
 : 3/4         50.20 w/c  50 m ; \  Home Depot must be an error
 ~ 1-in        84.20 w/c  55 m ; \  Home Depot 10-19-2019
@@ -425,43 +424,40 @@ Vocabulary EMT           EMT Definitions  \ Temp Sold Keep Have
 ~ 1-1/2      165.80 w/c  70 m ; \
 ~ 2-in       194.70 w/c  80 m ; \ was 230.00
 ~ 2-1/2      374.00 w/c  95 m ; \ was 374.00
-~ 3-in       463.00 w/c  11 c ; \ Not on HD list  
-~ 3-1/2      695.00 w/c  13 c ; \  
-~ 4-in       692.00 w/c  16 c ; \  
-Elect \  Stud wall = 4x if 1-1/2" Steiner  See LF-EMT           
-\ Add 28% for ladder to 12 feet.                                
-\ Normal to 8 feet, "T" bar, gun or on man lift.                
+~ 3-in       463.00 w/c  11 c ; \ Not on HD list
+~ 3-1/2      695.00 w/c  13 c ; \
+~ 4-in       692.00 w/c  16 c ; \
+Elect \  Stud wall = 4x if 1-1/2" Steiner  See LF-EMT
+\ Add 28% for ladder to 12 feet.
+\ Normal to 8 feet, "T" bar, gun or on man lift.
 
-
-| SS-CON                  B 010-011b AR-13          04-25-09    
-.( This file may be out of date )                               
-Vocabulary SS-CON                     \ Gar Temp Sold Keep Have 
-SS-CON Definitions              \                               
-: 1/2         12.10 w/c   8 c ; \ 12.00 Mar 09                  
-: 3/4         21.00 w/c  10 c ; \ 0.2048 4-25-09                
-: 1-in        39.00 w/c  12 c ; \ 9-93                          
-: 1-1/4      100.20 w/c  16 c ; \ 1.00 Jun 95                   
-: 1-1/2      150.90 w/c  20 c ; \                               
-: 2-in       202.60 w/c  25 c ; \                               
-~ 2-1/2      663.00 w/c  30 c ; \                               
-: 3-in       795.30 w/c  40 c ; \                               
+| SS-CON  \ Set-screw connector
+.( This file may be out of date )
+Vocabulary SS-CON
+SS-CON Definitions              \
+: 1/2         12.10 w/c   8 c ; \ 12.00 Mar 09
+: 3/4         21.00 w/c  10 c ; \ 0.2048 4-25-09
+: 1-in        39.00 w/c  12 c ; \ 9-93
+: 1-1/4      100.20 w/c  16 c ; \ 1.00 Jun 95
+: 1-1/2      150.90 w/c  20 c ; \
+: 2-in       202.60 w/c  25 c ; \
+~ 2-1/2      663.00 w/c  30 c ; \
+: 3-in       795.30 w/c  40 c ; \
 ~ 3-1/2     1125.50 w/c  50 c ; \ ,
 : 4-in      1309.00 w/c  60 c ; \
-Elect                                                           
-\ Die Cast Steel, EFCOR prices                                  
+Elect
+\ Die Cast Steel, EFCOR prices
 
-
-| OS-CON                  B 010-011a AR-13          88-09-02 AEC
-Vocabulary OS-CON       \                 \ Used Sold Keep Have 
+| OS-CON  \ Offset connector
+Vocabulary OS-CON
 OS-CON Definitions      \                                       
 ~ 1/2                 w/c   8 c  ; \                     2    2 
 ~ 3/4                 w/c  10 c  ; \                     1    1 
 ~ 1-in                w/c  12 c  ; \                     0      
 ~ 1-1/4               w/c  15 c  ; \                     0      
 Elect                                                           
-                                                                
 
-| SS-COUP   Die Cast      B 010-013  AR-13          03-09-09    
+| SS-COUP   Die Cast set-screw coupling
 Vocabulary SS-COUP                                              
                     SS-COUP DEFINITIONS                         
 : 1/2         15.00 w/c   4 c ; \ 14.82 Mar 09                  
@@ -475,9 +471,6 @@ Vocabulary SS-COUP
 : 3-1/2      751.40 w/c  12 c ; \                               
 : 4-in       832.90 w/c  14 c ; \                               
 ELECT                                                           
-: C-COUP  SS-COUP ;                                             
-( Die Cast )                                                    
-
 
 | RT-CON                  B 010-017  AR-13          10-06-07 AL
 Vocabulary RT-Con        RT-Con Definitions    \ Sold Keep Have 
@@ -494,8 +487,6 @@ Vocabulary RT-Con        RT-Con Definitions    \ Sold Keep Have
 ~ 4-in      2310.20 w/c   80 c ; \                              
 Elect    -->                     \                              
 \  Because all but 1/2 are too low priced                       
-                                                                
-
 
 | RT-COUP   Die Cast      B 010-019  AR-13          06-12-07 AL
 Vocabulary RT-Coup       RT-Coup Definitions   \                
@@ -510,7 +501,6 @@ Vocabulary RT-Coup       RT-Coup Definitions   \
 ~ 2-1/2      600.00 w/c  36 c ; \ Guess in 2000                 
 Elect  \   NECA is way to high                                  
 \ Error?   SS-COUP labor is included in the run of pipe         
-                                                                
 
 | SS-90 pulling elbo      B 010-020  AR-09          88-10-02 AEC
 Vocabulary SS-90                          \ Used Sold Keep Have 
@@ -527,7 +517,6 @@ ELECT  \
 \  They are also the same times used for the LB                 
 \  The price small book does not list SS-90,                    
 \  just threaded RT-90                                          
-                                                                
 
 | EMT-90                  B 010-020  AR-09          88-10-02 AEC
 Vocabulary EMT-90                         \ Used Sold Keep Have
@@ -542,7 +531,6 @@ EMT-90          Definitions
 : 2-1/2     2000.00 w/c  90 c ; \ Guess in 2000                 
 : 3-in      3837.00 w/c 125 c ; \ 1989 prices                   
 ELECT  \
-
 
 % STRAP-2-EMT             B 010-023                 88-10-02 AEC
 Vocabulary Strap-2-EMT                    \ Used Sold Keep Have
@@ -559,7 +547,6 @@ Vocabulary Strap-2-EMT                    \ Used Sold Keep Have
 ~ 4-in       147.39 w/c   0 c ; \                        -
 Elect \
 \ (One hole costs twice as much)
-
 
 | STRAP                   B 010-024                 04-25-09    
 Vocabulary Strap         STRAP Definitions    \ Keep Have
@@ -578,7 +565,6 @@ Elect  : STRAP-1-EMT strap ;
 \                                                               
 \ Two hole costs 1/2 as much                                    
 
-
 | NAILER  Drive strap     B 010-028                 89-04-28 AEC
 Vocabulary Nailer        Nailer Definitions    \ Sold Keep Have 
 : 1/2         14.10 w/c   1 c ; \   Raco          438  200  235 
@@ -590,7 +576,6 @@ Elect
 \                                                               
 \ Inc Bridgeport                                                
 \ NOTE: Wide fluctuation in manufacturer's prices.              
-                                                                
 
 | CONDUIT-HANGER            010-03X  BH-7           89-01-04 AEC
 Vocabulary CONDUIT-HANGER                                       
@@ -609,7 +594,6 @@ Elect \
 \ See also SECURE HANGER-ROD                                    
   ( Check times   all most all re guesses !!!)                  
 
-
 | PVC PIPE                C 020-011  AR-21  BR-19   09-15-08 AL
 Vocabulary PVC-Pipe      PVC-pipe  Definitions \ Sold Keep Bsmt 
 : 1/2         24.39 w/c   25 m ; \                      10  100 
@@ -625,7 +609,6 @@ Vocabulary PVC-Pipe      PVC-pipe  Definitions \ Sold Keep Bsmt
 Vocabulary PVC-LB  PVC-LB definitions                           
 : 2-in       143.30 w/c  500 m ; \  much more than a ft of pipe 
 Elect -->                                                       
-                                                                
 
 
 | PVC-90                  C 020-011  AR-21          09-15-08 AL
@@ -645,7 +628,6 @@ Vocabulary PVC-45  PVC-45 definitions
 : 2-in       400.00 w/c   40 m ; \ Guess                        
 Elect -->                                                       
 
-
 | PVC-COUP  (Rigid)   101   020-012  LL-0    Times> 09-15-08 AL
 Vocabulary PVC-Coup      PVC-Coup Definitions  \ Sold Keep Bsmt 
 : 1/2         21.00 w/c  10 c ; \                               
@@ -660,7 +642,6 @@ Vocabulary PVC-Coup      PVC-Coup Definitions  \ Sold Keep Bsmt
 ~ 4-in       425.00 w/c  30 c ; \                               
 Elect -->                                                       
 \ Labor inc in raceway                                          
-                                                                
 
 | PVC-FEMALE                020-017  AR-21 BR-19    09-15-08 AL
 Vocabulary PVC-Female    PVC-Female  Definitions \    Keep Bsmt 
@@ -679,7 +660,6 @@ Vocabulary PVC-Female    PVC-Female  Definitions \    Keep Bsmt
 Elect -->                                                       
 \ For sizes thru 3-1/2 male and female are the same price       
 
-
 | PVC-MALE                  020-017  AR-21 BR-19    09-15-08 AL
 Vocabulary PVC-Male      PVC-Male    Definitions \    Keep Bsmt 
 ` 1/2         25.00 w/c  10 c ; \ <- Br                   6     
@@ -697,7 +677,6 @@ Vocabulary PVC-Male      PVC-Male    Definitions \    Keep Bsmt
 Elect                                                           
 \ For sizes thru 3-1/2 male and female are the same price       
 
-
 | FLEX  --> - - F-L-E-X - C 030-009  AR-19          08-03-89 AE
 Vocabulary Flex          Flex Definitions \ Used Sold Keep Have 
 ` Loom         5.50 w/c  3  c ; \                       10      
@@ -708,20 +687,17 @@ Vocabulary Flex          Flex Definitions \ Used Sold Keep Have
 ` 1-1/2      125.30 w/c 15  c ; \ Guess time                    
 Elect  \   Zone A     Aluminum                                  
 
-
 | FLEX-COUP               C 030-021b AR-19          08-03-89 AEC
 Vocabulary Flex-Coup     Flex-Coup definitions \ Sold Keep Have
 ` 1/2         41.15 w/c  11 c ; \                   1    3   15 
 ` 3/4         68.20 w/c  12 c ; \                   4    1    1 
 ` 1-in       119.60 w/c  15 c ; \                        1    1 
 Elect              \                        -                   
-                                                                
 
 Vocabulary FLEX-TO-EMT  FLEX-TO-EMT definitions
 \ 1/2                           \                        2    5
 : 3/4          2.51 w/c  15 c ;  \                        1    2
 Elect
-
 
 | FLEX-CON -->            C 030-021a AR-19 88-08-06 08-06-89 AEC
 Vocabulary Flex-Con      FLEX-CON definitions  \ Sold Keep Have 
@@ -733,13 +709,6 @@ Vocabulary Flex-Con      FLEX-CON definitions  \ Sold Keep Have
 ~ 1-1/2      107.10 w/c  15 c ; \                        2    5 
 Elect                                                           
 -->                                                             
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-
 
 | LT-FLEX  (UL approved)  B 030-031  BR-18          06-12-07 AL
 VOCABULARY LT-Flex       LT-FLEX DEFINITIONS \                  
@@ -755,9 +724,6 @@ VOCABULARY LT-Flex       LT-FLEX DEFINITIONS \
 ~ 3-1/2                  60 c ; \                               
 ELECT                                                           
 -->                                                             
-                                                                
-                                                                
-
 
 | LT-CON  Non insulated   B 030-032  AR-18          88-10-02 AEC
 Vocabulary LT-Con        LT-CON DEFINITIONS    \ Sold Keep Have 
