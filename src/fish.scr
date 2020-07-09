@@ -22,7 +22,7 @@ Elect
 Electric Definitions
 Vocabulary (FISH-WORK)
 : FISH-IN-WALL     Elect (FISH-WORK)  also ;
-: Flush-in-wall         fish-in-wall ;
+: FIW                   fish-in-wall ;
 : Fish-in-walls         fish-in-wall ;
 : FISH                  fish-in-wall ;
 : Flush-on-walls        fish-in-wall ;
