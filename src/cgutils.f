@@ -270,7 +270,7 @@ forth
   call GetDateFormat date$ swap 1- ;
 
 editor
-: _date-stamp ( -- )    \ put date stamp (f9)
+: _date-stamp ( -- )    \ put date stamp (F8)
   noext? 0= ?exit  \ only if not a .f file
   month-day-year"    \ -- addr len
   >r get-cursor-line
