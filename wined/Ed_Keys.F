@@ -390,7 +390,7 @@ editor
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
       k_F1                          OF      3waytoggle                  ENDOF
       k_F1    +k_control            OF      word-help                   ENDOF
-      k_F2                          OF      settle   grand-total        ENDOF
+      k_F2                          OF      grand-total                 ENDOF
       k_F3                          OF      save-all-text ( FTA )       ENDOF
       k_F3    +k_shift              OF      save-all-text  ( bfta )     ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
@@ -411,7 +411,7 @@ editor
       k_F11                         OF      vindex#s ( fstacksave )     ENDOF
       k_F11   +k_shift              OF      next-link  ( prev-view )    ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      bookmark                    ENDOF
+      k_F12                         OF      vbmark                      ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( date-stamp )
 \                                         ( back-find-all-text )
