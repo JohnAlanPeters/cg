@@ -188,15 +188,16 @@ editor
     then over to orig-loc ;
 
 \ Show line of a file given filename count and iine#
-: show1line ( fnm l1 line#  -- t1 len ) { \ $txt -- }
-  100 localalloc: $txt
-  >r r/w open-file 0=
-  if r@ 0 do
-       $txt 1+ 100 2 pick read-line
-       if ." faled read line: " i 0 d. 0= leave
-       else 0= if ." end of file" i 0 d. 0= leave else $txt c! then
+: show1line ( fnm l1 line#  -- ) { \ $txt -- }
+  200 localalloc: $txt
+  >r r/o open-file 0=
+  if 0 0 2 pick reposition-file drop
+     r@ 0 do
+       $txt 1+ 200 2 pick read-line
+       if ." faled read line: " i 0 d. leave
+       else 0= if ." end of file" i 0 d. leave else $txt c! then
        then
-     loop dup if close-file drop $txt count type 1 then
+     loop close-file drop $txt count type 1
   then r> 2drop ;
 
 : se ( <word> -- )  \ show first line of definition from source
