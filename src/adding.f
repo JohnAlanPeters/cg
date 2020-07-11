@@ -166,7 +166,7 @@ editor also
      keyboard off ['] all-thru  catch 0=
      if ext-err if reset-stacks loadline @ to cursor-line 16 to cursor-col
         reedit exit
-        else to cursor-col to cursor-line to line-cur then  refresh-screen
+        else to cursor-col to cursor-line to line-cur then ( refresh-screen )
      else 2drop drop then
   then  EX-TOTAL to last-total
   ( clear-totals ) ( save-text ) ( overstrike on ) ;

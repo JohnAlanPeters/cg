@@ -117,7 +117,7 @@ del-max MAXSTRING + Pointer  del-buf
                 line-tbl cursor-line          cells+
                 file-lines 2 + cursor-line #lines + - cells move
                 file-lines #lines - 0max to file-lines  \ shorten by one line
-                refresh-screen ;
+                ( refresh-screen ) ;
 
 : delete-characters { #chars -- }       \ delete a number of characters
                 #chars 0max to #chars           \ at least zero characters
