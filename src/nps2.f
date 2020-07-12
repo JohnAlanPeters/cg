@@ -367,13 +367,19 @@ Vocabulary LIFE-SAFETY
 Elect \  see FIRE  for supervised See HARD-WIRED  for smokes
 
 
-Vocabulary Smoke-Alarm
-Smoke-Alarm Definitions
-: AC-Hardwired    48.00 w/e   45 c ; \ 
-: 3V-Battery      48.00 w/e   25 c ;
+Vocabulary Smoke-Alarm-HW
+Smoke-Alarm-HW Definitions
+: AC-Hardwired    68.00 w/e   45 c ; \
+: 3V-Battery      68.00 w/e   25 c ;
 Elect  \ Back to regular order of vocs
 : smk ; \ alias
 elect
+
+Vocabulary CO-alarm  CO-alarm definitions
+: 3V-combination                60.00 w/e 20 c ;
+: AC-combination                60.00 w/e 25 c ;
+
+
 
 
 | T-BAR                     625-104d XX-X           11-17-08 AL
@@ -470,7 +476,7 @@ Vocabulary Fixture       Fixture definitions
 : Motion-socket 45.00 w/e 20 c ; \ 38.94 inc ship, not tax,
 : Light-Sensor  15.00 w/e 25 c ; \ plc 3040 150w sauser
 : Double-head 2006.00 w/c 25 c ; \
-: Single-Head 1500.00 w/c 25 c ; \
+: Single-Head 1500.00 w/c 25 c ; \ shower-head
 : Keyless      160.00 w/c 20 c ; \ 5-05
 : Porclean   keyless ;
 : Pull-string  375.00 w/c 20 c ; \ 3.6661 May 2009
@@ -620,7 +626,7 @@ Juno     Definitions   \ (Remodel can costs the same price)
 
 
 | CAPRI (Trim)                                      04-19-93 AEC
-Vocabulary Capri   \ 4-16-93 for Stuart on Collingwood          
+Vocabulary Capri   \ A brand of recessed fixtues
 Capri    Definitions   \ (Remodel can costs the same price)     
 : LC119       26.85 w/e  10 c ; \ Masonic Inman Bath            
 : Oval-slot   LC119 ;           \ w/o line = LC119              
@@ -814,16 +820,16 @@ Elect              \
 
 : GLOBE  ball ;                 \                               
 \ These are not pendants
-\ 30 hours per c  is 18 minutes to hang it.                     
-Elect                                                                
+\ 30 hours per c  is 18 minutes to hang it.
+Elect
 
 \ LED ; \ viewable word
 \ See also LED-LAMP  LED-CANS  LED-CAN  LED-CONVERT  EXIT-LED  LED-TUBE
 \ LED-UC  LRD-RETROFIT-CAN  REWIRE-LED  EXIT-LED  LED-UC
 
-Vocabulary LED  LED definitions
-: Disk         7.00 w/e  40 c ; \ Guesses AZ is 5 or 6 ea.
-Elect
+\ Vocabulary LED  LED definitions
+\ Disk         7.00 w/e  40 c ; \ Guesses AZ is 5 or 6 ea.
+\ Elect
 
 
 | LAMP  Bulbs 1/3           630-022a FI-14
@@ -841,43 +847,43 @@ Vocabulary Lamp          Lamp Definitions
 :  60W          .55 w/e   0 c ; \ 12-93
 :  75W          .55 w/e   2 c ; \ 12-93
 : 100W          .55 w/e   0 c ; \ 12-93
-: 150W-PAR     4.79 w/e   6 c ; \
-: 50W-PAR      3.00 w/e   6 c ; \
-: 65W-PAR      3.00 w/e   6 c ; \
-: 75W-PAR      9.90 w/e   6 c ; \ 7.20 Old pre 3/9/09
-: PAR-75W      75W-PAR ;
-: 75W-CAPS     9.00 w/e   3 c ; \ 5.78 Aug 00
-: 75W-Halogen  7.00 w/e   3 c ; \ 6.75 Apr 95 B&K                
-: Flo-Spot    36.00 w/e   0 c ; Elect                           
+\ 150W-PAR     4.79 w/e   6 c ; \
+\ 50W-PAR      3.00 w/e   6 c ; \
+\ 65W-PAR      3.00 w/e   6 c ; \
+\ 75W-PAR      9.90 w/e   6 c ; \ 7.20 Old pre 3/9/09
+\ PAR-75W      75W-PAR ;
+\ 75W-CAPS     9.00 w/e   3 c ; \ 5.78 Aug 00
+\ 75W-Halogen  7.00 w/e   3 c ; \ 6.75 Apr 95 B&K
+\ Flo-Spot    36.00 w/e   0 c ; Elect
 : MR-16        9.45 w/e  20 c ; \ Feb 09 Advent Church
 : Plug-in     23.96 w/e  24 c ; \ "
 : HIR         31.05 w/e  12 c ; \ "
 : PAR-36      22.81 w/e  32 c ; \ "
-: S-16        13.90 w/e  10 c ; \ Ceramic diode guess           
-: D-16        12.95 w/e  10 c ; \ Apr 94 Alpha                  
-: PAR-20       6.00 w/e   0 c ; \ Aug 94 Alfa Not full          
-: PAR-20-130V 10.68 w/e   0 c ; \ Apr 94 City Lights            
-: 250W-Quartz 17.25 w/e   8 c ; \                               
-: PAR-30       8.37 w/e   0 c ; \ Apr 94 City Lights            
-: HPS         30.00 w/e  25 c ; \ Feb 94                        
-: HEAT-lamp    7.00 w/e  10 c ; \ 630                           
-: GLOBULAR     4.40 w/e   2 c ; \ 630 1.25                      
-: Flame-Tip     .81 w/e   2 c ; \                               
-: LF-Ropelight 525.00 w/c 8 c ; \ SES  Sep 97  Reg 5.50         
-: R-20         4.50 w/e   4 c ; \ Guess
-: R-25         4.50 w/e   4 c ; \ Guess                         
-: R-30         3.00 w/e   0 c ; \ 630              71    5   18 
-: R-60  ( 75 ) 4.80 w/e   4 c ; \ 630                    1    1 
-: 150W-R40     5.00 w/e   6 c ; \ MES is hi         2         0 
-: 300W-Halogen 5.00 w/e   6 c ; \ Guess                         
-: 400W-HID    37.00 w/e   4 c ; \                               
-: 90W-PAR38    7.40 w/e   8 c ; \ Guess                         
+: S-16        13.90 w/e  10 c ; \ Ceramic diode guess
+: D-16        12.95 w/e  10 c ; \ Apr 94 Alpha
+\ PAR-20       6.00 w/e   0 c ; \ Aug 94 Alfa Not full
+\ PAR-20-130V 10.68 w/e   0 c ; \ Apr 94 City Lights
+\ 250W-Quartz 17.25 w/e   8 c ; \
+\ PAR-30       8.37 w/e   0 c ; \ Apr 94 City Lights
+: HPS         30.00 w/e  25 c ; \ Feb 94
+: HEAT-lamp    7.00 w/e  10 c ; \ 630
+: GLOBULAR     4.40 w/e   2 c ; \ 630 1.25
+: Flame-Tip     .81 w/e   2 c ; \
+: LF-Ropelight 525.00 w/c 8 c ; \ SES  Sep 97  Reg 5.50
+\ R-20         4.50 w/e   4 c ; \ Guess
+\ R-25         4.50 w/e   4 c ; \ Guess
+\ R-30         3.00 w/e   0 c ; \ 630              71    5   18
+\ R-60  ( 75 ) 4.80 w/e   4 c ; \ 630                    1    1
+\ 150W-R40     5.00 w/e   6 c ; \ MES is hi         2         0
+\ 300W-Halogen 5.00 w/e   6 c ; \ Guess
+: 400W-HID    37.00 w/e   4 c ; \
+: 90W-PAR38    7.40 w/e   8 c ; \ Guess
 : Rough-Service 3.80 w/e  6 c ; \ 630
-: 60W-T10      3.86 w/e   2 c ; \                               
-\ A-19-130V    1.08                                             
-: Socket-ext   4.00 w/e   8 c ; \                               
-Elect                                                           
-\ 60=FNV 40=EXN 24=EXZ 14=EXT 14=EYF-75 9=EZY                   
+\ 60W-T10      3.86 w/e   2 c ; \
+\ A-19-130V    1.08
+: Socket-ext   4.00 w/e   8 c ; \
+Elect
+\ 60=FNV 40=EXN 24=EXZ 14=EXT 14=EYF-75 9=EZY
 
 
 | BALLAST                   630-003  FF-09          01-28-08 AL
@@ -899,18 +905,18 @@ Vocabulary Ballast    Ballast definitions \ Used Sold Keep Have
 Elect
 
 
-| CLOSET-LIGHT              630-600x LL-0         F 12-10-07 AL
-Vocabulary CLOSET-LIGHT                   \ Used Sold Keep Have 
-CLOSET-LIGHT Definitions \ 1\2 The labor of under cabinet       
-` 12-in     2000.00 w/c  25 c ; \ 12-in  Dec 93               - 
-` 21-in     3100.00 w/c  25 c ; \ 21-in                         
-` 24-in     2700.00 w/c  30 c ; \ 2-12"  May 98 26.62 not 33.00 
-` 24-in-HQ  8510.00 w/c  30 c ; \ Univ Best brand???            
-` 33-in     4350.00 w/c  35 c ; \ 12&21  28.44 May 05         - 
-` 42-in     5300.00 w/c  40 c ; \ 2-21"  33.08 Jul 2007         
-` Outlet     100.00 w/c  10 c ; \        Dec 93               - 
-` Rocker-Switch 200.00 w/c 10 c ; \      Dec 93               - 
-Elect   \                                                       
+\ CLOSET-LIGHT              630-600x LL-0         F 12-10-07 AL
+\ Vocabulary CLOSET-LIGHT                   \ Used Sold Keep Have
+\ CLOSET-LIGHT Definitions \ 1\2 The labor of under cabinet
+\ 12-in     2000.00 w/c  25 c ; \ 12-in  Dec 93               -
+\ 21-in     3100.00 w/c  25 c ; \ 21-in
+\ 24-in     2700.00 w/c  30 c ; \ 2-12"  May 98 26.62 not 33.00
+\ 24-in-HQ  8510.00 w/c  30 c ; \ Univ Best brand???
+\ 33-in     4350.00 w/c  35 c ; \ 12&21  28.44 May 05         -
+\ 42-in     5300.00 w/c  40 c ; \ 2-21"  33.08 Jul 2007
+\ Outlet     100.00 w/c  10 c ; \        Dec 93               -
+\ Rocker-Switch 200.00 w/c 10 c ; \      Dec 93               -
+\ Elect   \
      \ American Lights prices from SafeCo ( Cheep brand )       
      \ 24-in 21.97 Peer                                         
      \ Need an update including tubes                           
@@ -2572,8 +2578,3 @@ Vocabulary Warrantee
 : 15-Year     2 hours [ hours ] electrician ;                   
 : 10-year     1 hours [ hours ] electrician ;                   
 Elect
-
-| Annual-Safety                                                 
-Vocabulary Annual                                               
-Annual Definitions                                              
-: 25-year      25 hours [ hours ] electrician ;                 
