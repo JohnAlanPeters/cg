@@ -160,9 +160,16 @@ forth also forth definitions editor
   defer-margin 2 = if true overstrike ! false to browse? else
   defer-margin 3 = if false overstrike ! false to browse? then then then ;
 
-: VV-con ( cfa -- )      \ TODO: fix hilite on viewed word, index of base
-  $.viewinfo count "+open-text 0 swap 1- setedmode
-  to-find-line refresh-line reEdit ;
+: widesearch ( <file> -- cfa fl )   \ for 'vv' and 'vvv'
+  search-path
+  s" .;c:\cg;\win32forth" search-path place
+  bl word anyfind dup 0= if ." not found" then rot count search-path place ;
+
+: VV-con ( -- )      \ TODO: fix hilite on viewed word, index of base
+  widesearch
+  if $.viewinfo count "+open-text 0 swap 1- setedmode
+     to-find-line refresh-line reEdit
+  else drop then ;
 
 : VV-web-instructions ( <word> -- ) bl word drop cr
   ." Use SEE <word> to decompile the source code." cr
@@ -171,7 +178,7 @@ forth also forth definitions editor
   ." You can get the code from GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
-: VIEW ( word -- ) \ Web if warn else view the source code of the word
+: VIEW ( cfa -- ) \ Web if warn else view the source code of the word
   in-web?
   if vv-web-instructions
   else vv-con
@@ -181,11 +188,6 @@ forth also forth definitions editor
   [ editor ] vbmark ;
 
 : v reedit ; \ edit the currently open file
-
-: widesearch ( <file> -- cfa fl )   \ for 'vv' and 'vvv'
-  search-path
-  s" .;c:\cg;\win32forth" search-path place
-  bl word anyfind dup 0= if ." not found" then rot count search-path place ;
 
 : VV  ( <word> -- ) \ opens file in the editor for <word>; stays in console
    in-web?
@@ -199,9 +201,7 @@ forth also forth definitions editor
    then ;
 
 : vvv ( <word> -- )   \ open file in insert mode in editor
-   3 to defer-margin widesearch
-   if view
-   else drop ( setedmode reedit ) then ;
+   3 to defer-margin view ;
 
 : VVVV  ." Hay! ;-) Too many V's for me handle!" ;
 

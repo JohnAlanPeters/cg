@@ -257,7 +257,6 @@ defer _Control+W ' close-text is _control+w
   set-ed-defaults
   s" Recall" "GetDefaultValue
   if dup to entry# SetStack: EditWindow hyper-open
-     s" " s" Recall"  "SetDefault
   else drop then set-w32f-default ;
 
 : vbmark ( -- )  \ after bookmarking, reopen the file; don't delete the bookmark
@@ -269,7 +268,7 @@ defer _Control+W ' close-text is _control+w
 \ ** add virtual screen #s to a bid or module
 : index$ ( n -- addr len )  \ index# as a string
   s>d <# #S #> ;
-editor
+
 : vindex#s ( -- )       \ maintain indexes for each virtual page
   cursor-line
   17 to cursor-line     \ start after header of a bid file
@@ -301,6 +300,16 @@ editor
 
 : toggle-autoextend ( -- )  \ true-> extend on cr
   autoextend 0= to autoextend ;
+
+: squashblanks ( -- )  \ multiple blank lines removed to leave just 1
+  17 to cursor-line
+  0    \ track #blank lines
+  begin cursor-line file-lines 1- <     \ don't go off the end of the file
+  while
+    get-cursor-line cur-buf c@ 0=
+    if  dup if 1 delete-lines else 1+ 1 +to cursor-line then
+    else drop 0 1 +to cursor-line then
+  repeat drop refresh-screen ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 67    The main editor loop
