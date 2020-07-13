@@ -26,12 +26,13 @@ anew _grandtot
 
 : grand-total-line ( -- l#)
   0 >col-cursor   20 to cursor-line
-  s" TOTAL ESTIMATE" find-buf place _find-text-again  0=  
+  ['] no-show-find-line is to-find-line
+  s" TOTAL ESTIMATE" find-buf place _find-text-again  0=
   if  file-lines 1- to cursor-line    \ end of file
         1 insert-lines                  \ add line
         s" Total Estimate" >r cur-buf cell+ r@ cmove r> cur-buf !
         put-cursor-line
-  then  cursor-line ;
+  then  cursor-line ['] (to-find-line) is to-find-line ;
 
 : show-grand ( -- )  \ bottom of the bid
   grand-total-line

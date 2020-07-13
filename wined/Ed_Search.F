@@ -481,8 +481,13 @@ FALSE value find-label?     \ are we searching for a label?
         THEN    1 +to search-till ;
 
 \ Changed to allow wildcard text search ( July 6th, 2003 - dbu )
+defer to-find-line
+: no-show-find-line ( col row -- )
+   file-lines 1- min 0max
+   to cursor-line
+   to cursor-col ;
 
-: to-find-line  ( col row -- ) \ set cursor position to the line with the text we found
+: (to-find-line)  ( col row -- ) \ set cursor position to the line with the text we found
                 file-lines 1- min 0max
                 to cursor-line
                 to cursor-col

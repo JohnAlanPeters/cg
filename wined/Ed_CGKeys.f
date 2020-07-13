@@ -14,7 +14,7 @@
 defer line2clip
 
 : in-fish ( -- )
-  s" Fish-in-Walls inc" insert-bid-line ;   
+  s" Fish-in-Walls inc" insert-bid-line ;
 
 : in-emt ( -- )
   s" Neat-EMT" insert-bid-line ;
