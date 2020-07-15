@@ -43,7 +43,7 @@ int offsetY
         \ -- x y
         2dup
         edit-changed?
-        if s" MODIFIED" else s"                   " then
+        if s" MODIFIED" else s" Saved             " then
         DkMagenta  SetTextColor: dc TextOut: dc
         (((
         browse?
