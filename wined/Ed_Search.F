@@ -498,6 +498,7 @@ defer to-find-line
                 cursor-line dup to hlst to hled
                 cursor-col to hcst
                 hcst found_len + to hced ;
+' (to-find-line) is to-find-line
 
 : find-label    { line# -- flag }       \ flag=TRUE if we found the label
         line# #line" s" <A NAME" dup>r xsearch
