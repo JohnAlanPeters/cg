@@ -10,10 +10,10 @@ var fHeader='';
 var startstop=0;
 var sendint=false;
 var r1st=0;
+var dsp;
 
 function doit(cntnu)
 {
-  var dsp=document.getElementById('dsp');
   if(sendint){
      sendint=false;
      cntnu=4;
@@ -48,6 +48,7 @@ function doit(cntnu)
      }
      r1st=0;
      if(fHeader==5) fHeader=0;
+     if(data[0]!=' ')data=' '+data;
      dtxt+=data;
      lastlen=dtxt.length;
      dsp.value=dtxt;
@@ -66,7 +67,8 @@ CG is a database of electrical parts. The name Contract Generator is TM<br>
 <br>
 <textarea id='dsp' rows=18 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 <script>
-    //var dsp=document.getElementById('dsp');
+    dsp=document.getElementById('dsp');
+	dsp.value='';
     document.addEventListener("keydown",function(event) {
     if (event.key === "Enter") {
         r1st=1;

@@ -282,3 +282,19 @@ editor
 
 ' _date-stamp is date-stamp
 
+6 proc ShellExecute
+: ("ShellExecute) { operation addr cnt hWnd --  errorcode } \ open file using default application
+        1 ( SW_SHOWNORMAL )   \ nShowCmd
+        Null                  \ default directory
+        Null                  \ parameters
+        addr cnt asciiz       \ file name to execute
+        operation             \ operation to perform
+        hWnd                  \ parent
+        Call ShellExecute ;
+
+: "ShellExecute { addr cnt hwnd -- errorcode } \ execute batch file
+        z" open" addr cnt hWnd ("ShellExecute) ;
+
+: makenewcg ( -- )
+  s" c:\cg\_makenewcg.bat" 0 "shellexecute bye ;
+
