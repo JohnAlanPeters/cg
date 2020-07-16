@@ -648,9 +648,9 @@ Elect
 
 
 | Recessed-6"                                       07-12-07 AL
-Vocabulary Recessed-6"  Recessed-6"  Definitions                
-\ Can-IC      [ Halo ] H7-ICT ; \                               
-: Trim         9.00 w/e  10 c ;                                 
+Vocabulary Recessed-6"  Recessed-6"  Definitions
+\ Can-IC      [ Halo ] H7-ICT ; \
+: Trim        11.64 w/e  10 c ; \ Linda L
 : Bulb         7.20 w/e  06 c ;                                 
 : Can-Kit     26.84 w/e  41 c ; \                               
 : HiHat-inc   26.84 w/e  41 c ; \                               
@@ -877,7 +877,7 @@ Vocabulary Lamp          Lamp Definitions
 \ 150W-R40     5.00 w/e   6 c ; \ MES is hi         2         0
 \ 300W-Halogen 5.00 w/e   6 c ; \ Guess
 : 400W-HID    37.00 w/e   4 c ; \
-: 90W-PAR38    7.40 w/e   8 c ; \ Guess
+: 90W-PAR38   14.00 w/e   8 c ; \ Linda 7-13-2020
 : Rough-Service 3.80 w/e  6 c ; \ 630
 \ 60W-T10      3.86 w/e   2 c ; \
 \ A-19-130V    1.08
