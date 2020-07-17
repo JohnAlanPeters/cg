@@ -129,7 +129,7 @@ editor
 
 \ ' dotcomma-number is number
 
-: (settle)  ( -- )  \ eliminate extra blank lines  see also settle below
+: (settle)  ( -- )  \ eliminate extra blank lines. settle is vectored below
   noext? 0= if exit then
   cursor-line un-add
   17 to cursor-line   0  \ initial value for #blank lines read \ was 24  JPPP
