@@ -261,7 +261,7 @@ defer _Control+W ' close-text is _control+w
 
 : vbmark ( -- )  \ after bookmarking, reopen the file; don't delete the bookmark
   set-ed-defaults
-  s" Recall" "GetDefaultValue
+  s" Recall" "GetDefaultValue dup last-entry# < and
   if dup to entry# SetStack: EditWindow hyper-open
   else drop then set-w32f-default ;
 
