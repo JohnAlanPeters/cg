@@ -74,11 +74,12 @@ create lbuf 120 allot
   else drop
   then start/stop ;
 
-: files1line ( -- )
+: files1line ( -- )  \ loop thru the bids in a file and show the first line
   s" *" find-first-file 0=
   if 1linefile then
   begin find-next-file 0=
   while 1linefile
   repeat drop find-close drop ;
 
+: find-old-bids  files1line ; \ show 1st line of each file in a folder
 
