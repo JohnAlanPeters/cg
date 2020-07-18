@@ -497,42 +497,30 @@ only forth also editor also electric also definitions
   else close-file then to$ count "+open-text
       9 to cursor-line reEdit ;
 
-create upath 250 allot
-: userdir ( -- addr len )   \ path to users dir
-  s" \Users\j*"  find-first-file if drop s" \Users\User" find-first-file drop then 
-  dir->file-name rot drop 
-  s" \Users\" upath place upath +place s" \" upath +place ;
-
-: OneDriveDIR ( -- addr len )
-  userdir s" OneDrive\" upath +place upath count ;
-
-: OneDrive  \ +1drvdir ( addr len -- a2 l2)  \  filepath in OneDrive
-  onedrivedir 2drop upath +place upath count ;
-
+editor
 create fbuf 5000 allot          \ to hold the template file text
 : cab { \ to$ -- <fname> }  \ create a bid
-  s" bids\" OneDrive over +null "chdir
+  s" " onedrivebids "chdir
   max-path localAlloc: to$
-  upath count to$ place  \ path to 1drive bids
-  /parse-s$ count to$ +place
-  to$ $open
+  bl word count to$ place  \ path to 1drive bids file
+  to$ $open         \ do nothing if it exists
   if s" template-mini" r/o open-file 0=
     if >r fbuf 4096 r@ read-file r> close-file drop 0=
       if >r to$ count r/w create-file 0=
          if fbuf r> rot dup>r write-file r> close-file drop
             if to$ delete-file drop true abort" failed to write file"
-            then  \ todo: delete created file
+            then
          else r> drop then
       else drop then
     else drop then
   else drop then
-  to$ count "+open-text 9 to cursor-line bookmark reEdit ;
+  to$ count onedrivebids "+open-text 9 to cursor-line bookmark ;
 
 : to-bids ( -- )  \ open -bids in editor
-  s" bids\-bids" OneDrive "open-text reEdit  ;
+  s" -bids" onedrivebids "open-text ;
 
 : >bids ( line# -- )             \ open -bids to line# given
-  s" bids\-bids" OneDrive "open-text
+  s" -bids" onedrivebids "open-text
   find-buf off
   0 swap to-find-line  refresh-line ;
 

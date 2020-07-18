@@ -120,7 +120,7 @@ defer to-web
      2dup data>fuser ( type )        \ type the forth command to the surface console
      2dup type cr
      vectint             \ get output of request into buffer
-     2dup data>fuser   cr 2dup type      \ display response in console
+     2dup data>fuser   cr 2dup type SCROLLTOVIEW     \ display response in console
      dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
      b2sock             
  \ send the response to the socket

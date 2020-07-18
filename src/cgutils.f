@@ -277,7 +277,8 @@ editor
   month-day-year"    \ -- addr len
   >r get-cursor-line
   cur-buf lcount drop cursor-col + r@ cmove
-  cursor-col r> + cur-buf !
+  r@ cursor-col + cur-buf @ >
+  if cursor-col r@ + cur-buf ! then r> drop
   put-cursor-line file-has-changed refresh-line ;
 
 ' _date-stamp is date-stamp
