@@ -183,10 +183,9 @@ editor
 
 : vwinfo     ( -<name>- line filename )  [  editor ]
     bl word anyfind
-    if get-viewfile if dup count cur-file place else exit then
-    else c@ abort" Undefined word!"
-         cur-line @ cur-file
-    then over to orig-loc ;
+    if get-viewfile if dup count cur-file place over to orig-loc then
+    else ." Undefined word!" 0
+    then  ;
 
 \ Show line of a file given filename count and iine#
 : show1line ( fnm l1 line#  -- ) { \ $txt -- }
@@ -202,7 +201,7 @@ editor
   then r> 2drop ;
 
 : se ( <word> -- )  \ show first line of definition from source
- [  editor ] vwinfo count rot show1line ;
+ [  editor ] vwinfo ?dup if count rot show1line else drop then ;
 
 : SHOW ( <word> -- )    \ 'se' plus 'see'
   >in @ bl word c@
