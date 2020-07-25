@@ -100,7 +100,7 @@ defer to-web
 
 : sendfile ( addr cnt -- )
    r/o open-file not
-   if >r vbuf 4096 r@ read-file not
+   if >r vbuf 6000 r@ read-file not
       if  dup 1 sendheaders
           vbuf swap b2sock
       else drop then r> close-file
@@ -114,7 +114,7 @@ defer to-web
    over 3 s" GET"           \ address over to the top of stack
    compare not              \ compare the comand string and the string with the 'GET'
    if 2drop                 \ if not = drop the address of both strings and send HTML file
-     s" \cg\webinterpret\webinterpret-f.html" sendfile
+     s" \cg\webinterpret\webinterpret.html" sendfile
    else
      2crlfs              \ chop off headers up to 2 CRLFs to get to data
      2dup data>fuser ( type )        \ type the forth command to the surface console

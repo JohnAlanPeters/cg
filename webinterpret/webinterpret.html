@@ -2,48 +2,162 @@
 
 <meta charset="utf-8" />
 
-<title>test input</title>
+<title>Win32Forth</title>
 
 <script language="javascript" type="text/javascript">
 var lastlen=0;
-function doit()
+var fHeader='';
+var startstop=0;
+var sendint=false;
+var r1st=0;
+var dsp;
+
+function doit(cntnu)
 {
-    var dsp=document.getElementById('dsp');
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "webinterpreter.html"); 
-    xhr.onload = function(event){
-        var txt=event.target.response;
-		txt=txt.replace('\r','');
-        var dtxt=dsp.value;
- 		if(txt[txt.length-1]!='\n')
-		   txt+='\n';
-        dtxt+=txt;
-        lastlen=dtxt.length;
-        dsp.value=dtxt;
-    };
-    var txt = dsp.value;
-    var ntxt=txt.substring(lastlen);
-    	ntxt=ntxt.replace('\n',' cr ');
-    ntxt=ntxt.slice(0,-4)+' '
-    xhr.send(ntxt);
+  if(sendint){
+     sendint=false;
+     cntnu=4;
+  }
+  if(fHeader==5){
+     fHeader=0;
+     return;
+  }
+  if(startstop==3){
+     cntnu=3;
+  }
+  var ntxt=cntnu.toString();
+  if(!cntnu){
+    var txt=dsp.value;
+    ntxt=txt.substring(lastlen-1);
+    if(!fHeader &&  ntxt[ntxt.length-1] == '\n'){
+      ntxt=ntxt.slice(0,ntxt.length-1);}
+    if(ntxt[0]=='\n') ntxt=ntxt.slice(1);
+  }
+  fetch('',{method: 'post',body:ntxt,headers: {
+      'Content-Type': 'text/plain'
+     }
+  })
+  .then(response =>{
+    fHeader = response.headers.get('ForthContinue');
+    return response.text();
+   })
+  .then(function(data) {
+     var dtxt=dsp.value;
+     if((!fHeader || r1st) && dtxt[dtxt.length-1]=='\n'){
+      dtxt=dtxt.slice(0,dtxt.length-1);
+     }
+     r1st=0;
+     if(fHeader==5) fHeader=0;
+     if(data[0]!=' ')data=' '+data;
+     dtxt+=data;
+     lastlen=dtxt.length;
+     dsp.value=dtxt;
+     dsp.scrollTop=dsp.scrollHeight;
+     if(fHeader==2 && !window.startstop){
+        doit(1);
+     }
+  })
+  .catch(error => console.log('error is', error));
+
 }
 </script>
+      <script type = "text/javascript">
+         function WebSocketTest() {            
+            ws = new WebSocket("ws://24.5.42.64:8000/wstest");
+            if ("WebSocket" in window) {
+               ws.onopen = function() {                  
+                  // Web Socket is connected, send data using send()
+                  ws.send("open ok");
+               };
+				
+               ws.onmessage = function (evt) {
+                  var txt=evt.data;
+                  document.getElementById('aa').textContent=txt;
+               };
+				
+               //ws.onclose = function() {                   
+               //   alert("Connection is closed..."); 
+               //};
+            } else {              
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+         function sendtxt(){
+            txt=document.getElementById('bb').value;
+            ws.send(txt);
+         }
+         window.addEventListener("load", WebSocketTest, false);
+</script>
 <body>
-Web32Forth 1.01 (It is not very fast yet)<br>
-Text John Peters at 415-239-5393 to chat or to reboot.<br>
-The Python browser source code as well as the Win32Forth source is on GitHub<br>
-Forth is fast & Webbley is so so slow that a DO LOOP will not show results.<br>
-My purpose is to introduce Forth without having to download anything<br>
-I hope someone will take over this project and give it a permanent URL home<br>
-Please enter your name. You will get an error -13 but we will see your name<br>
-<textarea id='dsp' rows=56 cols=72></textarea>
-</body>
-</html> 
+Web32Forth 4.07 by Robert Ackerman & John Peters 415-239-5393<br>
+CG is a database of electrical parts. The name Contract Generator is TM<br>
+<br>
+<textarea id='dsp' rows=18 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 <script>
-const node = document.getElementById('dsp');
-node.addEventListener("keyup", function(event) {
+    dsp=document.getElementById('dsp');
+	dsp.value='';
+    document.addEventListener("keydown",function(event) {
     if (event.key === "Enter") {
-        doit();
+        r1st=1;
+        doit(0);
+    }
+    else if(event.key === 'Escape' && fHeader){  // quit long response
+        sendint=true;
+    }
+    else if(fHeader){    // start/stop long response
+        if(startstop){
+          startstop=0;
+          event.preventDefault();
+          doit(2);       // continue
+        }
+        else{
+          startstop=3;
+          event.preventDefault();
+        }
     }
 });
 </script>
+<br>
+We are looking for help with implementing an editor and file system here on the web.
+email me at japeters747@gmail.com or text me at 415-239-5393 <br>
+<br>
+Try<br>
+ &#58 TEST ( cr )  8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
+Win32Forth and all it's thousands of words are here for you to try. Please go ahead and try a bunch of FORTH words. Try 2 DUP .s or 65 EMIT <br>
+<br>
+PLEASE BE BRAVE & FEAR NOT -> The space-bar will START/STOP and the ESC key will break-out.<br>
+ Try any of the following having noted the above<br>
+<br>
+ORDER<br>
+ROOT WORDS<br>
+VOCS<br>
+SEE SEE<br>
+FORTH WORDS<br>
+ELECTRIC WORDS<br>
+C-B WORDS<br>
+<br>
+Enter the next four lines one a line at a time<br>
+EHADLINE<br>
+2 CB<br>
+4 CB<br>
+TOTAL<br>
+<br>
+BULB WORDS will list various types of light bulbs<br>
+ELECTRIC WORDS Use the space-bar to stop the output<br>
+FISH-IN-WALL WORDS<br>
+<br>
+PLEASE enter your name so your name will be in the log file<br>
+John Alan Peters japeters747@gmail.com<br>
+For a system reset (No problem) text me at 415-239-5393<br>
+P.S. If you get a -13 error when entering a known good forth word then the "smart-punctuation" may need to be disabled >General>Keyboards>Smart<br>
+<br>
+chat:
+<div id='aa'></div><br>
+<div>
+  msg: <input id='bb' type='text'/><br>
+  <button onclick="sendtxt();">send msg</button>
+</div>
+
+</body>
+</html>
+
