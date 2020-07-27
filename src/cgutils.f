@@ -298,3 +298,11 @@ editor
 : makenewcg ( -- )
   s" c:\cg\_makenewcg.bat" 0 "shellexecute bye ;
 
+: skipscan ( addr cnt sub sublen char -- addr cnt flag )
+  \ find substring in string; get chars from end of substring to char
+  >r dup >r search
+  if r> dup negate d+ 2dup r> scan
+     swap drop - -1
+  else r> r> 2drop 0 then ;
+
+

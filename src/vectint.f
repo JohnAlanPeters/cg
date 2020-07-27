@@ -81,6 +81,14 @@ defer to-web
 ' _to-con is to-con
 ' _to-web is to-web
 
+: chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
+  \ check for 'FileGet' or 'FilePut' header
+  2dup s" FileGet: " 13 skipscan      \ ?request for a file
+  if ." get file: " type 0
+  else 2dup s" FilePut" 13 skipscan   \ ?receive file
+  if ." FilePut: " type 0
+  else 2drop 2drop -1 then then ;
+
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
    vbuf count search -1 =
@@ -116,13 +124,14 @@ defer to-web
    if 2drop                 \ if not = drop the address of both strings and send HTML file
      s" \cg\webinterpret\webinterpret.html" sendfile
    else
-     2crlfs              \ chop off headers up to 2 CRLFs to get to data
-     2dup data>fuser ( type )        \ type the forth command to the surface console
-     2dup type cr
-     vectint             \ get output of request into buffer
-     2dup data>fuser   cr 2dup type SCROLLTOVIEW     \ display response in console
-     dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
-     b2sock             
- \ send the response to the socket
+     2dup chkheader           \ see if it request to get or receive a file
+     if  2crlfs              \ chop off headers up to 2 CRLFs to get to data
+       2dup data>fuser
+       2dup type cr        \ display the forth command in the surface console
+       vectint             \ get output of request into buffer
+       2dup data>fuser   cr 2dup type SCROLLTOVIEW     \ display response in console
+       dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
+       b2sock              \ send the response to the socket
+     else 2drop then
    then ;
 
