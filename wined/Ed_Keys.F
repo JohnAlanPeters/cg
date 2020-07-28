@@ -253,12 +253,6 @@ defer _Control+W ' close-text is _control+w
   set-ed-defaults entry# s>d (d.) s" Recall" "SetDefault
   set-w32f-default ;
 
-: recallopen ( -- )
-  set-ed-defaults
-  s" Recall" "GetDefaultValue
-  if dup to entry# SetStack: EditWindow hyper-open
-  else drop then set-w32f-default ;
-
 : vbmark ( -- )  \ after bookmarking, reopen the file; don't delete the bookmark
   set-ed-defaults
   s" Recall" "GetDefaultValue dup last-entry# < and

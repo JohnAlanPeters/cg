@@ -123,7 +123,6 @@ cr .( after ed_keys)
 \        new-text
 \        make-new-text
         open-initial-file
-        recallopen
         cursor-line find-top-margin - VPosition: EditWindow
 
         SetFocus: EditWindow
