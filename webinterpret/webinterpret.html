@@ -99,7 +99,7 @@ function getfile(){
     return response.text();
    })
   .then(function(data) {
-     var filetxt=document.getElementById('filetext');
+     var filetxt=document.getElementById('filetxt');
      filetxt.value=data;
      })
   .catch(error => console.log('failed to get file: ', error));
@@ -107,7 +107,7 @@ function getfile(){
 
 function putfile(){
   var fname=document.getElementById('filename').value;
-  var filetxt=document.getElementById('filetext').value;
+  var filetxt=document.getElementById('filetxt').value;
   fetch('',{method: 'post',body:filetxt,headers: {
       'Content-Type': 'text/plain',
       'FilePut': fname
@@ -149,42 +149,25 @@ CG is a database of electrical parts. The name Contract Generator is TM<br>
     });
 </script>
 <br>
-We are looking for help with implementing an editor and file system here on the web.
-email me at japeters747@gmail.com or text me at 415-239-5393 <br>
+We are implementing an editor and file system here on the web.<br>
 <br>
-Try<br>
- &#58 TEST ( cr )  8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
-Win32Forth and all it's thousands of words are here for you to try. Please go ahead and try a bunch of FORTH words. Try 2 DUP .s or 65 EMIT <br>
+Copy-paste this in to your bowser -> &#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
+Win32Forth and all it's thousands of words are here for you to try.
+Please go ahead and try some common FORTH words.<br>
 <br>
 PLEASE BE BRAVE & FEAR NOT -> The space-bar will START/STOP and the ESC key will break-out.<br>
- Try any of the following having noted the above<br>
+Having noted the above it is safe to try these. ORDER, ROOT WORDS, VOCS, SEE SEE, FORTH WORDS, ELECTRIC WORDS, C-B WORDS<br>
 <br>
-ORDER<br>
-ROOT WORDS<br>
-VOCS<br>
-SEE SEE<br>
-FORTH WORDS<br>
-ELECTRIC WORDS<br>
-C-B WORDS<br>
-<br>
-Enter the next four lines one a line at a time<br>
-EHADLINE<br>
-2 CB<br>
-4 CB<br>
-TOTAL<br>
-<br>
-BULB WORDS will list various types of light bulbs<br>
-ELECTRIC WORDS Use the space-bar to stop the output<br>
-FISH-IN-WALL WORDS<br>
+Enter the next four lines one a line at a time. HEADLINE, 2 CB, 4 CB, TOTAL<br>
+BULB WORDS will list various types of light bulbs. ELECTRIC WORDS Use the space-bar to stop the output. FISH-IN-WALL WORDS<br>
 <br>
 PLEASE enter your name so your name will be in the log file<br>
-John Alan Peters japeters747@gmail.com<br>
-For a system reset (No problem) text me at 415-239-5393<br>
+John Alan Peters japeters747@gmail.com For a system reset (No problem) text me at 415-239-5393<br>
 P.S. If you get a -13 error when entering a known good forth word then the "smart-punctuation" may need to be disabled >General>Keyboards>Smart<br>
 <div>
  <br><br>
- file: <input type='text' id='filename' value='--'></input> <button onclick="getfile();">get file</button>
- <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;"></textarea>
+ file: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
+ <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
  <br>
  <button onclick="putfile();">save file</button>
 </div>

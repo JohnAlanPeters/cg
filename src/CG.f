@@ -10,9 +10,6 @@ forth definitions
 
 needs xref
 needs xwinver
- chdir webserver
- needs webserver   \ TODO: don't need it all, just what we need for webby
- chdir ..
 create forthbase ," \win32forth\"
 here ," \win32forth\SRC\KERNEL\FKERNEL.F" ' KERNFILE 4 + !
 

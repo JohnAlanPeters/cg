@@ -34,11 +34,14 @@ defer to-web
        sockread 2drop       \ ready for send next line of response
     else ascii 4 = if 4 to sentcr s" interrupted" vbuf wplace abort then then ;
 
+: outvcons ( addr len -- )
+   to-con getxy swap if 1+ then 0 swap gotoxy type to-web ;
+
 : vcr ( -- )         \ virtual CR
   200 ms
   crlf$ 2 + 1 vbuf wplace     \ add newline=linefeed=decimal-10=hex-0a
   vbuf wcount dup 2 sendheaders
-  2dup data>fuser
+  2dup data>fuser 2dup outvcons
   b2sock                      \ send the response to the socket
   conscol off 0 vbuf w!       \ ready for next line
   sockread chkcntnu ;         \ get continue request from webpage
@@ -81,18 +84,45 @@ defer to-web
 ' _to-con is to-con
 ' _to-web is to-web
 
-: chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
-  \ check for 'FileGet' or 'FilePut' header
-  2dup s" FileGet: " 13 skipscan      \ ?request for a file
-  if ." get file: " type 0
-  else 2dup s" FilePut" 13 skipscan   \ ?receive file
-  if ." FilePut: " type 0
-  else 2drop 2drop -1 then then ;
+: sendfile { \ fname -- } ( addr cnt -- )
+   MAXSTRING LocalAlloc: fname
+   s" \cg\webfiles\" fname place fname +place
+   fname count r/o open-file not
+   if >r vbuf 32000 r@ read-file not
+      if dup 1 sendheaders
+         vbuf swap b2sock
+      else drop then r> close-file
+   then drop ;
 
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
    vbuf count search -1 =
    if 4 - swap 4 + swap else 2drop 0 0 then ;
+
+: sendhtmlfile ( addr cnt -- )
+   r/o open-file not
+   if >r vbuf 6000 r@ read-file not
+      if  dup 1 sendheaders
+          vbuf swap b2sock
+      else drop then r> close-file
+   then drop ;
+
+: rcvfile { \ fname -- } ( maddr mcnt faddr fcnt -- )  \ message and filename
+  MAXSTRING LocalAlloc: fname
+  s" \cg\webfiles\" fname place fname +place
+  cr fname count w/o create-file 0=
+  if >r 2crlfs r@ write-file
+     if ." failed to write file" else ." file saved" then
+     r> close-file drop
+  else ." failed to create file" drop 2drop then ;
+
+: chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
+  \ check for 'FileGet' or 'FilePut' header
+  2dup s" FileGet: " 13 skipscan      \ ?request for a file
+  if cr ." get file: " 2dup type sendfile 2drop 0
+  else 2drop 2dup s" FilePut:" 13 skipscan   \ ?receive file
+  if cr ." receive file: " 2dup type rcvfile 0
+  else 2drop 2drop -1 then then ;
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
@@ -106,7 +136,7 @@ defer to-web
    -1 conscol ! 0 to in-web? to-con     \ switch to ordinary output
    s"  ok " vbuf wplace crlf$ 2 + 1 vbuf wplace vbuf wcount ; \ ' ok lf' added
 
-: sendfile ( addr cnt -- )
+: sendhtmlfile ( addr cnt -- )
    r/o open-file not
    if >r vbuf 6000 r@ read-file not
       if  dup 1 sendheaders
@@ -122,7 +152,7 @@ defer to-web
    over 3 s" GET"           \ address over to the top of stack
    compare not              \ compare the comand string and the string with the 'GET'
    if 2drop                 \ if not = drop the address of both strings and send HTML file
-     s" \cg\webinterpret\webinterpret.html" sendfile
+     s" \cg\webinterpret\webinterpret.html" sendhtmlfile
    else
      2dup chkheader           \ see if it request to get or receive a file
      if  2crlfs              \ chop off headers up to 2 CRLFs to get to data
@@ -133,5 +163,5 @@ defer to-web
        dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
        b2sock              \ send the response to the socket
      else 2drop then
-   then ;
+   then scrolltoview ;
 
