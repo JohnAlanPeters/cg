@@ -136,6 +136,7 @@ editor also
 ' _total-est is total-est
 
 : AA     ( -- ) \ Extend all paragraphs and grand total the estimate
+  3C
   noext?        \ See also TIME-OUT
   cursor-line
   if settle line-cur cursor-line cursor-col

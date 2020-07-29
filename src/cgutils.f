@@ -153,7 +153,8 @@ editor
         RenameFrom$ count RenameTo$ count rename-file
         if ." failed to rename file" then ;
 
-: copy-file { | to$ from$ buf }  ( <to from -- )
+: copy-file \ COPY-FILE <NewfileName> then <ExistingFileName>
+           { | to$ from$ buf }  ( <to from -- )
   max-path localAlloc: to$
   max-path localAlloc: from$
   100000 localAlloc: buf
