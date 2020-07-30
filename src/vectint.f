@@ -108,6 +108,7 @@ defer to-web
    then drop ;
 
 : rcvfile { \ fname -- } ( maddr mcnt faddr fcnt -- )  \ message and filename
+  bl skip -trailing   \ remove leading and trailing spaces in the file name
   MAXSTRING LocalAlloc: fname
   s" \cg\webfiles\" fname place fname +place
   cr fname count w/o create-file 0=
@@ -120,7 +121,7 @@ defer to-web
   \ check for 'FileGet' or 'FilePut' header
   2dup s" FileGet: " 13 skipscan      \ ?request for a file
   if cr ." get file: " 2dup type sendfile 2drop 0
-  else 2drop 2dup s" FilePut:" 13 skipscan   \ ?receive file
+  else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
   if cr ." receive file: " 2dup type rcvfile 0
   else 2drop 2drop -1 then then ;
 
