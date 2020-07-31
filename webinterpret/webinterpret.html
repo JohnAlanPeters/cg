@@ -128,6 +128,7 @@ CG is a database of electrical parts. The name Contract Generator is TM<br>
     dsp=document.getElementById('dsp');
     	dsp.value='';
     document.addEventListener("keydown",function(event) {
+      if(event.target != dsp) return;
       if (event.key === "Enter") {
         r1st=1;
         doit(0);

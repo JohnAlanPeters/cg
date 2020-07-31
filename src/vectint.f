@@ -117,13 +117,19 @@ defer to-web
      r> close-file drop
   else ." failed to create file" drop 2drop then ;
 
+: webload { \ fname -- }  \ load source in cg\webfiles
+  bl word count bl skip -trailing
+  MAXSTRING LocalAlloc: fname
+  s" \cg\webfiles\" fname place fname +place
+  fname $fload ;
+
 : chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
   \ check for 'FileGet' or 'FilePut' header
   2dup s" FileGet: " 13 skipscan      \ ?request for a file
   if cr ." get file: " 2dup type sendfile 2drop 0
   else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
   if cr ." receive file: " 2dup type rcvfile 0
-  else 2drop 2drop -1 then then ;
+  else 2drop 2drop -1 then then scrolltoview ;
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
