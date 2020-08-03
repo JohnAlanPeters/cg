@@ -123,6 +123,9 @@ defer to-web
   s" \cg\webfiles\" fname place fname +place
   fname $fload ;
 
+: webdir ( -- )
+  s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
+
 : chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
   \ check for 'FileGet' or 'FilePut' header
   2dup s" FileGet: " 13 skipscan      \ ?request for a file

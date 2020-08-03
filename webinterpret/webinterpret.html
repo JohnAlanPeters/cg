@@ -150,36 +150,38 @@ CG is a database of electrical parts. The name Contract Generator is TM<br>
     });
 </script>
 <br>
-We are implementing an editor and file system here on the web.<br>
+Win32Forth and all it's thousands of words are here for you to use.
+Be brave & fear not. -> The space-bar will START/STOP and the ESC key will break-out.<br>
+For a system reset, text me at 415-239-5393 John Alan Peters japeters747@gmail.com<br>
+If you get a -13 error with good Forth word then kill your "smart-punctuation" >general>keyboards>smart<br>
 <br>
-Copy-paste this in to your bowser -> &#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
-Win32Forth and all it's thousands of words are here for you to try.
-Please go ahead and try some common FORTH words.<br>
+RUNNING with FORTH on the WEB.<br>
+In the upper window change the directory enter "chdir c:\cg\webfiles"<br>
 <br>
-PLEASE BE BRAVE & FEAR NOT -> The space-bar will START/STOP and the ESC key will break-out.<br>
-Having noted the above it is safe to try these. ORDER, ROOT WORDS, VOCS, SEE SEE, FORTH WORDS, ELECTRIC WORDS, C-B WORDS<br>
+Enter some Forth code in the TOP window, or copy-paste the the following "Hello world" code.<br>
+&#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
+In the lower window where it says "FILE NAME:" Enter the file name NEWTEST.F Click on SAVE FILE:<br>
+Delete the TEST do loop code from the top window.<br>
+In the lower window where it says "FILE:" Enter the file name NEWTEST.F and then click on SAVE FILE<br>
+You will see the code for : TEST cr 8 0 do ." Hi World " cr loop ." That's all folks" ;
+Modify the code - for example - change the number of do loops from 8 to another number. or change the words at the end by adding ." That is all for now folks"<br>
+Tap the "SAVE FILE" in the little box at the bottom.<br>
 <br>
-Enter the next four lines one a line at a time. HEADLINE, 2 CB, 4 CB, TOTAL<br>
-BULB WORDS will list various types of light bulbs. ELECTRIC WORDS Use the space-bar to stop the output. FISH-IN-WALL WORDS<br>
+In the top window type the command WEBLOAD newtest.f<br>
+If you get an ok then type<br>
+Test<br>
+You did it!<br>
+Enter your name - Ignore the error message.<br>
 <br>
-PLEASE enter your name so your name will be in the log file<br>
-John Alan Peters japeters747@gmail.com For a system reset (No problem) text me at 415-239-5393<br>
-P.S. If you get a -13 error when entering a known good forth word then the "smart-punctuation" may need to be disabled >General>Keyboards>Smart<br>
 <div>
  <br><br>
- file: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
+ file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
  <br>
  <button onclick="putfile();">save file</button>
-</div>
 <br>
-chat:
-<div id='aa'></div><br>
-<div>
-  msg: <input id='bb' type='text'/><br>
-  <button onclick="sendtxt();">send msg</button>
+<br>
 </div>
-
 </body>
 </html>
 
