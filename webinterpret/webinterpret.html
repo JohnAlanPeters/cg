@@ -118,11 +118,26 @@ function putfile(){
    })
   .catch(error => console.log('failed to put file: ', error));
 }
+
+function webload(){
+  dsp.value+='webload '
+  dsp.value+=document.getElementById('filename').value+'\n';
+  doit(0);
+}
+
 </script>
 <body>
 Web32Forth 4.07 by Robert Ackerman & John Peters 415-239-5393<br>
 CG is a database of electrical parts. The name Contract Generator is TM<br>
+<div>
+ <br><br>
+ file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
+ &nbsp;<button onclick="webload();">load file</button>&nbsp;<button onclick="putfile();">save file</button>
+ <br>
+ <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 <br>
+<br>
+</div><br>
 <textarea id='dsp' rows=18 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 <script>
     dsp=document.getElementById('dsp');
@@ -173,15 +188,6 @@ Test<br>
 You did it!<br>
 Enter your name - Ignore the error message.<br>
 <br>
-<div>
- <br><br>
- file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
- <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
- <br>
- <button onclick="putfile();">save file</button>
-<br>
-<br>
-</div>
 </body>
 </html>
 
