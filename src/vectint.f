@@ -99,13 +99,6 @@ defer to-web
    vbuf count search -1 =
    if 4 - swap 4 + swap else 2drop 0 0 then ;
 
-: sendhtmlfile ( addr cnt -- )
-   r/o open-file not
-   if >r vbuf 6000 r@ read-file not
-      if  dup 1 sendheaders
-          vbuf swap b2sock
-      else drop then r> close-file
-   then drop ;
 
 : rcvfile { \ fname -- } ( maddr mcnt faddr fcnt -- )  \ message and filename
   bl skip -trailing   \ remove leading and trailing spaces in the file name
@@ -148,7 +141,7 @@ defer to-web
 
 : sendhtmlfile ( addr cnt -- )
    r/o open-file not
-   if >r vbuf 6000 r@ read-file not
+   if >r vbuf 16000 r@ read-file not
       if  dup 1 sendheaders
           vbuf swap b2sock
       else drop then r> close-file
