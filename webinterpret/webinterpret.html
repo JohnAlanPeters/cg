@@ -125,20 +125,29 @@ function webload(){
   doit(0);
 }
 
+
 </script>
 <body>
+UNDER DEVELOPMENT 8-4-2020 After a LOAD you have to hit enter in the console. (Temporary bug)<br>
+<br>
 Web32Forth 4.07 by Robert Ackerman & John Peters 415-239-5393<br>
-CG is a database of electrical parts. The name Contract Generator is TM<br>
+This is also an application or database of electrical parts. Contract Generator TM<cg>
 <div>
- <br><br>
+ <br>
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="webload();">load file</button>&nbsp;<button onclick="putfile();">save file</button>
  <br>
+
  <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
-<br>
-<br>
+<br>This is the editor. The Console is below.<br>
 </div><br>
-<textarea id='dsp' rows=18 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
+<textarea id='dsp' rows=12 cols=64 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
+<br>
+---- Bottom of console.<br>
+<br>
+Win32Forth and all it's thousands of words are here for you to use. Be brave & fear not.<br>
+The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.<br>
+
 <script>
     dsp=document.getElementById('dsp');
     	dsp.value='';
@@ -164,25 +173,24 @@ CG is a database of electrical parts. The name Contract Generator is TM<br>
         }
     });
 </script>
+The system is case INsensative. For a reset, text me. sf ca 415-239-5393 John Alan Peters<br>
+If you get a -13 error with a good Forth word then watch out for your system's spell-check or smart-punctuation.<br>
 <br>
-Win32Forth and all it's thousands of words are here for you to use.
-Be brave & fear not. -> The space-bar will START/STOP and the ESC key will break-out.<br>
-For a system reset, text me at 415-239-5393 John Alan Peters japeters747@gmail.com<br>
-If you get a -13 error with good Forth word then kill your "smart-punctuation" >general>keyboards>smart<br>
-<br>
-RUNNING with FORTH on the WEB.<br>
-In the upper window change the directory enter "chdir c:\cg\webfiles"<br>
-<br>
-Enter some Forth code in the TOP window, or copy-paste the the following "Hello world" code.<br>
+RUNNING with FORTH on the WEB and STUDENT lesson ONE<br>
+Enter some Forth code in the TOP window, or copy-paste the "Hello world" code.<br>
 &#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
-In the lower window where it says "FILE NAME:" Enter the file name NEWTEST.F Click on SAVE FILE:<br>
-Delete the TEST do loop code from the top window.<br>
-In the lower window where it says "FILE:" Enter the file name NEWTEST.F and then click on SAVE FILE<br>
-You will see the code for : TEST cr 8 0 do ." Hi World " cr loop ." That's all folks" ;
-Modify the code - for example - change the number of do loops from 8 to another number. or change the words at the end by adding ." That is all for now folks"<br>
-Tap the "SAVE FILE" in the little box at the bottom.<br>
+In the box where it says "FILE NAME:" Enter your choice of a file name including the dot f .F<br>
+SAVE the file, LOAD the file, TEST the file.<br>
+Type the name of your word in the console to make sure it works,<br>
+Popup test one - Add the words 'That's all folks' in the right place in the code without the ' tick marks.<br>
+Popup test two - Change the number of do-loops from 8 to anoter number, LOAD it, RUN it by loading it and TEST it.<br>
+If you GET an error, try again. To REVERT to the last saved code GET the file again.<br>
 <br>
-In the top window type the command WEBLOAD newtest.f<br>
+If you are a Forth pro, please point us to some code for making automatic backup files.<br>
+Unfortunatly VIEW does not work here. It requies VIEW running on the hard disk system from GitHub. A.Q. for how.<br>
+To make VIEW work here via a browser is a time consuming task. Suggestions?  VIEW works, but it depends on the HD.<br>
+<br>
+ <br>
 If you get an ok then type<br>
 Test<br>
 You did it!<br>
