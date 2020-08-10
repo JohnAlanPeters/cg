@@ -41,7 +41,7 @@ defer to-web
   200 ms
   crlf$ 2 + 1 vbuf wplace     \ add newline=linefeed=decimal-10=hex-0a
   vbuf wcount dup 2 sendheaders
-  2dup data>fuser 2dup outvcons
+  2dup data>fuser ( 2dup outvcons )
   b2sock                      \ send the response to the socket
   conscol off 0 vbuf w!       \ ready for next line
   sockread chkcntnu ;         \ get continue request from webpage
@@ -172,9 +172,9 @@ defer to-web
      2dup chkheader           \ see if it request to get or receive a file
      if  2crlfs              \ chop off headers up to 2 CRLFs to get to data
        2dup data>fuser
-       2dup type cr        \ display the forth command in the surface console
+       \ 2dup type cr        \ display the forth command in the surface console
        vectint             \ get output of request into buffer
-       2dup data>fuser   cr 2dup type SCROLLTOVIEW     \ display response in console
+       \ 2dup data>fuser   cr 2dup type SCROLLTOVIEW     \ display response in console
        dup sentcr if 5 else 0 then sendheaders   \ send the HTML headers
        b2sock              \ send the response to the socket
      else 2drop then
