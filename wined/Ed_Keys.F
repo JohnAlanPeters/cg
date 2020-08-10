@@ -293,7 +293,7 @@ defer _Control+W ' close-text is _control+w
   err-vocab-show 0= to err-vocab-show ;
 
 : toggle-autoextend ( -- )  \ true-> extend on cr
-  autoextend 0= to autoextend ;
+  autoextend 0= to autoextend SetMultiStatus: EditorWindow ;
 
 : squashblanks ( -- )  \ multiple blank lines removed to leave just 1
   17 to cursor-line

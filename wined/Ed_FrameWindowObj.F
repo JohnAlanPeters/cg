@@ -215,7 +215,8 @@ MACRO -status   " 19 -"         ( n1 -- n2 )
         else s"  INSERT MODE" then               StatusBuf  place
         capslock? if s"   CAPS LOCK" StatusBuf +place then
         s"       Total: " StatusBuf +place
-        total-est    StatusBuf +place 
+        total-est    StatusBuf +place
+        autoextend if s"   Auto Extend On" StatusBuf +place then
         StatusBuf +null StatusBuf 1+ 3 SetText: Win-EdStatusbar
         ;M
 
