@@ -113,7 +113,7 @@ defer to-web
 : loadnoext  ( a l -- )
                 MAXSTRING _LOCALALLOC DUP>R
                 PLACE                              \ drop name to OPENBUF
-                R@ ?DEFEXT                         \ add extension if needed
+                \ R@ ?DEFEXT                         \ add extension if needed
                 R@ COUNT r/o OPEN-FILE             \ try to open it
                 DUP 0=                             \ if we succeeded
                 IF
@@ -122,6 +122,7 @@ defer to-web
                 R> COUNT POCKET PLACE              \ and set POCKET
                 _LOCALFREE
                0= if INCLUDE-FILE then ;
+
 : webload { \ fname -- }  \ load source in cg\webfiles
   bl word count bl skip -trailing
   MAXSTRING LocalAlloc: fname
