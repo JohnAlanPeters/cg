@@ -110,24 +110,11 @@ defer to-web
      r> close-file drop
   else ." failed to create file" drop 2drop then ;
 
-: loadnoext  ( a l -- )
-                MAXSTRING _LOCALALLOC DUP>R
-                PLACE                              \ drop name to OPENBUF
-                \ R@ ?DEFEXT                         \ add extension if needed
-                R@ COUNT r/o OPEN-FILE             \ try to open it
-                DUP 0=                             \ if we succeeded
-                IF
-                  R@ COUNT CUR-FILE PLACE          \ then set current file
-                THEN
-                R> COUNT POCKET PLACE              \ and set POCKET
-                _LOCALFREE
-               0= if INCLUDE-FILE then ;
-
 : webload { \ fname -- }  \ load source in cg\webfiles
   bl word count bl skip -trailing
   MAXSTRING LocalAlloc: fname
   s" \cg\webfiles\" fname place fname +place
-  fname count loadnoext ;
+  fname $fload ;
 
 : webdir ( -- )
   s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
