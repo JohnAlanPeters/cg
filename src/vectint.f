@@ -3,6 +3,7 @@
 
 defer to-con   \ temp while debugging vcr
 defer to-web
+create headerline 64 allot   \ parameter for header line
 
 : sendline ( addr cnt -- ) \ send a line to the socket
   ssock                    \ the socket connected to webpage
@@ -12,7 +13,8 @@ defer to-web
    s" HTTP/1.1 200 OK" sendline
    dup 2 = if s" ForthContinue: 2" sendline 1 to sentcr 0= else
    dup 3 = if s" ForthContinue: 3" sendline 0= else
-   dup 5 = if s" ForthContinue: 5" sendline 0= then then then
+   dup 5 = if s" ForthContinue: 5" sendline 0=
+   dup 6 = if headerline count sendline 0= then then then then
    if s" Content-type: text/html"
    else s" Content-type: text/plain" then sendline
    s" Server: Forth" sendline
@@ -93,6 +95,18 @@ defer to-web
          vbuf swap b2sock
       else drop then r> close-file
    then drop ;
+
+: _websendsrc ( line# file$ len -- )
+   r/o open-file not
+   if >r vbuf 32000 r@ read-file not
+      if s" Linenum: " headerline place
+         swap 0 (d.) headerline +place
+         dup 6 sendheaders
+         vbuf swap b2sock
+      else drop then r> close-file
+   then drop ;
+
+' _websendsrc is websendsrc
 
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
