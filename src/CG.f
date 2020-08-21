@@ -37,7 +37,6 @@ defer un-add \ for wined
 defer settle \ See also (settle) <- by triple clicking here
 defer ro
 defer date-stamp  \ defered to _date-stamp
-defer websendsrc
 
 : widefind ( a1 l1 -- a2 l2 fl )  \ for hyper-link
   search-path >r
@@ -159,9 +158,8 @@ forth also forth definitions editor
   defer-margin 3 = if false overstrike ! false to browse? then then then ;
 
 : widesearch ( <word> -- cfa fl )   \ for 'vv' and 'vvv'
-  search-path
   s" .;c:\cg;\win32forth" search-path place
-  bl word anyfind dup 0= if ." not found" then rot count search-path place ;
+  bl word anyfind dup 0= if ." not found" then ;
 
 : VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   widesearch
@@ -176,14 +174,9 @@ forth also forth definitions editor
   ." You can get the code from GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
-: vv-web ( <word> -- )
-  widesearch
-  if $.viewinfo count websendsrc
-  else drop then ;
-
 : VIEW ( <word> -- ) \ Web if warn else view the source code of the word
   in-web?
-  if vv-web-instructions
+  if VV-web-instructions  \ shouldn't get here; 'view' trapped in vectint.f code
   else vv-con
   then ;
 

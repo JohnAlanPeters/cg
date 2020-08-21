@@ -96,7 +96,7 @@ create headerline 64 allot   \ parameter for header line
       else drop then r> close-file
    then drop ;
 
-: _websendsrc ( line# file$ len -- )
+: websendsrc ( line# file$ len -- )
    r/o open-file not
    if >r vbuf 32000 r@ read-file not
       if s" Linenum: " headerline place
@@ -106,13 +106,19 @@ create headerline 64 allot   \ parameter for header line
       else drop then r> close-file
    then drop ;
 
-' _websendsrc is websendsrc
+: $widesearch ( addr len -- cfa f1 )   \ search given address/len of counted string
+  s" .;c:\cg;\win32forth" search-path place
+  pocket place pocket anyfind dup 0= if ." not found" then ;
+
+: vv-web ( addr len -- )  \ address/len of word to view
+  $widesearch
+  if $.viewinfo count websendsrc
+  else drop then ;
 
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
    vbuf count search -1 =
    if 4 - swap 4 + swap else 2drop 0 0 then ;
-
 
 : rcvfile { \ fname -- } ( maddr mcnt faddr fcnt -- )  \ message and filename
   bl skip -trailing   \ remove leading and trailing spaces in the file name
@@ -134,12 +140,14 @@ create headerline 64 allot   \ parameter for header line
   s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
 
 : chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
-  \ check for 'FileGet' or 'FilePut' header
+  \ check for 'FileGet', 'FilePut' header, or 'view' in body
   2dup s" FileGet: " 13 skipscan      \ ?request for a file
-  if cr ." get file: " 2dup type sendfile 2drop 0
+  if ( cr ." get file: " ) 2dup type sendfile 2drop 0
   else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
-  if cr ." receive file: " 2dup type rcvfile 0
-  else 2drop 2drop -1 then then scrolltoview ;
+  if ( cr ." receive file: " ) 2dup type rcvfile 0
+  else 2drop s" view " bl skipscan
+  if vv-web 0
+  then then then scrolltoview ;
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
