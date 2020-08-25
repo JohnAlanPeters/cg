@@ -2,6 +2,8 @@
 
 anew sockets.f
 
+needs sock.f
+
 winlibrary wsock32.dll
 
 1  CONSTANT SOCK_STREAM

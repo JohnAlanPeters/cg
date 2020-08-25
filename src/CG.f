@@ -10,9 +10,6 @@ forth definitions
 
 needs xref
 needs xwinver
- chdir webserver
- needs webserver   \ TODO: don't need it all, just what we need for webby
- chdir ..
 create forthbase ," \win32forth\"
 here ," \win32forth\SRC\KERNEL\FKERNEL.F" ' KERNFILE 4 + !
 
@@ -160,12 +157,11 @@ forth also forth definitions editor
   defer-margin 2 = if true overstrike ! false to browse? else
   defer-margin 3 = if false overstrike ! false to browse? then then then ;
 
-: widesearch ( <file> -- cfa fl )   \ for 'vv' and 'vvv'
-  search-path
+: widesearch ( <word> -- cfa fl )   \ for 'vv' and 'vvv'
   s" .;c:\cg;\win32forth" search-path place
-  bl word anyfind dup 0= if ." not found" then rot count search-path place ;
+  bl word anyfind dup 0= if ." not found" then ;
 
-: VV-con ( -- )      \ TODO: fix hilite on viewed word, index of base
+: VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   widesearch
   if $.viewinfo count "+open-text 0 swap 1- setedmode
      to-find-line refresh-line reEdit
@@ -178,9 +174,9 @@ forth also forth definitions editor
   ." You can get the code from GitHub at" cr
   ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
 
-: VIEW ( cfa -- ) \ Web if warn else view the source code of the word
+: VIEW ( <word> -- ) \ Web if warn else view the source code of the word
   in-web?
-  if vv-web-instructions
+  if VV-web-instructions  \ shouldn't get here; 'view' trapped in vectint.f code
   else vv-con
   then ;
 

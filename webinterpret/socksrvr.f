@@ -39,7 +39,7 @@ create lastwebuser 64 allot
   to srvrsock
   sport srvrsock BindSocket abort" can't bind to port"
   srvrsock ListenSocket abort" can't listen"
-  ." Waiting to accept client." cr
+  ." Waiting to accept client" cr
   rbuf szbuf srvrsock SOCKET-ACCEPT abort" can't accept"
   to ssock 
   ." Accepted: " showwebuser
@@ -82,10 +82,10 @@ fload ..\src\vectint      \ load here to access code above
   init-server
   begin -1 to in-web?
     sockread dup -1 =
-    if ." done"
+    if ." done" cr
     else dup -2 =
      if drop srvrsock closesocket drop ssock closesocket drop
-       ." reconnect" cr init-server 0
+       ." reconnect" cr scrolltoview  init-server 0
      else srvrinput   \ either send webpage or execute the forth
       false
      then

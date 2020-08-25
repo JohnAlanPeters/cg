@@ -751,7 +751,7 @@ del-max MAXSTRING + Pointer  del-buf
                 ELSE    0 >col-cursor
                         stop-delete
                         1 delete-lines
-                THEN    file-has-changed ;
+                THEN    file-has-changed refresh-screen ;
 
 : insert-tab    { \ hlsts hcsts hleds hceds -- }
                 bitImage? ?EXIT
