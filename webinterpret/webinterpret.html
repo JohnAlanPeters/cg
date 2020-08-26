@@ -10,6 +10,7 @@ var fHeader='';
 var startstop=0;
 var sendint=false;
 var r1st=0;
+var hline=0;
 var dsp;
 
 function doit(cntnu)
@@ -39,9 +40,19 @@ function doit(cntnu)
   })
   .then(response =>{
     fHeader = response.headers.get('ForthContinue');
+    if(!fHeader){
+       hline = response.headers.get('Linenum');
+    }
     return response.text();
    })
   .then(function(data) {
+     if(hline){
+        handleview(data,hline);
+        hline=0;
+        var dtxt=dsp.value;
+        lastlen=dtxt.length;
+        return;
+     }
      var dtxt=dsp.value;
      if((!fHeader || r1st) && dtxt[dtxt.length-1]=='\n'){
       dtxt=dtxt.slice(0,dtxt.length-1);
@@ -58,8 +69,17 @@ function doit(cntnu)
      }
   })
   .catch(error => console.log('error is', error));
-
 }
+
+function handleview(data,hline){
+   var elftxt=document.getElementById('filetxt');
+   elftxt.value=data;
+   var rows=elftxt.value.split('\n').length;
+   var lineHeight = parseInt(elftxt.scrollHeight/rows);
+   dptr=Math.max(hline-3,0) * lineHeight;
+   elftxt.scrollTop=dptr;
+}
+
 </script>
       <script type = "text/javascript">
          function WebSocketTest() {            
@@ -90,6 +110,10 @@ function doit(cntnu)
 
 function getfile(){
   var fname=document.getElementById('filename').value;
+  if(!fname){
+    alert('need to enter a file name');
+    return;
+  }
   fetch('',{method: 'post',body:'',headers: {
       'Content-Type': 'text/plain',
       'FileGet': fname
@@ -121,7 +145,8 @@ function putfile(){
 
 function webload(){
   dsp.value+='webload '
-  dsp.value+=document.getElementById('filename').value+'\n';
+  dsp.value+=document.getElementById('filename').value;
+  r1st=1;
   doit(0);
 }
 
@@ -136,23 +161,23 @@ This is also an application or database of electrical parts. Contract Generator 
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="webload();">load file</button>&nbsp;<button onclick="putfile();">save file</button>
  <br>
-
  <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
-<br>
-The editor is above. The Console is below. Type WORDS in the console.<br>
-
+ <br>
+ The Console is below; The editor is above
+ <br>
+ <textarea id='dsp' rows=12 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 </div><br>
-<textarea id='dsp' rows=12 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;"></textarea>
 <br>
 ---- Bottom of console.<br>
 <br>
 Win32Forth and all it's thousands of words are here for you to use. Be brave & fear not.<br>
+Type 'words' to see all the definitions in the system.<br>
 The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.<br>
 
 <script>
     dsp=document.getElementById('dsp');
     	dsp.value='';
-    document.addEventListener("keydown",function(event) {
+    document.addEventListener("keyup",function(event) {
       if(event.target != dsp) return;
       if (event.key === "Enter") {
         r1st=1;
