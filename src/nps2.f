@@ -532,9 +532,9 @@ Vocabulary LED-UC
 : 42-inch   65.00 w/e  50 c ;  \ March for Buich a guess from Amazon 
 \ 32-inch   99.00 w/e  50 c ;
 \ 30-inch   99.00 w/e  50 c ;
-\ 24-inch   85.90 w/e  50 c ;
+: 24-inch   62.00 w/e  50 c ; \ UE Aug 2020
 \ 18-inch   69.90 w/e  50 c ;
-\ 12-inch   49.90 w/e  45 c ;
+: 12-inch   45.90 w/e  45 c ; \ UE Aug 2020
 \  9-inch   39.90 w/e  40 c ;
 Elect
 
