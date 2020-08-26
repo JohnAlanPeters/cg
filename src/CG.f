@@ -206,6 +206,28 @@ forth also forth definitions editor
 : dir-modules
   s" \cg\modules\*.*" print-dir-files ;
 
+\ only show words in 'electric' vocab
+: eWORDS         ( -<optional_name>- ) \ WORDS partial-string will focus the list
+  electric [ hidden ]
+  words-pocket off
+  bl word uppercase c@
+  if      pocket count words-pocket place
+          bl word uppercase drop
+          voc-link @
+          begin   dup vlink>voc ( #threads cells - )
+                  dup ['] electric >
+                  if ['] (words) catch
+                   if      cr ." Interrupted!"
+                          drop TRUE       \ stop now
+                   else @ dup 0= then
+                  else drop @ dup 0= then
+          until   drop
+  else    context @ ['] (words) catch
+          if      drop
+                  cr ." Interrupted!"
+          then
+  then  ;
+editor
 : Done   ( -- ) save-text focus-console ." File Saved" ;
 : CAF    ( -- ) Done ;  \ As in close all files
 : Revert ( -- ) Revert-text ." Reverted to last save" ;

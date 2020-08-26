@@ -13,7 +13,7 @@ create headerline 64 allot   \ parameter for header line
    s" HTTP/1.1 200 OK" sendline
    dup 2 = if s" ForthContinue: 2" sendline 1 to sentcr 0= else
    dup 3 = if s" ForthContinue: 3" sendline 0= else
-   dup 5 = if s" ForthContinue: 5" sendline 0=
+   dup 5 = if s" ForthContinue: 5" sendline 0= else
    dup 6 = if headerline count sendline 0= then then then then
    if s" Content-type: text/html"
    else s" Content-type: text/plain" then sendline
@@ -91,7 +91,7 @@ create headerline 64 allot   \ parameter for header line
    s" \cg\webfiles\" fname place fname +place
    fname count r/o open-file not
    if >r vbuf 32000 r@ read-file not
-      if dup 1 sendheaders
+      if dup 0 sendheaders
          vbuf swap b2sock
       else drop then r> close-file
    then drop ;
@@ -124,11 +124,13 @@ create headerline 64 allot   \ parameter for header line
   bl skip -trailing   \ remove leading and trailing spaces in the file name
   MAXSTRING LocalAlloc: fname
   s" \cg\webfiles\" fname place fname +place
-  cr fname count w/o create-file 0=
+  fname count delete-file drop
+  fname count w/o create-file 0=
   if >r 2crlfs r@ write-file
      if ." failed to write file" else ." file saved" then
      r> close-file drop
-  else ." failed to create file" drop 2drop then ;
+  else cr ." failed to create file" drop 2drop then cr
+  s" ok" dup 1 sendheaders b2sock ;
 
 : webload { \ fname -- }  \ load source in cg\webfiles
   bl word count bl skip -trailing
@@ -142,11 +144,12 @@ create headerline 64 allot   \ parameter for header line
 : chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
   \ check for 'FileGet', 'FilePut' header, or 'view' in body
   2dup s" FileGet: " 13 skipscan      \ ?request for a file
-  if ( cr ." get file: " ) 2dup type sendfile 2drop 0
+  if cr ." send file: " 2dup type cr sendfile 2drop 0
   else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
-  if ( cr ." receive file: " ) 2dup type rcvfile 0
+  if cr ." receive file: " 2dup type cr rcvfile 0
   else 2drop s" view " bl skipscan
   if vv-web 0
+  else 2drop -1
   then then then scrolltoview ;
 
 \ interpret input from a string; result in a string

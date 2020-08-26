@@ -28,8 +28,8 @@ create upath 128 allot
 : xsave ( -- )     \ save original as xx.bak, before writing to disk
   edit-changed? 0= ?exit  \ only backup if file has changed
   cur-filename count find-first-file nip 0=
-  if s" xx.bak" cgbase" DELETE-FILE drop \ delete backup
-     cur-filename count s" xx.bak" cgbase" RENAME-FILE 0=  \ move current file to .bak
+  if s" xx.bak" onedrivebids DELETE-FILE drop \ delete backup
+     cur-filename count s" xx.bak" onedrivebids RENAME-FILE 0=  \ move current file to .bak
      if cur-filename count lastbakfile place then
   then
   do-save-text ;
