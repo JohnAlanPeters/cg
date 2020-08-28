@@ -154,7 +154,7 @@ function webload(){
 </script>
 <body>
 <br>
-Web32Forth 4.07 by Robert Ackerman & John Peters 415-239-5393<br>
+Web32Forth 5.00 by Robert Ackerman & John Peters 415-239-5393<br>
 This is also an application or database of electrical parts. Contract Generator TM<cg>
 <div>
  <br>
@@ -165,7 +165,7 @@ This is also an application or database of electrical parts. Contract Generator 
  <br>
  The Console is below; The editor is above
  <br>
- <textarea id='dsp' rows=12 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:blue;color:#fff"></textarea>
+ <textarea id='dsp' rows=12 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div><br>
 <br>
 ---- Bottom of console.<br>
@@ -176,7 +176,8 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 
 <script>
     dsp=document.getElementById('dsp');
-    	dsp.value='';
+    	dsp.value='ok\n';
+    lastlen=3;
     document.addEventListener("keyup",function(event) {
       if(event.target != dsp) return;
       if (event.key === "Enter") {
@@ -206,7 +207,7 @@ If you get a -13 error with a good Forth word then watch out for your system's s
 RUNNING with FORTH on the WEB and STUDENT lesson ONE<br>
 Enter some Forth code in the TOP window, or copy-paste the "Hello world" code.<br>
 &#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
-In the box where it says "FILE NAME:" Enter your choice of a file name including the dot f .F<br>
+In the box where it says "FILE NAME:" Enter your choice of a file name<br>
 SAVE the file, LOAD the file, TEST the file.<br>
 Type the name of your word in the console to make sure it works,<br>
 Popup test one - Add the words 'That's all folks' in the right place in the code without the ' tick marks.<br>
@@ -215,18 +216,15 @@ If you GET an error, try again. To REVERT to the last saved code GET the file ag
 If you get an ok then type<br>
 Test<br>
 You did it!<br>
-Enter your email addess and I will send you a graduation certificate :-) - Ignore the error message.<br>
-Now try entering some of the lessons from the online verson of Starting Forth.<br>
+Enter your email addess and I will be glad to know you were here :-) - Ignore the error message.<br>
+The book Sarting Forth and the lessons will work. It is best to use the updated free online version.<br>
 Here is the URL http://home.iae.nl/users/mhx/sf.html<br>
 <br>
-At some point it will be good to copy your work on to Google Docs and "share" it with the Teacher and students.<br>
-To share it, see the blue box on the right of the Google doc page.<br>
-<br>
-If you are a Forth pro, please point us to some code for making a revertof some text strokes or undo or automatic backup files.<br>
+We could use some help with some code for reverting text strokes and automatic backup files.<br>
 Unfortunatly VIEW does not work here. It requies VIEW running on the hard disk system from GitHub. A.Q. for how.<br>
 To make VIEW work here via a browser is a time consuming task. Suggestions?  VIEW works, but it depends on the HD.<br>
 <br>
-You might try some of the Contract Generator words. Rember to pound the enter key to dot words from spewing.<br>
+You might try some of the Contract Generator words. Rember to use the enter key to stop WORDS.<br>
 ELECTRIC WORDS<br>
 ELECTRIC VOCS<br>
 BULBS WORDS will give you prices and times.<br>
