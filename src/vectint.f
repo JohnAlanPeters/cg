@@ -41,7 +41,7 @@ create headerline 64 allot   \ parameter for header line
 
 : vcr ( -- )         \ virtual CR
   200 ms
-  crlf$ 2 + 1 vbuf wplace     \ add newline=linefeed=decimal-10=hex-0a
+  crlf$ count vbuf wplace     \ add newline=linefeed=decimal-10=hex-0a
   vbuf wcount dup 2 sendheaders
   2dup data>fuser ( 2dup outvcons )
   b2sock                      \ send the response to the socket
@@ -141,17 +141,6 @@ create headerline 64 allot   \ parameter for header line
 : webdir ( -- )
   s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
 
-: chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
-  \ check for 'FileGet', 'FilePut' header, or 'view' in body
-  2dup s" FileGet: " 13 skipscan      \ ?request for a file
-  if cr ." send file: " 2dup type cr sendfile 2drop 0
-  else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
-  if cr ." receive file: " 2dup type cr rcvfile 0
-  else 2drop s" view " bl skipscan
-  if vv-web 0
-  else 2drop -1
-  then then then scrolltoview ;
-
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
    0 vbuf w! 0 to sentcr  \ a 200 KB buffer to save response from interpreting
@@ -162,7 +151,18 @@ create headerline 64 allot   \ parameter for header line
    ?dup if sentcr 4 = if drop else ."  error " . then then
    vec 2@ (source) 2!
    -1 conscol ! 0 to in-web? to-con     \ switch to ordinary output
-   s"  ok " vbuf wplace crlf$ 2 + 1 vbuf wplace vbuf wcount ; \ ' ok lf' added
+   s"  ok " vbuf wplace crlf$ count vbuf wplace vbuf wcount ; \ ' ok lf' added
+
+: chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
+  \ check for 'FileGet', 'FilePut' header, or 'view' in body
+  2dup s" FileGet: " 13 skipscan      \ ?request for a file
+  if cr ." send file: " 2dup type cr sendfile 2drop 0
+  else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
+  if cr ." receive file: " 2dup type cr rcvfile 0
+  else 2drop s" view " bl skipscan
+  if vv-web 0
+  else 2drop -1
+  then then then scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )
    r/o open-file not

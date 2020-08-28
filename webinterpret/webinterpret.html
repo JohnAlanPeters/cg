@@ -30,6 +30,9 @@ function doit(cntnu)
   if(!cntnu){
     var txt=dsp.value;
     ntxt=txt.substring(lastlen-1);
+    if(ntxt=='dir\n'){
+       ntxt='webdir';
+    }
     if(!fHeader &&  ntxt[ntxt.length-1] == '\n'){
       ntxt=ntxt.slice(0,ntxt.length-1);}
     if(ntxt[0]=='\n') ntxt=ntxt.slice(1);
@@ -177,7 +180,7 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 <script>
     dsp=document.getElementById('dsp');
     	dsp.value='ok\n';
-    lastlen=3;
+    lastlen=4;
     document.addEventListener("keyup",function(event) {
       if(event.target != dsp) return;
       if (event.key === "Enter") {

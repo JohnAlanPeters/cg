@@ -424,11 +424,11 @@ only forth also editor also electric also definitions
 : Headline-WEB ( -- )
      conscol @ 40 > if cr then
      16 >ccol ." Count"
-     26 >ccol ." Part" \ Need to show on small cell screen or think it is dead
-     38 >ccol ." Parts"
-     48 >ccol ." Time"
-     58 >ccol ." Labor"
-     70 >ccol ." Sell" ;
+     33 >ccol ." Part" \ Need to show on small cell screen or think it is dead
+     44 >ccol ." Parts"
+     55 >ccol ." Time"
+     67 >ccol ." Labor"
+     78 >ccol ." Sell" ;
 
 : Headline-CON ( -- ) \ names of the columns
   16 >ccol  ." Count"
