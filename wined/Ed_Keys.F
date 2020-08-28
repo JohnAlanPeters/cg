@@ -398,7 +398,7 @@ defer _Control+W ' close-text is _control+w
       k_F3    +k_shift              OF      save-all-text  ( bfta )     ENDOF
       k_F3    +k_control            OF      find-text-highlight         ENDOF
       k_F3    +k_shift +k_control   OF      replace-text                ENDOF
-      k_F4                          OF      save-all-text               ENDOF
+      k_F4                          OF      vbmark                      ENDOF
       k_F4    +k_shift              OF      AAA   ( n n line swap )     ENDOF
       k_F5                          OF      prev-view                   ENDOF
       k_F5    +k_control +k_shift   OF      cwords                      ENDOF
@@ -414,7 +414,7 @@ defer _Control+W ' close-text is _control+w
       k_F11                         OF      vindex#s ( fstacksave )     ENDOF
       k_F11   +k_shift              OF      next-link  ( prev-view )    ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      vbmark                      ENDOF
+      k_F12                         OF      grand-total ( JP 8/28 )     ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( date-stamp )
 \                                         ( back-find-all-text )
