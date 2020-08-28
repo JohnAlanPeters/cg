@@ -138,7 +138,7 @@ editor also
 : AA     ( -- ) \ Extend all paragraphs and grand total the estimate
   noext? 0= ?exit  \ only extend if not .f file
   3-column
-  cursor-line
+  cursor-line dup
   if settle line-cur cursor-line cursor-col
      keyboard off ['] all-thru  catch 0=
      if ext-err if reset-stacks loadline @ to cursor-line 16 to cursor-col
