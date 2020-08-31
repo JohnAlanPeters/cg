@@ -93,7 +93,7 @@ Elect \ See OS-NIPPLE
 Elect
 
 
-% ( Three Phase )  OS-NIP                        08-15-93 AEC   
+\ ( Three Phase )  OS-NIP                        08-15-93 AEC
 ( Vocabulary OS-NIP )   OS-NIP definitions                      
 : 400A-3P                 239.38 w/e 404 c ;                    
 : 300A-3P                 111.20 w/e 298 c ;                    
@@ -207,7 +207,7 @@ Electric definitions
 : Repower reconnect ;
 
 
-%  ( Three Phase ) OS-NIP                            15apr8AEC  
+\  ( Three Phase ) OS-NIP                            15apr8AEC
 ( Vocabulary OS-NIP )   OS-NIP definitions                      
 \ 3P-400A                     190.56 EX 292 C ;                 
 : 3P-200A                       8069 EX 169 C ;                 

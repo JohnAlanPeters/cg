@@ -38,11 +38,11 @@ Vocabulary (FISH-WORK)
 : Cans-easy          60.00 w/c 100 c ;
 : Can                Cans            ;
 : LT-Hard           626.00 w/c 350 c ; \ Thru joists, no attic 
-` LT                626.00 w/c 300 c ; \ module 2   10.81
-` LT-Medium         615.00 w/c 225 c ; \ Romex.mod  10.88 1/2 OFF
-` LT-Easy           615.00 w/c 100 c ;
+: LT                626.00 w/c 300 c ; \ module 2   10.81
+: LT-Medium         615.00 w/c 225 c ; \ Romex.mod  10.88 1/2 OFF
+: LT-Easy           615.00 w/c 100 c ;
 : PS-Medium                LT-medium ; \
-` PS-Easy           615.00 w/c 100 c ;
+: PS-Easy           615.00 w/c 100 c ;
 : Quad                2.47 w/e  20 c ;
 : 1G->2G              2.50 w/e  50 c ;
 : PL-Hard           626.00 w/c 325 c ;
@@ -106,7 +106,7 @@ Elect
 \ New work means insulaton in the walls
 
 
-| Recessed-Can                                      04-26-09
+\ Recessed-Can                                      04-26-09
 Vocabulary Recessed-Can  Recessed-Can Definitions
 : 3in-LV      35.57 w/e 70 c ; \ MR-16 50W Max 06-3C-LVNAT
 : 4in-LV      25.12 w/e 70 c ; \
@@ -121,7 +121,7 @@ Vocabulary Recessed-Can  Recessed-Can Definitions
 Elect
 \ Mini is for 6-in joists
 
-| Recessed-Trim                                     04-26-09
+\ Recessed-Trim                                     04-26-09
 Vocabulary Recessed-Trim  Recessed-Trim Definitions
 : 3in-Various  5.39 w/e 15 c ; \ MR-16  Did not see Oval-slot
 : Shower       6.63 w/e 15 c ; \
@@ -133,7 +133,7 @@ Vocabulary Recessed-Trim  Recessed-Trim Definitions
 : 6in-13W      9.00 w/e 15 c ; \ Electronic
 Elect
 
-| Recessed-Lamp                                     04-26-09
+\ Recessed-Lamp                                     04-26-09
 Vocabulary Recessed-Lamp  Recessed-Lamp Definitions
 : MR-16        1.59 w/e 08 c ; \ MR-16
 : PAR-75-30    2.79 w/e 08 c ; \

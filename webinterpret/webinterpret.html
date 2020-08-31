@@ -33,6 +33,11 @@ function doit(cntnu)
     if(ntxt=='dir\n'){
        ntxt='webdir';
     }
+    else if(ntxt=='cls\n'){
+      dsp.value='ok\n';
+      lastlen=4;
+      return;
+    }
     if(!fHeader &&  ntxt[ntxt.length-1] == '\n'){
       ntxt=ntxt.slice(0,ntxt.length-1);}
     if(ntxt[0]=='\n') ntxt=ntxt.slice(1);

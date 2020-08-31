@@ -540,6 +540,14 @@ create fbuf 5000 allot          \ to hold the template file text
 
 ' (un-add) is un-add
 
+: replace-ch ( <ch1 ch2> -- )  \ replace all instances of ch1 in col 0 with ch2
+  bl word 1+ c@ bl word 1+ c@
+  cursor-line >r file-lines 0
+  do i to cursor-line get-cursor-line cur-buf dup c@
+     if cell+ dup c@ 3 pick =
+     if over swap c!  put-cursor-line 0 then then drop
+  loop 2drop file-has-changed save-text r> to cursor-line refresh-screen ;
+
 \s
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

@@ -3,15 +3,6 @@
 
 forth also forth definitions
 
-: --> ;
-
-: `  : ;  \ Back tick alias for colon - leaves original available.
-: ~  : ;  \ Nya alias for colon         
-: |    ( -- ) [compile] \ ; immediate \ Now ok to load each blk, plenty of mem.
-          \ Formerly used with GET to do LOAD on demand to save memory.
-: %    ( -- ) [compile] \ ; immediate \ Now ok to load each blk, plenty of mem.
-          \ Formerly used to indicate a block not commonly needed. (Ivory Plates)
-
 : TITLE ( n -- ) CREATE DOES> DROP ;
           \ Formerly created a title in the VLIST of words.
 

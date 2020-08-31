@@ -31,7 +31,7 @@ Vocabulary BIG-OK   BIG-OK definitions
 : CATV          S4 ;   \ 8-3-99                                 
 : (J)           PL ;                                            
 : PH            PL ;   : SP            PL ;                     
-: CAT-5         PL ;  Elect  -->                                
+: CAT-5         PL ;  Elect
 
 
 \ Loader screen   Same name as the old file         07-24-08 AL
