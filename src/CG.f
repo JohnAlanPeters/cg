@@ -250,7 +250,7 @@ editor
 : HELLO-CG
     s" bootup" logmsg \ getuser
     Title-CG  ( current-dir$ setfdir ) s" c:\cg\" &forthdir place
-    -1 to dp-location \ s" \cg\bids" "chdir \  s"  bids" "chdir
+    -1 to dp-location
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     editor overstrike off loadline off
     elect
