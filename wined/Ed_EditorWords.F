@@ -3,7 +3,7 @@
 
 defer ?wrap-word
 defer back-delete-character
-defer save-text
+defer save-text  \ XSAVE
 defer save-bitmap-as
 defer close-text
 defer ?save-text

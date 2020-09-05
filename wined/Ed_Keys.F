@@ -295,7 +295,7 @@ defer _Control+W ' close-text is _control+w
 : toggle-autoextend ( -- )  \ true-> extend on cr
   autoextend 0= to autoextend SetMultiStatus: EditorWindow ;
 
-: squashblanks ( -- )  \ multiple blank lines removed to leave just 1
+: squashblanks ( -- )  \ multiple blank lines removed to leave just 1 on current file
   17 to cursor-line
   0    \ track #blank lines
   begin cursor-line file-lines 1- <     \ don't go off the end of the file

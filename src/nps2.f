@@ -595,19 +595,6 @@ LED-Retrofit-can definitions
 Elect                         \ 25 minutes each according to Miro
 
 
-\ LED-28 Ameri Fluorescent
-Vocabulary LED-28
-LED-28 Definitions       \
-: LED28inc 115.00 w/e  50 c ;
-: 9-in      95.00 w/e  00 c ; \ 9.5 inches by 6.25 inches
-: Cord      10.00 w/e  00 c ;
-: Plug       5.00 w/e  00 c ;
-: Direct-Con 4.00 w/e  00 c ;
-Elect
-\ First saw at Universal in Aug 08 for Dolan job
-
-
-
 \ JUNO  IC44                                        08-16-94 AEC
 Vocabulary Juno    \ 4-16-93 for Stuart on Collingwood
 Juno     Definitions   \ (Remodel can costs the same price)
