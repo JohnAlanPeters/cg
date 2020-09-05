@@ -504,7 +504,7 @@ create fbuf 5000 allot          \ to hold the template file text
   max-path localAlloc: to$
   bl word count to$ place  \ path to 1drive bids file
   to$ $open         \ do nothing if it exists
-  if s" template-mini" r/o open-file 0=
+  if s" \cg\bids\template-mini" r/o open-file 0=
     if >r fbuf 4096 r@ read-file r> close-file drop 0=
       if >r to$ count r/w create-file 0=
          if fbuf r> rot dup>r write-file r> close-file drop

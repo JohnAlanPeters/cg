@@ -141,7 +141,9 @@ editor also
   cursor-line dup
   if settle line-cur cursor-line cursor-col
      keyboard off ['] all-thru  catch 0=
-     if ext-err if reset-stacks loadline @ to cursor-line 16 to cursor-col
+     if ext-err if reset-stacks loadline @ to cursor-line
+        get-cursor-line cur-buf lcount 2dup upper 2dup errword count 2dup upper search
+        if drop nip swap -  to cursor-col else 2drop then
         reedit exit
         else to cursor-col to cursor-line to line-cur then ( refresh-screen )
      else 2drop drop then

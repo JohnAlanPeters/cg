@@ -810,7 +810,7 @@ FileSaveDialog SaveBitmap "Save Bitmap File" "Bitmap Files (*.BMP)|*.BMP|*.DIB|A
         THEN
         ( flag )
         IF
-              s" Courier New" SetPrinterFont: ThePrinter
+              s" Courier New Bold" SetPrinterFont: ThePrinter
               toline fromline
               ?DO   i #line"
                     browse? \ if browsing, ignore HTML when printing
