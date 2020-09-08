@@ -29,7 +29,7 @@ create upath 128 allot
   edit-changed? 0= ?exit  \ only backup if file has changed
   cur-filename count find-first-file nip 0=
   if s" xx.bak" cgbase" DELETE-FILE drop \ delete backup
-     cur-filename count s" xx.bak" cgbase" RENAME-FILE 0=  \ move current file to .bak
+     cur-filename count s" xx.bak" cgbase" COPY-FILE 0=  \ move current file to .bak
      if cur-filename count lastbakfile place then
   then
   do-save-text ;
@@ -45,5 +45,30 @@ create upath 128 allot
      else drop then
   then ;
 
+0 value bkindx
+: xbk { \ fbk curfn -- }
+  128 localalloc: fbk   128 localalloc: curfn
+  cur-filename count fbk place
+  s" xbk" fbk +place
+  1 +to bkindx bkindx ascii 0 + sp@ 1 fbk +place drop
+  fbk count "OPEN 0=  \ check if .bak file exists
+  if close-file drop
+     fbk count DELETE-FILE drop  \ delete old backup
+  else drop then
+  cur-filename count curfn place
+  fbk count cur-filename place    \ save file as backup
+  do-save-text curfn count cur-filename place ;
+
+: xunbk { \ fbk curfn -- }
+  128 localalloc: fbk  128 localalloc: curfn
+  cur-filename count fbk place
+  s" xbk" fbk +place
+  bkindx ascii 0 + sp@ 1 fbk +place drop
+  fbk count "OPEN 0=  \ check if bakcup file exists
+  if close-file drop
+     cur-filename count curfn place
+     fbk count cur-filename place
+     revert-text  curfn count cur-filename place
+  else drop then ;
 
 

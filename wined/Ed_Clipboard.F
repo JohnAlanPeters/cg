@@ -77,6 +77,7 @@
 
 : cut-text      ( -- )
                 bitImage? ?EXIT
+                browse? ?EXIT
                 copy-text
                 clear-text ;
 
