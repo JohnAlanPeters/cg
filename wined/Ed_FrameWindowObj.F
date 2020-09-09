@@ -6,6 +6,7 @@ needs Resources.f
 \ 58    Define the main window for the application
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+0 value err-vocab-show
 defer HandleForthMsg
 
 :Object FrameWindow  <super window
@@ -209,14 +210,13 @@ MACRO -status   " 19 -"         ( n1 -- n2 )
                 s"  Chars) "                            StatusBuf +place
         THEN
         StatusBuf +null StatusBuf 1+ 2 SetText: Win-EdStatusbar
-        StatusBuf 50 blank
+        StatusBuf 80 blank
         overstrike @
         if   s"  Overstrike mode"   \ JP 4-4-09
         else s"  INSERT MODE" then               StatusBuf  place
         capslock? if s"   CAPS LOCK" StatusBuf +place then
-        s"       Total: " StatusBuf +place
-        total-est    StatusBuf +place
-        autoextend if s"   Auto Extend On" StatusBuf +place then
+        autoextend if s"   Auto Extend On" else s"   Auto Extend Off" then StatusBuf +place
+        err-vocab-show if s"   Vocdump On" else s"   Vocdump Off" then StatusBuf +place
         StatusBuf +null StatusBuf 1+ 3 SetText: Win-EdStatusbar
         ;M
 

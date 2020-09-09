@@ -12,7 +12,7 @@ needs ExControls.f
 
 :Object Win-EdStatusbar  <Super MultiStatusbar
 
-create MultiWidth 125 , 250 , 400 , 680 , \ width of statusbar parts   
+create MultiWidth 125 , 250 , 400 , 880 ,  \ width of statusbar parts
 create SingleWidth -1 ,                   \ width of statusbar parts
 
 :M SetMulti:    ( -- )

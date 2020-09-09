@@ -287,10 +287,9 @@ defer _Control+W ' close-text is _control+w
     1+              \ next vscreen index#
   repeat  drop to cursor-line refresh-screen ;
 
-0 value err-vocab-show
-  \ true-> show vocab on extend error
+\ true-> show vocab on extend error
 : err-vocab-toggle ( -- )  \ dump the current vocabulary words
-  err-vocab-show 0= to err-vocab-show ;
+  err-vocab-show 0= to err-vocab-show SetMultiStatus: EditorWindow ;
 
 : toggle-autoextend ( -- )  \ true-> extend on cr
   autoextend 0= to autoextend SetMultiStatus: EditorWindow ;
@@ -303,7 +302,7 @@ defer _Control+W ' close-text is _control+w
     get-cursor-line cur-buf c@ 0=
     if  dup if 1 delete-lines else 1+ 1 +to cursor-line then
     else drop 0 1 +to cursor-line then
-  repeat drop refresh-screen ;
+  repeat drop file-has-changed refresh-screen ;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 67    The main editor loop

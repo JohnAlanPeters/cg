@@ -294,7 +294,7 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 : CONS-SHOW-ALL   ( -- )   \ output on current console line
   cons-1col not
   if cons-show-parts cons-show-time then
-  cons-show-sell ;
+  cons-show-sell cr ;
 
 0. 2value markup
 
