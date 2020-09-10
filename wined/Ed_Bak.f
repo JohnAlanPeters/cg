@@ -47,9 +47,10 @@ create upath 128 allot
 
 0 value bkindx
 : xbk { \ fbk curfn -- }
+  edit-changed? not ?exit
   128 localalloc: fbk   128 localalloc: curfn
   cur-filename count fbk place
-  s" xbk" fbk +place
+  s" .xbk" fbk +place
   1 +to bkindx bkindx ascii 0 + sp@ 1 fbk +place drop
   fbk count "OPEN 0=  \ check if .bak file exists
   if close-file drop
@@ -59,10 +60,10 @@ create upath 128 allot
   fbk count cur-filename place    \ save file as backup
   do-save-text curfn count cur-filename place ;
 
-: xunbk { \ fbk curfn -- }
+: _xunbk { \ fbk curfn -- }
   128 localalloc: fbk  128 localalloc: curfn
   cur-filename count fbk place
-  s" xbk" fbk +place
+  s" .xbk" fbk +place
   bkindx ascii 0 + sp@ 1 fbk +place drop
   fbk count "OPEN 0=  \ check if bakcup file exists
   if close-file drop
@@ -70,5 +71,18 @@ create upath 128 allot
      fbk count cur-filename place
      revert-text  curfn count cur-filename place
   else drop then ;
+
+: xunbk ( -- )
+  bkindx 1- dup if to bkindx _xunbk else revert-text then ;
+
+: xrebk ( -- )
+  bkindx 1+ dup 10 < if to bkindx _xunbk else drop then ;
+
+: xbkdel { \ fbk -- }
+  128 localalloc: fbk
+  s" del " fbk place
+  cur-filename count fbk +place
+  s" .xbk*" fbk +place
+  fbk $shell ;
 
 
