@@ -58,7 +58,7 @@ create upath 128 allot
   else drop then
   cur-filename count curfn place
   fbk count cur-filename place    \ save file as backup
-  do-save-text curfn count cur-filename place ;
+  do-save-text curfn count cur-filename place reedit ;
 
 : _xunbk { \ fbk curfn -- }
   128 localalloc: fbk  128 localalloc: curfn
@@ -69,16 +69,18 @@ create upath 128 allot
   if close-file drop
      cur-filename count curfn place
      fbk count cur-filename place
+     cursor-line cursor-col
      revert-text  curfn count cur-filename place
-  else drop then ;
+     to cursor-col to cursor-col
+  else drop then reedit ;
 
 : xunbk ( -- )
-  bkindx 1- dup if to bkindx _xunbk else revert-text then ;
+  bkindx 1- 0 max dup to bkindx if _xunbk else revert-text reedit then ;
 
 : xrebk ( -- )
   bkindx 1+ dup 10 < if to bkindx _xunbk else drop then ;
 
-: xbkdel { \ fbk -- }
+: xdelbks { \ fbk -- }
   128 localalloc: fbk
   s" del " fbk place
   cur-filename count fbk +place

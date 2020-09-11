@@ -136,7 +136,7 @@ cd ..
 0 to slfactor           \ Zero is normal speed, Use space bar for stop/start
 forth also forth definitions editor
 :noname ( -- ) \ Re edit (Does not take any thing) 
-  true to invkloop gethandle: editwindow call SetFocus drop
+  true to invkloop gethandle: docwindow call SetFocus drop
   view-key-loop ;   is reedit
 
 : RE-Edit  reEdit ;
