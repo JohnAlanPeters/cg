@@ -71,7 +71,7 @@ create upath 128 allot
      fbk count cur-filename place
      cursor-line cursor-col
      revert-text  curfn count cur-filename place
-     to cursor-col to cursor-col
+     to cursor-col to cursor-line
   else drop then reedit ;
 
 : xunbk ( -- )

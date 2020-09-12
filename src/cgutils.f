@@ -306,4 +306,35 @@ editor
      swap drop - -1
   else r> r> 2drop 0 then ;
 
+hidden also
+0 value wvocdone
+: (wordvoc)       { voc \ w#threads -- }  ( -- fl)
+        voc dup voc#threads to w#threads
+        dup voc>vcfa
+        ?isclass not \ don't look through classes
+        if dup here 500 + w#threads cells move     \ copy vocabulary up
+           voc>vcfa vocsave !
+           begin   here 500 + w#threads largest dup wvocdone 0= and
+           while   dup l>name count
+                   words-pocket count istr=
+                   if drop vocsave @ .name -1 to wvocdone
+                   else @ swap !
+                   then
+           repeat  2drop
+        else    drop
+        then    vocsave off ;
+
+: wordvoc ( -<name>- ) \ show vocabulary of the <name>
+   words-pocket off 0 to wvocdone
+   bl word c@
+   if pocket count words-pocket place
+      voc-link @
+      begin dup vlink>voc ( #threads cells - )
+          (wordvoc) wvocdone
+          if true
+          else @ dup 0=
+          then
+      until 2drop
+   then ;
+
 
