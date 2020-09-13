@@ -187,6 +187,7 @@
                 cursor-line #line.addr cursor-col + to iadr  \ insert point
                 iadr                                \ from
                 iadr tlen +                         \ to
+                tlen +to cursor-col
                 end.addr iadr -                     \ remaining text len
                 move                                \ make a hole for new text
                 tadr iadr tlen move                 \ move in new text
