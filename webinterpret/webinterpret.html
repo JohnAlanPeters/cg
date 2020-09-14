@@ -162,22 +162,19 @@ function webload(){
 </script>
 <body>
 <br>
-Web32Forth 5.00 by Robert Ackerman & John Peters 415-239-5393<br>
-This is also an application or database of electrical parts. Contract Generator TM<cg>
+Web32Forth 5.01 by Robert Ackerman & John Peters 415-239-5393<br>
+This is an application and database called The Contract Generator TM<cg>
 <div>
  <br>
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
- &nbsp;<button onclick="webload();">load file</button>&nbsp;<button onclick="putfile();">save file</button>
+ &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
  <br>
- <textarea id='filetxt' rows=18 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
+ <textarea id='filetxt' rows=18 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
  <br>
- The Console is below; The editor is above
+ The Console and suggestins are below; The editor is above.
  <br>
- <textarea id='dsp' rows=12 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
-</div><br>
-<br>
----- Bottom of console.<br>
-<br>
+ <textarea id='dsp' rows=24 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
+</div>
 Win32Forth and all it's thousands of words are here for you to use. Be brave & fear not.<br>
 Type 'words' to see all the definitions in the system.<br>
 The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.<br>
@@ -211,10 +208,11 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 The system is case INsensitive. For a reset, text me. sf ca 415-239-5393 John Alan Peters<br>
 If you get a -13 error with a good Forth word then watch out for your system's spell-check or smart-punctuation.<br>
 <br>
-
-RUNNING with FORTH on the WEB and STUDENT lesson ONE<br>
-Enter some Forth code in the TOP window, or copy-paste the "Hello world" code.<br>
-&#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59<br>
+<pre>
+RUNNING with FORTH on the WEB and STUDENT lesson ONE
+Enter some Forth code in the TOP window, or copy-paste the "Hello world" code.
+&#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59
+: TEST cr 8 0 do ." Hi world" cr loop ;
 In the box where it says "FILE NAME:" Enter your choice of a file name<br>
 SAVE the file, LOAD the file, TEST the file.<br>
 Type the name of your word in the console to make sure it works,<br>
@@ -237,6 +235,7 @@ ELECTRIC WORDS<br>
 ELECTRIC VOCS<br>
 BULBS WORDS will give you prices and times.<br>
 FISH-IN-WALLS PR<br>
+</pre>
 SW<br>
 LT<br>
 </body>
