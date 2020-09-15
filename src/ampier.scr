@@ -227,7 +227,8 @@ Electric Definitions
 
 \  RISER    Out of date as of --> >    11-20-91 AEC 09-11-06 AL
 \ Corrected on June 1, 2020
-Vocabulary RISER RISER Definitions
+Vocabulary RISER \ AKA a telescope pipe and wire up to PG&E
+                 RISER Definitions
 : 70A       ( Repull #4 )         174.33 w/e  341 c ;
 : 100A      ( #4 in 1-1/4 )       262.12 w/e  357 c ;
 : 115A      ( #2 1-1/4 )          311.26 w/e  379 c ;
