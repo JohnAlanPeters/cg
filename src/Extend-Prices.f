@@ -52,7 +52,7 @@ This code was created fresh for the WinCG version.
      cur-buf lcount  drop
      tab-size + 30                       \ zero based, but editor is 1 based
      -1 -1 quan 2!                       \ flag for showing totals
-     evaluate-ext                        \ interpret cols 16-48
+     evaluate-ext                        \ interpret cols 16-46
      if 1 ( sub<>0 )                     \ (?is line not empty)
       if sell-sub 2@ -1 s>d d=           \ -1 -> flag for display as '0'
          if 0 0 sell-sub 2! then
