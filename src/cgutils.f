@@ -332,4 +332,7 @@ hidden also
       until drop
    then ;
 
+\ state smart so you can use it in console
+: ."    STATE @ if COMPILE (.") ," else (.") then ; IMMEDIATE
+
 
