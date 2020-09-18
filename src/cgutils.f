@@ -333,6 +333,8 @@ hidden also
    then ;
 
 \ state smart so you can use it in console
-: ."    STATE @ if COMPILE (.") ," else (.") then ; IMMEDIATE
+: ."    STATE @ if COMPILE (.") ," else  [CHAR] " PARSE TYPE  then ; IMMEDIATE
 
+: bye
+  in-web? if noop else bye then ;
 

@@ -161,24 +161,36 @@ function webload(){
 
 </script>
 <body>
-<br>
-Web32Forth 5.01 by Robert Ackerman & John Peters 415-239-5393<br>
-This is an application and database called The Contract Generator TM<cg>
+Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
+DON'T use the word "BYE"  It will lock up. We will vector it on Monday.<br>
+
 <div>
- <br>
+
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
- <br>
+ The file has to end in dot-F .F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
+
+
  <textarea id='filetxt' rows=18 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
- <br>
- The Console and suggestins are below; The editor is above.
- <br>
+<br>
+ The Console is below; The Editor is above. Please be the 1st to text me at 415-239-5393 Why do you hesitate?
+<br>
  <textarea id='dsp' rows=24 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div>
-Win32Forth and all it's thousands of words are here for you to use. Be brave & fear not.<br>
-Type 'words' to see all the definitions in the system.<br>
-The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.<br>
+<pre>
+Win32Forth and all it's thousands of words are here for you to use. Be brave & fear not..
+The system is case INsensitive. For a reset, text me. sf ca 415-239-5393 John Alan Peters.
+If you get a -13 error with a known good Forth word check your system's spell-check or smart-punctuation..
+>>
+NOTE note Note . . .VIEW now works.  Ithink it shows te whole file so be carefull.
+>>
+VIEW VIEW seems to be safe since is is a arelataivly small file.
+>>
+If you type 'WORDS' you will see the words in the default ELECTRIC directory..
+Type 'FORTH WORDS to see all the FORTH definitions in the system.
 
+The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.
+</pre>
 <script>
     dsp=document.getElementById('dsp');
     	dsp.value='ok\n';
@@ -205,39 +217,39 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
         }
     });
 </script>
-The system is case INsensitive. For a reset, text me. sf ca 415-239-5393 John Alan Peters<br>
-If you get a -13 error with a good Forth word then watch out for your system's spell-check or smart-punctuation.<br>
-<br>
+
 <pre>
 RUNNING with FORTH on the WEB and STUDENT lesson ONE
 Enter some Forth code in the TOP window, or copy-paste the "Hello world" code.
 &#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59
-: TEST cr 8 0 do ." Hi world" cr loop ;
-In the box where it says "FILE NAME:" Enter your choice of a file name<br>
-SAVE the file, LOAD the file, TEST the file.<br>
-Type the name of your word in the console to make sure it works,<br>
-Popup test one - Add the words 'That's all folks' in the right place in the code without the ' tick marks.<br>
-Popup test two - Change the number of do-loops from 8 to anoter number, LOAD it, RUN it by loading it and TEST it.<br>
-If you GET an error, try again. To REVERT to the last saved code GET the file again.<br>
-If you get an ok then type<br>
-Test<br>
-You did it!<br>
-Enter your email addess and I will be glad to know you were here :-) - Ignore the error message.<br>
-The book Sarting Forth and the lessons will work. It is best to use the updated free online version.<br>
-Here is the URL http://home.iae.nl/users/mhx/sf.html<br>
-<br>
-We could use some help with some code for reverting text strokes and automatic backup files.<br>
-Unfortunatly VIEW does not work here. It requies VIEW running on the hard disk system from GitHub. A.Q. for how.<br>
-To make VIEW work here via a browser is a time consuming task. Suggestions?  VIEW works, but it depends on the HD.<br>
-<br>
-You might try some of the Contract Generator words. Rember to use the enter key to stop WORDS.<br>
-ELECTRIC WORDS<br>
-ELECTRIC VOCS<br>
-BULBS WORDS will give you prices and times.<br>
-FISH-IN-WALLS PR<br>
+In the box where it says "FILE NAME:" Enter YourName.f
+Enter some Forth Code.
+SAVE the file, LOAD the file,
+TEST the your code. Type the name of your word in the console to make sure it works,
+
+Pop-up test one - Add the words 'That's all folks' in the right place in the code without the ' tick marks..
+Pop-up test two - Change the number of do-loops from 8 to anoter number, LOAD it, RUN it by loading it and TEST it.
+If you GET an error, try again. To REVERT to the last saved file you can 'GET' the file again.
+
+You did it!.
+
+The book Sarting Forth and the online lessons will work. It is best to use the updated free online version..
+Here is the URL
+http://home.iae.nl/users/mhx/sf.html.
+( I don't know why it is not "live")
+
+We could use some help with ideas for improvments.
+>>
+VIEW does work.
+>>
+You might try some of the Contract Generator words. Rember to use the enter key to stop WORDS..
+ELECTRIC WORDS
+ELECTRIC VOCS
+BULBS WORDS will give you prices and times..
+FISH-IN-WALLS PR
 </pre>
-SW<br>
-LT<br>
+SW
+LT
 </body>
 </html>
 
