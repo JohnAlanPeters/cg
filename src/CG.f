@@ -163,8 +163,9 @@ forth also forth definitions editor
 
 : VV-con ( <word> -- )      \ TODO: fix hilite on viewed word, index of base
   widesearch
-  if $.viewinfo count "+open-text 0 swap 1- setedmode
-     to-find-line refresh-line reEdit
+  if $.viewinfo dup 0< if 2drop else
+     count "+open-text 0 swap 1- setedmode
+     to-find-line refresh-line reEdit then
   else drop then ;
 
 : VV-web-instructions ( <word> -- ) bl word drop cr
@@ -190,9 +191,9 @@ forth also forth definitions editor
    if vv-web-instructions
    else widesearch
       if 1 to defer-margin
-      $.viewinfo count
+      $.viewinfo dup 0< if 2drop else count
       "+open-text setedmode 0 swap 1- to-find-line
-         focus-console false to invkloop
+         focus-console false to invkloop then
      else drop then
    then ;
 
