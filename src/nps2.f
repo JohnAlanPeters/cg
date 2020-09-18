@@ -344,6 +344,7 @@ Vocabulary Disconnect
 : Spa-30A      85.00 w/c  95 c ; \ JP guesses
 
 : Life ;  \ Viewable marker
+Elect
 
 \ LIFE-SAFETY  Exit-lights  685-015  LL-00
 Vocabulary LIFE-SAFETY
