@@ -68,12 +68,17 @@ create headerline 64 allot   \ parameter for header line
   if vcr           \
   then conscol @ [ hidden ] C_GETXY nip ;
 
+: wcls ( -- )
+  in-web? if s" cls" vbuf wplace
+  else c_cls then ;
+
 : _to-web
    ['] vemit is emit
    ['] vtype is type  \ add text to word counted buffer
    ['] ?vcr is ?cr
    ['] vcr is cr      \ virtual CR
-   ['] vgetxy is getxy ;
+   ['] vgetxy is getxy
+   ['] wcls is cls ;
 
 : _to-con
    [ hidden ]

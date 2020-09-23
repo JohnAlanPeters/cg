@@ -68,6 +68,12 @@ function doit(cntnu)
      r1st=0;
      if(fHeader==5) fHeader=0;
      if(data[0]!=' ')data=' '+data;
+     if(data.includes('cls')){
+       data=data.replace('cls','');
+       dsp.value='';
+       dtxt='';
+       lastlen=0;
+     }
      dtxt+=data;
      lastlen=dtxt.length;
      dsp.value=dtxt;
@@ -162,33 +168,33 @@ function webload(){
 </script>
 <body>
 Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
-The word "BYE" is now ok you use. It will send you an invation.<br>
+A Webby timer restarts on the hour.<br>
+Get the source here.
 <a href="https://github.com/JohnAlanPeters/cg">github repository</a>
 <div>
 
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
- The file has to end in dot-F .F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
+<br>The file has to end in dot-F .F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 
  <textarea id='filetxt' rows=18 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 <br>
- The Console is below; The Editor is above. Please be the 1st to text me at 415-239-5393 Why do you hesitate?
+ The Console is below; The Editor is above.
 <br>
  <textarea id='dsp' rows=24 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div>
+
 <pre><b>
-Win32Forth and all it's thousands of words are here for you to use. Be brave & fear not..
-The system is case INsensitive. For a reset, text me. sf ca 415-239-5393 John Alan Peters.
-If you get a -13 error with a known good Forth word check your system's spell-check or smart-punctuation..
+Win32Forth and all it's thousands of words (Like a library) ready to use. Use VIEW to look around..
+The system is case INsensitive.
+If you get a -13 error turn off your spell-checker.
 
-VIEW now works. It shows the whole file in the editor. Try it on a big file (I have not yet)
+VIEW works. It lists the file in the editor. Try it on DO-SERVER or START-STOP
+Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW.
 
-You can use VIEW to view VIEW are rlataivly small file.  Type VIEW VIEW.
-
-If you type 'WORDS' you will see the hendred of words in the default ELECTRIC directory..
-Type 'FORTH WORDS to see all the FORTH definitions in the system.  Instructions below
-
+If you type 'WORDS' you will get ELECTRIC WORDS in the default ELECTRIC directory..
+Instead use 'FORTH WORDS to see all the FORTH definitions in the system.
 The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.
 </b></pre>
 <script>
@@ -219,38 +225,30 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 </script>
 
 <pre><b>
-&#58 TEST cr 8 0 do &#46&#34 Hi World &#34 cr loop &#59
-
 RUNNING with FORTH on the Webby.
-
-Type in some Forth code or copy-paste some of your code in to the top window.
-Give it a [file name] like YourName.f (It is the only way we will know you were here.)
-SAVE the file.
-LOAD the file to add your words to the dictionaary.
-Type the name of your word in the console to make sure it works.
-
-If you enter the name of the definition as the last line in the file, then it will execut with the LOAD command.
-
-Pop-up test - Change the number of do-loops from 8 to anoter number, LOAD it, RUN it and TEST it.
-
+Copy/paste this in to the editor.
+: TEST cr 8 0 do ." Hi World" cr loop ;
+Or copy-paste some of your own code in to the top editor.
+Give it a [file name] like YourName.f (Nice to meet you, good to know you are here.)
+SAVE the file (So you can GET it back if you do an oops.)
+LOAD the file (It will compile your words into the dictionaary.)
+Enter your word in the console to see it work.
+If you include your word in the file, it will execute when you next LOAD your file.
+For fun change the number of do-loops from 8 to another number, LOAD it, RUN it.
 If you GET an error, and you have saved your file, you can [get file] it again and try again.
-
-You did it!.
-
-The book Sarting Forth has lessons. Use the updated free online version..
-Here is the URL
+Starting Forth has lessons. Use the updated free online version.. Here is the URL
+</b></pre>
 http://home.iae.nl/users/mhx/sf.html.
-( I don't know why it is not "live")
-
+<pre><b>
 We could use some help with ideas for improvments.
 
 VIEW works fine. You may like the source code for te following words.
-view start-stop
-view do-server
-view patch
-view view  (Yes you can view view )
+view START-STOP
+view DO-SERVER
+view PATCH
+view VIEW  (Yes you can view view )
 
-You might try some of the Contract Generator words. Rember to use the enter key to stop WORDS..
+Try some Contract Generator words.
 ELECTRIC WORDS
 ELECTRIC VOCS
 BULBS WORDS will give you prices and times..
