@@ -169,11 +169,7 @@ forth also forth definitions editor
   else drop then ;
 
 : VV-web-instructions ( <word> -- ) bl word drop cr
-  ." Use SEE <word> to decompile the source code." cr
-  ." VIEW requires the the disk based system or" cr
-  ." I can demo the Contract Generator TM with a screen-share app." cr
-  ." You can get the code from GitHub at" cr
-  ." https://github.com/JohnAlanPeters/cg/tree/master/src" cr ;
+  ." Use VIEW <word>" cr ;
 
 : VIEW ( <word> -- ) \ Web if warn else view the source code of the word
   in-web?
@@ -190,11 +186,10 @@ forth also forth definitions editor
    in-web?
    if vv-web-instructions
    else widesearch
-      if 1 to defer-margin
-      $.viewinfo dup 0< if 2drop else count
-      "+open-text setedmode 0 swap 1- to-find-line
-         focus-console false to invkloop then
-     else drop then
+    if $.viewinfo dup 0< if 2drop else
+     count "+open-text 0 swap 1- 1 to defer-margin setedmode
+     to-find-line refresh-line focus-console  then
+    else drop then
    then ;
 
 : vvv ( <word> -- )   \ open file in insert mode in editor
@@ -260,12 +255,12 @@ editor
     else  cmdline drop c@ ascii 0 =
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
-             cmdline 2 -2 d+ evaluate
+             cmdline 2 -2 d+ evaluate wined
           else cmdline file-to-edit$ place  wined
           then
     then
-    \ call GetFocus to topwin
-    clear-totals focus-console ." ok" cr quit ;
+    VIEW-KEY-LOOP ;
+    \  clear-totals focus-console ." ok" cr quit ;
     \ ['] wined catch 0<> if message then ;
 
 s" c:\cg\" &forthdir place

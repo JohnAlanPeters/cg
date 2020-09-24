@@ -68,12 +68,17 @@ create headerline 64 allot   \ parameter for header line
   if vcr           \
   then conscol @ [ hidden ] C_GETXY nip ;
 
+: wcls ( -- )
+  in-web? if s" cls" vbuf wplace
+  else c_cls then ;
+
 : _to-web
    ['] vemit is emit
    ['] vtype is type  \ add text to word counted buffer
    ['] ?vcr is ?cr
    ['] vcr is cr      \ virtual CR
-   ['] vgetxy is getxy ;
+   ['] vgetxy is getxy
+   ['] wcls is cls ;
 
 : _to-con
    [ hidden ]
@@ -159,10 +164,12 @@ create headerline 64 allot   \ parameter for header line
   if cr ." send file: " 2dup type cr sendfile 2drop 0
   else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
   if cr ." receive file: " 2dup type cr rcvfile 0
-  else 2drop s" view " bl skipscan
+  else 2drop 2dup s" view " bl skipscan
+  if vv-web 0
+  else 2drop s" vv " bl skipscan
   if vv-web 0
   else 2drop -1
-  then then then scrolltoview ;
+  then then then then scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )
    r/o open-file not

@@ -333,6 +333,14 @@ hidden also
    then ;
 
 \ state smart so you can use it in console
-: ."    STATE @ if COMPILE (.") ," else (.") then ; IMMEDIATE
+: ."    STATE @ if COMPILE (.") ," else  [CHAR] " PARSE TYPE  then ; IMMEDIATE
 
+: bye
+  in-web? if
+   cr ." Please post a comment in the FaceBook group Win32forth."
+   cr ." Are there any Forth words that are missing here?"
+   cr ." Is this project to complicated? is it worth continuing to develope on our own?
+   cr ." Wil Baden erased his personal Forth program as it was too complicaated for any one else."
+   cr
+   else bye then ;
 
