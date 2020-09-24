@@ -86,7 +86,6 @@ function doit(cntnu)
 }
 
 function handleview(data,hline){
-   var elftxt=document.getElementById('filetxt');
    elftxt.value=data;
    var rows=elftxt.value.split('\n').length;
    var lineHeight = parseInt(elftxt.scrollHeight/rows);
@@ -198,10 +197,18 @@ Instead use 'FORTH WORDS to see all the FORTH definitions in the system.
 The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.
 </b></pre>
 <script>
+    elftxt=document.getElementById('filetxt');
     dsp=document.getElementById('dsp');
     	dsp.value='ok\n';
     lastlen=4;
-    document.addEventListener("keyup",function(event) {
+    document.addEventListener("keydown",function(event) {
+      if(event.target==elftxt && (event.keyCode==9 || event.which==9)){
+        event.preventDefault();
+        var s=elftxt.selectionStart;
+        var ev=elftxt.value;
+        elftxt.value=ev.substring(0,s)+Array(16).fill('\xa0').join('')+ev.substring(s);
+        elftxt.selectionEnd=s+16;
+      }
       if(event.target != dsp) return;
       if (event.key === "Enter") {
         r1st=1;
@@ -238,7 +245,7 @@ For fun change the number of do-loops from 8 to another number, LOAD it, RUN it.
 If you GET an error, and you have saved your file, you can [get file] it again and try again.
 Starting Forth has lessons. Use the updated free online version.. Here is the URL
 </b></pre>
-http://home.iae.nl/users/mhx/sf.html.
+<a href="http://home.iae.nl/users/mhx/sf.html">starting forth</a>
 <pre><b>
 We could use some help with ideas for improvments.
 

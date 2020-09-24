@@ -169,7 +169,7 @@ forth also forth definitions editor
   else drop then ;
 
 : VV-web-instructions ( <word> -- ) bl word drop cr
-  ." Use VIEW." cr ;
+  ." Use VIEW <word>" cr ;
 
 : VIEW ( <word> -- ) \ Web if warn else view the source code of the word
   in-web?
@@ -255,12 +255,12 @@ editor
     else  cmdline drop c@ ascii 0 =
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
-             cmdline 2 -2 d+ evaluate
+             cmdline 2 -2 d+ evaluate wined
           else cmdline file-to-edit$ place  wined
           then
     then
-    \ call GetFocus to topwin
-    clear-totals focus-console ." ok" cr quit ;
+    VIEW-KEY-LOOP ;
+    \  clear-totals focus-console ." ok" cr quit ;
     \ ['] wined catch 0<> if message then ;
 
 s" c:\cg\" &forthdir place
