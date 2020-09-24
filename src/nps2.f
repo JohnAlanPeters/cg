@@ -1715,9 +1715,10 @@ Elect
 
 \ Smoke-Alarm
 Vocabulary Smoke-Alarm-old Smoke-Alarm-old Definitions    
-: 10-year         30.00 w/e  25 c ;       
+: 10-year         38.00 w/e  25 c ;
 Elect
-
+: smoke smoke-alarm-old ;
+Elect
 
 \ FIRE   and Smoke          900-070     467-9393  01-25-09 AL
 Vocabulary FIRE            FIRE   definitions
