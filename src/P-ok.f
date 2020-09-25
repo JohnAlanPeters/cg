@@ -29,4 +29,5 @@ cr
 cr .( Copyright by John A. Peters 1985 6 7 8 9 90 91 92 1993)
 cr .(    To rent a current copy call 415 239-5393)
 cr
+: eWORDS only electric words elect ; \ Auto show only electric words w/o forth
 
