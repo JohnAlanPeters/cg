@@ -30,10 +30,10 @@ function doit(cntnu)
   if(!cntnu){
     var txt=dsp.value;
     ntxt=txt.substring(lastlen-1);
-    if(ntxt=='dir\n'){
+    if(ntxt=='dir'){
        ntxt='webdir';
     }
-    else if(ntxt=='cls\n'){
+    else if(ntxt=='cls'){
       dsp.value='ok\n';
       lastlen=4;
       return;
@@ -167,33 +167,37 @@ function webload(){
 </script>
 <body>
 Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
-A Webby timer restarts on the hour.<br>
+A timer will restart Webby on the hour.<br>
 Get the source here.
 <a href="https://github.com/JohnAlanPeters/cg">github repository</a>
+and setup your own server.
 <div>
 
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
-<br>The file has to end in dot-F .F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
+<br>Saved filenames.f have to end in dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 
  <textarea id='filetxt' rows=18 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 <br>
- The Console is below; The Editor is above.
+ The Console is below and the Editor is above.
 <br>
  <textarea id='dsp' rows=24 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div>
 
 <pre><b>
-Win32Forth and all it's thousands of words (Like a library) ready to use. Use VIEW to look around..
-The system is case INsensitive.
-If you get a -13 error turn off your spell-checker.
+Win32Forth and all it's thousands of words ready to be found, (like a library) ready to use. Use VIEW to look around..
+The system is case INsensitive. If you get a -13 error for a real Forth word, maybe turn off your spell-checker.
 
-VIEW works. It lists the file in the editor. Try it on DO-SERVER or START-STOP
+VIEW <word> will lists the source in the editor. Try it on DO-SERVER or START-STOP
 Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW.
 
-If you type 'WORDS' you will get ELECTRIC WORDS in the default ELECTRIC directory..
-Instead use 'FORTH WORDS to see all the FORTH definitions in the system.
+If you type 'WORDS' you will get (too many) WORDS from the default vocabulary ELECTRIC directory..
+Instead use 'FORTH WORDS to see all the FORTH definitions in the system. (Still too many)
+FIXTURE WORDS is a manageable list. (24 words )
+EMT WORDS 10  ( Electro metalic tubing or pipe )
+THHN WORDS 24 words Copper wire. THHN is the name of a kind of insulation. )
+LIFE-SAFETY WORDS  Smoke alarms, exit lights etc.
 The space-bar will START-STOP and the ESC key will break-out from a listing of WORDS in the console.
 </b></pre>
 <script>
@@ -206,7 +210,7 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
         event.preventDefault();
         var s=elftxt.selectionStart;
         var ev=elftxt.value;
-        elftxt.value=ev.substring(0,s)+Array(16).fill('\xa0').join('')+ev.substring(s);
+        elftxt.value=ev.substring(0,s)+Array(16).fill(' ').join('')+ev.substring(s);
         elftxt.selectionEnd=s+16;
       }
       if(event.target != dsp) return;

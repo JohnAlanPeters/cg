@@ -243,7 +243,7 @@ forth
   time-buf >time" ;
 
 : data>fuser ( addr len -- )  \ write datetime, username, or ip address to file
-  s" \cg\webinterpret\users" 2dup r/w open-file
+  s" \cg\webinterpret\users.txt" 2dup r/w open-file
   if drop r/w create-file drop
   else -rot 2drop then
   dup >r file-append drop

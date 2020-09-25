@@ -214,8 +214,8 @@ MACRO -status   " 19 -"         ( n1 -- n2 )
         s"   Total: " StatusBuf place
 
         total-est     StatusBuf +place
-        overstrike @ if   s"  Overstrike mode"
-          else s"  INSERT MODE" then StatusBuf +place
+        overstrike @ if   s"  Overstrike"
+          else s"  INSERT" then StatusBuf +place
         capslock? if s"   CAPS LOCK" StatusBuf +place then
         autoextend if s"   Auto Extend On" else s"   Auto Extend Off" then StatusBuf +place
         err-vocab-show if s"   Vocdump On" else s"   Vocdump Off" then StatusBuf +place
