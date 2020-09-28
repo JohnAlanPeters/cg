@@ -51,7 +51,7 @@ create upath 128 allot
   128 localalloc: fbk   128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  1 +to bkindx bkindx ascii 0 + sp@ 1 fbk +place drop
+  1 +to bkindx bkindx 0 (d.) fbk +place
   fbk count "OPEN 0=  \ check if .bak file exists
   if close-file drop
      fbk count DELETE-FILE drop  \ delete old backup
@@ -64,7 +64,7 @@ create upath 128 allot
   128 localalloc: fbk  128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  bkindx ascii 0 + sp@ 1 fbk +place drop
+  bkindx 0 (d.) fbk +place drop
   fbk count "OPEN 0=  \ check if bakcup file exists
   if close-file drop
      cur-filename count curfn place
@@ -78,7 +78,7 @@ create upath 128 allot
   bkindx 1- 0 max dup to bkindx if _xunbk else revert-text reedit then ;
 
 : xrebk ( -- )
-  bkindx 1+ dup 10 < if to bkindx _xunbk else drop then ;
+  bkindx 1+ dup 100 < if to bkindx _xunbk else drop then ;
 
 : xdelbks { \ fbk -- }
   128 localalloc: fbk
