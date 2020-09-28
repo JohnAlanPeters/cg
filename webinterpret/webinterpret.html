@@ -175,12 +175,12 @@ and setup your own server.
 
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
-<br>Saved filenames.f have to end in dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
+<br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 
  <textarea id='filetxt' rows=18 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 <br>
- The Console is below and the Editor is above.
+ The Console is below and the Editor is above. The help text is below the blue console.
 <br>
  <textarea id='dsp' rows=24 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div>
@@ -238,8 +238,8 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 <pre><b>
 RUNNING with FORTH on the Webby.
 Copy/paste this in to the editor.
-: TEST cr 8 0 do ." Hi World" cr loop ;
-Or copy-paste some of your own code in to the top editor.
+: TEST cr 6 0 do ." Hi World" cr loop ;
+Or copy-paste some of your own code in to the editor.
 Give it a [file name] like YourName.f (Nice to meet you, good to know you are here.)
 SAVE the file (So you can GET it back if you do an oops.)
 LOAD the file (It will compile your words into the dictionaary.)
@@ -253,20 +253,33 @@ Starting Forth has lessons. Use the updated free online version.. Here is the UR
 <pre><b>
 We could use some help with ideas for improvments.
 
-VIEW works fine. You may like the source code for te following words.
+VIEW works fine. You may like the source code for the following words.
 view START-STOP
 view DO-SERVER
 view PATCH
 view VIEW  (Yes you can view view )
 
 Try some Contract Generator words.
-ELECTRIC WORDS
-ELECTRIC VOCS
-BULBS WORDS will give you prices and times..
-FISH-IN-WALLS PR
+CB  \ Short for Ciruit Breaker
+BULBS WORDS will give you prices and times for various light bulbs.
+FISH-IN-WALLS PR  (PR is short for plug receptacle)
+
+eWORDS is short for a command to only show the words in the electrical vocabulary
+If you view it, you will see there is more to it than just entering ELECTRIC WORDS
+If you try that you will find that WORDS is "unknown"
+
+-=GREETINGS=-
+If you are still here please enter your name like this
+VisitorName
+You will get an error -13 but your name will go in to the user log.
+The USER log also shows the results of the commands you use like eWORDS
+
+Glad to meet you. .
+Thanks for entering your name.
+Thanks for visiting
+
+
 </b></pre>
-SW
-LT
 </body>
 </html>
 

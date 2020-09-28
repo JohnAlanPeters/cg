@@ -55,18 +55,19 @@ needs Ed_MouseHighLight.f
 needs Ed_Do-Html-Link.f
 needs Ed_Defaults.f          \ Save & Restore default settings for Win-Ed
 needs Ed_CGKeys.f
-cr .( before ed_keys)
-needs Ed_Keys.f
-cr .( after ed_keys)
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 75    Initialization
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 0 value TimerID
-1500 value time         \ 1 second timeout
-4 CallBack: TimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop 0 to TimerID 0 ;
-: SetTimer ( -- )   &TimerProc time 0 0 Call SetTimer to TimerID ;
+3000 value time         \ 1 second timeout
 : KillTimer ( -- )   TimerID 0 Call KillTimer drop 0 to TimerID ;
+4 CallBack: TimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop xbk killtimer 0 ;
+: SetTimer ( -- )   &TimerProc time 0 0 Call SetTimer to TimerID ;
 : StartTimer ( -- )   time-reset  KillTimer SetTimer ;
+
+cr .( before ed_keys)
+needs Ed_Keys.f
+cr .( after ed_keys)
 
 : cgclick ( -- )
   timerid if killtimer hyper-link

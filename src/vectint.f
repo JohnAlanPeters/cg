@@ -155,7 +155,7 @@ create headerline 64 allot   \ parameter for header line
    catch
    ?dup if sentcr 4 = if drop
         else ."  error " -1 (d.) vbuf wplace
-             crlf$ count vbuf wplace vbuf wcount data>fuser
+            vbuf wcount data>fuser
         then then
    vec 2@ (source) 2!
    -1 conscol ! 0 to in-web? to-con     \ switch to ordinary output

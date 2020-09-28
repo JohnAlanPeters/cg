@@ -336,8 +336,8 @@ defer _Control+W ' close-text is _control+w
             ShowCursor: DocWindow
             EditMode: Win-EdToolbar
             \ SMS-WEW-key-Con-doc-interp-send
-            key
-            call GetFocus topwin <> if PutKey: cmd _xit then
+            key starttimer
+            call GetFocus topwin <> if killtimer PutKey: cmd _xit then
             SetFocus: DocWindow
             HideCursor: DocWindow
             CASE
