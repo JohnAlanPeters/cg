@@ -240,7 +240,6 @@ editor
 : WW            words ;
 : DEL   ( <fname> -- ) /parse delete-file abort" failed to delete file" ;
 
- \ 'esc' to go from console to editor
 : Title-CG   \ puts it on the top of the." console
   Z" Contract Generator 3.03.04" CONHNDL call SetWindowText drop ;
 
@@ -249,20 +248,20 @@ editor
     Title-CG  ( current-dir$ setfdir ) s" c:\cg\" &forthdir place
     -1 to dp-location
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
-    editor overstrike off loadline off cls
+    editor overstrike off loadline off
     elect
     cmdline 0= swap 0= or
-    if file-to-edit$ off  wined
+    if file-to-edit$ off wined VIEW-KEY-LOOP
     else  cmdline drop c@ ascii 0 =
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
-             cmdline 2 -2 d+ evaluate wined
-          else cmdline file-to-edit$ place  wined
+             cmdline 2 -2 d+ evaluate
+          else cmdline file-to-edit$ place  wined  VIEW-KEY-LOOP
           then
     then
-    VIEW-KEY-LOOP ;
+    quit ;
     \  clear-totals focus-console ." ok" cr quit ;
-    \ ['] wined catch 0<> if message then ;
+    \ ['] view-key-loop catch 0<> if message then ;
 
 s" c:\cg\" &forthdir place
 

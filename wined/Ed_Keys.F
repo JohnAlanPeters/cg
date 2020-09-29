@@ -343,8 +343,11 @@ defer _Control+W ' close-text is _control+w
             ShowCursor: DocWindow
             EditMode: Win-EdToolbar
             \ SMS-WEW-key-Con-doc-interp-send
-            key starttimer
-            call GetFocus topwin <> if killtimer PutKey: cmd _xit then
+            begin
+            call GetFocus topwin <> if kkilltimer PutKey: cmd _xit then
+            20 ms key?
+            until
+            key kstarttimer
             SetFocus: DocWindow
             HideCursor: DocWindow
             CASE
@@ -483,7 +486,7 @@ defer _Control+W ' close-text is _control+w
       k_delete  +k_control          OF      word-delete                 ENDOF
       k_BACKSPACE                   OF      do-backspace                ENDOF
       k_BACKSPACE   +k_shift        OF      next-window                 ENDOF
-      k_ESC                         OF      killtimer do-esc            ENDOF
+      k_ESC                         OF      kkilltimer do-esc           ENDOF
       k_LF                          OF      lf-left                     ENDOF
       k_CR                          OF      smart-cr                    ENDOF
       k_CR +k_shift                 OF      xsplit-line                 ENDOF
