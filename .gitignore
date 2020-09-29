@@ -9,6 +9,7 @@ webfiles/
 *xbk*
 .gitattributes
 *.bak
-*/SHELL.BAT
+SHELL.BAT
+src/SHELL.BAT
 src/tt.f
 ttrda
