@@ -30,14 +30,14 @@ variable #out
 : S-O   ( -- )  SO ; \ screen output
 
 :  _emit_  1 #out +!  [ hidden ] c_emit ;
-: _type [ hidden ] c_type ;
+\ : _type [ hidden ] c_type ;
 
 : _RO   ( -- ) ( Regular Output )  \ restore to regular
         keyboard on
-        screen-output off
+        screen-output off   [ hidden ]
         ['] _c_CR    is CR
         ['] _emit_   is emit
-        ['] _type   is type ;
+        ['] c_type   is type ;
 ' _ro is ro
 
 : R-O    ( -- ) RO ;

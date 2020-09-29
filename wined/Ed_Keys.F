@@ -324,6 +324,13 @@ defer _Control+W ' close-text is _control+w
 : edopen ( -- )
   s" \cg\bids\help.txt" "+open-text ;
 
+0 value kTimerID
+3000 value ktime         \ 1 second timeout
+: kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
+4 CallBack: kTimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop kKilltimer xbk 0 ;
+: kSetTimer ( -- )   &kTimerProc ktime 0 0 Call SetTimer to kTimerID ;
+: kStartTimer ( -- )   kKillTimer kSetTimer ;
+
 : F13  ; \ Down to Vscr 69 (line 411) for the function keys
 
 : VIEW-KEY-LOOP ( -- )
