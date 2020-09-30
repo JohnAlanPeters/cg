@@ -61,7 +61,7 @@ needs Ed_CGKeys.f
 0 value TimerID
 1500 value time         \ 1 second timeout
 4 CallBack: TimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop 0 to TimerID  0 ;
-: KillTimer ( -- )   TimerID 0 Call KillTimer drop  ;
+: KillTimer ( -- )   TimerID 0 Call KillTimer drop 0 to TimerID ;
 : SetTimer ( -- )   &TimerProc time 0 0 Call SetTimer to TimerID ;
 : StartTimer ( -- )   time-reset  KillTimer SetTimer ;
 

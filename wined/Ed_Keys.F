@@ -344,7 +344,7 @@ defer _Control+W ' close-text is _control+w
             EditMode: Win-EdToolbar
             \ SMS-WEW-key-Con-doc-interp-send
             begin
-            call GetFocus topwin <> if kkilltimer PutKey: cmd _xit then
+            call GetFocus topwin <> if kkilltimer _xit then
             20 ms key?
             until
             key kstarttimer

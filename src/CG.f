@@ -52,8 +52,10 @@ variable conscol -1 conscol !  \ column for output in current console line
 0 value invkloop  \ so we know when we are editing (in view-key-loop)
 0 0 2value last-total  \ has to be remembered before clearing
 defer total-est   \ so we can put total on status line
-: _xit ro loadline off false to invkloop focus-console
-   cr ." ok" quit ;
+0 value consWin
+: _xit ro loadline off false to invkloop
+   call GetFocus consWin =
+   if focus-console cr ." ok" quit then ;
 
 cd ..
 current-dir$ setfdir
@@ -249,7 +251,7 @@ editor
     -1 to dp-location
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     editor overstrike off loadline off
-    elect
+    elect call GetFocus to consWin
     cmdline 0= swap 0= or
     if file-to-edit$ off wined VIEW-KEY-LOOP
     else  cmdline drop c@ ascii 0 =
