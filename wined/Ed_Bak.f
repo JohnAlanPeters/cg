@@ -58,7 +58,7 @@ create upath 128 allot
   else drop then
   cur-filename count curfn place
   fbk count cur-filename place    \ save file as backup
-  do-save-text curfn count cur-filename place reedit ;
+  do-save-text true to edit-changed? curfn count cur-filename place reedit ;
 
 : _xunbk { \ fbk curfn -- }
   128 localalloc: fbk  128 localalloc: curfn

@@ -486,7 +486,7 @@ defer _Control+W ' close-text is _control+w
       k_delete  +k_control          OF      word-delete                 ENDOF
       k_BACKSPACE                   OF      do-backspace                ENDOF
       k_BACKSPACE   +k_shift        OF      next-window                 ENDOF
-      k_ESC                         OF      kkilltimer do-esc           ENDOF
+      k_ESC                         OF kkilltimer focus-console do-esc  ENDOF
       k_LF                          OF      lf-left                     ENDOF
       k_CR                          OF      smart-cr                    ENDOF
       k_CR +k_shift                 OF      xsplit-line                 ENDOF
