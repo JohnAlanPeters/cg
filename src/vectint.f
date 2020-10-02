@@ -146,6 +146,12 @@ create headerline 64 allot   \ parameter for header line
 : webdir ( -- )
   s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
 
+: webextend { fname cnt \ fn$ -- }
+  MAXSTRING LocalAlloc: fn$
+  2dup s" \cg\webfiles\" fn$ place fname cnt fn$ +place
+  fn$ count [ editor ] "+open-text 1 to cursor-line
+  aa fname cnt sendfile ;  \ TODO: catch error in extend
+
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
    0 vbuf w! 0 to sentcr  \ a 200 KB buffer to save response from interpreting
@@ -164,15 +170,17 @@ create headerline 64 allot   \ parameter for header line
 : chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
   \ check for 'FileGet', 'FilePut' header, or 'view' in body
   2dup s" FileGet: " 13 skipscan      \ ?request for a file
-  if cr ." send file: " 2dup type cr sendfile 2drop 0
+  if cr ." send file: " 2dup type cr sendfile 0
   else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
   if cr ." receive file: " 2dup type cr rcvfile 0
+  else 2drop 2dup s" FileExtend: " 13 skipscan
+  if cr ." extend file: " 2dup type cr webextend 0
   else 2drop 2dup s" view " bl skipscan
   if vv-web 0
   else 2drop s" vv " bl skipscan
   if vv-web 0
   else 2drop -1
-  then then then then scrolltoview ;
+  then then then then then dup 0= if -rot 2drop then scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )
    r/o open-file not

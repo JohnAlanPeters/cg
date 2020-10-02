@@ -46,39 +46,43 @@ create upath 128 allot
   then ;
 
 0 value bkindx
+0 value xcurbk
+: setbkindx { fbase fcnt \ fnm -- }   \ set bkindx to highest # that exists
+  128 localalloc: fnm
+  1 begin  fbase fcnt fnm place dup 0 (d.) fnm +place
+           fnm count "OPEN 0= if close-file drop 1+ 0 else drop 1 then
+    until 1- to bkindx ;
+
 : xbk { \ fbk curfn -- }
   edit-changed? not ?exit
   128 localalloc: fbk   128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  1 +to bkindx bkindx 0 (d.) fbk +place
-  fbk count "OPEN 0=  \ check if .bak file exists
-  if close-file drop
+  fbk count setbkindx bkindx 99 <
+  if 1 +to bkindx bkindx 0 (d.) fbk +place
+   fbk count "OPEN 0=  \ check if .bak file exists
+   if close-file drop
      fbk count DELETE-FILE drop  \ delete old backup
-  else drop then
-  cur-filename count curfn place
-  fbk count cur-filename place    \ save file as backup
-  do-save-text true to edit-changed? curfn count cur-filename place reedit ;
+   else drop then
+   cur-filename count curfn place
+   fbk count cur-filename place    \ save file as backup
+   do-save-text true to edit-changed? curfn count cur-filename place reedit
+  then ;
 
-: _xunbk { \ fbk curfn -- }
+: xunbk { \ fbk curfn -- }
   128 localalloc: fbk  128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  bkindx 0 (d.) fbk +place drop
-  fbk count "OPEN 0=  \ check if bakcup file exists
-  if close-file drop
-     cur-filename count curfn place
-     fbk count cur-filename place
-     cursor-line cursor-col
-     revert-text  curfn count cur-filename place
-     to cursor-col to cursor-line
-  else drop then reedit ;
-
-: xunbk ( -- )
-  bkindx 1- 0 max dup to bkindx if _xunbk else revert-text reedit then ;
+  fbk count setbkindx xcurbk 0= if bkindx else xcurbk 1- then to xcurbk
+  xcurbk dup bkindx 1+ < and
+  if xcurbk 0 (d.) fbk +place
+     cur-filename count delete-file drop
+     fbk count cur-filename count  xcopyfile
+     revert-text
+  else xcurbk 1- bkindx min to xcurbk revert-text then reedit ;
 
 : xrebk ( -- )
-  bkindx 1+ dup 100 < if to bkindx _xunbk else drop then ;
+  2 +to xcurbk xunbk ;
 
 : xdelbks { \ fbk -- }
   128 localalloc: fbk

@@ -264,6 +264,16 @@ forth
 : deletefile ( <file> -- )
   bl word count delete-file if ." failed to delete" then ;
 
+: _xcopyfile { adrold cnt1 adrnew cnt2 \ from$ to$ -- }
+   max-path localAlloc: from$
+   max-path localAlloc: to$
+   adrold cnt1 from$ place
+   adrnew cnt2 to$ place
+   from$ +NULL   to$   +NULL
+   false  to$ 1+ from$ 1+ Call CopyFile 0=
+   abort" The COPY Failed!" ;
+' _xcopyfile is xcopyfile
+
 \ date
 : month-day-year" ( -- addr len )
   get-local-time time-buf
