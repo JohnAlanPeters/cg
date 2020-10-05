@@ -1507,7 +1507,7 @@ Elect
 
 
 \ Gutter                  C 215-001  CS-7           08-13-89 AE
-Vocabulary JUNCTION-BOX  JUNCTION-BOX Definitions               
+Vocabulary JUNCTION-BOX  JUNCTION-BOX Definitions
 : 4x4x12       6.50 w/e 175 c ; \                        1    1 
 : 4x6x12      12.50 w/e 180 c ; \                        1    1 
 : 4x8x12      13.00 w/e 180 c ; \                        1    1 
@@ -1522,6 +1522,10 @@ Vocabulary JUNCTION-BOX  JUNCTION-BOX Definitions
 : 18x18x6     36.00 w/e 275 c ; \ Guess time, guess parts       
 Elect   : Gutter Junction-Box ; \ Need input as to time.        
 \ Note: add for ends and joiners..                              
+
+Vocabulary NEMA-junction NEMA-junction definitions
+: 8x8x4      20.59 w/e 170 c ;
+Elect
 
 
 \ W-M 1/3                 C 225-062  AS-3           06-12-07 AL
@@ -2149,4 +2153,3 @@ Vocabulary M-P
 \              129.00 B&K Apr 97  \ JA220CW Pheonex             
 : 400A-20-42 1300.00 w/e 300 c ; \ ,                            
 Elect \                                                         
-
