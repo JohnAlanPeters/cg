@@ -125,13 +125,13 @@ create headerline 64 allot   \ parameter for header line
    vbuf count search -1 =
    if 4 - swap 4 + swap else 2drop 0 0 then ;
 
-: rcvfile { \ fname -- } ( maddr mcnt faddr fcnt -- )  \ message and filename
+: rcvfile { \ fname -- } ( maddr mcnt faddr fcnt --  maddr mcnt )  \ message and filename
   bl skip -trailing   \ remove leading and trailing spaces in the file name
   MAXSTRING LocalAlloc: fname
   s" \cg\webfiles\" fname place fname +place
   fname count delete-file drop
   fname count w/o create-file 0=
-  if >r 2crlfs r@ write-file
+  if >r 2dup 2crlfs r@ write-file
      if ." failed to write file" else ." file saved" then
      r> close-file drop
   else cr ." failed to create file" drop 2drop then cr
@@ -151,6 +151,18 @@ create headerline 64 allot   \ parameter for header line
   2dup s" \cg\webfiles\" fn$ place fname cnt fn$ +place
   fn$ count [ editor ] "+open-text 1 to cursor-line
   aa fname cnt sendfile ;  \ TODO: catch error in extend
+
+: webcab { \ to$ fnm$ -- } ( fname cnt -- )  \ create a bid from webpage
+  max-path localAlloc: to$
+  max-path localAlloc: fnm$  fnm$ place
+  s" \cg\webfiles\" to$ place fnm$ count to$ +place
+  to$ $open         \ do nothing if it exists
+  if drop s" \cg\bids\template-mini" r/o open-file 0=
+    if dup file-size 2drop swap close-file drop
+       s" \cg\bids\template-mini" to$ count xcopyfile
+       fnm$ count sendfile
+    else drop then
+  else close-file drop then ;
 
 \ interpret input from a string; result in a string
 : vectint ( addr cnt -- addr cnt)  \ vectored interpret
@@ -177,10 +189,12 @@ create headerline 64 allot   \ parameter for header line
   if cr ." extend file: " 2dup type cr webextend 0
   else 2drop 2dup s" view " bl skipscan
   if vv-web 0
-  else 2drop s" vv " bl skipscan
+  else 2drop 2dup s" vv " bl skipscan
   if vv-web 0
-  else 2drop -1
-  then then then then then dup 0= if -rot 2drop then scrolltoview ;
+  else 2drop 2dup s" Webcab: " 13 skipscan
+  if webcab 0
+  else -1
+  then then then then then then -rot 2drop scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )
    r/o open-file not

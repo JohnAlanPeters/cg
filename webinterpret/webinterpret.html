@@ -121,7 +121,27 @@ function handleview(data,hline){
          }
          window.addEventListener("load", WebSocketTest, false);
 
-function getfile(){
+function getfile(typ="FileGet"){
+  var fname=document.getElementById('filename').value;
+  if(!fname){
+    alert('need to enter a file name');
+    return;
+  }
+  hdr= { 'Content-Type': 'text/plain'};
+  hdr[typ]=' '+fname;
+  fetch('',{method: 'post',body:'',headers:hdr}
+  )
+  .then(response =>{
+    return response.text();
+   })
+  .then(function(data) {
+     var filetxt=document.getElementById('filetxt');
+     filetxt.value=data;
+     })
+  .catch(error => console.log('failed to get file: ', error));
+}
+
+function extendfile(){
   var fname=document.getElementById('filename').value;
   if(!fname){
     alert('need to enter a file name');
@@ -129,7 +149,7 @@ function getfile(){
   }
   fetch('',{method: 'post',body:'',headers: {
       'Content-Type': 'text/plain',
-      'FileGet': fname
+      'FileExtend': fname
      }
   })
   .then(response =>{
@@ -172,9 +192,10 @@ Get the source here.
 <a href="https://github.com/JohnAlanPeters/cg">github repository</a>
 and setup your own server.
 <div>
-
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
+ &nbsp;<button onclick="extendfile();">extend file</button>
+ &nbsp;<button onclick="getfile('Webcab');">create bid</button>
 <br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 
