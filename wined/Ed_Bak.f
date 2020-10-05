@@ -73,13 +73,13 @@ create upath 128 allot
   128 localalloc: fbk  128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  fbk count setbkindx xcurbk 0= if bkindx else xcurbk 1- then to xcurbk
+  fbk count setbkindx xcurbk 0= if bkindx else xcurbk 1- 0 max then to xcurbk
   xcurbk dup bkindx 1+ < and
   if xcurbk 0 (d.) fbk +place
      cur-filename count delete-file drop
      fbk count cur-filename count  xcopyfile
      revert-text
-  else xcurbk 1- bkindx min to xcurbk revert-text then reedit ;
+  else xcurbk 1- 0 max bkindx min to xcurbk revert-text then reedit ;
 
 : xrebk ( -- )
   2 +to xcurbk xunbk ;
