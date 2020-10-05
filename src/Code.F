@@ -498,22 +498,13 @@ only forth also editor also electric also definitions
       9 to cursor-line reEdit ;
 
 editor
-create fbuf 5000 allot          \ to hold the template file text
-: cab { \ to$ -- <fname> }  \ create a bid
+: cab { \ to$ -- } ( <fname> -- )  \ create a bid
   s" " onedrivebids "chdir
   max-path localAlloc: to$
   bl word count to$ place  \ path to 1drive bids file
   to$ $open         \ do nothing if it exists
-  if s" \cg\bids\template-mini" r/o open-file 0=
-    if >r fbuf 4096 r@ read-file r> close-file drop 0=
-      if >r to$ count r/w create-file 0=
-         if fbuf r> rot dup>r write-file r> close-file drop
-            if to$ delete-file drop true abort" failed to write file"
-            then
-         else r> drop then
-      else drop then
-    else drop then
-  else drop then
+  if s" \cg\bids\template-mini" to$ count xcopyfile
+  then drop
   to$ count onedrivebids "+open-text 9 to cursor-line bookmark ;
 
 : to-bids ( -- )  \ open -bids in editor
