@@ -69,17 +69,26 @@ create upath 128 allot
    do-save-text true to edit-changed? curfn count cur-filename place reedit
   then ;
 
-: xunbk { \ fbk curfn -- }
+: xunbk { \ fbk curfn  textlen -- }
   128 localalloc: fbk  128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  fbk count setbkindx xcurbk 0= if bkindx else xcurbk 1- 0 max then to xcurbk
+  fbk count setbkindx xcurbk 0= if bkindx
+    else xcurbk 1- bkindx min 0 max then to xcurbk
   xcurbk dup bkindx 1+ < and
   if xcurbk 0 (d.) fbk +place
-     cur-filename count delete-file drop
-     fbk count cur-filename count  xcopyfile
-     revert-text
-  else xcurbk 1- 0 max bkindx min to xcurbk revert-text then reedit ;
+    fbk count r/o open-file 0=
+    if >r                              \ save the file handle
+      text-ptr ?dup IF release THEN
+      r@ file-size 2drop to textlen
+      textlen start-text-size +  to text-blen
+      text-blen malloc to text-ptr
+      text-ptr textlen r@ read-file drop
+      r> close-file drop
+      set-line-pointers
+      set-longest-line refresh-screen reedit
+    else drop then
+  else xcurbk 1- 0 max bkindx min to xcurbk revert-text then ;
 
 : xrebk ( -- )
   2 +to xcurbk xunbk ;
