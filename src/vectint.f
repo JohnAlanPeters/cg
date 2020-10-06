@@ -150,7 +150,7 @@ create headerline 64 allot   \ parameter for header line
   MAXSTRING LocalAlloc: fn$
   2dup s" \cg\webfiles\" fn$ place fname cnt fn$ +place
   fn$ count [ editor ] "+open-text 1 to cursor-line
-  aa fname cnt sendfile ;  \ TODO: catch error in extend
+  aa save-text fname cnt sendfile ;  \ TODO: catch error in extend
 
 : webcab { \ to$ fnm$ -- } ( fname cnt -- )  \ create a bid from webpage
   max-path localAlloc: to$
