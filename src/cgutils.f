@@ -354,3 +354,12 @@ hidden also
    cr
    else bye then ;
 
+font NewFont
+
+: >fontht ( n -- )   \ change console font height
+  900 Weight: NewFont
+  s" Courier" SetFaceName: NewFont
+   height: NewFont
+  NewFont SetFont: cmd
+ ;
+
