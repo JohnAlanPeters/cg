@@ -53,20 +53,18 @@ create upath 128 allot
            fnm count "OPEN 0= if close-file drop 1+ 0 else drop 1 then
     until 1- to bkindx ;
 
-: xbk { \ fbk curfn -- }
+: xbk { \ fbk -- }
   edit-changed? not ?exit
-  128 localalloc: fbk   128 localalloc: curfn
+  128 localalloc: fbk
   cur-filename count fbk place
   s" .xbk" fbk +place
-  fbk count setbkindx bkindx 99 <
+  fbk count setbkindx bkindx 10 <
   if 1 +to bkindx bkindx 0 (d.) fbk +place
    fbk count "OPEN 0=  \ check if .bak file exists
    if close-file drop
      fbk count DELETE-FILE drop  \ delete old backup
-   else drop then
-   cur-filename count curfn place
-   fbk count cur-filename place    \ save file as backup
-   do-save-text true to edit-changed? curfn count cur-filename place reedit
+   else drop then save-text
+   cur-filename count fbk count xcopyfile
   then ;
 
 : xunbk { \ fbk curfn  textlen -- }
