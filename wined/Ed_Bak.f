@@ -47,10 +47,27 @@ create upath 128 allot
 
 0 value bkindx
 0 value xcurbk
-: setbkindx { fbase fcnt \ fnm -- }   \ set bkindx to highest # that exists
-  128 localalloc: fnm
-  1 begin  fbase fcnt fnm place dup 0 (d.) fnm +place
-           fnm count "OPEN 0= if close-file drop 1+ 0 else drop 1 then
+0 0 2value bktime
+: file-mod-time ( adr len -- dwmodtime )
+  "open 0=
+   if >r
+     file-time-buf 2 cells erase     \ pre-clear buffer
+     file-time-buf                   \ address of where to put the file's
+                                     \ last written time and date
+     0                               \ last access time not needed
+     0                               \ creation time not needed
+     r@ call GetFileTime drop r> close-file drop
+     file-time-buf 2@ swap
+   else drop 0 0
+   then ;
+
+: setbkindx { fbase fcnt \ fnm  -- }   \ set bkindx to highest # that exists
+  128 localalloc: fnm   1 0 to bktime
+  1 begin fbase fcnt fnm place dup 0 (d.) fnm +place
+      fnm count file-mod-time ?dup
+      if 2dup bktime d>
+        if to bktime 1+ 0 else 2drop 1 then
+      else 0= then
     until 1- to bkindx ;
 
 : xbk { \ fbk -- }
@@ -58,25 +75,23 @@ create upath 128 allot
   128 localalloc: fbk
   cur-filename count fbk place
   s" .xbk" fbk +place
-  fbk count setbkindx bkindx 10 <
-  if 1 +to bkindx bkindx 0 (d.) fbk +place
-   fbk count "OPEN 0=  \ check if .bak file exists
-   if close-file drop
+  fbk count setbkindx bkindx 9 > if 0 to bkindx then
+  1 +to bkindx bkindx 0 (d.) fbk +place
+  fbk count "OPEN 0=  \ check if .bak file exists
+  if close-file drop
      fbk count DELETE-FILE drop  \ delete old backup
-   else drop then save-text
-   cur-filename count fbk count xcopyfile
-  then ;
+  else drop then save-text
+  cur-filename count fbk count xcopyfile bkindx to xcurbk ;
 
 : xunbk { \ fbk curfn  textlen -- }
   128 localalloc: fbk  128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
-  fbk count setbkindx xcurbk 0= if bkindx
-    else xcurbk 1- bkindx min 0 max then to xcurbk
-  xcurbk dup bkindx 1+ < and
-  if xcurbk 0 (d.) fbk +place
-    fbk count r/o open-file 0=
-    if >r                              \ save the file handle
+  fbk count setbkindx xcurbk ?dup 0= if bkindx then
+  1- ?dup 0= if 10 else dup 10 > if drop 1 then then dup to xcurbk
+  0 (d.) fbk +place
+  fbk count r/o open-file 0=
+  if >r                              \ save the file handle
       text-ptr ?dup IF release THEN
       r@ file-size 2drop to textlen
       textlen start-text-size +  to text-blen
@@ -85,8 +100,7 @@ create upath 128 allot
       r> close-file drop
       set-line-pointers
       set-longest-line refresh-screen reedit
-    else drop then
-  else xcurbk 1- 0 max bkindx min to xcurbk revert-text then ;
+   else drop then ;
 
 : xrebk ( -- )
   2 +to xcurbk xunbk ;
