@@ -70,9 +70,9 @@ create upath 128 allot
       else 0= then
     until 1- to bkindx ;
 
-: xbk { \ fbk -- }
+: xbk { \ fbk curfn -- }
   edit-changed? not ?exit
-  128 localalloc: fbk
+  128 localalloc: fbk   128 localalloc: curfn
   cur-filename count fbk place
   s" .xbk" fbk +place
   fbk count setbkindx bkindx 9 > if 0 to bkindx then
