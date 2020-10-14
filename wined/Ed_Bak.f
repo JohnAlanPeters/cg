@@ -88,10 +88,11 @@ create upath 128 allot
   cur-filename count fbk place
   s" .xbk" fbk +place
   fbk count setbkindx xcurbk ?dup 0= if bkindx then
-  1- ?dup 0= if 10 else dup 10 > if drop 1 then then dup to xcurbk
-  0 (d.) fbk +place
-  fbk count r/o open-file 0=
-  if >r                              \ save the file handle
+  1- dup bkindx <> over bkindx 1+ <> and
+  if ?dup 0= if 10 else dup 10 > if drop 1 then then dup to xcurbk
+    0 (d.) fbk +place
+    fbk count r/o open-file 0=
+    if >r                              \ save the file handle
       text-ptr ?dup IF release THEN
       r@ file-size 2drop to textlen
       textlen start-text-size +  to text-blen
@@ -100,7 +101,8 @@ create upath 128 allot
       r> close-file drop
       set-line-pointers
       set-longest-line refresh-screen reedit
-   else drop then ;
+    else drop then
+  else drop then ;
 
 : xrebk ( -- )
   2 +to xcurbk xunbk ;
