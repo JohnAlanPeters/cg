@@ -355,11 +355,13 @@ hidden also
    else bye then ;
 
 font NewFont
-
-: >fontht ( n -- )   \ change console font height
-  700 Weight: NewFont
+: >fontht ( w h -- )   \ change console font height
+    100 Weight: NewFont
   s" Courier" SetFaceName: NewFont
-   height: NewFont
-  NewFont SetFont: cmd
- ;
+   dup height: NewFont to char-height
+   dup width: NewFont to char-width
+  NewFont SetFont: cmd ;
+
+8 14 >fontht
+
 
