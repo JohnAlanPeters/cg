@@ -8,7 +8,7 @@ TV TeamViewer<br>
 
 The full W32 system is running on a Windows 10 Surface computer.  It includes the Forth source for estimating electrical jobs. A full system (database?) of parts with prices as well and times from the Manual of Labor units that came from NECA (National Electrical Contractors Association). I am hoping to see it put to use.  I will help for fun. It normally uses the WinEd editor to output to a file suitable for showing to the client.  This application is a whole other story and how to use it will come later
 
-Currently, we are live at http://25.5.40.11:8888/interpret 
+Currently, we are live at http://24.5.42.64:4444
 
 Support will be provided by me. Please text me at 415-239-5393 John Alan Peters
 My Email is not checked very often so if you email me please text that "You have mail!"
