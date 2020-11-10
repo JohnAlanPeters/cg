@@ -1,16 +1,9 @@
 # cg
-This system will bring Forth into the age of the cloud. Historically, Forth was typed in from a paper listing. Later Forth83 was DOS based. Forth migrated to Windows on XP and then via Win32Forth on to Windows W7, W8 & W10 via thanks to Tom Zimmer. Now I am asking you the reader to help improve Forth on the Cloud. Soon you will be able to use Forth without the hassle of downloading it (Anti Virus protection problems) etc, or the fear of downloading an unknown .EXE file and so on.
+This software serves Forth to you via cloud and a browser to your 
+It is live at http://24.5.42.64:4444
+The full W32 system is hosted on a Windows 10 Surface model 0 computer.  
 
-SHORT HAND
-W32 is short for Win32Forth<br>
-CG is short for Contract Generator. <br> 
-TV TeamViewer<br>
-
-The full W32 system is running on a Windows 10 Surface computer.  It includes the Forth source for estimating electrical jobs. A full system (database?) of parts with prices as well and times from the Manual of Labor units that came from NECA (National Electrical Contractors Association). I am hoping to see it put to use.  I will help for fun. It normally uses the WinEd editor to output to a file suitable for showing to the client.  This application is a whole other story and how to use it will come later
-
-Currently, we are live at http://25.5.40.11:8888/interpret 
-
-Support will be provided by me. Please text me at 415-239-5393 John Alan Peters
+Support is provided by text at 415-239-5393 John Alan Peters
 My Email is not checked very often so if you email me please text that "You have mail!"
 japeters@pacbell.net
 
@@ -41,6 +34,15 @@ Colon definitions work most of the time but are lost on a reboot.
 SEE of a short definition is fine.  If there is a problem, the system say "Error 13"
 We are using CATCH for the errors.
 
+
+It includes the Forth source for estimating electrical jobs. A full system (database?) of parts with prices as well and times from the Manual of Labor units that came from NECA (National Electrical Contractors Association). I am hoping to see it put to use.  I will help for fun. It normally uses the WinEd editor to output to a file suitable for showing to the client.  This application is a whole other story and how to use it will come later
+
+
+Short for Contract Generator. <br> 
+TV is TeamViewer<br>SHORT HAND
+W32 is short for Win32Forth<br>
+CG is short for Contract Generator. <br> 
+TV is TeamViewer<br>
 You can try ELECTRIC WORDS but it probably will fail (too many words)
 ROOT WORDS works as there are only three VOCABULARIES However if you execute ROOT WORDS from a regular disk based W32 
 you will see that there are some ------- lines that are EMITed incorrectly.  I don't know if the solution is in Forth or Python.
@@ -72,6 +74,8 @@ data is sent from the webpage to the python webserver and from there to forth wh
  or
  2 CB
  You should see the time and the costs to install a CB or circuit breaker.
+ 
+P.S. Historically, Forth was typed in from a paper listing. Later Forth83 was DOS based. Forth migrated to Windows on XP and then via Win32Forth on to Windows W7, W8 & W10 via thanks to Tom Zimmer. Now I am asking you the reader to help improve Forth on the Cloud. Soon you will be able to use Forth without the hassle of downloading it (Anti Virus protection problems) etc, or the fear of downloading an unknown .EXE file and so on.
  
  John Alan Peters
  415-539-5393 Please text (I don't answer the phone)
