@@ -193,7 +193,7 @@ create headerline 64 allot   \ parameter for header line
   if vv-web 0
   else 2drop 2dup s" Webcab: " 13 skipscan
   if webcab 0
-  else -1
+  else 2drop -1
   then then then then then then -rot 2drop scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )
