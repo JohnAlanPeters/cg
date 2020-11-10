@@ -6,6 +6,8 @@ The full W32 system is hosted on a W10 Surface computer.
 Support is provided by text at 415-239-5393 John Alan Peters
 My Email is not checked very often so if you email me please text that "You have mail!"
 japeters747@gmail.com
+Or any of the Forth Facebook groups including Forth2020 (Private - don't  know why) and Win32Forth
+https://www.facebook.com/groups/714452415259600 which is public.
 
 The whole Win32Forth dictionary is available via a console window in your browser when you log on to the above URL.
 Try something simple like SE SEE  SE is a short version of SEE that shows the stack comments and more. ( -- text )
