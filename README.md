@@ -1,7 +1,7 @@
 # cg
 This software serves Forth to you via cloud and a browser to your 
 It is live at http://24.5.42.64:4444
-The full W32 system is hosted on a Windows 10 Surface model 0 computer.  
+The full W32 system is hosted on an old Windows 10 Surface computer.  
 
 Support is provided by text at 415-239-5393 John Alan Peters
 My Email is not checked very often so if you email me please text that "You have mail!"
