@@ -1,13 +1,12 @@
 # cg
-This software serves Forth to you via cloud and a browser to your browser.
-It is live at http://24.5.42.64:4444
-The full W32 system is hosted on a W10 Surface computer.  
+This GitHub repository has the Forth source code that serves up a live version of Win32orth to your browser via the cloud.
+It is live at http://24.5.42.64:4444  It is a full W32 system that is hosted on a W-10 Surface notebook computer.  
 
 Support is provided by text at 415-239-5393 John Alan Peters
-My Email is not checked very often so if you email me please text that "You have mail!"
-japeters747@gmail.com
-Or any of the Forth Facebook groups including Forth2020 (Private - don't  know why) and Win32Forth
+My Email is not checked very often so if you email me please text that "You have mail!" japeters747@gmail.com
+It is better to use one of the Forth Facebook groups like Win32Forth
 https://www.facebook.com/groups/714452415259600 which is public.
+You are invided to join Forth2020 but it is private to keep spammers and trolls out.
 
 The whole Win32Forth dictionary is available via a console window in your browser when you log on to the above URL.
 Try something simple like SE SEE  SE is a short version of SEE that shows the stack comments and more. ( -- text )
