@@ -4,11 +4,11 @@ It is live at http://24.5.42.64:4444  It is a full W32 system that is hosted on 
 
 Support is provided by text at 415-239-5393 John Alan Peters
 My Email is not checked very often so if you email me please text that "You have mail!" japeters747@gmail.com
-It is better to use one of the Forth Facebook groups like Win32Forth
+It is better to use one of the Forth Facebook groups like Win32Forth which is at this URL.
 https://www.facebook.com/groups/714452415259600 which is public.
-You are invided to join Forth2020 but it is private to keep spammers and trolls out.
+You are invided to join Forth2020 but it is a private Fasebook group pevent problems.
 
-The whole Win32Forth dictionary is available via a console window in your browser when you log on to the above URL.
+The whole Win32Forth dictionary is available in a console window in your browser when you log on to the above URL.
 Try something simple like SE SEE  SE is a short version of SEE that shows the stack comments and more. ( -- text )
 
 TYPE has been vectored to VTYPE to send the output to the web page. It is in a loop in Win32Forth named VECTINT
