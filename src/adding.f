@@ -136,7 +136,6 @@ editor also
 ' _total-est is total-est
 
 : AA     ( -- ) \ Extend all paragraphs and grand total the estimate
-  in-web? if alltotal exit then
   noext? 0= ?exit  \ only extend if not .f file
   3-column
   cursor-line dup
