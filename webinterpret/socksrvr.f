@@ -11,7 +11,7 @@ create ssrvr             \ create a word in the dictionary named socket-server
 
 0 value ssock            \ create a value for the server-socket
 0 value srvrsock         \ set the server-socket to zero
-2048 value szbuf         \ set the size-buffer to 2048 or 2KB
+8192 value szbuf         \ set the size-buffer to 2048 or 2KB
 create rbuf szbuf allot  \ allocate the r-buffer to 2KB
 create lastwebuser 64 allot
 
