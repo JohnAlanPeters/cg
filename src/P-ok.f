@@ -15,7 +15,7 @@ comment;
 only Forth also definitions  \ maybe this will work
 
 Vocabulary ELECTRIC  \ A vocabulary for the electrical parts
-           ELECTRIC definitions
+   ELECTRIC \ definitions
 \ Forth
 : ELECT
    Only Forth Also Electric Also definitions  ;
@@ -23,7 +23,7 @@ Vocabulary ELECTRIC  \ A vocabulary for the electrical parts
 : ELE ELECT ;  \ Switches to the electric vocabulary along with forth
 : ELECTRIC-ORDER            Elect ;
 : DEFS       also definitions ;
-elect
+\ elect
 cr  .(     PARTS PRICES LOOKUP SYSTEM)
 cr
 cr .( Copyright by John A. Peters 1985 6 7 8 9 90 91 92 1993)

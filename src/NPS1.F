@@ -1,4 +1,5 @@
 \ GRS --------R-I-G-I-D-- C 001-001  AR-5           03-10-06 AL
+elect
 Vocabulary GRS  \ Galvanized ridged Steel
 GRS Definitions                  \                              
 : 1/2        127.40 w/c    4 c ; \ not 69.32       40   10   10
@@ -2152,4 +2153,4 @@ Vocabulary M-P
 : 200A-30-40*  275.00 w/e 100 c ; \ Guess
 \              129.00 B&K Apr 97  \ JA220CW Pheonex             
 : 400A-20-42 1300.00 w/e 300 c ; \ ,                            
-Elect \                                                         
+Elect forth definitions

@@ -28,6 +28,7 @@ COMMENT;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 2     THE VARIABLES =====
+forth definitions
 
 2variable QUAN              \ Also in MARKUP.BLK 10 as needed early ?
 2variable NPS-W/S           \ Whole sale cost of material not used
@@ -373,7 +374,8 @@ Vocabulary Dollars
 : T&M50  ( n -- )   \ divide an amount 50% materials, 50% labor
   50 _t&m ;
 
-only forth also editor also electric also definitions
+only forth also editor also electric
+forth definitions
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \      UNITS AND QUANTITIES ===========
 

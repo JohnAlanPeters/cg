@@ -13,6 +13,7 @@ Fred says
 John says
   Stay with the crew unless Pete is there else a low PPM.
 )))
+elect
 Vocabulary Fish-MC-walls
            Fish-MC-walls definitions
 : PL               350.00 w/c 325 c ;
@@ -187,7 +188,8 @@ Fish-in-walls Definitions
 : Recessed-110V 36.00 w/e 190 c ;
 : Recessed-12V  60.00 w/e 190 c ;
 : Recessed-flo  55.00 w/e 190 c ;
-Elect
+elect
+forth definitions
 
 \ Now includes labor and materials
 \ Romex too?

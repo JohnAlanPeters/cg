@@ -1,5 +1,6 @@
 \ G-M Group Metering        475-180                 12-12-90 AE
-Vocabulary G-M                            \ Used Sold Keep Have 
+elect
+Vocabulary G-M                            \ Used Sold Keep Have
                          G-M definitions \ hrs                  
 \ 2-gang                 2 E ; \ 200a buss  4                   
 : 3-gang    344.00 w/e   3 E ; \ 300a buss  5 687.00 /2         
@@ -2565,4 +2566,4 @@ Vocabulary Warrantee
 : 25-year     3 hours [ hours ] electrician ;                   
 : 15-Year     2 hours [ hours ] electrician ;                   
 : 10-year     1 hours [ hours ] electrician ;                   
-Elect
+elect forth definitions
