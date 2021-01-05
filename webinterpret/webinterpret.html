@@ -109,7 +109,7 @@ function handleview(data,hline){
                };
 				
                //ws.onclose = function() {                   
-               //   alert("Connection is closed..."); 
+               //   alert("Connection is closed...");
                //};
             } else {              
                alert("WebSocket NOT supported by your Browser!");
@@ -156,9 +156,16 @@ function extendfile(){
     return response.text();
    })
   .then(function(data) {
-     var filetxt=document.getElementById('filetxt');
-     filetxt.value=data;
-     })
+     if(data.substring(0,5)=='error'){
+      dsp.value+=data+'\n';
+      lastlen=dsp.value.length;
+      dsp.scrollTop=dsp.scrollHeight;
+     }
+     else{
+      var filetxt=document.getElementById('filetxt');
+      filetxt.value=data;
+     }
+   })
   .catch(error => console.log('failed to get file: ', error));
 }
 
@@ -187,23 +194,23 @@ function webload(){
 </script>
 <body>
 Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
-A timer will restart Webby on the hour.<br>
-Get the source here.
+A timer restarts Webby on the hour.<br>
+Complete source is here.
 <a href="https://github.com/JohnAlanPeters/cg">github repository</a>
-and setup your own server.
+You can setup your own server.
 <div>
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
- &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
  &nbsp;<button onclick="extendfile();">extend file</button>
+ &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
  &nbsp;<button onclick="getfile('Webcab');">create bid</button>
 <br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 
- <textarea id='filetxt' rows=18 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
+ <textarea id='filetxt' rows=36 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 <br>
- The Console is below and the Editor is above. The help text is below the blue console.
+ The blue Console is below and the white Editor is above. The help text is below the blue console.
 <br>
- <textarea id='dsp' rows=24 cols=88 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
+ <textarea id='dsp' rows=36 cols=93 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div>
 
 <pre><b>

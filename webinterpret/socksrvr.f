@@ -53,6 +53,7 @@ create lastwebuser 64 allot
    dup 100 > if drop -2 cr ." timeout" cr  exit then \ time to reset the system
    ssock ToRead abort" can't get # to read" ?dup
   until nip  \ loop until something to read
+  dup szbuf > abort" read buffer not large enough"
   rbuf swap ssock ReadSocket abort" can't read socket"
   rbuf swap ;
 
