@@ -144,7 +144,7 @@ editor also
      if ext-err if reset-stacks loadline @ to cursor-line
         get-cursor-line cur-buf lcount 2dup upper 2dup errword count 2dup upper search
         if drop nip swap -  to cursor-col else 2drop then
-        reedit exit
+        webextend? if webext-error else reedit then exit
         else to cursor-col to cursor-line to line-cur then ( refresh-screen )
      else 2drop drop then
   then  EX-TOTAL to last-total

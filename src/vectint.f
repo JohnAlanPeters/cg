@@ -141,7 +141,7 @@ create headerline 64 allot   \ parameter for header line
   bl word count bl skip -trailing
   MAXSTRING LocalAlloc: fname
   s" \cg\webfiles\" fname place fname +place
-  fname $fload ;
+   true to webload? cr fname $fload  false to webload? ;
 
 : webdir ( -- )
   s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
@@ -150,7 +150,12 @@ create headerline 64 allot   \ parameter for header line
   MAXSTRING LocalAlloc: fn$
   2dup s" \cg\webfiles\" fn$ place fname cnt fn$ +place
   fn$ count [ editor ] "+open-text 1 to cursor-line
-  aa save-text fname cnt sendfile ;  \ TODO: catch error in extend
+  true to webextend? aa save-text fname cnt sendfile false to webextend? ;
+
+: _webext-error  { \ $err -- }  \ catch error in web extend
+   MAXSTRING LocalAlloc: $err s" error: " $err place
+   errword count $err +place $err count dup 0 sendheaders b2sock ;
+' _webext-error is webext-error
 
 : webcab { \ to$ fnm$ -- } ( fname cnt -- )  \ create a bid from webpage
   max-path localAlloc: to$

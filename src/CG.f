@@ -46,7 +46,10 @@ defer xcopyfile
 
 : capslock? ( -- f )  20 call GetKeyState 1 and ;   \ true->caps lock is on
 
-0 value in-web? \ Are we in web?  0 = No
+0 value in-web? \ Are we interpreting in a webpage request?
+0 value webload?  \ in an file load request from the webpage?
+0 value webextend? \ in an extend request from webpage?
+defer webext-error
 variable conscol -1 conscol !  \ column for output in current console line
 
 0 value  topwin

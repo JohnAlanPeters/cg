@@ -420,6 +420,13 @@ forth definitions
   then
   72 >ccol sell-total  2@ bucks ;
 
+: total-webload  ( -- ) \ display sub-totals on webpage load
+  cons-1col not
+  if 40 >ccol parts-total 2@ bucks
+     50 >ccol time-total  2@ bucks ."  hr"
+     61 >ccol labor-total 2@ bucks
+  then
+  72 >ccol sell-total  2@ bucks ;
 
 : Total-CON ( -- ) \ display sub-totals in console
   cons-1col not
@@ -448,7 +455,7 @@ forth definitions
 
 : TOTAL  ( -- )
   in-web?
-  if  headline-WEB  cr total-WEB
+  if  headline-WEB  cr webload? if total-webload else total-WEB then
   else headline-CON cr total-CON
   then  clear-totals cr ;
 
@@ -557,6 +564,12 @@ editor
      if cell+ dup c@ 3 pick =
      if over swap c!  put-cursor-line 0 then then drop
   loop 2drop file-has-changed save-text r> to cursor-line refresh-screen ;
+
+: _cd ( adr len -- )  "chdir cr .dir ;
+: cd-bids s" \cg\bids"      _cd ;
+: cd-mods s" \cg\modules"   _cd ;
+: cd-demo s" \cg\demo"      _cd ;
+: cd-web  s" \cg\webfiles"  _cd ;
 
 \s
 
