@@ -475,6 +475,7 @@ forth definitions
   total clear-grand-total ;
 
 : HEADLINE cr headline-con ;
+: HEAD-LINE headline ;
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank

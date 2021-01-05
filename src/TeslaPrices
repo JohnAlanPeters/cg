@@ -1,0 +1,15 @@
+   CLS cr cr
+Neat-EMT  
+.( 50A charger outlet from existing panel with free spaces and enough power ) 
+cr cr           
+.( 50a 220v Breaker ) 1 C-B 50A 
+.( Pipe & #6 COPPER ) 10 LF-EMT 50A
+.( J-BOX )            1 4S BOX                
+.( NEMA R-50 )        1 Device-220 50A-4W                
+.( Industrial cover ) 1 4S-ind 2-1/8           
+total
+                                
+cr
+.( Go to job site. )  1 setup job-small
+.( Inspection )       0.50 setup job-small         
+ Grand-Total
