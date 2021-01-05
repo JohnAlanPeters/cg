@@ -181,9 +181,9 @@ create headerline 64 allot   \ parameter for header line
 
 : chkheader ( addr len -- flag )   \ 0= handled, 1=continue processing
   \ check for 'FileGet', 'FilePut' header, or 'view' in body
-  2dup s" FileGet: " 13 skipscan      \ ?request for a file
+  2dup s" FileGet: " 13 skipscan      \ request for a file
   if cr ." send file: " 2dup type cr sendfile 0
-  else 2drop 2dup s" FilePut: " 13 skipscan   \ ?receive file
+  else 2drop 2dup s" FilePut: " 13 skipscan   \ receive file
   if cr ." receive file: " 2dup type cr rcvfile 0
   else 2drop 2dup s" FileExtend: " 13 skipscan
   if cr ." extend file: " 2dup type cr webextend 0
@@ -193,7 +193,7 @@ create headerline 64 allot   \ parameter for header line
   if vv-web 0
   else 2drop 2dup s" Webcab: " 13 skipscan
   if webcab 0
-  else -1
+  else 2drop -1
   then then then then then then -rot 2drop scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )

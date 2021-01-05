@@ -1,5 +1,6 @@
 \ PRICES for Electro Metalic Tubeing on a wod surface.
 
+elect
 Vocabulary LF-EMT
                    LF-EMT definitions
 : 380A             1564.71 w/c 26 c ; \ 500mcm
@@ -146,10 +147,10 @@ Vocabulary LF-GRS
 :  20A              49.09 w/c  65 m ; \ 12/3 1/2
 :  20A-st           41.61 w/c  25 m ; \ 12/2 1/2
 :  15A              42.25 w/c  60 m ;
-Elect
+
 
 \ See also  \ele\modules\grs.mod
-
+elect forth definitions
 
 
 

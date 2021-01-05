@@ -28,6 +28,7 @@ COMMENT;
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 2     THE VARIABLES =====
+forth definitions
 
 2variable QUAN              \ Also in MARKUP.BLK 10 as needed early ?
 2variable NPS-W/S           \ Whole sale cost of material not used
@@ -82,6 +83,10 @@ Defer UNIT  ( this is ok )   \ Example: Wire is per 1000 ft
 2variable TIME-EXT    \ The time to install ordered quanity
 2variable LABOR-EXT   \ The labor to install the quality
 2variable SELL-EXT    \ The extended labor + materials
+2variable gparts-total
+2variable gtime-total
+2variable glabor-total
+2variable gsell-total
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 3     THE CONSTANTS ======
@@ -273,6 +278,8 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
   -1 to dp-location   \ so display items from console works
   clear-sub  wholesale-total 2off
   other-total 2off  permit-total 2off  allowance-total 2off
+  parts-total 2@ gparts-total 2+! labor-total 2@ glabor-total 2+!
+  time-total 2@ gtime-total 2+! sell-total 2@ gsell-total 2+!
   parts-total 2off  labor-total  2off
   time-total  2off  sell-total   2off  ;
 
@@ -367,7 +374,8 @@ Vocabulary Dollars
 : T&M50  ( n -- )   \ divide an amount 50% materials, 50% labor
   50 _t&m ;
 
-only forth also editor also electric also definitions
+only forth also editor also electric
+forth definitions
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \      UNITS AND QUANTITIES ===========
 
@@ -447,6 +455,17 @@ only forth also editor also electric also definitions
 : TOT total ; \ another attemampt as a shortcut
 
 : TT reset-stacks  total ; \ shortcut. The spell checker changed TT into "To"
+
+: clear-grand-total ( -- )
+  gparts-total 2off gtime-total 2off
+  glabor-total 2off gsell-total 2off ;
+
+: alltotal ( -- )  \ grand-total for web
+  gparts-total 2@ parts-total 2+!
+  gtime-total 2@ time-total 2+!
+  glabor-total 2@ labor-total 2+!
+  gsell-total 2@ sell-total 2+!
+  total clear-grand-total ;
 
 : HEADLINE cr headline-con ;
 : HEAD-LINE headline ;

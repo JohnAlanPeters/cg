@@ -8,6 +8,7 @@ for emit-at-column.
 This code was created fresh for the WinCG version.
 ))
 
+forth definitions
     editor
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \ 03    Extend the prices  It's vector is resolved in CG.G

@@ -6,34 +6,20 @@
                                                                 
                                                                 
                                                                 
-                                                                
-                                                                
-(                      July 24, 2008  )                         
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
 
-
+                                                                
+(                      July 24, 2008  )
 ( loader                                           08-02-08 AL)
 : AMPIERS ;                                                     
-CR (  Ampere-Modules is loading )                               
-2 eof thru  \ lst's try this.                                   
-                                                                
-                                                                
-                                                                
-                                                                
+CR (  Ampere-Modules is loading )
+
                                                                 
 \ Below was for use with converson to the WinCG system but it   
-\ messed up the blue sysem by not loading the screns            
+\ messed up the blue system by not loading the screns
 \ Electric Definitions    \ keep the \                          
-\ 2 CAPACITY 1- Thru      \ trial \ for CG                      
-                                                                
-                                                                
-                                                                
 
 
+elect
 \ RISER                                             09-28-08 AL
 Vocabulary RISER RISER Definitions                              
 : 70A       ( Repull #4 )          60.00 w/e 341 c ;            
@@ -239,7 +225,8 @@ Vocabulary RISER \ AKA a telescope pipe and wire up to PG&E
 \ 280A-3P   ( 300MCM 3-in )       511.35 w/e  765 c ;
 : 400A                           1228.00 w/e  826 c ;
 : 200A-3P   ( 3/0 in 2-in )       706.68 w/e  592 c ;
-ELECTRIC DEFINITIONS                                            
+ELECTRIC
+forth definitions
                                                                 
                                                                 
 
