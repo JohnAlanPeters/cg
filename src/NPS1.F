@@ -1242,6 +1242,7 @@ Vocabulary 4S
 : BOX         68.04 w/c  30 c ; \ .79 2-26 on line 62.00 Mar 09
 : Deep       257.00 w/c  30 c ; \ 2.5643 4-25-09
 : VB          80.00 w/c  30 c ; \ 4SVB-1/2
+: VB-Deep    498.00 w/c  30 c ; \ 12-20-2020 at Lows
 : Spl        175.00 w/c  30 c ; \ 4S-SPL
 : BL          67.00 w/c  16 c ; \ 0.35 Aug 08
 : EXT        240.00 w/c  20 c ; \ 2.39 Aug 08
@@ -1716,6 +1717,7 @@ Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
 : 15A          20A            ; \
 : 20-20A       8.31 w/e  30 c ; \  8.31 Aug 00 was 8.10
 : 15-15A       20-20A         ;
+: 15-20A       20-20A         ;
 : 15A-2P       10.00 w/e 30 c ; \  6.00  Jan 97  B&K
 : 20A-2P       15A-2P         ; \    88
 : 2P-20A       20A-2P         ;

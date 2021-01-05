@@ -449,6 +449,7 @@ only forth also editor also electric also definitions
 : TT reset-stacks  total ; \ shortcut. The spell checker changed TT into "To"
 
 : HEADLINE cr headline-con ;
+: HEAD-LINE headline ;
 
 : TOTAL-VSCR   ( Print totals at bottom of each section )
      [  editor   ] get-cursor-line buf-blank
