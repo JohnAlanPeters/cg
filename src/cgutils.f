@@ -364,4 +364,54 @@ font NewFont
 
 8 16 >fontht
 
+: .xfile-size-name  ( adr len - )
+        35 ?cr      .dir->file-size
+        dup>r type  30 r> - 0max spaces
+        start/stop ;
+
+
+: xprint-dir-files ( adr slen -- ) \ W32F      Files Extra
+        cr ." Directory of: " 2dup type cr
+        0 total-file-bytes !                         \ reset total-file-bytes
+        0 #files !                                   \ reset # of files in dir
+        ['] .xfile-size-name ['] ForAllFileNames catch
+                IF      3drop                        \ discard abort results
+                THEN
+        cr #files @ . ." Files displayed, using "
+        total-file-bytes @ 1 u,.r ."  bytes of disk." ;
+
+: dir ( <path> -- )
+   /parse-word dup c@ 0=                 \ if not spec given, use *.*
+   IF   current-dir$ count pocket place
+   THEN dup count + 1- c@ [char] : =     \ if just a drive, add \
+   IF   s" \"   pocket +place
+   THEN dup count + 1- c@ dup [char] \ = \ if it ends in a \,
+        swap [char] / = or               \ or a /, add *.*
+   IF   s" *.*" pocket +place
+   ELSE s" \*.*" pocket +place
+   THEN count xprint-dir-files ;
+
+: _voc? ( adr --  )         \ display vocabulary for a word
+   context @ >r
+   voc-link
+   begin   @ ?dup
+   while   dup vlink>voc ( #threads cells - )
+           dup voc>vcfa
+           ?IsClass 0=
+           if  context !  \ set voc
+               over count context @ SEARCH-WORDLIST
+               if  2drop drop
+                   context @ voc>vcfa .NAME \ print voc name
+                    r> context !
+                    EXIT      \ *** EXITS HERE ****
+               then
+            else drop then
+    repeat drop ." -> not found"
+    r> context ! ;
+
+: voc? { \ find$ -- cfa f1 }  \
+  /parse-word dup c@ if
+  MAXSTRING LocalAlloc: find$
+  count find$ place
+  find$  _voc? then ;
 
