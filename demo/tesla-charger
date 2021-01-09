@@ -1,0 +1,40 @@
+Tesla-Charger.
+
+Example: the customer said 10 feet and when you get there it is 50 feet.
+Change the number on the line where it says "Pipe" from 10 to 50 feet.
+SAVE it and EXTEND it and the price will change from $721.18 to $1,445.98
+The time will change from  to 8.43 hours
+
+                                                  3.51         4.21
+                                                  0.43         0.52
+                                                721.18
+                                                631.80       220.90
+                                                 89.38        44.69
+                                                  0.00         0.00
+                                                  0.00
+
+
+
+16
+
+
+Note
+                 ( head-line                           0.00     0.00        0.00
+
+
+Tesla Charger
+                Neat-EMT    xx
+50a 220v        1 C-B 50A
+Pipe & #        10 LF-EMT 50A
+J-BOX )         1 4S BOX
+NEMA R-50 )     1 Device-220 50A-4W
+Industrial      1 4S-ind 2-1/8
+
+
+Other
+Go to job       1 setup job-small
+Inspection )    0.50 setup job-small
+
+
+TOTAL ESTIMATE
+

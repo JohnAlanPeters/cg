@@ -340,7 +340,7 @@ font NewFont
 
 : .xfile-size-name  ( adr len - )
         35 ?cr      .dir->file-size
-        dup>r type  30 r> - 0max spaces
+        dup>r type  25 r> - 0max spaces
         start/stop ;
 
 

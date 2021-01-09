@@ -1,0 +1,145 @@
+Template
+address
+San Francisco, CA
+415
+email
+5 line
+                                                Actual        Goal
+                                      Hrs       111.78       134.13 Man Hours
+                                      Dys        13.97        16.78 Man Days
+                                      Tot    24,299.86          .16 Contract
+                                      Lab    20,120.40     7,035.10 W/S Labor
+                                      Mtl     4,179.46     2,089.83 Pre Tax
+                                      Oth         0.00         0.00
+                                      Pmt         0.00
+
+
+
+
+
+02 Mult 175A 1/0 ( 1-1/4* 150/175)
+-- NEW SERVICE  ( 230 Volts 175 Amps )                 0.00     0.00        0.00
+Ladder & 220V   1 Setup     Hot-220                    0.00     1.50      270.00
+Wires to PG&E  |1 Riser     150A                     757.26     4.40    1,549.26
+Hole, 90 corner 1 LB-Inc    150A                      41.60     1.41      295.40
+Horiz length    10 LF-EMT   150A                      93.40     1.40      345.40
+Meter sockets   1 Meter-in  3-Gang                   350.00     3.00      890.00
+Offset nipples  3 OS-Nip     65A                      70.86     3.36      675.66
+Circuit panel   3 Panel 125A-12-24                   276.00     6.00    1,356.00
+Tenant mains    3 C-B        60A                      64.68     0.90      226.68
+Hot cold & gas  3 Ground    Bond                      42.18     1.50      312.18
+Gr rod & water  1 Ground    150A                     105.18     4.82      972.78
+Hook up hot     3 Kouple-tap 3/0-12                  138.00     0.48      224.40
+                                                  $1,939.16    28.77   $7,117.76
+
+01 House meter  ( $165 for 200A )
+Temporary power ( Contingency fund )                   0.00     0.00        0.00
+Plywood         ( Contingency fund )                   0.00     0.00        0.00
+
+
+02 Modular 100A  ( #4 1-1/4 Res
+-- NEW SERVICE  ( 230 Volts 100 Amps )                 0.00     0.00        0.00
+Ladder & 220V   1 Setup     Hot-220                    0.00     1.50      270.00
+To PG&E wires   1 Riser     100A                     524.24     3.57    1,166.84
+Conduit body    1 LB-Inc    100A                      26.66     0.96      199.46
+90 Corner bend  1 90-Inc    100A                      26.60     0.75      161.60
+Meter & Panel   1 M-P       100A-12-24               299.12     2.50      749.12
+Ground System   1 Ground    100A                     105.18     4.82      972.78
+Hot cold & gas  1 Ground    Bond                      14.06     0.50      104.06
+Hook up hot     3 Kouple-tap 3/0-12                  138.00     0.48      224.40
+W-H relocated?                                         0.00     0.00        0.00
+                                                  $1,133.86    15.08   $3,848.26
+
+03 Reconnect old
+
+
+04               Neat-EMT
+ Old CBs         2 CB                                 12.00     0.40       84.00
+ n Old fuses     2 CB                                 12.00     0.40       84.00
+ 30 Amp Dryer    1 C-B 30A                            21.56     0.30       75.56
+ Knob & Tube     1 Reconnect Black-box                15.12     0.91      178.92
+ Existing rx     1 Reconnect Romex-easy                2.00     0.20       38.00
+ 1/2 inch pipe   1 Reconnect 1/2                      16.56     1.02      200.16
+ 3/4 inch pipe   1 Reconnect 3/4                      20.00     1.25      245.00
+ 1-in pipe       1 Reconnect 1-in                     30.00     1.40      282.00
+ Demolish old    40 minutes electrician                0.00     0.68      122.40
+ To new location 20 Lf-EMT 20A                        19.60     1.30      253.60
+ Light at panel  LT-easy   ( pull string )            29.46     1.25      254.46
+ If wanted       \ SW-ez  PL-ez GFCI ( Plug            0.00     0.00        0.00
+ Plywood (if)    Setup Wall                           82.00     0.85      235.00
+ Transformer     ( NIC  Low-Volt Tri-volt )            0.00     0.00        0.00
+                                                    $260.30     9.96   $2,053.10
+
+05 Kit Lights   ( Can't put text here yet, it wi
+                Open-1-side                            0.00     0.00        0.00
+Demo work       1.00 hours electrician                 0.00     1.00      180.00
+Ceiling Lights  5 LT  2 S3                            57.26     6.86    1,292.06
+Layout cans     120 Minutes Electrician                0.00     2.04      367.20
+Sink light      LT  SW                                16.36     1.83      345.76
+Hood Fan        LT  Install hood-fan                   8.18     1.48      274.58
+Light Circuits  CB  Circuit                           13.00     0.80      157.00
+Lighting Layout 0.50 Hour Electrician                  0.00     0.50       90.00
+Temp power      0.50 hour electrician                  0.00     0.50       90.00
+                ( For other trades )                   0.00     0.00        0.00
+                                                     $94.80    15.01   $2,796.60
+
+06 Kitchen Power
+                Open-1-side                            0.00     0.00        0.00
+Dishwasher      PL  CB  Circuit                       21.18     1.65      318.18
+Disposal -->?   PL  CB  Circuit  SW                   29.36     2.50      479.36
+Cords           2 Cord  ( if needed )                 18.08     0.50      108.08
+Refrigerator    PL                                     8.18     0.85      161.18
+Stove Igniter   PL                                     8.18     0.85      161.18
+Counters        6 PL  2 GFCI                         101.08     5.20    1,037.08
+Util Circuits   2 CB  2 Circuit                       26.00     1.60      314.00
+Island          ( Charge as ) Neat-EMT                 0.00     0.00        0.00
+Layout plugs    1 Hour Electrician                     0.00     1.00      180.00
+                                                    $212.06    14.15   $2,759.06
+
+07 Inlaw        ( Apartment )
+                Neat-EMT                               0.00     0.00        0.00
+Dishwasher      PL  CB  Circuit                       65.54     2.65      542.54
+Disposal        PL  CB  Circuit                       65.54     2.65      542.54
+                50 EMT 1/2                            28.00     2.25      433.00
+                                                    $159.08     7.55   $1,518.08
+
+08 Mid Bedroom
+                Neat-EMT                               0.00     0.00        0.00
+Bay window      PL                                    39.54     1.75      354.54
+West wall       PL                                    39.54     1.75      354.54
+South wall      2 PL                                  79.08     3.50      709.08
+                                                    $158.16     7.00   $1,418.16
+
+09 Demo work
+                1.00 hours electrician                 0.00     1.00      180.00
+Ceiling Lights  5 Kill old-wire                        0.00     1.25      225.00
+                                                      $0.00     2.25     $405.00
+
+10 Bathroom
+                Fish-in-walls                          0.00     0.00        0.00
+Vanity          LT  SW-Medium                         27.04     4.75      882.04
+                                                     $27.04     4.75     $882.04
+
+11 Old fuses
+                6 CB                                  36.00     1.20      252.00
+                                                     $36.00     1.20     $252.00
+
+12 Conduit &    ( Circuit(s)
+                Neat-EMT                               0.00     0.00        0.00
+Raceway pipe    50 LF-EMT 1/2                         27.00     2.65      504.00
+As needed...    Circuit  CB                           26.00     0.90      188.00
+If needed...    Circuit  CB                           26.00     0.90      188.00
+Arcfault Inter  1 C-B AFCI  ( Bedrooms )              80.00     0.25      125.00
+                                                    $159.00     4.70   $1,005.00
+
+13 Demolish old
+                40.00 minutes electrician              0.00     0.68      122.40
+                                                      $0.00     0.68     $122.40
+
+14 Fix the old
+Dosen't work    40 minutes electrician                 0.00     0.68      122.40
+                                                      $0.00     0.68     $122.40
+
+14 TOTAL ESTIMATE                                                     $24,299.86
+
+

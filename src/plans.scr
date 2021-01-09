@@ -3,12 +3,12 @@
                                                                 
                                                                 
                                                                 
+
+
+
                                                                 
                                                                 
-                                                                
-                                                                
-                                                                
-\                      July 24, 2008                            
+
                                                                 
                                                                 
                                                                 
@@ -68,7 +68,7 @@ Elect
 : S3                                LT ;
 : SW-fished             6.26 w/e 275 c ; \ Fish in walls
 : PS   ( .... > )                   LT ; \ was PL  7-10-97
-: S4                    6.00 w/e  98 c ;
+: S4                    6.00 w/e 100 c ;
 : Circuit               3.50 w/e  60 c ; \ 25 rx 14/2 was 94 c
 : CATV                 15.00 w/e 125 c ;
 : SW                                PL ;
@@ -77,10 +77,11 @@ Elect
 : PH                                PL ;
 : SP                                S4 ; \ 8-3-99
 : Split-wire            1.95 w/e  13 c ;
-: 1X                       open-1-side ;
-: Open-1                   open-1-side ;
 : Gas-out              10.00 w/e   1 e ;
 : Strong-Box           21.00 w/e  25 c ; \ 13.00 parts 8-08
 \ New work x 1.25 )
 Elect
+: 1X                       open-1-side ;
+: Open-1                   open-1-side ;
+
 
