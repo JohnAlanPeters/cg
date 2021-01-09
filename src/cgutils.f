@@ -316,32 +316,6 @@ editor
      swap drop - -1
   else r> r> 2drop 0 then ;
 
-hidden also
-: (wordvoc)       { voc \ w#threads -- }  ( -- fl)
-        voc dup voc#threads to w#threads
-        dup voc>vcfa
-        ?isclass not \ don't look through classes
-        if dup here 500 + w#threads cells move     \ copy vocabulary up
-           voc>vcfa vocsave !
-           begin   here 500 + w#threads largest dup
-           while   dup l>name count words-pocket count istr=
-                   if vocsave @ .name space then
-                   @ swap !
-           repeat  2drop
-        else    drop
-        then    vocsave off ;
-
-: wordvoc ( -<name>- ) \ show vocabulary of the <name>
-   words-pocket off
-   bl word c@
-   if pocket count words-pocket place
-      voc-link @
-      begin dup vlink>voc ( #threads cells - )
-          (wordvoc)
-          @ dup 0=
-      until drop
-   then ;
-
 \ state smart so you can use it in console
 : ."    STATE @ if COMPILE (.") ," else  [CHAR] " PARSE TYPE  then ; IMMEDIATE
 
@@ -391,22 +365,20 @@ font NewFont
    ELSE s" \*.*" pocket +place
    THEN count xprint-dir-files ;
 
-: _voc? ( adr --  )         \ display vocabulary for a word
+: _voc? ( adr --  )         \ find a word in any vocabulary
    context @ >r
-   voc-link
+   0 swap voc-link
    begin   @ ?dup
-   while   dup vlink>voc ( #threads cells - )
+   while   dup vlink>voc
            dup voc>vcfa
            ?IsClass 0=
            if  context !  \ set voc
                over count context @ SEARCH-WORDLIST
-               if  2drop drop
+               if  drop rot drop true rot rot
                    context @ voc>vcfa .NAME \ print voc name
-                    r> context !
-                    EXIT      \ *** EXITS HERE ****
                then
             else drop then
-    repeat drop ." -> not found"
+    repeat drop 0= if ." not found" then
     r> context ! ;
 
 : voc? { \ find$ -- cfa f1 }  \
