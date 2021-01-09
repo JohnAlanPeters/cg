@@ -1,0 +1,42 @@
+Template
+address
+San Francisco, CA
+415
+email
+5 line
+                                                Actual        Goal
+                                      Hrs         7.03         8.43 Man Hours
+                                      Dys         0.87         1.05 Man Days
+                                      Tot     1,445.98          .16 Contract
+                                      Lab     1,265.40       442.44 W/S Labor
+                                      Mtl       180.58        90.31 Pre Tax
+                                      Oth         0.00         0.00
+                                      Pmt         0.00
+
+15
+                                     
+
+
+Tesla Charger
+                Neat-EMT                               0.00     0.00        0.00
+50a 220v        1 C-B 50A                             21.56     0.30       75.56
+Pipe & #        50 LF-EMT 50A                        114.00     4.40      906.00
+J-BOX )         1 4S BOX                               1.36     0.30       55.36
+NEMA R-50 )     1 Device-220 50A-4W                   40.00     0.33       99.40
+Industrial      1 4S-ind 2-1/8                         3.66     0.20       39.66
+                                                    $180.58     5.53   $1,175.98
+
+Other
+Go to job       1 setup job-small                      0.00     1.00      180.00
+Inspection )    0.50 setup job-small                   0.00     0.50       90.00
+                                                      $0.00     1.50     $270.00
+
+TOTAL ESTIMATE                                                         $1,445.98
+
+
+Example: the customer said 10 feet and when you get there it is 50 feet, just change
+The number on the line where it says "Pipe" from 10 to 50 
+SAVE it and EXTEND it and the price will change from $721.18 to $1,445.98
+The time will change from  to 8.43 hours
+ 
+

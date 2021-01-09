@@ -12,12 +12,6 @@ Vocabulary LF-EMT
 : 130A              416.12 w/c 13 c ; \ #1
 : 115A              314.90 w/c 12 c ; \ #2
 : 125A                         115A ; \ #2
-Elect
-: LF-Conduit   LF-EMT ;
-
-
-\ LF-EMT  20A to 115A
-                   LF-EMT definitions
 : 100A                         115A ; \ #2 1-1/4
 :  85A             210.59 w/c 11  c ; \ #4 1-in
 :  65A             137.07 w/c  93 m ; \ #6 3/4 o
@@ -26,9 +20,9 @@ Elect
 :  20A              49.09 w/c  65 m ; \ 12/3 1/2
 :  20A-st           41.61 w/c  25 m ; \ 12/2 1/2
 :  15A              42.25 w/c  60 m ;
-: 3P-70A   170.78 w/c 105 m ;
+: 3P-70A           170.78 w/c 105 m ;
 Elect
-
+: LF-Conduit   LF-EMT ;
 
 \ SURFACE-EMT Outlets of various types.
 Vocabulary (Neat-EMT) (Neat-EMT) definitions

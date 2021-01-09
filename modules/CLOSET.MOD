@@ -4,7 +4,7 @@ Missing the price for LED strip fixture
                                                                 
                                                                 
                                                                 
-                                            Experienced     Learning
+                                           Experienced     Learning
                                       Hrs         2.63         3.15 Man Hours
                                       Dys         0.32         0.39 Man Days
                                       Tot       549.40              Contract
@@ -12,7 +12,7 @@ Missing the price for LED strip fixture
                                       Mtl        76.00        38.00 Pre Tax
                                       Oth         0.00         0.00
                                       Pmt         0.00
-                                                               
+
                                                   2.63         3.15
                                                   0.32         0.39
 

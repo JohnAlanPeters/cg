@@ -567,10 +567,11 @@ editor
   loop 2drop file-has-changed save-text r> to cursor-line refresh-screen ;
 
 : _cd ( adr len -- )  "chdir cr .dir ;
-: cd-bids s" \cg\bids"      _cd ;
-: cd-mods s" \cg\modules"   _cd ;
-: cd-demo s" \cg\demo"      _cd ;
-: cd-web  s" \cg\webfiles"  _cd ;
+: cd-bids s" \cg\bids"      _cd ; : cdbids cd-bids ;
+: cd-mods s" \cg\modules"   _cd ; : cdmods cd-mods ;
+: cd-demo s" \cg\demo"      _cd ; : cddemo cd-demo ;
+: cd-web  s" \cg\webfiles"  _cd ; : cdweb cd-web ;
+: cdwebfiles cd-web ;
 
 \s
 

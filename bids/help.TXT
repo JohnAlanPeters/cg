@@ -1,7 +1,7 @@
 help is on the way
 This is how to use the CG
 
-ELECTRIC WORDS takes 20 seconds lists electrical part names.<br>
+ELECTRIC WORDS takes 20 seconds to list all electrical part names.<br>
 C-B WORDS takes 3 seconds and lists the circuit breker sizes.<br>
 C-B SEE 400A shows the code.  C-B SHOW 400A<br>
 

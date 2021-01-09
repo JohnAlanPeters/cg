@@ -816,21 +816,19 @@ Elect
 \ See also LED-LAMP  LED-CANS  LED-CAN  LED-CONVERT  EXIT-LED  LED-TUBE
 \ LED-UC  LRD-RETROFIT-CAN  REWIRE-LED  EXIT-LED  LED-UC
 
-\ Vocabulary LED  LED definitions
-\ Disk         7.00 w/e  40 c ; \ Guesses AZ is 5 or 6 ea.
-\ Elect
-
-
-\ LAMP  Bulbs 1/3           630-022a FI-14
-Vocabulary Lamp          Lamp Definitions
+\ LED  Bulbs
+Vocabulary LED LED Definitions
 : LED-20       3.00 w/e   0 c ; \ Really?
 : LED-30       5.00 w/e   0 c ; \ Dimmable
 : LED-48      14.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
-: LED-96      15.50 w/e   8 c ; \ See also LED-TubeS       
+: LED-96      15.50 w/e   8 c ; \ See also LED-TubeS
 : LED-A19      5.00 w/e   8 c ; \ 5-600 Lumins = 60W
 : LED-PAR     17.00 w/e   8 c ; \ 6-600 Lumins
-: LED-16       3.00 w/e   8 c ; \ Navar June 2019                          
+: LED-16       3.00 w/e   8 c ; \ Navar June 2019
 : MR-16        3.00 w/e   8 c ; \ Navar June 2019
+Elect
+
+Vocabulary LAMP  LAMP definitions
 :  25W         1.01 w/e   2 c ; \ 630-22
 :  40W          .84 w/e   2 c ; \ 630-22
 :  60W          .55 w/e   0 c ; \ 12-93
@@ -2567,3 +2565,4 @@ Vocabulary Warrantee
 : 15-Year     2 hours [ hours ] electrician ;                   
 : 10-year     1 hours [ hours ] electrician ;                   
 elect forth definitions
+

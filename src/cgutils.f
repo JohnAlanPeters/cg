@@ -341,6 +341,7 @@ hidden also
           @ dup 0=
       until drop
    then ;
+: VocWord wordvoc ; ( -<name>- ) \ show vocabulary of the <name>
 
 \ state smart so you can use it in console
 : ."    STATE @ if COMPILE (.") ," else  [CHAR] " PARSE TYPE  then ; IMMEDIATE
@@ -366,7 +367,7 @@ font NewFont
 
 : .xfile-size-name  ( adr len - )
         35 ?cr      .dir->file-size
-        dup>r type  30 r> - 0max spaces
+        dup>r type  25 r> - 0max spaces
         start/stop ;
 
 
