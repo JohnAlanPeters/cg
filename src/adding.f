@@ -148,7 +148,7 @@ editor also
         else to cursor-col to cursor-line to line-cur then ( refresh-screen )
      else 2drop drop then
   then  EX-TOTAL to last-total
-  ( clear-totals ) ( save-text ) to cursor-line ;
+  clear-totals ( save-text ) to cursor-line ;
 
 ' AA is grand-total   \ AA from the console or use F2 from within the editor
 

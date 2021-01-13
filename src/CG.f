@@ -249,10 +249,12 @@ editor
 : Title-CG   \ puts it on the top of the." console
   Z" Contract Generator 3.03.04" CONHNDL call SetWindowText drop ;
 
+: READY clear-totals cls only forth also electric also ;
+
 : HELLO-CG
     s" bootup" logmsg \ getuser
     Title-CG  ( current-dir$ setfdir ) s" c:\cg\" &forthdir place
-    -1 to dp-location cd-bids
+    -1 to dp-location cd-bids ready
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     8 16 >fontht  \ console font
     editor overstrike off loadline off
@@ -274,8 +276,6 @@ s" c:\cg\" &forthdir place
 
 ELECT             \ Sets the vocabulary
 Editor also
-
-: READY total cls only forth also electric also ;
 
 ' Extend-Prices is My-Application
 \ ' Flat-Rate     is My-Application \ changing m-in does not seem to do anything

@@ -113,6 +113,7 @@ cr .( after ed_keys)
 : WinEd ( -- )
         Edit-init
         load-defaults
+        true to err-vocab-show
         16 to tab-size
        ( command-options )
         Start: FrameWindow

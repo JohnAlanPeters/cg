@@ -525,7 +525,7 @@ forth definitions
 
 editor
 : cab { \ to$ -- } ( <fname> -- )  \ create a bid
-  s" " onedrivebids "chdir
+  s" \cg\bids" "chdir
   max-path localAlloc: to$
   bl word count to$ place  \ path to 1drive bids file
   to$ $open         \ do nothing if it exists
@@ -534,10 +534,10 @@ editor
   to$ count onedrivebids "+open-text 9 to cursor-line bookmark ;
 
 : to-bids ( -- )  \ open -bids in editor
-  s" -bids" onedrivebids "open-text ;
+  s" \cg\bids\-bids" "open-text ;
 
 : >bids ( line# -- )             \ open -bids to line# given
-  s" -bids" onedrivebids "open-text
+  s" \cg\bids\-bids"  "open-text
   find-buf off
   0 swap to-find-line  refresh-line ;
 
