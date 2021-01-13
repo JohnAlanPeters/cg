@@ -1756,8 +1756,8 @@ Vocabulary C-B  C-B Definitions  \ Used Sold Keep Have
 : 100A-22K    45.00 w/e  80 c ; \ 12-20-05                      
 : 125A-22K   170.00 w/e 100 c ; \ Bertagnolli                   
 Elect                                                           
-\ Cuttler Hammer bought Bryand who bought Westinghouse          
-\ Bryant is phaysed out  use Westinghouse or Cuttler Hammer
+: Circuitbreaker c-b ;
+\ Cuttler Hammer bought Bryand who bought Westinghouse
 
 \ Square-D                  425-035b CB-5           06-01-09
 Vocabulary Square-D  Square-d Definitions                       

@@ -307,11 +307,10 @@ variable timejack  100 timejack !  \ 110 -> no jack  5-26-2013 inc 10%
 
 : small-parts   ( -- )     2.00 2to markup ; \ 200% or double
 : Parts+2.00               2.00 2to markup ;
-small-parts  \ default
-
 : Regular-markup           1.33 2to markup ;
 : Fair-markup              1.33 2to markup ;
 : parts+1/3                1.33 2to markup ;
+parts+1/3  \ default
 : Good-markup              1.33 2To markup ; \ <<<<<<
 : w/s+tax+15%+10%          1.33 2To markup ; \ <<<<<<
 : Parts+1.33               1.33 2to markup ;
@@ -569,8 +568,8 @@ editor
 : _cd ( adr len -- )  "chdir cr .dir ;
 : cd-bids s" \cg\bids"      _cd ; : cdbids cd-bids ;
 : cd-mods s" \cg\modules"   _cd ; : cdmods cd-mods ;
-: cd-demo s" \cg\demo"      _cd ; : cddemo cd-demo ;
-: cd-web  s" \cg\webfiles"  _cd ; : cdweb cd-web ;
+: cd-demo s" \cg\demo"      _cd ; : cddemo cd-demo ; \ no go locally
+: cd-web  s" \cg\webfiles"  _cd ; : cdweb cd-web ;   \ no go locally
 : cdwebfiles cd-web ;
 
 \s

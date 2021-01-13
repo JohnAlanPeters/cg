@@ -275,6 +275,8 @@ s" c:\cg\" &forthdir place
 ELECT             \ Sets the vocabulary
 Editor also
 
+: READY total cls only forth also electric also ;
+
 ' Extend-Prices is My-Application
 \ ' Flat-Rate     is My-Application \ changing m-in does not seem to do anything
 ' dotcomma-number is number

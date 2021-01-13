@@ -574,7 +574,7 @@ Elect
 
 Vocabulary LED-tube
 LED-Tube Definitions \ Parts only
-: 48-inch            10.68 w/e 00 c ; \ Universal invoice Feb 2020
+: 48-inch             8.00 w/e 00 c ; \ Universal invoice Feb 2020
 : 96-inch            18.50 w/e 00 c ; \ Amazon top cost
 : 48-inch-BV          7.10 w/e 00 c ; \ Time is included with the rewire
 : 96-inch-BV         26.00 w/e 00 c ; \ Wrong
@@ -817,14 +817,14 @@ Elect
 \ LED-UC  LRD-RETROFIT-CAN  REWIRE-LED  EXIT-LED  LED-UC
 
 \ LED  Bulbs
-Vocabulary LED LED Definitions
-: LED-20       3.00 w/e   0 c ; \ Really?
-: LED-30       5.00 w/e   0 c ; \ Dimmable
-: LED-48      14.00 w/e  55 c ; \ 1,500 Lumins  48 inch tube
-: LED-96      15.50 w/e   8 c ; \ See also LED-TubeS
-: LED-A19      5.00 w/e   8 c ; \ 5-600 Lumins = 60W
-: LED-PAR     17.00 w/e   8 c ; \ 6-600 Lumins
-: LED-16       3.00 w/e   8 c ; \ Navar June 2019
+Vocabulary LED-bulb LED-bulb Definitions
+: 20-inch       3.00 w/e   0 c ; \ Really?
+: 30-inch       5.00 w/e   0 c ; \ Dimmable
+: 48-inch      14.00 w/e  00 c ; \ 1,500 Lumins  48 inch tube
+: 96-inch      15.50 w/e   8 c ; \ See also LED-TubeS
+: A19           5.00 w/e   8 c ; \ 5-600 Lumins = 60W
+: PAR          17.00 w/e   8 c ; \ 6-600 Lumins
+: 16-inch       3.00 w/e   8 c ; \ Navar June 2019
 : MR-16        3.00 w/e   8 c ; \ Navar June 2019
 Elect
 

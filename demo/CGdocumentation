@@ -1,0 +1,113 @@
+\ 9     THE DOCUMENTATION -----
+
+                This revision is for Win32Forth.
+                Conversion started in March of 2000
+                Working version Thursday, July 01 2004
+                files1line will help look through the old bids
+                Stoped using it in 2008 due to realestate downt
+                Finished conversion November 2019
+                Web version is progressing in December 2019
+
+ELECTRIC        A vocabulary
+ELECT           Set the search order to a clean safe state.
+ELECTRIC-WORDS  A correctly spelled version
+DONE            Save all the buffers and set the vocabularys to a clean
+                state with Electric as the first vocabulary to be searched
+QUAN            The quanity ordered.
+NPS-W/S         The price of one unit wholesale
+PARTS-COST      The cost of the parts
+TIME-UNIT       Per each, hundred or thousand
+RATE        >>  This is where the default labor rate is set...
+UNIT            Defered to either C  M  E
+PARTS-EXT       The total of the unit price times the quanity.
+TIME-EXT        The time for the number of units.
+LABOR-EXT       The labor to extend
+SELL-EXT        The parts and labor added.  Asking price.
+PARTS-SUB       The sub total of parts.
+TIME-SUB        Sub total of time.
+LABOR-SUB       Sub total of the labor price.
+SELL-SUB        Sub total of the asking price.
+CALC-PARTS      Multiply the cost by the quantity and store in three variables
+                Parts-ext  Parts-sub  and Parts-total
+CALC-TIME       Calculate the time
+.W/S            Print whole sale
+SHOW-PARTS      Show the quanity, the parts price and the extended cost.
+SHOW-LABOR      Show the time it will take and the asking price for it.
+SHOW-SELL       Show the asking price for the line.
+W/E             Wholesale each
+W/C             Wholesale per hundred
+W/M             Wholesale per thousand
+EX              Single precision extend used for fluf and fixts
+E2              Calc the time labor and the sell price
+EXdd            Double number quanity, double number price
+EXd             Single percision quanitity  double number price
+M               Thousand
+C               Hundred
+E               Each
+CLEAR-SUB       Zero out the double variables named
+                parts-sub, labor-sub and sell-sub.
+(SUB)           print the sub total of the parts, labor and sell
+SUB
+CLEAR-GRAND     Don't clear-totals, do zero out the grand totals
+HEAD-LINE       Put a header on top of the columns like this.
+                PARTS       TIME      LABOR       SELL
+                and unsupress if necessary.
+GRAND           Show the headaers and the grand totals of all
+                and clear the grand total variables.
+                Actually not used very much by me.
+CLEAR
+INTERPRET-A-BLOCK
+                This was known as  RUN in F82 version 1.0.0
+                I use it as it does what I need in the old way when it treats
+                the in-file and the from-file.  Something like that.  JP
+SO-xx
+                If there is a double number on the stack, print it with 2
+                places to the right of the decimal and in a field of 3
+INTERPRET-LINE
+JUMPED
+JUMP
+CURRENT-LINE    is a variable
+SOURCE-LINE     Take the BLK and convert it to the address of
+                the current-line, unless BLK is zero.
+                Restore the tect input buffer??
+IF-SO-DOLLARS   Drop the cents and move the double number to
+                the address on the stack.
+NO-CENTS        Vector  if-so-dollars in to amount>screen
+IF-SO-CENTS     Test for a double nunber, output it to the
+                screen with two decimal places.
+WITH-CENTS      Vector if-so-CENTS in to amount>screen
+NOOP-SLASH-PAREN   Disabale the action of back-slash and the
+                   left parenithes.
+DEFINED+        The same as  DEFINED  with the addition of
+                disabeling the words back-slash and the left paren.
+REPORT          Give name of the word you are interpreting.  This is
+                usefull when you want to see what items are being extended
+                on screen while executing the command EXTEND.
+SUMMARY         Put the prices on top of the screen
+                Price up the items on the screen, enter the
+                editor, go to the top and print the various
+                totals for the parts, tate, hours, and sell
+                prices.  Put the user in to the editor so he can
+                use the work ADD to add up the extentions at the
+                cursor location.  Needs a beter name.
+FIG             Price out the screen but skip anything on the
+                first three columns.  ( Room name etc.)
+FIGG            Take the screen number and price it out.  Put
+                the totals on the top line of the screen.
+(EXTEND)        Tab over, figure the prices with totals then add the
+                colums and print the results
+EXTEND          Price up all the parts listed on the current screen.
+                Usually executed by  CTRL E  from the visual editor.
+FIG             Extend the prices as above but stop and wait for a key so
+                you can look at the on screen audit trail before going on.
+LEFT-EXTEND     Extend prices for parts listed on the left border.
+FIGG            An old name now better known as Left-Extend
+EXTENDS         Extend a series of screens
+FIG-THRU        an old name for Extends
+PRICE-IT        extend the whole file from screen one to the end
+LEFT-EXTENDS    Extends parts that start on left border of screen
+mmmm            Show the times for each line as well as the sell price
+MEN-ON          Turn on the times feature
+MEN-OFF         Put it back to not showing the times on each line
+(MEN)           Times on  extend each line  Times off
+MEN             Add a column showing the time required for each item
