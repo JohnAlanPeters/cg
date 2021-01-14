@@ -225,13 +225,13 @@
 \ changed February 29th, 2004 - 11:41 dbu
 : set-active-file ( addr n -- ) \ activate a given file
         2dup FILE-STATUS nip 0=
-        if   entry-max 0
+        if   0 entry-max
              DO   I to entry# \ select the hyper file index
                   I SetStack: EditWindow \ and activate the file
 
                   2dup cur-filename count compareia
-                  0= if leave then
-             LOOP 2drop
+                  0= if leave then -1
+             +LOOP 2drop
              hyper-open \ update window etc.
         else 2drop
         then ;

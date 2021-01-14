@@ -122,8 +122,6 @@ cr .( after ed_keys)
         THEN
         load-more-defaults
         true to open-previous?
-\        new-text
-\        make-new-text
         open-initial-file
         cursor-line find-top-margin - VPosition: EditWindow
 
@@ -132,9 +130,7 @@ cr .( after ed_keys)
 
         GetStack: DocWindow to entry#
         refresh-screen
-        no-highlight
-        \ view-key-loop
-        ;
+        no-highlight ;
 
 
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
