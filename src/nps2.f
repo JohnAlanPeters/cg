@@ -466,12 +466,12 @@ Elect
 
 \ FIXTURES   1/4            625-304  FF-3         F 05-01-09    
 Vocabulary Fixture       Fixture definitions
+( See also Recessed-can )4
 : LED-convert     22.00 w/e 33 c ; \ Plus setup time
-: LED-convert-15  15.00 w/e 50 c ; \ Kevin
 : Simple-Dome   25.00 w/e 25 c ; \ Simple 2 lamp fixture
 : LED-can       15.00 w/e 30 c ; \ Guessing in October 23, 2019
-: Motion-Sensor 30.00 w/e 40 c ; \ 80 22.00 Cheap no Good  
-: Motion-NonLED 48.00 w/e 40 c ; \ Levinson                  
+: Motion-Sensor 30.00 w/e 40 c ; \ 80 22.00 Cheap no Good
+: Motion-NonLED 48.00 w/e 40 c ; \ Levinson
 : Motion-Reg    40.00 w/e 40 c ; \ 75.00 RAB  Oct 07
 : Motion-Head   45.00 w/e 40 c ; \ 30.00 RAB black 300W 8/08!
 : Motion-RAB    47.00 w/e 50 c ; \ Motion Head only, works with LED
@@ -480,49 +480,35 @@ Vocabulary Fixture       Fixture definitions
 : Double-head 2006.00 w/c 25 c ; \
 : Single-Head 1500.00 w/c 25 c ; \ shower-head
 : Keyless      160.00 w/c 20 c ; \ 5-05
-: Porclean   keyless ;
+: Porcelaian           keyless ;
 : Pull-string  375.00 w/c 20 c ; \ 3.6661 May 2009
 : Temp-Light   400.00 w/c  8 c ; \ 3.50 Dec 2003
 : Fiber-Hat   8000.00 w/c 50 c ; \ B&K 78 Univ 80 Apr 2005
-: Jelly-jar   ( Not jelly-flo )    5.50 w/e 20 c ; \
 : Cloud-10       9.00 w/e 25 c ; \ #3620 10.95 Unit May 00
 : Brass-Cone    25.00 w/e 50 c ; \ Gas cone kit  Feb 97
-: Jelly-flo     15.00 w/e 25 c ; \                   a
-: Halogen-300W   8.39 w/e 25 c ; \ Price C  Out door flood
-: Halogen-500W  15.99 w/e 25 c ;
 : Leviton        3.00 w/e 25 c ; \ 610-651 Lamp holder    -
 : Monoxide      20.00 w/e 25 c ; \ Sep 97
 : Motion-Cube   19.88 w/e 75 c ; \ Apr 97  SL-5210  Home Depot
 : Motion-bulb   24.88 w/e 50 c ; \ Apr 97  SL-5211  Home Depot
 : Down-up      000.00 w/c 30 c ; \ x min                  -
-: Wellmade-407-445-2RS 120.00 w/e 1 e ;
 : Lamp-Basket    5.00 w/e 10 c ; Elect  \ Hodes job
-: Renoma-3040   80.00 w/e 30 c ; \ Halogen saucer 3040 H/BL
-\ Smoke-Hush  2995.00 w/e 25 c ; \ 110V
 : Saucer       500.00 w/c 25 c ; \ Guess
 : Double-spun 5000.00 w/c 25 c ; \ guess
 : 2-lamp12-in  700.00 w/c 25 c ; \
 : 2-lamp-gas  2900.00 w/c 50 c ; \ 30 min
 : Canopy-SW    200.00 w/c 25 c ; \
 : Fancy-BL     900.00 w/c 10 c ;
-: 3x5-halogen   28.00 w/e 25 c ;
-\ Motion-Aim    00.00 w/e 50 c ; \ Above are Heath Zenith
 : Best-Motion-Sensor 35.00 w/e 50 c ; \ May 95  Time to aim
 : Adapter       240.00 w/c  0 c ; \ Mogel to
 : "U"-bath        9.00 w/e 25 c ; \
 : Lampholder    250.00 w/c 25 c ;
 : RT-lampholder 200.00 w/c 22 c ; \ 1.99 B&K Jul 95  Pigtail
-: Glass-12-in     5.50 w/e 20 c ; \
-: Jelly-Flo      12.00 w/e 25 c ; \
 : Vapor-proof  1555.00 w/e 25 c ; \
-\ Nova-CIM-24 14130.00 w/c  0 c ; \ Mogel to
 : Oval-Slot-Can  47.45 w/e  0 c ; \ inc MR-16 & trim
 : Oval-Slot-Trim 20.85 w/e  0 c ; \ Labor elswhere !!!
-: Oval-Slot-Lamp  4.99 w/e  0 c ; \ Labor NIC  
+: Oval-Slot-Lamp  4.99 w/e  0 c ; \ Labor NIC
 : Light-sensor  25.00 w/e 25 c ; \ Bay Comm
 : Glass-10-only  4.50 w/e  8 c ; \ NIC lamp holder and lamps
-: Gas-2-lamp    18.50 w/e 25 c ; \ NIC Glass
-: Gas-3-lamp    21.00 w/e 25 c ; \
 Elect    \                                                      
 
 
@@ -2564,5 +2550,45 @@ Vocabulary Warrantee
 : 25-year     3 hours [ hours ] electrician ;                   
 : 15-Year     2 hours [ hours ] electrician ;                   
 : 10-year     1 hours [ hours ] electrician ;                   
+elect forth definitions
+
+       
+elect forth definitions
+
+                 
+elect forth definitions
+
+
+                 
+elect forth definitions
+
+        
+elect forth definitions
+
+        
+elect forth definitions
+
+ectrician ;                   
+elect forth definitions
+
+     
+elect forth definitions
+
+            
+elect forth definitions
+
+electrician ;                   
+elect forth definitions
+
+            
+elect forth definitions
+
+     
+elect forth definitions
+
+lectrician ;                   
+elect forth definitions
+
+cian ;                   
 elect forth definitions
 

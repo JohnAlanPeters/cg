@@ -129,9 +129,6 @@ Vocabulary Recessed-Trim  Recessed-Trim Definitions
 : 4in-Oval-16  6.48 w/e 15 c ; \ MR-16
 : 4in-Oval-50  7.95 w/e 15 c ; \ 50W/R20 or PAR 20
 : 5in-PAR-75   4.99 w/e 15 c ; \ Magnetic
-: 6in-13W      8.28 w/e 15 c ; \ Magnetic
-\ 6in-26W       xx  w/e 15 c ; \ Magnetic + Tubes
-: 6in-13W      9.00 w/e 15 c ; \ Electronic
 Elect
 
 \ Recessed-Lamp                                     04-26-09

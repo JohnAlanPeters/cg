@@ -1,42 +1,46 @@
-Template
+Kitchen Wood Studs
 address
 San Francisco, CA
 415
 email
-5 line
-                                                Actual        Goal
-                                      Hrs        16.00        19.20 Man Hours
-                                      Dys         2.00         2.40 Man Days
-                                      Tot     3,240.06          .16 Contract
-                                      Lab     2,880.00     1,006.99 W/S Labor
-                                      Mtl       360.06       180.03 Pre Tax
+
+                                           Experienced     Learning
+                                      Hrs        25.65        30.78 Man Hours
+                                      Dys         3.20         3.85 Man Days
+                                      Tot     5,038.83              Contract
+                                      Lab     4,617.00     1,614.33 W/S Labor
+                                      Mtl       421.83       317.29 Pre Tax
                                       Oth         0.00         0.00
                                       Pmt         0.00
 
 
-
-17hook
+                                                      Parts     Time       Price
 
 
 Kitchen Power
                 Open-1-side                            0.00     0.00        0.00
-Dishwasher      PL  AFCI Circuit                      95.18     1.70      401.18
-Disposal -->?   PL  AFCI Circuit  SW                 103.36     2.55      562.36
-Cords (if NIC)  2 Cord                                18.08     0.50      108.08
-Refrigerator    PL                                     8.18     0.85      161.18
-Stove Igniter   PL                                     8.18     0.85      161.18
-Counters        6 PL  2 GFCI                         101.08     5.20    1,037.08
-Util Circuits   2 CB  2 Circuit                       26.00     1.60      314.00
+Dishwasher      PL  AFCI Circuit                      63.28     1.70      369.28
+Disposal -->?   PL  AFCI Circuit  SW                  68.71     2.55      527.71
+Cords (if NIC)  2 Cord                                12.02     0.50      102.02
+Refrigerator    PL                                     5.43     0.85      158.43
+Stove Igniter   PL                                     5.43     0.85      158.43
+Counters        8 PL  2 GFCI                          78.02     6.90    1,320.02
+Util Circuits   2 CB  2 Circuit                       17.28     1.60      305.28
 Island          ( Charge as ) Neat-EMT                 0.00     0.00        0.00
 Layout plugs    1 Hour Electrician                     0.00     1.00      180.00
-                                                    $360.06    14.25   $2,925.06
+                                                    $250.17    15.95   $3,121.17
+
+Bedroom
+                4 PL                                 105.16     7.00    1,365.16
+                AFCI Circuit                          66.50     0.95      237.50
+                                                    $171.66     7.95   $1,602.66
 
 One Time Cost(s)
 Electrician &   Truck-to New-Location                  0.00     0.75      135.00
 Round Trip (if) Truck-to Supply-House                  0.00     1.00      180.00
                                                       $0.00     1.75     $315.00
 
-TOTAL ESTIMATE                                                         $3,240.06
+TOTAL ESTIMATE                                                         $5,038.83
                                                                        =========
 
 
