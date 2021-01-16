@@ -1,6 +1,6 @@
 \ logger.scr
 
-create logfile ," wcglog.txt" cgbase"      \ default logfile name
+create logfile ," \cg\wcglog.txt" \ cgbase"      \ default logfile name
 
 : logdatetime ( handle -- )
    >r get-local-time

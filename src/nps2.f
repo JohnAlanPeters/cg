@@ -528,7 +528,7 @@ Elect
 
 \ REWIRE-LED
 Vocabulary Rewire-LED  Rewire-LED Definitions
-: Strip-36          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
+: Strip-36          14.00 w/e  50 c ; \ .33 20 min  5K kelvin  Inc tubes
 : Strip-48          14.00 w/e  50 c ; \ .33 20 min  5K kelvin
 : Strip-96          40.00 w/e  45 c ; \ .45 27 min  Home Depot only   
 Elect
@@ -2550,45 +2550,6 @@ Vocabulary Warrantee
 : 25-year     3 hours [ hours ] electrician ;                   
 : 15-Year     2 hours [ hours ] electrician ;                   
 : 10-year     1 hours [ hours ] electrician ;                   
-elect forth definitions
+ forth definitions
 
-       
-elect forth definitions
-
-                 
-elect forth definitions
-
-
-                 
-elect forth definitions
-
-        
-elect forth definitions
-
-        
-elect forth definitions
-
-ectrician ;                   
-elect forth definitions
-
-     
-elect forth definitions
-
-            
-elect forth definitions
-
-electrician ;                   
-elect forth definitions
-
-            
-elect forth definitions
-
-     
-elect forth definitions
-
-lectrician ;                   
-elect forth definitions
-
-cian ;                   
-elect forth definitions
 
