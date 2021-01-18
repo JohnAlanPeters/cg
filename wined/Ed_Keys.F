@@ -325,7 +325,7 @@ defer _Control+W ' close-text is _control+w
   s" \cg\bids\help.txt" "+open-text ;
 
 0 value kTimerID
-30000 value ktime         \ 1 second timeout
+30000 value ktime         \ 1000 = 1 second timeout
 : kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
 4 CallBack: kTimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop kKilltimer xbk 0 ;
 : kSetTimer ( -- )   &kTimerProc ktime 0 0 Call SetTimer to kTimerID ;

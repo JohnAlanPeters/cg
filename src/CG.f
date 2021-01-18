@@ -243,6 +243,7 @@ editor
 : N      ( -- ) +vscr ; \ does not work
 : B      ( -- ) -vscr ;
 : HH     ( -- ) words ; \ You can give it a string
+: EE     ( -- ) ewords ;
 : WW            words ;
 : DEL   ( <fname> -- ) /parse delete-file abort" failed to delete file" ;
 
@@ -258,7 +259,7 @@ editor
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     8 16 >fontht  \ console font
     editor overstrike off loadline off
-    elect call GetFocus to consWin
+    elect forth definitions call GetFocus to consWin
     cmdline 0= swap 0= or
     if file-to-edit$ off wined VIEW-KEY-LOOP
     else  cmdline drop c@ ascii 0 =
