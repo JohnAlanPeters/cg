@@ -116,7 +116,6 @@ Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
 Include nps1.f
 Include nps2.f
 Include OPEN-1S.SEQ     \ Walls are open-1-side
-Include Cat3.f          \
 Include conpaste.f
 Include GrandTot.f      \ bid-thru - extend all vscrns
 Include Adding.f        \ aa - do bid-thru and display totals
