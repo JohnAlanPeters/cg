@@ -569,6 +569,7 @@ editor
 : cd-bids s" \cg\bids"      _cd ; : cdbids cd-bids ;
 : cd-mods s" \cg\modules"   _cd ; : cdmods cd-mods ;
 : cd-demo s" \cg\demo"      _cd ; : cddemo cd-demo ; \ no go locally
+: cd-src  s" \cg\src"       _cd ; : cdsrc  cd-src  ;
 : cd-web  s" \cg\webfiles"  _cd ; : cdweb cd-web ;   \ no go locally
 : cdwebfiles cd-web ;
 

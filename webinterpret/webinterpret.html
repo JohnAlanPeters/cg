@@ -30,8 +30,8 @@ function doit(cntnu)
   if(!cntnu){
     var txt=dsp.value;
     ntxt=txt.substring(lastlen-1);
-    if(ntxt=='dir'){
-       ntxt='webdir';
+    if(ntxt=='webdir'){
+      ntxt='webdir';
     }
     else if(ntxt=='cls'){
       dsp.value='ok\n';
@@ -206,13 +206,12 @@ You can setup your own server.
 <br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 
- <textarea id='filetxt' rows=36 cols=120 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
+ <textarea id='dsp' rows=36 cols=64 autofocus style="font-family:courier;font-size:14px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
+ <textarea id='filetxt' rows=36 cols=96 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 <br>
- The blue Console is below and the white Editor is above. The help text is below the blue console.
+ The Console is blue Editor is white. The help text is below.
 <br>
- <textarea id='dsp' rows=36 cols=93 autofocus style="font-family:courier;font-size:18px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
 </div>
-
 <pre><b>
 Win32Forth and all it's thousands of words ready to be found, (like a library) ready to use. Use VIEW to look around..
 The system is case INsensitive. If you get a -13 error for a real Forth word, maybe turn off your spell-checker.
