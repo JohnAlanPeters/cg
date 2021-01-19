@@ -303,7 +303,7 @@ create colontbl maxscrlines cells allot  \ to xlate scrline to fileline
 
 : file-has-changed ( -- )
                 save-minutes 0>
-                IF      NULL save-minutes 60000 * SAVE_TIMER
+                IF      NULL save-minutes 90000 * SAVE_TIMER
                         Gethandle: EditorWindow Call SetTimer drop
                 THEN
                 edit-changed? 0=                \ -- f1 ; not already changed?

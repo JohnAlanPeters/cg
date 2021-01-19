@@ -9,36 +9,11 @@
 
                                                                 
 (                      July 24, 2008  )
-( loader                                           08-02-08 AL)
-: AMPIERS ;                                                     
+: AMPIERS ;
 CR (  Ampere-Modules is loading )
 
-                                                                
-\ Below was for use with converson to the WinCG system but it   
-\ messed up the blue system by not loading the screns
-\ Electric Definitions    \ keep the \                          
-
-
 elect
-\ RISER                                             09-28-08 AL
-Vocabulary RISER RISER Definitions                              
-: 70A       ( Repull #4 )          60.00 w/e 341 c ;            
-: 100A      ( #4 in 1-1/4 )        97.15 w/e 467 c ; \ 88.49    
-\ 100A-AL   ( #1 Al 1-1/4 )       111.24 w/e 463 c ; \ 12-31-07 
-\ 115A      ( #2 1-1/4 )          140.84 w/e 489 c ;            
-: 130A      ( #1 1-1/4 )          121.43 w/e 500 c ;            
-: 125A                                  130A ;                  
-: 150A      ( 1/0 1-1/4 )         140.19 w/e 510 c ; \ 12-31-07 
-\ 200A-Res  ( 3/0 & #1 1-1/4 )    466.68 w/e 521 c ; \ 310-16.3 
-: 200A      ( 3/0 1-1/2 )         176.61 w/e 597 c ;            
-\ 230A      ( 4/0 2-in )          243.17 w/e 733 c ;            
-\ 380A      ( 500mcm 3-in )       600.00 w/e 850 c ; \ guesses  
-\ 400A                              380A ;                      
-\ 200A-3P   ( 3/0 in 2-in )        245.37 w/e 757 c ;           
-Electric Definitions \ Prices seem to still inc LB and or 90    
-
-
-\ GROUND                        16aug87AEC          05-12-09    
+\ GROUND                        16aug87AEC          05-12-09
 Have ground 0= if  Vocabulary Ground  then                      
 Ground Definitions  \ 600A   ( 1-in 3/0 )  58.47 w/e 312 c ;    
 : 400A   ( 1-in 1/0 520A )   113.47 w/e 754 c ; \ Jul 03         
@@ -110,10 +85,6 @@ Vocabulary LB-INC LB-INC definitions
 : 100A                   13.33 w/e  96 c ;  \ Same as 115a      
 Electric Definitions                                            
                                                                 
-                                                                
-                                                                
-                                                                
-
 
 \ 90-INC                                            04-13-96 AL
 Vocabulary ALRC-90-Inc ALRC-90-Inc Definitions                  
@@ -148,27 +119,21 @@ Vocabulary EMT-90-INC EMT-90-INC Definitions
 : 30A                     50A ;                 \               
 Electric Definitions                                            
                                                                 
-                                                                
-
 
 \ LF-ALRC                       12-30-90   DOUBLE CHECK $$   0.0
-Vocabulary LF-ALRC    LF-ALRC definitions                       
-: 400A   ( 500mcm 3-in )     2237.00 w/c  27 c ;                
-: 200A   ( 3/0 2-in )         825.50 w/c 169 m ;                
-: 150A   ( 1/0 1-1/4 )        616.19 w/c 147 m ;                
-: 130A   ( #1  1-1/4 )        524.00 w/c 136 m ;                
-: 115A   ( #2 1-in )          432.50 w/c 125 m ;                
-: 100A               115A ;                                     
-:  85A   ( #4 1-in )          328.19 w/c 135 m ;                
-:  70A                85A ;                                     
+Vocabulary LF-ALRC    LF-ALRC definitions
+: 400A   ( 500mcm 3-in )     2237.00 w/c  27 c ;
+: 200A   ( 3/0 2-in )         825.50 w/c 169 m ;
+: 150A   ( 1/0 1-1/4 )        616.19 w/c 147 m ;
+: 130A   ( #1  1-1/4 )        524.00 w/c 136 m ;
+: 115A   ( #2 1-in )          432.50 w/c 125 m ;
+: 100A               115A ;
+:  85A   ( #4 1-in )          328.19 w/c 135 m ;
+:  70A                85A ;
 :  65A   ( #6 3/4 )           223.43 w/c  97 m ;
-:  60A   65A ; \ more common                
-:  50A   ( #8 1/2 )           169.46 w/c  82 m ;                
-Electric Definitions                                            
-                                                                
-                                                                
-                                                                
-
+:  60A   65A ; \ more common
+:  50A   ( #8 1/2 )           169.46 w/c  82 m ;
+Electric Definitions
 
 \ Reconnection (s)       Parts   Time
 Vocabulary RECONNECT RECONNECT Definitions
@@ -194,21 +159,21 @@ Electric definitions
 
 
 \  ( Three Phase ) OS-NIP                            15apr8AEC
-( Vocabulary OS-NIP )   OS-NIP definitions                      
-\ 3P-400A                     190.56 EX 292 C ;                 
-: 3P-200A                       8069 EX 169 C ;                 
-: 3P-150A                       4971 EX 145 C ;                 
-: 3P-130A             ( -> ? )  4000 EX 117 C ;                 
-: 3P-125A       3P-130A ;                                       
-: 3P-115A                       3898 EX 127 C ;                 
-: 3P-100A       3P-115A ;                                       
-: 3P-70A                        2818 EX 121 C ; \ Interpolate   
-: 3P-65A                        2278 EX 118 C ;                 
-: 3P-60A        3P-65A ;                                        
-: 3P-50A                        1427 EX 99 C ;                  
-: 3P-40A        3P-50A ;  \ YEP                                 
-: 3P-30A                       8.03 w/e 147 C ;                 
-Electric Definitions                                            
+( Vocabulary OS-NIP )   OS-NIP definitions
+\ 3P-400A                     190.56 EX 292 C ;
+: 3P-200A                       8069 EX 169 C ;
+: 3P-150A                       4971 EX 145 C ;
+: 3P-130A             ( -> ? )  4000 EX 117 C ;
+: 3P-125A       3P-130A ;
+: 3P-115A                       3898 EX 127 C ;
+: 3P-100A       3P-115A ;
+: 3P-70A                        2818 EX 121 C ; \ Interpolate
+: 3P-65A                        2278 EX 118 C ;
+: 3P-60A        3P-65A ;
+: 3P-50A                        1427 EX 99 C ;
+: 3P-40A        3P-50A ;  \ YEP
+: 3P-30A                       8.03 w/e 147 C ;
+Electric Definitions
 
 
 \  RISER    Out of date as of --> >    11-20-91 AEC 09-11-06 AL
@@ -227,7 +192,5 @@ Vocabulary RISER \ AKA a telescope pipe and wire up to PG&E
 : 200A-3P   ( 3/0 in 2-in )       706.68 w/e  592 c ;
 ELECTRIC
 forth definitions
-                                                                
-                                                                
 
 
