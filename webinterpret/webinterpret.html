@@ -11,6 +11,7 @@ var startstop=0;
 var sendint=false;
 var r1st=0;
 var hline=0;
+var fname='';
 var dsp;
 
 function doit(cntnu)
@@ -91,6 +92,8 @@ function handleview(data,hline){
    var lineHeight = parseInt(elftxt.scrollHeight/rows);
    dptr=Math.max(hline-3,0) * lineHeight;
    elftxt.scrollTop=dptr;
+   var fname=document.getElementById('filename');
+
 }
 
 </script>
@@ -205,9 +208,10 @@ You can setup your own server.
  &nbsp;<button onclick="getfile('Webcab');">create bid</button>
 <br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
-
- <textarea id='dsp' rows=36 cols=80 autofocus style="font-family:courier;font-size:14px;font-weight: bold;background-color:RoyalBlue;color:#fff"></textarea>
- <textarea id='filetxt' rows=36 cols=96 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
+<div style="overflow-x:scroll;white-space:nowrap;">
+<!Editor >  <textarea id='dsp' rows=36 cols=64 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
+<!Blue> <textarea id='filetxt' rows=36 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
+</div>
 <br>
  The Console is blue Editor is white. The help text is below.
 <br>

@@ -93,7 +93,7 @@ create headerline 64 allot   \ parameter for header line
 
 : sendfile { \ fname -- } ( addr cnt -- )
    MAXSTRING LocalAlloc: fname
-   s" \cg\webfiles\" fname place fname +place
+   fname place
    fname count r/o open-file not
    if >r vbuf 32000 r@ read-file not
       if dup 0 sendheaders
@@ -120,6 +120,9 @@ create headerline 64 allot   \ parameter for header line
   if $.viewinfo count websendsrc
   else drop then ;
 
+: oo-web ( addr len -- )
+  ?dup if BL SKIP "CLIP" 0 -rot websendsrc else drop then ;
+
 : 2crlfs ( addr len -- addr len )
    crlf$ count vbuf place crlf$ count vbuf +place
    vbuf count search -1 =
@@ -128,7 +131,7 @@ create headerline 64 allot   \ parameter for header line
 : rcvfile { \ fname -- } ( maddr mcnt faddr fcnt --  maddr mcnt )  \ message and filename
   bl skip -trailing   \ remove leading and trailing spaces in the file name
   MAXSTRING LocalAlloc: fname
-  s" \cg\webfiles\" fname place fname +place
+  fname place
   fname count delete-file drop
   fname count w/o create-file 0=
   if >r 2dup 2crlfs r@ write-file
@@ -140,15 +143,14 @@ create headerline 64 allot   \ parameter for header line
 : webload { \ fname -- }  \ load source in cg\webfiles
   bl word count bl skip -trailing
   MAXSTRING LocalAlloc: fname
-  s" \cg\webfiles\" fname place fname +place
-   true to webload? cr fname $fload  false to webload? ;
+  fname place true to webload? cr fname $fload  false to webload? ;
 
 : webdir ( -- )
-  s" \cg\webfiles\*.*" pocket place pocket dup +null count print-dir-files ;
+  s" *.*" pocket place pocket dup +null count print-dir-files ;
 
 : webextend { fname cnt \ fn$ -- }
   MAXSTRING LocalAlloc: fn$
-  2dup s" \cg\webfiles\" fn$ place fname cnt fn$ +place
+  2dup fname cnt fn$ place
   fn$ count [ editor ] "+open-text 1 to cursor-line
   true to webextend? aa save-text fname cnt sendfile false to webextend? ;
 
@@ -160,7 +162,7 @@ create headerline 64 allot   \ parameter for header line
 : webcab { \ to$ fnm$ -- } ( fname cnt -- )  \ create a bid from webpage
   max-path localAlloc: to$
   max-path localAlloc: fnm$  fnm$ place
-  s" \cg\webfiles\" to$ place fnm$ count to$ +place
+  fnm$ count to$ +place
   to$ $open         \ do nothing if it exists
   if drop s" \cg\bids\template-mini" r/o open-file 0=
     if dup file-size 2drop swap close-file drop
@@ -196,10 +198,12 @@ create headerline 64 allot   \ parameter for header line
   if vv-web 0
   else 2drop 2dup s" vv " bl skipscan
   if vv-web 0
+  else 2drop 2dup s" oo " 13 skipscan
+  if oo-web 0
   else 2drop 2dup s" Webcab: " 13 skipscan
   if webcab 0
   else 2drop -1
-  then then then then then then -rot 2drop scrolltoview ;
+  then then then then then then then -rot 2drop scrolltoview ;
 
 : sendhtmlfile ( addr cnt -- )
    r/o open-file not
