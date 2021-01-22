@@ -11,7 +11,6 @@ var startstop=0;
 var sendint=false;
 var r1st=0;
 var hline=0;
-var fname='';
 var dsp;
 
 function doit(cntnu)
@@ -87,12 +86,14 @@ function doit(cntnu)
 }
 
 function handleview(data,hline){
+   var linenum=parseInt(hline.split(' ')[0]);
+   var fname=hline.split(' ')[1];
    elftxt.value=data;
    var rows=elftxt.value.split('\n').length;
    var lineHeight = parseInt(elftxt.scrollHeight/rows);
-   dptr=Math.max(hline-3,0) * lineHeight;
+   dptr=Math.max(linenum-3,0) * lineHeight;
    elftxt.scrollTop=dptr;
-   var fname=document.getElementById('filename');
+   document.getElementById('filename').value=fname;
 
 }
 
@@ -209,8 +210,8 @@ You can setup your own server.
 <br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 
 <div style="overflow-x:scroll;white-space:nowrap;">
-<!Editor >  <textarea id='dsp' rows=36 cols=64 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
-<!Blue> <textarea id='filetxt' rows=36 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
+<!BLUE   >  <textarea id='dsp' rows=36 cols=88 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
+<!EDIT> <textarea id='filetxt' rows=36 cols=92 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 </div>
 <br>
  The Console is blue Editor is white. The help text is below.
