@@ -194,28 +194,47 @@ function webload(){
   doit(0);
 }
 
-
 </script>
+
+<style>
+  .flexrow {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+  }
+  .flexcol {
+   display: flex;
+   flex-direction: column;
+  }
+
+</style>
+
 <body>
 Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
 A timer restarts Webby on the hour.<br>
 Complete source is here.
 <a href="https://github.com/JohnAlanPeters/cg">github repository</a>
 You can setup your own server.
+
+<div class='flexrow'>
+<div style="overflow-x:scroll;white-space:nowrap;">
+<!BLUE   >  <textarea id='dsp' rows=36 cols=64 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
+</div>
+<div class='flexcol'>
 <div>
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="extendfile();">extend file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
  &nbsp;<button onclick="getfile('Webcab');">create bid</button>
-<br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
-
-<div style="overflow-x:scroll;white-space:nowrap;">
-<!BLUE   >  <textarea id='dsp' rows=36 cols=88 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
-<!EDIT> <textarea id='filetxt' rows=36 cols=92 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 </div>
-<br>
- The Console is blue Editor is white. The help text is below.
-<br>
+<div>
+<!EDIT> <textarea id='filetxt' rows=36 cols=82 style="font-family:courier;font-size:14px;font-weight:bold;padding:4px;"></textarea>
+</div>
+</div>
+</div>
+<div>
+<br> The Console is blue Editor is white. The help text is below. <br>
+<br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
 </div>
 <pre><b>
 Win32Forth and all it's thousands of words ready to be found, (like a library) ready to use. Use VIEW to look around..
