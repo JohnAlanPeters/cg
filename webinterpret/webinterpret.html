@@ -200,7 +200,6 @@ function webload(){
   .flexrow {
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
   }
   .flexcol {
    display: flex;
@@ -212,13 +211,9 @@ function webload(){
 <body>
 Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
 A timer restarts Webby on the hour.<br>
-Complete source is here.
-<a href="https://github.com/JohnAlanPeters/cg">github repository</a>
-You can setup your own server.
-
 <div class='flexrow'>
 <div style="overflow-x:scroll;white-space:nowrap;">
-<!BLUE   >  <textarea id='dsp' rows=36 cols=64 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
+<!BLUE   >  <textarea id='dsp' rows=36 cols=88 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
 </div>
 <div class='flexcol'>
 <div>
@@ -234,14 +229,14 @@ You can setup your own server.
 </div>
 <div>
 <br> The Console is blue Editor is white. The help text is below. <br>
-<br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
+Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f<br>
 </div>
 <pre><b>
-Win32Forth and all it's thousands of words ready to be found, (like a library) ready to use. Use VIEW to look around..
-The system is case INsensitive. If you get a -13 error for a real Forth word, maybe turn off your spell-checker.
+Win32Forth and all it's thousands of WORDS are ready to be used, (like a library). Use VIEW to look around..
+The system is case INsensitive. If you get a -13 error for a real Forth word, turn off your spell-checker.
 
-VIEW <word> will lists the source in the editor. Try it on DO-SERVER or START-STOP
-Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW.
+VIEW <word> will lists the source in the editor. Try it on START-STOP or DUP
+Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW to do so.
 
 If you type 'WORDS' you will get (too many) WORDS from the default vocabulary ELECTRIC directory..
 Instead use 'FORTH WORDS to see all the FORTH definitions in the system. (Still too many)
@@ -288,7 +283,7 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 
 <pre><b>
 RUNNING with FORTH on the Webby.
-Copy/paste this in to the editor.
+Copy/paste this in to the editor to see a loop in action.
 : TEST cr 6 0 do ." Hi World" cr loop ;
 Or copy-paste some of your own code in to the editor.
 Give it a [file name] like YourName.f (Nice to meet you, good to know you are here.)
@@ -303,6 +298,9 @@ Starting Forth has lessons. Use the updated free online version.. Here is the UR
 <a href="http://home.iae.nl/users/mhx/sf.html">starting forth</a>
 <pre><b>
 We could use some help with ideas for improvments.
+Complete source is here.
+<a href="https://github.com/JohnAlanPeters/cg">github repository</a>
+You can setup your own server.
 
 VIEW works fine. You may like the source code for the following words.
 view START-STOP
@@ -311,7 +309,7 @@ view PATCH
 view VIEW  (Yes you can view view )
 
 Try some Contract Generator words.
-CB  \ Short for Ciruit Breaker
+CB Show the makeup of the price for a Circuit Breaker
 BULBS WORDS will give you prices and times for various light bulbs.
 FISH-IN-WALLS PR  (PR is short for plug receptacle)
 
