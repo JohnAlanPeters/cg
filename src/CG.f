@@ -254,7 +254,7 @@ editor
 : HELLO-CG
     s" bootup" logmsg \ getuser
     Title-CG  ( current-dir$ setfdir ) s" c:\cg\" &forthdir place
-    -1 to dp-location cd-bids ready
+    -1 to dp-location cd-demo ready
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     8 16 >fontht  \ console font
     editor overstrike off loadline off
