@@ -215,6 +215,7 @@ A timer restarts Webby on the hour.<br>
 <div style="overflow-x:scroll;white-space:nowrap;">
 <!BLUE   >  <textarea id='dsp' rows=36 cols=88 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
 </div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
 <div class='flexcol'>
 <div>
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
@@ -223,17 +224,23 @@ A timer restarts Webby on the hour.<br>
  &nbsp;<button onclick="getfile('Webcab');">create bid</button>
 </div>
 <div>
-<!EDIT> <textarea id='filetxt' rows=36 cols=82 style="font-family:courier;font-size:14px;font-weight:bold;padding:4px;"></textarea>
+<!WHITE> <textarea id='filetxt' rows=36 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;padding:4px;"></textarea>
 </div>
 </div>
 </div>
 <div>
-<br> The Console is blue Editor is white. The help text is below. <br>
-Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f<br>
+
+The <b>Console</b> is blue and the <b>Editor</b> is white. <b>DIR</b> will show you a directory of files and bids to play with.
+<b>Tesla-Charger</b> Is a good one to start with. Change the 50 to 10 or visa-versa just before LF-EMT 50A.<br>
+and all of the prices will change. They will update and show you new numbers.
+The file <b>files-docs</b> will tell you what each file contains<br>
+and what you can expect if you <b>get file</b> The files are usually already extended when you <b>get file</b> .
+If you make some changes you can <b>save file</b> and then <b>extend file</b> to get an update.<br>
+
 </div>
 <pre><b>
-Win32Forth and all it's thousands of WORDS are ready to be used, (like a library). Use VIEW to look around..
-The system is case INsensitive. If you get a -13 error for a real Forth word, turn off your spell-checker.
+Win32Forth and all it's thousands of WORDS are ready to be used, like a library. Use VIEW to look around..
+The system is case INsensitive. Watch out for your spell-checker.
 
 VIEW <word> will lists the source in the editor. Try it on START-STOP or DUP
 Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW to do so.

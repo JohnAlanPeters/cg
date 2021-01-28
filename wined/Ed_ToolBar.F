@@ -181,9 +181,9 @@ max-Edit-Tool-Bar to max-toolbar
      8 PictureButton                    paste-text      ; \ paste
         ButtonInfo"  Paste Text  (Ctrl+V) "
 
-DefToolWidth DefToolSpacing + HSpace
+ DefToolWidth DefToolSpacing + HSpace
         8 HSpace
-        8 HSpace
+
     13 PictureButton     hyper-link      ; \ hyper link
         ButtonInfo"  Hyper Link to: Highlighted Word  (Ctrl+Shft+F9) "
     16 PictureButton next-hyper-link RefreshCursor: DocWindow ShowCursor: DocWindow ;
@@ -203,7 +203,16 @@ DefToolWidth DefToolSpacing + HSpace
         8 HSpace
      5 PictureButton   ( rbbs )            s" doc\p-getstart.htm"
      Prepend<home>\ "browse ; ButtonInfo"  Help me get started  (F1) "
-        5 HSpace
+
+        8 HSpace
+     26 to DefToolWidth
+     23 PictureButton xunbk ;
+        ButtonInfo" Undo "
+     36 to DefToolWidth
+     24 PictureButton xrebk ;
+        ButtonInfo" Redo "
+     24 to DefToolWidth
+        8 HSpace
 
         -1 HSpace                       \ split the ToolBar into two lines
 

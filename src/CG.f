@@ -147,14 +147,7 @@ forth also forth definitions editor
 
 : RE-Edit  reEdit ;
 
-: (OO)   ( <optional file-name> -- ) \ Open current unless given a file name
-   0 word c@                         \ Must be in right directory
-   if pocket count BL SKIP "CLIP" "+open-text
-   then  cursor-on-screen reEdit ;
 
-
-: oo ['] (oo) catch 0<> if message then  ;  \ file name Must be in proper dir
-: OPEN  OO ;
 
 0 value defer-margin  \ wait to apply until file is current in editor
 
@@ -162,6 +155,17 @@ forth also forth definitions editor
   defer-margin 1 = if true to browse?  else
   defer-margin 2 = if true overstrike ! false to browse? else
   defer-margin 3 = if false overstrike ! false to browse? then then then ;
+
+: (OO)   ( <optional file-name> -- ) \ Open current unless given a file name
+   0 word c@                         \ Must be in right directory
+   if pocket count BL SKIP "CLIP" "+open-text
+      setedmode defer-margin 1 =
+      if focus-console else  cursor-on-screen reEdit then
+   then ;
+
+: oo  1 to defer-margin  ['] (oo) catch 0<> if message  then ;
+: OPEN  OO ;
+: ooo 2 to defer-margin ['] (oo) catch 0<> if message then ;
 
 : widesearch ( <word> -- cfa fl )   \ for 'vv' and 'vvv'
   s" .;c:\cg;\win32forth" search-path place
