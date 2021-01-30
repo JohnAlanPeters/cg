@@ -101,11 +101,15 @@ create headerline 64 allot   \ parameter for header line
       else drop then r> close-file
    then drop ;
 
-: websendsrc ( line# file$ len -- )
+: websendsrc  { \ fname -- }   ( line# file$ len -- )
+   MAXSTRING LocalAlloc: fname
+   2dup fname place
    r/o open-file not
    if >r vbuf 32000 r@ read-file not
       if s" Linenum: " headerline place
          swap 0 (d.) headerline +place
+         bl sp@ 1 headerline +place drop
+         fname count headerline +place
          dup 6 sendheaders
          vbuf swap b2sock
       else drop then r> close-file

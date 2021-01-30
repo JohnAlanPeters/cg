@@ -11,7 +11,6 @@ var startstop=0;
 var sendint=false;
 var r1st=0;
 var hline=0;
-var fname='';
 var dsp;
 
 function doit(cntnu)
@@ -87,12 +86,14 @@ function doit(cntnu)
 }
 
 function handleview(data,hline){
+   var linenum=parseInt(hline.split(' ')[0]);
+   var fname=hline.split(' ')[1];
    elftxt.value=data;
    var rows=elftxt.value.split('\n').length;
    var lineHeight = parseInt(elftxt.scrollHeight/rows);
-   dptr=Math.max(hline-3,0) * lineHeight;
+   dptr=Math.max(linenum-3,0) * lineHeight;
    elftxt.scrollTop=dptr;
-   var fname=document.getElementById('filename');
+   document.getElementById('filename').value=fname;
 
 }
 
@@ -193,35 +194,56 @@ function webload(){
   doit(0);
 }
 
-
 </script>
+
+<style>
+  .flexrow {
+   display: flex;
+   flex-direction: row;
+  }
+  .flexcol {
+   display: flex;
+   flex-direction: column;
+  }
+
+</style>
+
 <body>
 Web32Forth 5.02 by Robert Ackerman & John Peters 415-239-5393.<br>
 A timer restarts Webby on the hour.<br>
-Complete source is here.
-<a href="https://github.com/JohnAlanPeters/cg">github repository</a>
-You can setup your own server.
+<div class='flexrow'>
+<div style="overflow-x:scroll;white-space:nowrap;">
+<!BLUE   >  <textarea id='dsp' rows=36 cols=88 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
+</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div class='flexcol'>
 <div>
  file name: <input type='text' id='filename' value=''></input> <button onclick="getfile();">get file</button>
  &nbsp;<button onclick="extendfile();">extend file</button>
  &nbsp;<button onclick="putfile();">save file</button>&nbsp;<button onclick="webload();">load file</button>
  &nbsp;<button onclick="getfile('Webcab');">create bid</button>
-<br>Saved filenames.f need a dot-F for it to load. Sample: JohnPetersTest.f NOTE!! VIEW now works,<br>
-
-<div style="overflow-x:scroll;white-space:nowrap;">
-<!Editor >  <textarea id='dsp' rows=36 cols=64 autofocus style="font-family:courier;font-size:14px;font-weight:bold;background-color:RoyalBlue;color:#fff;"></textarea>
-<!Blue> <textarea id='filetxt' rows=36 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;"></textarea>
 </div>
-<br>
- The Console is blue Editor is white. The help text is below.
-<br>
+<div>
+<!WHITE> <textarea id='filetxt' rows=36 cols=88 style="font-family:courier;font-size:14px;font-weight:bold;padding:4px;"></textarea>
+</div>
+</div>
+</div>
+<div>
+
+The <b>Console</b> is blue and the <b>Editor</b> is white. <b>DIR</b> will show you a directory of files and bids to play with.
+<b>Tesla-Charger</b> Is a good one to start with. Change the 50 to 10 or visa-versa just before LF-EMT 50A.<br>
+and all of the prices will change. They will update and show you new numbers.
+The file <b>files-docs</b> will tell you what each file contains<br>
+and what you can expect if you <b>get file</b> The files are usually already extended when you <b>get file</b> .
+If you make some changes you can <b>save file</b> and then <b>extend file</b> to get an update.<br>
+
 </div>
 <pre><b>
-Win32Forth and all it's thousands of words ready to be found, (like a library) ready to use. Use VIEW to look around..
-The system is case INsensitive. If you get a -13 error for a real Forth word, maybe turn off your spell-checker.
+Win32Forth and all it's thousands of WORDS are ready to be used, like a library. Use VIEW to look around..
+The system is case INsensitive. Watch out for your spell-checker.
 
-VIEW <word> will lists the source in the editor. Try it on DO-SERVER or START-STOP
-Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW.
+VIEW <word> will lists the source in the editor. Try it on START-STOP or DUP
+Yes you can VIEW the source of VIEW it's self.  Type VIEW VIEW to do so.
 
 If you type 'WORDS' you will get (too many) WORDS from the default vocabulary ELECTRIC directory..
 Instead use 'FORTH WORDS to see all the FORTH definitions in the system. (Still too many)
@@ -268,7 +290,7 @@ The space-bar will START-STOP and the ESC key will break-out from a listing of W
 
 <pre><b>
 RUNNING with FORTH on the Webby.
-Copy/paste this in to the editor.
+Copy/paste this in to the editor to see a loop in action.
 : TEST cr 6 0 do ." Hi World" cr loop ;
 Or copy-paste some of your own code in to the editor.
 Give it a [file name] like YourName.f (Nice to meet you, good to know you are here.)
@@ -283,6 +305,9 @@ Starting Forth has lessons. Use the updated free online version.. Here is the UR
 <a href="http://home.iae.nl/users/mhx/sf.html">starting forth</a>
 <pre><b>
 We could use some help with ideas for improvments.
+Complete source is here.
+<a href="https://github.com/JohnAlanPeters/cg">github repository</a>
+You can setup your own server.
 
 VIEW works fine. You may like the source code for the following words.
 view START-STOP
@@ -291,7 +316,7 @@ view PATCH
 view VIEW  (Yes you can view view )
 
 Try some Contract Generator words.
-CB  \ Short for Ciruit Breaker
+CB Show the makeup of the price for a Circuit Breaker
 BULBS WORDS will give you prices and times for various light bulbs.
 FISH-IN-WALLS PR  (PR is short for plug receptacle)
 

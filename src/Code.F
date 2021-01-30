@@ -530,7 +530,7 @@ editor
   to$ $open         \ do nothing if it exists
   if s" \cg\bids\template-mini" to$ count xcopyfile
   then drop
-  to$ count onedrivebids "+open-text 9 to cursor-line bookmark ;
+  to$ count "+open-text 9 to cursor-line bookmark ;
 
 : to-bids ( -- )  \ open -bids in editor
   s" \cg\bids\-bids" "open-text ;
