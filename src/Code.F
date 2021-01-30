@@ -347,9 +347,8 @@ parts+1/3  \ default
 
 Vocabulary Dollars
            Dollars Definitions
-: T&M  ." a marker" ;
 
-: _t&m ( n % -- )   \ stack: amount (single precision), percent for materials
+: _t&m ( n % -- )   \ stack: amount (single precision 400) % for materials
   >r 0 100. d* 2dup 2dup sell-sub 2! sell-total 2+!
   2dup 100 r@ - 0 d* 100. d/ 2dup 2dup labor-sub 2! labor-total 2+!
   100. d* labor-rate 2@ d/ 2dup time-sub 2! time-total 2+!
