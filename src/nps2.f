@@ -1699,10 +1699,8 @@ Elect
  \ The batteries are NOT included with the panel
 
 \ Smoke-Alarm
-Vocabulary Smoke-Alarm-old Smoke-Alarm-old Definitions    
-: 10-year         38.00 w/e  25 c ;
-Elect
-: smoke smoke-alarm-old ;
+Vocabulary Smoke-Alarm Smoke-Alarm Definitions
+: 10-year         38.00 w/e  25 c ; \ AC or 9V
 Elect
 
 \ FIRE   and Smoke          900-070     467-9393  01-25-09 AL

@@ -1,0 +1,1520 @@
+Customer name
+address
+San Francisco, CA
+(415)   
+email
+
+6 line                                            Goal       Actual Budget
+                                                 73.49     91.87 Man Hours      
+                                                 18.37     12.24 Man Days       
+                                          T   17,490.98     Estimated Price     
+                                          L   13,780.50    4,818.35 W/S Labor   
+                                          M   1,960.48     1,453.30 pre taxed   
+                                          O     156.00      0.00 JP
+                                          B       0.00
+
+Custom Notes                                                                    
+
+                                                        
+                                                        
+\s                                                      
+<a href=                                                
+http://www.cpsc.gov/CPSCPUB/PUBS/afcifac8.PDF
+>Bedroom plugs need to be on a AFCI circuit breaker.</a>
+                                                        
+                                                        
+Modular 100A                 312.61 +1/3   15.08 hrs   1
+                Neat-EMT                                                                  
+Ladder & 220V   1 Setup     Hot-220                        1.50      225.00               
+To PG&E wires   1 Riser     100A                           3.57      639.93               
+Conduit body    1 LB-Inc    100A                           0.96      161.99               
+90 Corner bend  1 90-Inc    100A                           0.75      130.45               
+Meter & Panel   1 M-P       100A-12-24                     2.50      576.90               
+Ground System   1 Ground    100A                           4.82      793.99               
+Hot cold & gas  1 Ground    BOND                           0.50       84.49               
+Hook up hot     3 Kouple-tap 3/0-12                        0.48      165.15               
+W-H relocated?
+                                                          15.08   $2,777.90               
+
+\ Not including PG&E fees if any.                       
+                                                        
+                                                        
+Reconnect old                                           
+                Neat-EMT                                                                  
+n Old fuses     2 CB      ( AFCI? )                        0.40       70.80               
+n Old CBs       2 CB                                       0.40       70.80               
+30 Amp Dryer    1 C-B 30A                                  0.30       75.48               
+Knob & Tube     1 Reconnect Black-box                      1.25      192.90               
+Existing rx     1 Reconnect Romex-easy                     0.20       31.35               
+1/2 inch pipe   1 Reconnect 1/2                            1.02      164.17               
+3/4 inch pipe   1 Reconnect 3/4                            1.25      201.00               
+Demolish old    40 minutes electrician                     0.68      102.00               
+To new location 20 Lf-EMT 20A                              1.30      208.20               
+Plug at panel   PL-ez GFCI                                 0.38       85.35               
+Light at panel  LT-easy   ( pull string )                  1.25      199.65               
+SW+PL at panel  SW-ez     ( if wanted )                    0.33       60.30               
+Plywood (if)    Setup Wall                                 0.85      182.85               
+Transformer     ( NIC  Low-Volt Tri-volt )                                                
+Underground work                                                                          
+Coordinate PG&E 5 hours electrician                        5.01      751.50               
+Remove cement   300 Dollars Allowance                      0.00      300.00               
+Dig trench      800 Dollars Allowance                      0.00      800.00               
+Thru foundation 100 dollars Allowance                      0.00      100.00               
+Concrete mix    400 dollars Allowance                      0.00      400.00               
+Gr rod & water  1 Ground 200A                              4.82      793.99               
+Rigid conduit   10 GRS   3-in ( Over 125A )                1.50      294.70               
+PG&E required   1 Sweep  3x24                              2.00      397.20               
+PG&E required   1 Sweep  3x36 ( PVC-Conc )                 3.50      633.00               
+No thread con.  1 NT-Con 3-in                              0.75      228.63               
+Termination can 1 Term-can 200A                            1.25      307.65               
+Between boxes   1 OS-Nip   200A                            1.54      280.66               
+Bender rent     ( 26 Dollars Rental                                                       
+2-nd inspection ( Get PG&E estimate )                                                     
+Temporary power ( Pull in full size wires )
+                                                          29.98   $6,932.18               
+
+Kitchen Lighting                                        
+                Open-1-side                                                               
+Demo work       1.00 hours electrician                     1.00      150.00               
+Ceiling Lights  5 LT  2 S3                                 6.86    1,067.64               
+Layout cans     120 Minutes Electrician                    2.04      306.00               
+Sink light      LT  SW                                     1.83      285.54               
+Hood Fan        LT  Install hood-fan                       1.48      227.52               
+Light Circuits  CB  Circuit                                0.80      130.12               
+Lighting Layout 0.50 Hour Electrician                      0.50       75.00               
+Temp power      0.50 hour electrician                      0.50       75.00               
+                ( For other trades )
+                                                          15.01   $2,316.82               
+                                                        
+                                                        
+Kitchen Power                                           
+                Open-1-side                                                               
+Dishwasher      PL  AFCI Circuit                           1.70      319.24               
+Disposal -->?   PL  AFCI Circuit  SW                       2.55      452.26               
+Cords (if NIC)  2 Cord                                     0.50       87.20               
+Refrigerator    PL                                         0.85      133.02               
+Stove Igniter   PL                                         0.85      133.02               
+Counters        6 PL  2 GFCI                               5.20      848.22               
+Util Circuits   2 CB  2 Circuit                            1.60      260.24               
+Island          ( Charge as ) Neat-EMT                                                    
+Layout plugs    1 Hour Electrician                         1.00      150.00
+                                                          14.25   $2,383.20               
+                                                        
+                                                        
+\ (C) 2019 John A Peters                                 
+\ This proposal is the result of years of experience
+                                                        
+                                                        
+Reminders                                               
+Title-24                                                                                  
+AFCI CBs                                                                                  
+                                                        
+                                                        
+Conduit & Circuit(s)                                    
+                Neat-EMT                                                                  
+Raceway pipe    50 LF-EMT 1/2                              2.65      415.50               
+As needed...    AFCI Circuit                               0.95      210.00               
+If needed...    AFCI Circuit                               0.95      210.00               
+AFCI (Bedrooms) AFCI Circuit                               0.95      210.00
+                                                           5.50   $1,045.50               
+                                                        
+Raceway pipe    50 LF-EMT 3/4                           
+If needed       2 L-B 1/2                                  1.00      161.28               
+.               FPE                                                                       
+Empty Raceway   70 LF-EMT 1/2  ( Apartment )               3.71      581.70               
+If needed       25 LF-EMT 1/2  ( measure )                 1.32      207.00               
+Empty Raceway   90 LF-EMT 1/2  ( Back rear apt             4.77      747.90
+                                                          10.80   $1,697.88               
+City Permit & Inspection     173.20 +1/3    2.00 hrs    
+Residential       1 Permit 10-Outlets-1                 
+Meet Inspector    1 Appointment Inspector      2.00     
+\s                                                      
+\ If you do not want an inspection, your risk is 9X the 
+                                                        
+\ YES 2 HOURS
+                                                        
+Residential Med   1 Permit 20-Outlets-2                 
+Residential Big   1 Permit 40-Outlets-3                 
+Cover Inspection  1 Appointment Inspector               
+Final Inspection  1 Appointment Inspector               
+Commercial Job    1 Permit 5-Commercial-2               
+Commercial Job    1 Permit 20-Commercial-3              
+                                                        
+                                                        
+One Time Cost(s)               0.00 +1/3    1.25 hrs    
+Electrician &   Truck-to New-Location                      0.25       37.50               
+Round Trip (if) Truck-to Supply-House                      1.00      150.00
+                                                           1.25     $187.50               
+                                                        
+Fixed Bid Quality              0.00 +1/3    0.00 hrs    
+Draft Proposal  60 Dollars Allowance ( JP )                0.00       60.00               
+1st Day Meeting 45 Dollars Allowance ( JP )                0.00       45.00               
+Finish Quality  45 Dollars Allowance ( JP )                0.00       45.00
+                                                           0.00     $150.00               
+                                                        
+Contingency Reserve            0.00 +1/3    0.00 hrs    
+Change Orders?  ( Adds, Deletes, Changes )                                                
+Your Ideas      ( "While you are here" )                                                  
+Unseen work     ( Until Inspector gives ok )                                              
+25% or less     000 Dollars Allowance                                                     
+\s                                                      
+<a href=                                                
+http://brooklineelectric.com/categories/contingency-fund
+  >Click here to read about the contingency fund.</a>   
+-                                                       
+This fund allows you to give direct orders to the electr
+
+\ DON'T USE - USE BV ELECTRIC METHOD
+\ Avoid grief later minimum 300 or 500 contingency fund  
+                                                        
+                                                        
+-------------------                                 ====
+                                                        
+                                                                 ==========
+TOTAL ESTIMATE                                                   $17,490.98     
+                                                                 ==========
+
+                                                                                
+                                Signature                                       
+                                Change
+                                                                                
+                                                                                
+Custom work                         50%                                         
+                                                                                
+Condo Conversions need AT LEAST!!   25%
+       Man days                     20%
+Avoid gref atlest 300                                                           
+                                    10%                                         
+                                                                                
+                                                                                
+dkdkdk                                                                          
+                                                                                
+                                                                                
+OPT Plaster  (If needed)                                                        
+                Plaster  ( Scratch coat )                                       
+4x5 patch       20 Square-inches                                                
+2x7 patch       14 Square-inches                                                
+2x6 patch       12 Square-inches                                                
+2x5 patch       10 Square-inches                                                
+2x4 patch        8 Square-inches                                                
+This is a guess ( till the wires are in )                                       
+It is best to   ( have a professional do this.                                  
+                                                                                
+                                                                                
+Signature Agreement                                                             
+This summary is superseded by the details of the "Scope-of Work"                
+ including the two pages of "Job Management and Conventions".                   
+PROVIDE AND INSTALL:                                                            
+Various electrical outlets & other items listed on printout.                    
+City fees, appointment, inspection & certificate if a line item.                
+                                TOTAL-ESTIMATE
+                                                       ========                 
+Changes are itemized, suggestions appreciated. (Cross off items)                
+Please be present 2-nd hr of work -OR- provide answers and keys.                
+Progress payments COD-by-section, percent completed or as below.                
+-                                                                               
+PAYMENT SCHEDULE                                                                
+ PAID   DEPOSIT   PROGRESS   PROGRESS   CONTINGENCY  INSPECTED                  
+ 0.00                                                                           
+                                                                                
+=================================                                               
+                                                                                
+                                                                                
+Signature and Contract                                                          
+This summary is superseded by the details of the "Scope-of Work"                
+ including the two pages of "Job Management and Conventions".                   
+PROVIDE AND INSTALL:                                                            
+Reconnect existing circuits to thermal magnetic circuit breakers                
+Lights, switches, plugs & other items listed on printout.                       
+City fees, appointment, inspection & certificate if a line item.                
+                                TOTAL ESTIMATE           000.00                 
+Changes are itemized, suggestions appreciated. (Cross off items)                
+Please be present 1-st hr of work -OR- provide answers and keys.                
+Progress payments COD-by-section, percent completed or as below.                
+ PAID   DEPOSIT   50%-DONE   90%-DONE   CONTINGENCY  INSPECTED                  
+
+                                                                                
+                                                                                
+EXTRAS AND CHANGES                                                              
+Please add the following tasks to the list of work to be done.                  
+.                                                                               
+I agree that the prices will be calculated using the same data-                 
+base as was used for the original estimate.  The added items                    
+will be added to the appropriate section of the next revision.                  
+                                                                                
+                                                                                
+Goal 2                                                                          
+First Last                                                                      
+000 Address                                                                     
+San Francisco, CA                                     C                         
+                                                      O                         
+Contingency Fund is $x00                      Ref:                              
+                                               0.00 or  0.00 Hrs                
+                                             0.00  0.00 MAN DAYS                
+                     THE SHOPPING LIST            0.00 w    0.00                
+                   --> Revision 0.1 <--    T      0.00 Estimated                
+                      April 00, 2004       L      0.00      0.00                
+   Materials+Permits+Contingencies+Etc.->  M      0.00      0.00                
+___________                                                                     
+                                                                                
+                                                                                
+Multi Meter Gang                                                                
+-- NEW SERVICE  ( 230 Volts )                                                   
+Ladder & 220V   1 Setup     Hot-220                                             
+Meter sockets   UG-MM X-gang                                                    
+Tenant Mains    3 C-B 60A                                                       
+Hot cold & gas  X Ground    Bond                                                
+Gr rod & water  1 Ground    150A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+                                                                                
+                                                                                
+get ug-mm                                                                       
+                                                                                
+Temporary Power                                                                 
+                                                                                
+                                                                                
+Multi Panels                                                                    
+                Neat-EMT                                                        
+Panels          X Panel 150A-16-32                                              
+Pipe ends =     X OS-Nipple 1-1/4                                               
+More distance   X 15 * LF-EMT 65A                                               
+Other           1 hr el                                                         
+                                                                                
+                                                                                
+get OS-Nip                                                                      
+                                                                                
+Temporary power                                                                 
+                                                                                
+                                                                                
+Risks & rewards of a Little GC                                                  
+More steady work, known commodity                                               
+Provide electrical plans or sketch.                                             
+Share the goals  (Long term and short term) (Repeat client?)                    
+Audit the bid with me on the phone from your office.                            
+Provide fixture cut sheets and instructions for us.                             
+Give a sample change order as an exhibit.                                       
+                                                                                
+Give us an envelope of time, free of other trades.                              
+Walk the job with us before we start work.                                      
+Answer questions and give suggestions.                                          
+Loan equipment (scaffolding, a roto-hammer etc)                                 
+Be on call and pay attention to what is being done.                             
+Have a check ready for us when the inspector leaves.                            
+Provide lien notice details.  LOT and BLOCK numbers etc                         
+                                                                                
+Risks & rewards of a Big GC                                                     
+.                                                                               
+Don't sign a contract other than your own unless you:                           
+  Have your staff read and highlight everything.                                
+  Demand 24 hours to restudy a changed or new printout.                         
+  Request margin markers on any changed language                                
+  Charge for the time to research a thick contract document.                    
+  Charge for technical consulting.                                              
+  Watch out for terms that include pages other than "E" series,                 
+  EE pages with panel layouts are a good sign.                                  
+                                                                                
+                                                                                
+Warnings to Aries                                                               
+If they have their own agreement instead of us                                  
+ We have to take time to study General Contractor paperwork.                    
+ Our contract and estimate must be cited as an exhibit.                         
+                                                                                
+Bell wires in wall hit by drill                                                 
+                                                                                
+It is necessary to budget for contingencies.  Extra work may be                 
+required to correct the best of intentions by other trades.                     
+There are a range of activities and conditions can negatively                   
+impact construction team work.  We must work together to cut or                 
+eliminate risk or we will see our profits disappear.  Effective                 
+progress is our goal.  With good planning and steady work the                   
+contingency money will not be needed.  At the conclusion of the                 
+job I will audit this list and the total price will be adjusted                 
+and invoiced.                                                                   
+Reconnections                                                                   
+                                                                                
+Knob & Tube     1 Reconnect 6-Loom-N&T                                          
+Knob & Tube     1 Reconnect 2-Loom-N&T                                          
+                1 Reconnect Romex-easy                                          
+                1 Reconnect Romex-hard                                          
+1/2 inch pipe   1 Reconnect 1/2                                                 
+3/4 inch pipe   1 Reconnect 3/4                                                 
+1-in pipe       1 Reconnect 1-in                                                
+15-20A Breakers 2 CB                                                            
+30 Amp Dryer    1 C-B 30A                                                       
+50 Amp Range    1 C-B 50A                                                       
+Transformer     0 Lo-Volt Tri-volt                                              
+Light at meter  Neat-EMT  LT-easy                                               
+Printed CB list 30 minutes two-men                                              
+                                                                                
+2 (M) In/Out 150A                                                               
+NEW SERVICE     ( 230 Volts 150 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220                                             
+To PG&E wires   1 RISER     150A                                                
+90 degree bend  1 90-INC    150A                                                
+Conduit body    1 LB-INC    150A                                                
+Two in one box  1 METER-IN  2-gang                                              
+Between boxes   2 OS-NIP    100A                                                
+Spaces for CBs  2 PANEL     125A-12-24                                          
+Tenant main     2 C-B       100A                                                
+Hot cold & gas  2 GROUND    BOND                                                
+Gr rod & water  1 GROUND    150A                                                
+Plywood         ( Contingency fund )                                            
+                                                                                
+                                                                                
+2g M-M                                                                          
+.                                                                               
+Riser                                                                           
+.                                                                               
+New Electric    ( Service  2 Meters                                             
+Meter socket    1 M-M 2-GANG ( Meter-Main )                                     
+                2 Ground Bond                                                   
+Gr rod & water                                                                  
+Circuit breaker 2 C-B 100A                                                      
+                2 panel 125a-12-24                                              
+                2 c-b 100a                                                      
+                                                                                
+                                                                                
+3 Res 1 Coml UG                                                                 
+-- NEW SERVICE                                                                  
+Ladder & 220V   1 SETUP     HOT-220                                             
+Gr rod & water  1 GROUND 200A                                                   
+Connector       1 NT-CON 2-IN                                                   
+Termination     1 TERM-CAN 200A                                                 
+Off set nipple  3 OS-NIP  200A                                                  
+-- Panel work                                                                   
+Between boxes   3 OS-NIP  65A                                                   
+Meter-Breaker   3 M-B 100A-10-20                                                
+Copper Wire     30 THHN 3/0                                                     
+Junctions       9 Kouple-tap 4/0                                                
+Between boxes   2 OS-NIP 100A                                                   
+Meter main      1 COMMERCIAL-MM OH-100A                                         
+CB panel        1 PANEL 150A-20-30                                              
+Hot cold & gas  1 GROUND BOND                                                   
+400A Multi Res                                                                  
+-- NEW SERVICE  ( Service  8 Meters 100-A ea.                                   
+UG assumed                                                                      
+                                                                                
+Main switch     1 R-S FUSED-MAIN-400                                            
+Gang of meters  2 R-S    4-METER                                                
+                8 C-B    100A                                                   
+                8 Panel  125a-12-24                                             
+                8 OS-NIP 100A                                                   
+Hot cold & gas  1 GROUND BOND                                                   
+Gr rod & water                                                                  
+Plywood         ( Contingency fund )                                            
+                                                                                
+                                                                                
+Gang & riser                                                                    
+-- NEW SERVICE  ( 230 Volts ?00 Amps )                                          
+Ladder & 220V   1 SETUP    HOT-220                                              
+Periscope       1 RISER    200A                                                 
+Extra distance  10 LF-emt  200A                                                 
+90 degree bend  1 90-INC   200A                                                 
+Main disconnect ( SAFETY-SWITCH 200A                                            
+Between boxes   1 OS-NIP   200A                                                 
+Gang of meters  2 METER-RT 3-GANG                                               
+Between boxes   1 OS-NIP   200A                                                 
+Feed the panels 12 OS-NIP  65A                                                  
+Tenant mains    12 C-B     60A                                                  
+With spaces     12 PANEL   125A-8-16                                            
+Hot cold & gas  1 GROUND   BOND                                                 
+Gr rod & water  1 GROUND   200A                                                 
+                                                                                
+In-Out  200A 2/0 1-1/2 R                                                        
+-- NEW SERVICE  ( 230 Volts 200 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220            1.50     202.50                  
+To PG&E wires   1 Riser     200A               5.97   1,044.37                  
+Conduit body    0 LB-Inc    200A                                                
+90 degree bend  1 90-Inc    200A               1.18     220.46                  
+Meter socket    1 Meter     1-Gang                                              
+Between boxes   1 OS-Nip    200A                                                
+Spaces for CBs  1 Panel     200A-30-40                                          
+Tenant main     1 C-B       200A                                                
+Gr rod & water  1 Ground    200A                                                
+House meter T&T                                                                 
+Hot cold & gas  1 Ground    Bond                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+In-Out  175A 1/0 1-1/4*R                                                        
+-- NEW SERVICE  ( 230 Volts 175 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220            1.50     202.50                  
+To PG&E wires   1 RISER     150A               5.10     864.82                  
+Conduit body    0 LB-INC    150A                                                
+90 degree bend  1 90-INC    150A               0.96     162.27                  
+Meter socket    1 METER     1-gang                                              
+Between boxes   1 OS-NIP    150A                                                
+Spaces for CBs  1 PANEL     150A-24-30                                          
+Tenant main     1 C-B       150A                                                
+Gr rod & water  1 GROUND    150A                                                
+Hot cold & gas  1 GROUND    BOND                                                
+House meter T&T                                                                 
+Hook up hot     3 Kouple-tap 3/0-12                                             
+*  BEST DEAL    ( Largest wires minimum pipe )                                  
+Plywood         ( Contingency fund )                                            
+In-Out  150A  #1 1-1/4 R                                                        
+-- NEW SERVICE  ( 230 Volts 150 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220                                             
+To PG&E wires   1 RISER     150A                                                
+Conduit body    0 LB-INC    150A                                                
+90 degree bend  1 90-INC    150A                                                
+Meter socket    1 METER     1-gang                                              
+Between boxes   1 OS-NIP    150A                                                
+Spaces for CBs  1 PANEL     150A-24-30                                          
+Tenant main     1 C-B       150A                                                
+Gr rod & water  1 GROUND    150A                                                
+Hot cold & gas  1 GROUND    BOND                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+House meter T&T                                                                 
+Plywood         ( Contingency fund )                                            
+Something funny ( about this one and back one                                   
+In-Out  125A  #2 1-1/4 R                                                        
+-- NEW SERVICE  ( 230 Volts 125 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220                                             
+To PG&E wires   1 RISER     125A                                                
+Conduit body    0 LB-INC    125A                                                
+90 degree bend  1 90-INC    125A                                                
+Meter socket    1 METER     1-gang                                              
+Between boxes   1 OS-NIP    125A                                                
+Spaces for CBs  1 PANEL     125A-16-24 ( sml                                    
+Tenant main     1 C-B       125A                                                
+Gr rod & water  1 GROUND    125A                                                
+Hot cold & gas  1 GROUND    BOND                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House Meter T&T                                                                 
+In-Out  100A  #4 1-1/4 R                                                        
+-- NEW SERVICE  ( 230 Volts 100 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220       (                                     
+To PG&E wires   1 Riser     100A          (                                     
+Conduit body    1 LB-Inc    100A          (                                     
+90 Corner bend  1 90-Inc    100A          (                                     
+Meter Main      1 M-M       100A          (                                     
+Between boxes   1 OS-Nip    100A          (                                     
+Spaces for CBs  1 Panel     125A-12-24    (                                     
+Tenant main     1 C-B       100A          (                                     
+Gr rod & water  1 Ground    100A          (                                     
+Hot cold & gas  1 Ground    BOND          (                                     
+House meter AIC, W-H 3-ft   ( Load calc to PG&                                  
+Hook up hot     3 Kouple-tap 3/0-12                                             
+W-H relocated?                                                                  
+Rock?                                                                           
+Modular 200A 2/0 1-1/2*R                                                        
+-- NEW SERVICE  ( 230 Volts 225 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220                                             
+Pipe up to PG&E 1 Riser     200A                                                
+Conduit body    1 LB-Inc    200A                                                
+90 Corner bend  1 90-Inc    200A                                                
+Panel CB Meter  1 M-P 200A-20-40                                                
+Gr rod & water  1 Ground    200A                                                
+Hot Cold & Gas  1 Ground    Bond                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Glass           ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+                                                                                
+                                                                                
+Modular 175A 3/0 1-1/2 R                                                        
+-- NEW SERVICE  ( 230 Volts 200 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220                                             
+Pipe up to PG&E 1 Riser     200A                                                
+Conduit body    1 LB-Inc    200A                                                
+90 Corner bend  1 90-Inc    200A                                                
+Panel CB Meter  1 M-P 200A-20-40                                                
+Gr rod & water  1 Ground    200A                                                
+Hot Cold & Gas  1 Ground    Bond                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Glass           ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+                                                                                
+                                                                                
+Modular 125A  #2 1-1/4 R                                                        
+-- NEW SERVICE  ( 230 Volts 125 Amps )                                          
+Ladder & 220V   1 Setup     HOT-220                                             
+Pipe up to PG&E 1 Riser     125A                                                
+Conduit body    1 LB-Inc    125A                                                
+90 Corner bend  1 90-Inc    125A                                                
+Panel CB Meter  1 M-P 125A-16-24                                                
+Gr rod & water  1 Ground    125A                                                
+Hot Cold & Gas  1 Ground    Bond                                                
+*  BEST DEAL    ( Largest wires minimum pipe )                                  
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Glass           ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+                                                                                
+Modular 100A  #4 1-1/4 R                                                        
+-- NEW SERVICE  ( 230 Volts 100 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220       (                                     
+To PG&E wires   1 Riser     100A          (                                     
+Conduit body    1 LB-Inc    100A          (                                     
+90 Corner bend  1 90-Inc    100A          (                                     
+Meter & Panel   1 M-P       100A-12-24    (                                     
+Gr rod & water  1 Ground    100A          (                                     
+Hot cold & gas  1 Ground    BOND          (                                     
+AIC, W-H 3-ft   ( Load calc to PG&E )                                           
+Hook up hot     3 Kouple-tap 3/0-12                                             
+W-H relocated?                                                                  
+House meter                                                                     
+                                                                                
+get kouple-tap                                                                  
+                                                                                
+In-Out! 100A  #4 1-1/4 R                                                        
+-- NEW SERVICE  ( 230 Volts 100 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220       (                                     
+To PG&E wires   1 Riser     100A          (                                     
+Conduit body    1 LB-Inc    100A          (                                     
+90 Corner bend  1 90-Inc    100A          (                                     
+Meter Main      1 M-M       100A          (                                     
+Between boxes   1 OS-Nip    100A          (                                     
+Spaces for CBs  1 Panel     125A-12-24    (                                     
+Tenant main     1 C-B       100A          (                                     
+Gr rod & water  1 Ground    100A          (                                     
+Hot cold & gas  1 Ground    BOND          (                                     
+AIC, W-H 3-ft   ( Load calc to PG&E )                                           
+Hook up hot     3 Kouple-tap 3/0-12                                             
+W-H relocated?                                                                  
+House meter Rock?                                                               
+Mod Re Window   Get permission                                                  
+-- NEW SERVICE   ( 230 Volts 100 Amps )                                         
+Ladder & 220V   1 Setup      Hot-220                                            
+Weather Head    1 W-H        3/4                                                
+Up to PG&E      51 THHN      #4                                                 
+Pipe to box     1 HUB        3/4                                                
+Meter-breaker   1 M-P 100A-10-20                                                
+Gr rod & water  1 Ground    125A                                                
+Hot cold & gas  1 Ground    Bond                                                
+                ( Extend away from window )                                     
+                1 L-B        3/4                                                
+                5 ALRC       3/4                                                
+Hook up hot     3 Kouple-tap 3/0-12            0.48      65.10                  
+Plywood         ( Contingency fund )                                            
+House meter Glass           ( Contingency fund )                                
+Temporary power ( Contingency fund )                                            
+Mod Re Down     Get perm                                                        
+-- NEW SERVICE   ( 230 Volts 100 Amps )                                         
+Ladder & 220V   1 Setup      Hot-220                                            
+Weather Head    1 W-H        3/4                                                
+Up to PG&E      51 THHN      #4                                                 
+Pipe to box     1 HUB        3/4                                                
+Meter-breaker   1 M-P 100A-10-20                                                
+Gr rod & water  1 Ground    100A                                                
+Hot cold & gas  1 Ground    Bond                                                
+                ( Extend down to meter )                                        
+                1 L-B       3/4                                                 
+                5 ALRC      3/4                                                 
+                2 NT-Con    3/4                                                 
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+House meter                                                                     
+Multi 400A 230V                                                                 
+-- NEW SERVICE                                                                  
+Ladder & 220V   1 Setup     Hot-220                                             
+Wires to PG&E   1 Riser     400A                                                
+Hole, 90 corner 1 LB-Inc    400A                                                
+Meter sockets   x Meter     x-Gang                                              
+Offset nipples  x OS-Nip    100A                                                
+Offset nipples  x OS-Nip     65A                                                
+Circuit panel   x Panel     125A-12-24                                          
+Tenant mains    x C-B       100A                                                
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    400A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+Multi 220A 3/0 1-1/2*(200                                                       
+-- NEW SERVICE  ( 230 Volts 220 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220                                             
+Wires to PG&E   1 Riser     200A                                                
+Hole, 90 corner 1 LB-Inc    200A                                                
+Horiz length    10 LF-EMT   200A                                                
+Meter sockets   x Meter     x-Gang                                              
+Offset nipples  x OS-Nip    100A                                                
+Circuit panel   x Panel     125A-12-24                                          
+Tenant mains    x C-B       100A                                                
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    200A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+Multi 200A 2/0 1-1/2 (175                                                       
+-- NEW SERVICE  ( 230 Volts 200 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220                                             
+Wires to PG&E   1 Riser     200A                                                
+Hole, 90 corner 1 LB-Inc    200A                                                
+Horiz length    10 LF-EMT   200A                                                
+Meter sockets   x Meter     x-Gang                                              
+Offset nipples  x OS-Nip    100A                                                
+Circuit panel   x Panel     150A-20-30                                          
+Tenant mains    x C-B       100A                                                
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    200A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+House meter                                                                     
+                                                                                
+Multi 175A 1/0 1-1/4*(150                                                       
+-- NEW SERVICE  ( 230 Volts 175 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220                                             
+Wires to PG&E   1 Riser     150A                                                
+Hole, 90 corner 1 LB-Inc    150A                                                
+Horiz length    10 LF-EMT   150A                                                
+Meter sockets   1 Meter     x-Gang                                              
+Offset nipples  x OS-Nip     65A                                                
+Circuit panel   x Panel     150A-16-32                                          
+Tenant mains    x C-B        60A                                                
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    150A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+House meter + $165 for 200A                                                     
+Temporary power ( Contingency fund )                                            
+Plywood         ( Contingency fund )                                            
+Multi 150A  #1 1-1/4 (130                                                       
+-- NEW SERVICE  ( 230 Volts 150 Amps )                                          
+Ladder & 220V   1 Setup     HOT-220                                             
+Periscope       1 Riser     130A                                                
+Conduit bend    1 90-Inc    150A                                                
+Conduit body    1 LB-Inc    150A                                                
+Meter Socket    1 Meter     x-Gang                                              
+Nipple & wire   x OS-Nip    100A                                                
+Spaces for CBs  x Panel     150A-16-32                                          
+Tenant Main     x C-B       100A                                                
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    150A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+Multi 125A  #2 1-1/4 (115                                                       
+-- NEW SERVICE  ( 230 Volts 125 Amps )                                          
+Ladder & 220V   1 Setup     HOT-220                                             
+Periscope       1 Riser     115A                                                
+Conduit bend    1 90-Inc    100A                                                
+Conduit body    1 LB-Inc    100A                                                
+Meter Socket    1 Meter     x-Gang                                              
+Nipple & wire   x OS-Nip    100A                                                
+Spaces for CBs  x Panel     150A-16-32                                          
+Tenant Main     x C-B       100A                                                
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    100A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+House meter                                                                     
+Ready Stack                                                                     
+ - NEW SERVICE  ( 230 Volts 200 Amps )                                          
+Ladder & 220V   1 Setup    Hot-220                                              
+Weather Head    1 W-H      1-1/2                                                
+Pull new wires  20 6 + 3 * THHN 3/0 ( 200A )                                    
+                1 R-S      Lug-Kit-400                                          
+                1 R-S      Pull-Box-400                                         
+Fuses           3 Fuse     AIC-400A                                             
+Main Switch     1 R-S      FUSE-MAIN-400                                        
+                1 R-S      4-Meter                                              
+                1 R-S      3-Meter                                              
+Gr rod & water  1 Ground   200A                                                 
+Hot Cold & Gas  11 Ground  BOND                                                 
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund ) House met                                  
+Underground feed                                                                
+Remove cement   200 Dollars Allowance                                           
+Dig trench      200 Dollars Allowance                                           
+Thru foundation 100 dollars Allowance                                           
+Concrete batch  200 dollars Allowance                                           
+Gr rod & water  1 Ground 200A                                                   
+Rigid conduit   20 GRS   3-in ( Min )                                           
+PG&E required   1 Sweep  3x24                                                   
+No thread con.  1 NT-Con 3-in                                                   
+Termination can 1 Term-can 200A                                                 
+Between boxes   1 OS-Nip   200A                                                 
+Bender rent     26 Dollars Rental                                               
+Instruct digger ( 18-in cover min )                                             
+Mark cut lines  ( Post instructions )                                           
+Temporary power ( GET GRS SWEEP NT-CON                                          
+PHONE and CATV                                                                  
+M-M Meter-Main Gang                                                             
+-- NEW SERVICE  ( 230 Volts 150 Amps )                                          
+Ladder & 220V   1 Setup     Hot-220                                             
+Meter sockets   UG-MM x-gang                                                    
+Tenant Mains    x C-B 100A                                                      
+Hot cold & gas  x Ground    Bond                                                
+Gr rod & water  1 Ground    150A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+House meter                                                                     
+                                                                                
+                                                                                
+Underground 4-in                                                                
+Start up time   1 SETUP     NES                                                 
+Gr rod & water  1 GROUND    400A                                                
+Rigid conduit   20 GRS      4-in                                                
+PG&E required   1 SWEEP     4x36                                                
+No thread con.  1 NT-CON    4-in                                                
+Lock nuts       2 L-N       4-in                                                
+Bond bushing    1 BOND-BUSH 4-IN                                                
+Termination can 1 TERM-CAN  400A                                                
+Between boxes   1 OS-NIP    400A                                                
+Plywood         ( Contingency fund )                                            
+Temporary power ( Contingency fund )                                            
+                                                                                
+                                                                                
+New Service MB-100A                                                             
+-- NEW SERVICE  ( 230 Volts 100 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220                                             
+Meter & Panel   1 M-B 100A-16-24                                                
+Hot cold & gas  1 GROUND    BOND                                                
+Gr rod & water  1 GROUND    100A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+                                                                                
+The Oei job                                                                     
+Jan-03-1991                                                                     
+Temporary power ( Contingency fund )                                            
+100a much less                                                                  
+than 125a !                                                                     
+Plywood         ( Contingency fund )                                            
+House meter                                                                     
+                                                                                
+1 Comml 100A                                                                    
+Ladder & 220V   1 Setup     Hot-220                                             
+To PG&E wires   1 Riser     100A                                                
+90 degree bend  1 90-Inc    100A                                                
+                1 Commercial-meter 100A                                         
+Between boxes   1 OS-Nip    100A                                                
+Spaces for CBs  1 Panel     125A-12-24                                          
+Tenant main     1 C-B       100A                                                
+Gr rod & water  1 Ground    100A                                                
+Hot cold & gas  1 Ground    Bond                                                
+Plywood                                                                         
+Temporary power                                                                 
+                                                                                
+                                                                                
+2 Comml 100A ea.                                                                
+Ladder & 220V   1 Setup     Hot-220                                             
+To PG&E wires   1 Riser     200A                                                
+90 degree bend  1 90-Inc    200A                                                
+                1 OS-Nip    200A                                                
+              g 1 Safety-switch 200A                                            
+              g 1 Junction-box 10x10x36                                         
+              g 3 Kouple-Tap 3/0-12                                             
+                2 os-nip 100a                                                   
+              g 2 Commercial-Meter 100A                                         
+Between boxes   2 OS-NIP    100A                                                
+Spaces for CBs  2 PANEL     125A-12-24                                          
+Tenant main     2 C-B       100A                                                
+Gr rod & water  1 Ground    200A                                                
+Hot cold & gas  1 Ground    Bond                                                
+Plywood         ( Temporary power )                                             
+2 Comml 100A 3P                                                                 
+Ladder & 220V   1 Setup     HOT-220                                             
+To PG&E wires   1 Riser     200A-3P                                             
+90 degree bend  1 90-INC    200A                                                
+                1 Gutter 10x10x36                                               
+                4 Kouple-tap 3/0-12                                             
+                2 os-nip 100A                                                   
+                2 Commercial-MM 3P-3W-200A                                      
+Between boxes   2 OS-Nip    100A                                                
+Spaces for CBs  2 3P-Panel  125A-12-24                                          
+Tenant main     2 C-B       100A                                                
+Gr rod & water  1 Ground    200A                                                
+Hot cold & gas  1 Ground    Bond                                                
+3 phase adder   100 dollars parts                                               
+Temporary power Plywood                                                         
+                                                                                
+3 Meter Comm 1P                                                                 
+-- NEW SERVICE  ( 230 Volts 400 Amps )                                          
+Main Switch     1 Safety-switch 400A                                            
+Fuses           2 Fuse       400-AIC                                            
+Offset Nipple   1 OS-Nip        400A                                            
+Hot Gutter      1 Gutter    10x10x48                                            
+The wire        5 3 * 2 * thhn   3/0                                            
+Connections     3 Kouple-tap  3/0-12                                            
+Between boxes   3 OS-nip        200A                                            
+One unit        1 Commercial-Mm 100A                                            
+Two more        2 Commercial-Mm 100A                                            
+Gr rod & water  1 GROUND        400A                                            
+Hot Cold & Gas  3 GROUND        BOND                                            
+Temporary power                                                                 
+Plywood                                                                         
+                                                                                
+Main Safety-Switch                                                              
+Main switch     1 Safety-Switch 200A                                            
+AIC Fuses       2 Fuse      AIC-200A                                            
+Rigid conduit   20 GRS   1-1/2                                                  
+PG&E required   1 Sweep  1-1/2                                                  
+No thread con.  1 NT-Con 1-1/2                                                  
+Bolted hub      1 Hub    1-1/2                                                  
+Bolted Hub      1 Hub    1-1/2                                                  
+Between boxes   1 OS-Nip 200A                                                   
+Gr rod & water  1 Ground 200A                                                   
+Plywood                                                                         
+Check the AIC                                                                   
+                                                                                
+get safety-sw                                                                   
+get fuse                                                                        
+                                                                                
+In-Out 100A                                                                     
+-- NEW SERVICE  ( 230 Volts 100 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220                                             
+To PG&E wires   1 RISER     100A                                                
+Conduit body    0 LB-INC    100A                                                
+90 degree bend  1 90-INC    100A                                                
+Meter socket    1 METER-IN  1-gang                                              
+Between boxes   1 OS-NIP    100A                                                
+Spaces for CBs  1 PANEL     125A-12-24                                          
+Tenant main     1 C-B       100A                                                
+Hot cold & gas  1 GROUND    BOND                                                
+Gr rod & water  1 GROUND    100A                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+Plywood                                                                         
+                                                                                
+Temporary power                                                                 
+Risks and rewards of UNIFORM line item prices                                   
+                                                                                
+ADVANTAGES TO THE CLIENT                                                        
+  It is efficient, and saves money for both parties.                            
+  Changes can be made via verbal orders, without delay.                         
+  The flexibility welcomes positive ideas, improvements.                        
+  You can save time and money by being involved directly.                       
+  It shortens negotiations, puts the control where it belongs.                  
+                                                                                
+DISADVANTAGES TO THE CLIENT                                                     
+  The men may look to you for answers.                                          
+  It maybe confusing to have so many options.                                   
+  You will spend time on site, choosing options.                                
+  The total cost is not absolute till the changes are computed.                 
+                                                                                
+                                                                                
+Modular 100A                                                                    
+-- NEW SERVICE  ( 230 Volts 100 Amps )                                          
+Ladder & 220V   1 SETUP     HOT-220                                             
+Pipe up to PG&E 1 RISER     100A                                                
+90 Condulet     0 LB-INC    100A                                                
+90 Corner bend  1 90-INC    100A                                                
+Panel CB Meter  1 M-B 100A-10-20                                                
+Gr rod & water  1 GROUND    100A                                                
+Hot Cold & Gas  1 GROUND    BOND                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+.                                                                               
+Give warning    ( Small box )                                                   
+Plywood                                                                         
+                                                                                
+                                                                                
+UG Customer owned NES                                                           
+                ( 230 Volts 100 Amps )                                          
+Work hot 220V   1 Setup       Hot-220                                           
+Extend up       1 LB-Inc      100A                                              
+Meter-M & Panel Ug-all-in-1   100A-12-24                                        
+Gr rod & water  1 Ground      100A                                              
+Hot cold & gas  1 Ground      BOND                                              
+Hook up hot     1 hour Electrician                                              
+                                                                                
+                                                                                
+2 Comml 100A 3P                                                                 
+Ladder & 220V   1 SETUP     HOT-220                                             
+To PG&E wires   1 RISER     200A-3P                                             
+90 degree bend  1 90-INC    200A                                                
+                1 Commercial-MM 3P-3W-200A                                      
+Between boxes   1 OS-NIP    100A                                                
+Spaces for CBs  1 3P-PANEL  125A-12-24                                          
+Tenant main     1 C-B       100A                                                
+Gr rod & water  1 GROUND    200A                                                
+Hot cold & gas  1 GROUND    BOND                                                
+Hook up hot     3 Kouple-tap 3/0-12                                             
+3 phase adder   100 dollars parts                                               
+Plywood                                                                         
+                                                                                
+                                                                                
+Fixture costs                                     from 67                       
+You can go to Peer Light (Alan) or Bay Commercial (Mike).                       
+If you like I will fax a note of introduction to one of them.                   
+I will ask them to let you pay my whole sale price.                             
+                                                                                
+                                                                                
+Commercial check list                               06-10-92 AEC                
+A B switching                                                                   
+Load calc required.                                                             
+Cement walls and ceiling or high up add 25% time.                               
+Special items require a deposit and lead time.                                  
+Access may include waiting, room scheduled in use.                              
+Will the Ford Van be close to the work?                                         
+If the job goes slow, it will be because of ...                                 
+Stinger leg on three phase 220 volt applications.                               
+AIC rating and clearance of 36 inches on customer owned land.                   
+Can't have a contingency fund then add cost of risk.                            
+What is payment schedule, Special date?  Middle man?                            
+New technology may require study time.                                          
+Delays, testing, car in garage, Key sets in order, multi setups.                
+Get the time sheet initialed if there are changes.                              
+( See also Dick Fitzgerald's list )  MANAGE BID-PUNCH                           
+Change Policy                                                                   
+  If we have to redo some work, or provide additional work and                  
+it can be said that "Aries should have known about it" then we                  
+will not be ask you to pay any more than if it had been done                    
+correctly in the first place.                                                   
+                                                                                
+                                                                                
+Communication                                                                   
+Please share your goals with me so I can produce them as my own.                
+This is an estimate, not a bid.  It will be edited and reprinted                
+to reflect adds, changes and progress. Deletions will disappear.                
+Visits & questions or at least messages are expected w/o delay.                 
+.                                                                               
+If your response is delayed I will notify you of my plans, use                  
+my judgment, and bill for my time 2-nd guessing your wishes.                    
+.                                                                               
+24-hrs later I will assume it to be part of the contract.                       
+                                                                                
+                                                                                
+RELEASE OF MECHANIC'S LIEN                                                      
+   Aries Electric hereby releases any right of                                  
+that he may now have by reason of having furnished labor and/or                 
+materials, equipment and appliances to the above named address                  
+and used in or about the improvement of that property located in                
+the County of San Francisco, State of California and described                  
+as below, except for disputed claims for extra work and work not                
+covered by previous payments.                                                   
+                                                                                
+                                                                                
+Assumptions                                                                     
+If any of the stated criteria is incorrect or must be changed,                  
+it may affect the prices quoted, and a review of the costs will                 
+become necessary.                                                               
+                                                                                
+                                                                                
+Standard price list                                                             
+                Open-1-side                                                     
+                 LT                                                             
+                 SW                                                             
+                 PL                                                             
+                Fish-in-walls                                                   
+Light            LT                                                             
+Switch           SW                                                             
+Plug             PL                                                             
+                 PL-medium                                                      
+                 PL-easy?                                                       
+                Neat-EMT                                                        
+                 LT                                                             
+                 PL                                                             
+                                                                                
+                                                                                
+NES parts list                                                                  
+1-1/4 W-H                       #4 THHN                                         
+1-1/4 ALRC                      Armor #8                                        
+1-1/4 90                        Hammer Drill                                    
+1-1/4 LB                        5S                                              
+1-1/4 Tote                      4S-IND GFI                                      
+1-1/4 Gr bush                   Plywood                                         
+1-1/4 Hub                       Skill Saw                                       
+2s-con                          Calk                                            
+1/2 gr-bush                     Big Blue                                        
+M-P                                                                             
+CBs                             PR                                              
+DPW                             Plate                                           
+#6 bare                         GFI                                             
+Hubs with gr clamps             Cut-in box                                      
+                                                                                
+Door Bell                     37.99 +1/3    5.20 hrs     877.63                 
+                Fish-in-walls                                                   
+Front door      1 Low-volt button              0.25      43.39                  
+In hall         1 Low-volt Chime-kit           0.50      90.97                  
+The wire        90 wire 22/4                   1.80     303.30                  
+Inside gate     1 Low-volt Button              0.25      43.39                  
+Outside gate    1 Low-volt Button              0.25      43.39                  
+In garage       1 Transformer Tri-Volt         0.20      43.14                  
+                1 Blockage Floor-plate         0.75     119.25                  
+                1 Blockage FIre-Block          0.45      71.55                  
+                Setup job                      0.75     119.25                  
+                                                                                
+Get Blockage                                                                    
+Get Transformer                                                                 
+Get Wire                                                                        
+Get Low-Volt                                                                    
+Gate Release                  69.83 +1/3    4.25 hrs     769.63                 
+                Fish-in-walls                                                   
+Front door      1 Low-volt button              0.25      43.39                  
+In hall         1 Low-volt Chime-kit           0.50      90.97                  
+Front Gate      1 Low-volt Door-release        0.30      93.60                  
+The wire        75 wire 22/4                   1.50     252.75                  
+Release mount   ( NIC by gate man )                                             
+Inside gate     1 Low-volt Button              0.25      43.39                  
+Outside gate    1 Low-volt Button              0.25      43.39                  
+In garage       1 Transformer Tri-Volt         0.20      43.14                  
+Under bid?      1 hour electrician             1.00     159.00                  
+                                                                                
+                                                                                
+Closet light                                                                    
+                Fish-in-walls                                                   
+                LT-medium                                                       
+                SW-very-easy                                                    
+                Fixture Jelly-jar                                               
+                                                                                
+                                                                                
+Intercom                                                                        
+                Intercom C-123LP                                                
+                3 Low-volt Button                                               
+                Transformer Tri-volt                                            
+                100 wire 22/4                                                   
+                Setup job                                                       
+                Travel medium                                                   
+                Blockage floor-plate                                            
+                ( Door release extra )                                          
+                                                                                
+                                                                                
+Bath Fan Ceiling                                                                
+                Fish-in-walls                                                   
+In ceiling      Fan Panasonic                                                   
+Power source    PS                                                              
+Wall switch     SW                                                              
+                Ground Box-easy                                                 
+Exhaust         Vent-4" Flex-tube                                               
+ \              Vent-4" Transition                                              
+   \            Vent-4" Roof-Jack                                               
+                Timer 5-10-15-30                                                
+You will need   ( the services of a roofer                                      
+                ( if your roof is flat.                                         
+                                                                                
+get vent-4"     ( 125 )                                                         
+get timer                                                                       
+get Fan                                                                         
+Bath Fan Wall                                                                   
+                Fish-in-walls                                                   
+                Big-holes-ok                                                    
+In the wall     Fan Small  ( Caution )                                          
+Power source    PS                                                              
+Wall switch     SW                                                              
+                Ground box-easy                                                 
+                Timer 5-10-15-30                                                
+Hole thru wall  1 hour electrician                                              
+Stucco          1 hour electrician                                              
+Ladder work     1 hour electrician                                              
+Assembly parts  1 hour electrician                                              
+                                                                                
+get fan                                                                         
+get timer       ( This line will not print )                                    
+                                                                                
+BB Heat (Sample)                                                                
+                Fish-in-walls                                                   
+Power source    PS                                                              
+Heater unit     Heat-AL 1500W                                                   
+Thermostat      Heat-al EC-Stat                                                 
+C. Breaker      0.50 C-B 20A-2P                                                 
+Pipe            15 lf-EMT 1/2                                                   
+Wires           Circuit                                                         
+                                                                                
+                                                                                
+Puck Sample                                                                     
+                Flush-in-walls                                                  
+                8 Puck light                                                    
+                1 Transformer 250W                                              
+                                                                                
+                                                                                
+Template                                                                        
+                xx emt 1/2                                                      
+                xx GRS 1/2                                                      
+                xx ss-con 1/2                                                   
+                xx ss-coup 1/2                                                  
+                xx thhn 12                                                      
+                x 4s box                                                        
+                x 4s-ind pr                                                     
+                x 4s bl                                                         
+                x device pr                                                     
+                                                                                
+                                                                                
+Dryer 220V                    99.22 +1/3    6.04 hrs   1,094.07                 
+                Neat-EMT                                                        
+Breaker         C-B 30A                        0.30      78.18                  
+Pipe and wire   50 LF-EMT 30A                  3.80     646.20                  
+Extra corners   2 L-B 1/2                      1.00     170.28                  
+Outlet box      Box-only-easy                  0.44      74.01                  
+Female Plug     Device-220 Dryer               0.20      50.70                  
+Male Cord       Molded Dryer  ( 4 prong )      0.30      74.70                  
+                                                                                
+                                                                                
+12 14 hits                                                                      
+                                                                                
+get molded                                                                      
+get device-220                                                                  
+get l-b                                                                         
+                                                                                
+Jacuzzi 20A                                                                     
+                Neat-EMT                                                        
+Pipe to panel   50 lf-emt 20A                                                   
+Junction        Box-only                                                        
+Life Safety     GFI                                                             
+Bends           2 L-B 1/2                                                       
+If needed       Cord                                                            
+Ground wire     12 thhn #8                                                      
+ \              2 Ground clamp                                                  
+The main        C-B 20A                                                         
+Poor access     1 hours electrician                                             
+                                                                                
+                                                                                
+Jacuzzi 50A  Hot Tub 8/5                                                        
+                Neat-EMT                                                        
+In trench       25 GRS    3/4                                                   
+ \ the ends     2 NT-Con  3/4                                                   
+4 Copper wire   110 4 * THHN #8                     Scr 94                      
+Junctions in    2 Box-only                          for HITs                    
+The pipe        85 LF-EMT 3/4                                                   
+6 90-deg bends  3 L-B 3/4                                                       
+At the tub      6 LT-Flex 3/4                                                   
+ \ the ends     2 LT-CON 3/4                                                    
+  \ also        2 Ground-Bushing 3/4                                            
+If needed       Ground Rod                                                      
+Ground wire     12 THHN #8                                                      
+The main        C-B 50A                                                         
+Safety GFI CB   120 Dollars Parts ( 73 )                                        
+ \              2 Hours Electrician                                             
+\ Loader for 50A  Hot Tub 8/5                       07-30-07 AL                
+get GRS                                                                         
+get NT-Con                                                                      
+get L-B                                                                         
+get LT-Flex                                                                     
+get LT-CON                                                                      
+get Ground-Bushing                                                              
+                                                                                
+                                                                                
+USE 1 6 HITS not Load and not Get                                               
+Forget (fish-work)                                                              
+                                                                                
+get romex                                                                       
+get c-b                                                                         
+                                                                                
+                                                                                
+Trace & Tag Notes                                                               
+ Trace-and-tag will result in a circuit number on each outlet,                  
+in pencil so it can be easily cleaned off.  A                                   
+show every outlet according to it's circuit.  This exercise                     
+will disclose most any electrical code safety problem.                          
+                                                                                
+                                                                                
+Range 220V                                                                      
+                Open-1-side                                                     
+Circuit breaker C-B 50A                                                         
+50A Romex       50 LF-EMT 50A                                                   
+Outlet          Box-only                                                        
+Outlet          Device-220 Range                                                
+Range cord      Molded range                                                    
+                                                                                
+                                                                                
+Get Device-220                                                                  
+Get Molded      ( This line will not print )                                    
+                                                                                
+                                                                                
+Closet fuses out                                                                
+                Fish-in-walls                                                   
+n Fuses         4 CB                                                            
+First floor     Blockage floor-plate                                            
+Second floor    Blockage floor-plate                                            
+                2 Blockage fire-block                                           
+                2 Blockage fire-block                                           
+Copper wire     25 rx 12/3                                                      
+                Neat-EMT                                                        
+Junction box    (J)                                                             
+Pipe to panel   25 LF-EMT 1/2                                                   
+                                                                                
+                                                                                
+Get blockage                                                                    
+Get romex                                                                       
+                                                                                
+Closet fuses out T&M                                                            
+                Neat-EMT                                                        
+                55 dollars parts                                                
+                6.67 hours electrician                                          
+                ( See Likerman.sub )                                            
+                ( Repulling wires not included                                  
+                                                                                
+                                                                                
+Cans 2-in                                                                       
+                Fish-in-walls                                                   
+Back boxes      1 Recessed-2" Can                                               
+Simple type     1 Recessed-2" Trim                                              
+                1 Lamp MR-16                                                    
+Note: Prices    ( include some install time )                                   
+                                                                                
+                                                                                
+Cans 4-in                                                                       
+                Fish-in-walls                                                   
+Back boxes      1 Recessed-4" Can                                               
+Simple type     1 Recessed-4" Trim                                              
+Halogen type    1 Lamp 50W-PAR                                                  
+Note: Prices    ( include some install time )                                   
+                                                                                
+                                                                                
+Cans 5-in                                                                       
+                Fish-in-walls                                                   
+Back boxes      1 Recessed-5" Can                                               
+Simple type     1 Recessed-5" Trim                                              
+Halogen type    1 Lamp 75W-PAR                                                  
+                ( Fire box )                                                    
+Note: Prices    ( include some install time )                                   
+                                                                                
+                                                                                
+Bathroom remodel                                                                
+                Open-1-side                                                     
+Ceiling         LT  SW                                                          
+Wall plug       PL  GFCI                                                        
+Dedicated       CB  Circuit                                                     
+Home run        50 LF-EMT 1/2                                                   
+Make space      CB  ( wide->narrow CB )                                         
+Dimmer          Dimmer DV-600                                                   
+Fan             Timer Push-60W                                                  
+                Kill old-box                                                    
+                Flo Cloud-32W                                                   
+                                                                                
+                                                                                
+Notes changNeat-EMTtes and Spelling                                             
+PH CATV and CAT-5 times raised quite a bit prox 3-15-00                         
+Recessed-5" added but there are no prices yet. 3-28-00 prox                     
+Big-holes-ok added about an hour to each.  4-2-00                               
+There is a PL-easy in big-holes-ok, if needed.                                  
+Tried compiling the system on Win32Forth for Windows 4-2-00                     
+Malibu is the correct spelling.  4-24-00                                        
+Armoire the correct spelling.  4-24-00                                          
+Recessed is correct spelling.                                                   
+Setup job is 1 hour, Travel is 1/2 hour  Total is same. 6-5-00                  
+Contingency screen made easier and added items. 6-11-00                         
+Smoke-9v and Smoke-110v both now as well as Smoke-110V-9V                       
+                                                                                
+                                                                                
+UC flo lighting                                                                 
+                Fish-in-walls                                                   
+                4 LT                                                            
+                SW                                                              
+                Dimmer DV-600                                                   
+                4 Inch-light 42-in                                              
+                4 Inch-light 24-in                                              
+                4 Tube 12-in                                                    
+                4 Tube 21-in                                                    
+                                                                                
+                                                                                
+Oven 220V                                                                       
+                Fish-in-walls                                                   
+Circuit breaker C-B 30A                                                         
+Pipe & wire     70 LF-EMT 30A                                                   
+Sharp corner    1 L-B 1/2                                                       
+Outlet box      Box-only                                                        
+With installer  Travel Return-trip                                              
+Flex to unit    Whip                                                            
+                                                                                
+                                                                                
+Install Trolley Cable                                                           
+                Fish-in-walls                                                   
+                20 Install-Trolly Cable                                         
+                1 Install-Trolly Dual-300W                                      
+                1 Install-Trolly Single-300W                                    
+                1 Install-Trolly Interrupter                                    
+                1 Install-Trolly Dead-end                                       
+                1 Install-Trolly Live-End                                       
+                ( Install-Trolly Hardware                                       
+                ( Install-Trolly  "L"                                           
+                                                                                
+235 of NPS                                                                      
+                                                                                
+                                                                                
+Trace and Tag                                                                   
+                Trace&tag 1 Tester-Rent                                         
+                Trace&tag 1 Circuit                                             
+                Trace&tag 2 Rooms                                               
+                Trace&tag 1 Typed-list                                          
+                Trace&tag 1 Old-fuse                                            
+                Trace&tag 1 Outlet                                              
+                Trace&tag 1 Outlets                                             
+                                                                                
+                                                                                
+\ INDS Not too quick                                                            
+: INDS   SAVE-BUFFERS DEPTH 0=                                                  
+   IF 0 THEN                                                                    
+   CR CAPACITY 1- INCL                                                          
+   DO START-STOP I .LINE0  2000 MS LOOP                                         
+   CR ;                 ( ^^^^^ )                                               
+                        (  2000 for the IBM or                                  
+                        ( Change speed here )                                   
+                                                                                
+                                                                                
+Bathroom Heat                                                                   
+                Fish-in-Walls                                                   
+                PS                                                              
+Dedicated       CB  Circuit                                                     
+                Heat Bath-1500w                                                 
+                                                                                
+                                                                                
+PG&E                           0.00 +1/3    4.00 hrs     360.00                 
+Coordinate PG&E 4 hours electrician            4.00     360.00                  
+\s                                                                              
+Check with PG&E engineering on the AIC rating for the area.                     
+Meet PG&E inspector before covering the trench.                                 
+Fill out paperwork for PG&E and have the customer sign it.                      
+Take the paper work to the PG&E office.                                         
+Come back and "cut over power" by appointment.                                  
+                                                                                
+                                                                                
+Trench                                                                          
+Open 7 squares  300 Dollars Allowance                                           
+Dig trench      800 Dollars Allowance                                           
+Around corner                                                                   
+Thru foundation 100 Dollars Allowance                                           
+Concrete Cover  400 Dollars Allowance                                           
+                                                                                
+                                                                                
+Pipe                                                                            
+Gr rod & water  1 Ground 200A                                                   
+Rigid conduit   10 GRS   3-in                                                   
+PG&E required   1 Sweep  3x24                                                   
+PG&E required   1 Sweep  3x36 ( PVC-Conc )                                      
+No thread con.  1 NT-Con 3-in                                                   
+Termination can 1 Term-can 200A                                                 
+Between boxes   1 OS-Nip   200A                                                 
+Bender rent     26 Dollars Rental                                               
+2-nd inspection ( Get PG&E estimate )                                           
+Temporary power ( Pull in full size wires )                                     
+                                                                                
+get grs                                                                         
+get sweep                                                                       
+get os-nip      ( Move to top if needed )                                       
+                                                                                
+NIC = Not included                                                              
+Code work, safety issues or concealed work discovered.                          
+.                                                                               
+PG&E fees for trenching (Typically a $1,500 deposit)                            
+PG&E fees for overhead wire if moved, (Typically about $320)                    
+More power (We can do a load calculation)                                       
+Sub-standard construction or thick insulation or stucco.                        
+Panels that turn out to be over filled, no spare slots.                         
+Time correcting owner supplied fixtures (Incomplete or late etc)                
+Maid cleaning. We sweep up and put debris in your trash cans.                   
+PLASTER, stucco, sheet rock, paint, woodwork, framing, etc.                     
+.                                                                               
+Impact time, the other trades should absent while we work.                      
+Design time and talk time on kitchen remodel that have no plans.                
+Adjusting hights or centering outlets after cover-up inspection.                
+                                                                                
+City Permit & Inspection                                                        
+Residential Big   1 Permit 2-Inspections                                        
+Cover Inspection  1 Appointment Inspector                                       
+Final Inspection  1 Appointment Inspector                                       
+                                                                                
+                                                                                
+CONDITIONS, Custom work                                                         
+All of below =   1 Hour Electrician                                             
+Stairs take time                                                                
+No Drawings                                                                     
+No hights                                                                       
+No locations                                                                    
+2nd floor                                                                       
+3rd floor                                                                       
+                                                                                
+Far from shop                                                                   
+                                                                                
+                                                                                
+GOOD HOUSEKEEPING                                                               
+Coordination    ( on time etc)                                                  
+Show results    ( Give a tour )                                                 
+Keep animals in ( We like pets )                                                
+Ask permission  ( Is this ok here? )                                            
+Move furniture  ( Owner to put it back )                                        
+Security        ( Keep the doors closed )                                       
+Keep power on   ( & back on at end of day )                                     
+Guard valuables ( We are your security man )                                    
+Parking meters  ( No parking spaces near by )                                   
+Be careful . .  ( Valuable objects in place )                                   
+For all above   1 30 * Minutes electrician                                      
+                ( 1 days of cleanup and care )                                  
+Compared to a-> ( rough construction site )                                     
+                ( has laborers to clean up )                                    
+                                                                                
+\ NEW STUFF 1/2 --------                                                        
+                                                                                
+( Pre defined )    TRAVEL definitions                                           
+: Roll-it       0.00 w/c    100 c ;                                             
+: Parking       0.00 w/c     25 c ;                                             
+: Unpack        0.00 w/c     25 c ;                                             
+: Walk-job      0.00 w/c     50 c ;  Elect                                      
+: Each-day      0.00 w/c     25 c ;                                             
+-->                                                                             
+\s                                                                              
+Get engineer                                                                    
+                                                                                
+                                                                                
+\ New stuff 2/3                                                                 
+Vocabulary PACKING Packing definitions                                          
+: End-of-job     0.00 w/c    100 c ;                                            
+: Take-to-shop   0.00 w/c    100 c ;                                            
+: Clean-vehicle  0.00 w/c    100 c ;                                            
+: End-of-day     0.00 w/c     25 c ;                                            
+Elect                                                                           
+                                                                                
+Vocabulary Changes Changes Definitions                                          
+: Re-walk-job    0.00 w/c     50 c ;                                            
+: Re-type-bid    0.00 w/c     20 c ;                                            
+: Re-send-bid    0.00 w/c     10 c ;                                            
+: Get-the-ok     0.00 w/c     20 c ;                                            
+: Extra-shopping 0.00 w/c    100 c ;                                            
+Elect                                                                           
+                                                                                
+Custom Notes                                                                    
+\s                                                                              
+I can send you a version in plain English if you like.                          
+-                                                                               
+I now design & estimate electrical projects for BV Electric Co,                 
+instead of runing a 3 man crew. This give me more time for same                 
+day service calls, trouble shooting & emergency power restration                
+                                                                                
+                                                                                
+This brief description is superceded by the line item details.                  
+.                                                                               
+Title-24                                                                        
+FPE no AFCI                                                                     
+.                                                                               
+Can't have any blank lines if imported in to WinGC                              
+                                                                                
+First Day -----                                                                 
+Mobilization    1 Travel Roll-it                                                
+Find parking    1 Travel Parking                                                
+Tools, material 1 Travel Unpack                                                 
+Orientation     1 Travel Walk-job                                               
+Design & Build  1 Engineer Best-way                                             
+                                                                                
+                                                                                
+220V Hot Water Heater         54.58 +1/3    6.42 hrs     715.50                 
+                100.00 per-hour                                                 
+                Neat-EMT                                                        
+                40 lf-emt 30A                  3.04     337.60                  
+                C-B 30A                        0.30      60.48                  
+                Box-only                       1.00     104.71                  
+                Whip                           0.33      37.71                  
+                Setup New-Location             0.75      75.00                  
+Conjestion      0.50 hr el                     0.50      50.00                  
+3 Walls         0.50 hr el                     0.50      50.00                  
+                                                                                
+                                                                                
+Last Day -----                                                                  
+                1 Packing End-of-job                                            
+                1 Packing Take-to-shop                                          
+                1 Packing Clean-Vehicle                                         
+                                                                                
+                                                                                
+\                                                                               
+                                                                                
+                                                                                
+| Change orders                                                                 
+Re walk job     0.30 hr el                                                      
+Re type bid     0.20 hr el                                                      
+Re send it      0.10 hr el                                                      
+Get an ok       0.10 hr el                                                      
+Extra shopping  1.00 hr el                                                      
+                                                                                
+                                                                                
+\ Loader                                                     AL                
+117 load                                                                        
+Get engineer                                                                    
+                                                                                
+                                                                                
+
