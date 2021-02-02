@@ -102,7 +102,7 @@ create upath 128 allot
       r> close-file drop
       set-line-pointers
       to cursor-line
-      set-longest-line refresh-screen  reedit
+      set-longest-line refresh-screen cursor-on-screen  reedit
     else drop then
   else drop then ;
 
