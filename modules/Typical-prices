@@ -5,173 +5,171 @@ San Francisco, CA
 email
 
 6 line                                            Goal       Actual Budget
-                                                 73.49     91.87 Man Hours      
-                                                 18.37     12.24 Man Days       
-                                          T   17,490.98     Estimated Price     
-                                          L   13,780.50    4,818.35 W/S Labor   
-                                          M   1,960.48     1,453.30 pre taxed   
-                                          O     156.00      0.00 JP
+                                                 98.03       117.63n Hours
+                                                 12.25        14.71n Days
+                                          T  23,173.308     Estimated Price
+                                          L  17,645.400    6,169.72 W/S Labor
+                                          M   3,777.90     2,840.81 pre taxed
+                                          O       0.00     1,750.00
                                           B       0.00
 
 Custom Notes                                                                    
 
-                                                        
-                                                        
-\s                                                      
-<a href=                                                
+
+
+\s
+<a href=
 http://www.cpsc.gov/CPSCPUB/PUBS/afcifac8.PDF
->Bedroom plugs need to be on a AFCI circuit breaker.</a>
-                                                        
-                                                        
-Modular 100A                 312.61 +1/3   15.08 hrs   1
-                Neat-EMT                                                                  
-Ladder & 220V   1 Setup     Hot-220                        1.50      225.00               
-To PG&E wires   1 Riser     100A                           3.57      639.93               
-Conduit body    1 LB-Inc    100A                           0.96      161.99               
-90 Corner bend  1 90-Inc    100A                           0.75      130.45               
-Meter & Panel   1 M-P       100A-12-24                     2.50      576.90               
-Ground System   1 Ground    100A                           4.82      793.99               
-Hot cold & gas  1 Ground    BOND                           0.50       84.49               
-Hook up hot     3 Kouple-tap 3/0-12                        0.48      165.15               
-W-H relocated?
-                                                          15.08   $2,777.90               
+>Bedroom plugs need to be on a AFCI circuit brea
 
-\ Not including PG&E fees if any.                       
-                                                        
-                                                        
-Reconnect old                                           
-                Neat-EMT                                                                  
-n Old fuses     2 CB      ( AFCI? )                        0.40       70.80               
-n Old CBs       2 CB                                       0.40       70.80               
-30 Amp Dryer    1 C-B 30A                                  0.30       75.48               
-Knob & Tube     1 Reconnect Black-box                      1.25      192.90               
-Existing rx     1 Reconnect Romex-easy                     0.20       31.35               
-1/2 inch pipe   1 Reconnect 1/2                            1.02      164.17               
-3/4 inch pipe   1 Reconnect 3/4                            1.25      201.00               
-Demolish old    40 minutes electrician                     0.68      102.00               
-To new location 20 Lf-EMT 20A                              1.30      208.20               
-Plug at panel   PL-ez GFCI                                 0.38       85.35               
-Light at panel  LT-easy   ( pull string )                  1.25      199.65               
-SW+PL at panel  SW-ez     ( if wanted )                    0.33       60.30               
-Plywood (if)    Setup Wall                                 0.85      182.85               
-Transformer     ( NIC  Low-Volt Tri-volt )                                                
-Underground work                                                                          
-Coordinate PG&E 5 hours electrician                        5.01      751.50               
-Remove cement   300 Dollars Allowance                      0.00      300.00               
-Dig trench      800 Dollars Allowance                      0.00      800.00               
-Thru foundation 100 dollars Allowance                      0.00      100.00               
-Concrete mix    400 dollars Allowance                      0.00      400.00               
-Gr rod & water  1 Ground 200A                              4.82      793.99               
-Rigid conduit   10 GRS   3-in ( Over 125A )                1.50      294.70               
-PG&E required   1 Sweep  3x24                              2.00      397.20               
-PG&E required   1 Sweep  3x36 ( PVC-Conc )                 3.50      633.00               
-No thread con.  1 NT-Con 3-in                              0.75      228.63               
-Termination can 1 Term-can 200A                            1.25      307.65               
-Between boxes   1 OS-Nip   200A                            1.54      280.66               
-Bender rent     ( 26 Dollars Rental                                                       
-2-nd inspection ( Get PG&E estimate )                                                     
-Temporary power ( Pull in full size wires )
-                                                          29.98   $6,932.18               
 
-Kitchen Lighting                                        
-                Open-1-side                                                               
-Demo work       1.00 hours electrician                     1.00      150.00               
-Ceiling Lights  5 LT  2 S3                                 6.86    1,067.64               
-Layout cans     120 Minutes Electrician                    2.04      306.00               
-Sink light      LT  SW                                     1.83      285.54               
-Hood Fan        LT  Install hood-fan                       1.48      227.52               
-Light Circuits  CB  Circuit                                0.80      130.12               
-Lighting Layout 0.50 Hour Electrician                      0.50       75.00               
-Temp power      0.50 hour electrician                      0.50       75.00               
-                ( For other trades )
-                                                          15.01   $2,316.82               
-                                                        
-                                                        
-Kitchen Power                                           
-                Open-1-side                                                               
-Dishwasher      PL  AFCI Circuit                           1.70      319.24               
-Disposal -->?   PL  AFCI Circuit  SW                       2.55      452.26               
-Cords (if NIC)  2 Cord                                     0.50       87.20               
-Refrigerator    PL                                         0.85      133.02               
-Stove Igniter   PL                                         0.85      133.02               
-Counters        6 PL  2 GFCI                               5.20      848.22               
-Util Circuits   2 CB  2 Circuit                            1.60      260.24               
-Island          ( Charge as ) Neat-EMT                                                    
-Layout plugs    1 Hour Electrician                         1.00      150.00
-                                                          14.25   $2,383.20               
-                                                        
-                                                        
-\ (C) 2019 John A Peters                                 
-\ This proposal is the result of years of experience
-                                                        
-                                                        
-Reminders                                               
-Title-24                                                                                  
-AFCI CBs                                                                                  
-                                                        
-                                                        
-Conduit & Circuit(s)                                    
-                Neat-EMT                                                                  
-Raceway pipe    50 LF-EMT 1/2                              2.65      415.50               
-As needed...    AFCI Circuit                               0.95      210.00               
-If needed...    AFCI Circuit                               0.95      210.00               
-AFCI (Bedrooms) AFCI Circuit                               0.95      210.00
-                                                           5.50   $1,045.50               
-                                                        
-Raceway pipe    50 LF-EMT 3/4                           
-If needed       2 L-B 1/2                                  1.00      161.28               
-.               FPE                                                                       
-Empty Raceway   70 LF-EMT 1/2  ( Apartment )               3.71      581.70               
-If needed       25 LF-EMT 1/2  ( measure )                 1.32      207.00               
-Empty Raceway   90 LF-EMT 1/2  ( Back rear apt             4.77      747.90
-                                                          10.80   $1,697.88               
-City Permit & Inspection     173.20 +1/3    2.00 hrs    
-Residential       1 Permit 10-Outlets-1                 
-Meet Inspector    1 Appointment Inspector      2.00     
-\s                                                      
-\ If you do not want an inspection, your risk is 9X the 
-                                                        
-\ YES 2 HOURS
-                                                        
-Residential Med   1 Permit 20-Outlets-2                 
-Residential Big   1 Permit 40-Outlets-3                 
-Cover Inspection  1 Appointment Inspector               
-Final Inspection  1 Appointment Inspector               
-Commercial Job    1 Permit 5-Commercial-2               
-Commercial Job    1 Permit 20-Commercial-3              
-                                                        
-                                                        
-One Time Cost(s)               0.00 +1/3    1.25 hrs    
-Electrician &   Truck-to New-Location                      0.25       37.50               
-Round Trip (if) Truck-to Supply-House                      1.00      150.00
-                                                           1.25     $187.50               
-                                                        
-Fixed Bid Quality              0.00 +1/3    0.00 hrs    
-Draft Proposal  60 Dollars Allowance ( JP )                0.00       60.00               
-1st Day Meeting 45 Dollars Allowance ( JP )                0.00       45.00               
-Finish Quality  45 Dollars Allowance ( JP )                0.00       45.00
-                                                           0.00     $150.00               
-                                                        
-Contingency Reserve            0.00 +1/3    0.00 hrs    
-Change Orders?  ( Adds, Deletes, Changes )                                                
-Your Ideas      ( "While you are here" )                                                  
-Unseen work     ( Until Inspector gives ok )                                              
-25% or less     000 Dollars Allowance                                                     
-\s                                                      
-<a href=                                                
-http://brooklineelectric.com/categories/contingency-fund
-  >Click here to read about the contingency fund.</a>   
--                                                       
-This fund allows you to give direct orders to the electr
+Modular 100A                 312.61 +1/3   15.08
+                Neat-EMT                               0.00     0.00        0.00
+Ladder & 220V   1 Setup     Hot-220                    0.00     1.50      270.00
+To PG&E wires   1 Riser     100A                     348.61     3.57      991.21
+Conduit body    1 LB-Inc    100A                      17.72     0.96      190.52
+90 Corner bend  1 90-Inc    100A                      17.68     0.75      152.68
+Meter & Panel   1 M-P       100A-12-24               198.91     2.50      648.91
+Ground System   1 Ground    100A                      69.94     4.82      937.54
+Hot cold & gas  1 Ground    BOND                       9.34     0.50       99.34
+Hook up hot     3 Kouple-tap 3/0-12                   91.77     0.48      178.17
+W-H relocated?                                         0.00     0.00        0.00
+                                                    $753.97    15.08   $3,468.37
+
+\ Not including PG&E fees if any.
+
+
+Reconnect old
+                Neat-EMT                               0.00     0.00        0.00
+n Old fuses     2 CB      ( AFCI? )                    7.98     0.40       79.98
+n Old CBs       2 CB                                   7.98     0.40       79.98
+30 Amp Dryer    1 C-B 30A                             14.33     0.30       68.33
+Knob & Tube     1 Reconnect Black-box                 10.05     0.91      173.85
+Existing rx     1 Reconnect Romex-easy                 1.33     0.20       37.33
+1/2 inch pipe   1 Reconnect 1/2                       11.01     1.02      194.61
+3/4 inch pipe   1 Reconnect 3/4                       13.30     1.25      238.30
+Demolish old    40 minutes electrician                 0.00     0.68      122.40
+To new location 20 Lf-EMT 20A                         13.00     1.30      247.00
+Plug at panel   PL-ez GFCI                            27.93     0.38       96.33
+Light at panel  LT-easy   ( pull string )             11.97     1.25      236.97
+SW+PL at panel  SW-ez     ( if wanted )               10.64     0.33       70.04
+Plywood (if)    Setup Wall                            54.53     0.85      207.53
+Transformer     ( NIC  Low-Volt Tri-volt )             0.00     0.00        0.00
+Underground work                                       0.00     0.00        0.00
+Coordinate PG&E 5 hours electrician                    0.00     5.01      901.80
+Remove cement   300 Dollars Allowance                  0.00     0.00      300.00
+Dig trench      800 Dollars Allowance                  0.00     0.00      800.00
+Thru foundation 100 dollars Allowance                  0.00     0.00      100.00
+Concrete mix    400 dollars Allowance                  0.00     0.00      400.00
+Gr rod & water  1 Ground 200A                         69.94     4.82      937.54
+Rigid conduit   10 GRS   3-in ( Over 125A )           68.70     1.50      338.70
+PG&E required   1 Sweep  3x24                         95.76     2.00      455.76
+PG&E required   1 Sweep  3x36 ( PVC-Conc )           106.40     3.50      736.40
+No thread con.  1 NT-Con 3-in                        114.41     0.75      249.41
+Termination can 1 Term-can 200A                      118.37     1.25      343.37
+Between boxes   1 OS-Nip   200A                       48.93     1.54      326.13
+Bender rent     ( 26 Dollars Rental                    0.00     0.00        0.00
+2-nd inspection ( Get PG&E estimate )                  0.00     0.00        0.00
+Temporary power ( Pull in full size wires )            0.00     0.00        0.00
+                                                    $806.56    29.64   $7,741.76
+
+Kitchen Lighting
+                Open-1-side                            0.00     0.00        0.00
+Demo work       1.00 hours electrician                 0.00     1.00      180.00
+Ceiling Lights  5 LT  2 S3                            38.01     6.86    1,272.81
+Layout cans     120 Minutes Electrician                0.00     2.04      367.20
+Sink light      LT  SW                                10.86     1.83      340.26
+Hood Fan        LT  Install hood-fan                   5.43     1.48      271.83
+Light Circuits  CB  Circuit                            8.64     0.80      152.64
+Lighting Layout 0.50 Hour Electrician                  0.00     0.50       90.00
+Temp power      0.50 hour electrician                  0.00     0.50       90.00
+                ( For other trades )                   0.00     0.00        0.00
+                                                     $62.94    15.01   $2,764.74
+
+Kitchen Power
+                Open-1-side                            0.00     0.00        0.00
+Dishwasher      PL  AFCI Circuit                      63.28     1.70      369.28
+Disposal -->?   PL  AFCI Circuit  SW                  68.71     2.55      527.71
+Cords (if NIC)  2 Cord                                12.02     0.50      102.02
+Refrigerator    PL                                     5.43     0.85      158.43
+Stove Igniter   PL                                     5.43     0.85      158.43
+Counters        6 PL  2 GFCI                          67.16     5.20    1,003.16
+Util Circuits   2 CB  2 Circuit                       17.28     1.60      305.28
+Island          ( Charge as ) Neat-EMT                 0.00     0.00        0.00
+Layout plugs    1 Hour Electrician                     0.00     1.00      180.00
+                                                    $239.31    14.25   $2,804.31
+
+\ (C) 2019 John A Peters
+\ This proposal is the result of years of experi
+
+
+Reminders
+Title-24                                               0.00     0.00        0.00
+AFCI CBs                                               0.00     0.00        0.00
+
+
+Conduit & Circuit(s)
+                Neat-EMT                               0.00     0.00        0.00
+Raceway pipe    50 LF-EMT 1/2                         18.00     2.65      495.00
+As needed...    AFCI Circuit                          66.50     0.95      237.50
+If needed...    AFCI Circuit                          66.50     0.95      237.50
+AFCI (Bedrooms) AFCI Circuit                          66.50     0.95      237.50
+                                                    $217.50     5.50   $1,207.50
+
+Raceway pipe    50 LF-EMT 3/4
+If needed       2 L-B 1/2                             11.10     1.00      191.10
+.               FPE                                    0.00     0.00        0.00
+Empty Raceway   70 LF-EMT 1/2  ( Apartment )          25.20     3.71      693.00
+If needed       25 LF-EMT 1/2  ( measure )             9.00     1.32      246.60
+Empty Raceway   90 LF-EMT 1/2  ( Back rear apt        32.40     4.77      891.00
+                                                     $77.70    10.80   $2,021.70
+
+City Permit & Inspection     173.20 +1/3    2.00
+Residential       1 Permit 10-Outlets-1              219.45     0.00      219.45
+Meet Inspector    1 Appointment Inspector              0.00     2.00      360.00
+                                                    $219.45     2.00     $579.45
+
+Inspection fees
+Residential Med   1 Permit 20-Outlets-2              325.85     0.00      325.85
+Residential Big   1 Permit 40-Outlets-3              406.98     0.00      406.98
+Cover Inspection  1 Appointment Inspector              0.00     2.00      360.00
+Final Inspection  1 Appointment Inspector              0.00     2.00      360.00
+Commercial Job    1 Permit 5-Commercial-2            319.20     0.00      319.20
+Commercial Job    1 Permit 20-Commercial-3           348.44     0.00      348.44
+                                                  $1,400.47     4.00   $2,120.47
+
+One Time Cost(s)               0.00 +1/3    1.25
+Electrician &   Truck-to New-Location                  0.00     0.75      135.00
+Round Trip (if) Truck-to Supply-House                  0.00     1.00      180.00
+                                                      $0.00     1.75     $315.00
+
+Fixed Bid Quality              0.00 +1/3    0.00
+Draft Proposal  60 Dollars Allowance ( JP )            0.00     0.00       60.00
+1st Day Meeting 45 Dollars Allowance ( JP )            0.00     0.00       45.00
+Finish Quality  45 Dollars Allowance ( JP )            0.00     0.00       45.00
+                                                      $0.00     0.00     $150.00
+
+Contingency Reserve            0.00 +1/3    0.00
+Change Orders?  ( Adds, Deletes, Changes )             0.00     0.00        0.00
+Your Ideas      ( "While you are here" )               0.00     0.00        0.00
+Unseen work     ( Until Inspector gives ok )           0.00     0.00        0.00
+25% or less     000 Dollars Allowance                  0.00     0.00        0.00
+\s
+<a href=
+http://brooklineelectric.com/categories/continge
+  >Click here to read about the contingency fund
+-
+This fund allows you to give direct orders to th
+
 
 \ DON'T USE - USE BV ELECTRIC METHOD
-\ Avoid grief later minimum 300 or 500 contingency fund  
-                                                        
-                                                        
--------------------                                 ====
-                                                        
-                                                                 ==========
-TOTAL ESTIMATE                                                   $17,490.98     
+\ Avoid grief later minimum 300 or 500 contingen
+
+
+-------------------
+
+
+TOTAL ESTIMATE                                                        $23,173.30
                                                                  ==========
 
                                                                                 
@@ -181,6 +179,7 @@ TOTAL ESTIMATE                                                   $17,490.98
                                                                                 
 Custom work                         50%                                         
                                                                                 
+
 Condo Conversions need AT LEAST!!   25%
        Man days                     20%
 Avoid gref atlest 300                                                           
@@ -217,6 +216,7 @@ PAYMENT SCHEDULE
  PAID   DEPOSIT   PROGRESS   PROGRESS   CONTINGENCY  INSPECTED                  
  0.00                                                                           
                                                                                 
+
 =================================                                               
                                                                                 
                                                                                 
@@ -233,7 +233,6 @@ Please be present 1-st hr of work -OR- provide answers and keys.
 Progress payments COD-by-section, percent completed or as below.                
  PAID   DEPOSIT   50%-DONE   90%-DONE   CONTINGENCY  INSPECTED                  
 
-                                                                                
                                                                                 
 EXTRAS AND CHANGES                                                              
 Please add the following tasks to the list of work to be done.                  
@@ -270,6 +269,7 @@ Hook up hot     3 Kouple-tap 3/0-12
                                                                                 
 get ug-mm                                                                       
                                                                                 
+
 Temporary Power                                                                 
                                                                                 
                                                                                 
@@ -283,6 +283,7 @@ Other           1 hr el
                                                                                 
 get OS-Nip                                                                      
                                                                                 
+
 Temporary power                                                                 
                                                                                 
                                                                                 
@@ -294,6 +295,7 @@ Audit the bid with me on the phone from your office.
 Provide fixture cut sheets and instructions for us.                             
 Give a sample change order as an exhibit.                                       
                                                                                 
+
 Give us an envelope of time, free of other trades.                              
 Walk the job with us before we start work.                                      
 Answer questions and give suggestions.                                          
@@ -302,6 +304,7 @@ Be on call and pay attention to what is being done.
 Have a check ready for us when the inspector leaves.                            
 Provide lien notice details.  LOT and BLOCK numbers etc                         
                                                                                 
+
 Risks & rewards of a Big GC                                                     
 .                                                                               
 Don't sign a contract other than your own unless you:                           
@@ -319,8 +322,10 @@ If they have their own agreement instead of us
  We have to take time to study General Contractor paperwork.                    
  Our contract and estimate must be cited as an exhibit.                         
                                                                                 
+
 Bell wires in wall hit by drill                                                 
                                                                                 
+
 It is necessary to budget for contingencies.  Extra work may be                 
 required to correct the best of intentions by other trades.                     
 There are a range of activities and conditions can negatively                   
@@ -332,6 +337,7 @@ job I will audit this list and the total price will be adjusted
 and invoiced.                                                                   
 Reconnections                                                                   
                                                                                 
+
 Knob & Tube     1 Reconnect 6-Loom-N&T                                          
 Knob & Tube     1 Reconnect 2-Loom-N&T                                          
                 1 Reconnect Romex-easy                                          
@@ -346,6 +352,7 @@ Transformer     0 Lo-Volt Tri-volt
 Light at meter  Neat-EMT  LT-easy                                               
 Printed CB list 30 minutes two-men                                              
                                                                                 
+
 2 (M) In/Out 150A                                                               
 NEW SERVICE     ( 230 Volts 150 Amps )                                          
 Ladder & 220V   1 SETUP     HOT-220                                             
@@ -394,6 +401,7 @@ Hot cold & gas  1 GROUND BOND
 -- NEW SERVICE  ( Service  8 Meters 100-A ea.                                   
 UG assumed                                                                      
                                                                                 
+
 Main switch     1 R-S FUSED-MAIN-400                                            
 Gang of meters  2 R-S    4-METER                                                
                 8 C-B    100A                                                   
@@ -420,6 +428,7 @@ With spaces     12 PANEL   125A-8-16
 Hot cold & gas  1 GROUND   BOND                                                 
 Gr rod & water  1 GROUND   200A                                                 
                                                                                 
+
 In-Out  200A 2/0 1-1/2 R                                                        
 -- NEW SERVICE  ( 230 Volts 200 Amps )                                          
 Ladder & 220V   1 Setup     Hot-220            1.50     202.50                  
@@ -548,6 +557,7 @@ Glass           ( Contingency fund )
 Temporary power ( Contingency fund )                                            
 House meter                                                                     
                                                                                 
+
 Modular 100A  #4 1-1/4 R                                                        
 -- NEW SERVICE  ( 230 Volts 100 Amps )                                          
 Ladder & 220V   1 Setup     Hot-220       (                                     
@@ -562,8 +572,10 @@ Hook up hot     3 Kouple-tap 3/0-12
 W-H relocated?                                                                  
 House meter                                                                     
                                                                                 
+
 get kouple-tap                                                                  
                                                                                 
+
 In-Out! 100A  #4 1-1/4 R                                                        
 -- NEW SERVICE  ( 230 Volts 100 Amps )                                          
 Ladder & 220V   1 Setup     Hot-220       (                                     
@@ -660,6 +672,7 @@ Hook up hot     3 Kouple-tap 3/0-12
 Plywood         ( Contingency fund )                                            
 House meter                                                                     
                                                                                 
+
 Multi 175A 1/0 1-1/4*(150                                                       
 -- NEW SERVICE  ( 230 Volts 175 Amps )                                          
 Ladder & 220V   1 Setup     Hot-220                                             
@@ -773,6 +786,7 @@ Hot cold & gas  1 GROUND    BOND
 Gr rod & water  1 GROUND    100A                                                
 Hook up hot     3 Kouple-tap 3/0-12                                             
                                                                                 
+
 The Oei job                                                                     
 Jan-03-1991                                                                     
 Temporary power ( Contingency fund )                                            
@@ -781,6 +795,7 @@ than 125a !
 Plywood         ( Contingency fund )                                            
 House meter                                                                     
                                                                                 
+
 1 Comml 100A                                                                    
 Ladder & 220V   1 Setup     Hot-220                                             
 To PG&E wires   1 Riser     100A                                                
@@ -827,6 +842,7 @@ Hot cold & gas  1 Ground    Bond
 3 phase adder   100 dollars parts                                               
 Temporary power Plywood                                                         
                                                                                 
+
 3 Meter Comm 1P                                                                 
 -- NEW SERVICE  ( 230 Volts 400 Amps )                                          
 Main Switch     1 Safety-switch 400A                                            
@@ -843,6 +859,7 @@ Hot Cold & Gas  3 GROUND        BOND
 Temporary power                                                                 
 Plywood                                                                         
                                                                                 
+
 Main Safety-Switch                                                              
 Main switch     1 Safety-Switch 200A                                            
 AIC Fuses       2 Fuse      AIC-200A                                            
@@ -856,9 +873,11 @@ Gr rod & water  1 Ground 200A
 Plywood                                                                         
 Check the AIC                                                                   
                                                                                 
+
 get safety-sw                                                                   
 get fuse                                                                        
                                                                                 
+
 In-Out 100A                                                                     
 -- NEW SERVICE  ( 230 Volts 100 Amps )                                          
 Ladder & 220V   1 SETUP     HOT-220                                             
@@ -874,9 +893,11 @@ Gr rod & water  1 GROUND    100A
 Hook up hot     3 Kouple-tap 3/0-12                                             
 Plywood                                                                         
                                                                                 
+
 Temporary power                                                                 
 Risks and rewards of UNIFORM line item prices                                   
                                                                                 
+
 ADVANTAGES TO THE CLIENT                                                        
   It is efficient, and saves money for both parties.                            
   Changes can be made via verbal orders, without delay.                         
@@ -884,6 +905,7 @@ ADVANTAGES TO THE CLIENT
   You can save time and money by being involved directly.                       
   It shortens negotiations, puts the control where it belongs.                  
                                                                                 
+
 DISADVANTAGES TO THE CLIENT                                                     
   The men may look to you for answers.                                          
   It maybe confusing to have so many options.                                   
@@ -1020,6 +1042,7 @@ DPW                             Plate
 #6 bare                         GFI                                             
 Hubs with gr clamps             Cut-in box                                      
                                                                                 
+
 Door Bell                     37.99 +1/3    5.20 hrs     877.63                 
                 Fish-in-walls                                                   
 Front door      1 Low-volt button              0.25      43.39                  
@@ -1032,6 +1055,7 @@ In garage       1 Transformer Tri-Volt         0.20      43.14
                 1 Blockage FIre-Block          0.45      71.55                  
                 Setup job                      0.75     119.25                  
                                                                                 
+
 Get Blockage                                                                    
 Get Transformer                                                                 
 Get Wire                                                                        
@@ -1080,6 +1104,7 @@ Exhaust         Vent-4" Flex-tube
 You will need   ( the services of a roofer                                      
                 ( if your roof is flat.                                         
                                                                                 
+
 get vent-4"     ( 125 )                                                         
 get timer                                                                       
 get Fan                                                                         
@@ -1096,9 +1121,11 @@ Stucco          1 hour electrician
 Ladder work     1 hour electrician                                              
 Assembly parts  1 hour electrician                                              
                                                                                 
+
 get fan                                                                         
 get timer       ( This line will not print )                                    
                                                                                 
+
 BB Heat (Sample)                                                                
                 Fish-in-walls                                                   
 Power source    PS                                                              
@@ -1139,10 +1166,12 @@ Male Cord       Molded Dryer  ( 4 prong )      0.30      74.70
                                                                                 
 12 14 hits                                                                      
                                                                                 
+
 get molded                                                                      
 get device-220                                                                  
 get l-b                                                                         
                                                                                 
+
 Jacuzzi 20A                                                                     
                 Neat-EMT                                                        
 Pipe to panel   50 lf-emt 20A                                                   
@@ -1184,6 +1213,7 @@ get Ground-Bushing
 USE 1 6 HITS not Load and not Get                                               
 Forget (fish-work)                                                              
                                                                                 
+
 get romex                                                                       
 get c-b                                                                         
                                                                                 
@@ -1224,6 +1254,7 @@ Pipe to panel   25 LF-EMT 1/2
 Get blockage                                                                    
 Get romex                                                                       
                                                                                 
+
 Closet fuses out T&M                                                            
                 Neat-EMT                                                        
                 55 dollars parts                                                
@@ -1316,6 +1347,7 @@ Install Trolley Cable
                 ( Install-Trolly Hardware                                       
                 ( Install-Trolly  "L"                                           
                                                                                 
+
 235 of NPS                                                                      
                                                                                 
                                                                                 
@@ -1376,10 +1408,12 @@ Bender rent     26 Dollars Rental
 2-nd inspection ( Get PG&E estimate )                                           
 Temporary power ( Pull in full size wires )                                     
                                                                                 
+
 get grs                                                                         
 get sweep                                                                       
 get os-nip      ( Move to top if needed )                                       
                                                                                 
+
 NIC = Not included                                                              
 Code work, safety issues or concealed work discovered.                          
 .                                                                               
@@ -1396,6 +1430,7 @@ Impact time, the other trades should absent while we work.
 Design time and talk time on kitchen remodel that have no plans.                
 Adjusting hights or centering outlets after cover-up inspection.                
                                                                                 
+
 City Permit & Inspection                                                        
 Residential Big   1 Permit 2-Inspections                                        
 Cover Inspection  1 Appointment Inspector                                       
@@ -1411,6 +1446,7 @@ No locations
 2nd floor                                                                       
 3rd floor                                                                       
                                                                                 
+
 Far from shop                                                                   
                                                                                 
                                                                                 
@@ -1430,8 +1466,10 @@ For all above   1 30 * Minutes electrician
 Compared to a-> ( rough construction site )                                     
                 ( has laborers to clean up )                                    
                                                                                 
+
 \ NEW STUFF 1/2 --------                                                        
                                                                                 
+
 ( Pre defined )    TRAVEL definitions                                           
 : Roll-it       0.00 w/c    100 c ;                                             
 : Parking       0.00 w/c     25 c ;                                             
@@ -1451,6 +1489,7 @@ Vocabulary PACKING Packing definitions
 : End-of-day     0.00 w/c     25 c ;                                            
 Elect                                                                           
                                                                                 
+
 Vocabulary Changes Changes Definitions                                          
 : Re-walk-job    0.00 w/c     50 c ;                                            
 : Re-type-bid    0.00 w/c     20 c ;                                            
@@ -1459,6 +1498,7 @@ Vocabulary Changes Changes Definitions
 : Extra-shopping 0.00 w/c    100 c ;                                            
 Elect                                                                           
                                                                                 
+
 Custom Notes                                                                    
 \s                                                                              
 I can send you a version in plain English if you like.                          
@@ -1475,6 +1515,7 @@ FPE no AFCI
 .                                                                               
 Can't have any blank lines if imported in to WinGC                              
                                                                                 
+
 First Day -----                                                                 
 Mobilization    1 Travel Roll-it                                                
 Find parking    1 Travel Parking                                                
