@@ -77,7 +77,7 @@ create upath 128 allot
   s" .xbk" fbk +place
   fbk count setbkindx bkindx 9 > if 0 to bkindx then
   1 +to bkindx bkindx 0 (d.) fbk +place
-  fbk count "OPEN 0=  \ check if .bak file exists
+  fbk count "OPEN 0=  \ check if .xbk file exists
   if close-file drop
      fbk count DELETE-FILE drop  \ delete old backup
   else drop then save-text
@@ -97,10 +97,12 @@ create upath 128 allot
       r@ file-size 2drop to textlen
       textlen start-text-size +  to text-blen
       text-blen malloc to text-ptr
+      cursor-line
       text-ptr textlen r@ read-file drop
       r> close-file drop
       set-line-pointers
-      set-longest-line refresh-screen reedit
+      to cursor-line
+      set-longest-line refresh-screen  reedit
     else drop then
   else drop then ;
 
