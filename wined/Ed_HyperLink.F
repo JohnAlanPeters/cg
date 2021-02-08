@@ -267,6 +267,7 @@ needs hyper.f
 : _close-text   ( -- )
                 >E
                 ?save-text ?EXIT
+                0 to bkindx
                 hyper-delete
                 -1 +hyper
                 cur-filename c@ 0=              \ if there's no file to open
