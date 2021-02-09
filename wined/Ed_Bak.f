@@ -72,6 +72,7 @@ create upath 128 allot
 
 : xbk { \ fbk -- }  \ autosave
   edit-changed? not ?exit
+  128 localalloc: fbk
   cur-filename count fbk place
   s" .xbk" fbk +place
   fbk count setbkindx bkindx 9 > if 0 to bkindx then
@@ -101,8 +102,8 @@ create upath 128 allot
   128 localalloc: fbk cur-filename count fbk place
   s" .xbk" fbk +place
   fbk count setbkindx
-  unfl if xcurbk 1- dup 0< if drop bkindx 1- then ?dup 0= if 10 then
-          dup bkindx = if drop 0 then
+  unfl if xcurbk 1- dup 0< if drop bkindx then ?dup 0= if 10 then
+          dup bkindx > if drop 0 then
        else xcurbk dup 0= over bkindx = or
          if drop 0 else 1+ dup 10 > if drop 1 then then
        then ?dup

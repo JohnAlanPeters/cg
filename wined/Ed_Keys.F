@@ -326,7 +326,9 @@ defer _Control+W ' close-text is _control+w
 
 0 value kTimerID
 9000 value ktime         \ 1000 = 1 second timeout
-: kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
+: _kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
+' _kkillTimer is kkillTimer
+
 4 CallBack: kTimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop kKilltimer xbk 0 ;
 : kSetTimer ( -- )   &kTimerProc ktime 0 0 Call SetTimer to kTimerID ;
 : kStartTimer ( -- )   kKillTimer kSetTimer ;
@@ -344,7 +346,7 @@ defer _Control+W ' close-text is _control+w
             EditMode: Win-EdToolbar
             \ SMS-WEW-key-Con-doc-interp-send
             begin
-            call GetFocus topwin <> if kkilltimer _xit then
+            call GetFocus topwin <> if 0 to xcurbk kkilltimer _xit then
             20 ms key?
             until
             key kstarttimer
