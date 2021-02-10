@@ -102,26 +102,29 @@ create upath 128 allot
   128 localalloc: fbk cur-filename count fbk place
   s" .xbk" fbk +place
   fbk count setbkindx
-  unfl if xcurbk 1- dup 0< if drop bkindx then ?dup 0= if 10 then
-          dup bkindx > if drop 0 then
-       else xcurbk dup 0= over bkindx = or
-         if drop 0 else 1+ dup 10 > if drop 1 then then
+  unfl if xcurbk 1- dup bkindx = if drop 0   \ backed into most recent
+          else dup 0< if drop bkindx         \ 1st undo at most recent
+              else ?dup 0= if 10 then then   \ wrap up to possible earlier
+          then
+       else xcurbk dup bkindx = over 0= or if drop 0 \ no redo to get to
+          else 1+ dup 10 > if drop 1 then then  \ wrap down to more recent
        then ?dup
-  if dup to xcurbk
+  if dup
     0 (d.) fbk +place
     fbk count r/o open-file 0=
     if >r                              \ save the file handle
+      to xcurbk
       text-ptr ?dup IF release THEN
       r@ file-size 2drop to textlen
-      textlen start-text-size +  to text-blen
+      textlen start-text-size + to text-blen
       text-blen malloc to text-ptr
       cursor-line
       text-ptr textlen r@ read-file drop
       r> close-file drop
       set-line-pointers
       to cursor-line
-      set-longest-line refresh-screen cursor-on-screen  reedit
-    else drop then
+      set-longest-line refresh-screen cursor-on-screen reedit
+    else 2drop then
   then ;
 
 : xunbk ( -- )
