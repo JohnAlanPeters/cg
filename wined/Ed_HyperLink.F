@@ -105,6 +105,7 @@ needs   HyperLink.f
                 IF      2drop
                         i SetStack: DocWindow
                         hyper-open
+                        0 to xcurbk kkilltimer
                         TRUE entry#     \ return this entry#
                         LEAVE
                 THEN
@@ -267,6 +268,7 @@ needs hyper.f
 : _close-text   ( -- )
                 >E
                 ?save-text ?EXIT
+                0 to xcurbk kkilltimer
                 hyper-delete
                 -1 +hyper
                 cur-filename c@ 0=              \ if there's no file to open

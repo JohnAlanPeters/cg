@@ -306,7 +306,7 @@ editor
 : "ShellExecute { addr cnt hwnd -- errorcode } \ execute batch file
         z" open" addr cnt hWnd ("ShellExecute) ;
 
-: makenewcg ( -- )
+: newcg ( -- )
   s" c:\cg\_makenewcg.bat" 0 "shellexecute bye ;
 
 : skipscan ( addr cnt sub sublen char -- addr2 cnt2 flag )

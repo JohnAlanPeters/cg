@@ -70,9 +70,9 @@ create upath 128 allot
       else 0= then
     until 1- to bkindx ;
 
-: xbk { \ fbk curfn -- }
+: xbk { \ fbk -- }  \ autosave
   edit-changed? not ?exit
-  128 localalloc: fbk   128 localalloc: curfn
+  128 localalloc: fbk
   cur-filename count fbk place
   s" .xbk" fbk +place
   fbk count setbkindx bkindx 9 > if 0 to bkindx then
@@ -83,15 +83,8 @@ create upath 128 allot
   else drop then save-text
   cur-filename count fbk count xcopyfile bkindx to xcurbk ;
 
-: xunbk { \ fbk curfn  textlen -- }
-  128 localalloc: fbk  128 localalloc: curfn
-  cur-filename count fbk place
-  s" .xbk" fbk +place
-  fbk count setbkindx xcurbk ?dup 0= if bkindx then
-  1- dup bkindx <> over bkindx 1+ <> and
-  if ?dup 0= if 10 else dup 10 > if drop 1 then then dup to xcurbk
-    0 (d.) fbk +place
-    fbk count r/o open-file 0=
+: file-reload  {  \ textlen -- }  \ close and reopen current file
+    cur-filename count r/o open-file 0=
     if >r                              \ save the file handle
       text-ptr ?dup IF release THEN
       r@ file-size 2drop to textlen
@@ -102,12 +95,42 @@ create upath 128 allot
       r> close-file drop
       set-line-pointers
       to cursor-line
-      set-longest-line refresh-screen  reedit
-    else drop then
-  else drop then ;
+      set-longest-line refresh-screen cursor-on-screen  reedit
+   else drop then ;
 
+: xautobk { unfl \ fbk textlen -- }   \ undo/redo - restore an autosaved version
+  128 localalloc: fbk cur-filename count fbk place
+  s" .xbk" fbk +place
+  fbk count setbkindx
+  unfl if xcurbk 1- dup bkindx = if drop 0   \ backed into most recent
+          else dup 0< if drop bkindx         \ 1st undo at most recent
+              else ?dup 0= if 10 then then   \ wrap up to possible earlier
+          then
+       else xcurbk dup bkindx = over 0= or if drop 0 \ no redo to get to
+          else 1+ dup 10 > if drop 1 then then  \ wrap down to more recent
+       then ?dup
+  if dup
+    0 (d.) fbk +place
+    fbk count r/o open-file 0=
+    if >r                              \ save the file handle
+      to xcurbk
+      text-ptr ?dup IF release THEN
+      r@ file-size 2drop to textlen
+      textlen start-text-size + to text-blen
+      text-blen malloc to text-ptr
+      cursor-line
+      text-ptr textlen r@ read-file drop
+      r> close-file drop
+      set-line-pointers
+      to cursor-line
+      set-longest-line refresh-screen cursor-on-screen reedit
+    else 2drop then
+  then ;
+
+: xunbk ( -- )
+  1 xautobk ;
 : xrebk ( -- )
-  2 +to xcurbk xunbk ;
+  0 xautobk ;
 
 : xdelbks { \ fbk -- }
   128 localalloc: fbk

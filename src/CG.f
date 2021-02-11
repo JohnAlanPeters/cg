@@ -38,6 +38,7 @@ defer settle \ See also (settle) <- by triple clicking here
 defer ro
 defer date-stamp  \ defered to _date-stamp
 defer xcopyfile
+defer kkillTimer  \ autosave timer
 
 : widefind ( a1 l1 -- a2 l2 fl )  \ for hyper-link
   search-path >r
@@ -261,8 +262,8 @@ editor
     -1 to dp-location cd-demo ready
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     8 16 >fontht  \ console font
-    editor overstrike off loadline off
-    elect forth definitions call GetFocus to consWin
+    elect editor also overstrike off loadline off
+    forth definitions call GetFocus to consWin
     cmdline 0= swap 0= or
     if file-to-edit$ off wined VIEW-KEY-LOOP
     else  cmdline drop c@ ascii 0 =
