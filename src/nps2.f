@@ -492,7 +492,7 @@ Vocabulary Fixture       Fixture definitions
 : Motion-bulb   24.88 w/e 50 c ; \ Apr 97  SL-5211  Home Depot
 : Down-up      000.00 w/c 30 c ; \ x min                  -
 : Lamp-Basket    5.00 w/e 10 c ; Elect  \ Hodes job
-: Saucer       500.00 w/c 25 c ; \ Guess
+: Dig-out       00.00 w/c 25 c ; \
 : Double-spun 5000.00 w/c 25 c ; \ guess
 : 2-lamp12-in  700.00 w/c 25 c ; \
 : 2-lamp-gas  2900.00 w/c 50 c ; \ 30 min
@@ -803,15 +803,15 @@ Elect
 \ LED-UC  LRD-RETROFIT-CAN  REWIRE-LED  EXIT-LED  LED-UC
 
 \ LED  Bulbs
-Vocabulary LED-bulb LED-bulb Definitions
+Vocabulary LED LED Definitions \ was LED-bulb
 : 20-inch       3.00 w/e   0 c ; \ Really?
 : 30-inch       5.00 w/e   0 c ; \ Dimmable
 : 48-inch      14.00 w/e  00 c ; \ 1,500 Lumins  48 inch tube
 : 96-inch      15.50 w/e   8 c ; \ See also LED-TubeS
-: A19           5.00 w/e   8 c ; \ 5-600 Lumins = 60W
+: A19           5.00 w/e   2 c ; \ 5-600 Lumins = 60W
 : PAR          17.00 w/e   8 c ; \ 6-600 Lumins
 : 16-inch       3.00 w/e   8 c ; \ Navar June 2019
-: MR-16        3.00 w/e   8 c ; \ Navar June 2019
+: MR-16         3.00 w/e   8 c ; \ Navar June 2019
 Elect
 
 Vocabulary LAMP  LAMP definitions
