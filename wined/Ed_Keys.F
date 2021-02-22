@@ -324,9 +324,9 @@ defer _Control+W ' close-text is _control+w
 : edopen ( -- )
   s" \cg\bids\help.txt" "+open-text ;
 
-0 value kTimerID
-9000 value ktime         \ 1000 = 1 second timeout
-: _kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
+value kTimerID
+value ktime         \ 1000 is 1 second timeout  40k is 40 seconds
+ _kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
 ' _kkillTimer is kkillTimer
 
 4 CallBack: kTimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop kKilltimer xbk 0 ;
@@ -425,7 +425,7 @@ defer _Control+W ' close-text is _control+w
       k_F11                         OF      vindex#s ( fstacksave )     ENDOF
       k_F11   +k_shift              OF      next-link  ( prev-view )    ENDOF
       k_F11   +k_control +k_shift   OF      un-add     ( word-link )    ENDOF
-      k_F12                         OF      cls                         ENDOF
+      k_F12                         OF      grand-total ( JP 8/28 )     ENDOF
       k_F12   +k_shift              OF      save-all-text bye           ENDOF
 \                                         ( prev-link )  ( date-stamp )
 \                                         ( back-find-all-text )
