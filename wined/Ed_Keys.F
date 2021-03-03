@@ -324,9 +324,9 @@ defer _Control+W ' close-text is _control+w
 : edopen ( -- )
   s" \cg\bids\help.txt" "+open-text ;
 
-value kTimerID
-value ktime         \ 1000 is 1 second timeout  40k is 40 seconds
- _kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
+0 value kTimerID
+40000 value ktime         \ 1000 is 1 second timeout  40k is 40 seconds
+: _kKillTimer ( -- )   kTimerID 0 Call KillTimer drop 0 to kTimerID ;
 ' _kkillTimer is kkillTimer
 
 4 CallBack: kTimerProc ( dwTime TimerID Msg hWnd -- 0 ) 4drop kKilltimer xbk 0 ;

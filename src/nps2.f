@@ -555,6 +555,7 @@ Elect
 Vocabulary Rewire  Rewire Definitions
 : Strip-48           0.00 w/c  33 c ; \ .33 20 min  5K kelvin
 : Strip-96           0.00 w/c  45 c ; \ .45 27 min  Home Depot only
+
 Elect
 
 
@@ -812,6 +813,10 @@ Vocabulary LED LED Definitions \ was LED-bulb
 : PAR          17.00 w/e   8 c ; \ 6-600 Lumins
 : 16-inch       3.00 w/e   8 c ; \ Navar June 2019
 : MR-16         3.00 w/e   8 c ; \ Navar June 2019
+: Disk         15.00 w/e  15 c ; \ Jan 2021
+: 5-trim       17.00 w/e  15 c ; \ Jan 2021
+: 6-trim       17.00 w/e  15 c ; \ Jan 2021
+
 Elect
 
 Vocabulary LAMP  LAMP definitions
@@ -1376,7 +1381,7 @@ Vocabulary Heat-AL       Heat-al Definitions
 : 1000W       33.20 w/e  75 c ; \ 4'0"  48"
 : 1250W ( ? ) 39.00 w/e  75 c ; \ 5'0"  60"  1,500W             
 : 1500W       47.88 w/e  75 c ; \ 6'0"  72"                     
-: 2000W       62.25 w/e  75 c ; \ 8'0"  96"   80 Glass          
+: 2000W       88.00 w/e  75 c ; \ 8'0"  96"   80 Glass
 : HANG-YOURS   1.00 w/e  50 c ; \             20 Ceiling        
 : WM           1.00 w/e   1 e ; \             10 Floor
 : EC-Stat     21.00 w/e  50 c ; \ check this   5 Wall           
@@ -1556,8 +1561,8 @@ Vocabulary Install  INSTALL Definitions
 \ Recessed-can    0.00   e  40 c ; \ was 26.00
 : Very-easy       0.00 w/c  25 c ;
 : Easy            0.00 w/c  35 c ; \ 21 min
-: Medium          0.00 w/c  55 c ;
-: Med-hard        0.00 w/c  75 c ;  \
+: Medium          0.00 w/c  55 c ; \ 33 min
+: Med-hard        0.00 w/c  75 c ; \ 45 min
 : With-Assembly   0.00 w/c  77 c ;
 : 4-Posts         0.00 w/c 100 c ;   
 : Hard            0.20 w/c 100 c ;
@@ -1936,21 +1941,6 @@ TEMP     Definitions            \
 : Power         1.00 w/e 15 c ;
 : Laundry       1.00 w/e  1 e ; \ Till we do contract
 Elect
-
-
-\ Supervised see fire       000-000  XX-0 \ Used Sold Keep Have
-Vocabulary Supervised                                           
-SUPERVISED Definitions           \                              
-: Bell        45.00 w/e   20 c ; \                              
-: Smoke       48.00 w/e   20 c ; \                              
-: Pull        25.00 w/e   20 c ; \ Guess                        
-\ Controll   000.00 w/e   20 c ; \                              
-\ Battery    000.00 w/e   20 c ; \                              
-\ Certificate 00.00 w/e   20 c ; \                              
-Elect                                                           
-\                                                               
-\ .( Double check these prices )                                
-                                                                
 
 \ Hard-wired                000-000  XX-0           88-11-02 AEC
 Vocabulary Hard-Wired                     \ Used Sold Keep Have
