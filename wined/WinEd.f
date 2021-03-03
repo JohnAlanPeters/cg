@@ -113,7 +113,7 @@ cr .( after ed_keys)
 : WinEd ( -- )
         Edit-init
         load-defaults
-        true to err-vocab-show
+        false to err-vocab-show
         16 to tab-size
        ( command-options )
         Start: FrameWindow
@@ -127,9 +127,9 @@ cr .( after ed_keys)
 
         SetFocus: EditWindow
         EditWindow to DocWindow
-
         GetStack: DocWindow to entry#
         refresh-screen
+        true to browse?
         no-highlight ;
 
 
