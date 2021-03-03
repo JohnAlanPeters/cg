@@ -480,7 +480,7 @@ defer _Control+W ' close-text is _control+w
 \ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
       k_tab                         OF      smart-insert-tab            ENDOF
       k_tab   +k_shift              OF      smart-back-tab              ENDOF
-      k_insert                      OF      toggle-insert               ENDOF
+      k_insert                      OF      3waytoggle                  ENDOF
       k_insert +k_shift             OF      paste-text                  ENDOF
       k_insert +k_control           OF      copy-text                   ENDOF
       k_delete                      OF      delete-character            ENDOF
