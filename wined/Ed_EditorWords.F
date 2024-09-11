@@ -343,13 +343,12 @@ defer vtop?
   Color: WHITE     new-color normalBG
   Color: BLACK     new-color normalFG
   109 155 241 rgb  new-color marginColor        \ overstrike margin color blue
-
   Color: LTGRAY    new-color linesColor
   Color: BLACK     new-color binaryColor
-  109 155 241 rgb  new-color OmarginColor       \ overstrike margin color: blue
+\ 109 155 241 rgb  new-color OmarginColor       \ overstrike margin color: blue
+  Color: ltYellow  new-color OmarginColor       \ overstrike margin color: yellow
   128 225 128 rgb  new-color ImarginColor       \ insert margin color: green
-  218 165  32 rgb  new-color BmarginColor       \ browse margin color: gold
-\ Color: ltYellow  new-color BmarginColor       \ browse margin color: yellow
+  240 0 0 rgb  new-color BmarginColor           \ browse margin color: red
 
 defer trailBG  ' normalBG is trailBG
 defer selectBG ' normalBG is selectBG

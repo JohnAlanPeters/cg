@@ -1,7 +1,7 @@
 \ $Id: CG.f,v 1.14 2013/08/13 23:30:32 rdack Exp $
 \ to use merged editor compile in cg.f   [rda 11/02]
 
-: CG ;  \ place marker for use with VIEW or VV  Can I move it t line 84?
+: CG ;  \ place marker for use with VIEW or VV  Can I move it to line 84?
 
 sys-warning-off
 dup-warning-off
@@ -60,7 +60,7 @@ defer total-est   \ so we can put total on status line
 0 value consWin
 : _xit ro loadline off false to invkloop
    call GetFocus consWin =
-   if focus-console cr ." ok" quit then ;
+   if s" c:\investing" "chdir focus-console cr ." ok" quit then ;
 
 cd ..
 current-dir$ setfdir
@@ -258,7 +258,7 @@ editor
 
 : HELLO-CG
     s" bootup" logmsg \ getuser
-    Title-CG  ( current-dir$ setfdir ) s" c:\cg\" &forthdir place
+    Title-CG  ( current-dir$ setfdir ) s" c:\cg" &forthdir place
     -1 to dp-location cd-demo ready
     2 to newappid RunAsNewAppID 0 to with-source?   \ enable debugging
     8 16 >fontht  \ console font

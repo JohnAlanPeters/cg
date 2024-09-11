@@ -333,7 +333,7 @@ defer _Control+W ' close-text is _control+w
 : kSetTimer ( -- )   &kTimerProc ktime 0 0 Call SetTimer to kTimerID ;
 : kStartTimer ( -- )   kKillTimer kSetTimer ;
 
-: F13  ; \ Down to Vscr 69 (line 411) for the function keys
+: F13 ; \ Down to Vscr 69 (line 411) for the function keys
 
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
@@ -498,5 +498,5 @@ defer _Control+W ' close-text is _control+w
         ENDCASE
       AGAIN   ;
 
-: F14  ; \ I like to be able to VIEW this word to quickly jump to this file
+: F14  ; \ VIEW or VV F14 to to quickly jump heere in this file
          \ Please do not remove it.
