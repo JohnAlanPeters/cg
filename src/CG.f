@@ -8,6 +8,7 @@ dup-warning-off
 
 forth definitions
 
+needs unicode
 needs xref
 needs xwinver
 create forthbase ," \win32forth\"
