@@ -293,6 +293,8 @@ editor
 
 ' _date-stamp is date-stamp
 
+forth
+
 6 proc ShellExecute
 : ("ShellExecute) { operation addr cnt hWnd --  errorcode } \ open file using default application
         1 ( SW_SHOWNORMAL )   \ nShowCmd
@@ -386,4 +388,8 @@ font NewFont
   MAXSTRING LocalAlloc: find$
   count find$ place
   find$  _voc? then ;
+
+: esc-delay ( n -- )  \ #seconds to delay; esc to abort
+  10 * 0 do 100 ms key? if key 27 = if quit then then loop ;
+
 

@@ -61,7 +61,7 @@ defer total-est   \ so we can put total on status line
 0 value consWin
 : _xit ro loadline off false to invkloop
    call GetFocus consWin =
-   if s" c:\investing" "chdir focus-console cr ." ok" quit then ;
+   if s" c:\stockwatcher" "chdir focus-console cr ." ok" quit then ;
 
 cd ..
 current-dir$ setfdir
@@ -271,7 +271,7 @@ editor
           if file-to-edit$ off clear-totals wined
              focus-console false to invkloop
              cmdline 2 -2 d+ evaluate
-          else cmdline file-to-edit$ place  wined  VIEW-KEY-LOOP
+          else cmdline file-to-edit$ place  wined VIEW-KEY-LOOP
           then
     then
     quit ;

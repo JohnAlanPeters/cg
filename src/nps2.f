@@ -460,9 +460,12 @@ Vocabulary Flo-Lay-in    Flo-Lay-in Definitions
 : 2x2         40.00 w/e  50 c ; \  Guess                        
 : 2x4         37.50 w/e  50 c ; \ 4-T B&K Jul 95                
 \ Capri        0.00 w/c 140 c ; \                               
-: 18-cell-3   85.00 w/c 150 c ; \ 3 tube                        
+: 18-cell-3   85.00 w/c 150 c ; \ 3 tube
 Elect                                                           
 
+Vocabulary LED-Fixture  LED-fixture Definitions
+: 4-ft        33.51 w/c  50 c ; \ Guesses
+Elect
 
 \ FIXTURES   1/4            625-304  FF-3         F 05-01-09    
 Vocabulary Fixture       Fixture definitions
@@ -1479,7 +1482,6 @@ Elect
 : Profit                  Other ;
 : Fees                    Parts ;
 : Sub-Contract            Parts ;
-: Rental              Wholesale ;
 : Allowance ( n -- )  calc-allowance 0 e ;
 : Discount  ( n -- )    negate allowance ;
 Elect

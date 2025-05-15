@@ -337,7 +337,7 @@ defer _Control+W ' close-text is _control+w
 
 : VIEW-KEY-LOOP ( -- )
       true to invkloop   \ we are editing
-      call GetFocus to topwin
+      call GetFocus to topwin 0 to browse?
       BEGIN
             depth to saved-depth            \ so we can check stack depth
             ibeam-cursor
