@@ -63,6 +63,11 @@ defer total-est   \ so we can put total on status line
    call GetFocus consWin =
    if s" c:\stockwatcher" "chdir focus-console cr ." ok" quit then ;
 
+variable devsave   \ save on every keystroke
+: devsave-on  devsave on ;
+: devsave-off devsave off ;
+
+
 cd ..
 current-dir$ setfdir
 s" wined\res" cgbase" "fpath+       \ for wined resource file
@@ -114,22 +119,22 @@ Include PRETTY.F        \ Pretty printing words including PRT# and more
 Include P-OK.F          \ ELECT Vocabulary created, only load once!
 Include CODE.f          \ EXTEND the prices.
 Include EXTEND-PRICES.F \ Used by Ctrl+E
-Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
-Include nps1.f
-Include nps2.f
-Include OPEN-1S.SEQ     \ Walls are open-1-side
+\ Include Surface.emt     \ need to load before nps.scr b/c of use of 'neat-emt'
+\ Include nps1.f
+\ Include nps2.f
+\ Include OPEN-1S.SEQ     \ Walls are open-1-side
 Include conpaste.f
 Include GrandTot.f      \ bid-thru - extend all vscrns
 Include Adding.f        \ aa - do bid-thru and display totals
-Include ppsig.f         \ payment progress and signature
-Include convbid.f
-Include Email.f         \ create email.html for current file
-Include Logger.f        \ Used as ASP  Application Service Provider
-Include common.f
-Include plans.scr
-Include big-ok.scr
-Include fish.scr
-Include Ampier.scr
+\ Include ppsig.f         \ payment progress and signature
+\ Include convbid.f
+\ Include Email.f         \ create email.html for current file
+Include Logger.f          \ Used as ASP  Application Service Provider
+\ Include common.f
+\ Include plans.scr
+\ Include big-ok.scr
+\ Include fish.scr
+\ Include Ampier.scr
 \ include nes-compiled.f  \ colon defs with multiple modules
 forth definitions
 Include Tools.f          \ SELL will add tax, overhead and profit to a part.
@@ -193,21 +198,19 @@ forth also forth definitions editor
   [ editor ] vbmark ;
 
 : v reedit ; \ edit the currently open file
-
-: VV  ( <word> -- ) \ opens file in the editor for <word>; stays in console
+: vv view ;
+: VVc  ( <word> -- ) \ opens file in the editor for <word>; stays in console
    in-web?
    if vv-web-instructions
    else widesearch
     if $.viewinfo dup 0< if 2drop else
      count "+open-text 0 swap 1- 1 to defer-margin setedmode
-     to-find-line refresh-line focus-console  then
+     to-find-line refresh-line focus-console then
     else drop then
    then ;
 
 : vvv ( <word> -- )   \ open file in insert mode in editor
    3 to defer-margin view ;
-
-: VVVV  ." Hay! ;-) Too many V's for me handle!" ;
 
 : LOC .viewinfo 2drop ;
 
