@@ -496,6 +496,7 @@ defer _Control+W ' close-text is _control+w
       k_CR +k_alt                   OF     ." doesn't work"             ENDOF
                     dup insert/overstrike-character
         ENDCASE
+        devsave @ edit-changed? and if do-save-text then
       AGAIN   ;
 
 : F14  ; \ VIEW or VV F14 to to quickly jump heere in this file
